@@ -1,0 +1,38 @@
+{
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2014-11-13",
+    "endpointPrefix":"default",
+    "jsonVersion":"1.1",
+    "serviceAbbreviation":"Amazon ECS",
+    "serviceFullName":"Amazon EC2 Container Service",
+    "signatureVersion":"v4",
+    "targetPrefix":"AmazonEC2ContainerServiceV20141113",
+    "protocol":"json"
+  },
+  "documentation":"",
+  "operations":{
+  "HostingVmList":{
+    "name":"hosting.vm.list",
+    "http":{
+      "method":"POST",
+      "requestUri":"/"
+    },
+    "input":{"shape":"CreateClusterRequest"},
+    "output":{"shape":"CreateClusterResponse"},
+    "errors":[
+      {
+        "shape":"ServerException",
+        "exception":true,
+        "fault":true,
+        "documentation":"<p>These errors are usually caused by a server-side issue.</p>"
+      },
+      {
+        "shape":"ClientException",
+        "exception":true,
+        "documentation":"<p>These errors are usually caused by something the client did, such as use an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specify an identifier that is not valid.</p>"
+      }
+    ],
+    "documentation":"<p>Creates a new Amazon ECS cluster. By default, your account will receive a <code>default</code> cluster when you launch your first container instance. However, you can create your own cluster with a unique name with the <code>CreateCluster</code> action.</p>"
+  },
+}

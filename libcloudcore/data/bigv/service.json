@@ -1,0 +1,27 @@
+{
+  "metadata":{
+  },
+  "documentation":"",
+  "operations": {
+    "list_virtual_machines": {
+      "name":"list_virtual_machines",
+      "http": {
+         "method":"GET",
+         "uri":"/accounts/ACC_ID/groups/GROUP_ID/virtual_machines"
+      },
+      "input":{"shape":"list_virtual_machines_req"},
+      "output":{"shape":"list_virtual_machines_resp"},
+      "errors":[],
+      "documentation":""
+    }
+  },
+  "shapes": {
+    "list_virtual_machines_req": {
+        "type": "structure"
+    },
+    "list_virtual_machines_resp": {
+        "type": "list",
+        "member": {"shape": "Server"}
+    }
+  }
+}
