@@ -41,7 +41,7 @@ class Session(object):
             def _(*args, **kwargs):
                 return self.call(operation.name, *args, **kwargs)
             setattr(_, "__doc__", operation.documentation)
-            setattr(_, "__name__", operation.name)
+            setattr(_, "__name__", operation.name.encode("utf-8"))
             attrs[operation.name] = _
 
         driver = type(service, (Driver, ), attrs)
