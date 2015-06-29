@@ -17,7 +17,7 @@ install:
 
 script:
   - coverage run $(which py.test) libcloudcore
-  - flake8 touchdown
+  - flake8 libcloudcore
 
 after_success:
   - coveralls
