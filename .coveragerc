@@ -1,0 +1,4 @@
+[run]
+source = libcloudcore
+omit =
+    libcloudcore/tests/*
