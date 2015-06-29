@@ -14,7 +14,6 @@
 # limitations under the License.
 
 import os
-import unittest
 
 import pytest
 
@@ -22,7 +21,9 @@ from libcloudcore.session import Session
 
 
 def find_services():
-    root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data"))
+    root = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "data")
+    )
     for path, dirs, files in os.walk(root):
         if 'service.json' in files:
             yield os.path.relpath(path, root)

@@ -17,5 +17,7 @@ from .model import Model, Operation, InvalidShape, InvalidOperation
 
 __all__ = [
     'Model',
+    'InvalidShape',
+    'InvalidOperation',
     'Operation',
 ]

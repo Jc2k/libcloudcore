@@ -32,7 +32,11 @@ class TestModel(unittest.TestCase):
         self.assertRaises(InvalidShape, self.model.get_shape, "invalid_shape")
 
     def test_invalid_operation(self):
-        self.assertRaises(InvalidOperation, self.model.get_operation, "invalid_operation")
+        self.assertRaises(
+            InvalidOperation,
+            self.model.get_operation,
+            "invalid_operation"
+        )
 
 
 class TestOperation(unittest.TestCase):
@@ -55,14 +59,6 @@ class TestOperation(unittest.TestCase):
             },
         })
 
-    def test_build_request(self):
+    def test_get_operation(self):
         operation = self.model.get_operation('dummy_operation')
-
-    def test_parse_request(self):
-        operation = self.model.get_operation('dummy_operation')
-
-    def test_build_response(self):
-        operation = self.model.get_operation('dummy_operation')
-
-    def test_parse_response(self):
-        operation = self.model.get_operation('dummy_operation')
+        self.assertEqual(operation.name, "dummy_operation")

@@ -60,8 +60,10 @@ class Model(object):
             yield self.get_operation(key)
 
     def get_operation(self, name):
-        if not name in self.operations:
-            raise InvalidOperation("No operation '{}' for '{}'".format(name, self))
+        if name not in self.operations:
+            raise InvalidOperation(
+                "No operation '{}' for '{}'".format(name, self)
+            )
         return Operation(self, name, self.operations.get(name))
 
     def get_shape(self, name):

@@ -17,6 +17,7 @@
 This module implements a HTTP request wrapper that is backend abnostic.
 """
 
+
 class Request(object):
 
     def __init__(self, method='GET', headers=None, body=None):

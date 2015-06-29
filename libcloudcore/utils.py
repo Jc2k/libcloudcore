@@ -29,5 +29,6 @@ class Registry(object):
         try:
             klass = self.registry[name]
         except KeyError:
-            raise errors.Error()
+            # FIXME: Raise a more useful error here
+            raise
         return klass

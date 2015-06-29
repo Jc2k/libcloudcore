@@ -17,6 +17,7 @@
 This module implements a HTTP response wrapper that is backend abnostic.
 """
 
+
 class Response(object):
 
     def __init__(self, status_code=200, body=None, headers=None):

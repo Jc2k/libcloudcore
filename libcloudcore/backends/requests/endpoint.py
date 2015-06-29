@@ -30,7 +30,7 @@ class Endpoint(object):
         )
 
         return Response(
-            status_code=200,
+            status_code=response.status,
             headers={},
             body='',
         )

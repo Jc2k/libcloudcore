@@ -14,7 +14,7 @@
 # limitations under the License.
 
 
-class BasicAuth(Authentication):
+class BasicAuth(object):
 
     def add_authentication(self, request):
         request.add_header(
