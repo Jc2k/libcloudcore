@@ -13,10 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""
+This module implements a HTTP request wrapper that is backend abnostic.
+"""
 
 class Request(object):
 
     def __init__(self, method='GET', headers=None, body=None):
+        self.uri = b''
         self.method = method
         self.headers = headers or {}
         self.body = body or b''

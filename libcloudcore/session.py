@@ -16,6 +16,7 @@
 from .loader import Loader
 from .models import Model
 from .driver import Driver
+from . import serializers
 
 
 class Session(object):
@@ -32,7 +33,10 @@ class Session(object):
 
         attrs = {
             'name': service,
+            'model': model,
+            'serializers': [serializers.get(s) for s in model.serializers],
         }
+
         for operation in model.get_operations():
             def _(*args, **kwargs):
                 return self.call(operation.name, *args, **kwargs)

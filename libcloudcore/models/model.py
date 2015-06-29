@@ -40,9 +40,12 @@ class Map(Shape):
 
 class Operation(Shape):
 
-    def __init__(self, name, operation):
+    def __init__(self, model, name, operation):
+        self.model = model
         self.name = name.encode("utf-8")
         self.documentation = operation.get('documentation', '')
+        self.uri = operation.get('http', {}).get('uri', '/')
+        self.method = operation.get('http', {}).get('method', 'GET')
 
 
 class Model(object):
@@ -50,6 +53,7 @@ class Model(object):
     def __init__(self, model):
         self.name = model.get('name', '')
         self.operations = model.get('operations', {})
+        self.serializers = model.get('serializers', ['uri', 'json'])
 
     def get_operations(self):
         for key in self.operations.keys():
@@ -58,7 +62,7 @@ class Model(object):
     def get_operation(self, name):
         if not name in self.operations:
             raise InvalidOperation("No operation '{}' for '{}'".format(name, self))
-        return Operation(name, self.operations.get(name))
+        return Operation(self, name, self.operations.get(name))
 
     def get_shape(self, name):
         raise InvalidShape("No shape '{}' for '{}'".format(name, self))

@@ -13,8 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from libcloudcore.utils import Registry
 
-class Serializer(object)
+
+registry = Registry()
+get = registry.get
+register = registry.register
+
+
+class BaseSerializer(object):
 
     def serialize_request(self, operation, request, **params):
         raise NotImplementedError(self.serialize_request)

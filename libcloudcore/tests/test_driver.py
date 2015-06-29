@@ -13,9 +13,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .model import Model, Operation, InvalidShape, InvalidOperation
+import unittest
 
-__all__ = [
-    'Model',
-    'Operation',
-]
+from libcloudcore.session import Session
+
+
+class TestDriver(unittest.TestCase):
+
+    def setUp(self):
+        self.session = Session()
+        self.Driver = self.session.get_driver("bigv")
+        self.driver = self.Driver()
+        self.model = self.driver.model
+        self.operation = self.model.get_operation("list_virtual_machines")
+
+    def test_build_request(self):
+        request = self.driver.build_request(
+            self.operation,
+            account_id=1,
+            group_id=2
+        )
+        self.assertEqual(
+            request.uri,
+            '/accounts/1/groups/2/virtual_machines',
+        )

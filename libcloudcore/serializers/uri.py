@@ -13,10 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .serializer import BaseSerializer
+from . import serializer
 
 
-class UriSerializer(object):
+class UriSerializer(serializer.BaseSerializer):
+
+    name = 'uri'
 
     def serialize_request(self, operation, request, **params):
         request.uri = operation.uri.format(**params)
@@ -33,3 +35,5 @@ class UriSerializer(object):
         # The Uri is only used in the request cycle and does not participate
         # in the response
         return
+
+serializer.register(UriSerializer)

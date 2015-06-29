@@ -15,6 +15,8 @@
 
 import requests
 
+from libcloudcore.response import Response
+
 
 class Endpoint(object):
 
@@ -25,4 +27,10 @@ class Endpoint(object):
         response = self.session.request(
             request.method,
             request.url,
+        )
+
+        return Response(
+            status_code=200,
+            headers={},
+            body='',
         )

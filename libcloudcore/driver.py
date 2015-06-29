@@ -13,11 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from .request import Request
+
 
 class Driver(object):
 
-    def __init__(self, model):
-        self.model = model
+    def build_request(self, operation, **params):
+        request = Request()
+        for serializer in self.serializers:
+            serializer().serialize_request(operation, request, **params)
+        return request
 
     def call(self, operation, **params):
         request = self.build_request(operation, **params)

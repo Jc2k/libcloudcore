@@ -13,12 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import absolute_import
+
 import json
 
-from .serializer import BaseSerializer
+from . import serializer
 
 
-class JsonSerializer(BaseSerializer):
+class JsonSerializer(serializer.BaseSerializer):
+
+    name = 'json'
 
     def serialize_request(self, operation, request, **params):
         request.body = json.dumps(params)
@@ -31,3 +35,5 @@ class JsonSerializer(BaseSerializer):
 
     def deserialize_response(self, operation, response):
         return json.loads(response.body)
+
+serializer.register(JsonSerializer)

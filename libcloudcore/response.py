@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""
+This module implements a HTTP response wrapper that is backend abnostic.
+"""
 
 class Response(object):
 

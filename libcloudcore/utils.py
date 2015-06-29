@@ -13,9 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .model import Model, Operation, InvalidShape, InvalidOperation
 
-__all__ = [
-    'Model',
-    'Operation',
-]
+class Registry(object):
+
+    def __init__(self):
+        self.registry = {}
+
+    def register(self, cls):
+        self.registry[cls.name] = cls
+
+    def registered(self):
+        return self.registry.items()
+
+    def get(self, name):
+        try:
+            klass = self.registry[name]
+        except KeyError:
+            raise errors.Error()
+        return klass

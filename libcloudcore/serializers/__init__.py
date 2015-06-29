@@ -13,8 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from .serializer import get
+from .json import JsonSerializer
 from .uri import UriSerializer
 
+
 __all__ = [
+    'get',
+    'JsonSerializer',
     'UriSerializer',
 ]
