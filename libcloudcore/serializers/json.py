@@ -23,7 +23,9 @@ from .. import layer
 class JsonSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
+        request.headers['Content-Type'] = 'application/json'
         request.body = json.dumps(params)
+
         return super(JsonSerializer, self).before_call(
             operation,
             request,

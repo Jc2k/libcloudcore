@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-import json
+import xmlrpclib
 
 from .. import layer
 
@@ -23,7 +23,14 @@ from .. import layer
 class XmlrpcSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
-        request.body = json.dumps(params)
+        request.method = 'POST'
+        request.headers['Content-Type'] = 'text/xml'
+        request.body = xmlrpclib.dumps(
+            params,
+            operation.wire_name,
+            allow_none=True,
+        )
+
         return super(XmlrpcSerializer, self).before_call(
             operation,
             request,
@@ -31,4 +38,12 @@ class XmlrpcSerializer(layer.Layer):
         )
 
     def after_call(self, operation, response):
-        return json.loads(response.body)
+        try:
+            return xmlrpclib.loads(response.body)
+        except xmlrpclib.Fault:
+            return {
+                "Error": {
+                    "Code": e.faultCode,
+                    "Message": e.faultString,
+                }
+            }
