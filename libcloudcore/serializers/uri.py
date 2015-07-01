@@ -20,4 +20,8 @@ class UriSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
         request.uri = operation.uri.format(**params)
-        return super(UriSerializer, self).before_call(operation, request, **params)
+        return super(UriSerializer, self).before_call(
+            operation,
+            request,
+            **params
+        )

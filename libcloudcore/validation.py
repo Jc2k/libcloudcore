@@ -20,4 +20,8 @@ class Validation(Layer):
 
     def before_call(self, request, operation, **params):
         # DO SOME VALIDATION HERE
-        return super(Validation, self).before_call(request, operation, **params)
+        return super(Validation, self).before_call(
+            request,
+            operation,
+            **params
+        )

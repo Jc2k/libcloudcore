@@ -73,6 +73,7 @@ class Model(object):
     def __init__(self, model):
         self._model = model
         self.name = model.get('name', '')
+        self.documentation = model.get('documentation', '')
         self.operations = model.get('operations', {})
         self.serializers = model.get('serializers', ['uri', 'json'])
         self.shapes = model.get('shapes', {})

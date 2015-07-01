@@ -44,7 +44,7 @@ class Importer(object):
 
         attrs = {
             'name': service,
-            #'__doc__': model.documentation,
+            '__doc__': model.documentation,
             'model': model,
         }
 

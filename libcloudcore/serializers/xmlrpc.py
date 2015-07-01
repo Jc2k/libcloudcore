@@ -24,7 +24,11 @@ class XmlrpcSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
         request.body = json.dumps(params)
-        return super(JsonSerializer, self).before_call(operation, request, **params)
+        return super(XmlrpcSerializer, self).before_call(
+            operation,
+            request,
+            **params
+        )
 
     def after_call(self, operation, response):
         return json.loads(response.body)
