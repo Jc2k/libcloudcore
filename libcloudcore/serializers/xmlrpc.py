@@ -40,7 +40,7 @@ class XmlrpcSerializer(layer.Layer):
     def after_call(self, operation, response):
         try:
             return xmlrpc_client.loads(response.body)
-        except xmlrpclib.Fault as e:
+        except xmlrpc_client.Fault as e:
             return {
                 "Error": {
                     "Code": e.faultCode,
