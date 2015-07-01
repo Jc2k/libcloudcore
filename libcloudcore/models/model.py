@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import importlib
+
 
 class InvalidShape(Exception):
     pass
@@ -69,10 +71,22 @@ class Model(object):
     }
 
     def __init__(self, model):
+        self._model = model
         self.name = model.get('name', '')
         self.operations = model.get('operations', {})
         self.serializers = model.get('serializers', ['uri', 'json'])
         self.shapes = model.get('shapes', {})
+
+    @property
+    def request_pipeline(self):
+        pipeline = []
+        for stage in self._model['metadata'].get('request-pipeline', []):
+            mod, klass = stage.split(":")
+            pipeline.append(getattr(
+                importlib.import_module(mod),
+                klass,
+            ))
+        return tuple(pipeline)
 
     def get_operations(self):
         for key in self.operations.keys():

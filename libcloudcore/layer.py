@@ -13,14 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .request import Request
-from .layer import Layer
 
+class Layer(object):
 
-class Driver(Layer):
+    def before_call(self, request, operation, **params):
+        pass
 
-    def call(self, operation, **params):
-        request = Request()
-        self.before_call(request, operation, **params)
-        response = self.endpoint.request(request)
-        return self.model.parse_response(response)
+    def after_call(self, operation, request, response, parsed_response):
+        pass

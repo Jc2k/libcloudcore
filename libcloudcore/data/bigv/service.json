@@ -1,13 +1,17 @@
 {
   "metadata": {
+    "request-pipeline": [
+      "libcloudcore.serializers.uri:UriSerializer",
+      "libcloudcore.serializers.json:JsonSerializer"
+    ]
   },
   "documentation":"",
   "operations": {
     "list_virtual_machines": {
       "name":"list_virtual_machines",
       "http": {
-         "method":"GET",
-         "uri":"/accounts/{account_id}/groups/{group_id}/virtual_machines"
+         "method": "GET",
+         "uri": "/accounts/{account_id}/groups/{group_id}/virtual_machines"
       },
       "input":{"shape":"ListVirtualMachinesRequest"},
       "output":{"shape":"ListVirtualMachinesResponse"},

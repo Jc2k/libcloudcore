@@ -13,20 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import unittest
-
-from libcloudcore.session import Session
+from .layer import Layer
 
 
-class TestSession(unittest.TestCase):
+class Validation(Layer):
 
-    def setUp(self):
-        self.session = Session()
-
-    def test_get_driver(self):
-        driver = self.session.get_driver("bigv")
-        self.assertTrue(driver.name == "bigv")
-
-    def test_driver_has_operations(self):
-        driver = self.session.get_driver("bigv")
-        self.assertTrue(hasattr(driver, "list_virtual_machines"))
+    def before_call(self, request, operation, **params):
+        # DO SOME VALIDATION HERE
+        return super(Validation, self).before_call(request, operation, **params)

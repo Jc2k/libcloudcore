@@ -13,26 +13,45 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import inspect
 import unittest
 
-from libcloudcore.session import Session
+from libcloudcore.driver import Driver
+from libcloudcore.validation import Validation
+from libcloudcore.serializers import JsonSerializer, UriSerializer
+from libcloudcore.layer import Layer
+from ..request import Request
 
 
 class TestDriver(unittest.TestCase):
 
     def setUp(self):
-        self.session = Session()
-        self.Driver = self.session.get_driver("bigv")
-        self.driver = self.Driver()
+        from libcloudcore.drivers.bigv import Driver
+        self.Driver = Driver
+        self.driver = Driver()
         self.model = self.driver.model
         self.operation = self.model.get_operation("list_virtual_machines")
 
+    def test_mro(self):
+        self.assertEqual(inspect.getmro(self.Driver), (
+            self.Driver,
+            Driver,
+            Validation,
+            UriSerializer,
+            JsonSerializer,
+            Layer,
+            object,
+        ))
+
     def test_build_request(self):
-        request = self.driver.build_request(
+        request = Request()
+        self.driver.before_call(
+            request,
             self.operation,
             account_id=1,
             group_id=2
         )
+
         self.assertEqual(
             request.uri,
             '/accounts/1/groups/2/virtual_machines',

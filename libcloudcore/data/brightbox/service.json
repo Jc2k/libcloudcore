@@ -1,6 +1,9 @@
 {
   "metadata":{
-    "protocol":"json"
+    "request-pipeline": [
+      "libcloudcore.serializers.uri:UriSerializer",
+      "libcloudcore.serializers.json:JsonSerializer"
+    ]
   },
   "documentation":"",
   "operations":{
@@ -8,7 +11,7 @@
       "name":"CreateServer",
       "http":{
         "method":"PUT",
-        "requestUri":"/{apiVersion}/servers"
+        "uri":"/{metadata.version}/servers"
       },
       "input":{"shape":"CreateServerRequest"},
       "output":{"shape":"CreateServerResponse"},

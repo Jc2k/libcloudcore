@@ -17,23 +17,14 @@ from __future__ import absolute_import
 
 import json
 
-from . import serializer
+from .. import layer
 
 
-class JsonSerializer(serializer.BaseSerializer):
+class JsonSerializer(layer.Layer):
 
-    name = 'json'
-
-    def serialize_request(self, operation, request, **params):
+    def before_call(self, request, operation, **params):
         request.body = json.dumps(params)
+        return super(JsonSerializer, self).before_call(operation, request, **params)
 
-    def deserialize_request(self, operation, request):
-        return json.loads(request.body)
-
-    def serialize_response(self, operation, response, **params):
-        return json.dumps(params)
-
-    def deserialize_response(self, operation, response):
+    def after_call(self, operation, response):
         return json.loads(response.body)
-
-serializer.register(JsonSerializer)

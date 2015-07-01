@@ -13,24 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from libcloudcore.utils import Registry
+import unittest
+
+from libcloudcore.importer import Importer
 
 
-registry = Registry()
-get = registry.get
-register = registry.register
+class TestImporter(unittest.TestCase):
 
+    def setUp(self):
+        self.importer = Importer()
 
-class BaseSerializer(object):
+    def test_get_driver(self):
+        driver = self.importer.get_driver("bigv")
+        self.assertTrue(driver.name == "bigv")
 
-    def serialize_request(self, operation, request, **params):
-        raise NotImplementedError(self.serialize_request)
-
-    def deserialize_request(self, operation, request):
-        raise NotImplementedError(self.deserialize_request)
-
-    def serialize_response(self, operation, response, **params):
-        raise NotImplementedError(self.serialize_response)
-
-    def deserialize_response(self, operation, response):
-        raise NotImplementedError(self.serialize_response)
+    def test_driver_has_operations(self):
+        driver = self.importer.get_driver("bigv")
+        self.assertTrue(hasattr(driver, "list_virtual_machines"))

@@ -13,14 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .request import Request
-from .layer import Layer
+# This activates the import hook that allows you to access the dynamically
+# generated modules
 
-
-class Driver(Layer):
-
-    def call(self, operation, **params):
-        request = Request()
-        self.before_call(request, operation, **params)
-        response = self.endpoint.request(request)
-        return self.model.parse_response(response)
+import sys
+from .. import importer
+sys.meta_path.append(importer.Importer())
+del importer
+del sys

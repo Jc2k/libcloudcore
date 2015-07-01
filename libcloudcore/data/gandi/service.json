@@ -1,6 +1,8 @@
 {
   "metadata":{
-    "serializers": ["soap"]
+    "request-pipeline": [
+      "libcloudcore.serializers.xmlrpc:XmlrpcSerializer"
+    ]
   },
   "documentation":"",
   "operations":{

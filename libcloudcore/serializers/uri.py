@@ -13,29 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
-
-from . import serializer
+from .. import layer
 
 
-class UriSerializer(serializer.BaseSerializer):
+class UriSerializer(layer.Layer):
 
-    name = 'uri'
-
-    def serialize_request(self, operation, request, **params):
+    def before_call(self, request, operation, **params):
         request.uri = operation.uri.format(**params)
-
-    def deserialize_request(self, operation, request):
-        return dict(re.search(request.uri, operation.parse_uri))
-
-    def serialize_response(self, operation, response, **params):
-        # The Uri is only used in the request cycle and does not participate
-        # in the response
-        return
-
-    def deserialize_response(self, operation, response):
-        # The Uri is only used in the request cycle and does not participate
-        # in the response
-        return
-
-serializer.register(UriSerializer)
+        return super(UriSerializer, self).before_call(operation, request, **params)

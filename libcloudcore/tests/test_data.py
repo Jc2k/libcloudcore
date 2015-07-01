@@ -17,7 +17,7 @@ import os
 
 import pytest
 
-from libcloudcore.session import Session
+from libcloudcore.importer import Importer
 
 
 def find_services():
@@ -31,7 +31,7 @@ def find_services():
 
 @pytest.mark.parametrize('service', find_services())
 def test_data(service):
-    session = Session()
+    session = Importer()
     driver = session.get_driver(service)
     for operation in driver.model.get_operations():
         assert operation.input_shape.name != operation.output_shape.name

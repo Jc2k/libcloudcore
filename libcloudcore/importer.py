@@ -13,28 +13,39 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from . import validation
 from .loader import Loader
 from .models import Model
 from .driver import Driver
-from . import serializers
 
 
-class Session(object):
+class Importer(object):
 
     def __init__(self):
-        self.drivers = {}
         self.loader = Loader()
 
-    def get_driver(self, service):
-        if service in self.drivers:
-            return self.drivers[service]
+    def find_module(self, fullname, path):
+        if fullname.startswith("libcloudcore.drivers."):
+            return self
+        return None
 
+    def load_module(self, fullname):
+        service = fullname[len("libcloudcore.drivers."):].replace(".", "/")
+
+        class Module(object):
+            Driver = self.get_driver(service)
+
+        return Module()
+
+    def get_driver(self, service):
         model = Model(self.loader.load_service(service))
+
+        bases = (Driver, validation.Validation) + model.request_pipeline
 
         attrs = {
             'name': service,
+            #'__doc__': model.documentation,
             'model': model,
-            'serializers': [serializers.get(s) for s in model.serializers],
         }
 
         for operation in model.get_operations():
@@ -44,7 +55,6 @@ class Session(object):
             setattr(_, "__name__", operation.name.encode("utf-8"))
             attrs[operation.name] = _
 
-        driver = type(service, (Driver, ), attrs)
-        self.drivers[service] = driver
+        driver = type(service, bases, attrs)
 
         return driver

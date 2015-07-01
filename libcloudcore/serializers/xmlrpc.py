@@ -13,14 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .request import Request
-from .layer import Layer
+from __future__ import absolute_import
+
+import json
+
+from .. import layer
 
 
-class Driver(Layer):
+class XmlrpcSerializer(layer.Layer):
 
-    def call(self, operation, **params):
-        request = Request()
-        self.before_call(request, operation, **params)
-        response = self.endpoint.request(request)
-        return self.model.parse_response(response)
+    def before_call(self, request, operation, **params):
+        request.body = json.dumps(params)
+        return super(JsonSerializer, self).before_call(operation, request, **params)
+
+    def after_call(self, operation, response):
+        return json.loads(response.body)
