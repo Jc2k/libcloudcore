@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-import xmlrpclib
+from six.moves import xmlrpc_client
 
 from .. import layer
 
@@ -25,7 +25,7 @@ class XmlrpcSerializer(layer.Layer):
     def before_call(self, request, operation, **params):
         request.method = 'POST'
         request.headers['Content-Type'] = 'text/xml'
-        request.body = xmlrpclib.dumps(
+        request.body = xmlrpc_client.dumps(
             params,
             operation.wire_name,
             allow_none=True,
@@ -39,7 +39,7 @@ class XmlrpcSerializer(layer.Layer):
 
     def after_call(self, operation, response):
         try:
-            return xmlrpclib.loads(response.body)
+            return xmlrpc_client.loads(response.body)
         except xmlrpclib.Fault as e:
             return {
                 "Error": {

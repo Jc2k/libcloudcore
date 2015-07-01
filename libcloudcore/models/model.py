@@ -47,7 +47,7 @@ class Operation(Shape):
 
     def __init__(self, model, name, operation):
         self.model = model
-        self.name = name.encode("utf-8")
+        self.name = name
         self.operation = operation
         self.documentation = operation.get('documentation', '')
         self.uri = operation.get('http', {}).get('uri', '/')
