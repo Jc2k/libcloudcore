@@ -34,4 +34,4 @@ def test_data(service):
     session = Session()
     driver = session.get_driver(service)
     for operation in driver.model.get_operations():
-        pass
+        assert operation.input_shape.name != operation.output_shape.name

@@ -16,7 +16,7 @@
 
 class BasicAuth(object):
 
-    def add_authentication(self, request):
+    def before_call(self, request):
         request.add_header(
             'Authorization',
             ':'.join(self.username, self.password),

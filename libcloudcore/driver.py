@@ -18,13 +18,15 @@ from .request import Request
 
 class Driver(object):
 
-    def build_request(self, operation, **params):
-        request = Request()
-        for serializer in self.serializers:
-            serializer().serialize_request(operation, request, **params)
-        return request
+    def validate_call(self, operation, **params):
+        pass
+
+    def build_request(self, request, operation, **params):
+        pass
 
     def call(self, operation, **params):
-        request = self.build_request(operation, **params)
+        self.validate_call(operation, **params)
+        request = Request()
+        self.build_request(request, operation, **params)
         response = self.endpoint.request(request)
         return self.model.parse_response(response)

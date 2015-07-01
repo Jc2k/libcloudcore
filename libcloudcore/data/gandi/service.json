@@ -10,10 +10,18 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"CreateClusterRequest"},
-      "output":{"shape":"CreateClusterResponse"},
+      "input":{"shape":"HostingVmListRequest"},
+      "output":{"shape":"HostingVmListResponse"},
       "errors":[],
       "documentation": ""
+    }
+  },
+  "shapes": {
+    "HostingVmListRequest": {
+      "type": "structure"
+    },
+    "HostingVmListResponse": {
+      "type": "structure"
     }
   }
 }

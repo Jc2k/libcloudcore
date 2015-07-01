@@ -23,7 +23,10 @@ class InvalidOperation(Exception):
 
 
 class Shape(object):
-    pass
+
+    def __init__(self, name, shape):
+        self.shape = shape
+        self.name = name
 
 
 class Structure(Shape):
@@ -43,17 +46,33 @@ class Operation(Shape):
     def __init__(self, model, name, operation):
         self.model = model
         self.name = name.encode("utf-8")
+        self.operation = operation
         self.documentation = operation.get('documentation', '')
         self.uri = operation.get('http', {}).get('uri', '/')
         self.method = operation.get('http', {}).get('method', 'GET')
 
+    @property
+    def input_shape(self):
+        return self.model.get_shape(self.operation['input']['shape'])
+
+    @property
+    def output_shape(self):
+        return self.model.get_shape(self.operation['output']['shape'])
+
 
 class Model(object):
+
+    shape_types = {
+        'structure': Structure,
+        'list': List,
+        'map': Map,
+    }
 
     def __init__(self, model):
         self.name = model.get('name', '')
         self.operations = model.get('operations', {})
         self.serializers = model.get('serializers', ['uri', 'json'])
+        self.shapes = model.get('shapes', {})
 
     def get_operations(self):
         for key in self.operations.keys():
@@ -67,4 +86,9 @@ class Model(object):
         return Operation(self, name, self.operations.get(name))
 
     def get_shape(self, name):
-        raise InvalidShape("No shape '{}' for '{}'".format(name, self))
+        if name not in self.shapes:
+            raise InvalidShape(
+                "No shape '{}' for '{}'".format(name, self)
+            )
+        shape = self.shapes[name]
+        return self.shape_types[shape['type']](name, shape)
