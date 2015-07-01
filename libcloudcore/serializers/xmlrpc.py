@@ -32,15 +32,15 @@ class XmlrpcSerializer(layer.Layer):
         )
 
         return super(XmlrpcSerializer, self).before_call(
-            operation,
             request,
+            operation,
             **params
         )
 
     def after_call(self, operation, response):
         try:
             return xmlrpclib.loads(response.body)
-        except xmlrpclib.Fault:
+        except xmlrpclib.Fault as e:
             return {
                 "Error": {
                     "Code": e.faultCode,

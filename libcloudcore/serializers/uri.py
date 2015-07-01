@@ -22,7 +22,7 @@ class UriSerializer(layer.Layer):
         request.uri = operation.uri.format(**params)
 
         return super(UriSerializer, self).before_call(
-            operation,
             request,
+            operation,
             **params
         )

@@ -27,8 +27,8 @@ class JsonSerializer(layer.Layer):
         request.body = json.dumps(params)
 
         return super(JsonSerializer, self).before_call(
-            operation,
             request,
+            operation,
             **params
         )
 

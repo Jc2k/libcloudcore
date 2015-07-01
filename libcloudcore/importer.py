@@ -55,6 +55,4 @@ class Importer(object):
             setattr(_, "__name__", operation.name.encode("utf-8"))
             attrs[operation.name] = _
 
-        driver = type(service, bases, attrs)
-
-        return driver
+        return type(service, bases, attrs)
