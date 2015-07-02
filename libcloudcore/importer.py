@@ -17,6 +17,7 @@ from . import validation
 from .loader import Loader
 from .models import Model
 from .driver import Driver
+from .utils import force_str
 
 
 class Importer(object):
@@ -52,7 +53,7 @@ class Importer(object):
             def _(*args, **kwargs):
                 return self.call(operation.name, *args, **kwargs)
             setattr(_, "__doc__", operation.documentation)
-            setattr(_, "__name__", operation.name.encode("utf-8"))
+            setattr(_, "__name__", force_str(operation.name))
             attrs[operation.name] = _
 
         return type(service, bases, attrs)

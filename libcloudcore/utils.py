@@ -13,22 +13,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import six
 
-class Registry(object):
 
-    def __init__(self):
-        self.registry = {}
+def force_str(s):
+    if isinstance(s, str):
+        return s
+    elif isinstance(s, six.text_type):
+        return s.encode("utf-8")
+    elif isinstance(s, six.binary_type):
+        return s.decode("utf-8")
+    raise ValueError("{} Not a string".format(s))
 
-    def register(self, cls):
-        self.registry[cls.name] = cls
 
-    def registered(self):
-        return self.registry.items()
+def force_unicode(s):
+    if isinstance(s, six.binary_type):
+        return s.decode("utf-8")
+    elif isinstance(s, six.text_type):
+        return s
+    raise ValueError("Not a string")
 
-    def get(self, name):
-        try:
-            klass = self.registry[name]
-        except KeyError:
-            # FIXME: Raise a more useful error here
-            raise
-        return klass
+
+def force_bytes(s):
+    if isinstance(s, six.binary_type):
+        return s
+    elif isinstance(s, six.text_type):
+        return s.encode("utf-8")
+    raise ValueError("Not a string")
