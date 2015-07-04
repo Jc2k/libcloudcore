@@ -19,5 +19,5 @@ class Layer(object):
     def before_call(self, request, operation, **params):
         pass
 
-    def after_call(self, operation, request, response, parsed_response):
+    def after_call(self, operation, request, response):
         pass

@@ -1,17 +1,25 @@
 {
   "metadata":{
     "request-pipeline": [
+      "libcloudcore.auth.token:TokenAuth",
       "libcloudcore.serializers.xmlrpc:XmlrpcSerializer"
-    ]
+    ],
+    "token": {
+      "stored-in-param": "api_key"
+    },
+    "endpoint": "https://rpc.ote.gandi.net/xmlrpc/"
   },
   "documentation":"",
   "operations":{
     "hosting_vm_list":{
-      "name":"hosting.vm.list",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
+      "wire_name":"hosting.vm.list",
+      "input":{"shape":"HostingVmListRequest"},
+      "output":{"shape":"HostingVmListResponse"},
+      "errors":[],
+      "documentation": ""
+    },
+    "version_info":{
+      "wire_name":"version.info",
       "input":{"shape":"HostingVmListRequest"},
       "output":{"shape":"HostingVmListResponse"},
       "errors":[],
@@ -19,11 +27,38 @@
     }
   },
   "shapes": {
+    "ApiKey": {
+      "type": "string",
+      "regex": "^[a-z0-9]{24}$",
+      "min": 24,
+      "max": 24
+    },
     "HostingVmListRequest": {
-      "type": "structure"
+      "type": "structure",
+      "members": {
+        "api_key": {
+            "shape": "ApiKey"
+        }
+      }
     },
     "HostingVmListResponse": {
       "type": "structure"
+    },
+    "VersionInfoRequest": {
+      "type": "structure",
+      "members": {
+        "api_key": {
+            "shape": "ApiKey"
+        }
+      }
+    },
+    "VersionInfoResponse": {
+      "type": "structure",
+      "members": {
+        "api_version": {
+            "shape": "String"
+        }
+      }
     }
   }
 }

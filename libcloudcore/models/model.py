@@ -31,8 +31,22 @@ class Shape(object):
         self.name = name
 
 
+class Member(Shape):
+
+    @property
+    def destination(self):
+        return self.shape.get('destination', 'body')
+
+    @property
+    def required(self):
+        return self.shape.get('required', False)
+
+
 class Structure(Shape):
-    pass
+
+    def iter_members(self):
+        for key, value in self.shape['members'].items():
+            yield Member(key, value)
 
 
 class List(Shape):
@@ -52,6 +66,10 @@ class Operation(Shape):
         self.documentation = operation.get('documentation', '')
         self.uri = operation.get('http', {}).get('uri', '/')
         self.method = operation.get('http', {}).get('method', 'GET')
+
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
 
     @property
     def input_shape(self):

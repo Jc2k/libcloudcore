@@ -13,29 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import collections
-import json
-import os
 
+class TokenAuth(object):
 
-class Loader(object):
-
-    def __init__(self, search_path=None):
-        if not search_path:
-            search_path = [
-                os.path.join(os.path.dirname(__file__), "data"),
-            ]
-        self.search_path = search_path
-
-    def load_service(self, service):
-        return self.load_from_search_path(service + '/service.json')
-
-    def load_from_search_path(self, path):
-        for search_path in self.search_path:
-            full_path = os.path.join(search_path, path)
-            if os.path.exists(full_path):
-                return self.load(full_path)
-
-    def load(self, full_path):
-        with open(full_path) as fp:
-            return json.load(fp, object_pairs_hook=collections.OrderedDict)
+    def __init__(self, token):
+        self.token = token

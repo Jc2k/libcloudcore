@@ -14,13 +14,37 @@
 # limitations under the License.
 
 from .request import Request
+from .response import Response
 from .layer import Layer
+from . import exceptions
 
+import requests
 
 class Driver(Layer):
 
     def call(self, operation, **params):
         request = Request()
         self.before_call(request, operation, **params)
-        response = self.endpoint.request(request)
-        return self.model.parse_response(response)
+
+        print request.uri
+        print request.body
+        print request.headers
+
+        try:
+            resp = requests.request(
+                request.method,
+                request.uri,
+                data=request.body,
+                headers=request.headers,
+            )
+
+            response = Response()
+            response.status_code = resp.status_code
+            response.body = resp.content
+
+            return self.after_call(operation, request, response)
+        except requests.ConnectionError as e:
+            raise exceptions.ClientError(
+                message=str(e),
+                code='ConnectionError',
+            )

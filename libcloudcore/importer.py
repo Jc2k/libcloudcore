@@ -38,6 +38,13 @@ class Importer(object):
 
         return Module()
 
+    def get_driver_method(self, operation):
+        def method(self, *args, **kwargs):
+            return self.call(operation, *args, **kwargs)
+        setattr(method, "__doc__", operation.documentation)
+        setattr(method, "__name__", force_str(operation.name))
+        return method
+
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
 
@@ -50,10 +57,6 @@ class Importer(object):
         }
 
         for operation in model.get_operations():
-            def _(*args, **kwargs):
-                return self.call(operation.name, *args, **kwargs)
-            setattr(_, "__doc__", operation.documentation)
-            setattr(_, "__name__", force_str(operation.name))
-            attrs[operation.name] = _
+            attrs[operation.name] = self.get_driver_method(operation)
 
         return type(service, bases, attrs)

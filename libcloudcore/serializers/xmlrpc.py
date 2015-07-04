@@ -25,8 +25,15 @@ class XmlrpcSerializer(layer.Layer):
     def before_call(self, request, operation, **params):
         request.method = 'POST'
         request.headers['Content-Type'] = 'text/xml'
+        request.uri = operation.model._model['metadata']['endpoint']
+
+        args = []
+        for member in operation.input_shape.iter_members():
+            if member.destination == 'body':
+                args.append(params[member.name])
+
         request.body = xmlrpc_client.dumps(
-            params,
+            tuple(args),
             operation.wire_name,
             allow_none=True,
         )
@@ -37,9 +44,10 @@ class XmlrpcSerializer(layer.Layer):
             **params
         )
 
-    def after_call(self, operation, response):
+    def after_call(self, operation, request, response):
         try:
-            return xmlrpc_client.loads(response.body)
+            args, methodname = xmlrpc_client.loads(response.body)
+            return args[0]
         except xmlrpc_client.Fault as e:
             return {
                 "Error": {

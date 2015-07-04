@@ -32,5 +32,5 @@ class JsonSerializer(layer.Layer):
             **params
         )
 
-    def after_call(self, operation, response):
+    def after_call(self, operation, request, response):
         return json.loads(response.body)
