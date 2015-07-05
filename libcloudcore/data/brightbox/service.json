@@ -1,6 +1,7 @@
 {
   "metadata":{
     "request-pipeline": [
+      "libcloudcore.auth.oauth:OAuth",
       "libcloudcore.serializers.uri:UriSerializer",
       "libcloudcore.serializers.json:JsonSerializer"
     ]

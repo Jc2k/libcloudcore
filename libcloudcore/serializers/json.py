@@ -23,6 +23,7 @@ from .. import layer
 class JsonSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
+        request.uri = 'https://' + operation.endpoint + operation.uri
         request.headers['Content-Type'] = 'application/json'
         request.body = json.dumps(params)
 

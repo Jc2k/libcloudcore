@@ -64,6 +64,15 @@ class Operation(Shape):
         self.name = name
         self.operation = operation
         self.documentation = operation.get('documentation', '')
+
+        self.endpoint = operation.get('http', {}).get(
+            'endpoint',
+            self.model._model['metadata'].get('http', {}).get(
+                'endpoint',
+                'localhost',
+            )
+        )
+
         self.uri = operation.get('http', {}).get('uri', '/')
         self.method = operation.get('http', {}).get('method', 'GET')
 

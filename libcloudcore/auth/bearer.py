@@ -16,14 +16,12 @@
 from libcloudcore.layer import Layer
 
 
-class BasicAuth(Layer):
+class BearerTokenAuth(Layer):
 
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
+    def __init__(self, token=None):
+        self.bearer_token = token
 
     def before_call(self, request, operation, **params):
-        request.headers['Authorization'] = "Basic {}".format(
-            ':'.join((self.username, self.password)),
-        )
-        return super(BasicAuth, self).before_call(request, operation, **params)
+        if self.bearer_token:
+            request.headers['Authorization'] = 'Bearer ' + self.bearer_token
+        return super(BearerTokenAuth, self).before_call(request, operation, **params)

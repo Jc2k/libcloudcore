@@ -1,16 +1,20 @@
 {
   "metadata": {
     "request-pipeline": [
+      "libcloudcore.auth.basic_auth:BasicAuth",
       "libcloudcore.serializers.uri:UriSerializer",
       "libcloudcore.serializers.json:JsonSerializer"
-    ]
+    ],
+    "http": {
+        "method": "GET",
+        "endpoint": "uk0.bigv.io"
+    }
   },
   "documentation":"",
   "operations": {
     "list_virtual_machines": {
       "name":"list_virtual_machines",
       "http": {
-         "method": "GET",
          "uri": "/accounts/{account_id}/groups/{group_id}/virtual_machines"
       },
       "input":{"shape":"ListVirtualMachinesRequest"},

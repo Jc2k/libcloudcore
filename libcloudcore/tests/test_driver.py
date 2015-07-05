@@ -17,6 +17,7 @@ import inspect
 import unittest
 
 from libcloudcore.driver import Driver
+from libcloudcore.auth.basic_auth import BasicAuth
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer, UriSerializer
 from libcloudcore.layer import Layer
@@ -28,7 +29,7 @@ class TestDriver(unittest.TestCase):
     def setUp(self):
         from libcloudcore.drivers.bigv import Driver
         self.Driver = Driver
-        self.driver = Driver()
+        self.driver = Driver('username', 'password')
         self.model = self.driver.model
         self.operation = self.model.get_operation("list_virtual_machines")
 
@@ -37,6 +38,7 @@ class TestDriver(unittest.TestCase):
             self.Driver,
             Driver,
             Validation,
+            BasicAuth,
             UriSerializer,
             JsonSerializer,
             Layer,
