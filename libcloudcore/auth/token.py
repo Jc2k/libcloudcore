@@ -13,8 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from libcloudcore.layer import Layer
 
-class TokenAuth(object):
+
+class TokenAuth(Layer):
 
     def __init__(self, token):
         self.token = token
+
+    def before_call(self, request, operation, **params):
+        config = self.model._model['metadata'].get('token', {})
+
+        if 'stored-in-param' in config:
+            if config['stored-in-param'] not in params:
+                params[config['stored-in-param']] = self.token
+
+        return super(TokenAuth, self).before_call(request, operation, **params)

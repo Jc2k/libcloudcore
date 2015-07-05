@@ -5,7 +5,7 @@
             "libcloudcore.serializers.xmlrpc:XmlrpcSerializer"
         ],
         "token": {
-            "stored-in-param": "api_key"
+            "stored-in-param": "apikey"
         },
         "endpoint": "https://rpc.ote.gandi.net/xmlrpc/"
     },
@@ -25,10 +25,10 @@
         "version_info": {
             "wire_name": "version.info",
             "input": {
-                "shape": "HostingVmListRequest"
+                "shape": "VersionInfoRequest"
             },
             "output": {
-                "shape": "HostingVmListResponse"
+                "shape": "VersionInfoResponse"
             },
             "errors": [],
             "documentation": "\nReturn the API version number"
@@ -3476,7 +3476,7 @@
         "HostingVmListRequest": {
             "type": "structure",
             "members": {
-                "api_key": {
+                "apikey": {
                     "shape": "ApiKey"
                 }
             }
@@ -3487,7 +3487,7 @@
         "VersionInfoRequest": {
             "type": "structure",
             "members": {
-                "api_key": {
+                "apikey": {
                     "shape": "ApiKey"
                 }
             }
