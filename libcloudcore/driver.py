@@ -48,7 +48,7 @@ class Driver(Layer):
             response.status_code = resp.status_code
             response.body = resp.content
 
-            logger.debug(resonse.status_code)
+            logger.debug(response.status_code)
             logger.debug(response.body)
 
             return self.after_call(operation, request, response)
