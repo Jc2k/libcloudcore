@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import logging
+
 from .request import Request
 from .response import Response
 from .layer import Layer
@@ -21,15 +23,18 @@ from . import exceptions
 import requests
 
 
+logger = logging.getLogger(__name__)
+
+
 class Driver(Layer):
 
     def call(self, operation, **params):
         request = Request()
         self.before_call(request, operation, **params)
 
-        print request.uri
-        print request.body
-        print request.headers
+        logger.debug("{}: {}".format(request.method, request.uri))
+        logger.debug(request.body)
+        logger.debug(request.headers)
 
         try:
             resp = requests.request(
@@ -42,6 +47,9 @@ class Driver(Layer):
             response = Response()
             response.status_code = resp.status_code
             response.body = resp.content
+
+            logger.debug(resonse.status_code)
+            logger.debug(response.body)
 
             return self.after_call(operation, request, response)
         except requests.ConnectionError as e:
