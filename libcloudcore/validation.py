@@ -16,7 +16,11 @@
 import re
 import six
 
+from .exceptions import ParameterError
 from .layer import Layer
+
+
+context = ''
 
 
 def _check_type(value, types, report):
@@ -88,7 +92,7 @@ def _validate_list(shape, value, report):
     if not _check_range(len(value), shape.min, shape.max, report):
         return
 
-    for subvalue in value:
+    for i, subvalue in enumerate(value):
         _validate(shape.of, subvalue, report)
 
 

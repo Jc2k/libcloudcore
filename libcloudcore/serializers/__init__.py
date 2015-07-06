@@ -14,10 +14,10 @@
 # limitations under the License.
 
 from .json import JsonSerializer
-from .uri import UriSerializer
+from .xmlrpc import XmlrpcSerializer
 
 
 __all__ = [
     'JsonSerializer',
-    'UriSerializer',
+    'XmlrpcSerializer',
 ]

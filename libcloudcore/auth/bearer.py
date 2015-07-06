@@ -24,4 +24,8 @@ class BearerTokenAuth(Layer):
     def before_call(self, request, operation, **params):
         if self.bearer_token:
             request.headers['Authorization'] = 'Bearer ' + self.bearer_token
-        return super(BearerTokenAuth, self).before_call(request, operation, **params)
+        return super(BearerTokenAuth, self).before_call(
+            request,
+            operation,
+            **params
+        )

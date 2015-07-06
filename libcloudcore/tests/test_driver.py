@@ -19,7 +19,7 @@ import unittest
 from libcloudcore.driver import Driver
 from libcloudcore.auth.basic_auth import BasicAuth
 from libcloudcore.validation import Validation
-from libcloudcore.serializers import JsonSerializer, UriSerializer
+from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
 from ..request import Request
 
@@ -39,7 +39,6 @@ class TestDriver(unittest.TestCase):
             Driver,
             Validation,
             BasicAuth,
-            UriSerializer,
             JsonSerializer,
             Layer,
             object,
@@ -56,5 +55,5 @@ class TestDriver(unittest.TestCase):
 
         self.assertEqual(
             request.uri,
-            '/accounts/1/groups/2/virtual_machines',
+            'accounts/1/groups/2/virtual_machines',
         )

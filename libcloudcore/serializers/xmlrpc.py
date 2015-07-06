@@ -25,7 +25,6 @@ class XmlrpcSerializer(layer.Layer):
     def before_call(self, request, operation, **params):
         request.method = 'POST'
         request.headers['Content-Type'] = 'text/xml'
-        request.uri = operation.model._model['metadata']['endpoint']
 
         args = []
         for member in operation.input_shape.iter_members():

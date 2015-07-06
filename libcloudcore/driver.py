@@ -28,18 +28,29 @@ logger = logging.getLogger(__name__)
 
 class Driver(Layer):
 
-    def call(self, operation, **params):
-        request = Request()
-        self.before_call(request, operation, **params)
+    def before_call(self, request, operation, **params):
+        request.scheme = operation.http['scheme']
+        request.host = operation.http['host']
+        request.port = operation.http['port']
+        request.uri = operation.http['uri'].lstrip("/").format(**params)
+        request.method = operation.http['method']
+
+        super(Driver, self).before_call(request, operation, **params)
 
         logger.debug("{}: {}".format(request.method, request.uri))
         logger.debug(request.body)
         logger.debug(request.headers)
 
+    def call(self, operation, **params):
+        request = Request()
+        self.before_call(request, operation, **params)
+
+        uri = "{.scheme}://{.host}:{.port}/{.uri}".format(request)
+
         try:
             resp = requests.request(
                 request.method,
-                request.uri,
+                uri,
                 data=request.body,
                 headers=request.headers,
             )

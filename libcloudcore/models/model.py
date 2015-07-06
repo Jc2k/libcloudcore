@@ -69,16 +69,15 @@ class Operation(Shape):
         self.operation = operation
         self.documentation = operation.get('documentation', '')
 
-        self.endpoint = operation.get('http', {}).get(
-            'endpoint',
-            self.model._model['metadata'].get('http', {}).get(
-                'endpoint',
-                'localhost',
-            )
-        )
-
-        self.uri = operation.get('http', {}).get('uri', '/')
-        self.method = operation.get('http', {}).get('method', 'GET')
+        self.http = {
+            'scheme': 'https',
+            'host': 'localhost',
+            'uri': '/',
+            'port': 443,
+            'method': 'GET',
+        }
+        self.http.update(model._model.get('http', {}))
+        self.http.update(operation.get('http', {}))
 
     @property
     def wire_name(self):

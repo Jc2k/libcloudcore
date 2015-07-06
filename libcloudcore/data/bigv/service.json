@@ -2,7 +2,6 @@
   "metadata": {
     "request-pipeline": [
       "libcloudcore.auth.basic_auth:BasicAuth",
-      "libcloudcore.serializers.uri:UriSerializer",
       "libcloudcore.serializers.json:JsonSerializer"
     ],
     "http": {
@@ -16,8 +15,8 @@
       "http": {
          "uri": "/accounts"
       },
-      "input": "ListAccountsRequest",
-      "output": "ListAccountsResponse"
+      "input": {"shape":"ListAccountsRequest"},
+      "output": {"shape":"ListAccountsResponse"}
     },
     "list_virtual_machines": {
       "name":"list_virtual_machines",

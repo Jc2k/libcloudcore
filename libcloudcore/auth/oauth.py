@@ -24,4 +24,4 @@ class OAuth(Layer):
     def before_call(self, request, operation, **params):
         if self.oauth_token:
             request.headers['Authorization'] = 'OAuth ' + self.oauth_token
-        return super(TokenAuth, self).before_call(request, operation, **params)
+        return super(OAuth, self).before_call(request, operation, **params)

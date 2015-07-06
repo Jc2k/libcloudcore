@@ -21,6 +21,9 @@ This module implements a HTTP request wrapper that is backend abnostic.
 class Request(object):
 
     def __init__(self, method='GET', headers=None, body=None):
+        self.scheme = 'https'
+        self.port = 443
+        self.host = 'localhost'
         self.uri = b''
         self.method = method
         self.headers = headers or {}

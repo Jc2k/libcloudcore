@@ -14,6 +14,11 @@
 # limitations under the License.
 
 
+class ParameterError(Exception):
+
+    pass
+
+
 class ClientError(Exception):
 
     def __init__(self, message, code):
