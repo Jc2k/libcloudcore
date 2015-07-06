@@ -44,17 +44,21 @@ class Member(Shape):
 
 class Structure(Shape):
 
+    kind = "structure"
+
     def iter_members(self):
         for key, value in self.shape['members'].items():
             yield Member(key, value)
 
 
 class List(Shape):
-    pass
+
+    kind = "list"
 
 
 class Map(Shape):
-    pass
+
+    kind = "map"
 
 
 class Operation(Shape):

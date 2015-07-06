@@ -12,6 +12,13 @@
   },
   "documentation":"",
   "operations": {
+    "list_accounts": {
+      "http": {
+         "uri": "/accounts"
+      },
+      "input": "ListAccountsRequest",
+      "output": "ListAccountsResponse"
+    },
     "list_virtual_machines": {
       "name":"list_virtual_machines",
       "http": {
@@ -24,6 +31,21 @@
     }
   },
   "shapes": {
+    "Account": {
+        "type": "structure",
+        "members": {
+          "id": {"shape": "String"},
+          "name": {"shape": "String"},
+          "suspended": {"shape": "Boolean"}
+        }
+    },
+    "ListAccountsRequest": {
+        "type": "structure"
+    },
+    "ListAccountsResponse": {
+        "type": "list",
+        "of": "Account"
+    },
     "ListVirtualMachinesRequest": {
         "type": "structure",
         "required": [
