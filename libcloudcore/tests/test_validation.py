@@ -108,3 +108,47 @@ class TestValidateStructure(unittest.TestCase):
         self.assertEqual(len(report), 1)
         self.assertEqual(report[0].code, "invalid_type")
         self.assertEqual(report[0].field, "foo")
+
+
+class TestValidateList(unittest.TestCase):
+
+    def setUp(self):
+        self.model = Model({
+            'shapes': {
+                'String': {
+                    'type': 'string',
+                },
+                'TestStructure': {
+                    'type': 'structure',
+                    'members': {
+                        'foo': {
+                            'shape': 'String',
+                        }
+                    }
+                },
+                'TestShape': {
+                    'type': 'list',
+                    'of': 'TestStructure'
+                }
+            }
+        })
+
+    def test_validate_list_type_check(self):
+        report = validate_shape(self.model.get_shape('TestShape'), 55)
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+
+    def test_validate_child_type_check(self):
+        report = validate_shape(self.model.get_shape('TestShape'), [1])
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+        self.assertEqual(report[0].field, "[0]")
+
+    def test_validate_child_child_type_check(self):
+        report = validate_shape(
+            self.model.get_shape('TestShape'),
+            [{"foo": 1}]
+        )
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+        self.assertEqual(report[0].field, "[0].foo")

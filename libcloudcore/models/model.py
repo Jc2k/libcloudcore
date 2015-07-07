@@ -71,6 +71,10 @@ class List(Shape):
 
     kind = "list"
 
+    @property
+    def of(self):
+        return self.model.get_shape(self._shape['of'])
+
 
 class Map(Shape):
 
