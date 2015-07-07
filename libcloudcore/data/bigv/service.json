@@ -38,6 +38,9 @@
           "suspended": {"shape": "Boolean"}
         }
     },
+    "Integer": {
+        "type": "integer"
+    },
     "ListAccountsRequest": {
         "type": "structure"
     },

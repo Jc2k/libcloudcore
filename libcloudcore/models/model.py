@@ -26,12 +26,13 @@ class InvalidOperation(Exception):
 
 class Shape(object):
 
-    def __init__(self, name, shape):
-        self.shape = shape
+    def __init__(self, model, name, shape):
+        self.model = model
+        self._shape = shape
         self.name = name
 
     def __getattr__(self, key):
-        return self.shape.get(key, None)
+        return self._shape.get(key, None)
 
 
 class Integer(Shape):
@@ -45,12 +46,16 @@ class String(Shape):
 class Member(Shape):
 
     @property
+    def shape(self):
+        return self.model.get_shape(self._shape['shape'])
+
+    @property
     def destination(self):
-        return self.shape.get('destination', 'body')
+        return self._shape.get('destination', 'body')
 
     @property
     def required(self):
-        return self.shape.get('required', False)
+        return self._shape.get('required', False)
 
 
 class Structure(Shape):
@@ -58,8 +63,8 @@ class Structure(Shape):
     kind = "structure"
 
     def iter_members(self):
-        for key, value in self.shape['members'].items():
-            yield Member(key, value)
+        for key, value in self._shape['members'].items():
+            yield Member(self.model, key, value)
 
 
 class List(Shape):
@@ -149,4 +154,4 @@ class Model(object):
                 "No shape '{}' for '{}'".format(name, self)
             )
         shape = self.shapes[name]
-        return self.shape_types[shape['type']](name, shape)
+        return self.shape_types[shape['type']](self, name, shape)

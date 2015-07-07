@@ -55,6 +55,7 @@ class TestValidateShape(unittest.TestCase):
         })
         report = validate_shape(model.get_shape('TestShape'), "test")
         self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_range")
 
     def test_validate_string_type_check(self):
         model = Model({
@@ -66,3 +67,44 @@ class TestValidateShape(unittest.TestCase):
         })
         report = validate_shape(model.get_shape('TestShape'), 55)
         self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+
+
+class TestValidateStructure(unittest.TestCase):
+
+    def setUp(self):
+        self.model = Model({
+            'shapes': {
+                'String': {
+                    'type': 'string',
+                },
+                'TestShape': {
+                    'type': 'structure',
+                    'members': {
+                        'foo': {
+                            'shape': 'String',
+                        }
+                    }
+                }
+            }
+        })
+
+    def test_validate_structure_type_check(self):
+        report = validate_shape(self.model.get_shape('TestShape'), 55)
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+
+    def test_validate_structure_unknown_param(self):
+        report = validate_shape(
+            self.model.get_shape('TestShape'),
+            {"bar": "a"}
+        )
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "unexpected_field")
+        self.assertEqual(report[0].field, "bar")
+
+    def test_validate_structure_child_type_check(self):
+        report = validate_shape(self.model.get_shape('TestShape'), {"foo": 1})
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+        self.assertEqual(report[0].field, "foo")

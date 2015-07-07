@@ -15,131 +15,154 @@
 
 import re
 import six
+from collections import namedtuple
 
 from .exceptions import ParameterError
 from .layer import Layer
 
 
-context = ''
+ReportItem = namedtuple('ReportItem', ['field', 'code', 'message'])
 
 
-def _check_type(value, types, report):
+def _check_type(field, value, types, report):
     if not isinstance(value, types):
-        report.append(
-            "{} is a {} but expected on of ({})".format(
-                context,
+        report.append(ReportItem(
+            field,
+            "invalid_type",
+            "passed {} but expected on of ({})".format(
                 value,
                 ", ".join(str(t) for t in types)
             )
-        )
+        ))
         return False
 
     return True
 
 
-def _check_range(value, min, max, report):
+def _check_range(field, value, min, max, report):
     if min is not None and value < min:
-        report.append(
-            "{} is {} but must be >= {}".format(
-                context,
+        report.append(ReportItem(
+            field,
+            "invalid_range",
+            "got {} but must be >= {}".format(
                 value,
                 min
             )
-        )
+        ))
         return False
 
     if max is not None and value > max:
-        report.append(
-            "{} is {} but must be <= {}".format(
-                context,
+        report.append(ReportItem(
+            field,
+            "invalid_range",
+            "got {} but must be <= {}".format(
                 value,
                 max
             )
-        )
+        ))
         return False
 
     return True
 
 
-def _check_regex(value, regex, report):
+def _check_regex(field, value, regex, report):
     if regex is None or re.match(value, regex):
         return True
 
-    report.append(
-        "{} is {} which does not match '{}'".format(
-            context,
+    report.append(ReportItem(
+        field,
+        "value_fails_regex",
+        "got '{}' which does not match '{}'".format(
             value,
             regex
         )
-    )
-
+    ))
     return True
 
 
-def _validate_structure(shape, value, report):
-    if not _check_type(value, (dict, ), report):
+def _validate_structure(field, shape, value, report):
+    if not _check_type(field, value, (dict, ), report):
         return
 
+    members = set()
     for member in shape.iter_members():
-        if member.required and member.name not in value:
-            report.append(
-                '{} is missing'.format(member.name)
-            )
+        child_field = ".".join((field, member.name)).lstrip(".")
+        if member.name in value:
+            _validate(child_field, member.shape, value[member.name], report)
+        elif member.required:
+            report.append(ReportItem(
+                child_field,
+                "required_field_missing",
+                "field is missing".format(member.name)
+            ))
+        members.add(member.name)
 
-    for member in value:
-        pass
+    undefined = set(value.keys()) - members
+    for param in undefined:
+        child_field = ".".join((field, param)).lstrip(".")
+        report.append(ReportItem(
+            child_field,
+            "unexpected_field",
+            "unexpected field '{}'".format(param)
+        ))
 
 
-def _validate_list(shape, value, report):
-    if not _check_type(value, (list, tuple), report):
+def _validate_list(field, shape, value, report):
+    if not _check_type(field, value, (list, tuple), report):
         return
 
-    if not _check_range(len(value), shape.min, shape.max, report):
+    if not _check_range(field, len(value), shape.min, shape.max, report):
         return
 
     for i, subvalue in enumerate(value):
-        _validate(shape.of, subvalue, report)
+        child_field = "{}[{}]".format(field, i)
+        _validate(child_field, shape.of, subvalue, report)
 
 
-def _validate_map(shape, value, report):
-    if not _check_type(value, (dict,), report):
+def _validate_map(field, shape, value, report):
+    if not _check_type(field, value, (dict,), report):
         return
 
-    if not _check_range(value, shape.min, shape.max, report):
-        return
-
-
-def _validate_bool(shape, value, report):
-    if not _check_type(value, (bool,), report):
+    if not _check_range(field, value, shape.min, shape.max, report):
         return
 
 
-def _validate_string(shape, value, report):
-    if not _check_type(value, six.string_types, report):
-        return
-
-    if not _check_range(len(value), shape.min, shape.max, report):
-        return
-
-    if not _check_regex(value, shape.regex, report):
+def _validate_bool(field, shape, value, report):
+    if not _check_type(field, value, (bool,), report):
         return
 
 
-def _validate_integer(shape, value, report):
-    if not _check_type(value, six.integer_types, report):
+def _validate_string(field, shape, value, report):
+    if not _check_type(field, value, six.string_types, report):
         return
 
-    if not _check_range(value, shape.min, shape.max, report):
+    if not _check_range(field, len(value), shape.min, shape.max, report):
+        return
+
+    if not _check_regex(field, value, shape.regex, report):
         return
 
 
-def _validate(shape, value, report):
-    return globals()['_validate_{}'.format(shape.kind)](shape, value, report)
+def _validate_integer(field, shape, value, report):
+    if not _check_type(field, value, six.integer_types, report):
+        return
+
+    if not _check_range(field, value, shape.min, shape.max, report):
+        return
+
+
+def _validate(field, shape, value, report):
+    return globals()['_validate_{}'.format(shape.kind)](
+        field,
+        shape,
+        value,
+        report
+    )
 
 
 def validate_shape(shape, value):
     report = []
-    _validate(shape, value, report)
+    _validate("", shape, value, report)
     return report
 
 
@@ -148,7 +171,9 @@ class Validation(Layer):
     def before_call(self, request, operation, **params):
         report = validate_shape(operation.input_shape, params)
         if report:
-            raise ParameterError(report)
+            raise ParameterError("\n".join(
+                "{}: {}".format(r.field, r.message) for r in report,
+            ))
 
         return super(Validation, self).before_call(
             request,
