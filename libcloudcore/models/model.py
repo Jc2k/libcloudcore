@@ -30,6 +30,17 @@ class Shape(object):
         self.shape = shape
         self.name = name
 
+    def __getattr__(self, key):
+        return self.shape.get(key, None)
+
+
+class Integer(Shape):
+    kind = "integer"
+
+
+class String(Shape):
+    kind = "string"
+
 
 class Member(Shape):
 
@@ -98,6 +109,8 @@ class Model(object):
         'structure': Structure,
         'list': List,
         'map': Map,
+        'string': String,
+        'integer': Integer,
     }
 
     def __init__(self, model):

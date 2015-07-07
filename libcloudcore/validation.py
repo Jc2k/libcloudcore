@@ -32,6 +32,9 @@ def _check_type(value, types, report):
                 ", ".join(str(t) for t in types)
             )
         )
+        return False
+
+    return True
 
 
 def _check_range(value, min, max, report):
@@ -60,7 +63,7 @@ def _check_range(value, min, max, report):
 
 def _check_regex(value, regex, report):
     if regex is None or re.match(value, regex):
-        return
+        return True
 
     report.append(
         "{} is {} which does not match '{}'".format(
@@ -70,15 +73,17 @@ def _check_regex(value, regex, report):
         )
     )
 
+    return True
+
 
 def _validate_structure(shape, value, report):
     if not _check_type(value, (dict, ), report):
         return
 
-    for member in shape.members:
-        if shape.required and shape.name not in value:
+    for member in shape.iter_members():
+        if member.required and member.name not in value:
             report.append(
-                '{} is missing'.format(shape.name)
+                '{} is missing'.format(member.name)
             )
 
     for member in value:
@@ -116,7 +121,7 @@ def _validate_string(shape, value, report):
     if not _check_range(len(value), shape.min, shape.max, report):
         return
 
-    if not _check_regex(value, report):
+    if not _check_regex(value, shape.regex, report):
         return
 
 
