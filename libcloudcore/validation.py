@@ -123,11 +123,16 @@ def _validate_map(field, shape, value, report):
     if not _check_type(field, value, (dict,), report):
         return
 
-    if not _check_range(field, value, shape.min, shape.max, report):
+    if not _check_range(field, len(value), shape.min, shape.max, report):
         return
 
+    for k, v in value.items():
+        child_field = "{}['{}']".format(field, k)
+        _validate(child_field, shape.key_shape, k, report)
+        _validate(child_field, shape.value_shape, v, report)
 
-def _validate_bool(field, shape, value, report):
+
+def _validate_boolean(field, shape, value, report):
     if not _check_type(field, value, (bool,), report):
         return
 

@@ -43,6 +43,10 @@ class String(Shape):
     kind = "string"
 
 
+class Boolean(Shape):
+    kind = "boolean"
+
+
 class Member(Shape):
 
     @property
@@ -79,6 +83,14 @@ class List(Shape):
 class Map(Shape):
 
     kind = "map"
+
+    @property
+    def key_shape(self):
+        return self.model.get_shape(self._shape['key'])
+
+    @property
+    def value_shape(self):
+        return self.model.get_shape(self._shape['value'])
 
 
 class Operation(Shape):
@@ -120,6 +132,7 @@ class Model(object):
         'map': Map,
         'string': String,
         'integer': Integer,
+        'boolean': Boolean,
     }
 
     def __init__(self, model):
