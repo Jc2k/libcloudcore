@@ -1,14 +1,22 @@
 libcloudcore
 ============
 
+If you find this version of the code online, here be dragons! This is still
+very early code.
+
 libcloudcore is a low-level abstraction for multiple cloud service providers.
+It is an experiment at how libcloud could be refactored to:
 
-It is:
+ * Support all API's provided by a service, rather than the subset that matches
+   an abstraction.
+ * Reduce amount of code needed to support a new provider to the absolute
+   minimum.
 
- * Http library agnostic.
+It is inspired by the botocore API and is:
+
+ * Http library agnostic (with backends planned for asyncio and twisted).
  * Data driven.
  * Introspectable.
-
 
 The API is inspired by botocore. It provides a low-level API binding. Common
 requirements like pagination and waiting for resources to be created are dealth
