@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import sys
+
 from . import validation
 from .loader import Loader
 from .models import Model
@@ -36,7 +38,9 @@ class Importer(object):
         class Module(object):
             Driver = self.get_driver(service)
 
-        return Module()
+        module = sys.modules[fullname] = Module()
+
+        return module
 
     def get_driver_method(self, operation):
         def method(self, *args, **kwargs):
