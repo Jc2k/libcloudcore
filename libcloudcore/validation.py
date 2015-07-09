@@ -77,7 +77,7 @@ def _check_regex(field, value, regex, report):
             regex
         )
     ))
-    return True
+    return False
 
 
 def _validate_structure(field, shape, value, report):
