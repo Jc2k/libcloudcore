@@ -24,7 +24,11 @@ class Request(object):
         self.scheme = 'https'
         self.port = 443
         self.host = 'localhost'
-        self.uri = b''
+        self.uri = ''
         self.method = method
         self.headers = headers or {}
         self.body = body or b''
+
+    @property
+    def url(self):
+        return "{0.scheme}://{0.host}:{0.port}/{0.uri}".format(self)

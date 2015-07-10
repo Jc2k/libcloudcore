@@ -20,6 +20,7 @@ from .loader import Loader
 from .models import Model
 from .driver import Driver
 from .utils import force_str
+from .backends import RequestsBackend
 
 
 class Importer(object):
@@ -52,7 +53,7 @@ class Importer(object):
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
 
-        bases = (Driver, validation.Validation) + model.request_pipeline
+        bases = (Driver, RequestsBackend, validation.Validation) + model.request_pipeline
 
         attrs = {
             'name': service,

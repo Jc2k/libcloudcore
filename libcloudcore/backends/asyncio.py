@@ -13,35 +13,38 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
+import asyncio
 
 from .request import Request
 from .response import Response
 from .layer import Layer
 from . import exceptions
 
-import requests
-
-
-logger = logging.getLogger(__name__)
+import aiohttp
 
 
 class Driver(Layer):
 
-    def before_call(self, request, operation, **params):
-        request.scheme = operation.http['scheme']
-        request.host = operation.http['host']
-        request.port = operation.http['port']
-        request.uri = operation.http['uri'].lstrip("/").format(**params)
-        request.method = operation.http['method']
+    @asyncio.coroutine
+    def call(self, operation, **params):
+        request = Request()
+        self.before_call(request, operation, **params)
 
-        super(Driver, self).before_call(request, operation, **params)
+        try:
+            resp = yield from aiohttp.request(
+                request.method,
+                request.url,
+                headers=request.headers,
+                data=request.body,
+            )
+        except aiohttp.ClientConnectionError as e:
+            raise exceptions.ClientError(
+                message=str(e),
+                code='ConnectionError',
+            )
 
-        logger.debug("{}: {}".format(request.method, request.uri))
-        logger.debug(request.body)
-        logger.debug(request.headers)
+        response = Response()
+        response.status_code = resp.status
+        response.body = yield from resp.read()
 
-    def after_call(self, operation, request, response):
-        logger.debug(response.status_code)
-        logger.debug(response.body)
-        super(Driver, self).after_call(operation, request, response)
+        return self.after_call(operation, request, response)
