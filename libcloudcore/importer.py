@@ -15,7 +15,7 @@
 
 import sys
 
-from . import validation
+from .validation import Validation
 from .loader import Loader
 from .models import Model
 from .driver import Driver
@@ -53,7 +53,7 @@ class Importer(object):
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
 
-        bases = (Driver, RequestsBackend, validation.Validation) + model.request_pipeline
+        bases = (Driver, RequestsBackend, Validation) + model.request_pipeline
 
         attrs = {
             'name': service,

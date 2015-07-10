@@ -50,7 +50,7 @@ class TestRequests(unittest.TestCase):
         with mock.patch("requests.request") as request:
             request.return_value.status_code = 201
             request.return_value.content = b'{"hello": "test"}'
-            response = self.backend._do_call(r)
+            self.backend._do_call(r)
 
         request.assert_called_with(
             "GET",
@@ -63,7 +63,7 @@ class TestRequests(unittest.TestCase):
         with mock.patch("requests.request") as request:
             request.return_value.status_code = 201
             request.return_value.content = b'{"hello": "test"}'
-            response = self.backend.call(None)
+            self.backend.call(None)
 
         request.assert_called_with(
             "GET",

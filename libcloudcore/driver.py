@@ -15,12 +15,7 @@
 
 import logging
 
-from .request import Request
-from .response import Response
 from .layer import Layer
-from . import exceptions
-
-import requests
 
 
 logger = logging.getLogger(__name__)
