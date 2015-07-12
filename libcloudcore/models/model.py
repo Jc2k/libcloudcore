@@ -70,6 +70,9 @@ class Structure(Shape):
         for key, value in self._shape['members'].items():
             yield Member(self.model, key, value)
 
+    def get_member(self, name):
+        return Member(self.model, name, self._shape['members'][name])
+
 
 class List(Shape):
 

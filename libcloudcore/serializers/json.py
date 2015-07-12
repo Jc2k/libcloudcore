@@ -20,11 +20,93 @@ import json
 from .. import layer
 
 
+class ShapeVisitor(object):
+
+    def visit(self, shape, value):
+        visit_fn_name = "visit_{}".format(shape.type)
+        try:
+            visit_fn = getattr(self, visit_fn_name)
+        except AttributeError:
+            raise NotImplementedError(visit_fn_name)
+        return visit_fn(shape, value)
+
+
+class Parser(ShapeVisitor):
+
+    def visit_string(self, shape, value):
+        return value
+
+    def visit_integer(self, shape, value):
+        return value
+
+    def visit_list(self, shape, value):
+        subshape = shape.of
+        result = []
+        for subvalue in value:
+            result.append(self.visit(subshape, subvalue))
+        return result
+
+    def visit_map(self, shape, value):
+        key_shape = shape.key
+        value_shape = shape.value
+        out = {}
+        for k, v in value.items():
+            out[self.visit(key_shape, k)] = self.visit(value_shape, v)
+        return out
+
+    def visit_structure(self, shape, value):
+        out = {}
+        for k, v in value.items():
+            member = shape.get_member(k)
+            out[member.name] = self.visit(
+                member.shape,
+                value[member.name],
+            )
+        return out
+
+
+class Serializer(ShapeVisitor):
+
+    def visit_string(self, shape, value):
+        return value
+
+    def visit_integer(self, shape, value):
+        return value
+
+    def visit_list(self, shape, value):
+        subshape = shape.of
+        result = []
+        for subvalue in value:
+            result.append(self.visit(subshape, subvalue))
+        return result
+
+    def visit_map(self, shape, value):
+        key_shape = shape.key
+        value_shape = shape.value
+        out = {}
+        for k, v in value.items():
+            out[self.visit(key_shape, k)] = self.visit(value_shape, v)
+        return out
+
+    def visit_structure(self, shape, value):
+        out = {}
+        for k, v in value.items():
+            member = shape.get_member(k)
+            out[member.name] = self.visit(
+                member.shape,
+                value[member.name],
+            )
+        return out
+
+
 class JsonSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'application/json'
-        request.body = json.dumps(params)
+        request.body = json.dumps(Serializer().visit(
+            operation.input_shape,
+            params,
+        ))
 
         return super(JsonSerializer, self).before_call(
             request,
@@ -33,4 +115,7 @@ class JsonSerializer(layer.Layer):
         )
 
     def after_call(self, operation, request, response):
-        return json.loads(response.body)
+        return Parser().visit(
+            operation.output_shape,
+            json.loads(response.body),
+        )
