@@ -31,7 +31,7 @@ def find_services():
 
 @pytest.mark.parametrize('service', find_services())
 def test_data(service):
-    session = Importer()
+    session = Importer(__name__)
     driver = session.get_driver(service)
     for operation in driver.model.get_operations():
         assert operation.input_shape.name != operation.output_shape.name

@@ -17,13 +17,13 @@ import unittest
 import mock
 
 from libcloudcore.request import Request
-from libcloudcore.backends import requests
+from libcloudcore.backend import Driver
 
 
 class TestRequests(unittest.TestCase):
 
     def setUp(self):
-        self.backend = requests.RequestsBackend()
+        self.backend = Driver()
 
     def test_prepare_request(self):
         self.assertEqual(self.backend._prepare_request(None).uri, '')

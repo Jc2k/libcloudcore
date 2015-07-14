@@ -13,6 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .requests import RequestsBackend
+# This activates the import hook that allows you to access the dynamically
+# generated modules
 
-__all__ = ['RequestsBackend']
+import sys
+from libcloudcore.importer import Importer
+from libcloudcore.asyncio.backend import Driver
+
+sys.meta_path.append(Importer(__name__, backend=Driver))
+
+del Importer
+del Driver
+del sys

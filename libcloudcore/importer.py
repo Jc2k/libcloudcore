@@ -20,21 +20,23 @@ from .loader import Loader
 from .models import Model
 from .driver import Driver
 from .utils import force_str
-from .backends import RequestsBackend
+from . import backend
 
 
 class Importer(object):
 
-    def __init__(self):
+    def __init__(self, module_prefix, backend=backend.Driver):
         self.loader = Loader()
+        self.module_prefix = "{}.".format(module_prefix)
+        self.backend = backend
 
     def find_module(self, fullname, path):
-        if fullname.startswith("libcloudcore.drivers."):
+        if fullname.startswith(self.module_prefix):
             return self
         return None
 
     def load_module(self, fullname):
-        service = fullname[len("libcloudcore.drivers."):].replace(".", "/")
+        service = fullname[len(self.module_prefix):].replace(".", "/")
 
         class Module(object):
             Driver = self.get_driver(service)
@@ -53,7 +55,7 @@ class Importer(object):
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
 
-        bases = (Driver, RequestsBackend, Validation) + model.request_pipeline
+        bases = (Driver, self.backend, Validation) + model.request_pipeline
 
         attrs = {
             'name': service,

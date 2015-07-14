@@ -15,10 +15,10 @@
 
 import asyncio
 
-from .request import Request
-from .response import Response
-from .layer import Layer
-from . import exceptions
+from libcloudcore.request import Request
+from libcloudcore.response import Response
+from libcloudcore.layer import Layer
+from libcloudcore import exceptions
 
 import aiohttp
 

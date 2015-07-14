@@ -15,15 +15,15 @@
 
 from __future__ import absolute_import
 
-from ..request import Request
-from ..response import Response
-from ..layer import Layer
-from .. import exceptions
+from .request import Request
+from .response import Response
+from .layer import Layer
+from . import exceptions
 
 import requests
 
 
-class RequestsBackend(Layer):
+class Driver(Layer):
 
     def _prepare_request(self, operation, **params):
         request = Request()

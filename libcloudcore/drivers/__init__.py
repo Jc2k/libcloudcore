@@ -17,7 +17,8 @@
 # generated modules
 
 import sys
-from .. import importer
-sys.meta_path.append(importer.Importer())
-del importer
+from libcloudcore.importer import Importer
+
+sys.meta_path.append(Importer(__name__))
+del Importer
 del sys

@@ -18,7 +18,7 @@ import unittest
 
 from libcloudcore.driver import Driver
 from libcloudcore.auth.basic_auth import BasicAuth
-from libcloudcore.backend import Driver as RequestsBackend
+from libcloudcore.asyncio.backend import Driver as AsnycioBackend
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
@@ -28,7 +28,7 @@ from ..request import Request
 class TestDriver(unittest.TestCase):
 
     def setUp(self):
-        from libcloudcore.drivers.bigv import Driver
+        from libcloudcore.asyncio.drivers.bigv import Driver
         self.Driver = Driver
         self.driver = Driver('username', 'password')
         self.model = self.driver.model
@@ -38,24 +38,10 @@ class TestDriver(unittest.TestCase):
         self.assertEqual(inspect.getmro(self.Driver), (
             self.Driver,
             Driver,
-            RequestsBackend,
+            AsnycioBackend,
             Validation,
             BasicAuth,
             JsonSerializer,
             Layer,
             object,
         ))
-
-    def test_build_request(self):
-        request = Request()
-        self.driver.before_call(
-            request,
-            self.operation,
-            account_id=1,
-            group_id=2
-        )
-
-        self.assertEqual(
-            request.uri,
-            'accounts/1/groups/2/virtual_machines',
-        )

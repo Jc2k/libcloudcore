@@ -13,20 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import unittest
-
-from libcloudcore.importer import Importer
-
-
-class TestImporter(unittest.TestCase):
-
-    def setUp(self):
-        self.importer = Importer(__name__)
-
-    def test_get_driver(self):
-        driver = self.importer.get_driver("bigv")
-        self.assertTrue(driver.name == "bigv")
-
-    def test_driver_has_operations(self):
-        driver = self.importer.get_driver("bigv")
-        self.assertTrue(hasattr(driver, "list_virtual_machines"))
+# This activates the import hook that allows you to access the dynamically
+# generated modules

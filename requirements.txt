@@ -1,6 +1,8 @@
 jmespath==0.7.1
 six==1.9.0
 
+aiohttp
+
 mock
 coverage==3.7.1
 coveralls==0.5
