@@ -22,7 +22,6 @@ from libcloudcore.asyncio.backend import Driver as AsnycioBackend
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
-from ..request import Request
 
 
 class TestDriver(unittest.TestCase):

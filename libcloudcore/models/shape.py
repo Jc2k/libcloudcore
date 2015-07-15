@@ -14,24 +14,12 @@
 # limitations under the License.
 
 
-class InvalidShape(Exception):
-    pass
+class Shape(object):
 
+    def __init__(self, model, name, shape):
+        self.model = model
+        self._shape = shape
+        self.name = name
 
-class InvalidOperation(Exception):
-    pass
-
-
-class ParameterError(Exception):
-    pass
-
-
-class WaiterError(Exception):
-    pass
-
-
-class ClientError(Exception):
-
-    def __init__(self, message, code):
-        self.message = message
-        self.code = code
+    def __getattr__(self, key):
+        return self._shape.get(key, None)

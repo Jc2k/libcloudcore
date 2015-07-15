@@ -15,12 +15,30 @@
 
 from __future__ import absolute_import
 
+import time
+
 from .request import Request
 from .response import Response
 from .layer import Layer
 from . import exceptions
 
 import requests
+
+
+class Waiter(object):
+
+    def __init__(self, driver, waiter_config):
+        self.driver = driver
+        self.waiter_config = waiter_config
+
+    def wait(self, **kwargs):
+        waiter_loop = self.waiter_config.get_waiter_loop()
+        while True:
+            waiter_loop.send(self.driver.call(
+                self.waiter_config.operation,
+                **kwargs
+            ))
+            time.sleep(self.waiter_config.delay)
 
 
 class Driver(Layer):

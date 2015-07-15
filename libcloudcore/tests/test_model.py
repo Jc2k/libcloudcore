@@ -15,7 +15,8 @@
 
 import unittest
 
-from libcloudcore.models import Model, InvalidShape, InvalidOperation
+from libcloudcore.models import Model
+from libcloudcore.exceptions import InvalidShape, InvalidOperation
 
 
 class TestModel(unittest.TestCase):

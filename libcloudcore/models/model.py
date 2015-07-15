@@ -15,24 +15,9 @@
 
 import importlib
 
-
-class InvalidShape(Exception):
-    pass
-
-
-class InvalidOperation(Exception):
-    pass
-
-
-class Shape(object):
-
-    def __init__(self, model, name, shape):
-        self.model = model
-        self._shape = shape
-        self.name = name
-
-    def __getattr__(self, key):
-        return self._shape.get(key, None)
+from .. import exceptions
+from .shape import Shape
+from .waiters import Waiter
 
 
 class Integer(Shape):
@@ -145,6 +130,7 @@ class Model(object):
         self.operations = model.get('operations', {})
         self.serializers = model.get('serializers', ['uri', 'json'])
         self.shapes = model.get('shapes', {})
+        self.waiters = model.get('waiters', {})
 
     @property
     def request_pipeline(self):
@@ -163,15 +149,23 @@ class Model(object):
 
     def get_operation(self, name):
         if name not in self.operations:
-            raise InvalidOperation(
+            raise exceptions.InvalidOperation(
                 "No operation '{}' for '{}'".format(name, self)
             )
         return Operation(self, name, self.operations.get(name))
 
     def get_shape(self, name):
         if name not in self.shapes:
-            raise InvalidShape(
+            raise exceptions.InvalidShape(
                 "No shape '{}' for '{}'".format(name, self)
             )
         shape = self.shapes[name]
         return self.shape_types[shape['type']](self, name, shape)
+
+    def get_waiter(self, name):
+        if name not in self.waiters:
+            raise exceptions.InvalidShape(
+                "No waiter '{}' for '{}'".format(name, self)
+            )
+        waiter = self.waiters[name]
+        return Waiter(self, name, waiter)
