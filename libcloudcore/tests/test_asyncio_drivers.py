@@ -26,7 +26,7 @@ from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
 
 
-@pytest.mark.skipif(sys.version_info < (3,3), reason="requires python3.3")
+@pytest.mark.skipif(sys.version_info < (3, 3), reason="asyncio")
 class TestDriver(unittest.TestCase):
 
     def setUp(self):
