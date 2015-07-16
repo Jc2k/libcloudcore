@@ -27,7 +27,15 @@ class ParameterError(Exception):
 
 
 class WaiterError(Exception):
-    pass
+
+    def __init__(self, name, reason):
+        self.name = name
+        self.reason = reason
+
+        super(WaiterError, self).__init__("{}: {}".format(
+            self.name,
+            self.reason
+        ))
 
 
 class ClientError(Exception):

@@ -80,7 +80,7 @@ class PathAny(Check):
 class StatusCheck(Check):
 
     def check(self, response):
-        status_code = response('Metadata', {}).get('StatusCode')
+        status_code = response.get('Metadata', {}).get('StatusCode')
         return status_code == self.expected
 
 
@@ -96,10 +96,9 @@ class Waiter(Shape):
 
     def __init__(self, *args):
         super(Waiter, self).__init__(*args)
-        self.operation = self.shape['operation']
-        self.delay = self.shape['delay']
-        self.max_attempts = self.shape['max-attempts']
-        self.description = self.shape.get('description', '')
+        self.delay = self._shape['delay']
+        self.max_attempts = self._shape['max-attempts']
+        self.description = self._shape.get('description', '')
 
     @property
     def operation(self):
@@ -108,12 +107,12 @@ class Waiter(Shape):
     @property
     def checks(self):
         checks = []
-        for check in self.shape.get('checks', []):
+        for check in self._shape.get('checks', []):
             checks.append(self.check_types[check['type']](self, check))
         return checks
 
     def check_response(self, response):
-        for check in self.shape.get('checks', []):
+        for check in self.checks:
             if check.check(response):
                 return check.state
         return 'waiting'
