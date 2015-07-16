@@ -48,3 +48,12 @@ class Driver(Layer):
         response.body = yield from resp.read()
 
         return self.after_call(operation, request, response)
+
+    @asyncio.coroutine
+    def wait(self, waiter, **params):
+        operation = waiter.operation
+        waiter_loop = waiter.get_waiter_loop()
+        response = yield from self.call(operation, **params)
+        while waiter_loop.send(response):
+            yield from asyncio.sleep(waiter.delay)
+            response = yield from self.cell(operation, **params)
