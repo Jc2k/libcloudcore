@@ -60,10 +60,7 @@ class Driver(Layer):
         return self.after_call(operation, request, response)
 
     def wait(self, waiter, **params):
-        waiter_loop = self.waiter_config.get_waiter_loop()
-        while True:
-            waiter_loop.send(self.call(
-                self.waiter.operation,
-                **params
-            ))
+        operation = waiter.operation
+        waiter_loop = waiter.get_waiter_loop()
+        while waiter_loop.send(self.call(operation, **params)):
             time.sleep(waiter.delay)

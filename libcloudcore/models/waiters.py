@@ -119,8 +119,9 @@ class Waiter(Shape):
         return 'waiting'
 
     def get_wait_loop(self):
+        state = "waiting"
         for i in range(self.max_attempts):
-            response = yield
+            response = yield state
             state = self.check_response(response)
             if state == 'complete':
                 raise StopIteration()
