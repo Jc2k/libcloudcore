@@ -162,6 +162,10 @@ class Model(object):
         shape = self.shapes[name]
         return self.shape_types[shape['type']](self, name, shape)
 
+    def get_waiters(self):
+        for key in self.waiters.keys():
+            yield self.get_waiter(key)
+
     def get_waiter(self, name):
         if name not in self.waiters:
             raise exceptions.InvalidShape(

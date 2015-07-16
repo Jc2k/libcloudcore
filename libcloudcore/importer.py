@@ -52,6 +52,13 @@ class Importer(object):
         setattr(method, "__name__", force_str(operation.name))
         return method
 
+    def get_waiter_method(self, waiter):
+        def method(self, *args, **kwargs):
+            return self.wait(waiter, *args, **kwargs)
+        setattr(method, "__doc__", waiter.documentation)
+        setattr(method, "__name__", force_str(waiter.name))
+        return method
+
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
 
@@ -65,5 +72,8 @@ class Importer(object):
 
         for operation in model.get_operations():
             attrs[operation.name] = self.get_driver_method(operation)
+
+        for waiter in model.get_waiters():
+            attrs[waiter.name] = self.get_waiter_method(waiter)
 
         return type(service, bases, attrs)

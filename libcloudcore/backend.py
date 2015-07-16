@@ -25,22 +25,6 @@ from . import exceptions
 import requests
 
 
-class Waiter(object):
-
-    def __init__(self, driver, waiter_config):
-        self.driver = driver
-        self.waiter_config = waiter_config
-
-    def wait(self, **kwargs):
-        waiter_loop = self.waiter_config.get_waiter_loop()
-        while True:
-            waiter_loop.send(self.driver.call(
-                self.waiter_config.operation,
-                **kwargs
-            ))
-            time.sleep(self.waiter_config.delay)
-
-
 class Driver(Layer):
 
     def _prepare_request(self, operation, **params):
@@ -74,3 +58,12 @@ class Driver(Layer):
         response = self._do_call(request)
         response = self._prepare_response(response)
         return self.after_call(operation, request, response)
+
+    def wait(self, waiter, **params):
+        waiter_loop = self.waiter_config.get_waiter_loop()
+        while True:
+            waiter_loop.send(self.call(
+                self.waiter.operation,
+                **params
+            ))
+            time.sleep(waiter.delay)
