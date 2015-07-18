@@ -22,6 +22,7 @@ from .shape import Shape
 class Check(Shape):
 
     def __init__(self, waiter, check):
+        self._shape = check
         self.expected = check['expected']
 
 
@@ -117,13 +118,14 @@ class Waiter(Shape):
                 return check.state
         return 'waiting'
 
-    def get_wait_loop(self):
+    def _get_wait_loop(self):
         state = "waiting"
         for i in range(self.max_attempts):
             response = yield state
             state = self.check_response(response)
             if state == 'complete':
-                raise StopIteration()
+                yield state
+                return
             elif state == 'failure':
                 raise exceptions.WaiterError(
                     name=self.name,
@@ -139,3 +141,8 @@ class Waiter(Shape):
             name=self.name,
             reason="The water exceeded the maximum number of attempts"
         )
+
+    def get_wait_loop(self):
+        iterator = self._get_wait_loop()
+        next(iterator)
+        return iterator

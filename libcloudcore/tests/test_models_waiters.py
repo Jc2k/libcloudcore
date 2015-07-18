@@ -85,11 +85,15 @@ class TestWaiter(unittest.TestCase):
             "operation": "list_servers",
             "delay": 5,
             "max-attempts": 5,
+            "checks": [{
+                "type": "status",
+                "expected": "200",
+                "state": "complete",
+            }],
         })
 
     def test_loop_attempts(self):
         loop = self.waiter.get_wait_loop()
-        loop.send(None)
         loop.send({"Metadata": {"StatusCode": "404"}})
         loop.send({"Metadata": {"StatusCode": "404"}})
         loop.send({"Metadata": {"StatusCode": "404"}})
@@ -98,4 +102,11 @@ class TestWaiter(unittest.TestCase):
             WaiterError,
             loop.send,
             {"Metadata": {"StatusCode": "404"}},
+        )
+
+    def test_loop_success(self):
+        loop = self.waiter.get_wait_loop()
+        self.assertEqual(
+            "complete",
+            loop.send({"Metadata": {"StatusCode": "200"}}),
         )
