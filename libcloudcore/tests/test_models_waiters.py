@@ -59,6 +59,56 @@ class TestChecks(unittest.TestCase):
             False
         )
 
+    def test_path_all_pass(self):
+        check = waiters.PathAll(None, {
+            "expression": "status",
+            "expected": "pass"
+        })
+        self.assertEqual(
+            check.check({"status": ["pass", "pass"]}),
+            True
+        )
+
+    def test_path_all_fail(self):
+        check = waiters.PathAll(None, {
+            "expression": "status",
+            "expected": "pass"
+        })
+        self.assertEqual(
+            check.check({"status": ["pass", "fail"]}),
+            False
+        )
+
+    def test_path_any_pass(self):
+        check = waiters.PathAny(None, {
+            "expression": "status",
+            "expected": "pass"
+        })
+        self.assertEqual(
+            check.check({"status": ["pass", "pass"]}),
+            True
+        )
+
+    def test_path_any_pass_2(self):
+        check = waiters.PathAny(None, {
+            "expression": "status",
+            "expected": "pass"
+        })
+        self.assertEqual(
+            check.check({"status": ["pass", "fail"]}),
+            True
+        )
+
+    def test_path_any_fail(self):
+        check = waiters.PathAny(None, {
+            "expression": "status",
+            "expected": "pass"
+        })
+        self.assertEqual(
+            check.check({"status": ["fail", "fail"]}),
+            False
+        )
+
     def test_status_pass(self):
         check = waiters.StatusCheck(None, {
             "expected": "200"
