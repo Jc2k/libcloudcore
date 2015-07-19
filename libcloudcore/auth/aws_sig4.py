@@ -32,6 +32,28 @@ class AWSSignature4(Layer):
             key = self._sign(key, val)
         return key
 
+    def _get_canonical_uri(self, uri):
+        if not uri:
+            return '/'
+
+        output = []
+        stack = list(uri.split('/'))
+        while stack:
+            part = stack.pop(0)
+            if not part:
+                continue
+            elif part == '.':
+                continue
+            elif part == '..':
+                output.pop()
+            else:
+                output.append(part)
+
+        return '/{}{}'.format(
+            '/'.join(output),
+            '/' if uri.endswith("/") and len(output) else ''
+        )
+
     def _get_canonical_querystring(self, params):
         querystring = []
         for param in sorted(params):
@@ -43,22 +65,22 @@ class AWSSignature4(Layer):
 
     def _get_canonical_request(self, request):
         headers = []
-        signed_headers = []
+        signed_headers = set()
         for key in sorted(list(set(request.headers.keys()))):
             headers.append('{}:{}'.format(
-                key.lower(),
-                request.headers[key],
+                key.lower().strip(),
+                request.headers[key].strip(),
             ))
-            signed_headers.append(key.lower())
+            signed_headers.add(key.lower().strip())
         payload_hash = hashlib.sha256(b'').hexdigest()
 
         return '\n'.join((
             request.method.upper(),
-            request.uri,
+            self._get_canonical_uri(request.uri),
             self._get_canonical_querystring(request.query),
             '\n'.join(headers),
             '',
-            ';'.join(signed_headers),
+            ';'.join(sorted(signed_headers)),
             payload_hash,
         ))
 

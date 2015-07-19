@@ -54,7 +54,15 @@ def find_testcases():
         # Bad request syntax
         'post-vanilla-query-space',
         'post-vanilla-query-nonunreserved',
+        # Not supported by botocore
+        'get-vanilla-query-order-key-case',
+        'get-vanilla-query-order-value',
     ))
+    if not six.PY3:
+        ignore.update((
+            'get-header-key-duplicate',
+            'get-header-value-order',
+        ))
 
     testcases = os.listdir(os.path.abspath(
         os.path.join(os.path.dirname(__file__), "aws4_testsuite")
