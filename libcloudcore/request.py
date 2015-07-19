@@ -27,6 +27,7 @@ class Request(object):
         self.uri = ''
         self.method = method
         self.headers = headers or {}
+        self.query = {}
         self.body = body or b''
 
     @property
