@@ -24,6 +24,8 @@ from libcloudcore.layer import Layer
 
 class AWSSignature4(Layer):
 
+    region = "us-east-1"
+
     def _sign(self, key, msg):
         return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
 
@@ -98,11 +100,11 @@ class AWSSignature4(Layer):
             now.strftime('%Y%m%dT%H%M%SZ'),
             '/'.join((
                 now.strftime('%Y%m%d'),
-                region,
-                service,
+                self.region,
+                request.service,
                 'aws4_request',
             )),
-            hashlib.sha256(self._get_canonical_request(request)).hexdigest()
+            hashlib.sha256(self._get_canonical_request(request).encode('utf-8')).hexdigest()
         ))
 
     def _get_signature(self, request):

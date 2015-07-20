@@ -17,6 +17,7 @@ import codecs
 import io
 import os
 import unittest
+import mock
 
 import six
 from six.moves import BaseHTTPServer
@@ -109,11 +110,20 @@ def create_request_from_blob(blob):
 
 
 @pytest.mark.parametrize('testcase', find_testcases())
-def test_sigv4(testcase):
+@mock.patch('libcloudcore.auth.aws_sig4.datetime.datetime')
+def test_sigv4(datetime, testcase):
     CREDENTIAL_SCOPE = "KEYNAME/20110909/us-west-1/s3/aws4_request"
     SECRET_KEY = "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"
     ACCESS_KEY = 'AKIDEXAMPLE'
-    DATE_STRING = 'Mon, 09 Sep 2011 23:36:00 GMT'
+    SERVICE = 'host'
+
+    def _(format):
+        return {
+            '': 'Mon, 09 Sep 2011 23:36:00 GMT',
+            '%Y%m%dT%H%M%SZ': '20110909T233600Z',
+            '%Y%m%d': '20110909',
+        }[format]
+    datetime.utcnow.return_value.strftime.side_effect = _
 
     testsuite_dir = os.path.join(os.path.dirname(__file__), "aws4_testsuite")
 
@@ -124,6 +134,9 @@ def test_sigv4(testcase):
         ), encoding='utf-8').read()
 
     request = create_request_from_blob(blobs['req'])
+    request.service = SERVICE
 
     layer = AWSSignature4()
+
     assert blobs['creq'] == layer._get_canonical_request(request)
+    assert blobs['sts'] == layer._get_signature_body(request)
