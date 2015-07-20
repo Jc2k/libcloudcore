@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import datetime
 import hmac
 import hashlib
 
@@ -63,16 +64,22 @@ class AWSSignature4(Layer):
             ))
         return '&'.join(querystring)
 
+    def _get_headers_to_sign(self, request):
+        return sorted(set(k.lower() for k in request.headers))
+
     def _get_canonical_request(self, request):
         headers = []
         signed_headers = set()
-        for key in sorted(list(set(request.headers.keys()))):
+        for key in self._get_headers_to_sign(request):
             headers.append('{}:{}'.format(
                 key.lower().strip(),
-                request.headers[key].strip(),
+                ','.join(
+                    v.strip() for v in sorted(request.headers.get_all(key))
+                ),
             ))
             signed_headers.add(key.lower().strip())
-        payload_hash = hashlib.sha256(b'').hexdigest()
+
+        payload_hash = hashlib.sha256(request.body).hexdigest()
 
         return '\n'.join((
             request.method.upper(),
