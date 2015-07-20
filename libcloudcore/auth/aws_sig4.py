@@ -29,9 +29,11 @@ class AWSSignature4(Layer):
     def _sign(self, key, msg):
         return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
 
-    def _get_signature_key(self, key, datestamp, region, service):
+    def _get_signature_key(self, key, service, timestamp=None):
+        stamp = (timestamp if timestamp else datetime.datetime.utcnow()).strftime('%Y%m%d')
         key = "AWS4{}".format(key).encode("utf-8")
-        for val in (datestamp, region, service, "aws4_request"):
+        for val in (stamp, self.region, service, "aws4_request"):
+            print (val)
             key = self._sign(key, val)
         return key
 
@@ -71,7 +73,6 @@ class AWSSignature4(Layer):
 
     def _get_canonical_request(self, request):
         headers = []
-        signed_headers = set()
         for key in self._get_headers_to_sign(request):
             headers.append('{}:{}'.format(
                 key.lower().strip(),
@@ -79,7 +80,6 @@ class AWSSignature4(Layer):
                     v.strip() for v in sorted(request.headers.get_all(key))
                 ),
             ))
-            signed_headers.add(key.lower().strip())
 
         payload_hash = hashlib.sha256(request.body).hexdigest()
 
@@ -89,7 +89,7 @@ class AWSSignature4(Layer):
             self._get_canonical_querystring(request.query),
             '\n'.join(headers),
             '',
-            ';'.join(sorted(signed_headers)),
+            ';'.join(self._get_headers_to_sign(request)),
             payload_hash,
         ))
 
@@ -108,17 +108,18 @@ class AWSSignature4(Layer):
         ))
 
     def _get_signature(self, request):
+        now = datetime.datetime.utcnow()
         signature = hmac.new(
-            self._get_signature_key(request),
-            self._get_signature_body(request),
+            self._get_signature_key(self.secret_key, request.service),
+            self._get_signature_body(request).encode("utf-8"),
             hashlib.sha256
         ).hexdigest()
 
         authorization_header = ' '.join((
-            algorithm,
+            'AWS4-HMAC-SHA256',
             ', '.join((
-                'Credential=' + self.access_key + '/' + credential_scope,
-                'SignedHeaders=' + signed_headers,
+                'Credential=' + self.access_key + '/' + '20110909/us-east-1/host/aws4_request',
+                'SignedHeaders=' + ';'.join(self._get_headers_to_sign(request)),
                 'Signature=' + signature,
             )),
         ))

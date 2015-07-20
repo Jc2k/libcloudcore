@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import codecs
+import datetime
 import io
 import os
 import unittest
@@ -34,13 +35,13 @@ class TestSignature4(unittest.TestCase):
 
     def setUp(self):
         self.layer = AWSSignature4()
+        self.layer.region = 'us-east-1'
 
     def test_get_signature_key(self):
         key = self.layer._get_signature_key(
             'wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY',
-            '20120215',
-            'us-east-1',
-            'iam'
+            'iam',
+            timestamp=datetime.datetime(year=2012, month=2, day=15),
         )
         self.assertEqual(
             codecs.encode(key, 'hex'),
@@ -113,8 +114,6 @@ def create_request_from_blob(blob):
 @mock.patch('libcloudcore.auth.aws_sig4.datetime.datetime')
 def test_sigv4(datetime, testcase):
     CREDENTIAL_SCOPE = "KEYNAME/20110909/us-west-1/s3/aws4_request"
-    SECRET_KEY = "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"
-    ACCESS_KEY = 'AKIDEXAMPLE'
     SERVICE = 'host'
 
     def _(format):
@@ -137,6 +136,9 @@ def test_sigv4(datetime, testcase):
     request.service = SERVICE
 
     layer = AWSSignature4()
+    layer.access_key = 'AKIDEXAMPLE'
+    layer.secret_key = 'wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY'
 
     assert blobs['creq'] == layer._get_canonical_request(request)
     assert blobs['sts'] == layer._get_signature_body(request)
+    assert blobs['authz'] == layer._get_signature(request)['Authorization']
