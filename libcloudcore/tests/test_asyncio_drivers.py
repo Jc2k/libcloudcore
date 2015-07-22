@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import asyncio
 import inspect
 import unittest
 import sys
@@ -63,6 +62,7 @@ class TestActualRequests(httpbin.HttpBinTestCase):
             'port': self.server.port,
             'scheme': 'http',
         }
+        import asyncio
         loop = asyncio.get_event_loop()
         try:
             result = loop.run_until_complete(driver.ip())
