@@ -117,5 +117,5 @@ class JsonSerializer(layer.Layer):
     def after_call(self, operation, request, response):
         return Parser().visit(
             operation.output_shape,
-            json.loads(response.body),
+            json.loads(response.body.decode("utf-8")),
         )

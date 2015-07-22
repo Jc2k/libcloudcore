@@ -39,4 +39,4 @@ class Driver(Layer):
     def after_call(self, operation, request, response):
         logger.debug(response.status_code)
         logger.debug(response.body)
-        super(Driver, self).after_call(operation, request, response)
+        return super(Driver, self).after_call(operation, request, response)

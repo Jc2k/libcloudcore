@@ -30,10 +30,10 @@ class AWSSignature4(Layer):
         return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
 
     def _get_signature_key(self, key, service, timestamp=None):
-        stamp = (timestamp if timestamp else datetime.datetime.utcnow()).strftime('%Y%m%d')
+        timestamp = timestamp if timestamp else datetime.datetime.utcnow()
+        stamp = timestamp.strftime('%Y%m%d')
         key = "AWS4{}".format(key).encode("utf-8")
         for val in (stamp, self.region, service, "aws4_request"):
-            print (val)
             key = self._sign(key, val)
         return key
 
@@ -95,6 +95,7 @@ class AWSSignature4(Layer):
 
     def _get_signature_body(self, request):
         now = datetime.datetime.utcnow()
+        canonical_request = self._get_canonical_request(request)
         return "\n".join((
             'AWS4-HMAC-SHA256',
             now.strftime('%Y%m%dT%H%M%SZ'),
@@ -104,22 +105,24 @@ class AWSSignature4(Layer):
                 request.service,
                 'aws4_request',
             )),
-            hashlib.sha256(self._get_canonical_request(request).encode('utf-8')).hexdigest()
+            hashlib.sha256(canonical_request.encode('utf-8')).hexdigest()
         ))
 
     def _get_signature(self, request):
-        now = datetime.datetime.utcnow()
         signature = hmac.new(
             self._get_signature_key(self.secret_key, request.service),
             self._get_signature_body(request).encode("utf-8"),
             hashlib.sha256
         ).hexdigest()
 
+        credential_scope = '20110909/us-east-1/host/aws4_request'
+        signed_headers = ';'.join(self._get_headers_to_sign(request))
+
         authorization_header = ' '.join((
             'AWS4-HMAC-SHA256',
             ', '.join((
-                'Credential=' + self.access_key + '/' + '20110909/us-east-1/host/aws4_request',
-                'SignedHeaders=' + ';'.join(self._get_headers_to_sign(request)),
+                'Credential=' + self.access_key + '/' + credential_scope,
+                'SignedHeaders=' + signed_headers,
                 'Signature=' + signature,
             )),
         ))
@@ -131,4 +134,8 @@ class AWSSignature4(Layer):
 
     def before_call(self, request, operation, **params):
         request.headers.update(self._get_signature(request))
-        return super(AWSSignature4, self).before_call(request, operation, **params)
+        return super(AWSSignature4, self).before_call(
+            request,
+            operation,
+            **params
+        )

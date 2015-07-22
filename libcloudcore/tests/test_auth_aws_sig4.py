@@ -38,6 +38,7 @@ class TestSignature4(unittest.TestCase):
         self.layer.region = 'us-east-1'
 
     def test_get_signature_key(self):
+        _ = b'f4780e2d9f65fa895f9c67b32ce1baf0b0d8a43505a000a1a9e090d414db404d'
         key = self.layer._get_signature_key(
             'wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY',
             'iam',
@@ -45,7 +46,7 @@ class TestSignature4(unittest.TestCase):
         )
         self.assertEqual(
             codecs.encode(key, 'hex'),
-            b'f4780e2d9f65fa895f9c67b32ce1baf0b0d8a43505a000a1a9e090d414db404d',
+            _,
         )
 
 
@@ -78,7 +79,10 @@ class HTTPRequest(BaseHTTPServer.BaseHTTPRequestHandler):
         if isinstance(raw_request, six.text_type):
             raw_request = raw_request.encode('utf-8')
         self.rfile = six.BytesIO(raw_request)
-        self.raw_requestline = self.rfile.readline().replace(b'http/1.1', b'HTTP/1.1')
+        self.raw_requestline = self.rfile.readline().replace(
+            b'http/1.1',
+            b'HTTP/1.1'
+        )
         self.parse_request()
         if isinstance(self.path, six.text_type):
             self.path = self.path.encode('iso-8859-1').decode('utf-8')
@@ -106,14 +110,10 @@ def create_request_from_blob(blob):
 
     return request
 
-    #datetime_now = datetime.datetime(2011, 9, 9, 23, 36)
-    #request.context['timestamp'] = datetime_now.strftime('%Y%m%dT%H%M%SZ')
-
 
 @pytest.mark.parametrize('testcase', find_testcases())
 @mock.patch('libcloudcore.auth.aws_sig4.datetime.datetime')
 def test_sigv4(datetime, testcase):
-    CREDENTIAL_SCOPE = "KEYNAME/20110909/us-west-1/s3/aws4_request"
     SERVICE = 'host'
 
     def _(format):

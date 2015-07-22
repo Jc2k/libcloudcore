@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import asyncio
 import inspect
 import unittest
 import sys
@@ -24,6 +25,7 @@ from libcloudcore.auth.basic_auth import BasicAuth
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
+from . import httpbin
 
 
 @pytest.mark.skipif(sys.version_info < (3, 3), reason="asyncio")
@@ -48,3 +50,22 @@ class TestDriver(unittest.TestCase):
             Layer,
             object,
         ))
+
+
+@pytest.mark.skipif(sys.version_info < (3, 3), reason="asyncio")
+class TestActualRequests(httpbin.HttpBinTestCase):
+
+    def test_simple_get(self):
+        from libcloudcore.asyncio.drivers.httpbin import Driver
+        driver = Driver()
+        driver.model._model['metadata']['http'] = {
+            'host': 'localhost',
+            'port': self.server.port,
+            'scheme': 'http',
+        }
+        loop = asyncio.get_event_loop()
+        try:
+            result = loop.run_until_complete(driver.ip())
+        finally:
+            loop.close()
+        self.assertTrue('origin' in result)

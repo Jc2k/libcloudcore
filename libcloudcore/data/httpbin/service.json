@@ -1,0 +1,42 @@
+{
+  "metadata":{
+    "request-pipeline": [
+      "libcloudcore.serializers.json:JsonSerializer"
+    ],
+    "http": {
+      "scheme": "http",
+      "port": 80
+    }
+  },
+  "documentation":"",
+  "operations":{
+    "ip":{
+      "name":"ip",
+      "http":{
+        "method": "GET",
+        "uri": "/ip"
+      },
+      "input":{"shape":"IpRequest"},
+      "output":{"shape":"IpResponse"},
+      "errors":[],
+      "documentation":""
+    }
+  },
+  "shapes": {
+    "String": {
+        "type": "string"
+    },
+    "IpRequest": {
+      "type": "structure",
+      "members": {}
+    },
+    "IpResponse": {
+      "type": "structure",
+      "members": {
+          "origin": {
+              "shape": "String"
+          }
+      }
+    }
+  }
+}
