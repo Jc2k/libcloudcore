@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import codecs
+import binascii
 import datetime
 import io
 import os
@@ -45,7 +45,7 @@ class TestSignature4(unittest.TestCase):
             timestamp=datetime.datetime(year=2012, month=2, day=15),
         )
         self.assertEqual(
-            codecs.encode(key, 'hex'),
+            binascii.hexlify(key),
             _,
         )
 
