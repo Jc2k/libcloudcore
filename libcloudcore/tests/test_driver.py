@@ -24,6 +24,8 @@ from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
 from ..request import Request
 
+from . import httpbin
+
 
 class TestDriver(unittest.TestCase):
 
@@ -59,3 +61,16 @@ class TestDriver(unittest.TestCase):
             request.uri,
             'accounts/1/groups/2/virtual_machines',
         )
+
+
+class TestActualRequests(httpbin.HttpBinTestCase):
+
+    def test_simple_get(self):
+        from libcloudcore.drivers.httpbin import Driver
+        driver = Driver()
+        driver.model._model['metadata']['http'] = {
+            'host': 'localhost',
+            'port': self.server.port,
+            'scheme': 'http',
+        }
+        self.assertTrue('origin' in driver.ip())
