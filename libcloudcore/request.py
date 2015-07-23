@@ -17,6 +17,26 @@
 This module implements a HTTP request wrapper that is backend abnostic.
 """
 
+import six
+
+try:
+    from http_client import HTTPMessage as _HeadersBase
+except ImportError:
+    from email.message import Message as _HeadersBase
+
+
+class Headers(_HeadersBase):
+
+    def __eq__(self, headers):
+        if isinstance(headers, dict):
+            return dict(self) == headers
+        return super(Headers, self).__eq__(headers)
+
+    if not six.PY3:
+        def __iter__(self):
+            for field, value in self._headers:
+                yield field
+
 
 class Request(object):
 
@@ -26,7 +46,10 @@ class Request(object):
         self.host = 'localhost'
         self.uri = ''
         self.method = method
-        self.headers = headers or {}
+        self.headers = Headers()
+        if headers:
+            self.headers.update(headers)
+        self.query = {}
         self.body = body or b''
 
     @property
