@@ -89,15 +89,11 @@ class Operation(Shape):
         self.operation = operation
         self.documentation = operation.get('documentation', '')
 
-        self.http = {
-            'scheme': 'https',
-            'host': 'localhost',
-            'uri': '/',
-            'port': 443,
-            'method': 'GET',
-        }
-        self.http.update(model._model.get('http', {}))
-        self.http.update(operation.get('http', {}))
+    @property
+    def http(self):
+        http = dict(self.model.http_endpoint)
+        http.update(self.operation.get('http', {}))
+        return http
 
     @property
     def wire_name(self):
@@ -131,6 +127,18 @@ class Model(object):
         self.serializers = model.get('serializers', ['uri', 'json'])
         self.shapes = model.get('shapes', {})
         self.waiters = model.get('waiters', {})
+
+    @property
+    def http_endpoint(self):
+        endpoint = {
+            'scheme': 'https',
+            'host': 'localhost',
+            'uri': '/',
+            'port': 443,
+            'method': 'GET',
+        }
+        endpoint.update(self._model.get('metadata', {}).get('http', {}))
+        return endpoint
 
     @property
     def request_pipeline(self):

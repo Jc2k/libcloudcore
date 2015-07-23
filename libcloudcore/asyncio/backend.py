@@ -29,12 +29,11 @@ class Driver(Layer):
     def call(self, operation, **params):
         request = Request()
         self.before_call(request, operation, **params)
-
         try:
             resp = yield from aiohttp.request(
                 request.method,
                 request.url,
-                headers=request.headers,
+                headers=dict(request.headers),
                 data=request.body,
             )
         except aiohttp.ClientConnectionError as e:
