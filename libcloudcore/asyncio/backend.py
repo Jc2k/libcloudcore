@@ -34,6 +34,7 @@ class Driver(Layer):
                 request.method,
                 request.url,
                 headers=dict(request.headers),
+                params=request.query,
                 data=request.body,
             )
         except aiohttp.ClientConnectionError as e:

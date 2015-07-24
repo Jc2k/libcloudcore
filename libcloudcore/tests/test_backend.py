@@ -56,6 +56,7 @@ class TestRequests(unittest.TestCase):
             "GET",
             "https://www.example.com:443/hello",
             headers={'example': 'test'},
+            params={},
             data=b'',
         )
 
@@ -69,5 +70,6 @@ class TestRequests(unittest.TestCase):
             "GET",
             "https://localhost:443/",
             headers={},
+            params={},
             data=b'',
         )

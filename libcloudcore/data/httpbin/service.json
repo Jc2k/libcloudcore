@@ -10,6 +10,17 @@
   },
   "documentation":"",
   "operations":{
+    "get":{
+        "name":"get",
+        "http":{
+          "method": "GET",
+          "uri": "/get"
+        },
+        "input":{"shape":"GetRequest"},
+        "output":{"shape":"GetResponse"},
+        "errors":[],
+        "documentation":""
+    },
     "ip":{
       "name":"ip",
       "http":{
@@ -25,6 +36,42 @@
   "shapes": {
     "String": {
         "type": "string"
+    },
+    "Args": {
+        "type": "map",
+        "key": "String",
+        "value": "String"
+    },
+    "Headers": {
+        "type": "map",
+        "key": "String",
+        "value": "String"
+    },
+    "GetRequest": {
+      "type": "structure",
+      "members": {
+          "foo": {
+              "shape": "String",
+              "target": "query"
+          }
+      }
+    },
+    "GetResponse": {
+      "type": "structure",
+      "members": {
+          "args": {
+              "shape": "Args"
+          },
+          "headers": {
+              "shape": "Headers"
+          },
+          "origin": {
+              "shape": "String"
+          },
+          "url": {
+              "shape": "String"
+          }
+      }
     },
     "IpRequest": {
       "type": "structure",

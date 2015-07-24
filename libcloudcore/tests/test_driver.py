@@ -65,12 +65,19 @@ class TestDriver(unittest.TestCase):
 
 class TestActualRequests(httpbin.HttpBinTestCase):
 
-    def test_simple_get(self):
+    def setUp(self):
+        super(TestActualRequests, self).setUp()
         from libcloudcore.drivers.httpbin import Driver
-        driver = Driver()
-        driver.model._model['metadata']['http'] = {
+        self.driver = Driver()
+        self.driver.model._model['metadata']['http'] = {
             'host': 'localhost',
             'port': self.server.port,
             'scheme': 'http',
         }
-        self.assertTrue('origin' in driver.ip())
+
+    def test_ip(self):
+        self.assertTrue('origin' in self.driver.ip())
+
+    def test_get_args(self):
+        result = self.driver.get(foo="bar")
+        self.assertEqual(result["args"], {"foo": "bar"})

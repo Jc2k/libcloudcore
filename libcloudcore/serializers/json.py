@@ -47,8 +47,8 @@ class Parser(ShapeVisitor):
         return result
 
     def visit_map(self, shape, value):
-        key_shape = shape.key
-        value_shape = shape.value
+        key_shape = shape.key_shape
+        value_shape = shape.value_shape
         out = {}
         for k, v in value.items():
             out[self.visit(key_shape, k)] = self.visit(value_shape, v)
@@ -81,8 +81,8 @@ class Serializer(ShapeVisitor):
         return result
 
     def visit_map(self, shape, value):
-        key_shape = shape.key
-        value_shape = shape.value
+        key_shape = shape.key_shape
+        value_shape = shape.value_shape
         out = {}
         for k, v in value.items():
             out[self.visit(key_shape, k)] = self.visit(value_shape, v)

@@ -54,18 +54,25 @@ class TestDriver(unittest.TestCase):
 @pytest.mark.skipif(sys.version_info < (3, 3), reason="asyncio")
 class TestActualRequests(httpbin.HttpBinTestCase):
 
-    def test_simple_get(self):
+    def setUp(self):
+        super(TestActualRequests, self).setUp()
         from libcloudcore.asyncio.drivers.httpbin import Driver
-        driver = Driver()
-        driver.model._model['metadata']['http'] = {
+        self.driver = Driver()
+        self.driver.model._model['metadata']['http'] = {
             'host': 'localhost',
             'port': self.server.port,
             'scheme': 'http',
         }
+
+    def call(self, func, *args, **kwargs):
         import asyncio
         loop = asyncio.get_event_loop()
-        try:
-            result = loop.run_until_complete(driver.ip())
-        finally:
-            loop.close()
+        return loop.run_until_complete(func(*args, **kwargs))
+
+    def test_simple_get(self):
+        result = self.call(self.driver.ip)
         self.assertTrue('origin' in result)
+
+    def test_get_args(self):
+        result = self.call(self.driver.get, foo="bar")
+        self.assertEqual(result["args"], {"foo": "bar"})

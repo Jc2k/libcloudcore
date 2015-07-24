@@ -43,6 +43,7 @@ class Driver(Layer):
             return requests.request(
                 request.method,
                 request.url,
+                params=request.query,
                 data=request.body,
                 headers=request.headers,
             )

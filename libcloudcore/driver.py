@@ -23,12 +23,20 @@ logger = logging.getLogger(__name__)
 
 class Driver(Layer):
 
+    def _get_query_args(self, operation, request, **params):
+        query = {}
+        for member in operation.input_shape.iter_members():
+            if member.target == "query" and member.name in params:
+                query[member.name] = params[member.name]
+        return query
+
     def before_call(self, request, operation, **params):
         request.scheme = operation.http['scheme']
         request.host = operation.http['host']
         request.port = operation.http['port']
         request.uri = operation.http['uri'].lstrip("/").format(**params)
         request.method = operation.http['method']
+        request.query = self._get_query_args(operation, request, **params)
 
         super(Driver, self).before_call(request, operation, **params)
 
