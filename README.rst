@@ -1,6 +1,8 @@
 libcloudcore
 ============
 
+.. image:: http://codecov.io/github/Jc2k/libcloudcore/coverage.svg?branch=master :target: http://codecov.io/github/Jc2k/libcloudcore?branch=master
+
 If you find this version of the code online, here be dragons! This is still
 very early code.
 

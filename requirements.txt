@@ -4,8 +4,8 @@ six==1.9.0
 aiohttp
 
 mock
+codecov
 coverage==3.7.1
-coveralls==0.5
 flake8==2.4.1
 mccabe==0.3.1
 pep8==1.5.7  # rq.filter: <1.6
