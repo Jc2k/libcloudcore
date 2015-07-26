@@ -15,7 +15,6 @@
 
 import sys
 
-from .validation import Validation
 from .loader import Loader
 from .models import Model
 from .driver import Driver

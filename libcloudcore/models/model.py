@@ -15,6 +15,8 @@
 
 import importlib
 
+import jmespath
+
 from .. import exceptions
 from .shape import Shape
 from .waiters import Waiter
@@ -83,7 +85,7 @@ class Map(Shape):
 
 class Error(Shape):
 
-    def __init__(self, expresion):
+    def __init__(self, expression):
         self.expression = jmespath.compile(expression)
 
     def check(self, response):
