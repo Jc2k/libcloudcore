@@ -31,6 +31,17 @@
       "output":{"shape":"IpResponse"},
       "errors":[],
       "documentation":""
+    },
+    "post": {
+          "name":"post",
+          "http":{
+            "method": "POST",
+            "uri": "/post"
+          },
+          "input":{"shape":"PostRequest"},
+          "output":{"shape":"PostResponse"},
+          "errors":[],
+          "documentation":""
     }
   },
   "waiters": {
@@ -53,6 +64,10 @@
         "type": "map",
         "key": "String",
         "value": "String"
+    },
+    "ArgsList": {
+        "type": "list",
+        "of": "Args"
     },
     "Headers": {
         "type": "map",
@@ -94,6 +109,57 @@
       "members": {
           "origin": {
               "shape": "String"
+          }
+      }
+    },
+    "PostRequest": {
+      "type": "structure",
+      "members": {
+          "args": {
+              "shape": "Args"
+          },
+          "args_list": {
+              "shape": "ArgsList"
+          }
+      }
+    },
+    "PostResponseJson": {
+        "type": "structure",
+        "members": {
+            "args": {
+                "shape": "Args"
+            },
+            "args_list": {
+                "shape": "ArgsList"
+            }
+        }
+    },
+    "PostResponse": {
+      "type": "structure",
+      "members": {
+          "args": {
+              "shape": "Args"
+          },
+          "headers": {
+              "shape": "Headers"
+          },
+          "origin": {
+              "shape": "String"
+          },
+          "url": {
+              "shape": "String"
+          },
+          "form": {
+              "shape": "String"
+          },
+          "data": {
+              "shape": "String"
+          },
+          "files": {
+              "shape": "String"
+          },
+          "json": {
+              "shape": "PostResponseJson"
           }
       }
     }

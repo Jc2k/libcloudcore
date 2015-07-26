@@ -84,5 +84,13 @@ class TestActualRequests(httpbin.HttpBinTestCase):
         result = self.driver.get(foo="bar")
         self.assertEqual(result["args"], {"foo": "bar"})
 
+    def test_post(self):
+        result = self.driver.post(args={"foo": "bar"})
+        self.assertEqual(result["json"]["args"], {"foo": "bar"})
+
+    def test_post_2(self):
+        result = self.driver.post(args_list=[{"foo": "bar"}])
+        self.assertEqual(result["json"]["args_list"], [{"foo": "bar"}])
+
     def test_wait(self):
         self.driver.wait_get(foo="bar")

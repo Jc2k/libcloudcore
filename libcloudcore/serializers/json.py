@@ -68,7 +68,7 @@ class Parser(ShapeVisitor):
 class Serializer(ShapeVisitor):
 
     def visit_string(self, shape, value):
-        return value
+        return str(value)
 
     def visit_integer(self, shape, value):
         return value
