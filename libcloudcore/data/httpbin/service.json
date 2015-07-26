@@ -33,6 +33,18 @@
       "documentation":""
     }
   },
+  "waiters": {
+      "wait_get": {
+          "operation": "get",
+          "delay": 1,
+          "max-attempts": 1,
+          "checks": [{
+              "type": "status",
+              "expected": 200,
+              "state": "complete"
+          }]
+      }
+  },
   "shapes": {
     "String": {
         "type": "string"

@@ -62,6 +62,6 @@ class Driver(Layer):
 
     def wait(self, waiter, **params):
         operation = waiter.operation
-        waiter_loop = waiter.get_waiter_loop()
-        while waiter_loop.send(self.call(operation, **params)):
+        waiter_loop = waiter.get_wait_loop()
+        while waiter_loop.send(self.call(operation, **params)) != 'complete':
             time.sleep(waiter.delay)

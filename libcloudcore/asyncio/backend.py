@@ -52,8 +52,8 @@ class Driver(Layer):
     @asyncio.coroutine
     def wait(self, waiter, **params):
         operation = waiter.operation
-        waiter_loop = waiter.get_waiter_loop()
+        waiter_loop = waiter.get_wait_loop()
         response = yield from self.call(operation, **params)
-        while waiter_loop.send(response):
+        while waiter_loop.send(response) != 'complete':
             yield from asyncio.sleep(waiter.delay)
-            response = yield from self.cell(operation, **params)
+            response = yield from self.call(operation, **params)

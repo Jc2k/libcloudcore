@@ -47,4 +47,10 @@ class Driver(Layer):
     def after_call(self, operation, request, response):
         logger.debug(response.status_code)
         logger.debug(response.body)
-        return super(Driver, self).after_call(operation, request, response)
+        result = {
+            'Metadata': {
+                'StatusCode': response.status_code
+            }
+        }
+        result.update(super(Driver, self).after_call(operation, request, response))
+        return result

@@ -76,3 +76,6 @@ class TestActualRequests(httpbin.HttpBinTestCase):
     def test_get_args(self):
         result = self.call(self.driver.get, foo="bar")
         self.assertEqual(result["args"], {"foo": "bar"})
+
+    def test_wait(self):
+        self.call(self.driver.wait_get, foo="bar")

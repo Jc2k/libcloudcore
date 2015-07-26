@@ -103,7 +103,7 @@ class Waiter(Shape):
 
     @property
     def operation(self):
-        return self.model.get_operation(self.shape['operation'])
+        return self.model.get_operation(self._shape['operation'])
 
     @property
     def checks(self):
