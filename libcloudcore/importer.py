@@ -62,7 +62,7 @@ class Importer(object):
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
 
-        bases = (Driver, self.backend, Validation) + model.request_pipeline
+        bases = (Driver, self.backend) + model.request_pipeline
 
         attrs = {
             'name': service,

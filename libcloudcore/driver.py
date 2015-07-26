@@ -15,13 +15,14 @@
 
 import logging
 
-from .layer import Layer
+from .error_parser import ErrorParser
+from .validation import Validation
 
 
 logger = logging.getLogger(__name__)
 
 
-class Driver(Layer):
+class Driver(ErrorParser, Validation):
 
     def _get_query_args(self, operation, request, **params):
         query = {}

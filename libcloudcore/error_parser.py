@@ -23,13 +23,12 @@ class ErrorParser(Layer):
 
     def after_call(self, operation, request, response):
         parsed = super(ErrorParser, self).after_call(
-            self,
             operation,
             request,
             response
         )
 
-        for error in operation.get('errors', []):
+        for error in operation.errors:
             # FIXME:  precompile exception?
             result = jmespath.query(error['expression'], parsed)
             if not result:

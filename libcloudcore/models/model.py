@@ -81,6 +81,15 @@ class Map(Shape):
         return self.model.get_shape(self._shape['value'])
 
 
+class Error(Shape):
+
+    def __init__(self, expresion):
+        self.expression = jmespath.compile(expression)
+
+    def check(self, response):
+        return self.expression.search(response)
+
+
 class Operation(Shape):
 
     def __init__(self, model, name, operation):
@@ -94,6 +103,13 @@ class Operation(Shape):
         http = dict(self.model.http_endpoint)
         http.update(self.operation.get('http', {}))
         return http
+
+    @property
+    def errors(self):
+        errors = []
+        for error in self.operation.get('errors', []):
+            errors.append(Error(error))
+        return errors
 
     @property
     def wire_name(self):

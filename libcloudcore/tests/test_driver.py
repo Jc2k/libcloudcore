@@ -21,6 +21,7 @@ from libcloudcore.auth.basic_auth import BasicAuth
 from libcloudcore.backend import Driver as RequestsBackend
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer
+from libcloudcore.error_parser import ErrorParser
 from libcloudcore.layer import Layer
 from ..request import Request
 
@@ -40,8 +41,9 @@ class TestDriver(unittest.TestCase):
         self.assertEqual(inspect.getmro(self.Driver), (
             self.Driver,
             Driver,
-            RequestsBackend,
+            ErrorParser,
             Validation,
+            RequestsBackend,
             BasicAuth,
             JsonSerializer,
             Layer,
