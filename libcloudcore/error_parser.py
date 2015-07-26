@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import jmespath
-
 from .layer import Layer
 from .exceptions import ClientError
 
@@ -29,18 +27,14 @@ class ErrorParser(Layer):
         )
 
         for error in operation.errors:
-            # FIXME:  precompile exception?
-            result = jmespath.query(error['expression'], parsed)
-            if not result:
-                continue
-
-            # FIXME:  custom classes?
-            raise ClientError(
-                message=result['Message'],
-                code=result['Code'],
-                request=request,
-                response=parsed,
-            )
+            result = error.check(parsed)
+            if result:
+                raise ClientError(
+                    message=result['Message'],
+                    code=result['Code'],
+                    request=request,
+                    response=parsed,
+                )
 
         if 'Error' in parsed:
             raise ClientError(
