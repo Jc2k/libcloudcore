@@ -52,5 +52,7 @@ class Driver(Layer):
                 'StatusCode': response.status_code
             }
         }
-        result.update(super(Driver, self).after_call(operation, request, response))
+        result.update(
+            super(Driver, self).after_call(operation, request, response)
+        )
         return result
