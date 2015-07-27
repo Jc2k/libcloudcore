@@ -13,12 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .model import Model, Operation
-from .visitor import Visitor
 
+class Visitor(object):
 
-__all__ = [
-    'Model',
-    'Operation',
-    'Visitor',
-]
+    def visit(self, parent, shape, value):
+        visit_fn_name = "visit_{}".format(shape.type)
+        try:
+            visit_fn = getattr(self, visit_fn_name)
+        except AttributeError:
+            raise NotImplementedError(visit_fn_name)
+        return visit_fn(parent, shape, value)
+
+    def visit_string(self, parent, shape, value):
+        return value
