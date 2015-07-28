@@ -1,0 +1,131 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import unittest
+
+from libcloudcore.models import Model
+from libcloudcore.serializers.xml import XmlSerializer
+
+
+class TestParseXml(unittest.TestCase):
+
+    def setUp(self):
+        self.model = Model({
+            'metadata': {},
+            'shapes': {
+                "String": {
+                    "type": "string",
+                },
+                "Integer": {
+                    "type": "integer",
+                },
+                "Boolean": {
+                    "type": "boolean",
+                },
+                "HostedZoneConfig": {
+                    "type": "structure",
+                    "members": {
+                        "Comment": {
+                            "shape": "String"
+                        },
+                        "PrivateZone": {
+                            "shape": "Boolean"
+                        }
+                    }
+                },
+                "HostedZone": {
+                    "type": "structure",
+                    "members": {
+                        "Id": {
+                            "shape": "String",
+                        },
+                        "Name": {
+                            "shape": "String",
+                        },
+                        "CallerReference": {
+                            "shape": "String",
+                        },
+                        "Config": {
+                            "shape": "HostedZoneConfig",
+                        },
+                        "ResourceRecordSetCount": {
+                            "shape": "Integer"
+                        }
+                    }
+                },
+                "HostedZones": {
+                    "type": "list",
+                    "of": "HostedZone",
+                },
+                "ListHostedZonesByNameResponse": {
+                    "type": "structure",
+                    "members": {
+                        "HostedZones": {
+                            "shape": "HostedZones"
+                        },
+                        "IsTruncated": {
+                            "shape": "Boolean"
+                        },
+                        "MaxItems": {
+                            "shape": "Integer"
+                        }
+                    }
+                }
+            },
+            'operations': {
+                'list_hosted_zones_by_name': {
+                    'output': {"shape": "ListHostedZonesByNameResponse"},
+                }
+            },
+            'documentation': 'Test model documentation',
+        })
+        self.layer = XmlSerializer()
+
+    def test_parse(self):
+        xml = """
+            <?xml version="1.0" encoding="UTF-8"?>
+            <ListHostedZonesByNameResponse
+                xmlns="https://route53.amazonaws.com/doc/2013-04-01/">
+            <HostedZones>
+                <HostedZone>
+                    <Id>/hostedzone/ZONE_ID</Id>
+                    <Name>www.example.com</Name>
+                    <CallerReference>CALLER_REFERENCE</CallerReference>
+                    <Config>
+                        <Comment>COMMENT</Comment>
+                        <PrivateZone>true</PrivateZone>
+                    </Config>
+                    <ResourceRecordSetCount>0</ResourceRecordSetCount>
+                </HostedZone>
+            </HostedZones>
+            <IsTruncated>false</IsTruncated>
+            <MaxItems>10</MaxItems>
+        </ListHostedZonesByNameResponse>""".strip()
+
+        operation = self.model.get_operation("list_hosted_zones_by_name")
+        self.assertEqual(self.layer._parse_xml(operation, xml), {
+            "HostedZones": [{
+                "Id": "/hostedzone/ZONE_ID",
+                "Name": "www.example.com",
+                "CallerReference": "CALLER_REFERENCE",
+                "Config": {
+                    "Comment": "COMMENT",
+                    "PrivateZone": True,
+                },
+                "ResourceRecordSetCount": 0,
+            }],
+            "IsTruncated": False,
+            "MaxItems": 10,
+        })

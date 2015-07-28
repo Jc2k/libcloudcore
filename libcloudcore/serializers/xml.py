@@ -36,15 +36,30 @@ class ShapeVisitor(object):
 
 class Parser(ShapeVisitor):
 
+    def visit(self, shape, value):
+        visit_fn_name = "visit_{}".format(shape.type)
+        try:
+            visit_fn = getattr(self, visit_fn_name)
+        except AttributeError:
+            raise NotImplementedError(visit_fn_name)
+        return visit_fn(shape, value)
+
     def visit_string(self, shape, value):
         return value.text or ''
 
     def visit_integer(self, shape, value):
         return int(value.text)
 
+    def visit_boolean(self, shape, value):
+        if value.text == "true":
+            return True
+        return False
+
     def visit_list(self, shape, value):
-        # subshape = shape.of
+        subshape = shape.of
         result = []
+        for child in value.getchildren():
+            result.append(self.visit(subshape, child))
         return result
 
     def visit_map(self, shape, value):
@@ -53,8 +68,16 @@ class Parser(ShapeVisitor):
         out = {}
         return out
 
+    def _prefix(self, name):
+        return '{https://route53.amazonaws.com/doc/2013-04-01/}' + name
+
     def visit_structure(self, shape, value):
         out = {}
+        for member in shape.iter_members():
+            out[member.name] = self.visit(
+                member.shape,
+                value.find(self._prefix(member.name)),
+            )
         return out
 
 
@@ -120,16 +143,20 @@ class XmlSerializer(layer.Layer):
             **params
         )
 
-    def _parse_xml(self, body):
+    def _open_xml(self, body):
         parser = ElementTree.XMLParser(
             target=ElementTree.TreeBuilder(),
             encoding="utf-8",
         )
-        return parser.feed(body).close()
+        parser.feed(body)
+        return parser.close()
 
-    def after_call(self, operation, request, response):
-        root = self._parse_xml(response.body)
+    def _parse_xml(self, operation, body):
+        root = self._open_xml(body)
         return Parser().visit(
             operation.output_shape,
             root,
         )
+
+    def after_call(self, operation, request, response):
+        return self._parse_xml(response.body)
