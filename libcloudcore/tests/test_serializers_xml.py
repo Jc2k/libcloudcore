@@ -37,7 +37,11 @@ class TestParseXml(unittest.TestCase):
 
     def setUp(self):
         self.model = Model({
-            'metadata': {},
+            'metadata': {
+                'namespaces': {
+                    '': 'https://route53.amazonaws.com/doc/2013-04-01/'
+                }
+            },
             'shapes': {
                 "String": {
                     "type": "string",
@@ -146,7 +150,11 @@ class TestSerializeXml(unittest.TestCase):
 
     def setUp(self):
         self.model = Model({
-            'metadata': {},
+            'metadata': {
+                'namespaces': {
+                    '': 'https://route53.amazonaws.com/doc/2013-04-01/'
+                }
+            },
             'shapes': {
                 "String": {
                     "type": "string",

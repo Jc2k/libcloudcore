@@ -163,6 +163,7 @@ class Model(object):
         self._model = model
         self.name = model.get('name', '')
         self.documentation = model.get('documentation', '')
+        self.metadata = model.get('metadata', {})
         self.operations = model.get('operations', {})
         self.serializers = model.get('serializers', ['uri', 'json'])
         self.shapes = model.get('shapes', {})

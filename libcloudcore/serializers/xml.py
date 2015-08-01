@@ -147,7 +147,8 @@ class XmlSerializer(layer.Layer):
             params,
         )
         real_root = root.getchildren()[0]
-        real_root.set("xmlns", "https://route53.amazonaws.com/doc/2013-04-01/")
+        for ns, uri in operation.model.metadata.get("namespaces", {}).items():
+            real_root.set("xmlns:{}".format(ns) if ns else "xmlns", uri)
         return ElementTree.tostring(real_root, encoding='utf-8')
 
     def before_call(self, request, operation, **params):
