@@ -511,7 +511,8 @@
             "type": "string"
         },
         "Destinations": {
-            "type": "list"
+            "type": "list",
+            "of": "Destination"
         },
         "EventId": {
             "type": "string"
@@ -631,7 +632,8 @@
             ]
         },
         "FilteredLogEvents": {
-            "type": "list"
+            "type": "list",
+            "of": "FilteredLogEvent"
         },
         "GetLogEventsRequest": {
             "type": "structure",
@@ -702,10 +704,12 @@
             ]
         },
         "InputLogEvents": {
-            "type": "list"
+            "type": "list",
+            "of": "InputLogEvent"
         },
         "InputLogStreamNames": {
-            "type": "list"
+            "type": "list",
+            "of": "LogStreamName"
         },
         "Interleaved": {
             "type": "boolean"
@@ -763,7 +767,8 @@
             "type": "string"
         },
         "LogGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "LogGroup"
         },
         "LogStream": {
             "type": "structure",
@@ -809,7 +814,8 @@
             "type": "boolean"
         },
         "LogStreams": {
-            "type": "list"
+            "type": "list",
+            "of": "LogStream"
         },
         "MetricFilter": {
             "type": "structure",
@@ -850,10 +856,12 @@
             ]
         },
         "MetricFilterMatches": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricFilterMatchRecord"
         },
         "MetricFilters": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricFilter"
         },
         "MetricName": {
             "type": "string"
@@ -879,7 +887,8 @@
             ]
         },
         "MetricTransformations": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricTransformation"
         },
         "MetricValue": {
             "type": "string"
@@ -912,7 +921,8 @@
             ]
         },
         "OutputLogEvents": {
-            "type": "list"
+            "type": "list",
+            "of": "OutputLogEvent"
         },
         "PutDestinationPolicyRequest": {
             "type": "structure",
@@ -1108,7 +1118,8 @@
             ]
         },
         "SearchedLogStreams": {
-            "type": "list"
+            "type": "list",
+            "of": "SearchedLogStream"
         },
         "SequenceToken": {
             "type": "string"
@@ -1153,13 +1164,15 @@
             ]
         },
         "SubscriptionFilters": {
-            "type": "list"
+            "type": "list",
+            "of": "SubscriptionFilter"
         },
         "TargetArn": {
             "type": "string"
         },
         "TestEventMessages": {
-            "type": "list"
+            "type": "list",
+            "of": "EventMessage"
         },
         "TestMetricFilterRequest": {
             "type": "structure",

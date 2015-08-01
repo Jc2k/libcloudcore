@@ -235,7 +235,8 @@
             ]
         },
         "EventsList": {
-            "type": "list"
+            "type": "list",
+            "of": "Event"
         },
         "GetTrailStatusRequest": {
             "type": "structure",
@@ -364,7 +365,8 @@
             "type": "string"
         },
         "LookupAttributesList": {
-            "type": "list"
+            "type": "list",
+            "of": "LookupAttribute"
         },
         "LookupEventsRequest": {
             "type": "structure",
@@ -437,7 +439,8 @@
             ]
         },
         "ResourceList": {
-            "type": "list"
+            "type": "list",
+            "of": "Resource"
         },
         "S3BucketDoesNotExistException": {
             "type": "structure",
@@ -519,10 +522,12 @@
             "members": []
         },
         "TrailList": {
-            "type": "list"
+            "type": "list",
+            "of": "Trail"
         },
         "TrailNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "TrailNotFoundException": {
             "type": "structure",

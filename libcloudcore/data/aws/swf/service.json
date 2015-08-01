@@ -575,7 +575,8 @@
             ]
         },
         "ActivityTypeInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "ActivityTypeInfo"
         },
         "ActivityTypeInfos": {
             "type": "structure",
@@ -1108,7 +1109,8 @@
             ]
         },
         "DecisionList": {
-            "type": "list"
+            "type": "list",
+            "of": "Decision"
         },
         "DecisionTask": {
             "type": "structure",
@@ -1402,7 +1404,8 @@
             ]
         },
         "DomainInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "DomainInfo"
         },
         "DomainInfos": {
             "type": "structure",
@@ -1825,7 +1828,8 @@
             ]
         },
         "HistoryEventList": {
-            "type": "list"
+            "type": "list",
+            "of": "HistoryEvent"
         },
         "Identity": {
             "type": "string"
@@ -3040,7 +3044,8 @@
             ]
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TaskList": {
             "type": "structure",
@@ -3487,7 +3492,8 @@
             ]
         },
         "WorkflowExecutionInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "WorkflowExecutionInfo"
         },
         "WorkflowExecutionInfos": {
             "type": "structure",
@@ -3768,7 +3774,8 @@
             ]
         },
         "WorkflowTypeInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "WorkflowTypeInfo"
         },
         "WorkflowTypeInfos": {
             "type": "structure",

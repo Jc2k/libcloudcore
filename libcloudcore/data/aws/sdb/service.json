@@ -110,10 +110,12 @@
             ]
         },
         "AttributeList": {
-            "type": "list"
+            "type": "list",
+            "of": "Attribute"
         },
         "AttributeNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "BatchDeleteAttributesRequest": {
             "type": "structure",
@@ -173,7 +175,8 @@
             ]
         },
         "DeletableItemList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeletableItem"
         },
         "DeleteAttributesRequest": {
             "type": "structure",
@@ -261,7 +264,8 @@
             ]
         },
         "DomainNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "DuplicateItemName": {
             "type": "structure",
@@ -379,7 +383,8 @@
             ]
         },
         "ItemList": {
-            "type": "list"
+            "type": "list",
+            "of": "Item"
         },
         "ListDomainsRequest": {
             "type": "structure",
@@ -532,7 +537,8 @@
             ]
         },
         "ReplaceableAttributeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReplaceableAttribute"
         },
         "ReplaceableItem": {
             "type": "structure",
@@ -551,7 +557,8 @@
             ]
         },
         "ReplaceableItemList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReplaceableItem"
         },
         "RequestTimeout": {
             "type": "structure",

@@ -21,6 +21,8 @@ def process_service_2(path, model):
                 m = collections.OrderedDict(name=k)
                 m.update(v)
                 s['members'].append(m)
+        elif s['type'] == 'list':
+            s['of'] = shape['member']['shape']
 
     operations = model['operations']
     for name, operation in service.get("operations", {}).items():

@@ -151,7 +151,8 @@
             ]
         },
         "AssociationDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "AssociationDescription"
         },
         "AssociationDoesNotExist": {
             "type": "structure",
@@ -176,7 +177,8 @@
             "type": "string"
         },
         "AssociationFilterList": {
-            "type": "list"
+            "type": "list",
+            "of": "AssociationFilter"
         },
         "AssociationFilterValue": {
             "type": "string"
@@ -186,7 +188,8 @@
             "members": []
         },
         "AssociationList": {
-            "type": "list"
+            "type": "list",
+            "of": "Association"
         },
         "AssociationStatus": {
             "type": "structure",
@@ -230,7 +233,8 @@
             ]
         },
         "CreateAssociationBatchRequestEntries": {
-            "type": "list"
+            "type": "list",
+            "of": "CreateAssociationBatchRequestEntry"
         },
         "CreateAssociationBatchRequestEntry": {
             "type": "structure",
@@ -444,7 +448,8 @@
             "type": "string"
         },
         "DocumentFilterList": {
-            "type": "list"
+            "type": "list",
+            "of": "DocumentFilter"
         },
         "DocumentFilterValue": {
             "type": "string"
@@ -460,7 +465,8 @@
             ]
         },
         "DocumentIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "DocumentIdentifier"
         },
         "DocumentLimitExceeded": {
             "type": "structure",
@@ -500,7 +506,8 @@
             ]
         },
         "FailedCreateAssociationList": {
-            "type": "list"
+            "type": "list",
+            "of": "FailedCreateAssociation"
         },
         "Fault": {
             "type": "string"

@@ -62,7 +62,8 @@
             ]
         },
         "BucketList": {
-            "type": "list"
+            "type": "list",
+            "of": "Bucket"
         },
         "ContentType": {
             "type": "string"
@@ -99,7 +100,8 @@
             ]
         },
         "DocumentServiceWarnings": {
-            "type": "list"
+            "type": "list",
+            "of": "DocumentServiceWarning"
         },
         "Expr": {
             "type": "string"
@@ -114,7 +116,8 @@
             "type": "map"
         },
         "FieldValue": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "Fields": {
             "type": "map"
@@ -154,7 +157,8 @@
             ]
         },
         "HitList": {
-            "type": "list"
+            "type": "list",
+            "of": "Hit"
         },
         "Hits": {
             "type": "structure",
@@ -452,7 +456,8 @@
             ]
         },
         "Suggestions": {
-            "type": "list"
+            "type": "list",
+            "of": "SuggestionMatch"
         },
         "SuggestionsSize": {
             "type": "long"

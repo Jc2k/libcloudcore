@@ -148,7 +148,8 @@
             "members": []
         },
         "BranchNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "BranchName"
         },
         "BranchNameRequiredException": {
             "type": "structure",
@@ -479,7 +480,8 @@
             ]
         },
         "RepositoryMetadataList": {
-            "type": "list"
+            "type": "list",
+            "of": "RepositoryMetadata"
         },
         "RepositoryName": {
             "type": "string"
@@ -503,10 +505,12 @@
             ]
         },
         "RepositoryNameIdPairList": {
-            "type": "list"
+            "type": "list",
+            "of": "RepositoryNameIdPair"
         },
         "RepositoryNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "RepositoryName"
         },
         "RepositoryNameRequiredException": {
             "type": "structure",
@@ -517,7 +521,8 @@
             "members": []
         },
         "RepositoryNotFoundList": {
-            "type": "list"
+            "type": "list",
+            "of": "RepositoryName"
         },
         "SortByEnum": {
             "type": "string"

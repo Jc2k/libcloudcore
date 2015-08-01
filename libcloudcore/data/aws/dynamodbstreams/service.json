@@ -104,7 +104,8 @@
             "type": "blob"
         },
         "BinarySetAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "BinaryAttributeValue"
         },
         "BooleanAttributeValue": {
             "type": "boolean"
@@ -231,7 +232,8 @@
             ]
         },
         "KeySchema": {
-            "type": "list"
+            "type": "list",
+            "of": "KeySchemaElement"
         },
         "KeySchemaAttributeName": {
             "type": "string"
@@ -265,7 +267,8 @@
             ]
         },
         "ListAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeValue"
         },
         "ListStreamsInput": {
             "type": "structure",
@@ -312,7 +315,8 @@
             "type": "string"
         },
         "NumberSetAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "NumberAttributeValue"
         },
         "OperationType": {
             "type": "string"
@@ -359,7 +363,8 @@
             ]
         },
         "RecordList": {
-            "type": "list"
+            "type": "list",
+            "of": "Record"
         },
         "ResourceNotFoundException": {
             "type": "structure",
@@ -410,7 +415,8 @@
             ]
         },
         "ShardDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "Shard"
         },
         "ShardId": {
             "type": "string"
@@ -495,7 +501,8 @@
             ]
         },
         "StreamList": {
-            "type": "list"
+            "type": "list",
+            "of": "Stream"
         },
         "StreamRecord": {
             "type": "structure",
@@ -545,7 +552,8 @@
             "type": "string"
         },
         "StringSetAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "StringAttributeValue"
         },
         "TableName": {
             "type": "string"

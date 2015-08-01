@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import imp
 import sys
 
 from .loader import Loader
@@ -37,10 +38,21 @@ class Importer(object):
     def load_module(self, fullname):
         service = fullname[len(self.module_prefix):].replace(".", "/")
 
-        class Module(object):
-            Driver = self.get_driver(service)
+        if self.is_namespace(service):
+            class Module(object):
+                __package__ = service
+        else:
+            class Module(object):
+                Driver = self.get_driver(service)
 
-        module = sys.modules[fullname] = Module()
+        module = sys.modules[fullname] = imp.new_module(fullname)
+        module.__name__ = fullname
+        module.__path__ = [fullname]
+        module.__loader__ = self
+        if self.is_namespace(service):
+            module.__package__ = fullname
+        else:
+            module.Driver = self.get_driver(service)
 
         return module
 
@@ -57,6 +69,9 @@ class Importer(object):
         setattr(method, "__doc__", waiter.documentation)
         setattr(method, "__name__", force_str(waiter.name))
         return method
+
+    def is_namespace(self, service):
+        return not self.loader.is_service(service)
 
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))

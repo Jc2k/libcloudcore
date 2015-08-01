@@ -618,7 +618,8 @@
             ]
         },
         "CachediSCSIVolumes": {
-            "type": "list"
+            "type": "list",
+            "of": "CachediSCSIVolume"
         },
         "CancelArchivalInput": {
             "type": "structure",
@@ -669,7 +670,8 @@
             ]
         },
         "ChapCredentials": {
-            "type": "list"
+            "type": "list",
+            "of": "ChapInfo"
         },
         "ChapInfo": {
             "type": "structure",
@@ -1612,10 +1614,12 @@
             "type": "string"
         },
         "DiskIds": {
-            "type": "list"
+            "type": "list",
+            "of": "DiskId"
         },
         "Disks": {
-            "type": "list"
+            "type": "list",
+            "of": "Disk"
         },
         "DoubleObject": {
             "type": "double"
@@ -1650,7 +1654,8 @@
             "type": "string"
         },
         "GatewayNetworkInterfaces": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkInterface"
         },
         "GatewayOperationalState": {
             "type": "string"
@@ -1665,7 +1670,8 @@
             "type": "string"
         },
         "Gateways": {
-            "type": "list"
+            "type": "list",
+            "of": "GatewayInfo"
         },
         "HourOfDay": {
             "type": "integer"
@@ -1674,7 +1680,8 @@
             "type": "string"
         },
         "Initiators": {
-            "type": "list"
+            "type": "list",
+            "of": "Initiator"
         },
         "InternalServerError": {
             "type": "structure",
@@ -2057,7 +2064,8 @@
             ]
         },
         "StorediSCSIVolumes": {
-            "type": "list"
+            "type": "list",
+            "of": "StorediSCSIVolume"
         },
         "Tape": {
             "type": "structure",
@@ -2098,7 +2106,8 @@
             "type": "string"
         },
         "TapeARNs": {
-            "type": "list"
+            "type": "list",
+            "of": "TapeARN"
         },
         "TapeArchive": {
             "type": "structure",
@@ -2139,7 +2148,8 @@
             "type": "string"
         },
         "TapeArchives": {
-            "type": "list"
+            "type": "list",
+            "of": "TapeArchive"
         },
         "TapeBarcode": {
             "type": "string"
@@ -2175,7 +2185,8 @@
             ]
         },
         "TapeRecoveryPointInfos": {
-            "type": "list"
+            "type": "list",
+            "of": "TapeRecoveryPointInfo"
         },
         "TapeRecoveryPointStatus": {
             "type": "string"
@@ -2187,7 +2198,8 @@
             "type": "string"
         },
         "Tapes": {
-            "type": "list"
+            "type": "list",
+            "of": "Tape"
         },
         "TargetARN": {
             "type": "string"
@@ -2433,7 +2445,8 @@
             "type": "string"
         },
         "VTLDeviceARNs": {
-            "type": "list"
+            "type": "list",
+            "of": "VTLDeviceARN"
         },
         "VTLDeviceProductIdentifier": {
             "type": "string"
@@ -2445,13 +2458,15 @@
             "type": "string"
         },
         "VTLDevices": {
-            "type": "list"
+            "type": "list",
+            "of": "VTLDevice"
         },
         "VolumeARN": {
             "type": "string"
         },
         "VolumeARNs": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeARN"
         },
         "VolumeId": {
             "type": "string"
@@ -2470,7 +2485,8 @@
             ]
         },
         "VolumeInfos": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeInfo"
         },
         "VolumeRecoveryPointInfo": {
             "type": "structure",
@@ -2494,7 +2510,8 @@
             ]
         },
         "VolumeRecoveryPointInfos": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeRecoveryPointInfo"
         },
         "VolumeStatus": {
             "type": "string"

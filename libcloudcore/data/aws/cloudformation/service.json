@@ -148,7 +148,8 @@
             "type": "string"
         },
         "AllowedValues": {
-            "type": "list"
+            "type": "list",
+            "of": "AllowedValue"
         },
         "AlreadyExistsException": {
             "type": "structure",
@@ -165,7 +166,8 @@
             ]
         },
         "Capabilities": {
-            "type": "list"
+            "type": "list",
+            "of": "Capability"
         },
         "CapabilitiesReason": {
             "type": "string"
@@ -600,7 +602,8 @@
             "type": "string"
         },
         "NotificationARNs": {
-            "type": "list"
+            "type": "list",
+            "of": "NotificationARN"
         },
         "OnFailure": {
             "type": "string"
@@ -632,7 +635,8 @@
             "type": "string"
         },
         "Outputs": {
-            "type": "list"
+            "type": "list",
+            "of": "Output"
         },
         "Parameter": {
             "type": "structure",
@@ -700,7 +704,8 @@
             ]
         },
         "ParameterDeclarations": {
-            "type": "list"
+            "type": "list",
+            "of": "ParameterDeclaration"
         },
         "ParameterKey": {
             "type": "string"
@@ -712,7 +717,8 @@
             "type": "string"
         },
         "Parameters": {
-            "type": "list"
+            "type": "list",
+            "of": "Parameter"
         },
         "PhysicalResourceId": {
             "type": "string"
@@ -911,7 +917,8 @@
             ]
         },
         "StackEvents": {
-            "type": "list"
+            "type": "list",
+            "of": "StackEvent"
         },
         "StackId": {
             "type": "string"
@@ -1040,7 +1047,8 @@
             ]
         },
         "StackResourceSummaries": {
-            "type": "list"
+            "type": "list",
+            "of": "StackResourceSummary"
         },
         "StackResourceSummary": {
             "type": "structure",
@@ -1078,19 +1086,22 @@
             ]
         },
         "StackResources": {
-            "type": "list"
+            "type": "list",
+            "of": "StackResource"
         },
         "StackStatus": {
             "type": "string"
         },
         "StackStatusFilter": {
-            "type": "list"
+            "type": "list",
+            "of": "StackStatus"
         },
         "StackStatusReason": {
             "type": "string"
         },
         "StackSummaries": {
-            "type": "list"
+            "type": "list",
+            "of": "StackSummary"
         },
         "StackSummary": {
             "type": "structure",
@@ -1138,7 +1149,8 @@
             ]
         },
         "Stacks": {
-            "type": "list"
+            "type": "list",
+            "of": "Stack"
         },
         "Tag": {
             "type": "structure",
@@ -1162,7 +1174,8 @@
             "type": "string"
         },
         "Tags": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TemplateBody": {
             "type": "string"
@@ -1196,7 +1209,8 @@
             ]
         },
         "TemplateParameters": {
-            "type": "list"
+            "type": "list",
+            "of": "TemplateParameter"
         },
         "TemplateURL": {
             "type": "string"

@@ -213,7 +213,8 @@
             ]
         },
         "AliasList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "Aliases": {
             "type": "structure",
@@ -250,7 +251,8 @@
             ]
         },
         "AwsAccountNumberList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "BatchTooLarge": {
             "type": "structure",
@@ -325,7 +327,8 @@
             ]
         },
         "CacheBehaviorList": {
-            "type": "list"
+            "type": "list",
+            "of": "CacheBehavior"
         },
         "CacheBehaviors": {
             "type": "structure",
@@ -466,10 +469,12 @@
             ]
         },
         "CloudFrontOriginAccessIdentitySummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "CloudFrontOriginAccessIdentitySummary"
         },
         "CookieNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "CookieNames": {
             "type": "structure",
@@ -679,7 +684,8 @@
             ]
         },
         "CustomErrorResponseList": {
-            "type": "list"
+            "type": "list",
+            "of": "CustomErrorResponse"
         },
         "CustomErrorResponses": {
             "type": "structure",
@@ -1056,7 +1062,8 @@
             ]
         },
         "DistributionSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "DistributionSummary"
         },
         "ForwardedValues": {
             "type": "structure",
@@ -1305,7 +1312,8 @@
             ]
         },
         "HeaderList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "Headers": {
             "type": "structure",
@@ -1588,13 +1596,15 @@
             ]
         },
         "InvalidationSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "InvalidationSummary"
         },
         "ItemSelection": {
             "type": "string"
         },
         "KeyPairIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "KeyPairIds": {
             "type": "structure",
@@ -1735,7 +1745,8 @@
             ]
         },
         "LocationList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "LoggingConfig": {
             "type": "structure",
@@ -1766,7 +1777,8 @@
             "type": "string"
         },
         "MethodsList": {
-            "type": "list"
+            "type": "list",
+            "of": "Method"
         },
         "MinimumProtocolVersion": {
             "type": "string"
@@ -1856,7 +1868,8 @@
             ]
         },
         "OriginList": {
-            "type": "list"
+            "type": "list",
+            "of": "Origin"
         },
         "OriginProtocolPolicy": {
             "type": "string"
@@ -1877,7 +1890,8 @@
             ]
         },
         "PathList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "Paths": {
             "type": "structure",
@@ -1959,7 +1973,8 @@
             ]
         },
         "SignerList": {
-            "type": "list"
+            "type": "list",
+            "of": "Signer"
         },
         "StreamingDistribution": {
             "type": "structure",
@@ -2149,7 +2164,8 @@
             ]
         },
         "StreamingDistributionSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "StreamingDistributionSummary"
         },
         "StreamingLoggingConfig": {
             "type": "structure",

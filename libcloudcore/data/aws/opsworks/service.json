@@ -538,7 +538,8 @@
             ]
         },
         "AgentVersions": {
-            "type": "list"
+            "type": "list",
+            "of": "AgentVersion"
         },
         "App": {
             "type": "structure",
@@ -625,7 +626,8 @@
             "type": "string"
         },
         "Apps": {
-            "type": "list"
+            "type": "list",
+            "of": "App"
         },
         "Architecture": {
             "type": "string"
@@ -759,7 +761,8 @@
             ]
         },
         "BlockDeviceMappings": {
-            "type": "list"
+            "type": "list",
+            "of": "BlockDeviceMapping"
         },
         "Boolean": {
             "type": "boolean"
@@ -959,7 +962,8 @@
             ]
         },
         "Commands": {
-            "type": "list"
+            "type": "list",
+            "of": "Command"
         },
         "CreateAppRequest": {
             "type": "structure",
@@ -1449,7 +1453,8 @@
             ]
         },
         "DataSources": {
-            "type": "list"
+            "type": "list",
+            "of": "DataSource"
         },
         "DateTime": {
             "type": "string"
@@ -1600,7 +1605,8 @@
             "type": "string"
         },
         "Deployments": {
-            "type": "list"
+            "type": "list",
+            "of": "Deployment"
         },
         "DeregisterEcsClusterRequest": {
             "type": "structure",
@@ -2276,7 +2282,8 @@
             ]
         },
         "EcsClusters": {
-            "type": "list"
+            "type": "list",
+            "of": "EcsCluster"
         },
         "ElasticIp": {
             "type": "structure",
@@ -2309,7 +2316,8 @@
             ]
         },
         "ElasticIps": {
-            "type": "list"
+            "type": "list",
+            "of": "ElasticIp"
         },
         "ElasticLoadBalancer": {
             "type": "structure",
@@ -2362,7 +2370,8 @@
             ]
         },
         "ElasticLoadBalancers": {
-            "type": "list"
+            "type": "list",
+            "of": "ElasticLoadBalancer"
         },
         "EnvironmentVariable": {
             "type": "structure",
@@ -2385,7 +2394,8 @@
             ]
         },
         "EnvironmentVariables": {
-            "type": "list"
+            "type": "list",
+            "of": "EnvironmentVariable"
         },
         "GetHostnameSuggestionRequest": {
             "type": "structure",
@@ -2656,7 +2666,8 @@
             ]
         },
         "Instances": {
-            "type": "list"
+            "type": "list",
+            "of": "Instance"
         },
         "InstancesCount": {
             "type": "structure",
@@ -2880,7 +2891,8 @@
             "type": "string"
         },
         "Layers": {
-            "type": "list"
+            "type": "list",
+            "of": "Layer"
         },
         "LifecycleEventConfiguration": {
             "type": "structure",
@@ -2918,7 +2930,8 @@
             ]
         },
         "LoadBasedAutoScalingConfigurations": {
-            "type": "list"
+            "type": "list",
+            "of": "LoadBasedAutoScalingConfiguration"
         },
         "Minute": {
             "type": "integer"
@@ -2957,7 +2970,8 @@
             ]
         },
         "Permissions": {
-            "type": "list"
+            "type": "list",
+            "of": "Permission"
         },
         "RaidArray": {
             "type": "structure",
@@ -3030,7 +3044,8 @@
             ]
         },
         "RaidArrays": {
-            "type": "list"
+            "type": "list",
+            "of": "RaidArray"
         },
         "RdsDbInstance": {
             "type": "structure",
@@ -3083,7 +3098,8 @@
             ]
         },
         "RdsDbInstances": {
-            "type": "list"
+            "type": "list",
+            "of": "RdsDbInstance"
         },
         "RebootInstanceRequest": {
             "type": "structure",
@@ -3369,7 +3385,8 @@
             ]
         },
         "ServiceErrors": {
-            "type": "list"
+            "type": "list",
+            "of": "ServiceError"
         },
         "SetLoadBasedAutoScalingRequest": {
             "type": "structure",
@@ -3685,7 +3702,8 @@
             ]
         },
         "Stacks": {
-            "type": "list"
+            "type": "list",
+            "of": "Stack"
         },
         "StartInstanceRequest": {
             "type": "structure",
@@ -3731,7 +3749,8 @@
             "type": "string"
         },
         "Strings": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "Switch": {
             "type": "string"
@@ -3777,7 +3796,8 @@
             ]
         },
         "TimeBasedAutoScalingConfigurations": {
-            "type": "list"
+            "type": "list",
+            "of": "TimeBasedAutoScalingConfiguration"
         },
         "UnassignInstanceRequest": {
             "type": "structure",
@@ -4224,7 +4244,8 @@
             ]
         },
         "UserProfiles": {
-            "type": "list"
+            "type": "list",
+            "of": "UserProfile"
         },
         "ValidForInMinutes": {
             "type": "integer"
@@ -4348,13 +4369,15 @@
             ]
         },
         "VolumeConfigurations": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeConfiguration"
         },
         "VolumeType": {
             "type": "string"
         },
         "Volumes": {
-            "type": "list"
+            "type": "list",
+            "of": "Volume"
         },
         "WeeklyAutoScalingSchedule": {
             "type": "structure",

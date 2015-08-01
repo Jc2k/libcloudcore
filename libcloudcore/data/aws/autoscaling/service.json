@@ -355,7 +355,8 @@
     },
     "shapes": {
         "Activities": {
-            "type": "list"
+            "type": "list",
+            "of": "Activity"
         },
         "ActivitiesType": {
             "type": "structure",
@@ -428,7 +429,8 @@
             ]
         },
         "ActivityIds": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlString"
         },
         "ActivityType": {
             "type": "structure",
@@ -451,7 +453,8 @@
             ]
         },
         "AdjustmentTypes": {
-            "type": "list"
+            "type": "list",
+            "of": "AdjustmentType"
         },
         "Alarm": {
             "type": "structure",
@@ -469,7 +472,8 @@
             ]
         },
         "Alarms": {
-            "type": "list"
+            "type": "list",
+            "of": "Alarm"
         },
         "AlreadyExistsFault": {
             "type": "structure",
@@ -635,7 +639,8 @@
             "type": "integer"
         },
         "AutoScalingGroupNames": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceName"
         },
         "AutoScalingGroupNamesType": {
             "type": "structure",
@@ -658,7 +663,8 @@
             ]
         },
         "AutoScalingGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "AutoScalingGroup"
         },
         "AutoScalingGroupsType": {
             "type": "structure",
@@ -711,7 +717,8 @@
             ]
         },
         "AutoScalingInstances": {
-            "type": "list"
+            "type": "list",
+            "of": "AutoScalingInstanceDetails"
         },
         "AutoScalingInstancesType": {
             "type": "structure",
@@ -729,10 +736,12 @@
             ]
         },
         "AutoScalingNotificationTypes": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen255"
         },
         "AvailabilityZones": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen255"
         },
         "BlockDeviceEbsDeleteOnTermination": {
             "type": "boolean"
@@ -772,10 +781,12 @@
             ]
         },
         "BlockDeviceMappings": {
-            "type": "list"
+            "type": "list",
+            "of": "BlockDeviceMapping"
         },
         "ClassicLinkVPCSecurityGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen255"
         },
         "CompleteLifecycleActionAnswer": {
             "type": "structure",
@@ -1511,7 +1522,8 @@
             ]
         },
         "EnabledMetrics": {
-            "type": "list"
+            "type": "list",
+            "of": "EnabledMetric"
         },
         "EnterStandbyAnswer": {
             "type": "structure",
@@ -1617,7 +1629,8 @@
             ]
         },
         "Filters": {
-            "type": "list"
+            "type": "list",
+            "of": "Filter"
         },
         "ForceDelete": {
             "type": "boolean"
@@ -1665,7 +1678,8 @@
             ]
         },
         "InstanceIds": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen16"
         },
         "InstanceMonitoring": {
             "type": "structure",
@@ -1678,7 +1692,8 @@
             ]
         },
         "Instances": {
-            "type": "list"
+            "type": "list",
+            "of": "Instance"
         },
         "InvalidNextToken": {
             "type": "structure",
@@ -1800,7 +1815,8 @@
             ]
         },
         "LaunchConfigurationNames": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceName"
         },
         "LaunchConfigurationNamesType": {
             "type": "structure",
@@ -1823,7 +1839,8 @@
             ]
         },
         "LaunchConfigurations": {
-            "type": "list"
+            "type": "list",
+            "of": "LaunchConfiguration"
         },
         "LaunchConfigurationsType": {
             "type": "structure",
@@ -1897,10 +1914,12 @@
             ]
         },
         "LifecycleHookNames": {
-            "type": "list"
+            "type": "list",
+            "of": "AsciiStringMaxLen255"
         },
         "LifecycleHooks": {
-            "type": "list"
+            "type": "list",
+            "of": "LifecycleHook"
         },
         "LifecycleState": {
             "type": "string"
@@ -1918,7 +1937,8 @@
             ]
         },
         "LoadBalancerNames": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen255"
         },
         "LoadBalancerState": {
             "type": "structure",
@@ -1936,7 +1956,8 @@
             ]
         },
         "LoadBalancerStates": {
-            "type": "list"
+            "type": "list",
+            "of": "LoadBalancerState"
         },
         "MaxNumberOfAutoScalingGroups": {
             "type": "integer"
@@ -1958,7 +1979,8 @@
             ]
         },
         "MetricCollectionTypes": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricCollectionType"
         },
         "MetricGranularityType": {
             "type": "structure",
@@ -1971,13 +1993,15 @@
             ]
         },
         "MetricGranularityTypes": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricGranularityType"
         },
         "MetricScale": {
             "type": "double"
         },
         "Metrics": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen255"
         },
         "MinAdjustmentMagnitude": {
             "type": "integer"
@@ -2012,7 +2036,8 @@
             ]
         },
         "NotificationConfigurations": {
-            "type": "list"
+            "type": "list",
+            "of": "NotificationConfiguration"
         },
         "PoliciesType": {
             "type": "structure",
@@ -2043,13 +2068,16 @@
             "type": "integer"
         },
         "PolicyNames": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceName"
         },
         "PolicyTypes": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen64"
         },
         "ProcessNames": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen255"
         },
         "ProcessType": {
             "type": "structure",
@@ -2062,7 +2090,8 @@
             ]
         },
         "Processes": {
-            "type": "list"
+            "type": "list",
+            "of": "ProcessType"
         },
         "ProcessesType": {
             "type": "structure",
@@ -2317,7 +2346,8 @@
             "type": "string"
         },
         "ScalingPolicies": {
-            "type": "list"
+            "type": "list",
+            "of": "ScalingPolicy"
         },
         "ScalingPolicy": {
             "type": "structure",
@@ -2405,7 +2435,8 @@
             ]
         },
         "ScheduledActionNames": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceName"
         },
         "ScheduledActionsType": {
             "type": "structure",
@@ -2478,10 +2509,12 @@
             ]
         },
         "ScheduledUpdateGroupActions": {
-            "type": "list"
+            "type": "list",
+            "of": "ScheduledUpdateGroupAction"
         },
         "SecurityGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlString"
         },
         "SetDesiredCapacityType": {
             "type": "structure",
@@ -2553,7 +2586,8 @@
             ]
         },
         "StepAdjustments": {
-            "type": "list"
+            "type": "list",
+            "of": "StepAdjustment"
         },
         "SuspendedProcess": {
             "type": "structure",
@@ -2571,7 +2605,8 @@
             ]
         },
         "SuspendedProcesses": {
-            "type": "list"
+            "type": "list",
+            "of": "SuspendedProcess"
         },
         "Tag": {
             "type": "structure",
@@ -2634,7 +2669,8 @@
             ]
         },
         "TagDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagDescription"
         },
         "TagKey": {
             "type": "string"
@@ -2643,7 +2679,8 @@
             "type": "string"
         },
         "Tags": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagsType": {
             "type": "structure",
@@ -2676,7 +2713,8 @@
             ]
         },
         "TerminationPolicies": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen1600"
         },
         "TimestampType": {
             "type": "timestamp"
@@ -2747,7 +2785,8 @@
             ]
         },
         "Values": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlString"
         },
         "XmlString": {
             "type": "string"

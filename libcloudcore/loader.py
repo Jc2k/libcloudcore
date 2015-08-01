@@ -27,14 +27,24 @@ class Loader(object):
             ]
         self.search_path = search_path
 
+    def find(self, path):
+        for search_path in self.search_path:
+            full_path = os.path.join(search_path, path)
+            if os.path.exists(full_path):
+                return full_path
+
+    def is_service(self, service):
+        if self.find(service + '/service.json'):
+            return True
+        return False
+
     def load_service(self, service):
         return self.load_from_search_path(service + '/service.json')
 
     def load_from_search_path(self, path):
-        for search_path in self.search_path:
-            full_path = os.path.join(search_path, path)
-            if os.path.exists(full_path):
-                return self.load(full_path)
+        full_path = self.find(path)
+        if full_path:
+            return self.load(full_path)
 
     def load(self, full_path):
         with open(full_path) as fp:

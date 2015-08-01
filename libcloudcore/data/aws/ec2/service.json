@@ -1510,13 +1510,15 @@
             ]
         },
         "AccountAttributeList": {
-            "type": "list"
+            "type": "list",
+            "of": "AccountAttribute"
         },
         "AccountAttributeName": {
             "type": "string"
         },
         "AccountAttributeNameStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "AccountAttributeName"
         },
         "AccountAttributeValue": {
             "type": "structure",
@@ -1530,7 +1532,8 @@
             ]
         },
         "AccountAttributeValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "AccountAttributeValue"
         },
         "ActiveInstance": {
             "type": "structure",
@@ -1556,7 +1559,8 @@
             ]
         },
         "ActiveInstanceSet": {
-            "type": "list"
+            "type": "list",
+            "of": "ActiveInstance"
         },
         "Address": {
             "type": "structure",
@@ -1612,7 +1616,8 @@
             ]
         },
         "AddressList": {
-            "type": "list"
+            "type": "list",
+            "of": "Address"
         },
         "AllocateAddressRequest": {
             "type": "structure",
@@ -1654,7 +1659,8 @@
             ]
         },
         "AllocationIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ArchitectureValues": {
             "type": "string"
@@ -2129,7 +2135,8 @@
             ]
         },
         "AvailabilityZoneList": {
-            "type": "list"
+            "type": "list",
+            "of": "AvailabilityZone"
         },
         "AvailabilityZoneMessage": {
             "type": "structure",
@@ -2143,7 +2150,8 @@
             ]
         },
         "AvailabilityZoneMessageList": {
-            "type": "list"
+            "type": "list",
+            "of": "AvailabilityZoneMessage"
         },
         "AvailabilityZoneState": {
             "type": "string"
@@ -2181,16 +2189,19 @@
             ]
         },
         "BlockDeviceMappingList": {
-            "type": "list"
+            "type": "list",
+            "of": "BlockDeviceMapping"
         },
         "BlockDeviceMappingRequestList": {
-            "type": "list"
+            "type": "list",
+            "of": "BlockDeviceMapping"
         },
         "Boolean": {
             "type": "boolean"
         },
         "BundleIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "BundleInstanceRequest": {
             "type": "structure",
@@ -2295,7 +2306,8 @@
             ]
         },
         "BundleTaskList": {
-            "type": "list"
+            "type": "list",
+            "of": "BundleTask"
         },
         "BundleTaskState": {
             "type": "string"
@@ -2464,7 +2476,8 @@
             ]
         },
         "CancelSpotFleetRequestsErrorSet": {
-            "type": "list"
+            "type": "list",
+            "of": "CancelSpotFleetRequestsErrorItem"
         },
         "CancelSpotFleetRequestsRequest": {
             "type": "structure",
@@ -2530,7 +2543,8 @@
             ]
         },
         "CancelSpotFleetRequestsSuccessSet": {
-            "type": "list"
+            "type": "list",
+            "of": "CancelSpotFleetRequestsSuccessItem"
         },
         "CancelSpotInstanceRequestState": {
             "type": "string"
@@ -2581,7 +2595,8 @@
             ]
         },
         "CancelledSpotInstanceRequestList": {
-            "type": "list"
+            "type": "list",
+            "of": "CancelledSpotInstanceRequest"
         },
         "ClassicLinkInstance": {
             "type": "structure",
@@ -2613,7 +2628,8 @@
             ]
         },
         "ClassicLinkInstanceList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClassicLinkInstance"
         },
         "ClientData": {
             "type": "structure",
@@ -2682,7 +2698,8 @@
             "type": "string"
         },
         "ConversionIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ConversionTask": {
             "type": "structure",
@@ -3562,7 +3579,8 @@
             ]
         },
         "CreateVolumePermissionList": {
-            "type": "list"
+            "type": "list",
+            "of": "CreateVolumePermission"
         },
         "CreateVolumePermissionModifications": {
             "type": "structure",
@@ -3887,10 +3905,12 @@
             ]
         },
         "CustomerGatewayIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "CustomerGatewayList": {
-            "type": "list"
+            "type": "list",
+            "of": "CustomerGateway"
         },
         "DatafeedSubscriptionState": {
             "type": "string"
@@ -4531,7 +4551,8 @@
             ]
         },
         "DescribeConversionTaskList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConversionTask"
         },
         "DescribeConversionTasksRequest": {
             "type": "structure",
@@ -6735,7 +6756,8 @@
             ]
         },
         "DhcpConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "DhcpConfiguration"
         },
         "DhcpOptions": {
             "type": "structure",
@@ -6761,10 +6783,12 @@
             ]
         },
         "DhcpOptionsIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "DhcpOptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "DhcpOptions"
         },
         "DisableVgwRoutePropagationRequest": {
             "type": "structure",
@@ -6923,7 +6947,8 @@
             "type": "string"
         },
         "DiskImageList": {
-            "type": "list"
+            "type": "list",
+            "of": "DiskImage"
         },
         "DiskImageVolumeDescription": {
             "type": "structure",
@@ -7125,7 +7150,8 @@
             "type": "string"
         },
         "ExecutableByStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ExportEnvironment": {
             "type": "string"
@@ -7172,10 +7198,12 @@
             ]
         },
         "ExportTaskIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ExportTaskList": {
-            "type": "list"
+            "type": "list",
+            "of": "ExportTask"
         },
         "ExportTaskState": {
             "type": "string"
@@ -7255,7 +7283,8 @@
             ]
         },
         "FilterList": {
-            "type": "list"
+            "type": "list",
+            "of": "Filter"
         },
         "Float": {
             "type": "float"
@@ -7320,7 +7349,8 @@
             ]
         },
         "FlowLogSet": {
-            "type": "list"
+            "type": "list",
+            "of": "FlowLog"
         },
         "FlowLogsResourceType": {
             "type": "string"
@@ -7407,7 +7437,8 @@
             ]
         },
         "GroupIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "GroupIdentifier": {
             "type": "structure",
@@ -7427,10 +7458,12 @@
             ]
         },
         "GroupIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "GroupIdentifier"
         },
         "GroupNameStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "HistoryRecord": {
             "type": "structure",
@@ -7456,7 +7489,8 @@
             ]
         },
         "HistoryRecords": {
-            "type": "list"
+            "type": "list",
+            "of": "HistoryRecord"
         },
         "HypervisorType": {
             "type": "string"
@@ -7746,13 +7780,16 @@
             ]
         },
         "ImageDiskContainerList": {
-            "type": "list"
+            "type": "list",
+            "of": "ImageDiskContainer"
         },
         "ImageIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ImageList": {
-            "type": "list"
+            "type": "list",
+            "of": "Image"
         },
         "ImageState": {
             "type": "string"
@@ -7959,7 +7996,8 @@
             ]
         },
         "ImportImageTaskList": {
-            "type": "list"
+            "type": "list",
+            "of": "ImportImageTask"
         },
         "ImportInstanceLaunchSpecification": {
             "type": "structure",
@@ -8155,7 +8193,8 @@
             ]
         },
         "ImportInstanceVolumeDetailSet": {
-            "type": "list"
+            "type": "list",
+            "of": "ImportInstanceVolumeDetailItem"
         },
         "ImportKeyPairRequest": {
             "type": "structure",
@@ -8279,10 +8318,12 @@
             ]
         },
         "ImportSnapshotTaskList": {
-            "type": "list"
+            "type": "list",
+            "of": "ImportSnapshotTask"
         },
         "ImportTaskIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ImportVolumeRequest": {
             "type": "structure",
@@ -8701,7 +8742,8 @@
             ]
         },
         "InstanceBlockDeviceMappingList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceBlockDeviceMapping"
         },
         "InstanceBlockDeviceMappingSpecification": {
             "type": "structure",
@@ -8733,7 +8775,8 @@
             ]
         },
         "InstanceBlockDeviceMappingSpecificationList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceBlockDeviceMappingSpecification"
         },
         "InstanceCount": {
             "type": "structure",
@@ -8753,7 +8796,8 @@
             ]
         },
         "InstanceCountList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceCount"
         },
         "InstanceExportDetails": {
             "type": "structure",
@@ -8773,13 +8817,15 @@
             ]
         },
         "InstanceIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "InstanceLifecycleType": {
             "type": "string"
         },
         "InstanceList": {
-            "type": "list"
+            "type": "list",
+            "of": "Instance"
         },
         "InstanceMonitoring": {
             "type": "structure",
@@ -8799,7 +8845,8 @@
             ]
         },
         "InstanceMonitoringList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceMonitoring"
         },
         "InstanceNetworkInterface": {
             "type": "structure",
@@ -8949,7 +8996,8 @@
             ]
         },
         "InstanceNetworkInterfaceList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceNetworkInterface"
         },
         "InstanceNetworkInterfaceSpecification": {
             "type": "structure",
@@ -9018,7 +9066,8 @@
             ]
         },
         "InstanceNetworkInterfaceSpecificationList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceNetworkInterfaceSpecification"
         },
         "InstancePrivateIpAddress": {
             "type": "structure",
@@ -9050,7 +9099,8 @@
             ]
         },
         "InstancePrivateIpAddressList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstancePrivateIpAddress"
         },
         "InstanceState": {
             "type": "structure",
@@ -9093,7 +9143,8 @@
             ]
         },
         "InstanceStateChangeList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceStateChange"
         },
         "InstanceStateName": {
             "type": "string"
@@ -9163,7 +9214,8 @@
             ]
         },
         "InstanceStatusDetailsList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceStatusDetails"
         },
         "InstanceStatusEvent": {
             "type": "structure",
@@ -9195,10 +9247,12 @@
             ]
         },
         "InstanceStatusEventList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceStatusEvent"
         },
         "InstanceStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceStatus"
         },
         "InstanceStatusSummary": {
             "type": "structure",
@@ -9221,7 +9275,8 @@
             "type": "string"
         },
         "InstanceTypeList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceType"
         },
         "Integer": {
             "type": "integer"
@@ -9267,10 +9322,12 @@
             ]
         },
         "InternetGatewayAttachmentList": {
-            "type": "list"
+            "type": "list",
+            "of": "InternetGatewayAttachment"
         },
         "InternetGatewayList": {
-            "type": "list"
+            "type": "list",
+            "of": "InternetGateway"
         },
         "IpPermission": {
             "type": "structure",
@@ -9314,7 +9371,8 @@
             ]
         },
         "IpPermissionList": {
-            "type": "list"
+            "type": "list",
+            "of": "IpPermission"
         },
         "IpRange": {
             "type": "structure",
@@ -9328,10 +9386,12 @@
             ]
         },
         "IpRangeList": {
-            "type": "list"
+            "type": "list",
+            "of": "IpRange"
         },
         "KeyNameStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "KeyPair": {
             "type": "structure",
@@ -9374,7 +9434,8 @@
             ]
         },
         "KeyPairList": {
-            "type": "list"
+            "type": "list",
+            "of": "KeyPairInfo"
         },
         "LaunchPermission": {
             "type": "structure",
@@ -9394,7 +9455,8 @@
             ]
         },
         "LaunchPermissionList": {
-            "type": "list"
+            "type": "list",
+            "of": "LaunchPermission"
         },
         "LaunchPermissionModifications": {
             "type": "structure",
@@ -9506,7 +9568,8 @@
             ]
         },
         "LaunchSpecsList": {
-            "type": "list"
+            "type": "list",
+            "of": "SpotFleetLaunchSpecification"
         },
         "ListingState": {
             "type": "string"
@@ -9991,7 +10054,8 @@
             ]
         },
         "MovingAddressStatusSet": {
-            "type": "list"
+            "type": "list",
+            "of": "MovingAddressStatus"
         },
         "NetworkAcl": {
             "type": "structure",
@@ -10058,7 +10122,8 @@
             ]
         },
         "NetworkAclAssociationList": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkAclAssociation"
         },
         "NetworkAclEntry": {
             "type": "structure",
@@ -10108,10 +10173,12 @@
             ]
         },
         "NetworkAclEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkAclEntry"
         },
         "NetworkAclList": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkAcl"
         },
         "NetworkInterface": {
             "type": "structure",
@@ -10329,10 +10396,12 @@
             "type": "string"
         },
         "NetworkInterfaceIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "NetworkInterfaceList": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkInterface"
         },
         "NetworkInterfacePrivateIpAddress": {
             "type": "structure",
@@ -10364,7 +10433,8 @@
             ]
         },
         "NetworkInterfacePrivateIpAddressList": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkInterfacePrivateIpAddress"
         },
         "NetworkInterfaceStatus": {
             "type": "string"
@@ -10373,7 +10443,8 @@
             "type": "string"
         },
         "OwnerStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "PermissionGroup": {
             "type": "string"
@@ -10425,13 +10496,15 @@
             ]
         },
         "PlacementGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "PlacementGroup"
         },
         "PlacementGroupState": {
             "type": "string"
         },
         "PlacementGroupStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "PlacementStrategy": {
             "type": "string"
@@ -10491,10 +10564,12 @@
             ]
         },
         "PrefixListIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "PrefixListId"
         },
         "PrefixListSet": {
-            "type": "list"
+            "type": "list",
+            "of": "PrefixList"
         },
         "PriceSchedule": {
             "type": "structure",
@@ -10526,7 +10601,8 @@
             ]
         },
         "PriceScheduleList": {
-            "type": "list"
+            "type": "list",
+            "of": "PriceSchedule"
         },
         "PriceScheduleSpecification": {
             "type": "structure",
@@ -10552,7 +10628,8 @@
             ]
         },
         "PriceScheduleSpecificationList": {
-            "type": "list"
+            "type": "list",
+            "of": "PriceScheduleSpecification"
         },
         "PricingDetail": {
             "type": "structure",
@@ -10572,7 +10649,8 @@
             ]
         },
         "PricingDetailsList": {
-            "type": "list"
+            "type": "list",
+            "of": "PricingDetail"
         },
         "PrivateIpAddressSpecification": {
             "type": "structure",
@@ -10592,10 +10670,12 @@
             ]
         },
         "PrivateIpAddressSpecificationList": {
-            "type": "list"
+            "type": "list",
+            "of": "PrivateIpAddressSpecification"
         },
         "PrivateIpAddressStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ProductCode": {
             "type": "structure",
@@ -10615,16 +10695,19 @@
             ]
         },
         "ProductCodeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ProductCode"
         },
         "ProductCodeStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ProductCodeValues": {
             "type": "string"
         },
         "ProductDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "PropagatingVgw": {
             "type": "structure",
@@ -10638,10 +10721,12 @@
             ]
         },
         "PropagatingVgwList": {
-            "type": "list"
+            "type": "list",
+            "of": "PropagatingVgw"
         },
         "PublicIpStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "PurchaseReservedInstancesOfferingRequest": {
             "type": "structure",
@@ -10685,7 +10770,8 @@
             "type": "string"
         },
         "ReasonCodesList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReportInstanceReasonCodes"
         },
         "RebootInstancesRequest": {
             "type": "structure",
@@ -10725,7 +10811,8 @@
             "type": "string"
         },
         "RecurringChargesList": {
-            "type": "list"
+            "type": "list",
+            "of": "RecurringCharge"
         },
         "Region": {
             "type": "structure",
@@ -10745,10 +10832,12 @@
             ]
         },
         "RegionList": {
-            "type": "list"
+            "type": "list",
+            "of": "Region"
         },
         "RegionNameStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "RegisterImageRequest": {
             "type": "structure",
@@ -11245,7 +11334,8 @@
             ]
         },
         "ReservationList": {
-            "type": "list"
+            "type": "list",
+            "of": "Reservation"
         },
         "ReservedInstanceLimitPrice": {
             "type": "structure",
@@ -11398,7 +11488,8 @@
             ]
         },
         "ReservedInstancesConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstancesConfiguration"
         },
         "ReservedInstancesId": {
             "type": "structure",
@@ -11412,10 +11503,12 @@
             ]
         },
         "ReservedInstancesIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ReservedInstancesList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstances"
         },
         "ReservedInstancesListing": {
             "type": "structure",
@@ -11483,7 +11576,8 @@
             ]
         },
         "ReservedInstancesListingList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstancesListing"
         },
         "ReservedInstancesModification": {
             "type": "structure",
@@ -11545,10 +11639,12 @@
             ]
         },
         "ReservedInstancesModificationIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ReservedInstancesModificationList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstancesModification"
         },
         "ReservedInstancesModificationResult": {
             "type": "structure",
@@ -11568,7 +11664,8 @@
             ]
         },
         "ReservedInstancesModificationResultList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstancesModificationResult"
         },
         "ReservedInstancesOffering": {
             "type": "structure",
@@ -11654,13 +11751,16 @@
             ]
         },
         "ReservedInstancesOfferingIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ReservedInstancesOfferingList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstancesOffering"
         },
         "ReservedIntancesIds": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedInstancesId"
         },
         "ResetImageAttributeName": {
             "type": "string"
@@ -11754,13 +11854,15 @@
             ]
         },
         "ResourceIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ResourceType": {
             "type": "string"
         },
         "RestorableByStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "RestoreAddressToClassicRequest": {
             "type": "structure",
@@ -11971,7 +12073,8 @@
             ]
         },
         "RouteList": {
-            "type": "list"
+            "type": "list",
+            "of": "Route"
         },
         "RouteOrigin": {
             "type": "string"
@@ -12050,10 +12153,12 @@
             ]
         },
         "RouteTableAssociationList": {
-            "type": "list"
+            "type": "list",
+            "of": "RouteTableAssociation"
         },
         "RouteTableList": {
-            "type": "list"
+            "type": "list",
+            "of": "RouteTable"
         },
         "RuleAction": {
             "type": "string"
@@ -12289,13 +12394,16 @@
             ]
         },
         "SecurityGroupIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SecurityGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "SecurityGroup"
         },
         "SecurityGroupStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ShutdownBehavior": {
             "type": "string"
@@ -12445,7 +12553,8 @@
             ]
         },
         "SnapshotDetailList": {
-            "type": "list"
+            "type": "list",
+            "of": "SnapshotDetail"
         },
         "SnapshotDiskContainer": {
             "type": "structure",
@@ -12472,10 +12581,12 @@
             ]
         },
         "SnapshotIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SnapshotList": {
-            "type": "list"
+            "type": "list",
+            "of": "Snapshot"
         },
         "SnapshotState": {
             "type": "string"
@@ -12755,7 +12866,8 @@
             ]
         },
         "SpotFleetRequestConfigSet": {
-            "type": "list"
+            "type": "list",
+            "of": "SpotFleetRequestConfig"
         },
         "SpotInstanceRequest": {
             "type": "structure",
@@ -12859,10 +12971,12 @@
             ]
         },
         "SpotInstanceRequestIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SpotInstanceRequestList": {
-            "type": "list"
+            "type": "list",
+            "of": "SpotInstanceRequest"
         },
         "SpotInstanceState": {
             "type": "string"
@@ -12963,7 +13077,8 @@
             ]
         },
         "SpotPriceHistoryList": {
-            "type": "list"
+            "type": "list",
+            "of": "SpotPrice"
         },
         "StartInstancesRequest": {
             "type": "structure",
@@ -13135,10 +13250,12 @@
             ]
         },
         "SubnetIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SubnetList": {
-            "type": "list"
+            "type": "list",
+            "of": "Subnet"
         },
         "SubnetState": {
             "type": "string"
@@ -13193,10 +13310,12 @@
             ]
         },
         "TagDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagDescription"
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TelemetryStatus": {
             "type": "string"
@@ -13315,7 +13434,8 @@
             ]
         },
         "UnsuccessfulItemSet": {
-            "type": "list"
+            "type": "list",
+            "of": "UnsuccessfulItem"
         },
         "UserBucket": {
             "type": "structure",
@@ -13361,7 +13481,8 @@
             ]
         },
         "UserGroupStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "UserIdGroupPair": {
             "type": "structure",
@@ -13387,13 +13508,16 @@
             ]
         },
         "UserIdGroupPairList": {
-            "type": "list"
+            "type": "list",
+            "of": "UserIdGroupPair"
         },
         "UserIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ValueStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VgwTelemetry": {
             "type": "structure",
@@ -13431,7 +13555,8 @@
             ]
         },
         "VgwTelemetryList": {
-            "type": "list"
+            "type": "list",
+            "of": "VgwTelemetry"
         },
         "VirtualizationType": {
             "type": "string"
@@ -13555,7 +13680,8 @@
             ]
         },
         "VolumeAttachmentList": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeAttachment"
         },
         "VolumeAttachmentState": {
             "type": "string"
@@ -13575,10 +13701,12 @@
             ]
         },
         "VolumeIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VolumeList": {
-            "type": "list"
+            "type": "list",
+            "of": "Volume"
         },
         "VolumeState": {
             "type": "string"
@@ -13613,7 +13741,8 @@
             ]
         },
         "VolumeStatusActionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeStatusAction"
         },
         "VolumeStatusDetails": {
             "type": "structure",
@@ -13633,7 +13762,8 @@
             ]
         },
         "VolumeStatusDetailsList": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeStatusDetails"
         },
         "VolumeStatusEvent": {
             "type": "structure",
@@ -13671,7 +13801,8 @@
             ]
         },
         "VolumeStatusEventsList": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeStatusEvent"
         },
         "VolumeStatusInfo": {
             "type": "structure",
@@ -13729,7 +13860,8 @@
             ]
         },
         "VolumeStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeStatusItem"
         },
         "VolumeStatusName": {
             "type": "string"
@@ -13802,7 +13934,8 @@
             ]
         },
         "VpcAttachmentList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpcAttachment"
         },
         "VpcAttributeName": {
             "type": "string"
@@ -13831,10 +13964,12 @@
             ]
         },
         "VpcClassicLinkIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VpcClassicLinkList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpcClassicLink"
         },
         "VpcEndpoint": {
             "type": "structure",
@@ -13884,13 +14019,16 @@
             ]
         },
         "VpcEndpointSet": {
-            "type": "list"
+            "type": "list",
+            "of": "VpcEndpoint"
         },
         "VpcIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VpcList": {
-            "type": "list"
+            "type": "list",
+            "of": "Vpc"
         },
         "VpcPeeringConnection": {
             "type": "structure",
@@ -13934,7 +14072,8 @@
             ]
         },
         "VpcPeeringConnectionList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpcPeeringConnection"
         },
         "VpcPeeringConnectionStateReason": {
             "type": "structure",
@@ -14048,10 +14187,12 @@
             ]
         },
         "VpnConnectionIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VpnConnectionList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpnConnection"
         },
         "VpnConnectionOptions": {
             "type": "structure",
@@ -14117,10 +14258,12 @@
             ]
         },
         "VpnGatewayIdStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VpnGatewayList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpnGateway"
         },
         "VpnState": {
             "type": "string"
@@ -14149,16 +14292,19 @@
             ]
         },
         "VpnStaticRouteList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpnStaticRoute"
         },
         "VpnStaticRouteSource": {
             "type": "string"
         },
         "ZoneNameStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "NewDhcpConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "NewDhcpConfiguration"
         },
         "NewDhcpConfiguration": {
             "type": "structure",
@@ -14176,7 +14322,8 @@
             ]
         },
         "DhcpConfigurationValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeValue"
         },
         "Blob": {
             "type": "blob"

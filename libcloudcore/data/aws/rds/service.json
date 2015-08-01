@@ -697,7 +697,8 @@
             ]
         },
         "AccountQuotaList": {
-            "type": "list"
+            "type": "list",
+            "of": "AccountQuota"
         },
         "AddSourceIdentifierToSubscriptionMessage": {
             "type": "structure",
@@ -805,10 +806,12 @@
             ]
         },
         "AvailabilityZoneList": {
-            "type": "list"
+            "type": "list",
+            "of": "AvailabilityZone"
         },
         "AvailabilityZones": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "Boolean": {
             "type": "boolean"
@@ -847,7 +850,8 @@
             ]
         },
         "CertificateList": {
-            "type": "list"
+            "type": "list",
+            "of": "Certificate"
         },
         "CertificateMessage": {
             "type": "structure",
@@ -1619,7 +1623,8 @@
             "members": []
         },
         "DBClusterList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBCluster"
         },
         "DBClusterMember": {
             "type": "structure",
@@ -1642,7 +1647,8 @@
             ]
         },
         "DBClusterMemberList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBClusterMember"
         },
         "DBClusterMessage": {
             "type": "structure",
@@ -1664,7 +1670,8 @@
             "members": []
         },
         "DBClusterOptionGroupMemberships": {
-            "type": "list"
+            "type": "list",
+            "of": "DBClusterOptionGroupStatus"
         },
         "DBClusterOptionGroupStatus": {
             "type": "structure",
@@ -1717,7 +1724,8 @@
             ]
         },
         "DBClusterParameterGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBClusterParameterGroup"
         },
         "DBClusterParameterGroupNameMessage": {
             "type": "structure",
@@ -1837,7 +1845,8 @@
             "members": []
         },
         "DBClusterSnapshotList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBClusterSnapshot"
         },
         "DBClusterSnapshotMessage": {
             "type": "structure",
@@ -1899,7 +1908,8 @@
             ]
         },
         "DBEngineVersionList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBEngineVersion"
         },
         "DBEngineVersionMessage": {
             "type": "structure",
@@ -2131,7 +2141,8 @@
             "members": []
         },
         "DBInstanceList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBInstance"
         },
         "DBInstanceMessage": {
             "type": "structure",
@@ -2178,7 +2189,8 @@
             ]
         },
         "DBInstanceStatusInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBInstanceStatusInfo"
         },
         "DBLogFileNotFoundFault": {
             "type": "structure",
@@ -2224,7 +2236,8 @@
             ]
         },
         "DBParameterGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBParameterGroup"
         },
         "DBParameterGroupNameMessage": {
             "type": "structure",
@@ -2260,7 +2273,8 @@
             ]
         },
         "DBParameterGroupStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBParameterGroupStatus"
         },
         "DBParameterGroupsMessage": {
             "type": "structure",
@@ -2332,7 +2346,8 @@
             ]
         },
         "DBSecurityGroupMembershipList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBSecurityGroupMembership"
         },
         "DBSecurityGroupMessage": {
             "type": "structure",
@@ -2350,7 +2365,8 @@
             ]
         },
         "DBSecurityGroupNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "DBSecurityGroupNotFoundFault": {
             "type": "structure",
@@ -2365,7 +2381,8 @@
             "members": []
         },
         "DBSecurityGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "DBSecurityGroup"
         },
         "DBSnapshot": {
             "type": "structure",
@@ -2492,7 +2509,8 @@
             "members": []
         },
         "DBSnapshotList": {
-            "type": "list"
+            "type": "list",
+            "of": "DBSnapshot"
         },
         "DBSnapshotMessage": {
             "type": "structure",
@@ -2579,7 +2597,8 @@
             "members": []
         },
         "DBSubnetGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "DBSubnetGroup"
         },
         "DBSubnetQuotaExceededFault": {
             "type": "structure",
@@ -2944,7 +2963,8 @@
             ]
         },
         "DescribeDBLogFilesList": {
-            "type": "list"
+            "type": "list",
+            "of": "DescribeDBLogFilesDetails"
         },
         "DescribeDBLogFilesMessage": {
             "type": "structure",
@@ -3542,7 +3562,8 @@
             ]
         },
         "DomainMembershipList": {
-            "type": "list"
+            "type": "list",
+            "of": "DomainMembership"
         },
         "DomainNotFoundFault": {
             "type": "structure",
@@ -3622,7 +3643,8 @@
             ]
         },
         "EC2SecurityGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "EC2SecurityGroup"
         },
         "Endpoint": {
             "type": "structure",
@@ -3690,7 +3712,8 @@
             ]
         },
         "EventCategoriesList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "EventCategoriesMap": {
             "type": "structure",
@@ -3708,7 +3731,8 @@
             ]
         },
         "EventCategoriesMapList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventCategoriesMap"
         },
         "EventCategoriesMessage": {
             "type": "structure",
@@ -3721,7 +3745,8 @@
             ]
         },
         "EventList": {
-            "type": "list"
+            "type": "list",
+            "of": "Event"
         },
         "EventSubscription": {
             "type": "structure",
@@ -3778,7 +3803,8 @@
             "members": []
         },
         "EventSubscriptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventSubscription"
         },
         "EventSubscriptionsMessage": {
             "type": "structure",
@@ -3836,10 +3862,12 @@
             ]
         },
         "FilterList": {
-            "type": "list"
+            "type": "list",
+            "of": "Filter"
         },
         "FilterValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "IPRange": {
             "type": "structure",
@@ -3857,7 +3885,8 @@
             ]
         },
         "IPRangeList": {
-            "type": "list"
+            "type": "list",
+            "of": "IPRange"
         },
         "InstanceQuotaExceededFault": {
             "type": "structure",
@@ -3946,7 +3975,8 @@
             "members": []
         },
         "KeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ListTagsForResourceMessage": {
             "type": "structure",
@@ -4332,7 +4362,8 @@
             ]
         },
         "OptionConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionConfiguration"
         },
         "OptionGroup": {
             "type": "structure",
@@ -4394,7 +4425,8 @@
             ]
         },
         "OptionGroupMembershipList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionGroupMembership"
         },
         "OptionGroupNotFoundFault": {
             "type": "structure",
@@ -4496,10 +4528,12 @@
             ]
         },
         "OptionGroupOptionSettingsList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionGroupOptionSetting"
         },
         "OptionGroupOptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionGroupOption"
         },
         "OptionGroupOptionsMessage": {
             "type": "structure",
@@ -4535,10 +4569,12 @@
             ]
         },
         "OptionGroupsList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionGroup"
         },
         "OptionNamesList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "OptionSetting": {
             "type": "structure",
@@ -4591,16 +4627,20 @@
             ]
         },
         "OptionSettingConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionSetting"
         },
         "OptionSettingsList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionSetting"
         },
         "OptionsDependedOn": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "OptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "Option"
         },
         "OrderableDBInstanceOption": {
             "type": "structure",
@@ -4663,7 +4703,8 @@
             ]
         },
         "OrderableDBInstanceOptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "OrderableDBInstanceOption"
         },
         "OrderableDBInstanceOptionsMessage": {
             "type": "structure",
@@ -4736,7 +4777,8 @@
             ]
         },
         "ParametersList": {
-            "type": "list"
+            "type": "list",
+            "of": "Parameter"
         },
         "PendingMaintenanceAction": {
             "type": "structure",
@@ -4774,10 +4816,12 @@
             ]
         },
         "PendingMaintenanceActionDetails": {
-            "type": "list"
+            "type": "list",
+            "of": "PendingMaintenanceAction"
         },
         "PendingMaintenanceActions": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourcePendingMaintenanceActions"
         },
         "PendingMaintenanceActionsMessage": {
             "type": "structure",
@@ -4907,7 +4951,8 @@
             ]
         },
         "ReadReplicaDBInstanceIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "RebootDBInstanceMessage": {
             "type": "structure",
@@ -4940,7 +4985,8 @@
             ]
         },
         "RecurringChargeList": {
-            "type": "list"
+            "type": "list",
+            "of": "RecurringCharge"
         },
         "RemoveSourceIdentifierFromSubscriptionMessage": {
             "type": "structure",
@@ -5052,7 +5098,8 @@
             "members": []
         },
         "ReservedDBInstanceList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedDBInstance"
         },
         "ReservedDBInstanceMessage": {
             "type": "structure",
@@ -5133,7 +5180,8 @@
             ]
         },
         "ReservedDBInstancesOfferingList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedDBInstancesOffering"
         },
         "ReservedDBInstancesOfferingMessage": {
             "type": "structure",
@@ -5607,7 +5655,8 @@
             "members": []
         },
         "SourceIdsList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SourceNotFoundFault": {
             "type": "structure",
@@ -5651,10 +5700,12 @@
             "members": []
         },
         "SubnetIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SubnetList": {
-            "type": "list"
+            "type": "list",
+            "of": "Subnet"
         },
         "SubscriptionAlreadyExistFault": {
             "type": "structure",
@@ -5669,7 +5720,8 @@
             "members": []
         },
         "SupportedCharacterSetsList": {
-            "type": "list"
+            "type": "list",
+            "of": "CharacterSet"
         },
         "TStamp": {
             "type": "timestamp"
@@ -5690,7 +5742,8 @@
             ]
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagListMessage": {
             "type": "structure",
@@ -5703,7 +5756,8 @@
             ]
         },
         "VpcSecurityGroupIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VpcSecurityGroupMembership": {
             "type": "structure",
@@ -5721,7 +5775,8 @@
             ]
         },
         "VpcSecurityGroupMembershipList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpcSecurityGroupMembership"
         },
         "AddSourceIdentifierToSubscriptionResult": {
             "type": "structure",

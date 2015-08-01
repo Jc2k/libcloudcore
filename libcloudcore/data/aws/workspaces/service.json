@@ -79,10 +79,12 @@
             "type": "string"
         },
         "BundleIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "BundleId"
         },
         "BundleList": {
-            "type": "list"
+            "type": "list",
+            "of": "WorkspaceBundle"
         },
         "BundleOwner": {
             "type": "string"
@@ -280,16 +282,19 @@
             "type": "string"
         },
         "DirectoryIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "DirectoryId"
         },
         "DirectoryList": {
-            "type": "list"
+            "type": "list",
+            "of": "WorkspaceDirectory"
         },
         "DirectoryName": {
             "type": "string"
         },
         "DnsIpAddresses": {
-            "type": "list"
+            "type": "list",
+            "of": "IpAddress"
         },
         "ErrorType": {
             "type": "string"
@@ -318,16 +323,20 @@
             ]
         },
         "FailedCreateWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "FailedCreateWorkspaceRequest"
         },
         "FailedRebootWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "FailedWorkspaceChangeRequest"
         },
         "FailedRebuildWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "FailedWorkspaceChangeRequest"
         },
         "FailedTerminateWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "FailedWorkspaceChangeRequest"
         },
         "FailedWorkspaceChangeRequest": {
             "type": "structure",
@@ -382,7 +391,8 @@
             ]
         },
         "RebootWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "RebootRequest"
         },
         "RebootWorkspacesRequest": {
             "type": "structure",
@@ -415,7 +425,8 @@
             ]
         },
         "RebuildWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "RebuildRequest"
         },
         "RebuildWorkspacesRequest": {
             "type": "structure",
@@ -472,7 +483,8 @@
             "type": "string"
         },
         "SubnetIds": {
-            "type": "list"
+            "type": "list",
+            "of": "SubnetId"
         },
         "TerminateRequest": {
             "type": "structure",
@@ -485,7 +497,8 @@
             ]
         },
         "TerminateWorkspaceRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "TerminateRequest"
         },
         "TerminateWorkspacesRequest": {
             "type": "structure",
@@ -683,10 +696,12 @@
             "type": "string"
         },
         "WorkspaceIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "WorkspaceId"
         },
         "WorkspaceList": {
-            "type": "list"
+            "type": "list",
+            "of": "Workspace"
         },
         "WorkspaceRequest": {
             "type": "structure",
@@ -709,7 +724,8 @@
             ]
         },
         "WorkspaceRequestList": {
-            "type": "list"
+            "type": "list",
+            "of": "WorkspaceRequest"
         },
         "WorkspaceState": {
             "type": "string"

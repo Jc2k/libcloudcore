@@ -127,7 +127,8 @@
             ]
         },
         "AlarmHistoryItems": {
-            "type": "list"
+            "type": "list",
+            "of": "AlarmHistoryItem"
         },
         "AlarmName": {
             "type": "string"
@@ -136,7 +137,8 @@
             "type": "string"
         },
         "AlarmNames": {
-            "type": "list"
+            "type": "list",
+            "of": "AlarmName"
         },
         "AwsQueryErrorMessage": {
             "type": "string"
@@ -188,7 +190,8 @@
             "type": "double"
         },
         "Datapoints": {
-            "type": "list"
+            "type": "list",
+            "of": "Datapoint"
         },
         "DeleteAlarmsInput": {
             "type": "structure",
@@ -376,7 +379,8 @@
             ]
         },
         "DimensionFilters": {
-            "type": "list"
+            "type": "list",
+            "of": "DimensionFilter"
         },
         "DimensionName": {
             "type": "string"
@@ -385,7 +389,8 @@
             "type": "string"
         },
         "Dimensions": {
-            "type": "list"
+            "type": "list",
+            "of": "Dimension"
         },
         "DisableAlarmActionsInput": {
             "type": "structure",
@@ -719,10 +724,12 @@
             ]
         },
         "MetricAlarms": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricAlarm"
         },
         "MetricData": {
-            "type": "list"
+            "type": "list",
+            "of": "MetricDatum"
         },
         "MetricDatum": {
             "type": "structure",
@@ -766,7 +773,8 @@
             "type": "string"
         },
         "Metrics": {
-            "type": "list"
+            "type": "list",
+            "of": "Metric"
         },
         "MissingRequiredParameterException": {
             "type": "structure",
@@ -883,7 +891,8 @@
             ]
         },
         "ResourceList": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceName"
         },
         "ResourceName": {
             "type": "string"
@@ -964,7 +973,8 @@
             ]
         },
         "Statistics": {
-            "type": "list"
+            "type": "list",
+            "of": "Statistic"
         },
         "Threshold": {
             "type": "double"

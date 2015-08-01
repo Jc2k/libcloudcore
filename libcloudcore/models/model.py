@@ -71,7 +71,6 @@ class Structure(Shape):
 
     def iter_members(self):
         for member in self._shape['members']:
-            print(member)
             yield Member(self.model, member['name'], member)
 
 
@@ -162,6 +161,7 @@ class Model(object):
         'map': Map,
         'string': String,
         'integer': Integer,
+        'long': Integer,
         'boolean': Boolean,
     }
 

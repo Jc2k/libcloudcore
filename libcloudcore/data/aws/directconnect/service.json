@@ -358,7 +358,8 @@
             "type": "string"
         },
         "ConnectionList": {
-            "type": "list"
+            "type": "list",
+            "of": "Connection"
         },
         "ConnectionName": {
             "type": "string"
@@ -584,7 +585,8 @@
             "type": "string"
         },
         "InterconnectList": {
-            "type": "list"
+            "type": "list",
+            "of": "Interconnect"
         },
         "InterconnectName": {
             "type": "string"
@@ -621,7 +623,8 @@
             "type": "string"
         },
         "LocationList": {
-            "type": "list"
+            "type": "list",
+            "of": "Location"
         },
         "LocationName": {
             "type": "string"
@@ -783,7 +786,8 @@
             ]
         },
         "RouteFilterPrefixList": {
-            "type": "list"
+            "type": "list",
+            "of": "RouteFilterPrefix"
         },
         "RouterConfig": {
             "type": "string"
@@ -808,7 +812,8 @@
             "type": "string"
         },
         "VirtualGatewayList": {
-            "type": "list"
+            "type": "list",
+            "of": "VirtualGateway"
         },
         "VirtualGatewayState": {
             "type": "string"
@@ -893,7 +898,8 @@
             "type": "string"
         },
         "VirtualInterfaceList": {
-            "type": "list"
+            "type": "list",
+            "of": "VirtualInterface"
         },
         "VirtualInterfaceName": {
             "type": "string"

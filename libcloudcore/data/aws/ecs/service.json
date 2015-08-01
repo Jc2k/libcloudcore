@@ -320,7 +320,8 @@
             "members": []
         },
         "Clusters": {
-            "type": "list"
+            "type": "list",
+            "of": "Cluster"
         },
         "Container": {
             "type": "structure",
@@ -428,7 +429,8 @@
             ]
         },
         "ContainerDefinitions": {
-            "type": "list"
+            "type": "list",
+            "of": "ContainerDefinition"
         },
         "ContainerInstance": {
             "type": "structure",
@@ -486,7 +488,8 @@
             ]
         },
         "ContainerInstances": {
-            "type": "list"
+            "type": "list",
+            "of": "ContainerInstance"
         },
         "ContainerOverride": {
             "type": "structure",
@@ -509,10 +512,12 @@
             ]
         },
         "ContainerOverrides": {
-            "type": "list"
+            "type": "list",
+            "of": "ContainerOverride"
         },
         "Containers": {
-            "type": "list"
+            "type": "list",
+            "of": "Container"
         },
         "CreateClusterRequest": {
             "type": "structure",
@@ -674,7 +679,8 @@
             ]
         },
         "Deployments": {
-            "type": "list"
+            "type": "list",
+            "of": "Deployment"
         },
         "DeregisterContainerInstanceRequest": {
             "type": "structure",
@@ -894,7 +900,8 @@
             "type": "double"
         },
         "EnvironmentVariables": {
-            "type": "list"
+            "type": "list",
+            "of": "KeyValuePair"
         },
         "Failure": {
             "type": "structure",
@@ -912,7 +919,8 @@
             ]
         },
         "Failures": {
-            "type": "list"
+            "type": "list",
+            "of": "Failure"
         },
         "HostVolumeProperties": {
             "type": "structure",
@@ -1207,7 +1215,8 @@
             ]
         },
         "LoadBalancers": {
-            "type": "list"
+            "type": "list",
+            "of": "LoadBalancer"
         },
         "Long": {
             "type": "long"
@@ -1237,7 +1246,8 @@
             ]
         },
         "MountPointList": {
-            "type": "list"
+            "type": "list",
+            "of": "MountPoint"
         },
         "NetworkBinding": {
             "type": "structure",
@@ -1265,7 +1275,8 @@
             ]
         },
         "NetworkBindings": {
-            "type": "list"
+            "type": "list",
+            "of": "NetworkBinding"
         },
         "NoUpdateAvailableException": {
             "type": "structure",
@@ -1292,7 +1303,8 @@
             ]
         },
         "PortMappingList": {
-            "type": "list"
+            "type": "list",
+            "of": "PortMapping"
         },
         "RegisterContainerInstanceRequest": {
             "type": "structure",
@@ -1403,7 +1415,8 @@
             ]
         },
         "Resources": {
-            "type": "list"
+            "type": "list",
+            "of": "Resource"
         },
         "RunTaskRequest": {
             "type": "structure",
@@ -1545,7 +1558,8 @@
             ]
         },
         "ServiceEvents": {
-            "type": "list"
+            "type": "list",
+            "of": "ServiceEvent"
         },
         "ServiceNotActiveException": {
             "type": "structure",
@@ -1556,7 +1570,8 @@
             "members": []
         },
         "Services": {
-            "type": "list"
+            "type": "list",
+            "of": "Service"
         },
         "SortOrder": {
             "type": "string"
@@ -1634,7 +1649,8 @@
             "type": "string"
         },
         "StringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SubmitContainerStateChangeRequest": {
             "type": "structure",
@@ -1820,7 +1836,8 @@
             ]
         },
         "Tasks": {
-            "type": "list"
+            "type": "list",
+            "of": "Task"
         },
         "Timestamp": {
             "type": "timestamp"
@@ -1942,10 +1959,12 @@
             ]
         },
         "VolumeFromList": {
-            "type": "list"
+            "type": "list",
+            "of": "VolumeFrom"
         },
         "VolumeList": {
-            "type": "list"
+            "type": "list",
+            "of": "Volume"
         }
     }
 }

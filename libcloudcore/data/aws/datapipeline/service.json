@@ -524,7 +524,8 @@
             ]
         },
         "ParameterAttributeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ParameterAttribute"
         },
         "ParameterObject": {
             "type": "structure",
@@ -542,7 +543,8 @@
             ]
         },
         "ParameterObjectList": {
-            "type": "list"
+            "type": "list",
+            "of": "ParameterObject"
         },
         "ParameterValue": {
             "type": "structure",
@@ -560,7 +562,8 @@
             ]
         },
         "ParameterValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "ParameterValue"
         },
         "PipelineDeletedException": {
             "type": "structure",
@@ -603,7 +606,8 @@
             ]
         },
         "PipelineDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "PipelineDescription"
         },
         "PipelineIdName": {
             "type": "structure",
@@ -651,7 +655,8 @@
             ]
         },
         "PipelineObjectList": {
-            "type": "list"
+            "type": "list",
+            "of": "PipelineObject"
         },
         "PipelineObjectMap": {
             "type": "map"
@@ -880,7 +885,8 @@
             ]
         },
         "SelectorList": {
-            "type": "list"
+            "type": "list",
+            "of": "Selector"
         },
         "SetStatusInput": {
             "type": "structure",
@@ -1050,7 +1056,8 @@
             ]
         },
         "ValidationErrors": {
-            "type": "list"
+            "type": "list",
+            "of": "ValidationError"
         },
         "ValidationWarning": {
             "type": "structure",
@@ -1068,7 +1075,8 @@
             ]
         },
         "ValidationWarnings": {
-            "type": "list"
+            "type": "list",
+            "of": "ValidationWarning"
         },
         "attributeNameString": {
             "type": "string"
@@ -1086,7 +1094,8 @@
             "type": "string"
         },
         "fieldList": {
-            "type": "list"
+            "type": "list",
+            "of": "Field"
         },
         "fieldNameString": {
             "type": "string"
@@ -1098,7 +1107,8 @@
             "type": "string"
         },
         "idList": {
-            "type": "list"
+            "type": "list",
+            "of": "id"
         },
         "int": {
             "type": "integer"
@@ -1107,19 +1117,22 @@
             "type": "string"
         },
         "pipelineList": {
-            "type": "list"
+            "type": "list",
+            "of": "PipelineIdName"
         },
         "string": {
             "type": "string"
         },
         "stringList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "tagKey": {
             "type": "string"
         },
         "tagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "tagValue": {
             "type": "string"
@@ -1134,7 +1147,8 @@
             "type": "string"
         },
         "validationMessages": {
-            "type": "list"
+            "type": "list",
+            "of": "validationMessage"
         }
     }
 }

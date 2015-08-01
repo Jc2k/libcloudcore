@@ -184,7 +184,8 @@
             "type": "string"
         },
         "Attributes": {
-            "type": "list"
+            "type": "list",
+            "of": "Attribute"
         },
         "AuthenticationFailedException": {
             "type": "structure",
@@ -205,7 +206,8 @@
             "type": "string"
         },
         "AvailabilityZones": {
-            "type": "list"
+            "type": "list",
+            "of": "AvailabilityZone"
         },
         "ClientException": {
             "type": "structure",
@@ -714,13 +716,15 @@
             ]
         },
         "DirectoryDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "DirectoryDescription"
         },
         "DirectoryId": {
             "type": "string"
         },
         "DirectoryIds": {
-            "type": "list"
+            "type": "list",
+            "of": "DirectoryId"
         },
         "DirectoryLimitExceededException": {
             "type": "structure",
@@ -877,7 +881,8 @@
             "members": []
         },
         "DnsIpAddrs": {
-            "type": "list"
+            "type": "list",
+            "of": "IpAddr"
         },
         "EnableRadiusRequest": {
             "type": "structure",
@@ -1028,7 +1033,8 @@
             "type": "string"
         },
         "IpAddrs": {
-            "type": "list"
+            "type": "list",
+            "of": "IpAddr"
         },
         "LastUpdatedDateTime": {
             "type": "timestamp"
@@ -1144,7 +1150,8 @@
             "type": "string"
         },
         "Servers": {
-            "type": "list"
+            "type": "list",
+            "of": "Server"
         },
         "ServiceException": {
             "type": "structure",
@@ -1198,7 +1205,8 @@
             "type": "string"
         },
         "SnapshotIds": {
-            "type": "list"
+            "type": "list",
+            "of": "SnapshotId"
         },
         "SnapshotLimitExceededException": {
             "type": "structure",
@@ -1243,7 +1251,8 @@
             "type": "string"
         },
         "Snapshots": {
-            "type": "list"
+            "type": "list",
+            "of": "Snapshot"
         },
         "SsoEnabled": {
             "type": "boolean"
@@ -1258,7 +1267,8 @@
             "type": "string"
         },
         "SubnetIds": {
-            "type": "list"
+            "type": "list",
+            "of": "SubnetId"
         },
         "UnsupportedOperationException": {
             "type": "structure",

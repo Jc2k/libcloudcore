@@ -136,10 +136,12 @@
     },
     "shapes": {
         "AWSAccountIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ActionNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "AddPermissionRequest": {
             "type": "structure",
@@ -170,7 +172,8 @@
             "type": "map"
         },
         "AttributeNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "QueueAttributeName"
         },
         "BatchEntryIdsNotDistinct": {
             "type": "structure",
@@ -206,13 +209,15 @@
             ]
         },
         "BatchResultErrorEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "BatchResultErrorEntry"
         },
         "Binary": {
             "type": "blob"
         },
         "BinaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "Binary"
         },
         "Boolean": {
             "type": "boolean"
@@ -253,7 +258,8 @@
             ]
         },
         "ChangeMessageVisibilityBatchRequestEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "ChangeMessageVisibilityBatchRequestEntry"
         },
         "ChangeMessageVisibilityBatchResult": {
             "type": "structure",
@@ -281,7 +287,8 @@
             ]
         },
         "ChangeMessageVisibilityBatchResultEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "ChangeMessageVisibilityBatchResultEntry"
         },
         "ChangeMessageVisibilityRequest": {
             "type": "structure",
@@ -360,7 +367,8 @@
             ]
         },
         "DeleteMessageBatchRequestEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeleteMessageBatchRequestEntry"
         },
         "DeleteMessageBatchResult": {
             "type": "structure",
@@ -388,7 +396,8 @@
             ]
         },
         "DeleteMessageBatchResultEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeleteMessageBatchResultEntry"
         },
         "DeleteMessageRequest": {
             "type": "structure",
@@ -578,7 +587,8 @@
             "type": "string"
         },
         "MessageAttributeNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "MessageAttributeName"
         },
         "MessageAttributeValue": {
             "type": "structure",
@@ -615,7 +625,8 @@
             ]
         },
         "MessageList": {
-            "type": "list"
+            "type": "list",
+            "of": "Message"
         },
         "MessageNotInflight": {
             "type": "structure",
@@ -655,7 +666,8 @@
             "members": []
         },
         "QueueUrlList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ReceiptHandleIsInvalid": {
             "type": "structure",
@@ -763,7 +775,8 @@
             ]
         },
         "SendMessageBatchRequestEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "SendMessageBatchRequestEntry"
         },
         "SendMessageBatchResult": {
             "type": "structure",
@@ -806,7 +819,8 @@
             ]
         },
         "SendMessageBatchResultEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "SendMessageBatchResultEntry"
         },
         "SendMessageRequest": {
             "type": "structure",
@@ -874,7 +888,8 @@
             "type": "string"
         },
         "StringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "TooManyEntriesInBatchRequest": {
             "type": "structure",

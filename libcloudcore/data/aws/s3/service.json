@@ -488,19 +488,22 @@
             "type": "string"
         },
         "AllowedHeaders": {
-            "type": "list"
+            "type": "list",
+            "of": "AllowedHeader"
         },
         "AllowedMethod": {
             "type": "string"
         },
         "AllowedMethods": {
-            "type": "list"
+            "type": "list",
+            "of": "AllowedMethod"
         },
         "AllowedOrigin": {
             "type": "string"
         },
         "AllowedOrigins": {
-            "type": "list"
+            "type": "list",
+            "of": "AllowedOrigin"
         },
         "Body": {
             "type": "blob"
@@ -549,7 +552,8 @@
             "type": "string"
         },
         "Buckets": {
-            "type": "list"
+            "type": "list",
+            "of": "Bucket"
         },
         "CORSConfiguration": {
             "type": "structure",
@@ -596,7 +600,8 @@
             ]
         },
         "CORSRules": {
-            "type": "list"
+            "type": "list",
+            "of": "CORSRule"
         },
         "CacheControl": {
             "type": "string"
@@ -647,7 +652,8 @@
             ]
         },
         "CommonPrefixList": {
-            "type": "list"
+            "type": "list",
+            "of": "CommonPrefix"
         },
         "CompleteMultipartUploadOutput": {
             "type": "structure",
@@ -768,7 +774,8 @@
             ]
         },
         "CompletedPartList": {
-            "type": "list"
+            "type": "list",
+            "of": "CompletedPart"
         },
         "Condition": {
             "type": "structure",
@@ -1569,7 +1576,8 @@
             "type": "string"
         },
         "DeleteMarkers": {
-            "type": "list"
+            "type": "list",
+            "of": "DeleteMarkerEntry"
         },
         "DeleteObjectOutput": {
             "type": "structure",
@@ -1707,7 +1715,8 @@
             ]
         },
         "DeletedObjects": {
-            "type": "list"
+            "type": "list",
+            "of": "DeletedObject"
         },
         "Delimiter": {
             "type": "string"
@@ -1766,13 +1775,15 @@
             ]
         },
         "Errors": {
-            "type": "list"
+            "type": "list",
+            "of": "Error"
         },
         "Event": {
             "type": "string"
         },
         "EventList": {
-            "type": "list"
+            "type": "list",
+            "of": "Event"
         },
         "Expiration": {
             "type": "string"
@@ -1787,7 +1798,8 @@
             "type": "string"
         },
         "ExposeHeaders": {
-            "type": "list"
+            "type": "list",
+            "of": "ExposeHeader"
         },
         "GetBucketAclOutput": {
             "type": "structure",
@@ -2512,7 +2524,8 @@
             ]
         },
         "Grants": {
-            "type": "list"
+            "type": "list",
+            "of": "Grant"
         },
         "HeadBucketRequest": {
             "type": "structure",
@@ -2868,7 +2881,8 @@
             ]
         },
         "LambdaFunctionConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "LambdaFunctionConfiguration"
         },
         "LastModified": {
             "type": "timestamp"
@@ -3446,7 +3460,8 @@
             "type": "string"
         },
         "MultipartUploadList": {
-            "type": "list"
+            "type": "list",
+            "of": "MultipartUpload"
         },
         "NextKeyMarker": {
             "type": "string"
@@ -3593,13 +3608,15 @@
             ]
         },
         "ObjectIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "ObjectIdentifier"
         },
         "ObjectKey": {
             "type": "string"
         },
         "ObjectList": {
-            "type": "list"
+            "type": "list",
+            "of": "Object"
         },
         "ObjectNotInActiveTierError": {
             "type": "structure",
@@ -3655,7 +3672,8 @@
             "type": "string"
         },
         "ObjectVersionList": {
-            "type": "list"
+            "type": "list",
+            "of": "ObjectVersion"
         },
         "ObjectVersionStorageClass": {
             "type": "string"
@@ -3705,7 +3723,8 @@
             "type": "integer"
         },
         "Parts": {
-            "type": "list"
+            "type": "list",
+            "of": "Part"
         },
         "Payer": {
             "type": "string"
@@ -4434,7 +4453,8 @@
             ]
         },
         "QueueConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "QueueConfiguration"
         },
         "Quiet": {
             "type": "boolean"
@@ -4537,7 +4557,8 @@
             "type": "string"
         },
         "ReplicationRules": {
-            "type": "list"
+            "type": "list",
+            "of": "ReplicationRule"
         },
         "ReplicationStatus": {
             "type": "string"
@@ -4656,7 +4677,8 @@
             ]
         },
         "RoutingRules": {
-            "type": "list"
+            "type": "list",
+            "of": "RoutingRule"
         },
         "Rule": {
             "type": "structure",
@@ -4695,7 +4717,8 @@
             ]
         },
         "Rules": {
-            "type": "list"
+            "type": "list",
+            "of": "Rule"
         },
         "SSECustomerAlgorithm": {
             "type": "string"
@@ -4737,7 +4760,8 @@
             ]
         },
         "TagSet": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "Tagging": {
             "type": "structure",
@@ -4766,7 +4790,8 @@
             ]
         },
         "TargetGrants": {
-            "type": "list"
+            "type": "list",
+            "of": "TargetGrant"
         },
         "TargetPrefix": {
             "type": "string"
@@ -4820,7 +4845,8 @@
             ]
         },
         "TopicConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "TopicConfiguration"
         },
         "Transition": {
             "type": "structure",

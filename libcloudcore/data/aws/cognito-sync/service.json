@@ -167,7 +167,8 @@
             "type": "string"
         },
         "ApplicationArnList": {
-            "type": "list"
+            "type": "list",
+            "of": "ApplicationArn"
         },
         "AssumeRoleArn": {
             "type": "string"
@@ -277,7 +278,8 @@
             ]
         },
         "DatasetList": {
-            "type": "list"
+            "type": "list",
+            "of": "Dataset"
         },
         "DatasetName": {
             "type": "string"
@@ -555,7 +557,8 @@
             ]
         },
         "IdentityPoolUsageList": {
-            "type": "list"
+            "type": "list",
+            "of": "IdentityPoolUsage"
         },
         "IdentityUsage": {
             "type": "structure",
@@ -861,7 +864,8 @@
             "type": "long"
         },
         "MergedDatasetNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "NotAuthorizedException": {
             "type": "structure",
@@ -936,7 +940,8 @@
             "type": "string"
         },
         "RecordList": {
-            "type": "list"
+            "type": "list",
+            "of": "Record"
         },
         "RecordPatch": {
             "type": "structure",
@@ -969,7 +974,8 @@
             ]
         },
         "RecordPatchList": {
-            "type": "list"
+            "type": "list",
+            "of": "RecordPatch"
         },
         "RecordValue": {
             "type": "string"

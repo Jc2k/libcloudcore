@@ -302,7 +302,8 @@
             ]
         },
         "AnalysisSchemeStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "AnalysisSchemeStatus"
         },
         "AvailabilityOptionsStatus": {
             "type": "structure",
@@ -877,7 +878,8 @@
             "type": "string"
         },
         "DomainNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "DomainName"
         },
         "DomainNameMap": {
             "type": "map"
@@ -949,7 +951,8 @@
             ]
         },
         "DomainStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "DomainStatus"
         },
         "Double": {
             "type": "double"
@@ -1023,7 +1026,8 @@
             "type": "string"
         },
         "DynamicFieldNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "DynamicFieldName"
         },
         "ErrorCode": {
             "type": "string"
@@ -1059,7 +1063,8 @@
             ]
         },
         "ExpressionStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "ExpressionStatus"
         },
         "ExpressionValue": {
             "type": "string"
@@ -1071,7 +1076,8 @@
             "type": "string"
         },
         "FieldNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "FieldName"
         },
         "FieldValue": {
             "type": "string"
@@ -1167,7 +1173,8 @@
             ]
         },
         "IndexFieldStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "IndexFieldStatus"
         },
         "IndexFieldType": {
             "type": "string"
@@ -1483,7 +1490,8 @@
             "type": "string"
         },
         "StandardNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "StandardName"
         },
         "String": {
             "type": "string"
@@ -1518,7 +1526,8 @@
             ]
         },
         "SuggesterStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "SuggesterStatus"
         },
         "TextArrayOptions": {
             "type": "structure",

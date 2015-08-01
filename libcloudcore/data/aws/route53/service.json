@@ -453,10 +453,12 @@
             "members": []
         },
         "Changes": {
-            "type": "list"
+            "type": "list",
+            "of": "Change"
         },
         "CheckerIpRanges": {
-            "type": "list"
+            "type": "list",
+            "of": "IPAddressCidr"
         },
         "ConflictingDomainExists": {
             "type": "structure",
@@ -644,7 +646,8 @@
             ]
         },
         "DelegationSetNameServers": {
-            "type": "list"
+            "type": "list",
+            "of": "DNSName"
         },
         "DelegationSetNotAvailable": {
             "type": "structure",
@@ -667,7 +670,8 @@
             ]
         },
         "DelegationSets": {
-            "type": "list"
+            "type": "list",
+            "of": "DelegationSet"
         },
         "DeleteHealthCheckRequest": {
             "type": "structure",
@@ -762,7 +766,8 @@
             "type": "string"
         },
         "ErrorMessages": {
-            "type": "list"
+            "type": "list",
+            "of": "ErrorMessage"
         },
         "FailureThreshold": {
             "type": "integer"
@@ -838,7 +843,8 @@
             ]
         },
         "GeoLocationDetailsList": {
-            "type": "list"
+            "type": "list",
+            "of": "GeoLocationDetails"
         },
         "GeoLocationSubdivisionCode": {
             "type": "string"
@@ -1181,7 +1187,8 @@
             ]
         },
         "HealthCheckObservations": {
-            "type": "list"
+            "type": "list",
+            "of": "HealthCheckObservation"
         },
         "HealthCheckType": {
             "type": "string"
@@ -1199,7 +1206,8 @@
             ]
         },
         "HealthChecks": {
-            "type": "list"
+            "type": "list",
+            "of": "HealthCheck"
         },
         "HostedZone": {
             "type": "structure",
@@ -1283,7 +1291,8 @@
             "type": "long"
         },
         "HostedZones": {
-            "type": "list"
+            "type": "list",
+            "of": "HostedZone"
         },
         "IPAddress": {
             "type": "string"
@@ -1974,10 +1983,12 @@
             "type": "long"
         },
         "ResourceRecordSets": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceRecordSet"
         },
         "ResourceRecords": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceRecord"
         },
         "ResourceTagSet": {
             "type": "structure",
@@ -2000,7 +2011,8 @@
             ]
         },
         "ResourceTagSetList": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceTagSet"
         },
         "ResourceURI": {
             "type": "string"
@@ -2048,16 +2060,19 @@
             "type": "string"
         },
         "TagKeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagKey"
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagResourceId": {
             "type": "string"
         },
         "TagResourceIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagResourceId"
         },
         "TagResourceType": {
             "type": "string"
@@ -2208,7 +2223,8 @@
             "type": "string"
         },
         "VPCs": {
-            "type": "list"
+            "type": "list",
+            "of": "VPC"
         }
     }
 }

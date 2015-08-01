@@ -3445,7 +3445,8 @@
             ]
         },
         "ManagedPolicyDetailListType": {
-            "type": "list"
+            "type": "list",
+            "of": "ManagedPolicyDetail"
         },
         "NoSuchEntityException": {
             "type": "structure",
@@ -3466,7 +3467,8 @@
             ]
         },
         "OpenIDConnectProviderListType": {
-            "type": "list"
+            "type": "list",
+            "of": "OpenIDConnectProviderListEntry"
         },
         "OpenIDConnectProviderUrlType": {
             "type": "string"
@@ -3615,7 +3617,8 @@
             ]
         },
         "PolicyGroupListType": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyGroup"
         },
         "PolicyRole": {
             "type": "structure",
@@ -3628,7 +3631,8 @@
             ]
         },
         "PolicyRoleListType": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyRole"
         },
         "PolicyUser": {
             "type": "structure",
@@ -3641,7 +3645,8 @@
             ]
         },
         "PolicyUserListType": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyUser"
         },
         "PolicyVersion": {
             "type": "structure",
@@ -3917,7 +3922,8 @@
             ]
         },
         "SAMLProviderListType": {
-            "type": "list"
+            "type": "list",
+            "of": "SAMLProviderListEntry"
         },
         "SAMLProviderNameType": {
             "type": "string"
@@ -3958,7 +3964,8 @@
             ]
         },
         "SSHPublicKeyListType": {
-            "type": "list"
+            "type": "list",
+            "of": "SSHPublicKeyMetadata"
         },
         "SSHPublicKeyMetadata": {
             "type": "structure",
@@ -4549,13 +4556,15 @@
             "type": "string"
         },
         "accessKeyMetadataListType": {
-            "type": "list"
+            "type": "list",
+            "of": "AccessKeyMetadata"
         },
         "accessKeySecretType": {
             "type": "string"
         },
         "accountAliasListType": {
-            "type": "list"
+            "type": "list",
+            "of": "accountAliasType"
         },
         "accountAliasType": {
             "type": "string"
@@ -4567,7 +4576,8 @@
             "type": "string"
         },
         "attachedPoliciesListType": {
-            "type": "list"
+            "type": "list",
+            "of": "AttachedPolicy"
         },
         "attachmentCountType": {
             "type": "integer"
@@ -4591,10 +4601,12 @@
             "type": "string"
         },
         "certificateListType": {
-            "type": "list"
+            "type": "list",
+            "of": "SigningCertificate"
         },
         "clientIDListType": {
-            "type": "list"
+            "type": "list",
+            "of": "clientIDType"
         },
         "clientIDType": {
             "type": "string"
@@ -4627,7 +4639,8 @@
             "type": "string"
         },
         "entityListType": {
-            "type": "list"
+            "type": "list",
+            "of": "EntityType"
         },
         "entityTemporarilyUnmodifiableMessage": {
             "type": "string"
@@ -4636,13 +4649,16 @@
             "type": "string"
         },
         "groupDetailListType": {
-            "type": "list"
+            "type": "list",
+            "of": "GroupDetail"
         },
         "groupListType": {
-            "type": "list"
+            "type": "list",
+            "of": "Group"
         },
         "groupNameListType": {
-            "type": "list"
+            "type": "list",
+            "of": "groupNameType"
         },
         "groupNameType": {
             "type": "string"
@@ -4651,7 +4667,8 @@
             "type": "string"
         },
         "instanceProfileListType": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceProfile"
         },
         "instanceProfileNameType": {
             "type": "string"
@@ -4693,7 +4710,8 @@
             "type": "integer"
         },
         "mfaDeviceListType": {
-            "type": "list"
+            "type": "list",
+            "of": "MFADevice"
         },
         "minimumPasswordLengthType": {
             "type": "integer"
@@ -4720,19 +4738,23 @@
             "type": "string"
         },
         "policyDetailListType": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyDetail"
         },
         "policyDocumentType": {
             "type": "string"
         },
         "policyDocumentVersionListType": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyVersion"
         },
         "policyListType": {
-            "type": "list"
+            "type": "list",
+            "of": "Policy"
         },
         "policyNameListType": {
-            "type": "list"
+            "type": "list",
+            "of": "policyNameType"
         },
         "policyNameType": {
             "type": "string"
@@ -4759,10 +4781,12 @@
             "type": "string"
         },
         "roleDetailListType": {
-            "type": "list"
+            "type": "list",
+            "of": "RoleDetail"
         },
         "roleListType": {
-            "type": "list"
+            "type": "list",
+            "of": "Role"
         },
         "roleNameType": {
             "type": "string"
@@ -4771,7 +4795,8 @@
             "type": "string"
         },
         "serverCertificateMetadataListType": {
-            "type": "list"
+            "type": "list",
+            "of": "ServerCertificateMetadata"
         },
         "serverCertificateNameType": {
             "type": "string"
@@ -4795,7 +4820,8 @@
             "type": "integer"
         },
         "thumbprintListType": {
-            "type": "list"
+            "type": "list",
+            "of": "thumbprintType"
         },
         "thumbprintType": {
             "type": "string"
@@ -4804,16 +4830,19 @@
             "type": "string"
         },
         "userDetailListType": {
-            "type": "list"
+            "type": "list",
+            "of": "UserDetail"
         },
         "userListType": {
-            "type": "list"
+            "type": "list",
+            "of": "User"
         },
         "userNameType": {
             "type": "string"
         },
         "virtualMFADeviceListType": {
-            "type": "list"
+            "type": "list",
+            "of": "VirtualMFADevice"
         },
         "virtualMFADeviceName": {
             "type": "string"

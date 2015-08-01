@@ -35,77 +35,11 @@ def xml_open(payload, encoding="utf-8"):
 
 class TestParseXml(unittest.TestCase):
 
+    maxDiff = 1024
+
     def setUp(self):
-        self.model = Model({
-            'metadata': {
-                'namespaces': {
-                    '': 'https://route53.amazonaws.com/doc/2013-04-01/'
-                }
-            },
-            'shapes': {
-                "String": {
-                    "type": "string",
-                },
-                "Integer": {
-                    "type": "integer",
-                },
-                "Boolean": {
-                    "type": "boolean",
-                },
-                "HostedZoneConfig": {
-                    "type": "structure",
-                    "members": [{
-                        "name": "Comment",
-                        "shape": "String"
-                    }, {
-                        "name": "PrivateZone",
-                        "shape": "Boolean"
-                    }]
-                },
-                "HostedZone": {
-                    "type": "structure",
-                    "members": [{
-                        "name": "Id",
-                        "shape": "String",
-                        }, {
-                        "name": "Name",
-                        "shape": "String",
-                        }, {
-                        "name": "CallerReference",
-                        "shape": "String",
-                        }, {
-                        "name": "Config",
-                        "shape": "HostedZoneConfig",
-                        }, {
-                        "name": "ResourceRecordSetCount",
-                        "shape": "Integer"
-                    }]
-                },
-                "HostedZones": {
-                    "type": "list",
-                    "of": "HostedZone",
-                },
-                "ListHostedZonesByNameResponse": {
-                    "type": "structure",
-                    "members": [{
-                        "name": "HostedZones",
-                        "shape": "HostedZones"
-                        }, {
-                        "name": "IsTruncated",
-                        "shape": "Boolean"
-                        }, {
-                        "name": "MaxItems",
-                        "shape": "Integer"
-                    }]
-                }
-            },
-            'operations': {
-                'list_hosted_zones_by_name': {
-                    'output': {"shape": "ListHostedZonesByNameResponse"},
-                }
-            },
-            'documentation': 'Test model documentation',
-        })
+        from libcloudcore.drivers.aws.route53 import Driver
+        self.model = Driver.model
         self.layer = XmlSerializer()
 
     def test_parse(self):
@@ -129,7 +63,7 @@ class TestParseXml(unittest.TestCase):
             <MaxItems>10</MaxItems>
         </ListHostedZonesByNameResponse>""".strip()
 
-        operation = self.model.get_operation("list_hosted_zones_by_name")
+        operation = self.model.get_operation("ListHostedZonesByName")
         self.assertEqual(self.layer._parse_xml(operation, xml), {
             "HostedZones": [{
                 "Id": "/hostedzone/ZONE_ID",
@@ -142,7 +76,7 @@ class TestParseXml(unittest.TestCase):
                 "ResourceRecordSetCount": 0,
             }],
             "IsTruncated": False,
-            "MaxItems": 10,
+            "MaxItems": "10",
         })
 
 

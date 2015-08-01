@@ -333,10 +333,12 @@
             "type": "string"
         },
         "ApplicationsInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "ApplicationInfo"
         },
         "ApplicationsList": {
-            "type": "list"
+            "type": "list",
+            "of": "ApplicationName"
         },
         "AutoScalingGroup": {
             "type": "structure",
@@ -357,13 +359,15 @@
             "type": "string"
         },
         "AutoScalingGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "AutoScalingGroup"
         },
         "AutoScalingGroupName": {
             "type": "string"
         },
         "AutoScalingGroupNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "AutoScalingGroupName"
         },
         "BatchGetApplicationsInput": {
             "type": "structure",
@@ -679,7 +683,8 @@
             "members": []
         },
         "DeploymentConfigsList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeploymentConfigName"
         },
         "DeploymentCreator": {
             "type": "string"
@@ -761,7 +766,8 @@
             "members": []
         },
         "DeploymentGroupsList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeploymentGroupName"
         },
         "DeploymentId": {
             "type": "string"
@@ -887,13 +893,16 @@
             "type": "string"
         },
         "DeploymentStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeploymentStatus"
         },
         "DeploymentsInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeploymentInfo"
         },
         "DeploymentsList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeploymentId"
         },
         "DeregisterOnPremisesInstanceInput": {
             "type": "structure",
@@ -958,7 +967,8 @@
             ]
         },
         "EC2TagFilterList": {
-            "type": "list"
+            "type": "list",
+            "of": "EC2TagFilter"
         },
         "EC2TagFilterType": {
             "type": "string"
@@ -1261,7 +1271,8 @@
             ]
         },
         "InstanceInfoList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceInfo"
         },
         "InstanceLimitExceededException": {
             "type": "structure",
@@ -1275,7 +1286,8 @@
             "members": []
         },
         "InstanceNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceName"
         },
         "InstanceNameRequiredException": {
             "type": "structure",
@@ -1289,7 +1301,8 @@
             "type": "string"
         },
         "InstanceStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceStatus"
         },
         "InstanceSummary": {
             "type": "structure",
@@ -1322,7 +1335,8 @@
             ]
         },
         "InstancesList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceId"
         },
         "InvalidApplicationNameException": {
             "type": "structure",
@@ -1457,7 +1471,8 @@
             ]
         },
         "LifecycleEventList": {
-            "type": "list"
+            "type": "list",
+            "of": "LifecycleEvent"
         },
         "LifecycleEventName": {
             "type": "string"
@@ -1835,7 +1850,8 @@
             ]
         },
         "RevisionLocationList": {
-            "type": "list"
+            "type": "list",
+            "of": "RevisionLocation"
         },
         "RevisionLocationType": {
             "type": "string"
@@ -1957,7 +1973,8 @@
             ]
         },
         "TagFilterList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagFilter"
         },
         "TagFilterType": {
             "type": "string"
@@ -1967,7 +1984,8 @@
             "members": []
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagRequiredException": {
             "type": "structure",

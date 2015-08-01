@@ -74,7 +74,8 @@
             ]
         },
         "ArtifactList": {
-            "type": "list"
+            "type": "list",
+            "of": "Artifact"
         },
         "BucketPermissionException": {
             "type": "structure",
@@ -460,13 +461,15 @@
             "type": "string"
         },
         "JobIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "GenericString"
         },
         "JobType": {
             "type": "string"
         },
         "JobsList": {
-            "type": "list"
+            "type": "list",
+            "of": "Job"
         },
         "ListJobsInput": {
             "type": "structure",

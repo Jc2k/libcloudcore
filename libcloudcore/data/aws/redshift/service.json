@@ -522,7 +522,8 @@
             ]
         },
         "AccountsWithRestoreAccessList": {
-            "type": "list"
+            "type": "list",
+            "of": "AccountWithRestoreAccess"
         },
         "AuthorizationAlreadyExistsFault": {
             "type": "structure",
@@ -592,7 +593,8 @@
             ]
         },
         "AvailabilityZoneList": {
-            "type": "list"
+            "type": "list",
+            "of": "AvailabilityZone"
         },
         "Boolean": {
             "type": "boolean"
@@ -769,7 +771,8 @@
             "members": []
         },
         "ClusterList": {
-            "type": "list"
+            "type": "list",
+            "of": "Cluster"
         },
         "ClusterNode": {
             "type": "structure",
@@ -792,7 +795,8 @@
             ]
         },
         "ClusterNodesList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterNode"
         },
         "ClusterNotFoundFault": {
             "type": "structure",
@@ -886,7 +890,8 @@
             ]
         },
         "ClusterParameterGroupStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterParameterGroupStatus"
         },
         "ClusterParameterGroupsMessage": {
             "type": "structure",
@@ -924,7 +929,8 @@
             ]
         },
         "ClusterParameterStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterParameterStatus"
         },
         "ClusterQuotaExceededFault": {
             "type": "structure",
@@ -980,7 +986,8 @@
             ]
         },
         "ClusterSecurityGroupMembershipList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterSecurityGroupMembership"
         },
         "ClusterSecurityGroupMessage": {
             "type": "structure",
@@ -998,7 +1005,8 @@
             ]
         },
         "ClusterSecurityGroupNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ClusterSecurityGroupNotFoundFault": {
             "type": "structure",
@@ -1009,7 +1017,8 @@
             "members": []
         },
         "ClusterSecurityGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterSecurityGroup"
         },
         "ClusterSnapshotAlreadyExistsFault": {
             "type": "structure",
@@ -1106,7 +1115,8 @@
             "members": []
         },
         "ClusterSubnetGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterSubnetGroup"
         },
         "ClusterSubnetQuotaExceededFault": {
             "type": "structure",
@@ -1133,7 +1143,8 @@
             ]
         },
         "ClusterVersionList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterVersion"
         },
         "ClusterVersionsMessage": {
             "type": "structure",
@@ -2256,7 +2267,8 @@
             ]
         },
         "EC2SecurityGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "EC2SecurityGroup"
         },
         "ElasticIpStatus": {
             "type": "structure",
@@ -2374,7 +2386,8 @@
             ]
         },
         "EventCategoriesList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "EventCategoriesMap": {
             "type": "structure",
@@ -2392,7 +2405,8 @@
             ]
         },
         "EventCategoriesMapList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventCategoriesMap"
         },
         "EventCategoriesMessage": {
             "type": "structure",
@@ -2430,10 +2444,12 @@
             ]
         },
         "EventInfoMapList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventInfoMap"
         },
         "EventList": {
-            "type": "list"
+            "type": "list",
+            "of": "Event"
         },
         "EventSubscription": {
             "type": "structure",
@@ -2500,7 +2516,8 @@
             "members": []
         },
         "EventSubscriptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventSubscription"
         },
         "EventSubscriptionsMessage": {
             "type": "structure",
@@ -2557,7 +2574,8 @@
             "members": []
         },
         "HsmClientCertificateList": {
-            "type": "list"
+            "type": "list",
+            "of": "HsmClientCertificate"
         },
         "HsmClientCertificateMessage": {
             "type": "structure",
@@ -2617,7 +2635,8 @@
             "members": []
         },
         "HsmConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "HsmConfiguration"
         },
         "HsmConfigurationMessage": {
             "type": "structure",
@@ -2683,16 +2702,20 @@
             ]
         },
         "IPRangeList": {
-            "type": "list"
+            "type": "list",
+            "of": "IPRange"
         },
         "ImportTablesCompleted": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ImportTablesInProgress": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "ImportTablesNotStarted": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "IncompatibleOrderableOptions": {
             "type": "structure",
@@ -3029,7 +3052,8 @@
             ]
         },
         "OrderableClusterOptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "OrderableClusterOption"
         },
         "OrderableClusterOptionsMessage": {
             "type": "structure",
@@ -3100,10 +3124,12 @@
             "type": "string"
         },
         "ParameterGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterParameterGroup"
         },
         "ParametersList": {
-            "type": "list"
+            "type": "list",
+            "of": "Parameter"
         },
         "PendingModifiedValues": {
             "type": "structure",
@@ -3186,7 +3212,8 @@
             ]
         },
         "RecurringChargeList": {
-            "type": "list"
+            "type": "list",
+            "of": "RecurringCharge"
         },
         "ReservedNode": {
             "type": "structure",
@@ -3258,7 +3285,8 @@
             "members": []
         },
         "ReservedNodeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedNode"
         },
         "ReservedNodeNotFoundFault": {
             "type": "structure",
@@ -3310,7 +3338,8 @@
             ]
         },
         "ReservedNodeOfferingList": {
-            "type": "list"
+            "type": "list",
+            "of": "ReservedNodeOffering"
         },
         "ReservedNodeOfferingNotFoundFault": {
             "type": "structure",
@@ -3444,7 +3473,8 @@
             "members": []
         },
         "RestorableNodeTypeList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "RestoreFromClusterSnapshotMessage": {
             "type": "structure",
@@ -3830,7 +3860,8 @@
             "members": []
         },
         "SnapshotCopyGrantList": {
-            "type": "list"
+            "type": "list",
+            "of": "SnapshotCopyGrant"
         },
         "SnapshotCopyGrantMessage": {
             "type": "structure",
@@ -3856,7 +3887,8 @@
             "members": []
         },
         "SnapshotList": {
-            "type": "list"
+            "type": "list",
+            "of": "Snapshot"
         },
         "SnapshotMessage": {
             "type": "structure",
@@ -3874,7 +3906,8 @@
             ]
         },
         "SourceIdsList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SourceNotFoundFault": {
             "type": "structure",
@@ -3910,10 +3943,12 @@
             "members": []
         },
         "SubnetIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "SubnetList": {
-            "type": "list"
+            "type": "list",
+            "of": "Subnet"
         },
         "SubscriptionAlreadyExistFault": {
             "type": "structure",
@@ -3954,17 +3989,20 @@
             ]
         },
         "TagKeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "TagLimitExceededFault": {
             "type": "structure",
             "members": []
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "TaggedResource": {
             "type": "structure",
@@ -3987,7 +4025,8 @@
             ]
         },
         "TaggedResourceList": {
-            "type": "list"
+            "type": "list",
+            "of": "TaggedResource"
         },
         "TaggedResourceListMessage": {
             "type": "structure",
@@ -4021,7 +4060,8 @@
             "members": []
         },
         "VpcSecurityGroupIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "VpcSecurityGroupMembership": {
             "type": "structure",
@@ -4037,7 +4077,8 @@
             ]
         },
         "VpcSecurityGroupMembershipList": {
-            "type": "list"
+            "type": "list",
+            "of": "VpcSecurityGroupMembership"
         },
         "AuthorizeClusterSecurityGroupIngressResult": {
             "type": "structure",

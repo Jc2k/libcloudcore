@@ -50,6 +50,8 @@ class Parser(ShapeVisitor):
     def visit_integer(self, shape, value):
         return int(value.text)
 
+    visit_long = visit_integer
+
     def visit_boolean(self, shape, value):
         if value.text == "true":
             return True
@@ -74,10 +76,12 @@ class Parser(ShapeVisitor):
     def visit_structure(self, shape, value):
         out = {}
         for member in shape.iter_members():
-            out[member.name] = self.visit(
-                member.shape,
-                value.find(self._prefix(member.name)),
-            )
+            inner_value = value.find(self._prefix(member.name))
+            if inner_value is not None:
+                out[member.name] = self.visit(
+                    member.shape,
+                    inner_value,
+                )
         return out
 
 
@@ -100,6 +104,8 @@ class Serializer(ShapeVisitor):
         node = ElementTree.SubElement(parent, name)
         node.text = str(value)
         return node
+
+    visit_long = visit_integer
 
     def visit_boolean(self, parent, shape, name, value):
         node = ElementTree.SubElement(parent, name)
@@ -125,7 +131,6 @@ class Serializer(ShapeVisitor):
     def visit_structure(self, parent, shape, name, value):
         node = ElementTree.SubElement(parent, name)
         for member in shape.iter_members():
-            print(member.name)
             if member.name in value:
                 self.visit(
                     node,

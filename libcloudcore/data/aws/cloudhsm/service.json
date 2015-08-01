@@ -160,7 +160,8 @@
             "type": "string"
         },
         "AZList": {
-            "type": "list"
+            "type": "list",
+            "of": "AZ"
         },
         "Boolean": {
             "type": "boolean"
@@ -178,7 +179,8 @@
             "type": "string"
         },
         "ClientList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClientArn"
         },
         "ClientToken": {
             "type": "string"
@@ -654,13 +656,15 @@
             "type": "string"
         },
         "HapgList": {
-            "type": "list"
+            "type": "list",
+            "of": "HapgArn"
         },
         "HsmArn": {
             "type": "string"
         },
         "HsmList": {
-            "type": "list"
+            "type": "list",
+            "of": "HsmArn"
         },
         "HsmSerialNumber": {
             "type": "string"
@@ -883,13 +887,15 @@
             "type": "string"
         },
         "PartitionList": {
-            "type": "list"
+            "type": "list",
+            "of": "PartitionArn"
         },
         "PartitionSerial": {
             "type": "string"
         },
         "PartitionSerialList": {
-            "type": "list"
+            "type": "list",
+            "of": "PartitionSerial"
         },
         "SshKey": {
             "type": "string"

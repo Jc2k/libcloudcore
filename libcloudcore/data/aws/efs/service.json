@@ -448,7 +448,8 @@
             ]
         },
         "FileSystemDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "FileSystemDescription"
         },
         "FileSystemId": {
             "type": "string"
@@ -648,7 +649,8 @@
             ]
         },
         "MountTargetDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "MountTargetDescription"
         },
         "MountTargetId": {
             "type": "string"
@@ -725,7 +727,8 @@
             ]
         },
         "SecurityGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "SecurityGroup"
         },
         "SubnetId": {
             "type": "string"
@@ -762,13 +765,15 @@
             "type": "string"
         },
         "TagKeys": {
-            "type": "list"
+            "type": "list",
+            "of": "TagKey"
         },
         "TagValue": {
             "type": "string"
         },
         "Tags": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "Timestamp": {
             "type": "timestamp"

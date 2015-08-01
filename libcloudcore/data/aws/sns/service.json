@@ -199,7 +199,8 @@
     },
     "shapes": {
         "ActionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "action"
         },
         "AddPermissionInput": {
             "type": "structure",
@@ -354,7 +355,8 @@
             ]
         },
         "DelegatesList": {
-            "type": "list"
+            "type": "list",
+            "of": "delegate"
         },
         "DeleteEndpointInput": {
             "type": "structure",
@@ -549,10 +551,12 @@
             ]
         },
         "ListOfEndpoints": {
-            "type": "list"
+            "type": "list",
+            "of": "Endpoint"
         },
         "ListOfPlatformApplications": {
-            "type": "list"
+            "type": "list",
+            "of": "PlatformApplication"
         },
         "ListPlatformApplicationsInput": {
             "type": "structure",
@@ -925,7 +929,8 @@
             ]
         },
         "SubscriptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "Subscription"
         },
         "Topic": {
             "type": "structure",
@@ -950,7 +955,8 @@
             ]
         },
         "TopicsList": {
-            "type": "list"
+            "type": "list",
+            "of": "Topic"
         },
         "UnsubscribeInput": {
             "type": "structure",

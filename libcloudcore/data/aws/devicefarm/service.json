@@ -223,7 +223,8 @@
             "type": "string"
         },
         "AmazonResourceNames": {
-            "type": "list"
+            "type": "list",
+            "of": "AmazonResourceName"
         },
         "ArgumentException": {
             "type": "structure",
@@ -272,7 +273,8 @@
             "type": "string"
         },
         "Artifacts": {
-            "type": "list"
+            "type": "list",
+            "of": "Artifact"
         },
         "Boolean": {
             "type": "boolean"
@@ -566,16 +568,19 @@
             ]
         },
         "DevicePoolCompatibilityResults": {
-            "type": "list"
+            "type": "list",
+            "of": "DevicePoolCompatibilityResult"
         },
         "DevicePoolType": {
             "type": "string"
         },
         "DevicePools": {
-            "type": "list"
+            "type": "list",
+            "of": "DevicePool"
         },
         "Devices": {
-            "type": "list"
+            "type": "list",
+            "of": "Device"
         },
         "Double": {
             "type": "double"
@@ -802,7 +807,8 @@
             ]
         },
         "IncompatibilityMessages": {
-            "type": "list"
+            "type": "list",
+            "of": "IncompatibilityMessage"
         },
         "Integer": {
             "type": "integer"
@@ -867,7 +873,8 @@
             ]
         },
         "Jobs": {
-            "type": "list"
+            "type": "list",
+            "of": "Job"
         },
         "LimitExceededException": {
             "type": "structure",
@@ -1315,7 +1322,8 @@
             ]
         },
         "Problems": {
-            "type": "list"
+            "type": "list",
+            "of": "Problem"
         },
         "Project": {
             "type": "structure",
@@ -1338,7 +1346,8 @@
             ]
         },
         "Projects": {
-            "type": "list"
+            "type": "list",
+            "of": "Project"
         },
         "Radios": {
             "type": "structure",
@@ -1404,7 +1413,8 @@
             "type": "string"
         },
         "Rules": {
-            "type": "list"
+            "type": "list",
+            "of": "Rule"
         },
         "Run": {
             "type": "structure",
@@ -1477,7 +1487,8 @@
             ]
         },
         "Runs": {
-            "type": "list"
+            "type": "list",
+            "of": "Run"
         },
         "Sample": {
             "type": "structure",
@@ -1503,7 +1514,8 @@
             "type": "string"
         },
         "Samples": {
-            "type": "list"
+            "type": "list",
+            "of": "Sample"
         },
         "ScheduleRunConfiguration": {
             "type": "structure",
@@ -1679,7 +1691,8 @@
             ]
         },
         "Suites": {
-            "type": "list"
+            "type": "list",
+            "of": "Suite"
         },
         "Test": {
             "type": "structure",
@@ -1743,7 +1756,8 @@
             "type": "string"
         },
         "Tests": {
-            "type": "list"
+            "type": "list",
+            "of": "Test"
         },
         "URL": {
             "type": "string"
@@ -1764,7 +1778,8 @@
             ]
         },
         "UniqueProblems": {
-            "type": "list"
+            "type": "list",
+            "of": "UniqueProblem"
         },
         "UniqueProblemsByExecutionResultMap": {
             "type": "map"
@@ -1826,7 +1841,8 @@
             "type": "string"
         },
         "Uploads": {
-            "type": "list"
+            "type": "list",
+            "of": "Upload"
         }
     }
 }

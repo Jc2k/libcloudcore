@@ -294,7 +294,8 @@
             ]
         },
         "ApplicationDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "ApplicationDescription"
         },
         "ApplicationDescriptionMessage": {
             "type": "structure",
@@ -320,7 +321,8 @@
             "type": "string"
         },
         "ApplicationNamesList": {
-            "type": "list"
+            "type": "list",
+            "of": "ApplicationName"
         },
         "ApplicationVersionDescription": {
             "type": "structure",
@@ -358,7 +360,8 @@
             ]
         },
         "ApplicationVersionDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "ApplicationVersionDescription"
         },
         "ApplicationVersionDescriptionMessage": {
             "type": "structure",
@@ -394,13 +397,16 @@
             ]
         },
         "AutoScalingGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "AutoScalingGroup"
         },
         "AvailableSolutionStackDetailsList": {
-            "type": "list"
+            "type": "list",
+            "of": "SolutionStackDescription"
         },
         "AvailableSolutionStackNamesList": {
-            "type": "list"
+            "type": "list",
+            "of": "SolutionStackName"
         },
         "CheckDNSAvailabilityMessage": {
             "type": "structure",
@@ -497,7 +503,8 @@
             ]
         },
         "ConfigurationOptionDescriptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationOptionDescription"
         },
         "ConfigurationOptionName": {
             "type": "string"
@@ -506,7 +513,8 @@
             "type": "string"
         },
         "ConfigurationOptionPossibleValues": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationOptionPossibleValue"
         },
         "ConfigurationOptionSetting": {
             "type": "structure",
@@ -534,7 +542,8 @@
             ]
         },
         "ConfigurationOptionSettingsList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationOptionSetting"
         },
         "ConfigurationOptionSeverity": {
             "type": "string"
@@ -611,7 +620,8 @@
             ]
         },
         "ConfigurationSettingsDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationSettingsDescription"
         },
         "ConfigurationSettingsDescriptions": {
             "type": "structure",
@@ -637,7 +647,8 @@
             "type": "string"
         },
         "ConfigurationTemplateNamesList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationTemplateName"
         },
         "CreateApplicationMessage": {
             "type": "structure",
@@ -1151,7 +1162,8 @@
             ]
         },
         "EnvironmentDescriptionsList": {
-            "type": "list"
+            "type": "list",
+            "of": "EnvironmentDescription"
         },
         "EnvironmentDescriptionsMessage": {
             "type": "structure",
@@ -1170,7 +1182,8 @@
             "type": "string"
         },
         "EnvironmentIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "EnvironmentId"
         },
         "EnvironmentInfoDescription": {
             "type": "structure",
@@ -1198,7 +1211,8 @@
             ]
         },
         "EnvironmentInfoDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "EnvironmentInfoDescription"
         },
         "EnvironmentInfoType": {
             "type": "string"
@@ -1207,7 +1221,8 @@
             "type": "string"
         },
         "EnvironmentNamesList": {
-            "type": "list"
+            "type": "list",
+            "of": "EnvironmentName"
         },
         "EnvironmentResourceDescription": {
             "type": "structure",
@@ -1341,7 +1356,8 @@
             ]
         },
         "EventDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventDescription"
         },
         "EventDescriptionsMessage": {
             "type": "structure",
@@ -1384,7 +1400,8 @@
             ]
         },
         "InstanceList": {
-            "type": "list"
+            "type": "list",
+            "of": "Instance"
         },
         "InsufficientPrivilegesException": {
             "type": "structure",
@@ -1404,7 +1421,8 @@
             ]
         },
         "LaunchConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "LaunchConfiguration"
         },
         "ListAvailableSolutionStacksResultMessage": {
             "type": "structure",
@@ -1467,10 +1485,12 @@
             ]
         },
         "LoadBalancerList": {
-            "type": "list"
+            "type": "list",
+            "of": "LoadBalancer"
         },
         "LoadBalancerListenersDescription": {
-            "type": "list"
+            "type": "list",
+            "of": "Listener"
         },
         "MaxRecords": {
             "type": "integer"
@@ -1530,7 +1550,8 @@
             ]
         },
         "OptionsSpecifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "OptionSpecification"
         },
         "Queue": {
             "type": "structure",
@@ -1548,7 +1569,8 @@
             ]
         },
         "QueueList": {
-            "type": "list"
+            "type": "list",
+            "of": "Queue"
         },
         "RebuildEnvironmentMessage": {
             "type": "structure",
@@ -1693,7 +1715,8 @@
             ]
         },
         "SolutionStackFileTypeList": {
-            "type": "list"
+            "type": "list",
+            "of": "FileTypeExtension"
         },
         "SolutionStackName": {
             "type": "string"
@@ -1767,7 +1790,8 @@
             "type": "string"
         },
         "Tags": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TerminateEnvForce": {
             "type": "boolean"
@@ -1835,7 +1859,8 @@
             ]
         },
         "TriggerList": {
-            "type": "list"
+            "type": "list",
+            "of": "Trigger"
         },
         "UpdateApplicationMessage": {
             "type": "structure",
@@ -2012,7 +2037,8 @@
             "type": "string"
         },
         "ValidationMessagesList": {
-            "type": "list"
+            "type": "list",
+            "of": "ValidationMessage"
         },
         "ValidationSeverity": {
             "type": "string"
@@ -2021,7 +2047,8 @@
             "type": "string"
         },
         "VersionLabelsList": {
-            "type": "list"
+            "type": "list",
+            "of": "VersionLabel"
         }
     }
 }

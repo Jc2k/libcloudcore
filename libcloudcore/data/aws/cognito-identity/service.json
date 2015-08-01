@@ -297,7 +297,8 @@
             "type": "string"
         },
         "DeveloperUserIdentifierList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeveloperUserIdentifier"
         },
         "ErrorCode": {
             "type": "string"
@@ -471,7 +472,8 @@
             "type": "boolean"
         },
         "IdentitiesList": {
-            "type": "list"
+            "type": "list",
+            "of": "IdentityDescription"
         },
         "IdentityDescription": {
             "type": "structure",
@@ -502,7 +504,8 @@
             "type": "string"
         },
         "IdentityIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "IdentityId"
         },
         "IdentityPool": {
             "type": "structure",
@@ -564,7 +567,8 @@
             "type": "boolean"
         },
         "IdentityPoolsList": {
-            "type": "list"
+            "type": "list",
+            "of": "IdentityPoolShortDescription"
         },
         "IdentityProviderId": {
             "type": "string"
@@ -694,7 +698,8 @@
             ]
         },
         "LoginsList": {
-            "type": "list"
+            "type": "list",
+            "of": "IdentityProviderName"
         },
         "LoginsMap": {
             "type": "map"
@@ -795,7 +800,8 @@
             ]
         },
         "OIDCProviderList": {
-            "type": "list"
+            "type": "list",
+            "of": "ARNString"
         },
         "OIDCToken": {
             "type": "string"
@@ -930,7 +936,8 @@
             ]
         },
         "UnprocessedIdentityIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "UnprocessedIdentityId"
         }
     }
 }

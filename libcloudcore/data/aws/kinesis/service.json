@@ -514,7 +514,8 @@
             ]
         },
         "PutRecordsRequestEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "PutRecordsRequestEntry"
         },
         "PutRecordsResultEntry": {
             "type": "structure",
@@ -542,7 +543,8 @@
             ]
         },
         "PutRecordsResultEntryList": {
-            "type": "list"
+            "type": "list",
+            "of": "PutRecordsResultEntry"
         },
         "Record": {
             "type": "structure",
@@ -565,7 +567,8 @@
             ]
         },
         "RecordList": {
-            "type": "list"
+            "type": "list",
+            "of": "Record"
         },
         "RemoveTagsFromStreamInput": {
             "type": "structure",
@@ -660,7 +663,8 @@
             "type": "string"
         },
         "ShardList": {
-            "type": "list"
+            "type": "list",
+            "of": "Shard"
         },
         "SplitShardInput": {
             "type": "structure",
@@ -719,7 +723,8 @@
             "type": "string"
         },
         "StreamNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "StreamName"
         },
         "StreamStatus": {
             "type": "string"
@@ -743,10 +748,12 @@
             "type": "string"
         },
         "TagKeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagKey"
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagMap": {
             "type": "map"

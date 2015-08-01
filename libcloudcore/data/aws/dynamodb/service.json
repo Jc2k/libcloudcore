@@ -139,7 +139,8 @@
             ]
         },
         "AttributeDefinitions": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeDefinition"
         },
         "AttributeMap": {
             "type": "map"
@@ -148,7 +149,8 @@
             "type": "string"
         },
         "AttributeNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeName"
         },
         "AttributeUpdates": {
             "type": "map"
@@ -209,7 +211,8 @@
             ]
         },
         "AttributeValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeValue"
         },
         "AttributeValueUpdate": {
             "type": "structure",
@@ -314,7 +317,8 @@
             "type": "blob"
         },
         "BinarySetAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "BinaryAttributeValue"
         },
         "BooleanAttributeValue": {
             "type": "boolean"
@@ -400,7 +404,8 @@
             ]
         },
         "ConsumedCapacityMultiple": {
-            "type": "list"
+            "type": "list",
+            "of": "ConsumedCapacity"
         },
         "ConsumedCapacityUnits": {
             "type": "double"
@@ -780,10 +785,12 @@
             ]
         },
         "GlobalSecondaryIndexDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "GlobalSecondaryIndexDescription"
         },
         "GlobalSecondaryIndexList": {
-            "type": "list"
+            "type": "list",
+            "of": "GlobalSecondaryIndex"
         },
         "GlobalSecondaryIndexUpdate": {
             "type": "structure",
@@ -806,7 +813,8 @@
             ]
         },
         "GlobalSecondaryIndexUpdateList": {
-            "type": "list"
+            "type": "list",
+            "of": "GlobalSecondaryIndexUpdate"
         },
         "IndexName": {
             "type": "string"
@@ -846,7 +854,8 @@
             ]
         },
         "ItemCollectionMetricsMultiple": {
-            "type": "list"
+            "type": "list",
+            "of": "ItemCollectionMetrics"
         },
         "ItemCollectionMetricsPerTable": {
             "type": "map"
@@ -855,7 +864,8 @@
             "type": "double"
         },
         "ItemCollectionSizeEstimateRange": {
-            "type": "list"
+            "type": "list",
+            "of": "ItemCollectionSizeEstimateBound"
         },
         "ItemCollectionSizeLimitExceededException": {
             "type": "structure",
@@ -868,7 +878,8 @@
             ]
         },
         "ItemList": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeMap"
         },
         "Key": {
             "type": "map"
@@ -880,10 +891,12 @@
             "type": "string"
         },
         "KeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "Key"
         },
         "KeySchema": {
-            "type": "list"
+            "type": "list",
+            "of": "KeySchemaElement"
         },
         "KeySchemaAttributeName": {
             "type": "string"
@@ -947,7 +960,8 @@
             ]
         },
         "ListAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "AttributeValue"
         },
         "ListTablesInput": {
             "type": "structure",
@@ -1036,10 +1050,12 @@
             ]
         },
         "LocalSecondaryIndexDescriptionList": {
-            "type": "list"
+            "type": "list",
+            "of": "LocalSecondaryIndexDescription"
         },
         "LocalSecondaryIndexList": {
-            "type": "list"
+            "type": "list",
+            "of": "LocalSecondaryIndex"
         },
         "Long": {
             "type": "long"
@@ -1051,7 +1067,8 @@
             "type": "string"
         },
         "NonKeyAttributeNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "NonKeyAttributeName"
         },
         "NullAttributeValue": {
             "type": "boolean"
@@ -1060,7 +1077,8 @@
             "type": "string"
         },
         "NumberSetAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "NumberAttributeValue"
         },
         "PositiveIntegerObject": {
             "type": "integer"
@@ -1536,7 +1554,8 @@
             "type": "string"
         },
         "StringSetAttributeValue": {
-            "type": "list"
+            "type": "list",
+            "of": "StringAttributeValue"
         },
         "TableDescription": {
             "type": "structure",
@@ -1617,7 +1636,8 @@
             "type": "string"
         },
         "TableNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "TableName"
         },
         "TableStatus": {
             "type": "string"
@@ -1775,7 +1795,8 @@
             ]
         },
         "WriteRequests": {
-            "type": "list"
+            "type": "list",
+            "of": "WriteRequest"
         }
     }
 }

@@ -251,7 +251,8 @@
             ]
         },
         "AttachmentSet": {
-            "type": "list"
+            "type": "list",
+            "of": "AttachmentDetails"
         },
         "AttachmentSetExpired": {
             "type": "structure",
@@ -287,7 +288,8 @@
             ]
         },
         "Attachments": {
-            "type": "list"
+            "type": "list",
+            "of": "Attachment"
         },
         "BeforeTime": {
             "type": "string"
@@ -374,7 +376,8 @@
             "type": "string"
         },
         "CaseIdList": {
-            "type": "list"
+            "type": "list",
+            "of": "CaseId"
         },
         "CaseIdNotFound": {
             "type": "structure",
@@ -387,7 +390,8 @@
             ]
         },
         "CaseList": {
-            "type": "list"
+            "type": "list",
+            "of": "CaseDetails"
         },
         "CaseStatus": {
             "type": "string"
@@ -411,7 +415,8 @@
             "type": "string"
         },
         "CategoryList": {
-            "type": "list"
+            "type": "list",
+            "of": "Category"
         },
         "CategoryName": {
             "type": "string"
@@ -420,7 +425,8 @@
             "type": "string"
         },
         "CcEmailAddressList": {
-            "type": "list"
+            "type": "list",
+            "of": "CcEmailAddress"
         },
         "Communication": {
             "type": "structure",
@@ -456,7 +462,8 @@
             "type": "string"
         },
         "CommunicationList": {
-            "type": "list"
+            "type": "list",
+            "of": "Communication"
         },
         "CreateCaseRequest": {
             "type": "structure",
@@ -924,10 +931,12 @@
             "type": "string"
         },
         "ServiceCodeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ServiceCode"
         },
         "ServiceList": {
-            "type": "list"
+            "type": "list",
+            "of": "Service"
         },
         "ServiceName": {
             "type": "string"
@@ -957,7 +966,8 @@
             "type": "string"
         },
         "SeverityLevelsList": {
-            "type": "list"
+            "type": "list",
+            "of": "SeverityLevel"
         },
         "Status": {
             "type": "string"
@@ -966,7 +976,8 @@
             "type": "string"
         },
         "StringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "Subject": {
             "type": "string"
@@ -1018,7 +1029,8 @@
             ]
         },
         "TrustedAdvisorCheckList": {
-            "type": "list"
+            "type": "list",
+            "of": "TrustedAdvisorCheckDescription"
         },
         "TrustedAdvisorCheckRefreshStatus": {
             "type": "structure",
@@ -1041,7 +1053,8 @@
             ]
         },
         "TrustedAdvisorCheckRefreshStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "TrustedAdvisorCheckRefreshStatus"
         },
         "TrustedAdvisorCheckResult": {
             "type": "structure",
@@ -1112,7 +1125,8 @@
             ]
         },
         "TrustedAdvisorCheckSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "TrustedAdvisorCheckSummary"
         },
         "TrustedAdvisorCostOptimizingSummary": {
             "type": "structure",
@@ -1160,7 +1174,8 @@
             ]
         },
         "TrustedAdvisorResourceDetailList": {
-            "type": "list"
+            "type": "list",
+            "of": "TrustedAdvisorResourceDetail"
         },
         "TrustedAdvisorResourcesSummary": {
             "type": "structure",

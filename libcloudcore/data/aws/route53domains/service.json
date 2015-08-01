@@ -363,7 +363,8 @@
             "type": "string"
         },
         "DomainStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "DomainStatus"
         },
         "DomainSummary": {
             "type": "structure",
@@ -391,7 +392,8 @@
             ]
         },
         "DomainSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "DomainSummary"
         },
         "DuplicateRequest": {
             "type": "structure",
@@ -460,7 +462,8 @@
             ]
         },
         "ExtraParamList": {
-            "type": "list"
+            "type": "list",
+            "of": "ExtraParam"
         },
         "ExtraParamName": {
             "type": "string"
@@ -640,7 +643,8 @@
             "type": "string"
         },
         "GlueIpList": {
-            "type": "list"
+            "type": "list",
+            "of": "GlueIp"
         },
         "HostName": {
             "type": "string"
@@ -753,7 +757,8 @@
             ]
         },
         "NameserverList": {
-            "type": "list"
+            "type": "list",
+            "of": "Nameserver"
         },
         "OperationId": {
             "type": "string"
@@ -796,7 +801,8 @@
             ]
         },
         "OperationSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "OperationSummary"
         },
         "OperationType": {
             "type": "string"
@@ -938,10 +944,12 @@
             "type": "string"
         },
         "TagKeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagKey"
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagValue": {
             "type": "string"

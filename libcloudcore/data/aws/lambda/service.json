@@ -379,7 +379,8 @@
             ]
         },
         "EventSourceMappingsList": {
-            "type": "list"
+            "type": "list",
+            "of": "EventSourceMappingConfiguration"
         },
         "EventSourcePosition": {
             "type": "string"
@@ -483,7 +484,8 @@
             ]
         },
         "FunctionList": {
-            "type": "list"
+            "type": "list",
+            "of": "FunctionConfiguration"
         },
         "FunctionName": {
             "type": "string"

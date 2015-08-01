@@ -327,7 +327,8 @@
             ]
         },
         "ActionConfigurationPropertyList": {
-            "type": "list"
+            "type": "list",
+            "of": "ActionConfigurationProperty"
         },
         "ActionConfigurationPropertyType": {
             "type": "string"
@@ -493,7 +494,8 @@
             ]
         },
         "ActionStateList": {
-            "type": "list"
+            "type": "list",
+            "of": "ActionState"
         },
         "ActionType": {
             "type": "structure",
@@ -550,7 +552,8 @@
             ]
         },
         "ActionTypeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ActionType"
         },
         "ActionTypeNotFoundException": {
             "type": "structure",
@@ -617,7 +620,8 @@
             ]
         },
         "ArtifactList": {
-            "type": "list"
+            "type": "list",
+            "of": "Artifact"
         },
         "ArtifactLocation": {
             "type": "structure",
@@ -1044,7 +1048,8 @@
             ]
         },
         "InputArtifactList": {
-            "type": "list"
+            "type": "list",
+            "of": "InputArtifact"
         },
         "InvalidActionDeclarationException": {
             "type": "structure",
@@ -1166,7 +1171,8 @@
             "type": "string"
         },
         "JobList": {
-            "type": "list"
+            "type": "list",
+            "of": "Job"
         },
         "JobNotFoundException": {
             "type": "structure",
@@ -1269,7 +1275,8 @@
             ]
         },
         "OutputArtifactList": {
-            "type": "list"
+            "type": "list",
+            "of": "OutputArtifact"
         },
         "Percentage": {
             "type": "integer"
@@ -1326,7 +1333,8 @@
             "type": "string"
         },
         "PipelineList": {
-            "type": "list"
+            "type": "list",
+            "of": "PipelineSummary"
         },
         "PipelineName": {
             "type": "string"
@@ -1340,7 +1348,8 @@
             "members": []
         },
         "PipelineStageDeclarationList": {
-            "type": "list"
+            "type": "list",
+            "of": "StageDeclaration"
         },
         "PipelineSummary": {
             "type": "structure",
@@ -1599,10 +1608,12 @@
             "type": "string"
         },
         "StageActionDeclarationList": {
-            "type": "list"
+            "type": "list",
+            "of": "ActionDeclaration"
         },
         "StageBlockerDeclarationList": {
-            "type": "list"
+            "type": "list",
+            "of": "BlockerDeclaration"
         },
         "StageContext": {
             "type": "structure",
@@ -1662,7 +1673,8 @@
             ]
         },
         "StageStateList": {
-            "type": "list"
+            "type": "list",
+            "of": "StageState"
         },
         "StageTransitionType": {
             "type": "string"
@@ -1762,7 +1774,8 @@
             "type": "string"
         },
         "ThirdPartyJobList": {
-            "type": "list"
+            "type": "list",
+            "of": "ThirdPartyJob"
         },
         "Timestamp": {
             "type": "timestamp"

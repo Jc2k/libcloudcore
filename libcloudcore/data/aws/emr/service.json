@@ -247,7 +247,8 @@
             ]
         },
         "ApplicationList": {
-            "type": "list"
+            "type": "list",
+            "of": "Application"
         },
         "Boolean": {
             "type": "boolean"
@@ -268,7 +269,8 @@
             ]
         },
         "BootstrapActionConfigList": {
-            "type": "list"
+            "type": "list",
+            "of": "BootstrapActionConfig"
         },
         "BootstrapActionDetail": {
             "type": "structure",
@@ -281,7 +283,8 @@
             ]
         },
         "BootstrapActionDetailList": {
-            "type": "list"
+            "type": "list",
+            "of": "BootstrapActionDetail"
         },
         "Cluster": {
             "type": "structure",
@@ -397,7 +400,8 @@
             "type": "string"
         },
         "ClusterStateList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterState"
         },
         "ClusterStatus": {
             "type": "structure",
@@ -445,7 +449,8 @@
             ]
         },
         "ClusterSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "ClusterSummary"
         },
         "ClusterTimeline": {
             "type": "structure",
@@ -488,7 +493,8 @@
             ]
         },
         "CommandList": {
-            "type": "list"
+            "type": "list",
+            "of": "Command"
         },
         "Configuration": {
             "type": "structure",
@@ -511,7 +517,8 @@
             ]
         },
         "ConfigurationList": {
-            "type": "list"
+            "type": "list",
+            "of": "Configuration"
         },
         "Date": {
             "type": "timestamp"
@@ -597,7 +604,8 @@
             ]
         },
         "EC2InstanceIdsToTerminateList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceId"
         },
         "Ec2InstanceAttributes": {
             "type": "structure",
@@ -836,7 +844,8 @@
             ]
         },
         "InstanceGroupConfigList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceGroupConfig"
         },
         "InstanceGroupDetail": {
             "type": "structure",
@@ -914,16 +923,19 @@
             ]
         },
         "InstanceGroupDetailList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceGroupDetail"
         },
         "InstanceGroupId": {
             "type": "string"
         },
         "InstanceGroupIdsList": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen256"
         },
         "InstanceGroupList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceGroup"
         },
         "InstanceGroupModifyConfig": {
             "type": "structure",
@@ -946,7 +958,8 @@
             ]
         },
         "InstanceGroupModifyConfigList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceGroupModifyConfig"
         },
         "InstanceGroupState": {
             "type": "string"
@@ -1013,13 +1026,15 @@
             "type": "string"
         },
         "InstanceGroupTypeList": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceGroupType"
         },
         "InstanceId": {
             "type": "string"
         },
         "InstanceList": {
-            "type": "list"
+            "type": "list",
+            "of": "Instance"
         },
         "InstanceRoleType": {
             "type": "string"
@@ -1186,13 +1201,15 @@
             ]
         },
         "JobFlowDetailList": {
-            "type": "list"
+            "type": "list",
+            "of": "JobFlowDetail"
         },
         "JobFlowExecutionState": {
             "type": "string"
         },
         "JobFlowExecutionStateList": {
-            "type": "list"
+            "type": "list",
+            "of": "JobFlowExecutionState"
         },
         "JobFlowExecutionStatusDetail": {
             "type": "structure",
@@ -1390,7 +1407,8 @@
             ]
         },
         "KeyValueList": {
-            "type": "list"
+            "type": "list",
+            "of": "KeyValue"
         },
         "ListBootstrapActionsInput": {
             "type": "structure",
@@ -1589,7 +1607,8 @@
             ]
         },
         "NewSupportedProductsList": {
-            "type": "list"
+            "type": "list",
+            "of": "SupportedProductConfig"
         },
         "PlacementType": {
             "type": "structure",
@@ -1734,7 +1753,8 @@
             ]
         },
         "SecurityGroupsList": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen256"
         },
         "SetTerminationProtectionInput": {
             "type": "structure",
@@ -1817,7 +1837,8 @@
             ]
         },
         "StepConfigList": {
-            "type": "list"
+            "type": "list",
+            "of": "StepConfig"
         },
         "StepDetail": {
             "type": "structure",
@@ -1835,7 +1856,8 @@
             ]
         },
         "StepDetailList": {
-            "type": "list"
+            "type": "list",
+            "of": "StepDetail"
         },
         "StepExecutionState": {
             "type": "string"
@@ -1874,7 +1896,8 @@
             "type": "string"
         },
         "StepIdsList": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen256"
         },
         "StepState": {
             "type": "string"
@@ -1898,7 +1921,8 @@
             "type": "string"
         },
         "StepStateList": {
-            "type": "list"
+            "type": "list",
+            "of": "StepState"
         },
         "StepStatus": {
             "type": "structure",
@@ -1951,7 +1975,8 @@
             ]
         },
         "StepSummaryList": {
-            "type": "list"
+            "type": "list",
+            "of": "StepSummary"
         },
         "StepTimeline": {
             "type": "structure",
@@ -1977,7 +2002,8 @@
             "type": "string"
         },
         "StringList": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "StringMap": {
             "type": "map"
@@ -1998,7 +2024,8 @@
             ]
         },
         "SupportedProductsList": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlStringMaxLen256"
         },
         "Tag": {
             "type": "structure",
@@ -2016,7 +2043,8 @@
             ]
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TerminateJobFlowsInput": {
             "type": "structure",
@@ -2032,7 +2060,8 @@
             "type": "string"
         },
         "XmlStringList": {
-            "type": "list"
+            "type": "list",
+            "of": "XmlString"
         },
         "XmlStringMaxLen256": {
             "type": "string"

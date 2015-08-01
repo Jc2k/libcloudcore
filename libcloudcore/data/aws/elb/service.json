@@ -359,10 +359,12 @@
             ]
         },
         "AdditionalAttributes": {
-            "type": "list"
+            "type": "list",
+            "of": "AdditionalAttribute"
         },
         "AppCookieStickinessPolicies": {
-            "type": "list"
+            "type": "list",
+            "of": "AppCookieStickinessPolicy"
         },
         "AppCookieStickinessPolicy": {
             "type": "structure",
@@ -442,7 +444,8 @@
             "type": "string"
         },
         "AvailabilityZones": {
-            "type": "list"
+            "type": "list",
+            "of": "AvailabilityZone"
         },
         "BackendServerDescription": {
             "type": "structure",
@@ -460,7 +463,8 @@
             ]
         },
         "BackendServerDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "BackendServerDescription"
         },
         "Cardinality": {
             "type": "string"
@@ -1055,10 +1059,12 @@
             ]
         },
         "InstanceStates": {
-            "type": "list"
+            "type": "list",
+            "of": "InstanceState"
         },
         "Instances": {
-            "type": "list"
+            "type": "list",
+            "of": "Instance"
         },
         "InvalidConfigurationRequestException": {
             "type": "structure",
@@ -1081,7 +1087,8 @@
             "members": []
         },
         "LBCookieStickinessPolicies": {
-            "type": "list"
+            "type": "list",
+            "of": "LBCookieStickinessPolicy"
         },
         "LBCookieStickinessPolicy": {
             "type": "structure",
@@ -1143,14 +1150,16 @@
             ]
         },
         "ListenerDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "ListenerDescription"
         },
         "ListenerNotFoundException": {
             "type": "structure",
             "members": []
         },
         "Listeners": {
-            "type": "list"
+            "type": "list",
+            "of": "Listener"
         },
         "LoadBalancerAttributeNotFoundException": {
             "type": "structure",
@@ -1272,13 +1281,16 @@
             ]
         },
         "LoadBalancerDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "LoadBalancerDescription"
         },
         "LoadBalancerNames": {
-            "type": "list"
+            "type": "list",
+            "of": "AccessPointName"
         },
         "LoadBalancerNamesMax20": {
-            "type": "list"
+            "type": "list",
+            "of": "AccessPointName"
         },
         "LoadBalancerScheme": {
             "type": "string"
@@ -1369,7 +1381,8 @@
             ]
         },
         "PolicyAttributeDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyAttributeDescription"
         },
         "PolicyAttributeTypeDescription": {
             "type": "structure",
@@ -1402,10 +1415,12 @@
             ]
         },
         "PolicyAttributeTypeDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyAttributeTypeDescription"
         },
         "PolicyAttributes": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyAttribute"
         },
         "PolicyDescription": {
             "type": "structure",
@@ -1428,13 +1443,15 @@
             ]
         },
         "PolicyDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyDescription"
         },
         "PolicyName": {
             "type": "string"
         },
         "PolicyNames": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyName"
         },
         "PolicyNotFoundException": {
             "type": "structure",
@@ -1461,20 +1478,23 @@
             ]
         },
         "PolicyTypeDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyTypeDescription"
         },
         "PolicyTypeName": {
             "type": "string"
         },
         "PolicyTypeNames": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyTypeName"
         },
         "PolicyTypeNotFoundException": {
             "type": "structure",
             "members": []
         },
         "Ports": {
-            "type": "list"
+            "type": "list",
+            "of": "AccessPointPort"
         },
         "Protocol": {
             "type": "string"
@@ -1567,7 +1587,8 @@
             "type": "string"
         },
         "SecurityGroups": {
-            "type": "list"
+            "type": "list",
+            "of": "SecurityGroupId"
         },
         "SetLoadBalancerListenerSSLCertificateInput": {
             "type": "structure",
@@ -1670,7 +1691,8 @@
             "members": []
         },
         "Subnets": {
-            "type": "list"
+            "type": "list",
+            "of": "SubnetId"
         },
         "Tag": {
             "type": "structure",
@@ -1703,13 +1725,15 @@
             ]
         },
         "TagDescriptions": {
-            "type": "list"
+            "type": "list",
+            "of": "TagDescription"
         },
         "TagKey": {
             "type": "string"
         },
         "TagKeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "TagKeyOnly"
         },
         "TagKeyOnly": {
             "type": "structure",
@@ -1722,7 +1746,8 @@
             ]
         },
         "TagList": {
-            "type": "list"
+            "type": "list",
+            "of": "Tag"
         },
         "TagValue": {
             "type": "string"

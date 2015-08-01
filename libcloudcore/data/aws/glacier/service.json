@@ -467,7 +467,8 @@
             ]
         },
         "DataRetrievalRulesList": {
-            "type": "list"
+            "type": "list",
+            "of": "DataRetrievalRule"
         },
         "DateTime": {
             "type": "string"
@@ -1139,7 +1140,8 @@
             ]
         },
         "JobList": {
-            "type": "list"
+            "type": "list",
+            "of": "GlacierJobDescription"
         },
         "JobParameters": {
             "type": "structure",
@@ -1480,13 +1482,15 @@
             ]
         },
         "NotificationEventList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "NullableLong": {
             "type": "long"
         },
         "PartList": {
-            "type": "list"
+            "type": "list",
+            "of": "PartListElement"
         },
         "PartListElement": {
             "type": "structure",
@@ -1682,7 +1686,8 @@
             "type": "string"
         },
         "TagKeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "string"
         },
         "TagMap": {
             "type": "map"
@@ -1816,7 +1821,8 @@
             ]
         },
         "UploadsList": {
-            "type": "list"
+            "type": "list",
+            "of": "UploadListElement"
         },
         "VaultAccessPolicy": {
             "type": "structure",
@@ -1829,7 +1835,8 @@
             ]
         },
         "VaultList": {
-            "type": "list"
+            "type": "list",
+            "of": "DescribeVaultOutput"
         },
         "VaultLockPolicy": {
             "type": "structure",

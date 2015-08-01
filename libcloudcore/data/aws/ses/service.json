@@ -190,7 +190,8 @@
             "type": "string"
         },
         "AddressList": {
-            "type": "list"
+            "type": "list",
+            "of": "Address"
         },
         "AmazonResourceName": {
             "type": "string"
@@ -442,7 +443,8 @@
             ]
         },
         "IdentityList": {
-            "type": "list"
+            "type": "list",
+            "of": "Identity"
         },
         "IdentityNotificationAttributes": {
             "type": "structure",
@@ -612,7 +614,8 @@
             "type": "string"
         },
         "PolicyNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyName"
         },
         "PutIdentityPolicyRequest": {
             "type": "structure",
@@ -682,7 +685,8 @@
             ]
         },
         "SendDataPointList": {
-            "type": "list"
+            "type": "list",
+            "of": "SendDataPoint"
         },
         "SendEmailRequest": {
             "type": "structure",
@@ -857,7 +861,8 @@
             "type": "string"
         },
         "VerificationTokenList": {
-            "type": "list"
+            "type": "list",
+            "of": "VerificationToken"
         },
         "VerifyDomainDkimRequest": {
             "type": "structure",

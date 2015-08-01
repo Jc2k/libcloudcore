@@ -208,7 +208,8 @@
             "type": "string"
         },
         "AliasList": {
-            "type": "list"
+            "type": "list",
+            "of": "AliasListEntry"
         },
         "AliasListEntry": {
             "type": "structure",
@@ -709,7 +710,8 @@
             "type": "string"
         },
         "GrantList": {
-            "type": "list"
+            "type": "list",
+            "of": "GrantListEntry"
         },
         "GrantListEntry": {
             "type": "structure",
@@ -750,10 +752,12 @@
             "type": "string"
         },
         "GrantOperationList": {
-            "type": "list"
+            "type": "list",
+            "of": "GrantOperation"
         },
         "GrantTokenList": {
-            "type": "list"
+            "type": "list",
+            "of": "GrantTokenType"
         },
         "GrantTokenType": {
             "type": "string"
@@ -825,7 +829,8 @@
             "type": "string"
         },
         "KeyList": {
-            "type": "list"
+            "type": "list",
+            "of": "KeyListEntry"
         },
         "KeyListEntry": {
             "type": "structure",
@@ -1084,7 +1089,8 @@
             "type": "blob"
         },
         "PolicyNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "PolicyNameType"
         },
         "PolicyNameType": {
             "type": "string"

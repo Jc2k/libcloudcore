@@ -298,7 +298,8 @@
             "type": "string"
         },
         "BatchPredictions": {
-            "type": "list"
+            "type": "list",
+            "of": "BatchPrediction"
         },
         "ComparatorValue": {
             "type": "string"
@@ -658,7 +659,8 @@
             "type": "string"
         },
         "DataSources": {
-            "type": "list"
+            "type": "list",
+            "of": "DataSource"
         },
         "DeleteBatchPredictionInput": {
             "type": "structure",
@@ -1084,7 +1086,8 @@
             "type": "string"
         },
         "EDPSecurityGroupIds": {
-            "type": "list"
+            "type": "list",
+            "of": "EDPSecurityGroupId"
         },
         "EDPServiceRole": {
             "type": "string"
@@ -1174,7 +1177,8 @@
             "type": "string"
         },
         "Evaluations": {
-            "type": "list"
+            "type": "list",
+            "of": "Evaluation"
         },
         "GetBatchPredictionInput": {
             "type": "structure",
@@ -1691,7 +1695,8 @@
             "type": "string"
         },
         "MLModels": {
-            "type": "list"
+            "type": "list",
+            "of": "MLModel"
         },
         "Message": {
             "type": "string"

@@ -160,7 +160,8 @@
             "type": "string"
         },
         "AccessControls": {
-            "type": "list"
+            "type": "list",
+            "of": "AccessControl"
         },
         "AccessDeniedException": {
             "type": "structure",
@@ -207,7 +208,8 @@
             ]
         },
         "Artworks": {
-            "type": "list"
+            "type": "list",
+            "of": "Artwork"
         },
         "Ascending": {
             "type": "string"
@@ -351,7 +353,8 @@
             "type": "string"
         },
         "CaptionFormats": {
-            "type": "list"
+            "type": "list",
+            "of": "CaptionFormat"
         },
         "CaptionMergePolicy": {
             "type": "string"
@@ -387,7 +390,8 @@
             ]
         },
         "CaptionSources": {
-            "type": "list"
+            "type": "list",
+            "of": "CaptionSource"
         },
         "Captions": {
             "type": "structure",
@@ -426,7 +430,8 @@
             "type": "map"
         },
         "Composition": {
-            "type": "list"
+            "type": "list",
+            "of": "Clip"
         },
         "CreateJobOutput": {
             "type": "structure",
@@ -489,7 +494,8 @@
             ]
         },
         "CreateJobOutputs": {
-            "type": "list"
+            "type": "list",
+            "of": "CreateJobOutput"
         },
         "CreateJobPlaylist": {
             "type": "structure",
@@ -522,7 +528,8 @@
             ]
         },
         "CreateJobPlaylists": {
-            "type": "list"
+            "type": "list",
+            "of": "CreateJobPlaylist"
         },
         "CreateJobRequest": {
             "type": "structure",
@@ -783,7 +790,8 @@
             "type": "string"
         },
         "ExceptionMessages": {
-            "type": "list"
+            "type": "list",
+            "of": "String"
         },
         "Filename": {
             "type": "string"
@@ -1092,7 +1100,8 @@
             ]
         },
         "JobOutputs": {
-            "type": "list"
+            "type": "list",
+            "of": "JobOutput"
         },
         "JobStatus": {
             "type": "string"
@@ -1118,10 +1127,12 @@
             ]
         },
         "JobWatermarks": {
-            "type": "list"
+            "type": "list",
+            "of": "JobWatermark"
         },
         "Jobs": {
-            "type": "list"
+            "type": "list",
+            "of": "Job"
         },
         "JpgOrPng": {
             "type": "string"
@@ -1345,7 +1356,8 @@
             "type": "string"
         },
         "OutputKeys": {
-            "type": "list"
+            "type": "list",
+            "of": "Key"
         },
         "PaddingPolicy": {
             "type": "string"
@@ -1371,7 +1383,8 @@
             ]
         },
         "Permissions": {
-            "type": "list"
+            "type": "list",
+            "of": "Permission"
         },
         "Pipeline": {
             "type": "structure",
@@ -1457,7 +1470,8 @@
             "type": "string"
         },
         "Pipelines": {
-            "type": "list"
+            "type": "list",
+            "of": "Pipeline"
         },
         "PixelsOrPercent": {
             "type": "string"
@@ -1544,7 +1558,8 @@
             "type": "string"
         },
         "Playlists": {
-            "type": "list"
+            "type": "list",
+            "of": "Playlist"
         },
         "Preset": {
             "type": "structure",
@@ -1661,10 +1676,12 @@
             "type": "string"
         },
         "PresetWatermarks": {
-            "type": "list"
+            "type": "list",
+            "of": "PresetWatermark"
         },
         "Presets": {
-            "type": "list"
+            "type": "list",
+            "of": "Preset"
         },
         "ReadJobRequest": {
             "type": "structure",
@@ -1761,7 +1778,8 @@
             "type": "string"
         },
         "SnsTopics": {
-            "type": "list"
+            "type": "list",
+            "of": "SnsTopic"
         },
         "StorageClass": {
             "type": "string"
@@ -2133,7 +2151,8 @@
             ]
         },
         "Warnings": {
-            "type": "list"
+            "type": "list",
+            "of": "Warning"
         },
         "WatermarkKey": {
             "type": "string"

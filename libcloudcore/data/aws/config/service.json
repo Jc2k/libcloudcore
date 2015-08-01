@@ -250,7 +250,8 @@
             "type": "timestamp"
         },
         "ConfigurationItemList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationItem"
         },
         "ConfigurationItemMD5Hash": {
             "type": "string"
@@ -279,10 +280,12 @@
             ]
         },
         "ConfigurationRecorderList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationRecorder"
         },
         "ConfigurationRecorderNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "RecorderName"
         },
         "ConfigurationRecorderStatus": {
             "type": "structure",
@@ -330,7 +333,8 @@
             ]
         },
         "ConfigurationRecorderStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "ConfigurationRecorderStatus"
         },
         "ConfigurationStateId": {
             "type": "string"
@@ -394,10 +398,12 @@
             ]
         },
         "DeliveryChannelList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeliveryChannel"
         },
         "DeliveryChannelNameList": {
-            "type": "list"
+            "type": "list",
+            "of": "ChannelName"
         },
         "DeliveryChannelStatus": {
             "type": "structure",
@@ -425,7 +431,8 @@
             ]
         },
         "DeliveryChannelStatusList": {
-            "type": "list"
+            "type": "list",
+            "of": "DeliveryChannelStatus"
         },
         "DeliveryStatus": {
             "type": "string"
@@ -701,7 +708,8 @@
             "type": "string"
         },
         "RelatedEventList": {
-            "type": "list"
+            "type": "list",
+            "of": "RelatedEvent"
         },
         "Relationship": {
             "type": "structure",
@@ -724,7 +732,8 @@
             ]
         },
         "RelationshipList": {
-            "type": "list"
+            "type": "list",
+            "of": "Relationship"
         },
         "RelationshipName": {
             "type": "string"
@@ -743,7 +752,8 @@
             "type": "string"
         },
         "ResourceTypeList": {
-            "type": "list"
+            "type": "list",
+            "of": "ResourceType"
         },
         "StartConfigurationRecorderRequest": {
             "type": "structure",
