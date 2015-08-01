@@ -143,12 +143,12 @@ class Serializer(ShapeVisitor):
 
 class XmlSerializer(layer.Layer):
 
-    def _serialize(self, operation, **params):
+    def _serialize(self, operation, shape, **params):
         root = ElementTree.Element('DummyRoot')
         Serializer().visit(
             root,
-            operation.input_shape,
-            operation.input_shape.name,
+            shape,
+            shape.name,
             params,
         )
         real_root = root.getchildren()[0]
@@ -158,7 +158,11 @@ class XmlSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'text/xml'
-        request.body = self._serialize(operation, **params)
+        request.body = self._serialize(
+            operation,
+            operation.input_shape,
+            **params
+        )
 
         return super(XmlSerializer, self).before_call(
             request,

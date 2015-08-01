@@ -15,7 +15,6 @@
 
 import unittest
 
-from libcloudcore.models import Model
 from libcloudcore.serializers.xml import XmlSerializer
 
 try:
@@ -83,93 +82,29 @@ class TestParseXml(unittest.TestCase):
 class TestSerializeXml(unittest.TestCase):
 
     def setUp(self):
-        self.model = Model({
-            'metadata': {
-                'namespaces': {
-                    '': 'https://route53.amazonaws.com/doc/2013-04-01/'
-                }
-            },
-            'shapes': {
-                "String": {
-                    "type": "string",
-                },
-                "Integer": {
-                    "type": "integer",
-                },
-                "Boolean": {
-                    "type": "boolean",
-                },
-                "HostedZoneConfig": {
-                    "type": "structure",
-                    "members": [{
-                        "name": "Comment",
-                        "shape": "String"
-                    }, {
-                        "name": "PrivateZone",
-                        "shape": "Boolean"
-                    }]
-                },
-                "HostedZone": {
-                    "type": "structure",
-                    "members": [{
-                        "name": "Id",
-                        "shape": "String",
-                        }, {
-                        "name": "Name",
-                        "shape": "String",
-                        }, {
-                        "name": "CallerReference",
-                        "shape": "String",
-                        }, {
-                        "name": "Config",
-                        "shape": "HostedZoneConfig",
-                        }, {
-                        "name": "ResourceRecordSetCount",
-                        "shape": "Integer"
-                    }]
-                },
-                "HostedZones": {
-                    "type": "list",
-                    "of": "HostedZone",
-                },
-                "ListHostedZonesByNameResponse": {
-                    "type": "structure",
-                    "members": [{
-                        "name": "HostedZones",
-                        "shape": "HostedZones"
-                        }, {
-                        "name": "IsTruncated",
-                        "shape": "Boolean"
-                        }, {
-                        "name": "MaxItems",
-                        "shape": "Integer"
-                    }]
-                }
-            },
-            'operations': {
-                'list_hosted_zones_by_name': {
-                    'input': {"shape": "ListHostedZonesByNameResponse"},
-                }
-            },
-            'documentation': 'Test model documentation',
-        })
+        from libcloudcore.drivers.aws.route53 import Driver
+        self.model = Driver.model
         self.layer = XmlSerializer()
 
     def test_serialize(self):
-        operation = self.model.get_operation("list_hosted_zones_by_name")
+        operation = self.model.get_operation("ListHostedZonesByName")
 
-        result = xml_open(self.layer._serialize(operation, HostedZones=[{
-            "Id": "/hostedzone/ZONE_ID",
-            "Name": "www.example.com",
-            "CallerReference": "CALLER_REFERENCE",
-            "Config": {
-                "Comment": "COMMENT",
-                "PrivateZone": True,
-            },
-            "ResourceRecordSetCount": 0,
-        }]))
+        result = self.layer._serialize(
+            operation,
+            operation.output_shape,
+            HostedZones=[{
+                "Id": "/hostedzone/ZONE_ID",
+                "Name": "www.example.com",
+                "CallerReference": "CALLER_REFERENCE",
+                "Config": {
+                    "Comment": "COMMENT",
+                    "PrivateZone": True,
+                },
+                "ResourceRecordSetCount": 0,
+            }],
+        )
 
-        xml = xml_open("""
+        xml = """
             <ListHostedZonesByNameResponse
                 xmlns="https://route53.amazonaws.com/doc/2013-04-01/">
             <HostedZones>
@@ -184,9 +119,9 @@ class TestSerializeXml(unittest.TestCase):
                     <ResourceRecordSetCount>0</ResourceRecordSetCount>
                 </HostedZone>
             </HostedZones>
-        </ListHostedZonesByNameResponse>""".strip())
+        </ListHostedZonesByNameResponse>""".strip()
 
-        self.assertXmlEqual(result, xml)
+        self.assertXmlEqual(xml_open(result), xml_open(xml))
 
     def assertXmlEqual(self, x1, x2):
         self.assertEqual(x1.tag, x2.tag)

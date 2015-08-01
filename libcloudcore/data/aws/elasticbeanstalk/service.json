@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "namespaces": {
+            "": "http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/"
+        }
+    },
     "operations": {
         "AbortEnvironmentUpdate": {
             "documentation": "<p>Cancels in-progress environment configuration update or application version deployment.</p>",

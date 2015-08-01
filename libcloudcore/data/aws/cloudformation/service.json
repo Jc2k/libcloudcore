@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "namespaces": {
+            "": "http://cloudformation.amazonaws.com/doc/2010-05-15/"
+        }
+    },
     "operations": {
         "CancelUpdateStack": {
             "documentation": "<p>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>",

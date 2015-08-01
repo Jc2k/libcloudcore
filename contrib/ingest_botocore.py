@@ -11,6 +11,20 @@ def process_service_2(path, model):
     with open(os.path.join(path, "service-2.json"), "r") as fp:
         service = json.load(fp, object_pairs_hook=collections.OrderedDict)
 
+    if 'xmlNamespace' in service['metadata']:
+        namespaces = model['metadata']['namespaces'] = {}
+        namespaces[''] = service['metadata']['xmlNamespace']
+    else:
+        possible_namespaces = set()
+        for o in service.get("operations", {}).values():
+            if "xmlNamespace" in o.get('input', {}):
+                possible_namespaces.add(o['input']['xmlNamespace']['uri'])
+        if len(possible_namespaces) == 1:
+            namespaces = model['metadata']['namespaces'] = {}
+            namespaces[''] = tuple(possible_namespaces)[0]
+        elif len(possible_namespaces) > 1:
+            print("ERROR: {} has {} namespaces".format(path, len(possible_namespaces)))
+
     shapes = model['shapes']
     for name, shape in service.get("shapes", {}).items():
         s = shapes[name] = collections.OrderedDict()

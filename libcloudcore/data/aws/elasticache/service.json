@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "namespaces": {
+            "": "http://elasticache.amazonaws.com/doc/2015-02-02/"
+        }
+    },
     "operations": {
         "AddTagsToResource": {
             "documentation": "<p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named resource. A <i>cost allocation tag</i> is a key-value pair where the key and value are case-sensitive. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html\">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>",

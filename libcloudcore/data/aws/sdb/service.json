@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "namespaces": {
+            "": "http://sdb.amazonaws.com/doc/2009-04-15/"
+        }
+    },
     "operations": {
         "BatchDeleteAttributes": {
             "documentation": "<p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>",

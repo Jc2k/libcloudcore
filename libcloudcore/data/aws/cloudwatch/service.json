@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "namespaces": {
+            "": "http://monitoring.amazonaws.com/doc/2010-08-01/"
+        }
+    },
     "operations": {
         "DeleteAlarms": {
             "documentation": "<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>",

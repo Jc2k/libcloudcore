@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "namespaces": {
+            "": "https://iam.amazonaws.com/doc/2010-05-08/"
+        }
+    },
     "operations": {
         "AddClientIDToOpenIDConnectProvider": {
             "documentation": "<p>Adds a new client ID (also known as audience) to the list of client IDs already registered for the specified IAM OpenID Connect provider.</p> <p>This action is idempotent; it does not fail or return an error if you add an existing client ID to the provider.</p>",
