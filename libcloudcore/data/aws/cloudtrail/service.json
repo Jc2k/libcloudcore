@@ -1,0 +1,612 @@
+{
+    "metadata": {},
+    "operations": {
+        "CreateTrail": {
+            "documentation": "<p>From the command line, use <code>create-subscription</code>. </p> <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>",
+            "input": {
+                "shape": "CreateTrailRequest"
+            },
+            "output": {
+                "shape": "CreateTrailResponse"
+            }
+        },
+        "DeleteTrail": {
+            "documentation": "<p>Deletes a trail.</p>",
+            "input": {
+                "shape": "DeleteTrailRequest"
+            },
+            "output": {
+                "shape": "DeleteTrailResponse"
+            }
+        },
+        "DescribeTrails": {
+            "documentation": "<p>Retrieves settings for the trail associated with the current region for your account.</p>",
+            "input": {
+                "shape": "DescribeTrailsRequest"
+            },
+            "output": {
+                "shape": "DescribeTrailsResponse"
+            }
+        },
+        "GetTrailStatus": {
+            "documentation": "<p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. </p>",
+            "input": {
+                "shape": "GetTrailStatusRequest"
+            },
+            "output": {
+                "shape": "GetTrailStatusResponse"
+            }
+        },
+        "LookupEvents": {
+            "documentation": "<p>Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account. Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during the last seven days. Lookup supports five different attributes: time range (defined by a start time and end time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number of attributes that can be specified in any one lookup request are time range and one other attribute. The default number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results. The rate of lookup requests is limited to one per second per account.</p> <important>Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.</important>",
+            "input": {
+                "shape": "LookupEventsRequest"
+            },
+            "output": {
+                "shape": "LookupEventsResponse"
+            }
+        },
+        "StartLogging": {
+            "documentation": "<p>Starts the recording of AWS API calls and log file delivery for a trail.</p>",
+            "input": {
+                "shape": "StartLoggingRequest"
+            },
+            "output": {
+                "shape": "StartLoggingResponse"
+            }
+        },
+        "StopLogging": {
+            "documentation": "<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording.</p>",
+            "input": {
+                "shape": "StopLoggingRequest"
+            },
+            "output": {
+                "shape": "StopLoggingResponse"
+            }
+        },
+        "UpdateTrail": {
+            "documentation": "<p>From the command line, use <code>update-subscription</code>.</p> <p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. </p>",
+            "input": {
+                "shape": "UpdateTrailRequest"
+            },
+            "output": {
+                "shape": "UpdateTrailResponse"
+            }
+        }
+    },
+    "shapes": {
+        "Boolean": {
+            "type": "boolean"
+        },
+        "CloudWatchLogsDeliveryUnavailableException": {
+            "type": "structure",
+            "members": []
+        },
+        "CreateTrailRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the trail.</p>"
+                },
+                {
+                    "name": "S3BucketName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>"
+                },
+                {
+                    "name": "S3KeyPrefix",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.</p>"
+                },
+                {
+                    "name": "SnsTopicName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery.</p>"
+                },
+                {
+                    "name": "IncludeGlobalServiceEvents",
+                    "shape": "Boolean",
+                    "documentation": "<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+                },
+                {
+                    "name": "CloudWatchLogsLogGroupArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>"
+                },
+                {
+                    "name": "CloudWatchLogsRoleArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user\u2019s log group.</p>"
+                }
+            ]
+        },
+        "CreateTrailResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the trail.</p>"
+                },
+                {
+                    "name": "S3BucketName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>"
+                },
+                {
+                    "name": "S3KeyPrefix",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.</p>"
+                },
+                {
+                    "name": "SnsTopicName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery.</p>"
+                },
+                {
+                    "name": "IncludeGlobalServiceEvents",
+                    "shape": "Boolean",
+                    "documentation": "<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+                },
+                {
+                    "name": "CloudWatchLogsLogGroupArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>"
+                },
+                {
+                    "name": "CloudWatchLogsRoleArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user\u2019s log group.</p>"
+                }
+            ]
+        },
+        "Date": {
+            "type": "timestamp"
+        },
+        "DeleteTrailRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>The name of a trail to be deleted.</p>"
+                }
+            ]
+        },
+        "DeleteTrailResponse": {
+            "type": "structure",
+            "members": []
+        },
+        "DescribeTrailsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "trailNameList",
+                    "shape": "TrailNameList",
+                    "documentation": "<p>The trail returned.</p>"
+                }
+            ]
+        },
+        "DescribeTrailsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "trailList",
+                    "shape": "TrailList",
+                    "documentation": "<p>The list of trails.</p>"
+                }
+            ]
+        },
+        "Event": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "EventId",
+                    "shape": "String",
+                    "documentation": "<p>The CloudTrail ID of the event returned.</p>"
+                },
+                {
+                    "name": "EventName",
+                    "shape": "String",
+                    "documentation": "<p>The name of the event returned.</p>"
+                },
+                {
+                    "name": "EventTime",
+                    "shape": "Date",
+                    "documentation": "<p>The date and time of the event returned.</p>"
+                },
+                {
+                    "name": "Username",
+                    "shape": "String",
+                    "documentation": "<p>A user name or role name of the requester that called the API in the event returned.</p>"
+                },
+                {
+                    "name": "Resources",
+                    "shape": "ResourceList",
+                    "documentation": "<p>A list of resources referenced by the event returned.</p>"
+                },
+                {
+                    "name": "CloudTrailEvent",
+                    "shape": "String",
+                    "documentation": "<p>A JSON string that contains a representation of the event returned.</p>"
+                }
+            ]
+        },
+        "EventsList": {
+            "type": "list"
+        },
+        "GetTrailStatusRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>The name of the trail for which you are requesting the current status.</p>"
+                }
+            ]
+        },
+        "GetTrailStatusResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IsLogging",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the CloudTrail is currently logging AWS API calls.</p>"
+                },
+                {
+                    "name": "LatestDeliveryError",
+                    "shape": "String",
+                    "documentation": "<p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information see the topic <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html\">Error Responses</a> in the Amazon S3 API Reference. </p>"
+                },
+                {
+                    "name": "LatestNotificationError",
+                    "shape": "String",
+                    "documentation": "<p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/welcome.html\">Amazon SNS Developer Guide</a>. </p>"
+                },
+                {
+                    "name": "LatestDeliveryTime",
+                    "shape": "Date",
+                    "documentation": "<p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>"
+                },
+                {
+                    "name": "LatestNotificationTime",
+                    "shape": "Date",
+                    "documentation": "<p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket. </p>"
+                },
+                {
+                    "name": "StartLoggingTime",
+                    "shape": "Date",
+                    "documentation": "<p>Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account. </p>"
+                },
+                {
+                    "name": "StopLoggingTime",
+                    "shape": "Date",
+                    "documentation": "<p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account. </p>"
+                },
+                {
+                    "name": "LatestCloudWatchLogsDeliveryError",
+                    "shape": "String",
+                    "documentation": "<p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>"
+                },
+                {
+                    "name": "LatestCloudWatchLogsDeliveryTime",
+                    "shape": "Date",
+                    "documentation": "<p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>"
+                }
+            ]
+        },
+        "InsufficientS3BucketPolicyException": {
+            "type": "structure",
+            "members": []
+        },
+        "InsufficientSnsTopicPolicyException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidCloudWatchLogsLogGroupArnException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidCloudWatchLogsRoleArnException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidLookupAttributesException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidMaxResultsException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidNextTokenException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidS3BucketNameException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidS3PrefixException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidSnsTopicNameException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidTimeRangeException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidTrailNameException": {
+            "type": "structure",
+            "members": []
+        },
+        "LookupAttribute": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AttributeKey",
+                    "shape": "LookupAttributeKey",
+                    "documentation": "<p>Specifies an attribute on which to filter the events returned.</p>"
+                },
+                {
+                    "name": "AttributeValue",
+                    "shape": "String",
+                    "documentation": "<p>Specifies a value for the specified AttributeKey.</p>"
+                }
+            ]
+        },
+        "LookupAttributeKey": {
+            "type": "string"
+        },
+        "LookupAttributesList": {
+            "type": "list"
+        },
+        "LookupEventsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "LookupAttributes",
+                    "shape": "LookupAttributesList",
+                    "documentation": "<p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>"
+                },
+                {
+                    "name": "StartTime",
+                    "shape": "Date",
+                    "documentation": "<p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>"
+                },
+                {
+                    "name": "EndTime",
+                    "shape": "Date",
+                    "documentation": "<p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>"
+                },
+                {
+                    "name": "MaxResults",
+                    "shape": "MaxResults",
+                    "documentation": "<p>The number of events to return. Possible values are 1 through 50. The default is 10.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>"
+                }
+            ]
+        },
+        "LookupEventsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Events",
+                    "shape": "EventsList",
+                    "documentation": "<p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>"
+                }
+            ]
+        },
+        "MaxResults": {
+            "type": "integer"
+        },
+        "MaximumNumberOfTrailsExceededException": {
+            "type": "structure",
+            "members": []
+        },
+        "NextToken": {
+            "type": "string"
+        },
+        "Resource": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ResourceType",
+                    "shape": "String",
+                    "documentation": "<p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for RDS, and <b>AccessKey</b> for IAM. For a list of resource types supported for event lookup, see <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html\">Resource Types Supported for Event Lookup</a>.</p>"
+                },
+                {
+                    "name": "ResourceName",
+                    "shape": "String",
+                    "documentation": "<p>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be \"auto-scaling-test-group\" for an Auto Scaling Group or \"i-1234567\" for an EC2 Instance.</p>"
+                }
+            ]
+        },
+        "ResourceList": {
+            "type": "list"
+        },
+        "S3BucketDoesNotExistException": {
+            "type": "structure",
+            "members": []
+        },
+        "StartLoggingRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>The name of the trail for which CloudTrail logs AWS API calls.</p>"
+                }
+            ]
+        },
+        "StartLoggingResponse": {
+            "type": "structure",
+            "members": []
+        },
+        "StopLoggingRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>Communicates to CloudTrail the name of the trail for which to stop logging AWS API calls.</p>"
+                }
+            ]
+        },
+        "StopLoggingResponse": {
+            "type": "structure",
+            "members": []
+        },
+        "String": {
+            "type": "string"
+        },
+        "Trail": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>Name of the trail set by calling <a>CreateTrail</a>.</p>"
+                },
+                {
+                    "name": "S3BucketName",
+                    "shape": "String",
+                    "documentation": "<p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. </p>"
+                },
+                {
+                    "name": "S3KeyPrefix",
+                    "shape": "String",
+                    "documentation": "<p>Value of the Amazon S3 prefix.</p>"
+                },
+                {
+                    "name": "SnsTopicName",
+                    "shape": "String",
+                    "documentation": "<p>Name of the existing Amazon SNS topic that CloudTrail uses to notify the account owner when new CloudTrail log files have been delivered. </p>"
+                },
+                {
+                    "name": "IncludeGlobalServiceEvents",
+                    "shape": "Boolean",
+                    "documentation": "<p>Set to <b>True</b> to include AWS API calls from AWS global services such as IAM. Otherwise, <b>False</b>.</p>"
+                },
+                {
+                    "name": "CloudWatchLogsLogGroupArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered.</p>"
+                },
+                {
+                    "name": "CloudWatchLogsRoleArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user\u2019s log group.</p>"
+                }
+            ]
+        },
+        "TrailAlreadyExistsException": {
+            "type": "structure",
+            "members": []
+        },
+        "TrailList": {
+            "type": "list"
+        },
+        "TrailNameList": {
+            "type": "list"
+        },
+        "TrailNotFoundException": {
+            "type": "structure",
+            "members": []
+        },
+        "UpdateTrailRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the trail.</p>"
+                },
+                {
+                    "name": "S3BucketName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>"
+                },
+                {
+                    "name": "S3KeyPrefix",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.</p>"
+                },
+                {
+                    "name": "SnsTopicName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery.</p>"
+                },
+                {
+                    "name": "IncludeGlobalServiceEvents",
+                    "shape": "Boolean",
+                    "documentation": "<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+                },
+                {
+                    "name": "CloudWatchLogsLogGroupArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</p>"
+                },
+                {
+                    "name": "CloudWatchLogsRoleArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user\u2019s log group.</p>"
+                }
+            ]
+        },
+        "UpdateTrailResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the trail.</p>"
+                },
+                {
+                    "name": "S3BucketName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>"
+                },
+                {
+                    "name": "S3KeyPrefix",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.</p>"
+                },
+                {
+                    "name": "SnsTopicName",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery.</p>"
+                },
+                {
+                    "name": "IncludeGlobalServiceEvents",
+                    "shape": "Boolean",
+                    "documentation": "<p>Specifies whether the trail is publishing events from global services such as IAM to the log files. </p>"
+                },
+                {
+                    "name": "CloudWatchLogsLogGroupArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>"
+                },
+                {
+                    "name": "CloudWatchLogsRoleArn",
+                    "shape": "String",
+                    "documentation": "<p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user\u2019s log group.</p>"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,667 @@
+{
+    "metadata": {},
+    "operations": {
+        "CancelJob": {
+            "documentation": "This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.",
+            "input": {
+                "shape": "CancelJobInput"
+            },
+            "output": {
+                "shape": "CancelJobOutput"
+            }
+        },
+        "CreateJob": {
+            "documentation": "This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.",
+            "input": {
+                "shape": "CreateJobInput"
+            },
+            "output": {
+                "shape": "CreateJobOutput"
+            }
+        },
+        "GetShippingLabel": {
+            "documentation": "This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.",
+            "input": {
+                "shape": "GetShippingLabelInput"
+            },
+            "output": {
+                "shape": "GetShippingLabelOutput"
+            }
+        },
+        "GetStatus": {
+            "documentation": "This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.",
+            "input": {
+                "shape": "GetStatusInput"
+            },
+            "output": {
+                "shape": "GetStatusOutput"
+            }
+        },
+        "ListJobs": {
+            "documentation": "This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.",
+            "input": {
+                "shape": "ListJobsInput"
+            },
+            "output": {
+                "shape": "ListJobsOutput"
+            }
+        },
+        "UpdateJob": {
+            "documentation": "You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.",
+            "input": {
+                "shape": "UpdateJobInput"
+            },
+            "output": {
+                "shape": "UpdateJobOutput"
+            }
+        }
+    },
+    "shapes": {
+        "APIVersion": {
+            "type": "string"
+        },
+        "Artifact": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Description",
+                    "shape": "Description"
+                },
+                {
+                    "name": "URL",
+                    "shape": "URL"
+                }
+            ]
+        },
+        "ArtifactList": {
+            "type": "list"
+        },
+        "BucketPermissionException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "CancelJobInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobId",
+                    "shape": "JobId"
+                },
+                {
+                    "name": "APIVersion",
+                    "shape": "APIVersion"
+                }
+            ]
+        },
+        "CancelJobOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Success",
+                    "shape": "Success"
+                }
+            ]
+        },
+        "CanceledJobIdException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "Carrier": {
+            "type": "string"
+        },
+        "CreateJobInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobType",
+                    "shape": "JobType"
+                },
+                {
+                    "name": "Manifest",
+                    "shape": "Manifest"
+                },
+                {
+                    "name": "ManifestAddendum",
+                    "shape": "ManifestAddendum"
+                },
+                {
+                    "name": "ValidateOnly",
+                    "shape": "ValidateOnly"
+                },
+                {
+                    "name": "APIVersion",
+                    "shape": "APIVersion"
+                }
+            ]
+        },
+        "CreateJobOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobId",
+                    "shape": "JobId"
+                },
+                {
+                    "name": "JobType",
+                    "shape": "JobType"
+                },
+                {
+                    "name": "Signature",
+                    "shape": "Signature"
+                },
+                {
+                    "name": "SignatureFileContents",
+                    "shape": "SignatureFileContents"
+                },
+                {
+                    "name": "WarningMessage",
+                    "shape": "WarningMessage"
+                },
+                {
+                    "name": "ArtifactList",
+                    "shape": "ArtifactList"
+                }
+            ]
+        },
+        "CreateJobQuotaExceededException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "CreationDate": {
+            "type": "timestamp"
+        },
+        "CurrentManifest": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ErrorCount": {
+            "type": "integer"
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "ExpiredJobIdException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "GenericString": {
+            "type": "string"
+        },
+        "GetShippingLabelInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "jobIds",
+                    "shape": "JobIdList"
+                },
+                {
+                    "name": "name",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "company",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "phoneNumber",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "country",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "stateOrProvince",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "city",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "postalCode",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "street1",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "street2",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "street3",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "APIVersion",
+                    "shape": "GenericString"
+                }
+            ]
+        },
+        "GetShippingLabelOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ShippingLabelURL",
+                    "shape": "GenericString"
+                },
+                {
+                    "name": "Warning",
+                    "shape": "GenericString"
+                }
+            ]
+        },
+        "GetStatusInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobId",
+                    "shape": "JobId"
+                },
+                {
+                    "name": "APIVersion",
+                    "shape": "APIVersion"
+                }
+            ]
+        },
+        "GetStatusOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobId",
+                    "shape": "JobId"
+                },
+                {
+                    "name": "JobType",
+                    "shape": "JobType"
+                },
+                {
+                    "name": "LocationCode",
+                    "shape": "LocationCode"
+                },
+                {
+                    "name": "LocationMessage",
+                    "shape": "LocationMessage"
+                },
+                {
+                    "name": "ProgressCode",
+                    "shape": "ProgressCode"
+                },
+                {
+                    "name": "ProgressMessage",
+                    "shape": "ProgressMessage"
+                },
+                {
+                    "name": "Carrier",
+                    "shape": "Carrier"
+                },
+                {
+                    "name": "TrackingNumber",
+                    "shape": "TrackingNumber"
+                },
+                {
+                    "name": "LogBucket",
+                    "shape": "LogBucket"
+                },
+                {
+                    "name": "LogKey",
+                    "shape": "LogKey"
+                },
+                {
+                    "name": "ErrorCount",
+                    "shape": "ErrorCount"
+                },
+                {
+                    "name": "Signature",
+                    "shape": "Signature"
+                },
+                {
+                    "name": "SignatureFileContents",
+                    "shape": "Signature"
+                },
+                {
+                    "name": "CurrentManifest",
+                    "shape": "CurrentManifest"
+                },
+                {
+                    "name": "CreationDate",
+                    "shape": "CreationDate"
+                },
+                {
+                    "name": "ArtifactList",
+                    "shape": "ArtifactList"
+                }
+            ]
+        },
+        "InvalidAccessKeyIdException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidAddressException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidCustomsException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidFileSystemException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidJobIdException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidManifestFieldException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidParameterException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "InvalidVersionException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "IsCanceled": {
+            "type": "boolean"
+        },
+        "IsTruncated": {
+            "type": "boolean"
+        },
+        "Job": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobId",
+                    "shape": "JobId"
+                },
+                {
+                    "name": "CreationDate",
+                    "shape": "CreationDate"
+                },
+                {
+                    "name": "IsCanceled",
+                    "shape": "IsCanceled"
+                },
+                {
+                    "name": "JobType",
+                    "shape": "JobType"
+                }
+            ]
+        },
+        "JobId": {
+            "type": "string"
+        },
+        "JobIdList": {
+            "type": "list"
+        },
+        "JobType": {
+            "type": "string"
+        },
+        "JobsList": {
+            "type": "list"
+        },
+        "ListJobsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MaxJobs",
+                    "shape": "MaxJobs"
+                },
+                {
+                    "name": "Marker",
+                    "shape": "Marker"
+                },
+                {
+                    "name": "APIVersion",
+                    "shape": "APIVersion"
+                }
+            ]
+        },
+        "ListJobsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Jobs",
+                    "shape": "JobsList"
+                },
+                {
+                    "name": "IsTruncated",
+                    "shape": "IsTruncated"
+                }
+            ]
+        },
+        "LocationCode": {
+            "type": "string"
+        },
+        "LocationMessage": {
+            "type": "string"
+        },
+        "LogBucket": {
+            "type": "string"
+        },
+        "LogKey": {
+            "type": "string"
+        },
+        "MalformedManifestException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "Manifest": {
+            "type": "string"
+        },
+        "ManifestAddendum": {
+            "type": "string"
+        },
+        "Marker": {
+            "type": "string"
+        },
+        "MaxJobs": {
+            "type": "integer"
+        },
+        "MissingCustomsException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "MissingManifestFieldException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "MissingParameterException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "MultipleRegionsException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "NoSuchBucketException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "ProgressCode": {
+            "type": "string"
+        },
+        "ProgressMessage": {
+            "type": "string"
+        },
+        "Signature": {
+            "type": "string"
+        },
+        "SignatureFileContents": {
+            "type": "string"
+        },
+        "Success": {
+            "type": "boolean"
+        },
+        "TrackingNumber": {
+            "type": "string"
+        },
+        "URL": {
+            "type": "string"
+        },
+        "UnableToCancelJobIdException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "UnableToUpdateJobIdException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "UpdateJobInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "JobId",
+                    "shape": "JobId"
+                },
+                {
+                    "name": "Manifest",
+                    "shape": "Manifest"
+                },
+                {
+                    "name": "JobType",
+                    "shape": "JobType"
+                },
+                {
+                    "name": "ValidateOnly",
+                    "shape": "ValidateOnly"
+                },
+                {
+                    "name": "APIVersion",
+                    "shape": "APIVersion"
+                }
+            ]
+        },
+        "UpdateJobOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Success",
+                    "shape": "Success"
+                },
+                {
+                    "name": "WarningMessage",
+                    "shape": "WarningMessage"
+                },
+                {
+                    "name": "ArtifactList",
+                    "shape": "ArtifactList"
+                }
+            ]
+        },
+        "ValidateOnly": {
+            "type": "boolean"
+        },
+        "WarningMessage": {
+            "type": "string"
+        }
+    }
+}

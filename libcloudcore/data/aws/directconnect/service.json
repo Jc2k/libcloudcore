@@ -1,0 +1,918 @@
+{
+    "metadata": {},
+    "operations": {
+        "AllocateConnectionOnInterconnect": {
+            "documentation": "<p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the given interconnect.</p>",
+            "input": {
+                "shape": "AllocateConnectionOnInterconnectRequest"
+            },
+            "output": {
+                "shape": "Connection"
+            }
+        },
+        "AllocatePrivateVirtualInterface": {
+            "documentation": "<p>Provisions a private virtual interface to be owned by a different customer.</p> <p>The owner of a connection calls this function to provision a private virtual interface which will be owned by another AWS customer.</p> <p>Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling ConfirmPrivateVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming' state, and will not be available for handling traffic.</p>",
+            "input": {
+                "shape": "AllocatePrivateVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "VirtualInterface"
+            }
+        },
+        "AllocatePublicVirtualInterface": {
+            "documentation": "<p>Provisions a public virtual interface to be owned by a different customer.</p> <p>The owner of a connection calls this function to provision a public virtual interface which will be owned by another AWS customer.</p> <p>Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming' state, and will not be available for handling traffic.</p>",
+            "input": {
+                "shape": "AllocatePublicVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "VirtualInterface"
+            }
+        },
+        "ConfirmConnection": {
+            "documentation": "<p>Confirm the creation of a hosted connection on an interconnect.</p> <p>Upon creation, the hosted connection is initially in the 'Ordering' state, and will remain in this state until the owner calls ConfirmConnection to confirm creation of the hosted connection.</p>",
+            "input": {
+                "shape": "ConfirmConnectionRequest"
+            },
+            "output": {
+                "shape": "ConfirmConnectionResponse"
+            }
+        },
+        "ConfirmPrivateVirtualInterface": {
+            "documentation": "<p>Accept ownership of a private virtual interface created by another customer.</p> <p>After the virtual interface owner calls this function, the virtual interface will be created and attached to the given virtual private gateway, and will be available for handling traffic.</p>",
+            "input": {
+                "shape": "ConfirmPrivateVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "ConfirmPrivateVirtualInterfaceResponse"
+            }
+        },
+        "ConfirmPublicVirtualInterface": {
+            "documentation": "<p>Accept ownership of a public virtual interface created by another customer.</p> <p>After the virtual interface owner calls this function, the specified virtual interface will be created and made available for handling traffic.</p>",
+            "input": {
+                "shape": "ConfirmPublicVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "ConfirmPublicVirtualInterfaceResponse"
+            }
+        },
+        "CreateConnection": {
+            "documentation": "<p>Creates a new connection between the customer network and a specific AWS Direct Connect location.</p> <p>A connection links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. An AWS Direct Connect location provides access to Amazon Web Services in the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a connection in one region does not provide connectivity to other regions.</p>",
+            "input": {
+                "shape": "CreateConnectionRequest"
+            },
+            "output": {
+                "shape": "Connection"
+            }
+        },
+        "CreateInterconnect": {
+            "documentation": "<p>Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location.</p> <p>An interconnect is a connection which is capable of hosting other connections. The AWS Direct Connect partner can use an interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own connections. Like a standard connection, an interconnect links the AWS Direct Connect partner's network to an AWS Direct Connect location over a standard 1 Gbps or 10 Gbps Ethernet fiber-optic cable. One end is connected to the partner's router, the other to an AWS Direct Connect router.</p> <p>For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling AllocateConnectionOnInterconnect. The end customer can then connect to AWS resources by creating a virtual interface on their connection, using the VLAN assigned to them by the AWS Direct Connect partner.</p>",
+            "input": {
+                "shape": "CreateInterconnectRequest"
+            },
+            "output": {
+                "shape": "Interconnect"
+            }
+        },
+        "CreatePrivateVirtualInterface": {
+            "documentation": "<p>Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private virtual interface supports sending traffic to a single virtual private cloud (VPC).</p>",
+            "input": {
+                "shape": "CreatePrivateVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "VirtualInterface"
+            }
+        },
+        "CreatePublicVirtualInterface": {
+            "documentation": "<p>Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3).</p>",
+            "input": {
+                "shape": "CreatePublicVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "VirtualInterface"
+            }
+        },
+        "DeleteConnection": {
+            "documentation": "<p>Deletes the connection.</p> <p>Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. You need to cancel separately with the providers any services or charges for cross-connects or network circuits that connect you to the AWS Direct Connect location.</p>",
+            "input": {
+                "shape": "DeleteConnectionRequest"
+            },
+            "output": {
+                "shape": "Connection"
+            }
+        },
+        "DeleteInterconnect": {
+            "documentation": "<p>Deletes the specified interconnect.</p>",
+            "input": {
+                "shape": "DeleteInterconnectRequest"
+            },
+            "output": {
+                "shape": "DeleteInterconnectResponse"
+            }
+        },
+        "DeleteVirtualInterface": {
+            "documentation": "<p>Deletes a virtual interface.</p>",
+            "input": {
+                "shape": "DeleteVirtualInterfaceRequest"
+            },
+            "output": {
+                "shape": "DeleteVirtualInterfaceResponse"
+            }
+        },
+        "DescribeConnections": {
+            "documentation": "<p>Displays all connections in this region.</p> <p>If a connection ID is provided, the call returns only that particular connection.</p>",
+            "input": {
+                "shape": "DescribeConnectionsRequest"
+            },
+            "output": {
+                "shape": "Connections"
+            }
+        },
+        "DescribeConnectionsOnInterconnect": {
+            "documentation": "<p>Return a list of connections that have been provisioned on the given interconnect.</p>",
+            "input": {
+                "shape": "DescribeConnectionsOnInterconnectRequest"
+            },
+            "output": {
+                "shape": "Connections"
+            }
+        },
+        "DescribeInterconnects": {
+            "documentation": "<p>Returns a list of interconnects owned by the AWS account.</p> <p>If an interconnect ID is provided, it will only return this particular interconnect.</p>",
+            "input": {
+                "shape": "DescribeInterconnectsRequest"
+            },
+            "output": {
+                "shape": "Interconnects"
+            }
+        },
+        "DescribeLocations": {
+            "documentation": "<p>Returns the list of AWS Direct Connect locations in the current AWS region. These are the locations that may be selected when calling CreateConnection or CreateInterconnect.</p>",
+            "output": {
+                "shape": "Locations"
+            }
+        },
+        "DescribeVirtualGateways": {
+            "documentation": "<p>Returns a list of virtual private gateways owned by the AWS account.</p> <p>You can create one or more AWS Direct Connect private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud (VPC) console or the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html\">EC2 CreateVpnGateway</a> action.</p>",
+            "output": {
+                "shape": "VirtualGateways"
+            }
+        },
+        "DescribeVirtualInterfaces": {
+            "documentation": "<p>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces is called are also returned. If a connection ID is included then only virtual interfaces associated with this connection will be returned. If a virtual interface ID is included then only a single virtual interface will be returned.</p> <p>A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.</p> <p>If a connection ID is provided, only virtual interfaces provisioned on the specified connection will be returned. If a virtual interface ID is provided, only this particular virtual interface will be returned.</p>",
+            "input": {
+                "shape": "DescribeVirtualInterfacesRequest"
+            },
+            "output": {
+                "shape": "VirtualInterfaces"
+            }
+        }
+    },
+    "shapes": {
+        "ASN": {
+            "type": "integer"
+        },
+        "AllocateConnectionOnInterconnectRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "bandwidth",
+                    "shape": "Bandwidth",
+                    "documentation": "<p>Bandwidth of the connection.</p> <p>Example: \"<i>500Mbps</i>\"</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "connectionName",
+                    "shape": "ConnectionName",
+                    "documentation": "<p>Name of the provisioned connection.</p> <p>Example: \"<i>500M Connection to AWS</i>\"</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "ownerAccount",
+                    "shape": "OwnerAccount",
+                    "documentation": "<p>Numeric account Id of the customer for whom the connection will be provisioned.</p> <p>Example: 123443215678</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "interconnectId",
+                    "shape": "InterconnectId",
+                    "documentation": "<p>ID of the interconnect on which the connection will be provisioned.</p> <p>Example: dxcon-456abc78</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN",
+                    "documentation": "<p>The dedicated VLAN provisioned to the connection.</p> <p>Example: 101</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "AllocatePrivateVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId",
+                    "documentation": "<p>The connection ID on which the private virtual interface is provisioned.</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "ownerAccount",
+                    "shape": "OwnerAccount",
+                    "documentation": "<p>The AWS account that will own the new private virtual interface.</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "newPrivateVirtualInterfaceAllocation",
+                    "shape": "NewPrivateVirtualInterfaceAllocation",
+                    "documentation": "<p>Detailed information for the private virtual interface to be provisioned.</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "AllocatePublicVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId",
+                    "documentation": "<p>The connection ID on which the public virtual interface is provisioned.</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "ownerAccount",
+                    "shape": "OwnerAccount",
+                    "documentation": "<p>The AWS account that will own the new public virtual interface.</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "newPublicVirtualInterfaceAllocation",
+                    "shape": "NewPublicVirtualInterfaceAllocation",
+                    "documentation": "<p>Detailed information for the public virtual interface to be provisioned.</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "AmazonAddress": {
+            "type": "string"
+        },
+        "BGPAuthKey": {
+            "type": "string"
+        },
+        "Bandwidth": {
+            "type": "string"
+        },
+        "CIDR": {
+            "type": "string"
+        },
+        "ConfirmConnectionRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                }
+            ]
+        },
+        "ConfirmConnectionResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionState",
+                    "shape": "ConnectionState"
+                }
+            ]
+        },
+        "ConfirmPrivateVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceId",
+                    "shape": "VirtualInterfaceId"
+                },
+                {
+                    "name": "virtualGatewayId",
+                    "shape": "VirtualGatewayId",
+                    "documentation": "<p>ID of the virtual private gateway that will be attached to the virtual interface.</p> <p> A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC) console or the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html\">EC2 CreateVpnGateway</a> action.</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "ConfirmPrivateVirtualInterfaceResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceState",
+                    "shape": "VirtualInterfaceState"
+                }
+            ]
+        },
+        "ConfirmPublicVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceId",
+                    "shape": "VirtualInterfaceId"
+                }
+            ]
+        },
+        "ConfirmPublicVirtualInterfaceResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceState",
+                    "shape": "VirtualInterfaceState"
+                }
+            ]
+        },
+        "Connection": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ownerAccount",
+                    "shape": "OwnerAccount"
+                },
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                },
+                {
+                    "name": "connectionName",
+                    "shape": "ConnectionName"
+                },
+                {
+                    "name": "connectionState",
+                    "shape": "ConnectionState"
+                },
+                {
+                    "name": "region",
+                    "shape": "Region"
+                },
+                {
+                    "name": "location",
+                    "shape": "LocationCode"
+                },
+                {
+                    "name": "bandwidth",
+                    "shape": "Bandwidth",
+                    "documentation": "<p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN"
+                },
+                {
+                    "name": "partnerName",
+                    "shape": "PartnerName"
+                }
+            ]
+        },
+        "ConnectionId": {
+            "type": "string"
+        },
+        "ConnectionList": {
+            "type": "list"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "ConnectionState": {
+            "type": "string"
+        },
+        "Connections": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connections",
+                    "shape": "ConnectionList",
+                    "documentation": "<p>A list of connections.</p>"
+                }
+            ]
+        },
+        "CreateConnectionRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "location",
+                    "shape": "LocationCode"
+                },
+                {
+                    "name": "bandwidth",
+                    "shape": "Bandwidth"
+                },
+                {
+                    "name": "connectionName",
+                    "shape": "ConnectionName"
+                }
+            ]
+        },
+        "CreateInterconnectRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnectName",
+                    "shape": "InterconnectName",
+                    "documentation": "<p>The name of the interconnect.</p> <p>Example: \"<i>1G Interconnect to AWS</i>\"</p> <p>Default: None</p>"
+                },
+                {
+                    "name": "bandwidth",
+                    "shape": "Bandwidth",
+                    "documentation": "<p>The port bandwidth</p> <p>Example: 1Gbps</p> <p>Default: None</p> <p>Available values: 1Gbps,10Gbps</p>"
+                },
+                {
+                    "name": "location",
+                    "shape": "LocationCode",
+                    "documentation": "<p>Where the interconnect is located</p> <p>Example: EqSV5</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "CreatePrivateVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                },
+                {
+                    "name": "newPrivateVirtualInterface",
+                    "shape": "NewPrivateVirtualInterface",
+                    "documentation": "<p>Detailed information for the private virtual interface to be created.</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "CreatePublicVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                },
+                {
+                    "name": "newPublicVirtualInterface",
+                    "shape": "NewPublicVirtualInterface",
+                    "documentation": "<p>Detailed information for the public virtual interface to be created.</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "CustomerAddress": {
+            "type": "string"
+        },
+        "DeleteConnectionRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                }
+            ]
+        },
+        "DeleteInterconnectRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnectId",
+                    "shape": "InterconnectId"
+                }
+            ]
+        },
+        "DeleteInterconnectResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnectState",
+                    "shape": "InterconnectState"
+                }
+            ]
+        },
+        "DeleteVirtualInterfaceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceId",
+                    "shape": "VirtualInterfaceId"
+                }
+            ]
+        },
+        "DeleteVirtualInterfaceResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceState",
+                    "shape": "VirtualInterfaceState"
+                }
+            ]
+        },
+        "DescribeConnectionsOnInterconnectRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnectId",
+                    "shape": "InterconnectId",
+                    "documentation": "<p>ID of the interconnect on which a list of connection is provisioned.</p> <p>Example: dxcon-abc123</p> <p>Default: None</p>"
+                }
+            ]
+        },
+        "DescribeConnectionsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                }
+            ]
+        },
+        "DescribeInterconnectsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnectId",
+                    "shape": "InterconnectId"
+                }
+            ]
+        },
+        "DescribeVirtualInterfacesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                },
+                {
+                    "name": "virtualInterfaceId",
+                    "shape": "VirtualInterfaceId"
+                }
+            ]
+        },
+        "DirectConnectClientException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "DirectConnectServerException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "Interconnect": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnectId",
+                    "shape": "InterconnectId"
+                },
+                {
+                    "name": "interconnectName",
+                    "shape": "InterconnectName"
+                },
+                {
+                    "name": "interconnectState",
+                    "shape": "InterconnectState"
+                },
+                {
+                    "name": "region",
+                    "shape": "Region"
+                },
+                {
+                    "name": "location",
+                    "shape": "LocationCode"
+                },
+                {
+                    "name": "bandwidth",
+                    "shape": "Bandwidth"
+                }
+            ]
+        },
+        "InterconnectId": {
+            "type": "string"
+        },
+        "InterconnectList": {
+            "type": "list"
+        },
+        "InterconnectName": {
+            "type": "string"
+        },
+        "InterconnectState": {
+            "type": "string"
+        },
+        "Interconnects": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "interconnects",
+                    "shape": "InterconnectList",
+                    "documentation": "<p>A list of interconnects.</p>"
+                }
+            ]
+        },
+        "Location": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "locationCode",
+                    "shape": "LocationCode",
+                    "documentation": "<p>The code used to indicate the AWS Direct Connect location.</p>"
+                },
+                {
+                    "name": "locationName",
+                    "shape": "LocationName",
+                    "documentation": "<p>The name of the AWS Direct Connect location. The name includes the colocation partner name and the physical site of the lit building.</p>"
+                }
+            ]
+        },
+        "LocationCode": {
+            "type": "string"
+        },
+        "LocationList": {
+            "type": "list"
+        },
+        "LocationName": {
+            "type": "string"
+        },
+        "Locations": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "locations",
+                    "shape": "LocationList"
+                }
+            ]
+        },
+        "NewPrivateVirtualInterface": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceName",
+                    "shape": "VirtualInterfaceName"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN"
+                },
+                {
+                    "name": "asn",
+                    "shape": "ASN"
+                },
+                {
+                    "name": "authKey",
+                    "shape": "BGPAuthKey"
+                },
+                {
+                    "name": "amazonAddress",
+                    "shape": "AmazonAddress"
+                },
+                {
+                    "name": "customerAddress",
+                    "shape": "CustomerAddress"
+                },
+                {
+                    "name": "virtualGatewayId",
+                    "shape": "VirtualGatewayId"
+                }
+            ]
+        },
+        "NewPrivateVirtualInterfaceAllocation": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceName",
+                    "shape": "VirtualInterfaceName"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN"
+                },
+                {
+                    "name": "asn",
+                    "shape": "ASN"
+                },
+                {
+                    "name": "authKey",
+                    "shape": "BGPAuthKey"
+                },
+                {
+                    "name": "amazonAddress",
+                    "shape": "AmazonAddress"
+                },
+                {
+                    "name": "customerAddress",
+                    "shape": "CustomerAddress"
+                }
+            ]
+        },
+        "NewPublicVirtualInterface": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceName",
+                    "shape": "VirtualInterfaceName"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN"
+                },
+                {
+                    "name": "asn",
+                    "shape": "ASN"
+                },
+                {
+                    "name": "authKey",
+                    "shape": "BGPAuthKey"
+                },
+                {
+                    "name": "amazonAddress",
+                    "shape": "AmazonAddress"
+                },
+                {
+                    "name": "customerAddress",
+                    "shape": "CustomerAddress"
+                },
+                {
+                    "name": "routeFilterPrefixes",
+                    "shape": "RouteFilterPrefixList"
+                }
+            ]
+        },
+        "NewPublicVirtualInterfaceAllocation": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaceName",
+                    "shape": "VirtualInterfaceName"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN"
+                },
+                {
+                    "name": "asn",
+                    "shape": "ASN"
+                },
+                {
+                    "name": "authKey",
+                    "shape": "BGPAuthKey"
+                },
+                {
+                    "name": "amazonAddress",
+                    "shape": "AmazonAddress"
+                },
+                {
+                    "name": "customerAddress",
+                    "shape": "CustomerAddress"
+                },
+                {
+                    "name": "routeFilterPrefixes",
+                    "shape": "RouteFilterPrefixList"
+                }
+            ]
+        },
+        "OwnerAccount": {
+            "type": "string"
+        },
+        "PartnerName": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RouteFilterPrefix": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "cidr",
+                    "shape": "CIDR",
+                    "documentation": "<p>CIDR notation for the advertised route. Multiple routes are separated by commas.</p> <p>Example: 10.10.10.0/24,10.10.11.0/24</p>"
+                }
+            ]
+        },
+        "RouteFilterPrefixList": {
+            "type": "list"
+        },
+        "RouterConfig": {
+            "type": "string"
+        },
+        "VLAN": {
+            "type": "integer"
+        },
+        "VirtualGateway": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualGatewayId",
+                    "shape": "VirtualGatewayId"
+                },
+                {
+                    "name": "virtualGatewayState",
+                    "shape": "VirtualGatewayState"
+                }
+            ]
+        },
+        "VirtualGatewayId": {
+            "type": "string"
+        },
+        "VirtualGatewayList": {
+            "type": "list"
+        },
+        "VirtualGatewayState": {
+            "type": "string"
+        },
+        "VirtualGateways": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualGateways",
+                    "shape": "VirtualGatewayList",
+                    "documentation": "<p>A list of virtual private gateways.</p>"
+                }
+            ]
+        },
+        "VirtualInterface": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ownerAccount",
+                    "shape": "OwnerAccount"
+                },
+                {
+                    "name": "virtualInterfaceId",
+                    "shape": "VirtualInterfaceId"
+                },
+                {
+                    "name": "location",
+                    "shape": "LocationCode"
+                },
+                {
+                    "name": "connectionId",
+                    "shape": "ConnectionId"
+                },
+                {
+                    "name": "virtualInterfaceType",
+                    "shape": "VirtualInterfaceType"
+                },
+                {
+                    "name": "virtualInterfaceName",
+                    "shape": "VirtualInterfaceName"
+                },
+                {
+                    "name": "vlan",
+                    "shape": "VLAN"
+                },
+                {
+                    "name": "asn",
+                    "shape": "ASN"
+                },
+                {
+                    "name": "authKey",
+                    "shape": "BGPAuthKey"
+                },
+                {
+                    "name": "amazonAddress",
+                    "shape": "AmazonAddress"
+                },
+                {
+                    "name": "customerAddress",
+                    "shape": "CustomerAddress"
+                },
+                {
+                    "name": "virtualInterfaceState",
+                    "shape": "VirtualInterfaceState"
+                },
+                {
+                    "name": "customerRouterConfig",
+                    "shape": "RouterConfig",
+                    "documentation": "<p>Information for generating the customer router configuration.</p>"
+                },
+                {
+                    "name": "virtualGatewayId",
+                    "shape": "VirtualGatewayId"
+                },
+                {
+                    "name": "routeFilterPrefixes",
+                    "shape": "RouteFilterPrefixList"
+                }
+            ]
+        },
+        "VirtualInterfaceId": {
+            "type": "string"
+        },
+        "VirtualInterfaceList": {
+            "type": "list"
+        },
+        "VirtualInterfaceName": {
+            "type": "string"
+        },
+        "VirtualInterfaceState": {
+            "type": "string"
+        },
+        "VirtualInterfaceType": {
+            "type": "string"
+        },
+        "VirtualInterfaces": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "virtualInterfaces",
+                    "shape": "VirtualInterfaceList",
+                    "documentation": "<p>A list of virtual interfaces.</p>"
+                }
+            ]
+        }
+    }
+}

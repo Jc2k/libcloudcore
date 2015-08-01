@@ -1,0 +1,1667 @@
+{
+    "metadata": {},
+    "operations": {
+        "BuildSuggesters": {
+            "documentation": "<p>Indexes the search suggestions. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters\">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "BuildSuggestersRequest"
+            },
+            "output": {
+                "shape": "BuildSuggestersResponse"
+            }
+        },
+        "CreateDomain": {
+            "documentation": "<p>Creates a new search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html\" target=\"_blank\">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "CreateDomainRequest"
+            },
+            "output": {
+                "shape": "CreateDomainResponse"
+            }
+        },
+        "DefineAnalysisScheme": {
+            "documentation": "<p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DefineAnalysisSchemeRequest"
+            },
+            "output": {
+                "shape": "DefineAnalysisSchemeResponse"
+            }
+        },
+        "DefineExpression": {
+            "documentation": "<p>Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DefineExpressionRequest"
+            },
+            "output": {
+                "shape": "DefineExpressionResponse"
+            }
+        },
+        "DefineIndexField": {
+            "documentation": "<p>Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "input": {
+                "shape": "DefineIndexFieldRequest"
+            },
+            "output": {
+                "shape": "DefineIndexFieldResponse"
+            }
+        },
+        "DefineSuggester": {
+            "documentation": "<p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DefineSuggesterRequest"
+            },
+            "output": {
+                "shape": "DefineSuggesterResponse"
+            }
+        },
+        "DeleteAnalysisScheme": {
+            "documentation": "<p>Deletes an analysis scheme. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "input": {
+                "shape": "DeleteAnalysisSchemeRequest"
+            },
+            "output": {
+                "shape": "DeleteAnalysisSchemeResponse"
+            }
+        },
+        "DeleteDomain": {
+            "documentation": "<p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html\" target=\"_blank\">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "input": {
+                "shape": "DeleteDomainRequest"
+            },
+            "output": {
+                "shape": "DeleteDomainResponse"
+            }
+        },
+        "DeleteExpression": {
+            "documentation": "<p>Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DeleteExpressionRequest"
+            },
+            "output": {
+                "shape": "DeleteExpressionResponse"
+            }
+        },
+        "DeleteIndexField": {
+            "documentation": "<p>Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DeleteIndexFieldRequest"
+            },
+            "output": {
+                "shape": "DeleteIndexFieldResponse"
+            }
+        },
+        "DeleteSuggester": {
+            "documentation": "<p>Deletes a suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DeleteSuggesterRequest"
+            },
+            "output": {
+                "shape": "DeleteSuggesterResponse"
+            }
+        },
+        "DescribeAnalysisSchemes": {
+            "documentation": "<p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeAnalysisSchemesRequest"
+            },
+            "output": {
+                "shape": "DescribeAnalysisSchemesResponse"
+            }
+        },
+        "DescribeAvailabilityOptions": {
+            "documentation": "<p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeAvailabilityOptionsRequest"
+            },
+            "output": {
+                "shape": "DescribeAvailabilityOptionsResponse"
+            }
+        },
+        "DescribeDomains": {
+            "documentation": "<p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeDomainsRequest"
+            },
+            "output": {
+                "shape": "DescribeDomainsResponse"
+            }
+        },
+        "DescribeExpressions": {
+            "documentation": "<p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeExpressionsRequest"
+            },
+            "output": {
+                "shape": "DescribeExpressionsResponse"
+            }
+        },
+        "DescribeIndexFields": {
+            "documentation": "<p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeIndexFieldsRequest"
+            },
+            "output": {
+                "shape": "DescribeIndexFieldsResponse"
+            }
+        },
+        "DescribeScalingParameters": {
+            "documentation": "<p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeScalingParametersRequest"
+            },
+            "output": {
+                "shape": "DescribeScalingParametersResponse"
+            }
+        },
+        "DescribeServiceAccessPolicies": {
+            "documentation": "<p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeServiceAccessPoliciesRequest"
+            },
+            "output": {
+                "shape": "DescribeServiceAccessPoliciesResponse"
+            }
+        },
+        "DescribeSuggesters": {
+            "documentation": "<p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "DescribeSuggestersRequest"
+            },
+            "output": {
+                "shape": "DescribeSuggestersResponse"
+            }
+        },
+        "IndexDocuments": {
+            "documentation": "<p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>",
+            "input": {
+                "shape": "IndexDocumentsRequest"
+            },
+            "output": {
+                "shape": "IndexDocumentsResponse"
+            }
+        },
+        "ListDomainNames": {
+            "documentation": "<p>Lists all search domains owned by an account.</p>",
+            "output": {
+                "shape": "ListDomainNamesResponse"
+            }
+        },
+        "UpdateAvailabilityOptions": {
+            "documentation": "<p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "input": {
+                "shape": "UpdateAvailabilityOptionsRequest"
+            },
+            "output": {
+                "shape": "UpdateAvailabilityOptionsResponse"
+            }
+        },
+        "UpdateScalingParameters": {
+            "documentation": "<p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "input": {
+                "shape": "UpdateScalingParametersRequest"
+            },
+            "output": {
+                "shape": "UpdateScalingParametersResponse"
+            }
+        },
+        "UpdateServiceAccessPolicies": {
+            "documentation": "<p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>",
+            "input": {
+                "shape": "UpdateServiceAccessPoliciesRequest"
+            },
+            "output": {
+                "shape": "UpdateServiceAccessPoliciesResponse"
+            }
+        }
+    },
+    "shapes": {
+        "APIVersion": {
+            "type": "string"
+        },
+        "ARN": {
+            "type": "string"
+        },
+        "AccessPoliciesStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "PolicyDocument"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "AlgorithmicStemming": {
+            "type": "string"
+        },
+        "AnalysisOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Synonyms",
+                    "shape": "String",
+                    "documentation": "<p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms\">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>"
+                },
+                {
+                    "name": "Stopwords",
+                    "shape": "String",
+                    "documentation": "<p>A JSON array of terms to ignore during indexing and searching. For example, <code>[\"a\", \"an\", \"the\", \"of\"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>"
+                },
+                {
+                    "name": "StemmingDictionary",
+                    "shape": "String",
+                    "documentation": "<p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{\"term1\": \"stem1\", \"term2\": \"stem2\", \"term3\": \"stem3\"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>"
+                },
+                {
+                    "name": "JapaneseTokenizationDictionary",
+                    "shape": "String",
+                    "documentation": "<p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>"
+                },
+                {
+                    "name": "AlgorithmicStemming",
+                    "shape": "AlgorithmicStemming",
+                    "documentation": "<p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings\" target=\"_blank\">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>"
+                }
+            ]
+        },
+        "AnalysisScheme": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AnalysisSchemeName",
+                    "shape": "StandardName"
+                },
+                {
+                    "name": "AnalysisSchemeLanguage",
+                    "shape": "AnalysisSchemeLanguage"
+                },
+                {
+                    "name": "AnalysisOptions",
+                    "shape": "AnalysisOptions"
+                }
+            ]
+        },
+        "AnalysisSchemeLanguage": {
+            "type": "string"
+        },
+        "AnalysisSchemeStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "AnalysisScheme"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "AnalysisSchemeStatusList": {
+            "type": "list"
+        },
+        "AvailabilityOptionsStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "MultiAZ",
+                    "documentation": "<p>The availability options configured for the domain.</p>"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "BaseException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Code",
+                    "shape": "ErrorCode"
+                },
+                {
+                    "name": "Message",
+                    "shape": "ErrorMessage"
+                }
+            ]
+        },
+        "Boolean": {
+            "type": "boolean"
+        },
+        "BuildSuggestersRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                }
+            ]
+        },
+        "BuildSuggestersResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "FieldNames",
+                    "shape": "FieldNameList"
+                }
+            ]
+        },
+        "CreateDomainRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>"
+                }
+            ]
+        },
+        "CreateDomainResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainStatus",
+                    "shape": "DomainStatus"
+                }
+            ]
+        },
+        "DateArrayOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceFields",
+                    "shape": "FieldNameCommaList",
+                    "documentation": "<p>A list of source fields to map to the field. </p>"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                }
+            ]
+        },
+        "DateOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "SortEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the field can be used to sort the search results.</p>"
+                }
+            ]
+        },
+        "DefineAnalysisSchemeRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "AnalysisScheme",
+                    "shape": "AnalysisScheme"
+                }
+            ]
+        },
+        "DefineAnalysisSchemeResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AnalysisScheme",
+                    "shape": "AnalysisSchemeStatus"
+                }
+            ]
+        },
+        "DefineExpressionRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "Expression",
+                    "shape": "Expression"
+                }
+            ]
+        },
+        "DefineExpressionResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Expression",
+                    "shape": "ExpressionStatus"
+                }
+            ]
+        },
+        "DefineIndexFieldRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "IndexField",
+                    "shape": "IndexField",
+                    "documentation": "<p>The index field and field options you want to configure. </p>"
+                }
+            ]
+        },
+        "DefineIndexFieldResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IndexField",
+                    "shape": "IndexFieldStatus"
+                }
+            ]
+        },
+        "DefineSuggesterRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "Suggester",
+                    "shape": "Suggester"
+                }
+            ]
+        },
+        "DefineSuggesterResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Suggester",
+                    "shape": "SuggesterStatus"
+                }
+            ]
+        },
+        "DeleteAnalysisSchemeRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "AnalysisSchemeName",
+                    "shape": "StandardName",
+                    "documentation": "<p>The name of the analysis scheme you want to delete.</p>"
+                }
+            ]
+        },
+        "DeleteAnalysisSchemeResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AnalysisScheme",
+                    "shape": "AnalysisSchemeStatus",
+                    "documentation": "<p>The status of the analysis scheme being deleted.</p>"
+                }
+            ]
+        },
+        "DeleteDomainRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to permanently delete.</p>"
+                }
+            ]
+        },
+        "DeleteDomainResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainStatus",
+                    "shape": "DomainStatus"
+                }
+            ]
+        },
+        "DeleteExpressionRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "ExpressionName",
+                    "shape": "StandardName",
+                    "documentation": "<p>The name of the <code><a>Expression</a></code> to delete.</p>"
+                }
+            ]
+        },
+        "DeleteExpressionResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Expression",
+                    "shape": "ExpressionStatus",
+                    "documentation": "<p>The status of the expression being deleted.</p>"
+                }
+            ]
+        },
+        "DeleteIndexFieldRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "IndexFieldName",
+                    "shape": "DynamicFieldName",
+                    "documentation": "<p>The name of the index field your want to remove from the domain's indexing options.</p>"
+                }
+            ]
+        },
+        "DeleteIndexFieldResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IndexField",
+                    "shape": "IndexFieldStatus",
+                    "documentation": "<p>The status of the index field being deleted.</p>"
+                }
+            ]
+        },
+        "DeleteSuggesterRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "SuggesterName",
+                    "shape": "StandardName",
+                    "documentation": "<p>Specifies the name of the suggester you want to delete.</p>"
+                }
+            ]
+        },
+        "DeleteSuggesterResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Suggester",
+                    "shape": "SuggesterStatus",
+                    "documentation": "<p>The status of the suggester being deleted.</p>"
+                }
+            ]
+        },
+        "DescribeAnalysisSchemesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to describe.</p>"
+                },
+                {
+                    "name": "AnalysisSchemeNames",
+                    "shape": "StandardNameList",
+                    "documentation": "<p>The analysis schemes you want to describe.</p>"
+                },
+                {
+                    "name": "Deployed",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>"
+                }
+            ]
+        },
+        "DescribeAnalysisSchemesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AnalysisSchemes",
+                    "shape": "AnalysisSchemeStatusList",
+                    "documentation": "<p>The analysis scheme descriptions.</p>"
+                }
+            ]
+        },
+        "DescribeAvailabilityOptionsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to describe.</p>"
+                },
+                {
+                    "name": "Deployed",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>"
+                }
+            ]
+        },
+        "DescribeAvailabilityOptionsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AvailabilityOptions",
+                    "shape": "AvailabilityOptionsStatus",
+                    "documentation": "<p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>"
+                }
+            ]
+        },
+        "DescribeDomainsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainNames",
+                    "shape": "DomainNameList",
+                    "documentation": "<p>The names of the domains you want to include in the response.</p>"
+                }
+            ]
+        },
+        "DescribeDomainsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainStatusList",
+                    "shape": "DomainStatusList"
+                }
+            ]
+        },
+        "DescribeExpressionsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to describe.</p>"
+                },
+                {
+                    "name": "ExpressionNames",
+                    "shape": "StandardNameList",
+                    "documentation": "<p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>"
+                },
+                {
+                    "name": "Deployed",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>"
+                }
+            ]
+        },
+        "DescribeExpressionsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Expressions",
+                    "shape": "ExpressionStatusList",
+                    "documentation": "<p>The expressions configured for the domain.</p>"
+                }
+            ]
+        },
+        "DescribeIndexFieldsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to describe.</p>"
+                },
+                {
+                    "name": "FieldNames",
+                    "shape": "DynamicFieldNameList",
+                    "documentation": "<p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>"
+                },
+                {
+                    "name": "Deployed",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>"
+                }
+            ]
+        },
+        "DescribeIndexFieldsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IndexFields",
+                    "shape": "IndexFieldStatusList",
+                    "documentation": "<p>The index fields configured for the domain.</p>"
+                }
+            ]
+        },
+        "DescribeScalingParametersRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                }
+            ]
+        },
+        "DescribeScalingParametersResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ScalingParameters",
+                    "shape": "ScalingParametersStatus"
+                }
+            ]
+        },
+        "DescribeServiceAccessPoliciesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to describe.</p>"
+                },
+                {
+                    "name": "Deployed",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>"
+                }
+            ]
+        },
+        "DescribeServiceAccessPoliciesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AccessPolicies",
+                    "shape": "AccessPoliciesStatus",
+                    "documentation": "<p>The access rules configured for the domain specified in the request.</p>"
+                }
+            ]
+        },
+        "DescribeSuggestersRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName",
+                    "documentation": "<p>The name of the domain you want to describe.</p>"
+                },
+                {
+                    "name": "SuggesterNames",
+                    "shape": "StandardNameList",
+                    "documentation": "<p>The suggesters you want to describe.</p>"
+                },
+                {
+                    "name": "Deployed",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>"
+                }
+            ]
+        },
+        "DescribeSuggestersResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Suggesters",
+                    "shape": "SuggesterStatusList",
+                    "documentation": "<p>The suggesters configured for the domain specified in the request.</p>"
+                }
+            ]
+        },
+        "DisabledOperationException": {
+            "type": "structure",
+            "members": []
+        },
+        "DocumentSuggesterOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName",
+                    "documentation": "<p>The name of the index field you want to use for suggestions. </p>"
+                },
+                {
+                    "name": "FuzzyMatching",
+                    "shape": "SuggesterFuzzyMatching",
+                    "documentation": "<p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>"
+                },
+                {
+                    "name": "SortExpression",
+                    "shape": "String",
+                    "documentation": "<p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>"
+                }
+            ]
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "DomainNameList": {
+            "type": "list"
+        },
+        "DomainNameMap": {
+            "type": "map"
+        },
+        "DomainStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainId",
+                    "shape": "DomainId"
+                },
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "ARN",
+                    "shape": "ARN"
+                },
+                {
+                    "name": "Created",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>"
+                },
+                {
+                    "name": "Deleted",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called. Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>"
+                },
+                {
+                    "name": "DocService",
+                    "shape": "ServiceEndpoint",
+                    "documentation": "<p>The service endpoint for updating documents in a search domain.</p>"
+                },
+                {
+                    "name": "SearchService",
+                    "shape": "ServiceEndpoint",
+                    "documentation": "<p>The service endpoint for requesting search results from a search domain.</p>"
+                },
+                {
+                    "name": "RequiresIndexDocuments",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>"
+                },
+                {
+                    "name": "Processing",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if processing is being done to activate the current domain configuration.</p>"
+                },
+                {
+                    "name": "SearchInstanceType",
+                    "shape": "SearchInstanceType",
+                    "documentation": "<p>The instance type that is being used to process search requests.</p>"
+                },
+                {
+                    "name": "SearchPartitionCount",
+                    "shape": "PartitionCount",
+                    "documentation": "<p>The number of partitions across which the search index is spread.</p>"
+                },
+                {
+                    "name": "SearchInstanceCount",
+                    "shape": "InstanceCount",
+                    "documentation": "<p>The number of search instances that are available to process search requests.</p>"
+                },
+                {
+                    "name": "Limits",
+                    "shape": "Limits"
+                }
+            ]
+        },
+        "DomainStatusList": {
+            "type": "list"
+        },
+        "Double": {
+            "type": "double"
+        },
+        "DoubleArrayOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "Double",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceFields",
+                    "shape": "FieldNameCommaList",
+                    "documentation": "<p>A list of source fields to map to the field. </p>"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                }
+            ]
+        },
+        "DoubleOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "Double",
+                    "documentation": "<p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>"
+                },
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName",
+                    "documentation": "<p>The name of the source field to map to the field. </p>"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "SortEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the field can be used to sort the search results.</p>"
+                }
+            ]
+        },
+        "DynamicFieldName": {
+            "type": "string"
+        },
+        "DynamicFieldNameList": {
+            "type": "list"
+        },
+        "ErrorCode": {
+            "type": "string"
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "Expression": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ExpressionName",
+                    "shape": "StandardName"
+                },
+                {
+                    "name": "ExpressionValue",
+                    "shape": "ExpressionValue"
+                }
+            ]
+        },
+        "ExpressionStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "Expression",
+                    "documentation": "<p>The expression that is evaluated for sorting while processing a search request.</p>"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "ExpressionStatusList": {
+            "type": "list"
+        },
+        "ExpressionValue": {
+            "type": "string"
+        },
+        "FieldName": {
+            "type": "string"
+        },
+        "FieldNameCommaList": {
+            "type": "string"
+        },
+        "FieldNameList": {
+            "type": "list"
+        },
+        "FieldValue": {
+            "type": "string"
+        },
+        "IndexDocumentsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                }
+            ]
+        },
+        "IndexDocumentsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "FieldNames",
+                    "shape": "FieldNameList",
+                    "documentation": "<p>The names of the fields that are currently being indexed.</p>"
+                }
+            ]
+        },
+        "IndexField": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IndexFieldName",
+                    "shape": "DynamicFieldName",
+                    "documentation": "<p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>"
+                },
+                {
+                    "name": "IndexFieldType",
+                    "shape": "IndexFieldType"
+                },
+                {
+                    "name": "IntOptions",
+                    "shape": "IntOptions"
+                },
+                {
+                    "name": "DoubleOptions",
+                    "shape": "DoubleOptions"
+                },
+                {
+                    "name": "LiteralOptions",
+                    "shape": "LiteralOptions"
+                },
+                {
+                    "name": "TextOptions",
+                    "shape": "TextOptions"
+                },
+                {
+                    "name": "DateOptions",
+                    "shape": "DateOptions"
+                },
+                {
+                    "name": "LatLonOptions",
+                    "shape": "LatLonOptions"
+                },
+                {
+                    "name": "IntArrayOptions",
+                    "shape": "IntArrayOptions"
+                },
+                {
+                    "name": "DoubleArrayOptions",
+                    "shape": "DoubleArrayOptions"
+                },
+                {
+                    "name": "LiteralArrayOptions",
+                    "shape": "LiteralArrayOptions"
+                },
+                {
+                    "name": "TextArrayOptions",
+                    "shape": "TextArrayOptions"
+                },
+                {
+                    "name": "DateArrayOptions",
+                    "shape": "DateArrayOptions"
+                }
+            ]
+        },
+        "IndexFieldStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "IndexField"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "IndexFieldStatusList": {
+            "type": "list"
+        },
+        "IndexFieldType": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "integer"
+        },
+        "IntArrayOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "Long",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceFields",
+                    "shape": "FieldNameCommaList",
+                    "documentation": "<p>A list of source fields to map to the field. </p>"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                }
+            ]
+        },
+        "IntOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "Long",
+                    "documentation": "A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document."
+                },
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName",
+                    "documentation": "<p>The name of the source field to map to the field. </p>"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "SortEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the field can be used to sort the search results.</p>"
+                }
+            ]
+        },
+        "InternalException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidTypeException": {
+            "type": "structure",
+            "members": []
+        },
+        "LatLonOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "SortEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the field can be used to sort the search results.</p>"
+                }
+            ]
+        },
+        "LimitExceededException": {
+            "type": "structure",
+            "members": []
+        },
+        "Limits": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MaximumReplicationCount",
+                    "shape": "MaximumReplicationCount"
+                },
+                {
+                    "name": "MaximumPartitionCount",
+                    "shape": "MaximumPartitionCount"
+                }
+            ]
+        },
+        "ListDomainNamesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainNames",
+                    "shape": "DomainNameMap",
+                    "documentation": "<p>The names of the search domains owned by an account.</p>"
+                }
+            ]
+        },
+        "LiteralArrayOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceFields",
+                    "shape": "FieldNameCommaList",
+                    "documentation": "<p>A list of source fields to map to the field. </p>"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                }
+            ]
+        },
+        "LiteralOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName"
+                },
+                {
+                    "name": "FacetEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether facet information can be returned for the field.</p>"
+                },
+                {
+                    "name": "SearchEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field are searchable.</p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "SortEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the field can be used to sort the search results.</p>"
+                }
+            ]
+        },
+        "Long": {
+            "type": "long"
+        },
+        "MaximumPartitionCount": {
+            "type": "integer"
+        },
+        "MaximumReplicationCount": {
+            "type": "integer"
+        },
+        "MultiAZ": {
+            "type": "boolean"
+        },
+        "OptionState": {
+            "type": "string"
+        },
+        "OptionStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "CreationDate",
+                    "shape": "UpdateTimestamp",
+                    "documentation": "<p>A timestamp for when this option was created.</p>"
+                },
+                {
+                    "name": "UpdateDate",
+                    "shape": "UpdateTimestamp",
+                    "documentation": "<p>A timestamp for when this option was last updated.</p>"
+                },
+                {
+                    "name": "UpdateVersion",
+                    "shape": "UIntValue",
+                    "documentation": "<p>A unique integer that indicates when this option was last updated.</p>"
+                },
+                {
+                    "name": "State",
+                    "shape": "OptionState",
+                    "documentation": "<p>The state of processing a change to an option. Possible values:</p> <ul> <li> <code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li> <code>Processing</code>: the option's latest value is in the process of being activated. </li> <li> <code>Active</code>: the option's latest value is completely deployed.</li> <li> <code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>"
+                },
+                {
+                    "name": "PendingDeletion",
+                    "shape": "Boolean",
+                    "documentation": "<p>Indicates that the option will be deleted once processing is complete.</p>"
+                }
+            ]
+        },
+        "PartitionCount": {
+            "type": "integer"
+        },
+        "PartitionInstanceType": {
+            "type": "string"
+        },
+        "PolicyDocument": {
+            "type": "string"
+        },
+        "ResourceNotFoundException": {
+            "type": "structure",
+            "members": []
+        },
+        "ScalingParameters": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DesiredInstanceType",
+                    "shape": "PartitionInstanceType",
+                    "documentation": "<p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>"
+                },
+                {
+                    "name": "DesiredReplicationCount",
+                    "shape": "UIntValue",
+                    "documentation": "<p>The number of replicas you want to preconfigure for each index partition.</p>"
+                },
+                {
+                    "name": "DesiredPartitionCount",
+                    "shape": "UIntValue",
+                    "documentation": "<p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>"
+                }
+            ]
+        },
+        "ScalingParametersStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "ScalingParameters"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "SearchInstanceType": {
+            "type": "string"
+        },
+        "ServiceEndpoint": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Endpoint",
+                    "shape": "ServiceUrl"
+                }
+            ]
+        },
+        "ServiceUrl": {
+            "type": "string"
+        },
+        "StandardName": {
+            "type": "string"
+        },
+        "StandardNameList": {
+            "type": "list"
+        },
+        "String": {
+            "type": "string"
+        },
+        "Suggester": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "SuggesterName",
+                    "shape": "StandardName"
+                },
+                {
+                    "name": "DocumentSuggesterOptions",
+                    "shape": "DocumentSuggesterOptions"
+                }
+            ]
+        },
+        "SuggesterFuzzyMatching": {
+            "type": "string"
+        },
+        "SuggesterStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Options",
+                    "shape": "Suggester"
+                },
+                {
+                    "name": "Status",
+                    "shape": "OptionStatus"
+                }
+            ]
+        },
+        "SuggesterStatusList": {
+            "type": "list"
+        },
+        "TextArrayOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceFields",
+                    "shape": "FieldNameCommaList",
+                    "documentation": "<p>A list of source fields to map to the field. </p>"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "HighlightEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether highlights can be returned for the field.</p>"
+                },
+                {
+                    "name": "AnalysisScheme",
+                    "shape": "Word",
+                    "documentation": "<p>The name of an analysis scheme for a <code>text-array</code> field.</p>"
+                }
+            ]
+        },
+        "TextOptions": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DefaultValue",
+                    "shape": "FieldValue",
+                    "documentation": "A value to use for the field if the field isn't specified for a document."
+                },
+                {
+                    "name": "SourceField",
+                    "shape": "FieldName"
+                },
+                {
+                    "name": "ReturnEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the contents of the field can be returned in the search results.</p>"
+                },
+                {
+                    "name": "SortEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the field can be used to sort the search results.</p>"
+                },
+                {
+                    "name": "HighlightEnabled",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether highlights can be returned for the field.</p>"
+                },
+                {
+                    "name": "AnalysisScheme",
+                    "shape": "Word",
+                    "documentation": "<p>The name of an analysis scheme for a <code>text</code> field.</p>"
+                }
+            ]
+        },
+        "UIntValue": {
+            "type": "integer"
+        },
+        "UpdateAvailabilityOptionsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "MultiAZ",
+                    "shape": "Boolean",
+                    "documentation": "<p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>"
+                }
+            ]
+        },
+        "UpdateAvailabilityOptionsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AvailabilityOptions",
+                    "shape": "AvailabilityOptionsStatus",
+                    "documentation": "<p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>"
+                }
+            ]
+        },
+        "UpdateScalingParametersRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "ScalingParameters",
+                    "shape": "ScalingParameters"
+                }
+            ]
+        },
+        "UpdateScalingParametersResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ScalingParameters",
+                    "shape": "ScalingParametersStatus"
+                }
+            ]
+        },
+        "UpdateServiceAccessPoliciesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DomainName",
+                    "shape": "DomainName"
+                },
+                {
+                    "name": "AccessPolicies",
+                    "shape": "PolicyDocument",
+                    "documentation": "<p>The access rules you want to configure. These rules replace any existing rules. </p>"
+                }
+            ]
+        },
+        "UpdateServiceAccessPoliciesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AccessPolicies",
+                    "shape": "AccessPoliciesStatus",
+                    "documentation": "<p>The access rules configured for the domain.</p>"
+                }
+            ]
+        },
+        "UpdateTimestamp": {
+            "type": "timestamp"
+        },
+        "Word": {
+            "type": "string"
+        }
+    }
+}

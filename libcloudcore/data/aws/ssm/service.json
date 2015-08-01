@@ -1,0 +1,692 @@
+{
+    "metadata": {},
+    "operations": {
+        "CreateAssociation": {
+            "documentation": "<p>Associates the specified configuration document with the specified instance.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>",
+            "input": {
+                "shape": "CreateAssociationRequest"
+            },
+            "output": {
+                "shape": "CreateAssociationResult"
+            }
+        },
+        "CreateAssociationBatch": {
+            "documentation": "<p>Associates the specified configuration documents with the specified instances.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>",
+            "input": {
+                "shape": "CreateAssociationBatchRequest"
+            },
+            "output": {
+                "shape": "CreateAssociationBatchResult"
+            }
+        },
+        "CreateDocument": {
+            "documentation": "<p>Creates a configuration document.</p> <p>After you create a configuration document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>",
+            "input": {
+                "shape": "CreateDocumentRequest"
+            },
+            "output": {
+                "shape": "CreateDocumentResult"
+            }
+        },
+        "DeleteAssociation": {
+            "documentation": "<p>Disassociates the specified configuration document from the specified instance.</p> <p>When you disassociate a configuration document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a configuration document, you must create a new configuration document with the desired configuration and associate it with the instance.</p>",
+            "input": {
+                "shape": "DeleteAssociationRequest"
+            },
+            "output": {
+                "shape": "DeleteAssociationResult"
+            }
+        },
+        "DeleteDocument": {
+            "documentation": "<p>Deletes the specified configuration document.</p> <p>You must use <a>DeleteAssociation</a> to disassociate all instances that are associated with the configuration document before you can delete it.</p>",
+            "input": {
+                "shape": "DeleteDocumentRequest"
+            },
+            "output": {
+                "shape": "DeleteDocumentResult"
+            }
+        },
+        "DescribeAssociation": {
+            "documentation": "<p>Describes the associations for the specified configuration document or instance.</p>",
+            "input": {
+                "shape": "DescribeAssociationRequest"
+            },
+            "output": {
+                "shape": "DescribeAssociationResult"
+            }
+        },
+        "DescribeDocument": {
+            "documentation": "<p>Describes the specified configuration document.</p>",
+            "input": {
+                "shape": "DescribeDocumentRequest"
+            },
+            "output": {
+                "shape": "DescribeDocumentResult"
+            }
+        },
+        "GetDocument": {
+            "documentation": "<p>Gets the contents of the specified configuration document.</p>",
+            "input": {
+                "shape": "GetDocumentRequest"
+            },
+            "output": {
+                "shape": "GetDocumentResult"
+            }
+        },
+        "ListAssociations": {
+            "documentation": "<p>Lists the associations for the specified configuration document or instance.</p>",
+            "input": {
+                "shape": "ListAssociationsRequest"
+            },
+            "output": {
+                "shape": "ListAssociationsResult"
+            }
+        },
+        "ListDocuments": {
+            "documentation": "<p>Describes one or more of your configuration documents.</p>",
+            "input": {
+                "shape": "ListDocumentsRequest"
+            },
+            "output": {
+                "shape": "ListDocumentsResult"
+            }
+        },
+        "UpdateAssociationStatus": {
+            "documentation": "<p>Updates the status of the configuration document associated with the specified instance.</p>",
+            "input": {
+                "shape": "UpdateAssociationStatusRequest"
+            },
+            "output": {
+                "shape": "UpdateAssociationStatusResult"
+            }
+        }
+    },
+    "shapes": {
+        "AssociatedInstances": {
+            "type": "structure",
+            "members": []
+        },
+        "Association": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                }
+            ]
+        },
+        "AssociationAlreadyExists": {
+            "type": "structure",
+            "members": []
+        },
+        "AssociationDescription": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                },
+                {
+                    "name": "Date",
+                    "shape": "DateTime",
+                    "documentation": "<p>The date when the association was made.</p>"
+                },
+                {
+                    "name": "Status",
+                    "shape": "AssociationStatus",
+                    "documentation": "<p>The association status.</p>"
+                }
+            ]
+        },
+        "AssociationDescriptionList": {
+            "type": "list"
+        },
+        "AssociationDoesNotExist": {
+            "type": "structure",
+            "members": []
+        },
+        "AssociationFilter": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "key",
+                    "shape": "AssociationFilterKey",
+                    "documentation": "<p>The name of the filter.</p>"
+                },
+                {
+                    "name": "value",
+                    "shape": "AssociationFilterValue",
+                    "documentation": "<p>The filter value.</p>"
+                }
+            ]
+        },
+        "AssociationFilterKey": {
+            "type": "string"
+        },
+        "AssociationFilterList": {
+            "type": "list"
+        },
+        "AssociationFilterValue": {
+            "type": "string"
+        },
+        "AssociationLimitExceeded": {
+            "type": "structure",
+            "members": []
+        },
+        "AssociationList": {
+            "type": "list"
+        },
+        "AssociationStatus": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Date",
+                    "shape": "DateTime",
+                    "documentation": "<p>The date when the status changed.</p>"
+                },
+                {
+                    "name": "Name",
+                    "shape": "AssociationStatusName",
+                    "documentation": "<p>The status.</p>"
+                },
+                {
+                    "name": "Message",
+                    "shape": "StatusMessage",
+                    "documentation": "<p>The reason for the status.</p>"
+                },
+                {
+                    "name": "AdditionalInfo",
+                    "shape": "StatusAdditionalInfo",
+                    "documentation": "<p>A user-defined string.</p>"
+                }
+            ]
+        },
+        "AssociationStatusName": {
+            "type": "string"
+        },
+        "BatchErrorMessage": {
+            "type": "string"
+        },
+        "CreateAssociationBatchRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Entries",
+                    "shape": "CreateAssociationBatchRequestEntries",
+                    "documentation": "<p>One or more associations.</p>"
+                }
+            ]
+        },
+        "CreateAssociationBatchRequestEntries": {
+            "type": "list"
+        },
+        "CreateAssociationBatchRequestEntry": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                }
+            ]
+        },
+        "CreateAssociationBatchResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Successful",
+                    "shape": "AssociationDescriptionList",
+                    "documentation": "<p>Information about the associations that succeeded.</p>"
+                },
+                {
+                    "name": "Failed",
+                    "shape": "FailedCreateAssociationList",
+                    "documentation": "<p>Information about the associations that failed.</p>"
+                }
+            ]
+        },
+        "CreateAssociationRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                }
+            ]
+        },
+        "CreateAssociationResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AssociationDescription",
+                    "shape": "AssociationDescription",
+                    "documentation": "<p>Information about the association.</p>"
+                }
+            ]
+        },
+        "CreateDocumentRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Content",
+                    "shape": "DocumentContent",
+                    "documentation": "<p>A valid JSON file. For more information about the contents of this file, see <a href=\"http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html\">Configuration Document</a>.</p>"
+                },
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>A name for the configuration document.</p>"
+                }
+            ]
+        },
+        "CreateDocumentResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DocumentDescription",
+                    "shape": "DocumentDescription",
+                    "documentation": "<p>Information about the configuration document.</p>"
+                }
+            ]
+        },
+        "DateTime": {
+            "type": "timestamp"
+        },
+        "DeleteAssociationRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                }
+            ]
+        },
+        "DeleteAssociationResult": {
+            "type": "structure",
+            "members": []
+        },
+        "DeleteDocumentRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                }
+            ]
+        },
+        "DeleteDocumentResult": {
+            "type": "structure",
+            "members": []
+        },
+        "DescribeAssociationRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                }
+            ]
+        },
+        "DescribeAssociationResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AssociationDescription",
+                    "shape": "AssociationDescription",
+                    "documentation": "<p>Information about the association.</p>"
+                }
+            ]
+        },
+        "DescribeDocumentRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                }
+            ]
+        },
+        "DescribeDocumentResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Document",
+                    "shape": "DocumentDescription",
+                    "documentation": "<p>Information about the configuration document.</p>"
+                }
+            ]
+        },
+        "DocumentAlreadyExists": {
+            "type": "structure",
+            "members": []
+        },
+        "DocumentContent": {
+            "type": "string"
+        },
+        "DocumentDescription": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Sha1",
+                    "shape": "DocumentSha1",
+                    "documentation": "<p>The SHA1 hash of the document, which you can use for verification purposes.</p>"
+                },
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "CreatedDate",
+                    "shape": "DateTime",
+                    "documentation": "<p>The date when the configuration document was created.</p>"
+                },
+                {
+                    "name": "Status",
+                    "shape": "DocumentStatus",
+                    "documentation": "<p>The status of the configuration document.</p>"
+                }
+            ]
+        },
+        "DocumentFilter": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "key",
+                    "shape": "DocumentFilterKey",
+                    "documentation": "<p>The name of the filter.</p>"
+                },
+                {
+                    "name": "value",
+                    "shape": "DocumentFilterValue",
+                    "documentation": "<p>The value of the filter.</p>"
+                }
+            ]
+        },
+        "DocumentFilterKey": {
+            "type": "string"
+        },
+        "DocumentFilterList": {
+            "type": "list"
+        },
+        "DocumentFilterValue": {
+            "type": "string"
+        },
+        "DocumentIdentifier": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                }
+            ]
+        },
+        "DocumentIdentifierList": {
+            "type": "list"
+        },
+        "DocumentLimitExceeded": {
+            "type": "structure",
+            "members": []
+        },
+        "DocumentName": {
+            "type": "string"
+        },
+        "DocumentSha1": {
+            "type": "string"
+        },
+        "DocumentStatus": {
+            "type": "string"
+        },
+        "DuplicateInstanceId": {
+            "type": "structure",
+            "members": []
+        },
+        "FailedCreateAssociation": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Entry",
+                    "shape": "CreateAssociationBatchRequestEntry",
+                    "documentation": "<p>The association.</p>"
+                },
+                {
+                    "name": "Message",
+                    "shape": "BatchErrorMessage",
+                    "documentation": "<p>A description of the failure.</p>"
+                },
+                {
+                    "name": "Fault",
+                    "shape": "Fault",
+                    "documentation": "<p>The source of the failure.</p>"
+                }
+            ]
+        },
+        "FailedCreateAssociationList": {
+            "type": "list"
+        },
+        "Fault": {
+            "type": "string"
+        },
+        "GetDocumentRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                }
+            ]
+        },
+        "GetDocumentResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "Content",
+                    "shape": "DocumentContent",
+                    "documentation": "<p>The contents of the configuration document.</p>"
+                }
+            ]
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InternalServerError": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidDocument": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidDocumentContent": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "<p>A description of the validation error.</p>"
+                }
+            ]
+        },
+        "InvalidInstanceId": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidNextToken": {
+            "type": "structure",
+            "members": []
+        },
+        "ListAssociationsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AssociationFilterList",
+                    "shape": "AssociationFilterList",
+                    "documentation": "<p>One or more filters. Use a filter to return a more specific list of results.</p>"
+                },
+                {
+                    "name": "MaxResults",
+                    "shape": "MaxResults",
+                    "box": true,
+                    "documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>The token for the next set of items to return. (You received this token from a previous call.)</p>"
+                }
+            ]
+        },
+        "ListAssociationsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Associations",
+                    "shape": "AssociationList",
+                    "documentation": "<p>The associations.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>"
+                }
+            ]
+        },
+        "ListDocumentsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DocumentFilterList",
+                    "shape": "DocumentFilterList",
+                    "documentation": "<p>One or more filters. Use a filter to return a more specific list of results.</p>"
+                },
+                {
+                    "name": "MaxResults",
+                    "shape": "MaxResults",
+                    "box": true,
+                    "documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>The token for the next set of items to return. (You received this token from a previous call.)</p>"
+                }
+            ]
+        },
+        "ListDocumentsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "DocumentIdentifiers",
+                    "shape": "DocumentIdentifierList",
+                    "documentation": "<p>The names of the configuration documents.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>"
+                }
+            ]
+        },
+        "MaxDocumentSizeExceeded": {
+            "type": "structure",
+            "members": []
+        },
+        "MaxResults": {
+            "type": "integer"
+        },
+        "NextToken": {
+            "type": "string"
+        },
+        "StatusAdditionalInfo": {
+            "type": "string"
+        },
+        "StatusMessage": {
+            "type": "string"
+        },
+        "StatusUnchanged": {
+            "type": "structure",
+            "members": []
+        },
+        "String": {
+            "type": "string"
+        },
+        "TooManyUpdates": {
+            "type": "structure",
+            "members": []
+        },
+        "UpdateAssociationStatusRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DocumentName",
+                    "documentation": "<p>The name of the configuration document.</p>"
+                },
+                {
+                    "name": "InstanceId",
+                    "shape": "InstanceId",
+                    "documentation": "<p>The ID of the instance.</p>"
+                },
+                {
+                    "name": "AssociationStatus",
+                    "shape": "AssociationStatus",
+                    "documentation": "<p>The association status.</p>"
+                }
+            ]
+        },
+        "UpdateAssociationStatusResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AssociationDescription",
+                    "shape": "AssociationDescription",
+                    "documentation": "<p>Information about the association.</p>"
+                }
+            ]
+        }
+    }
+}

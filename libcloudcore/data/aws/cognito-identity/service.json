@@ -1,0 +1,936 @@
+{
+    "metadata": {},
+    "operations": {
+        "CreateIdentityPool": {
+            "documentation": "<p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "CreateIdentityPoolInput"
+            },
+            "output": {
+                "shape": "IdentityPool"
+            }
+        },
+        "DeleteIdentities": {
+            "documentation": "<p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "DeleteIdentitiesInput"
+            },
+            "output": {
+                "shape": "DeleteIdentitiesResponse"
+            }
+        },
+        "DeleteIdentityPool": {
+            "documentation": "<p>Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "DeleteIdentityPoolInput"
+            }
+        },
+        "DescribeIdentity": {
+            "documentation": "<p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "DescribeIdentityInput"
+            },
+            "output": {
+                "shape": "IdentityDescription"
+            }
+        },
+        "DescribeIdentityPool": {
+            "documentation": "<p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "DescribeIdentityPoolInput"
+            },
+            "output": {
+                "shape": "IdentityPool"
+            }
+        },
+        "GetCredentialsForIdentity": {
+            "documentation": "<p>Returns credentials for the the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "input": {
+                "shape": "GetCredentialsForIdentityInput"
+            },
+            "output": {
+                "shape": "GetCredentialsForIdentityResponse"
+            }
+        },
+        "GetId": {
+            "documentation": "<p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p> <p>token+\";\"+tokenSecret.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "input": {
+                "shape": "GetIdInput"
+            },
+            "output": {
+                "shape": "GetIdResponse"
+            }
+        },
+        "GetIdentityPoolRoles": {
+            "documentation": "<p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "GetIdentityPoolRolesInput"
+            },
+            "output": {
+                "shape": "GetIdentityPoolRolesResponse"
+            }
+        },
+        "GetOpenIdToken": {
+            "documentation": "<p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 15 minutes.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "input": {
+                "shape": "GetOpenIdTokenInput"
+            },
+            "output": {
+                "shape": "GetOpenIdTokenResponse"
+            }
+        },
+        "GetOpenIdTokenForDeveloperIdentity": {
+            "documentation": "<p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the \"domain\" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "GetOpenIdTokenForDeveloperIdentityInput"
+            },
+            "output": {
+                "shape": "GetOpenIdTokenForDeveloperIdentityResponse"
+            }
+        },
+        "ListIdentities": {
+            "documentation": "<p>Lists the identities in a pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "ListIdentitiesInput"
+            },
+            "output": {
+                "shape": "ListIdentitiesResponse"
+            }
+        },
+        "ListIdentityPools": {
+            "documentation": "<p>Lists all of the Cognito identity pools registered for your account.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "input": {
+                "shape": "ListIdentityPoolsInput"
+            },
+            "output": {
+                "shape": "ListIdentityPoolsResponse"
+            }
+        },
+        "LookupDeveloperIdentity": {
+            "documentation": "<p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "LookupDeveloperIdentityInput"
+            },
+            "output": {
+                "shape": "LookupDeveloperIdentityResponse"
+            }
+        },
+        "MergeDeveloperIdentities": {
+            "documentation": "<p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "MergeDeveloperIdentitiesInput"
+            },
+            "output": {
+                "shape": "MergeDeveloperIdentitiesResponse"
+            }
+        },
+        "SetIdentityPoolRoles": {
+            "documentation": "<p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "SetIdentityPoolRolesInput"
+            }
+        },
+        "UnlinkDeveloperIdentity": {
+            "documentation": "<p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "input": {
+                "shape": "UnlinkDeveloperIdentityInput"
+            }
+        },
+        "UnlinkIdentity": {
+            "documentation": "<p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "input": {
+                "shape": "UnlinkIdentityInput"
+            }
+        },
+        "UpdateIdentityPool": {
+            "documentation": "<p>Updates a user pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "input": {
+                "shape": "IdentityPool"
+            },
+            "output": {
+                "shape": "IdentityPool"
+            }
+        }
+    },
+    "shapes": {
+        "ARNString": {
+            "type": "string"
+        },
+        "AccessKeyString": {
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "ConcurrentModificationException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "<p>The message returned by a ConcurrentModificationException.</p>"
+                }
+            ]
+        },
+        "CreateIdentityPoolInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolName",
+                    "shape": "IdentityPoolName",
+                    "documentation": "<p>A string that you provide.</p>"
+                },
+                {
+                    "name": "AllowUnauthenticatedIdentities",
+                    "shape": "IdentityPoolUnauthenticated",
+                    "documentation": "<p>TRUE if the identity pool supports unauthenticated logins.</p>"
+                },
+                {
+                    "name": "SupportedLoginProviders",
+                    "shape": "IdentityProviders",
+                    "documentation": "<p>Optional key:value pairs mapping provider names to provider app IDs.</p>"
+                },
+                {
+                    "name": "DeveloperProviderName",
+                    "shape": "DeveloperProviderName",
+                    "documentation": "<p>The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>"
+                },
+                {
+                    "name": "OpenIdConnectProviderARNs",
+                    "shape": "OIDCProviderList",
+                    "documentation": "<p>A list of OpendID Connect provider ARNs.</p>"
+                }
+            ]
+        },
+        "Credentials": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AccessKeyId",
+                    "shape": "AccessKeyString",
+                    "documentation": "<p>The Access Key portion of the credentials.</p>"
+                },
+                {
+                    "name": "SecretKey",
+                    "shape": "SecretKeyString",
+                    "documentation": "<p>The Secret Access Key portion of the credentials</p>"
+                },
+                {
+                    "name": "SessionToken",
+                    "shape": "SessionTokenString",
+                    "documentation": "<p>The Session Token portion of the credentials</p>"
+                },
+                {
+                    "name": "Expiration",
+                    "shape": "DateType",
+                    "documentation": "<p>The date at which these credentials will expire.</p>"
+                }
+            ]
+        },
+        "DateType": {
+            "type": "timestamp"
+        },
+        "DeleteIdentitiesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityIdsToDelete",
+                    "shape": "IdentityIdList",
+                    "documentation": "<p>A list of 1-60 identities that you want to delete.</p>"
+                }
+            ]
+        },
+        "DeleteIdentitiesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "UnprocessedIdentityIds",
+                    "shape": "UnprocessedIdentityIdList",
+                    "documentation": "<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>"
+                }
+            ]
+        },
+        "DeleteIdentityPoolInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                }
+            ]
+        },
+        "DescribeIdentityInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                }
+            ]
+        },
+        "DescribeIdentityPoolInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                }
+            ]
+        },
+        "DeveloperProviderName": {
+            "type": "string"
+        },
+        "DeveloperUserAlreadyRegisteredException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "<p>This developer user identifier is already registered with Cognito.</p>"
+                }
+            ]
+        },
+        "DeveloperUserIdentifier": {
+            "type": "string"
+        },
+        "DeveloperUserIdentifierList": {
+            "type": "list"
+        },
+        "ErrorCode": {
+            "type": "string"
+        },
+        "ExternalServiceException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "<p>The message returned by an ExternalServiceException</p>"
+                }
+            ]
+        },
+        "GetCredentialsForIdentityInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "Logins",
+                    "shape": "LoginsMap",
+                    "documentation": "<p>A set of optional name-value pairs that map provider names to provider tokens.</p>"
+                }
+            ]
+        },
+        "GetCredentialsForIdentityResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "Credentials",
+                    "shape": "Credentials",
+                    "documentation": "<p>Credentials for the the provided identity ID.</p>"
+                }
+            ]
+        },
+        "GetIdInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AccountId",
+                    "shape": "AccountId",
+                    "documentation": "A standard AWS account ID (9+ digits)."
+                },
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                },
+                {
+                    "name": "Logins",
+                    "shape": "LoginsMap",
+                    "documentation": "<p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits: <code>www.digits.com</code> </li> </ul> </p>"
+                }
+            ]
+        },
+        "GetIdResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "A unique identifier in the format REGION:GUID."
+                }
+            ]
+        },
+        "GetIdentityPoolRolesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                }
+            ]
+        },
+        "GetIdentityPoolRolesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "Roles",
+                    "shape": "RolesMap",
+                    "documentation": "<p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>"
+                }
+            ]
+        },
+        "GetOpenIdTokenForDeveloperIdentityInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "Logins",
+                    "shape": "LoginsMap",
+                    "documentation": "<p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>"
+                },
+                {
+                    "name": "TokenDuration",
+                    "shape": "TokenDuration",
+                    "documentation": "<p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p>"
+                }
+            ]
+        },
+        "GetOpenIdTokenForDeveloperIdentityResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "Token",
+                    "shape": "OIDCToken",
+                    "documentation": "<p>An OpenID token.</p>"
+                }
+            ]
+        },
+        "GetOpenIdTokenInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "A unique identifier in the format REGION:GUID."
+                },
+                {
+                    "name": "Logins",
+                    "shape": "LoginsMap",
+                    "documentation": "A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com or any other OpenId Connect provider, always include the id_token."
+                }
+            ]
+        },
+        "GetOpenIdTokenResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input."
+                },
+                {
+                    "name": "Token",
+                    "shape": "OIDCToken",
+                    "documentation": "An OpenID token, valid for 15 minutes."
+                }
+            ]
+        },
+        "HideDisabled": {
+            "type": "boolean"
+        },
+        "IdentitiesList": {
+            "type": "list"
+        },
+        "IdentityDescription": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "A unique identifier in the format REGION:GUID."
+                },
+                {
+                    "name": "Logins",
+                    "shape": "LoginsList",
+                    "documentation": "A set of optional name-value pairs that map provider names to provider tokens."
+                },
+                {
+                    "name": "CreationDate",
+                    "shape": "DateType",
+                    "documentation": "<p>Date on which the identity was created.</p>"
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "shape": "DateType",
+                    "documentation": "<p>Date on which the identity was last modified.</p>"
+                }
+            ]
+        },
+        "IdentityId": {
+            "type": "string"
+        },
+        "IdentityIdList": {
+            "type": "list"
+        },
+        "IdentityPool": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                },
+                {
+                    "name": "IdentityPoolName",
+                    "shape": "IdentityPoolName",
+                    "documentation": "<p>A string that you provide.</p>"
+                },
+                {
+                    "name": "AllowUnauthenticatedIdentities",
+                    "shape": "IdentityPoolUnauthenticated",
+                    "documentation": "TRUE if the identity pool supports unauthenticated logins."
+                },
+                {
+                    "name": "SupportedLoginProviders",
+                    "shape": "IdentityProviders",
+                    "documentation": "<p>Optional key:value pairs mapping provider names to provider app IDs.</p>"
+                },
+                {
+                    "name": "DeveloperProviderName",
+                    "shape": "DeveloperProviderName",
+                    "documentation": "<p>The \"domain\" by which Cognito will refer to your users.</p>"
+                },
+                {
+                    "name": "OpenIdConnectProviderARNs",
+                    "shape": "OIDCProviderList",
+                    "documentation": "<p>A list of OpendID Connect provider ARNs.</p>"
+                }
+            ]
+        },
+        "IdentityPoolId": {
+            "type": "string"
+        },
+        "IdentityPoolName": {
+            "type": "string"
+        },
+        "IdentityPoolShortDescription": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                },
+                {
+                    "name": "IdentityPoolName",
+                    "shape": "IdentityPoolName",
+                    "documentation": "A string that you provide."
+                }
+            ]
+        },
+        "IdentityPoolUnauthenticated": {
+            "type": "boolean"
+        },
+        "IdentityPoolsList": {
+            "type": "list"
+        },
+        "IdentityProviderId": {
+            "type": "string"
+        },
+        "IdentityProviderName": {
+            "type": "string"
+        },
+        "IdentityProviderToken": {
+            "type": "string"
+        },
+        "IdentityProviders": {
+            "type": "map"
+        },
+        "InternalErrorException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "The message returned by an InternalErrorException."
+                }
+            ]
+        },
+        "InvalidIdentityPoolConfigurationException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "<p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>"
+                }
+            ]
+        },
+        "InvalidParameterException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "The message returned by an InvalidParameterException."
+                }
+            ]
+        },
+        "LimitExceededException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "The message returned by a LimitExceededException."
+                }
+            ]
+        },
+        "ListIdentitiesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                },
+                {
+                    "name": "MaxResults",
+                    "shape": "QueryLimit",
+                    "documentation": "The maximum number of identities to return."
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "PaginationKey",
+                    "documentation": "A pagination token."
+                },
+                {
+                    "name": "HideDisabled",
+                    "shape": "HideDisabled",
+                    "documentation": "<p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>"
+                }
+            ]
+        },
+        "ListIdentitiesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "An identity pool ID in the format REGION:GUID."
+                },
+                {
+                    "name": "Identities",
+                    "shape": "IdentitiesList",
+                    "documentation": "An object containing a set of identities and associated mappings."
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "PaginationKey",
+                    "documentation": "A pagination token."
+                }
+            ]
+        },
+        "ListIdentityPoolsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MaxResults",
+                    "shape": "QueryLimit",
+                    "documentation": "The maximum number of identities to return."
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "PaginationKey",
+                    "documentation": "A pagination token."
+                }
+            ]
+        },
+        "ListIdentityPoolsResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPools",
+                    "shape": "IdentityPoolsList",
+                    "documentation": "The identity pools returned by the ListIdentityPools action."
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "PaginationKey",
+                    "documentation": "A pagination token."
+                }
+            ]
+        },
+        "LoginsList": {
+            "type": "list"
+        },
+        "LoginsMap": {
+            "type": "map"
+        },
+        "LookupDeveloperIdentityInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "DeveloperUserIdentifier",
+                    "shape": "DeveloperUserIdentifier",
+                    "documentation": "<p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>"
+                },
+                {
+                    "name": "MaxResults",
+                    "shape": "QueryLimit",
+                    "documentation": "<p>The maximum number of identities to return.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "PaginationKey",
+                    "documentation": "<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>"
+                }
+            ]
+        },
+        "LookupDeveloperIdentityResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "DeveloperUserIdentifierList",
+                    "shape": "DeveloperUserIdentifierList",
+                    "documentation": "<p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "PaginationKey",
+                    "documentation": "<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>"
+                }
+            ]
+        },
+        "MergeDeveloperIdentitiesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "SourceUserIdentifier",
+                    "shape": "DeveloperUserIdentifier",
+                    "documentation": "<p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>"
+                },
+                {
+                    "name": "DestinationUserIdentifier",
+                    "shape": "DeveloperUserIdentifier",
+                    "documentation": "<p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>"
+                },
+                {
+                    "name": "DeveloperProviderName",
+                    "shape": "DeveloperProviderName",
+                    "documentation": "<p>The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>"
+                },
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                }
+            ]
+        },
+        "MergeDeveloperIdentitiesResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                }
+            ]
+        },
+        "NotAuthorizedException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "The message returned by a NotAuthorizedException"
+                }
+            ]
+        },
+        "OIDCProviderList": {
+            "type": "list"
+        },
+        "OIDCToken": {
+            "type": "string"
+        },
+        "PaginationKey": {
+            "type": "string"
+        },
+        "QueryLimit": {
+            "type": "integer"
+        },
+        "ResourceConflictException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "The message returned by a ResourceConflictException."
+                }
+            ]
+        },
+        "ResourceNotFoundException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "The message returned by a ResourceNotFoundException."
+                }
+            ]
+        },
+        "RoleType": {
+            "type": "string"
+        },
+        "RolesMap": {
+            "type": "map"
+        },
+        "SecretKeyString": {
+            "type": "string"
+        },
+        "SessionTokenString": {
+            "type": "string"
+        },
+        "SetIdentityPoolRolesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "Roles",
+                    "shape": "RolesMap",
+                    "documentation": "<p>The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.</p>"
+                }
+            ]
+        },
+        "String": {
+            "type": "string"
+        },
+        "TokenDuration": {
+            "type": "long"
+        },
+        "TooManyRequestsException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "String",
+                    "documentation": "Message returned by a TooManyRequestsException"
+                }
+            ]
+        },
+        "UnlinkDeveloperIdentityInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "IdentityPoolId",
+                    "shape": "IdentityPoolId",
+                    "documentation": "<p>An identity pool ID in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "DeveloperProviderName",
+                    "shape": "DeveloperProviderName",
+                    "documentation": "<p>The \"domain\" by which Cognito will refer to your users.</p>"
+                },
+                {
+                    "name": "DeveloperUserIdentifier",
+                    "shape": "DeveloperUserIdentifier",
+                    "documentation": "A unique ID used by your backend authentication process to identify a user."
+                }
+            ]
+        },
+        "UnlinkIdentityInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "A unique identifier in the format REGION:GUID."
+                },
+                {
+                    "name": "Logins",
+                    "shape": "LoginsMap",
+                    "documentation": "A set of optional name-value pairs that map provider names to provider tokens."
+                },
+                {
+                    "name": "LoginsToRemove",
+                    "shape": "LoginsList",
+                    "documentation": "Provider names to unlink from this identity."
+                }
+            ]
+        },
+        "UnprocessedIdentityId": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "IdentityId",
+                    "shape": "IdentityId",
+                    "documentation": "<p>A unique identifier in the format REGION:GUID.</p>"
+                },
+                {
+                    "name": "ErrorCode",
+                    "shape": "ErrorCode",
+                    "documentation": "<p>The error code indicating the type of error that occurred.</p>"
+                }
+            ]
+        },
+        "UnprocessedIdentityIdList": {
+            "type": "list"
+        }
+    }
+}

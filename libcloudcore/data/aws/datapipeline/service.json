@@ -1,0 +1,1140 @@
+{
+    "metadata": {},
+    "operations": {
+        "ActivatePipeline": {
+            "documentation": "<p>Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.</p> <p>If you need to pause the pipeline to investigate an issue with a component, such as a data source or script, call <a>DeactivatePipeline</a>.</p> <p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p>",
+            "input": {
+                "shape": "ActivatePipelineInput"
+            },
+            "output": {
+                "shape": "ActivatePipelineOutput"
+            }
+        },
+        "AddTags": {
+            "documentation": "<p>Adds or modifies tags for the specified pipeline.</p>",
+            "input": {
+                "shape": "AddTagsInput"
+            },
+            "output": {
+                "shape": "AddTagsOutput"
+            }
+        },
+        "CreatePipeline": {
+            "documentation": "<p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>",
+            "input": {
+                "shape": "CreatePipelineInput"
+            },
+            "output": {
+                "shape": "CreatePipelineOutput"
+            }
+        },
+        "DeactivatePipeline": {
+            "documentation": "<p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p> <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>",
+            "input": {
+                "shape": "DeactivatePipelineInput"
+            },
+            "output": {
+                "shape": "DeactivatePipelineOutput"
+            }
+        },
+        "DeletePipeline": {
+            "documentation": "<p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p> <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <a>SetStatus</a> can be resumed.</p>",
+            "input": {
+                "shape": "DeletePipelineInput"
+            }
+        },
+        "DescribeObjects": {
+            "documentation": "<p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p>",
+            "input": {
+                "shape": "DescribeObjectsInput"
+            },
+            "output": {
+                "shape": "DescribeObjectsOutput"
+            }
+        },
+        "DescribePipelines": {
+            "documentation": "<p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p> <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>",
+            "input": {
+                "shape": "DescribePipelinesInput"
+            },
+            "output": {
+                "shape": "DescribePipelinesOutput"
+            }
+        },
+        "EvaluateExpression": {
+            "documentation": "<p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>",
+            "input": {
+                "shape": "EvaluateExpressionInput"
+            },
+            "output": {
+                "shape": "EvaluateExpressionOutput"
+            }
+        },
+        "GetPipelineDefinition": {
+            "documentation": "<p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>",
+            "input": {
+                "shape": "GetPipelineDefinitionInput"
+            },
+            "output": {
+                "shape": "GetPipelineDefinitionOutput"
+            }
+        },
+        "ListPipelines": {
+            "documentation": "<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>",
+            "input": {
+                "shape": "ListPipelinesInput"
+            },
+            "output": {
+                "shape": "ListPipelinesOutput"
+            }
+        },
+        "PollForTask": {
+            "documentation": "<p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p> <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p>",
+            "input": {
+                "shape": "PollForTaskInput"
+            },
+            "output": {
+                "shape": "PollForTaskOutput"
+            }
+        },
+        "PutPipelineDefinition": {
+            "documentation": "<p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p> <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p> <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action. </p>",
+            "input": {
+                "shape": "PutPipelineDefinitionInput"
+            },
+            "output": {
+                "shape": "PutPipelineDefinitionOutput"
+            }
+        },
+        "QueryObjects": {
+            "documentation": "<p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>",
+            "input": {
+                "shape": "QueryObjectsInput"
+            },
+            "output": {
+                "shape": "QueryObjectsOutput"
+            }
+        },
+        "RemoveTags": {
+            "documentation": "<p>Removes existing tags from the specified pipeline.</p>",
+            "input": {
+                "shape": "RemoveTagsInput"
+            },
+            "output": {
+                "shape": "RemoveTagsOutput"
+            }
+        },
+        "ReportTaskProgress": {
+            "documentation": "<p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p> <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>",
+            "input": {
+                "shape": "ReportTaskProgressInput"
+            },
+            "output": {
+                "shape": "ReportTaskProgressOutput"
+            }
+        },
+        "ReportTaskRunnerHeartbeat": {
+            "documentation": "<p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p>",
+            "input": {
+                "shape": "ReportTaskRunnerHeartbeatInput"
+            },
+            "output": {
+                "shape": "ReportTaskRunnerHeartbeatOutput"
+            }
+        },
+        "SetStatus": {
+            "documentation": "<p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>",
+            "input": {
+                "shape": "SetStatusInput"
+            }
+        },
+        "SetTaskStatus": {
+            "documentation": "<p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>",
+            "input": {
+                "shape": "SetTaskStatusInput"
+            },
+            "output": {
+                "shape": "SetTaskStatusOutput"
+            }
+        },
+        "ValidatePipelineDefinition": {
+            "documentation": "<p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>",
+            "input": {
+                "shape": "ValidatePipelineDefinitionInput"
+            },
+            "output": {
+                "shape": "ValidatePipelineDefinitionOutput"
+            }
+        }
+    },
+    "shapes": {
+        "ActivatePipelineInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "parameterValues",
+                    "shape": "ParameterValueList",
+                    "documentation": "<p>A list of parameter values to pass to the pipeline at activation.</p>"
+                },
+                {
+                    "name": "startTimestamp",
+                    "shape": "timestamp",
+                    "documentation": "<p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>"
+                }
+            ]
+        },
+        "ActivatePipelineOutput": {
+            "type": "structure",
+            "members": []
+        },
+        "AddTagsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "tags",
+                    "shape": "tagList",
+                    "documentation": "<p>The tags to add, as key/value pairs.</p>"
+                }
+            ]
+        },
+        "AddTagsOutput": {
+            "type": "structure",
+            "members": []
+        },
+        "CreatePipelineInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "name",
+                    "shape": "id",
+                    "documentation": "<p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>"
+                },
+                {
+                    "name": "uniqueId",
+                    "shape": "id",
+                    "documentation": "<p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>"
+                },
+                {
+                    "name": "description",
+                    "shape": "string",
+                    "documentation": "<p>The description for the pipeline.</p>"
+                },
+                {
+                    "name": "tags",
+                    "shape": "tagList",
+                    "documentation": "<p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>"
+                }
+            ]
+        },
+        "CreatePipelineOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>"
+                }
+            ]
+        },
+        "DeactivatePipelineInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "cancelActive",
+                    "shape": "cancelActive",
+                    "documentation": "<p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>"
+                }
+            ]
+        },
+        "DeactivatePipelineOutput": {
+            "type": "structure",
+            "members": []
+        },
+        "DeletePipelineInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                }
+            ]
+        },
+        "DescribeObjectsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline that contains the object definitions.</p>"
+                },
+                {
+                    "name": "objectIds",
+                    "shape": "idList",
+                    "documentation": "<p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>"
+                },
+                {
+                    "name": "evaluateExpressions",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>"
+                },
+                {
+                    "name": "marker",
+                    "shape": "string",
+                    "documentation": "<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>"
+                }
+            ]
+        },
+        "DescribeObjectsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineObjects",
+                    "shape": "PipelineObjectList",
+                    "documentation": "<p>An array of object definitions.</p>"
+                },
+                {
+                    "name": "marker",
+                    "shape": "string",
+                    "documentation": "<p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>"
+                },
+                {
+                    "name": "hasMoreResults",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether there are more results to return.</p>"
+                }
+            ]
+        },
+        "DescribePipelinesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineIds",
+                    "shape": "idList",
+                    "documentation": "<p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>"
+                }
+            ]
+        },
+        "DescribePipelinesOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineDescriptionList",
+                    "shape": "PipelineDescriptionList",
+                    "documentation": "<p>An array of descriptions for the specified pipelines.</p>"
+                }
+            ]
+        },
+        "EvaluateExpressionInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "objectId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the object.</p>"
+                },
+                {
+                    "name": "expression",
+                    "shape": "longString",
+                    "documentation": "<p>The expression to evaluate.</p>"
+                }
+            ]
+        },
+        "EvaluateExpressionOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "evaluatedExpression",
+                    "shape": "longString",
+                    "documentation": "<p>The evaluated expression.</p>"
+                }
+            ]
+        },
+        "Field": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "key",
+                    "shape": "fieldNameString",
+                    "documentation": "<p>The field identifier.</p>"
+                },
+                {
+                    "name": "stringValue",
+                    "shape": "fieldStringValue",
+                    "documentation": "<p>The field value, expressed as a String.</p>"
+                },
+                {
+                    "name": "refValue",
+                    "shape": "fieldNameString",
+                    "documentation": "<p>The field value, expressed as the identifier of another object.</p>"
+                }
+            ]
+        },
+        "GetPipelineDefinitionInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "version",
+                    "shape": "string",
+                    "documentation": "<p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>"
+                }
+            ]
+        },
+        "GetPipelineDefinitionOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineObjects",
+                    "shape": "PipelineObjectList",
+                    "documentation": "<p>The objects defined in the pipeline.</p>"
+                },
+                {
+                    "name": "parameterObjects",
+                    "shape": "ParameterObjectList",
+                    "documentation": "<p>The parameter objects used in the pipeline definition.</p>"
+                },
+                {
+                    "name": "parameterValues",
+                    "shape": "ParameterValueList",
+                    "documentation": "<p>The parameter values used in the pipeline definition.</p>"
+                }
+            ]
+        },
+        "InstanceIdentity": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "document",
+                    "shape": "string",
+                    "documentation": "<p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>"
+                },
+                {
+                    "name": "signature",
+                    "shape": "string",
+                    "documentation": "<p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>"
+                }
+            ]
+        },
+        "InternalServiceError": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "errorMessage",
+                    "documentation": "<p>Description of the error message.</p>"
+                }
+            ]
+        },
+        "InvalidRequestException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "errorMessage",
+                    "documentation": "<p>Description of the error message.</p>"
+                }
+            ]
+        },
+        "ListPipelinesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "marker",
+                    "shape": "string",
+                    "documentation": "<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>"
+                }
+            ]
+        },
+        "ListPipelinesOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineIdList",
+                    "shape": "pipelineList",
+                    "documentation": "<p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>"
+                },
+                {
+                    "name": "marker",
+                    "shape": "string",
+                    "documentation": "<p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>"
+                },
+                {
+                    "name": "hasMoreResults",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether there are more results that can be obtained by a subsequent call.</p>"
+                }
+            ]
+        },
+        "Operator": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "type",
+                    "shape": "OperatorType",
+                    "documentation": "<p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> <p> The comparison operators EQ and REF_EQ act on the following fields: </p> <ul> <li>name</li> <li>@sphere</li> <li>parent</li> <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string \"my\".</p>"
+                },
+                {
+                    "name": "values",
+                    "shape": "stringList",
+                    "documentation": "<p>The value that the actual field value will be compared with.</p>"
+                }
+            ]
+        },
+        "OperatorType": {
+            "type": "string"
+        },
+        "ParameterAttribute": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "key",
+                    "shape": "attributeNameString",
+                    "documentation": "<p>The field identifier.</p>"
+                },
+                {
+                    "name": "stringValue",
+                    "shape": "attributeValueString",
+                    "documentation": "<p>The field value, expressed as a String.</p>"
+                }
+            ]
+        },
+        "ParameterAttributeList": {
+            "type": "list"
+        },
+        "ParameterObject": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "fieldNameString",
+                    "documentation": "<p>The ID of the parameter object. </p>"
+                },
+                {
+                    "name": "attributes",
+                    "shape": "ParameterAttributeList",
+                    "documentation": "<p>The attributes of the parameter object.</p>"
+                }
+            ]
+        },
+        "ParameterObjectList": {
+            "type": "list"
+        },
+        "ParameterValue": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "fieldNameString",
+                    "documentation": "<p>The ID of the parameter value.</p>"
+                },
+                {
+                    "name": "stringValue",
+                    "shape": "fieldStringValue",
+                    "documentation": "<p>The field value, expressed as a String.</p>"
+                }
+            ]
+        },
+        "ParameterValueList": {
+            "type": "list"
+        },
+        "PipelineDeletedException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "errorMessage",
+                    "documentation": "<p>Description of the error message.</p>"
+                }
+            ]
+        },
+        "PipelineDescription": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "id",
+                    "documentation": "<p>The name of the pipeline.</p>"
+                },
+                {
+                    "name": "fields",
+                    "shape": "fieldList",
+                    "documentation": "<p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>"
+                },
+                {
+                    "name": "description",
+                    "shape": "string",
+                    "documentation": "<p>Description of the pipeline.</p>"
+                },
+                {
+                    "name": "tags",
+                    "shape": "tagList",
+                    "documentation": "<p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>"
+                }
+            ]
+        },
+        "PipelineDescriptionList": {
+            "type": "list"
+        },
+        "PipelineIdName": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "id",
+                    "documentation": "<p>The name of the pipeline.</p>"
+                }
+            ]
+        },
+        "PipelineNotFoundException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "errorMessage",
+                    "documentation": "<p>Description of the error message.</p>"
+                }
+            ]
+        },
+        "PipelineObject": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the object.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "id",
+                    "documentation": "<p>The name of the object.</p>"
+                },
+                {
+                    "name": "fields",
+                    "shape": "fieldList",
+                    "documentation": "<p>Key-value pairs that define the properties of the object.</p>"
+                }
+            ]
+        },
+        "PipelineObjectList": {
+            "type": "list"
+        },
+        "PipelineObjectMap": {
+            "type": "map"
+        },
+        "PollForTaskInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "workerGroup",
+                    "shape": "string",
+                    "documentation": "<p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>"
+                },
+                {
+                    "name": "hostname",
+                    "shape": "id",
+                    "documentation": "<p>The public DNS name of the calling task runner.</p>"
+                },
+                {
+                    "name": "instanceIdentity",
+                    "shape": "InstanceIdentity",
+                    "documentation": "<p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>"
+                }
+            ]
+        },
+        "PollForTaskOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "taskObject",
+                    "shape": "TaskObject",
+                    "documentation": "<p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>"
+                }
+            ]
+        },
+        "PutPipelineDefinitionInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "pipelineObjects",
+                    "shape": "PipelineObjectList",
+                    "documentation": "<p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>"
+                },
+                {
+                    "name": "parameterObjects",
+                    "shape": "ParameterObjectList",
+                    "documentation": "<p>The parameter objects used with the pipeline.</p>"
+                },
+                {
+                    "name": "parameterValues",
+                    "shape": "ParameterValueList",
+                    "documentation": "<p>The parameter values used with the pipeline.</p>"
+                }
+            ]
+        },
+        "PutPipelineDefinitionOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "validationErrors",
+                    "shape": "ValidationErrors",
+                    "documentation": "<p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>"
+                },
+                {
+                    "name": "validationWarnings",
+                    "shape": "ValidationWarnings",
+                    "documentation": "<p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>"
+                },
+                {
+                    "name": "errored",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>"
+                }
+            ]
+        },
+        "Query": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "selectors",
+                    "shape": "SelectorList",
+                    "documentation": "<p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>"
+                }
+            ]
+        },
+        "QueryObjectsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "query",
+                    "shape": "Query",
+                    "documentation": "<p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>"
+                },
+                {
+                    "name": "sphere",
+                    "shape": "string",
+                    "documentation": "<p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>"
+                },
+                {
+                    "name": "marker",
+                    "shape": "string",
+                    "documentation": "<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>"
+                },
+                {
+                    "name": "limit",
+                    "shape": "int",
+                    "documentation": "<p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>"
+                }
+            ]
+        },
+        "QueryObjectsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ids",
+                    "shape": "idList",
+                    "documentation": "<p>The identifiers that match the query selectors.</p>"
+                },
+                {
+                    "name": "marker",
+                    "shape": "string",
+                    "documentation": "<p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>"
+                },
+                {
+                    "name": "hasMoreResults",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether there are more results that can be obtained by a subsequent call.</p>"
+                }
+            ]
+        },
+        "RemoveTagsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "tagKeys",
+                    "shape": "stringList",
+                    "documentation": "<p>The keys of the tags to remove.</p>"
+                }
+            ]
+        },
+        "RemoveTagsOutput": {
+            "type": "structure",
+            "members": []
+        },
+        "ReportTaskProgressInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "taskId",
+                    "shape": "taskId",
+                    "documentation": "<p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>"
+                },
+                {
+                    "name": "fields",
+                    "shape": "fieldList",
+                    "documentation": "<p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>"
+                }
+            ]
+        },
+        "ReportTaskProgressOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "canceled",
+                    "shape": "boolean",
+                    "documentation": "<p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>"
+                }
+            ]
+        },
+        "ReportTaskRunnerHeartbeatInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "taskrunnerId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>"
+                },
+                {
+                    "name": "workerGroup",
+                    "shape": "string",
+                    "documentation": "<p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>"
+                },
+                {
+                    "name": "hostname",
+                    "shape": "id",
+                    "documentation": "<p>The public DNS name of the task runner.</p>"
+                }
+            ]
+        },
+        "ReportTaskRunnerHeartbeatOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "terminate",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether the calling task runner should terminate.</p>"
+                }
+            ]
+        },
+        "Selector": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "fieldName",
+                    "shape": "string",
+                    "documentation": "<p>The name of the field that the operator will be applied to. The field name is the \"key\" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>"
+                },
+                {
+                    "name": "operator",
+                    "shape": "Operator"
+                }
+            ]
+        },
+        "SelectorList": {
+            "type": "list"
+        },
+        "SetStatusInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline that contains the objects.</p>"
+                },
+                {
+                    "name": "objectIds",
+                    "shape": "idList",
+                    "documentation": "<p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>"
+                },
+                {
+                    "name": "status",
+                    "shape": "string",
+                    "documentation": "<p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>"
+                }
+            ]
+        },
+        "SetTaskStatusInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "taskId",
+                    "shape": "taskId",
+                    "documentation": "<p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>"
+                },
+                {
+                    "name": "taskStatus",
+                    "shape": "TaskStatus",
+                    "documentation": "<p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>"
+                },
+                {
+                    "name": "errorId",
+                    "shape": "string",
+                    "documentation": "<p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string \"Service_\" which is reserved by the system.</p>"
+                },
+                {
+                    "name": "errorMessage",
+                    "shape": "errorMessage",
+                    "documentation": "<p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>"
+                },
+                {
+                    "name": "errorStackTrace",
+                    "shape": "string",
+                    "documentation": "<p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>"
+                }
+            ]
+        },
+        "SetTaskStatusOutput": {
+            "type": "structure",
+            "members": []
+        },
+        "Tag": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "key",
+                    "shape": "tagKey",
+                    "documentation": "<p>The key name of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>"
+                },
+                {
+                    "name": "value",
+                    "shape": "tagValue",
+                    "documentation": "<p>The optional value portion of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>"
+                }
+            ]
+        },
+        "TaskNotFoundException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "errorMessage",
+                    "documentation": "<p>Description of the error message.</p>"
+                }
+            ]
+        },
+        "TaskObject": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "taskId",
+                    "shape": "taskId",
+                    "documentation": "<p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>"
+                },
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline that provided the task.</p>"
+                },
+                {
+                    "name": "attemptId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>"
+                },
+                {
+                    "name": "objects",
+                    "shape": "PipelineObjectMap",
+                    "documentation": "<p>Connection information for the location where the task runner will publish the output of the task.</p>"
+                }
+            ]
+        },
+        "TaskStatus": {
+            "type": "string"
+        },
+        "ValidatePipelineDefinitionInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "pipelineId",
+                    "shape": "id",
+                    "documentation": "<p>The ID of the pipeline.</p>"
+                },
+                {
+                    "name": "pipelineObjects",
+                    "shape": "PipelineObjectList",
+                    "documentation": "<p>The objects that define the pipeline changes to validate against the pipeline.</p>"
+                },
+                {
+                    "name": "parameterObjects",
+                    "shape": "ParameterObjectList",
+                    "documentation": "<p>The parameter objects used with the pipeline.</p>"
+                },
+                {
+                    "name": "parameterValues",
+                    "shape": "ParameterValueList",
+                    "documentation": "<p>The parameter values used with the pipeline.</p>"
+                }
+            ]
+        },
+        "ValidatePipelineDefinitionOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "validationErrors",
+                    "shape": "ValidationErrors",
+                    "documentation": "<p>Any validation errors that were found.</p>"
+                },
+                {
+                    "name": "validationWarnings",
+                    "shape": "ValidationWarnings",
+                    "documentation": "<p>Any validation warnings that were found.</p>"
+                },
+                {
+                    "name": "errored",
+                    "shape": "boolean",
+                    "documentation": "<p>Indicates whether there were validation errors.</p>"
+                }
+            ]
+        },
+        "ValidationError": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "id",
+                    "documentation": "<p>The identifier of the object that contains the validation error.</p>"
+                },
+                {
+                    "name": "errors",
+                    "shape": "validationMessages",
+                    "documentation": "<p>A description of the validation error.</p>"
+                }
+            ]
+        },
+        "ValidationErrors": {
+            "type": "list"
+        },
+        "ValidationWarning": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "id",
+                    "documentation": "<p>The identifier of the object that contains the validation warning.</p>"
+                },
+                {
+                    "name": "warnings",
+                    "shape": "validationMessages",
+                    "documentation": "<p>A description of the validation warning.</p>"
+                }
+            ]
+        },
+        "ValidationWarnings": {
+            "type": "list"
+        },
+        "attributeNameString": {
+            "type": "string"
+        },
+        "attributeValueString": {
+            "type": "string"
+        },
+        "boolean": {
+            "type": "boolean"
+        },
+        "cancelActive": {
+            "type": "boolean"
+        },
+        "errorMessage": {
+            "type": "string"
+        },
+        "fieldList": {
+            "type": "list"
+        },
+        "fieldNameString": {
+            "type": "string"
+        },
+        "fieldStringValue": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "idList": {
+            "type": "list"
+        },
+        "int": {
+            "type": "integer"
+        },
+        "longString": {
+            "type": "string"
+        },
+        "pipelineList": {
+            "type": "list"
+        },
+        "string": {
+            "type": "string"
+        },
+        "stringList": {
+            "type": "list"
+        },
+        "tagKey": {
+            "type": "string"
+        },
+        "tagList": {
+            "type": "list"
+        },
+        "tagValue": {
+            "type": "string"
+        },
+        "taskId": {
+            "type": "string"
+        },
+        "timestamp": {
+            "type": "timestamp"
+        },
+        "validationMessage": {
+            "type": "string"
+        },
+        "validationMessages": {
+            "type": "list"
+        }
+    }
+}

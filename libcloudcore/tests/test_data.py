@@ -34,4 +34,7 @@ def test_data(service):
     session = Importer(__name__)
     driver = session.get_driver(service)
     for operation in driver.model.get_operations():
-        assert operation.input_shape.name != operation.output_shape.name
+        if operation.input_shape:
+            assert len(operation.input_shape.name) > 0
+        if operation.output_shape:
+            assert len(operation.output_shape.name) > 0

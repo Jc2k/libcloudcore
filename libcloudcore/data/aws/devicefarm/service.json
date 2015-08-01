@@ -1,0 +1,1832 @@
+{
+    "metadata": {},
+    "operations": {
+        "CreateDevicePool": {
+            "documentation": "<p>Creates a device pool.</p>",
+            "input": {
+                "shape": "CreateDevicePoolRequest"
+            },
+            "output": {
+                "shape": "CreateDevicePoolResult"
+            }
+        },
+        "CreateProject": {
+            "documentation": "<p>Creates a new project.</p>",
+            "input": {
+                "shape": "CreateProjectRequest"
+            },
+            "output": {
+                "shape": "CreateProjectResult"
+            }
+        },
+        "CreateUpload": {
+            "documentation": "<p>Uploads an app or test scripts.</p>",
+            "input": {
+                "shape": "CreateUploadRequest"
+            },
+            "output": {
+                "shape": "CreateUploadResult"
+            }
+        },
+        "GetDevice": {
+            "documentation": "<p>Gets information about a unique device type.</p>",
+            "input": {
+                "shape": "GetDeviceRequest"
+            },
+            "output": {
+                "shape": "GetDeviceResult"
+            }
+        },
+        "GetDevicePool": {
+            "documentation": "<p>Gets information about a device pool.</p>",
+            "input": {
+                "shape": "GetDevicePoolRequest"
+            },
+            "output": {
+                "shape": "GetDevicePoolResult"
+            }
+        },
+        "GetDevicePoolCompatibility": {
+            "documentation": "<p>Gets information about compatibility with a device pool.</p>",
+            "input": {
+                "shape": "GetDevicePoolCompatibilityRequest"
+            },
+            "output": {
+                "shape": "GetDevicePoolCompatibilityResult"
+            }
+        },
+        "GetJob": {
+            "documentation": "<p>Gets information about a job.</p>",
+            "input": {
+                "shape": "GetJobRequest"
+            },
+            "output": {
+                "shape": "GetJobResult"
+            }
+        },
+        "GetProject": {
+            "documentation": "<p>Gets information about a project.</p>",
+            "input": {
+                "shape": "GetProjectRequest"
+            },
+            "output": {
+                "shape": "GetProjectResult"
+            }
+        },
+        "GetRun": {
+            "documentation": "<p>Gets information about a run.</p>",
+            "input": {
+                "shape": "GetRunRequest"
+            },
+            "output": {
+                "shape": "GetRunResult"
+            }
+        },
+        "GetSuite": {
+            "documentation": "<p>Gets information about a suite.</p>",
+            "input": {
+                "shape": "GetSuiteRequest"
+            },
+            "output": {
+                "shape": "GetSuiteResult"
+            }
+        },
+        "GetTest": {
+            "documentation": "<p>Gets information about a test.</p>",
+            "input": {
+                "shape": "GetTestRequest"
+            },
+            "output": {
+                "shape": "GetTestResult"
+            }
+        },
+        "GetUpload": {
+            "documentation": "<p>Gets information about an upload.</p>",
+            "input": {
+                "shape": "GetUploadRequest"
+            },
+            "output": {
+                "shape": "GetUploadResult"
+            }
+        },
+        "ListArtifacts": {
+            "documentation": "<p>Gets information about artifacts.</p>",
+            "input": {
+                "shape": "ListArtifactsRequest"
+            },
+            "output": {
+                "shape": "ListArtifactsResult"
+            }
+        },
+        "ListDevicePools": {
+            "documentation": "<p>Gets information about device pools.</p>",
+            "input": {
+                "shape": "ListDevicePoolsRequest"
+            },
+            "output": {
+                "shape": "ListDevicePoolsResult"
+            }
+        },
+        "ListDevices": {
+            "documentation": "<p>Gets information about unique device types.</p>",
+            "input": {
+                "shape": "ListDevicesRequest"
+            },
+            "output": {
+                "shape": "ListDevicesResult"
+            }
+        },
+        "ListJobs": {
+            "documentation": "<p>Gets information about jobs.</p>",
+            "input": {
+                "shape": "ListJobsRequest"
+            },
+            "output": {
+                "shape": "ListJobsResult"
+            }
+        },
+        "ListProjects": {
+            "documentation": "<p>Gets information about projects.</p>",
+            "input": {
+                "shape": "ListProjectsRequest"
+            },
+            "output": {
+                "shape": "ListProjectsResult"
+            }
+        },
+        "ListRuns": {
+            "documentation": "<p>Gets information about runs.</p>",
+            "input": {
+                "shape": "ListRunsRequest"
+            },
+            "output": {
+                "shape": "ListRunsResult"
+            }
+        },
+        "ListSamples": {
+            "documentation": "<p>Gets information about samples.</p>",
+            "input": {
+                "shape": "ListSamplesRequest"
+            },
+            "output": {
+                "shape": "ListSamplesResult"
+            }
+        },
+        "ListSuites": {
+            "documentation": "<p>Gets information about suites.</p>",
+            "input": {
+                "shape": "ListSuitesRequest"
+            },
+            "output": {
+                "shape": "ListSuitesResult"
+            }
+        },
+        "ListTests": {
+            "documentation": "<p>Gets information about tests.</p>",
+            "input": {
+                "shape": "ListTestsRequest"
+            },
+            "output": {
+                "shape": "ListTestsResult"
+            }
+        },
+        "ListUniqueProblems": {
+            "documentation": "<p>Gets information about unique problems.</p>",
+            "input": {
+                "shape": "ListUniqueProblemsRequest"
+            },
+            "output": {
+                "shape": "ListUniqueProblemsResult"
+            }
+        },
+        "ListUploads": {
+            "documentation": "<p>Gets information about uploads.</p>",
+            "input": {
+                "shape": "ListUploadsRequest"
+            },
+            "output": {
+                "shape": "ListUploadsResult"
+            }
+        },
+        "ScheduleRun": {
+            "documentation": "<p>Schedules a run.</p>",
+            "input": {
+                "shape": "ScheduleRunRequest"
+            },
+            "output": {
+                "shape": "ScheduleRunResult"
+            }
+        }
+    },
+    "shapes": {
+        "AmazonResourceName": {
+            "type": "string"
+        },
+        "AmazonResourceNames": {
+            "type": "list"
+        },
+        "ArgumentException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>Any additional information about the exception.</p>"
+                }
+            ]
+        },
+        "Artifact": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The artifact's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The artifact's name.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "ArtifactType",
+                    "documentation": "<p>The artifact's type.</p> <p>Allowed values include the following:</p> <ul> <li><p>APPIUM_JAVA_OUTPUT: The Appium Java output type.</p></li> <li><p>APPIUM_JAVA_XML_OUTPUT: The Appium Java XML output type.</p></li> <li><p>APPIUM_SERVER_OUTPUT: The Appium server output type.</p></li> <li><p>AUTOMATION_OUTPUT: The automation output type.</p></li> <li><p>CALABASH_JSON_OUTPUT: The Calabash JSON output type.</p></li> <li><p>CALABASH_JAVA_XML_OUTPUT: The Calabash Java XML output type.</p></li> <li><p>CALABASH_PRETTY_OUTPUT: The Calabash pretty output type.</p></li> <li><p>CALABASH_STANDARD_OUTPUT: The Calabash standard output type.</p></li> <li><p>DEVICE_LOG: The device log type.</p></li> <li><p>EXERCISER_MONKEY_OUTPUT: The artifact (log) generated by a fuzz test.</p></li> <li><p>INSTRUMENTATION_OUTPUT: The instrumentation type.</p></li> <li><p>MESSAGE_LOG: The message log type.</p></li> <li><p>RESULT_LOG: The result log type.</p></li> <li><p>SCREENSHOT: The screenshot type.</p></li> <li><p>SERVICE_LOG: The service log type.</p></li> <li><p>UNKNOWN: An unknown type.</p></li> </ul>"
+                },
+                {
+                    "name": "extension",
+                    "shape": "String",
+                    "documentation": "<p>The artifact's file extension.</p>"
+                },
+                {
+                    "name": "url",
+                    "shape": "URL",
+                    "documentation": "<p>The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the artifact's file.</p>"
+                }
+            ]
+        },
+        "ArtifactCategory": {
+            "type": "string"
+        },
+        "ArtifactType": {
+            "type": "string"
+        },
+        "Artifacts": {
+            "type": "list"
+        },
+        "Boolean": {
+            "type": "boolean"
+        },
+        "CPU": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "frequency",
+                    "shape": "String",
+                    "documentation": "<p>The CPU's frequency.</p>"
+                },
+                {
+                    "name": "architecture",
+                    "shape": "String",
+                    "documentation": "<p>The CPU's architecture, for example x86 or ARM.</p>"
+                },
+                {
+                    "name": "clock",
+                    "shape": "Double",
+                    "documentation": "<p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>"
+                }
+            ]
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "Counters": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "total",
+                    "shape": "Integer",
+                    "documentation": "<p>The total number of entities.</p>"
+                },
+                {
+                    "name": "passed",
+                    "shape": "Integer",
+                    "documentation": "<p>The number of passed entities.</p>"
+                },
+                {
+                    "name": "failed",
+                    "shape": "Integer",
+                    "documentation": "<p>The number of failed entities.</p>"
+                },
+                {
+                    "name": "warned",
+                    "shape": "Integer",
+                    "documentation": "<p>The number of warned entities.</p>"
+                },
+                {
+                    "name": "errored",
+                    "shape": "Integer",
+                    "documentation": "<p>The number of errored entities.</p>"
+                },
+                {
+                    "name": "stopped",
+                    "shape": "Integer",
+                    "documentation": "<p>The number of stopped entities.</p>"
+                },
+                {
+                    "name": "skipped",
+                    "shape": "Integer",
+                    "documentation": "<p>The number of skipped entities.</p>"
+                }
+            ]
+        },
+        "CreateDevicePoolRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "projectArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the project for the device pool.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The device pool's name.</p>"
+                },
+                {
+                    "name": "description",
+                    "shape": "Message",
+                    "documentation": "<p>The device pool's description.</p>"
+                },
+                {
+                    "name": "rules",
+                    "shape": "Rules",
+                    "documentation": "<p>The device pool's rules.</p>"
+                }
+            ]
+        },
+        "CreateDevicePoolResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "devicePool",
+                    "shape": "DevicePool",
+                    "documentation": "<p>The newly created device pool.</p>"
+                }
+            ]
+        },
+        "CreateProjectRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The project's name.</p>"
+                }
+            ]
+        },
+        "CreateProjectResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "project",
+                    "shape": "Project",
+                    "documentation": "<p>The newly created project.</p>"
+                }
+            ]
+        },
+        "CreateUploadRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "projectArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the project for the upload.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The upload's file name.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "UploadType",
+                    "documentation": "<p>The upload's upload type.</p> <p>Must be one of the following values:</p> <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p></li> </ul>"
+                },
+                {
+                    "name": "contentType",
+                    "shape": "ContentType",
+                    "documentation": "<p>The upload's content type (for example, \"application/octet-stream\").</p>"
+                }
+            ]
+        },
+        "CreateUploadResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "upload",
+                    "shape": "Upload",
+                    "documentation": "<p>The newly created upload.</p>"
+                }
+            ]
+        },
+        "DateTime": {
+            "type": "timestamp"
+        },
+        "Device": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The device's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The device's display name.</p>"
+                },
+                {
+                    "name": "manufacturer",
+                    "shape": "String",
+                    "documentation": "<p>The device's manufacturer name.</p>"
+                },
+                {
+                    "name": "model",
+                    "shape": "String",
+                    "documentation": "<p>The device's model name.</p>"
+                },
+                {
+                    "name": "formFactor",
+                    "shape": "DeviceFormFactor",
+                    "documentation": "<p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li><p>PHONE: The phone form factor.</p></li> <li><p>TABLET: The tablet form factor.</p></li> </ul>"
+                },
+                {
+                    "name": "platform",
+                    "shape": "DevicePlatform",
+                    "documentation": "<p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li><p>ANDROID: The Android platform.</p></li> </ul>"
+                },
+                {
+                    "name": "os",
+                    "shape": "String",
+                    "documentation": "<p>The device's operating system type.</p>"
+                },
+                {
+                    "name": "cpu",
+                    "shape": "CPU",
+                    "documentation": "<p>Information about the device's CPU.</p>"
+                },
+                {
+                    "name": "resolution",
+                    "shape": "Resolution"
+                },
+                {
+                    "name": "heapSize",
+                    "shape": "Long",
+                    "documentation": "<p>The device's heap size, expressed in bytes.</p>"
+                },
+                {
+                    "name": "memory",
+                    "shape": "Long",
+                    "documentation": "<p>The device's total memory size, expressed in bytes.</p>"
+                },
+                {
+                    "name": "image",
+                    "shape": "String",
+                    "documentation": "<p>The device's image name.</p>"
+                },
+                {
+                    "name": "carrier",
+                    "shape": "String",
+                    "documentation": "<p>The device's carrier.</p>"
+                },
+                {
+                    "name": "radio",
+                    "shape": "String",
+                    "documentation": "<p>The device's radio.</p>"
+                }
+            ]
+        },
+        "DeviceAttribute": {
+            "type": "string"
+        },
+        "DeviceFormFactor": {
+            "type": "string"
+        },
+        "DevicePlatform": {
+            "type": "string"
+        },
+        "DevicePool": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The device pool's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The device pool's name.</p>"
+                },
+                {
+                    "name": "description",
+                    "shape": "Message",
+                    "documentation": "<p>The device pool's description.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "DevicePoolType",
+                    "documentation": "<p>The device pool's type.</p> <p>Allowed values include:</p> <ul> <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li> <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li> </ul>"
+                },
+                {
+                    "name": "rules",
+                    "shape": "Rules",
+                    "documentation": "<p>Information about the device pool's rules.</p>"
+                }
+            ]
+        },
+        "DevicePoolCompatibilityResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "device",
+                    "shape": "Device"
+                },
+                {
+                    "name": "compatible",
+                    "shape": "Boolean",
+                    "documentation": "<p>Whether the result was compatible with the device pool.</p>"
+                },
+                {
+                    "name": "incompatibilityMessages",
+                    "shape": "IncompatibilityMessages",
+                    "documentation": "<p>Information about the compatibility.</p>"
+                }
+            ]
+        },
+        "DevicePoolCompatibilityResults": {
+            "type": "list"
+        },
+        "DevicePoolType": {
+            "type": "string"
+        },
+        "DevicePools": {
+            "type": "list"
+        },
+        "Devices": {
+            "type": "list"
+        },
+        "Double": {
+            "type": "double"
+        },
+        "ExecutionResult": {
+            "type": "string"
+        },
+        "ExecutionStatus": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "string"
+        },
+        "GetDevicePoolCompatibilityRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "devicePoolArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The device pool's ARN.</p>"
+                },
+                {
+                    "name": "appArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the app that is associated with the specified device pool.</p>"
+                },
+                {
+                    "name": "testType",
+                    "shape": "TestType",
+                    "documentation": "<p>The test type for the specified device pool.</p> <p>Allowed values include the following:</p> <ul> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> </ul>"
+                }
+            ]
+        },
+        "GetDevicePoolCompatibilityResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "compatibleDevices",
+                    "shape": "DevicePoolCompatibilityResults",
+                    "documentation": "<p>Information about compatible devices.</p>"
+                },
+                {
+                    "name": "incompatibleDevices",
+                    "shape": "DevicePoolCompatibilityResults",
+                    "documentation": "<p>Information about incompatible devices.</p>"
+                }
+            ]
+        },
+        "GetDevicePoolRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The device pool's ARN.</p>"
+                }
+            ]
+        },
+        "GetDevicePoolResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "devicePool",
+                    "shape": "DevicePool"
+                }
+            ]
+        },
+        "GetDeviceRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The device type's ARN.</p>"
+                }
+            ]
+        },
+        "GetDeviceResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "device",
+                    "shape": "Device"
+                }
+            ]
+        },
+        "GetJobRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The job's ARN.</p>"
+                }
+            ]
+        },
+        "GetJobResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "job",
+                    "shape": "Job"
+                }
+            ]
+        },
+        "GetProjectRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The project's ARN.</p>"
+                }
+            ]
+        },
+        "GetProjectResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "project",
+                    "shape": "Project"
+                }
+            ]
+        },
+        "GetRunRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The run's ARN.</p>"
+                }
+            ]
+        },
+        "GetRunResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "run",
+                    "shape": "Run"
+                }
+            ]
+        },
+        "GetSuiteRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The suite's ARN.</p>"
+                }
+            ]
+        },
+        "GetSuiteResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "suite",
+                    "shape": "Suite"
+                }
+            ]
+        },
+        "GetTestRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The test's ARN.</p>"
+                }
+            ]
+        },
+        "GetTestResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "test",
+                    "shape": "Test"
+                }
+            ]
+        },
+        "GetUploadRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The upload's ARN.</p>"
+                }
+            ]
+        },
+        "GetUploadResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "upload",
+                    "shape": "Upload"
+                }
+            ]
+        },
+        "IdempotencyException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>Any additional information about the exception.</p>"
+                }
+            ]
+        },
+        "IncompatibilityMessage": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the incompatibility.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "DeviceAttribute",
+                    "documentation": "<p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li> <li><p>PLATFORM: The platform.</p></li> </ul>"
+                }
+            ]
+        },
+        "IncompatibilityMessages": {
+            "type": "list"
+        },
+        "Integer": {
+            "type": "integer"
+        },
+        "Job": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The job's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The job's name.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "TestType",
+                    "documentation": "<p>The job's type.</p> <p>Allowed values include the following:</p> <ul> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> </ul>"
+                },
+                {
+                    "name": "created",
+                    "shape": "DateTime",
+                    "documentation": "<p>When the job was created.</p>"
+                },
+                {
+                    "name": "status",
+                    "shape": "ExecutionStatus",
+                    "documentation": "<p>The job's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+                },
+                {
+                    "name": "result",
+                    "shape": "ExecutionResult",
+                    "documentation": "<p>The job's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+                },
+                {
+                    "name": "started",
+                    "shape": "DateTime",
+                    "documentation": "<p>The job's start time.</p>"
+                },
+                {
+                    "name": "stopped",
+                    "shape": "DateTime",
+                    "documentation": "<p>The job's stop time.</p>"
+                },
+                {
+                    "name": "counters",
+                    "shape": "Counters",
+                    "documentation": "<p>The job's result counters.</p>"
+                },
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the job's result.</p>"
+                },
+                {
+                    "name": "device",
+                    "shape": "Device"
+                }
+            ]
+        },
+        "Jobs": {
+            "type": "list"
+        },
+        "LimitExceededException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>Any additional information about the exception.</p>"
+                }
+            ]
+        },
+        "ListArtifactsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The artifacts' ARNs.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "ArtifactCategory",
+                    "documentation": "<p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT: The artifacts are screenshots.</li> </ul>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListArtifactsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "artifacts",
+                    "shape": "Artifacts",
+                    "documentation": "<p>Information about the artifacts.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListDevicePoolsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The project ARN.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "DevicePoolType",
+                    "documentation": "<p>The device pools' type.</p> <p>Allowed values include:</p> <ul> <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li> <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li> </ul>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListDevicePoolsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "devicePools",
+                    "shape": "DevicePools",
+                    "documentation": "<p>Information about the device pools.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListDevicesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The device types' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListDevicesResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "devices",
+                    "shape": "Devices",
+                    "documentation": "<p>Information about the devices.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListJobsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The jobs' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListJobsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "jobs",
+                    "shape": "Jobs",
+                    "documentation": "<p>Information about the jobs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListProjectsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The projects' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListProjectsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "projects",
+                    "shape": "Projects",
+                    "documentation": "<p>Information about the projects.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListRunsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The runs' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListRunsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "runs",
+                    "shape": "Runs",
+                    "documentation": "<p>Information about the runs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListSamplesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The samples' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListSamplesResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "samples",
+                    "shape": "Samples",
+                    "documentation": "<p>Information about the samples.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListSuitesRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The suites' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListSuitesResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "suites",
+                    "shape": "Suites",
+                    "documentation": "<p>Information about the suites.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListTestsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The tests' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListTestsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "tests",
+                    "shape": "Tests",
+                    "documentation": "<p>Information about the tests.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListUniqueProblemsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The unique problems' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListUniqueProblemsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "uniqueProblems",
+                    "shape": "UniqueProblemsByExecutionResultMap",
+                    "documentation": "<p>Information about the unique problems.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListUploadsRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The uploads' ARNs.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "ListUploadsResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "uploads",
+                    "shape": "Uploads",
+                    "documentation": "<p>Information about the uploads.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "PaginationToken",
+                    "documentation": "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>"
+                }
+            ]
+        },
+        "Location": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "latitude",
+                    "shape": "Double",
+                    "documentation": "<p>The latitude.</p>"
+                },
+                {
+                    "name": "longitude",
+                    "shape": "Double",
+                    "documentation": "<p>The longitude.</p>"
+                }
+            ]
+        },
+        "Long": {
+            "type": "long"
+        },
+        "Message": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotFoundException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>Any additional information about the exception.</p>"
+                }
+            ]
+        },
+        "PaginationToken": {
+            "type": "string"
+        },
+        "Problem": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "run",
+                    "shape": "ProblemDetail",
+                    "documentation": "<p>Information about the associated run.</p>"
+                },
+                {
+                    "name": "job",
+                    "shape": "ProblemDetail",
+                    "documentation": "<p>Information about the associated job.</p>"
+                },
+                {
+                    "name": "suite",
+                    "shape": "ProblemDetail",
+                    "documentation": "<p>Information about the associated suite.</p>"
+                },
+                {
+                    "name": "test",
+                    "shape": "ProblemDetail",
+                    "documentation": "<p>Information about the associated test.</p>"
+                },
+                {
+                    "name": "device",
+                    "shape": "Device",
+                    "documentation": "<p>Information about the associated device.</p>"
+                },
+                {
+                    "name": "result",
+                    "shape": "ExecutionResult",
+                    "documentation": "<p>The problem's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+                },
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the problem's result.</p>"
+                }
+            ]
+        },
+        "ProblemDetail": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The problem detail's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The problem detail's name.</p>"
+                }
+            ]
+        },
+        "Problems": {
+            "type": "list"
+        },
+        "Project": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The project's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The project's name.</p>"
+                },
+                {
+                    "name": "created",
+                    "shape": "DateTime",
+                    "documentation": "<p>When the project was created.</p>"
+                }
+            ]
+        },
+        "Projects": {
+            "type": "list"
+        },
+        "Radios": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "wifi",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if Wi-Fi is enabled at the beginning of the test; otherwise, false.</p>"
+                },
+                {
+                    "name": "bluetooth",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if Bluetooth is enabled at the beginning of the test; otherwise, false.</p>"
+                },
+                {
+                    "name": "nfc",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if NFC is enabled at the beginning of the test; otherwise, false.</p>"
+                },
+                {
+                    "name": "gps",
+                    "shape": "Boolean",
+                    "documentation": "<p>True if GPS is enabled at the beginning of the test; otherwise, false.</p>"
+                }
+            ]
+        },
+        "Resolution": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "width",
+                    "shape": "Integer",
+                    "documentation": "<p>The screen resolution's width, expressed in pixels.</p>"
+                },
+                {
+                    "name": "height",
+                    "shape": "Integer",
+                    "documentation": "<p>The screen resolution's height, expressed in pixels.</p>"
+                }
+            ]
+        },
+        "Rule": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "attribute",
+                    "shape": "DeviceAttribute",
+                    "documentation": "<p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li> <li><p>PLATFORM: The platform.</p></li> </ul>"
+                },
+                {
+                    "name": "operator",
+                    "shape": "RuleOperator",
+                    "documentation": "<p>The rule's operator.</p> <ul> <li><p>EQUAL: The equals operator.</p></li> <li><p>GREATER_THAN: The greater-than operator.</p></li> <li><p>IN: The in operator.</p></li> <li><p>LESS_THAN: The less-than operator.</p></li> <li><p>NOT_IN: The not-in operator.</p></li> </ul>"
+                },
+                {
+                    "name": "value",
+                    "shape": "String",
+                    "documentation": "<p>The rule's value.</p>"
+                }
+            ]
+        },
+        "RuleOperator": {
+            "type": "string"
+        },
+        "Rules": {
+            "type": "list"
+        },
+        "Run": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The run's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The run's name.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "TestType",
+                    "documentation": "<p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> </ul>"
+                },
+                {
+                    "name": "platform",
+                    "shape": "DevicePlatform",
+                    "documentation": "<p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li><p>ANDROID: The Android platform.</p></li> </ul>"
+                },
+                {
+                    "name": "created",
+                    "shape": "DateTime",
+                    "documentation": "<p>When the run was created.</p>"
+                },
+                {
+                    "name": "status",
+                    "shape": "ExecutionStatus",
+                    "documentation": "<p>The run's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+                },
+                {
+                    "name": "result",
+                    "shape": "ExecutionResult",
+                    "documentation": "<p>The run's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+                },
+                {
+                    "name": "started",
+                    "shape": "DateTime",
+                    "documentation": "<p>The run's start time.</p>"
+                },
+                {
+                    "name": "stopped",
+                    "shape": "DateTime",
+                    "documentation": "<p>The run's stop time.</p>"
+                },
+                {
+                    "name": "counters",
+                    "shape": "Counters",
+                    "documentation": "<p>The run's result counters.</p>"
+                },
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the run's result.</p>"
+                },
+                {
+                    "name": "totalJobs",
+                    "shape": "Integer",
+                    "documentation": "<p>The total number of jobs for the run.</p>"
+                },
+                {
+                    "name": "completedJobs",
+                    "shape": "Integer",
+                    "documentation": "<p>The total number of completed jobs.</p>"
+                }
+            ]
+        },
+        "Runs": {
+            "type": "list"
+        },
+        "Sample": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The sample's ARN.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "SampleType",
+                    "documentation": "<p>The sample's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported by process, as a percentage.</p></li> <li><p>MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in kilobytes.</p></li> <li><p>NATIVE_AVG_DRAWTIME</p></li> <li><p>NATIVE_FPS</p></li> <li><p>NATIVE_FRAMES</p></li> <li><p>NATIVE_MAX_DRAWTIME</p></li> <li><p>NATIVE_MIN_DRAWTIME</p></li> <li><p>OPENGL_AVG_DRAWTIME</p></li> <li><p>OPENGL_FPS</p></li> <li><p>OPENGL_FRAMES</p></li> <li><p>OPENGL_MAX_DRAWTIME</p></li> <li><p>OPENGL_MIN_DRAWTIME</p></li> <li><p>RX</p></li> <li><p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.</p></li> <li><p>THREADS: A threads sample type. This is expressed as the total number of threads per app process.</p></li> <li><p>TX</p></li> <li><p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p></li> </ul>"
+                },
+                {
+                    "name": "url",
+                    "shape": "URL",
+                    "documentation": "<p>The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.</p>"
+                }
+            ]
+        },
+        "SampleType": {
+            "type": "string"
+        },
+        "Samples": {
+            "type": "list"
+        },
+        "ScheduleRunConfiguration": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "extraDataPackageArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to external data.</p>"
+                },
+                {
+                    "name": "networkProfileArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>Reserved for internal use.</p>"
+                },
+                {
+                    "name": "locale",
+                    "shape": "String",
+                    "documentation": "<p>Information about the locale that is used for the run.</p>"
+                },
+                {
+                    "name": "location",
+                    "shape": "Location",
+                    "documentation": "<p>Information about the location that is used for the run.</p>"
+                },
+                {
+                    "name": "radios",
+                    "shape": "Radios",
+                    "documentation": "<p>Information about the radio states for the run.</p>"
+                },
+                {
+                    "name": "auxiliaryApps",
+                    "shape": "AmazonResourceNames",
+                    "documentation": "<p>A list of auxiliary apps for the run.</p>"
+                }
+            ]
+        },
+        "ScheduleRunRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "projectArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the project for the run to be scheduled.</p>"
+                },
+                {
+                    "name": "appArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the app to schedule a run.</p>"
+                },
+                {
+                    "name": "devicePoolArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the device pool for the run to be scheduled.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The name for the run to be scheduled.</p>"
+                },
+                {
+                    "name": "test",
+                    "shape": "ScheduleRunTest",
+                    "documentation": "<p>Information about the test for the run to be scheduled.</p>"
+                },
+                {
+                    "name": "configuration",
+                    "shape": "ScheduleRunConfiguration",
+                    "documentation": "<p>Information about the settings for the run to be scheduled.</p>"
+                }
+            ]
+        },
+        "ScheduleRunResult": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "run",
+                    "shape": "Run",
+                    "documentation": "<p>Information about the scheduled run.</p>"
+                }
+            ]
+        },
+        "ScheduleRunTest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "type",
+                    "shape": "TestType",
+                    "documentation": "<p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> </ul>"
+                },
+                {
+                    "name": "testPackageArn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The ARN of the uploaded test that will be run.</p>"
+                },
+                {
+                    "name": "filter",
+                    "shape": "Filter",
+                    "documentation": "<p>The test's filter.</p>"
+                },
+                {
+                    "name": "parameters",
+                    "shape": "TestParameters",
+                    "documentation": "<p>The test's parameters, such as test framework parameters and fixture settings.</p>"
+                }
+            ]
+        },
+        "ServiceAccountException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>Any additional information about the exception.</p>"
+                }
+            ]
+        },
+        "String": {
+            "type": "string"
+        },
+        "Suite": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The suite's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The suite's name.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "TestType",
+                    "documentation": "<p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> </ul>"
+                },
+                {
+                    "name": "created",
+                    "shape": "DateTime",
+                    "documentation": "<p>When the suite was created.</p>"
+                },
+                {
+                    "name": "status",
+                    "shape": "ExecutionStatus",
+                    "documentation": "<p>The suite's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+                },
+                {
+                    "name": "result",
+                    "shape": "ExecutionResult",
+                    "documentation": "<p>The suite's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+                },
+                {
+                    "name": "started",
+                    "shape": "DateTime",
+                    "documentation": "<p>The suite's start time.</p>"
+                },
+                {
+                    "name": "stopped",
+                    "shape": "DateTime",
+                    "documentation": "<p>The suite's stop time.</p>"
+                },
+                {
+                    "name": "counters",
+                    "shape": "Counters",
+                    "documentation": "<p>The suite's result counters.</p>"
+                },
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the suite's result.</p>"
+                }
+            ]
+        },
+        "Suites": {
+            "type": "list"
+        },
+        "Test": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The test's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The test's name.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "TestType",
+                    "documentation": "<p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>BUILTIN_EXPLORER: An app explorer that will traverse an app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> </ul>"
+                },
+                {
+                    "name": "created",
+                    "shape": "DateTime",
+                    "documentation": "<p>When the test was created.</p>"
+                },
+                {
+                    "name": "status",
+                    "shape": "ExecutionStatus",
+                    "documentation": "<p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+                },
+                {
+                    "name": "result",
+                    "shape": "ExecutionResult",
+                    "documentation": "<p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+                },
+                {
+                    "name": "started",
+                    "shape": "DateTime",
+                    "documentation": "<p>The test's start time.</p>"
+                },
+                {
+                    "name": "stopped",
+                    "shape": "DateTime",
+                    "documentation": "<p>The test's stop time.</p>"
+                },
+                {
+                    "name": "counters",
+                    "shape": "Counters",
+                    "documentation": "<p>The test's result counters.</p>"
+                },
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the test's result.</p>"
+                }
+            ]
+        },
+        "TestParameters": {
+            "type": "map"
+        },
+        "TestType": {
+            "type": "string"
+        },
+        "Tests": {
+            "type": "list"
+        },
+        "URL": {
+            "type": "string"
+        },
+        "UniqueProblem": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the unique problems' result.</p>"
+                },
+                {
+                    "name": "problems",
+                    "shape": "Problems",
+                    "documentation": "<p>Information about the problems.</p>"
+                }
+            ]
+        },
+        "UniqueProblems": {
+            "type": "list"
+        },
+        "UniqueProblemsByExecutionResultMap": {
+            "type": "map"
+        },
+        "Upload": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "arn",
+                    "shape": "AmazonResourceName",
+                    "documentation": "<p>The upload's ARN.</p>"
+                },
+                {
+                    "name": "name",
+                    "shape": "Name",
+                    "documentation": "<p>The upload's file name.</p>"
+                },
+                {
+                    "name": "created",
+                    "shape": "DateTime",
+                    "documentation": "<p>When the upload was created.</p>"
+                },
+                {
+                    "name": "type",
+                    "shape": "UploadType",
+                    "documentation": "<p>The upload's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p></li> </ul>"
+                },
+                {
+                    "name": "status",
+                    "shape": "UploadStatus",
+                    "documentation": "<p>The upload's status.</p> <p>Must be one of the following values:</p> <ul> <li><p>FAILED: A failed status.</p></li> <li><p>INITIALIZED: An initialized status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>SUCCEEDED: A succeeded status.</p></li> </ul>"
+                },
+                {
+                    "name": "url",
+                    "shape": "URL",
+                    "documentation": "<p>The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.</p>"
+                },
+                {
+                    "name": "metadata",
+                    "shape": "Metadata",
+                    "documentation": "<p>The upload's metadata. This contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>"
+                },
+                {
+                    "name": "contentType",
+                    "shape": "ContentType",
+                    "documentation": "<p>The upload's content type (for example, \"application/octet-stream\").</p>"
+                },
+                {
+                    "name": "message",
+                    "shape": "Message",
+                    "documentation": "<p>A message about the upload's result.</p>"
+                }
+            ]
+        },
+        "UploadStatus": {
+            "type": "string"
+        },
+        "UploadType": {
+            "type": "string"
+        },
+        "Uploads": {
+            "type": "list"
+        }
+    }
+}

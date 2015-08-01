@@ -141,11 +141,17 @@ class Operation(Shape):
 
     @property
     def input_shape(self):
-        return self.model.get_shape(self.operation['input']['shape'])
+        try:
+            return self.model.get_shape(self.operation['input']['shape'])
+        except KeyError:
+            return None
 
     @property
     def output_shape(self):
-        return self.model.get_shape(self.operation['output']['shape'])
+        try:
+            return self.model.get_shape(self.operation['output']['shape'])
+        except KeyError:
+            return None
 
 
 class Model(object):

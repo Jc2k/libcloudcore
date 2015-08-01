@@ -1,0 +1,564 @@
+{
+    "metadata": {},
+    "operations": {
+        "DescribeStream": {
+            "documentation": "<p>Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p> <note><p>You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.</p></note> <p>Each shard in the stream has a <code>SequenceNumberRange</code> associated with it. If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are present, the that shared is closed and can no longer receive more data.</p>",
+            "input": {
+                "shape": "DescribeStreamInput"
+            },
+            "output": {
+                "shape": "DescribeStreamOutput"
+            }
+        },
+        "GetRecords": {
+            "documentation": "<p>Retrieves the stream records from a given shard.</p> <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the position in the shard from which you want to start reading stream records sequentially. If there are no stream records available in the portion of the shard that the iterator points to, <code>GetRecords</code> returns an empty list. Note that it might take multiple calls to get to a portion of the shard that contains stream records.</p> <note><p><function>GetRecords</function> can retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes first.</p></note>",
+            "input": {
+                "shape": "GetRecordsInput"
+            },
+            "output": {
+                "shape": "GetRecordsOutput"
+            }
+        },
+        "GetShardIterator": {
+            "documentation": "<p>Returns a shard iterator. A shard iterator provides information about how to retrieve the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code> request to read the stream records from the shard.</p> <note><p>A shard iterator expires 15 minutes after it is returned to the requester.</p></note>",
+            "input": {
+                "shape": "GetShardIteratorInput"
+            },
+            "output": {
+                "shape": "GetShardIteratorOutput"
+            }
+        },
+        "ListStreams": {
+            "documentation": "<p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return only the streams ARNs for that table.</p> <note><p>You can call <i>ListStreams</i> at a maximum rate of 5 times per second.</p></note>",
+            "input": {
+                "shape": "ListStreamsInput"
+            },
+            "output": {
+                "shape": "ListStreamsOutput"
+            }
+        }
+    },
+    "shapes": {
+        "AttributeMap": {
+            "type": "map"
+        },
+        "AttributeName": {
+            "type": "string"
+        },
+        "AttributeValue": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "S",
+                    "shape": "StringAttributeValue",
+                    "documentation": "<p>A String data type.</p>"
+                },
+                {
+                    "name": "N",
+                    "shape": "NumberAttributeValue",
+                    "documentation": "<p>A Number data type.</p>"
+                },
+                {
+                    "name": "B",
+                    "shape": "BinaryAttributeValue",
+                    "documentation": "<p>A Binary data type.</p>"
+                },
+                {
+                    "name": "SS",
+                    "shape": "StringSetAttributeValue",
+                    "documentation": "<p>A String Set data type.</p>"
+                },
+                {
+                    "name": "NS",
+                    "shape": "NumberSetAttributeValue",
+                    "documentation": "<p>A Number Set data type.</p>"
+                },
+                {
+                    "name": "BS",
+                    "shape": "BinarySetAttributeValue",
+                    "documentation": "<p>A Binary Set data type.</p>"
+                },
+                {
+                    "name": "M",
+                    "shape": "MapAttributeValue",
+                    "documentation": "<p>A Map data type.</p>"
+                },
+                {
+                    "name": "L",
+                    "shape": "ListAttributeValue",
+                    "documentation": "<p>A List data type.</p>"
+                },
+                {
+                    "name": "NULL",
+                    "shape": "NullAttributeValue",
+                    "documentation": "<p>A Null data type.</p>"
+                },
+                {
+                    "name": "BOOL",
+                    "shape": "BooleanAttributeValue",
+                    "documentation": "<p> A Boolean data type.</p>"
+                }
+            ]
+        },
+        "BinaryAttributeValue": {
+            "type": "blob"
+        },
+        "BinarySetAttributeValue": {
+            "type": "list"
+        },
+        "BooleanAttributeValue": {
+            "type": "boolean"
+        },
+        "Date": {
+            "type": "timestamp"
+        },
+        "DescribeStreamInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "StreamArn",
+                    "shape": "StreamArn",
+                    "documentation": "<p>The Amazon Resource Name (ARN) for the stream.</p>"
+                },
+                {
+                    "name": "Limit",
+                    "shape": "PositiveIntegerObject",
+                    "documentation": "<p>The maximum number of shard objects to return. The upper limit is 100.</p>"
+                },
+                {
+                    "name": "ExclusiveStartShardId",
+                    "shape": "ShardId",
+                    "documentation": "<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>"
+                }
+            ]
+        },
+        "DescribeStreamOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "StreamDescription",
+                    "shape": "StreamDescription",
+                    "documentation": "<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>"
+                }
+            ]
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "ExpiredIteratorException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p>The provided iterator exceeds the maximum age allowed.</p>"
+                }
+            ]
+        },
+        "GetRecordsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ShardIterator",
+                    "shape": "ShardIterator",
+                    "documentation": "<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>"
+                },
+                {
+                    "name": "Limit",
+                    "shape": "PositiveIntegerObject",
+                    "documentation": "<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>"
+                }
+            ]
+        },
+        "GetRecordsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Records",
+                    "shape": "RecordList",
+                    "documentation": "<p>The stream records from the shard, which were retrieved using the shard iterator.</p>"
+                },
+                {
+                    "name": "NextShardIterator",
+                    "shape": "ShardIterator",
+                    "documentation": "<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>"
+                }
+            ]
+        },
+        "GetShardIteratorInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "StreamArn",
+                    "shape": "StreamArn",
+                    "documentation": "<p>The Amazon Resource Name (ARN) for the stream.</p>"
+                },
+                {
+                    "name": "ShardId",
+                    "shape": "ShardId",
+                    "documentation": "<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>"
+                },
+                {
+                    "name": "ShardIteratorType",
+                    "shape": "ShardIteratorType",
+                    "documentation": "<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>"
+                },
+                {
+                    "name": "SequenceNumber",
+                    "shape": "SequenceNumber",
+                    "documentation": "<p>The sequence number of a stream record in the shard from which to start reading.</p>"
+                }
+            ]
+        },
+        "GetShardIteratorOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ShardIterator",
+                    "shape": "ShardIterator",
+                    "documentation": "<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>"
+                }
+            ]
+        },
+        "InternalServerError": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p>The server encountered an internal error trying to fulfill the request.</p>"
+                }
+            ]
+        },
+        "KeySchema": {
+            "type": "list"
+        },
+        "KeySchemaAttributeName": {
+            "type": "string"
+        },
+        "KeySchemaElement": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AttributeName",
+                    "shape": "KeySchemaAttributeName",
+                    "documentation": "<p>The name of a key attribute.</p>"
+                },
+                {
+                    "name": "KeyType",
+                    "shape": "KeyType",
+                    "documentation": "<p>The attribute data, consisting of the data type and the attribute value itself.</p>"
+                }
+            ]
+        },
+        "KeyType": {
+            "type": "string"
+        },
+        "LimitExceededException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p>Too many operations for a given subscriber.</p>"
+                }
+            ]
+        },
+        "ListAttributeValue": {
+            "type": "list"
+        },
+        "ListStreamsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "TableName",
+                    "shape": "TableName",
+                    "documentation": "<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>"
+                },
+                {
+                    "name": "Limit",
+                    "shape": "PositiveIntegerObject",
+                    "documentation": "<p>The maximum number of streams to return. The upper limit is 100.</p>"
+                },
+                {
+                    "name": "ExclusiveStartStreamArn",
+                    "shape": "StreamArn",
+                    "documentation": "<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>"
+                }
+            ]
+        },
+        "ListStreamsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Streams",
+                    "shape": "StreamList",
+                    "documentation": "<p>A list of stream descriptors associated with the current account and endpoint.</p>"
+                },
+                {
+                    "name": "LastEvaluatedStreamArn",
+                    "shape": "StreamArn",
+                    "documentation": "<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>"
+                }
+            ]
+        },
+        "MapAttributeValue": {
+            "type": "map"
+        },
+        "NullAttributeValue": {
+            "type": "boolean"
+        },
+        "NumberAttributeValue": {
+            "type": "string"
+        },
+        "NumberSetAttributeValue": {
+            "type": "list"
+        },
+        "OperationType": {
+            "type": "string"
+        },
+        "PositiveIntegerObject": {
+            "type": "integer"
+        },
+        "PositiveLongObject": {
+            "type": "long"
+        },
+        "Record": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "eventID",
+                    "shape": "String",
+                    "documentation": "<p>A globally unique identifier for the event that was recorded in this stream record.</p>"
+                },
+                {
+                    "name": "eventName",
+                    "shape": "OperationType",
+                    "documentation": "<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li> <li><p><code>MODIFY</code> - one or more of the item's attributes were updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the table</p></li> </ul>"
+                },
+                {
+                    "name": "eventVersion",
+                    "shape": "String",
+                    "documentation": "<p>The version number of the stream record format. Currently, this is <i>1.0</i>.</p>"
+                },
+                {
+                    "name": "eventSource",
+                    "shape": "String",
+                    "documentation": "<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.</p>"
+                },
+                {
+                    "name": "awsRegion",
+                    "shape": "String",
+                    "documentation": "<p>The region in which the <i>GetRecords</i> request was received.</p>"
+                },
+                {
+                    "name": "dynamodb",
+                    "shape": "StreamRecord",
+                    "documentation": "<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>"
+                }
+            ]
+        },
+        "RecordList": {
+            "type": "list"
+        },
+        "ResourceNotFoundException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p>The resource which is being requested does not exist.</p>"
+                }
+            ]
+        },
+        "SequenceNumber": {
+            "type": "string"
+        },
+        "SequenceNumberRange": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "StartingSequenceNumber",
+                    "shape": "SequenceNumber",
+                    "documentation": "<p>The first sequence number.</p>"
+                },
+                {
+                    "name": "EndingSequenceNumber",
+                    "shape": "SequenceNumber",
+                    "documentation": "<p>The last sequence number.</p>"
+                }
+            ]
+        },
+        "Shard": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "ShardId",
+                    "shape": "ShardId",
+                    "documentation": "<p>The system-generated identifier for this shard.</p>"
+                },
+                {
+                    "name": "SequenceNumberRange",
+                    "shape": "SequenceNumberRange",
+                    "documentation": "<p>The range of possible sequence numbers for the shard.</p>"
+                },
+                {
+                    "name": "ParentShardId",
+                    "shape": "ShardId",
+                    "documentation": "<p>The shard ID of the current shard's parent.</p>"
+                }
+            ]
+        },
+        "ShardDescriptionList": {
+            "type": "list"
+        },
+        "ShardId": {
+            "type": "string"
+        },
+        "ShardIterator": {
+            "type": "string"
+        },
+        "ShardIteratorType": {
+            "type": "string"
+        },
+        "Stream": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "StreamArn",
+                    "shape": "StreamArn",
+                    "documentation": "<p>The Amazon Resource Name (ARN) for the stream.</p>"
+                },
+                {
+                    "name": "TableName",
+                    "shape": "TableName",
+                    "documentation": "<p>The DynamoDB table with which the stream is associated.</p>"
+                },
+                {
+                    "name": "StreamLabel",
+                    "shape": "String",
+                    "documentation": "<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name</p></li> <li><p>the <i>StreamLabel</i></p></li> </ul>"
+                }
+            ]
+        },
+        "StreamArn": {
+            "type": "string"
+        },
+        "StreamDescription": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "StreamArn",
+                    "shape": "StreamArn",
+                    "documentation": "<p>The Amazon Resource Name (ARN) for the stream.</p>"
+                },
+                {
+                    "name": "StreamLabel",
+                    "shape": "String",
+                    "documentation": "<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table name</p></li> <li><p>the <i>StreamLabel</i></p></li> </ul>"
+                },
+                {
+                    "name": "StreamStatus",
+                    "shape": "StreamStatus",
+                    "documentation": "<p>Indicates the current status of the stream:</p> <ul> <li><p><code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p></li> <li><p><code>ENABLING</code> - the stream is enabled.</p></li> <li><p><code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p></li> <li><p><code>DISABLED</code> - the stream is disabled.</p></li> </ul>"
+                },
+                {
+                    "name": "StreamViewType",
+                    "shape": "StreamViewType",
+                    "documentation": "<p>Indicates the format of the records within this stream:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p></li> <li><p><code>NEW_IMAGE</code> - entire item from the table, as it appeared after they were modified.</p></li> <li><p><code>OLD_IMAGE</code> - entire item from the table, as it appeared before they were modified.</p></li> <li><p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li> </ul>"
+                },
+                {
+                    "name": "CreationRequestDateTime",
+                    "shape": "Date",
+                    "documentation": "<p>The date and time when the request to create this stream was issued.</p>"
+                },
+                {
+                    "name": "TableName",
+                    "shape": "TableName",
+                    "documentation": "<p>The DynamoDB table with which the stream is associated.</p>"
+                },
+                {
+                    "name": "KeySchema",
+                    "shape": "KeySchema",
+                    "documentation": "<p>The key attribute(s) of the stream's DynamoDB table.</p>"
+                },
+                {
+                    "name": "Shards",
+                    "shape": "ShardDescriptionList",
+                    "documentation": "<p>The shards that comprise the stream.</p>"
+                },
+                {
+                    "name": "LastEvaluatedShardId",
+                    "shape": "ShardId",
+                    "documentation": "<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>"
+                }
+            ]
+        },
+        "StreamList": {
+            "type": "list"
+        },
+        "StreamRecord": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Keys",
+                    "shape": "AttributeMap",
+                    "documentation": "<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>"
+                },
+                {
+                    "name": "NewImage",
+                    "shape": "AttributeMap",
+                    "documentation": "<p>The item in the DynamoDB table as it appeared after it was modified.</p>"
+                },
+                {
+                    "name": "OldImage",
+                    "shape": "AttributeMap",
+                    "documentation": "<p>The item in the DynamoDB table as it appeared before it was modified.</p>"
+                },
+                {
+                    "name": "SequenceNumber",
+                    "shape": "SequenceNumber",
+                    "documentation": "<p>The sequence number of the stream record.</p>"
+                },
+                {
+                    "name": "SizeBytes",
+                    "shape": "PositiveLongObject",
+                    "documentation": "<p>The size of the stream record, in bytes.</p>"
+                },
+                {
+                    "name": "StreamViewType",
+                    "shape": "StreamViewType",
+                    "documentation": "<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item, as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p></li> <li><p><code>NEW_AND_OLD_IMAGES</code> \u2014 both the new and the old item images of the item.</p></li> </ul>"
+                }
+            ]
+        },
+        "StreamStatus": {
+            "type": "string"
+        },
+        "StreamViewType": {
+            "type": "string"
+        },
+        "String": {
+            "type": "string"
+        },
+        "StringAttributeValue": {
+            "type": "string"
+        },
+        "StringSetAttributeValue": {
+            "type": "list"
+        },
+        "TableName": {
+            "type": "string"
+        },
+        "TrimmedDataAccessException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p>\"The data you are trying to access has been trimmed.</p>"
+                }
+            ]
+        }
+    }
+}

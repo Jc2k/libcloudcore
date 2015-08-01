@@ -1,0 +1,569 @@
+{
+    "metadata": {},
+    "operations": {
+        "BatchGetRepositories": {
+            "documentation": "<p>Gets information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+            "input": {
+                "shape": "BatchGetRepositoriesInput"
+            },
+            "output": {
+                "shape": "BatchGetRepositoriesOutput"
+            }
+        },
+        "CreateBranch": {
+            "documentation": "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</note>",
+            "input": {
+                "shape": "CreateBranchInput"
+            }
+        },
+        "CreateRepository": {
+            "documentation": "<p>Creates a new, empty repository.</p>",
+            "input": {
+                "shape": "CreateRepositoryInput"
+            },
+            "output": {
+                "shape": "CreateRepositoryOutput"
+            }
+        },
+        "DeleteRepository": {
+            "documentation": "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>",
+            "input": {
+                "shape": "DeleteRepositoryInput"
+            },
+            "output": {
+                "shape": "DeleteRepositoryOutput"
+            }
+        },
+        "GetBranch": {
+            "documentation": "<p>Retrieves information about a repository branch, including its name and the last commit ID.</p>",
+            "input": {
+                "shape": "GetBranchInput"
+            },
+            "output": {
+                "shape": "GetBranchOutput"
+            }
+        },
+        "GetRepository": {
+            "documentation": "<p>Gets information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+            "input": {
+                "shape": "GetRepositoryInput"
+            },
+            "output": {
+                "shape": "GetRepositoryOutput"
+            }
+        },
+        "ListBranches": {
+            "documentation": "<p>Gets information about one or more branches in a repository.</p>",
+            "input": {
+                "shape": "ListBranchesInput"
+            },
+            "output": {
+                "shape": "ListBranchesOutput"
+            }
+        },
+        "ListRepositories": {
+            "documentation": "<p>Gets information about one or more repositories.</p>",
+            "input": {
+                "shape": "ListRepositoriesInput"
+            },
+            "output": {
+                "shape": "ListRepositoriesOutput"
+            }
+        },
+        "UpdateDefaultBranch": {
+            "documentation": "<p>Sets or changes the default branch name for the specified repository.</p> <note>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</note>",
+            "input": {
+                "shape": "UpdateDefaultBranchInput"
+            }
+        },
+        "UpdateRepositoryDescription": {
+            "documentation": "<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+            "input": {
+                "shape": "UpdateRepositoryDescriptionInput"
+            }
+        },
+        "UpdateRepositoryName": {
+            "documentation": "<p>Renames a repository.</p>",
+            "input": {
+                "shape": "UpdateRepositoryNameInput"
+            }
+        }
+    },
+    "shapes": {
+        "AccountId": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BatchGetRepositoriesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryNames",
+                    "shape": "RepositoryNameList",
+                    "documentation": "<p>The names of the repositories to get information about.</p>"
+                }
+            ]
+        },
+        "BatchGetRepositoriesOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositories",
+                    "shape": "RepositoryMetadataList",
+                    "documentation": "<p>A list of repositories returned by the batch get repositories operation.</p>"
+                },
+                {
+                    "name": "repositoriesNotFound",
+                    "shape": "RepositoryNotFoundList",
+                    "documentation": "<p>Returns a list of repository names for which information could not be found.</p>"
+                }
+            ]
+        },
+        "BranchDoesNotExistException": {
+            "type": "structure",
+            "members": []
+        },
+        "BranchInfo": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "branchName",
+                    "shape": "BranchName",
+                    "documentation": "<p>The name of the branch.</p>"
+                },
+                {
+                    "name": "commitId",
+                    "shape": "CommitId",
+                    "documentation": "<p>The ID of the last commit made to the branch.</p>"
+                }
+            ]
+        },
+        "BranchName": {
+            "type": "string"
+        },
+        "BranchNameExistsException": {
+            "type": "structure",
+            "members": []
+        },
+        "BranchNameList": {
+            "type": "list"
+        },
+        "BranchNameRequiredException": {
+            "type": "structure",
+            "members": []
+        },
+        "CloneUrlHttp": {
+            "type": "string"
+        },
+        "CloneUrlSsh": {
+            "type": "string"
+        },
+        "CommitDoesNotExistException": {
+            "type": "structure",
+            "members": []
+        },
+        "CommitId": {
+            "type": "string"
+        },
+        "CommitIdRequiredException": {
+            "type": "structure",
+            "members": []
+        },
+        "CreateBranchInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the repository in which you want to create the new branch.</p>"
+                },
+                {
+                    "name": "branchName",
+                    "shape": "BranchName",
+                    "documentation": "<p>The name of the new branch to create.</p>"
+                },
+                {
+                    "name": "commitId",
+                    "shape": "CommitId",
+                    "documentation": "<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>"
+                }
+            ]
+        },
+        "CreateRepositoryInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>"
+                },
+                {
+                    "name": "repositoryDescription",
+                    "shape": "RepositoryDescription",
+                    "documentation": "<p>A comment or description about the new repository.</p>"
+                }
+            ]
+        },
+        "CreateRepositoryOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryMetadata",
+                    "shape": "RepositoryMetadata",
+                    "documentation": "<p>Information about the newly created repository.</p>"
+                }
+            ]
+        },
+        "CreationDate": {
+            "type": "timestamp"
+        },
+        "DeleteRepositoryInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the repository to delete.</p>"
+                }
+            ]
+        },
+        "DeleteRepositoryOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryId",
+                    "shape": "RepositoryId",
+                    "documentation": "<p>The ID of the repository that was deleted.</p>"
+                }
+            ]
+        },
+        "EncryptionIntegrityChecksFailedException": {
+            "type": "structure",
+            "members": []
+        },
+        "EncryptionKeyAccessDeniedException": {
+            "type": "structure",
+            "members": []
+        },
+        "EncryptionKeyDisabledException": {
+            "type": "structure",
+            "members": []
+        },
+        "EncryptionKeyNotFoundException": {
+            "type": "structure",
+            "members": []
+        },
+        "EncryptionKeyUnavailableException": {
+            "type": "structure",
+            "members": []
+        },
+        "GetBranchInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName"
+                },
+                {
+                    "name": "branchName",
+                    "shape": "BranchName",
+                    "documentation": "<p>The name of the branch for which you want to retrieve information.</p>"
+                }
+            ]
+        },
+        "GetBranchOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "branch",
+                    "shape": "BranchInfo",
+                    "documentation": "<p>The name of the branch.</p>"
+                }
+            ]
+        },
+        "GetRepositoryInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the repository to get information about.</p>"
+                }
+            ]
+        },
+        "GetRepositoryOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryMetadata",
+                    "shape": "RepositoryMetadata",
+                    "documentation": "<p>Information about the repository.</p>"
+                }
+            ]
+        },
+        "InvalidBranchNameException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidCommitIdException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidContinuationTokenException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidOrderException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidRepositoryDescriptionException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidRepositoryNameException": {
+            "type": "structure",
+            "members": []
+        },
+        "InvalidSortByException": {
+            "type": "structure",
+            "members": []
+        },
+        "LastModifiedDate": {
+            "type": "timestamp"
+        },
+        "ListBranchesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the repository that contains the branches.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>An enumeration token that allows the operation to batch the results. </p>"
+                }
+            ]
+        },
+        "ListBranchesOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "branches",
+                    "shape": "BranchNameList",
+                    "documentation": "<p>The list of branch names.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>An enumeration token that returns the batch of the results. </p>"
+                }
+            ]
+        },
+        "ListRepositoriesInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "nextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>"
+                },
+                {
+                    "name": "sortBy",
+                    "shape": "SortByEnum",
+                    "documentation": "<p>The criteria used to sort the results of a list repositories operation.</p>"
+                },
+                {
+                    "name": "order",
+                    "shape": "OrderEnum",
+                    "documentation": "<p>The order in which to sort the results of a list repositories operation.</p>"
+                }
+            ]
+        },
+        "ListRepositoriesOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositories",
+                    "shape": "RepositoryNameIdPairList",
+                    "documentation": "<p>Lists the repositories called by the list repositories operation.</p>"
+                },
+                {
+                    "name": "nextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>"
+                }
+            ]
+        },
+        "MaximumRepositoryNamesExceededException": {
+            "type": "structure",
+            "members": []
+        },
+        "NextToken": {
+            "type": "string"
+        },
+        "OrderEnum": {
+            "type": "string"
+        },
+        "RepositoryDescription": {
+            "type": "string"
+        },
+        "RepositoryDoesNotExistException": {
+            "type": "structure",
+            "members": []
+        },
+        "RepositoryId": {
+            "type": "string"
+        },
+        "RepositoryLimitExceededException": {
+            "type": "structure",
+            "members": []
+        },
+        "RepositoryMetadata": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "accountId",
+                    "shape": "AccountId",
+                    "documentation": "<p>The ID of the AWS account associated with the repository.</p>"
+                },
+                {
+                    "name": "repositoryId",
+                    "shape": "RepositoryId",
+                    "documentation": "<p>The ID of the repository.</p>"
+                },
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The repository's name.</p>"
+                },
+                {
+                    "name": "repositoryDescription",
+                    "shape": "RepositoryDescription",
+                    "documentation": "<p>A comment or description about the repository.</p>"
+                },
+                {
+                    "name": "defaultBranch",
+                    "shape": "BranchName",
+                    "documentation": "<p>The repository's default branch name.</p>"
+                },
+                {
+                    "name": "lastModifiedDate",
+                    "shape": "LastModifiedDate",
+                    "documentation": "<p>The date and time the repository was last modified, in timestamp format.</p>"
+                },
+                {
+                    "name": "creationDate",
+                    "shape": "CreationDate",
+                    "documentation": "<p>The date and time the repository was created, in timestamp format.</p>"
+                },
+                {
+                    "name": "cloneUrlHttp",
+                    "shape": "CloneUrlHttp",
+                    "documentation": "<p>The URL to use for cloning the repository over HTTPS.</p>"
+                },
+                {
+                    "name": "cloneUrlSsh",
+                    "shape": "CloneUrlSsh",
+                    "documentation": "<p>The URL to use for cloning the repository over SSH.</p>"
+                },
+                {
+                    "name": "Arn",
+                    "shape": "Arn",
+                    "documentation": "<p>The Amazon Resource Name (ARN) of the repository.</p>"
+                }
+            ]
+        },
+        "RepositoryMetadataList": {
+            "type": "list"
+        },
+        "RepositoryName": {
+            "type": "string"
+        },
+        "RepositoryNameExistsException": {
+            "type": "structure",
+            "members": []
+        },
+        "RepositoryNameIdPair": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName"
+                },
+                {
+                    "name": "repositoryId",
+                    "shape": "RepositoryId",
+                    "documentation": "<p>The ID associated with the repository name.</p>"
+                }
+            ]
+        },
+        "RepositoryNameIdPairList": {
+            "type": "list"
+        },
+        "RepositoryNameList": {
+            "type": "list"
+        },
+        "RepositoryNameRequiredException": {
+            "type": "structure",
+            "members": []
+        },
+        "RepositoryNamesRequiredException": {
+            "type": "structure",
+            "members": []
+        },
+        "RepositoryNotFoundList": {
+            "type": "list"
+        },
+        "SortByEnum": {
+            "type": "string"
+        },
+        "UpdateDefaultBranchInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the repository to set or change the default branch for.</p>"
+                },
+                {
+                    "name": "defaultBranchName",
+                    "shape": "BranchName",
+                    "documentation": "<p>The name of the branch to set as the default.</p>"
+                }
+            ]
+        },
+        "UpdateRepositoryDescriptionInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "repositoryName",
+                    "shape": "RepositoryName",
+                    "documentation": "<p>The name of the repository to set or change the comment or description for.</p>"
+                },
+                {
+                    "name": "repositoryDescription",
+                    "shape": "RepositoryDescription",
+                    "documentation": "<p>The new comment or description for the specified repository.</p>"
+                }
+            ]
+        },
+        "UpdateRepositoryNameInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "oldName",
+                    "shape": "RepositoryName"
+                },
+                {
+                    "name": "newName",
+                    "shape": "RepositoryName"
+                }
+            ]
+        }
+    }
+}

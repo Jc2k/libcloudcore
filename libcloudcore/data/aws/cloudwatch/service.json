@@ -1,0 +1,976 @@
+{
+    "metadata": {},
+    "operations": {
+        "DeleteAlarms": {
+            "documentation": "<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>",
+            "input": {
+                "shape": "DeleteAlarmsInput"
+            }
+        },
+        "DescribeAlarmHistory": {
+            "documentation": "<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p>",
+            "input": {
+                "shape": "DescribeAlarmHistoryInput"
+            },
+            "output": {
+                "shape": "DescribeAlarmHistoryOutput"
+            }
+        },
+        "DescribeAlarms": {
+            "documentation": "<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>",
+            "input": {
+                "shape": "DescribeAlarmsInput"
+            },
+            "output": {
+                "shape": "DescribeAlarmsOutput"
+            }
+        },
+        "DescribeAlarmsForMetric": {
+            "documentation": "<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>",
+            "input": {
+                "shape": "DescribeAlarmsForMetricInput"
+            },
+            "output": {
+                "shape": "DescribeAlarmsForMetricOutput"
+            }
+        },
+        "DisableAlarmActions": {
+            "documentation": "<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>",
+            "input": {
+                "shape": "DisableAlarmActionsInput"
+            }
+        },
+        "EnableAlarmActions": {
+            "documentation": "<p> Enables actions for the specified alarms. </p>",
+            "input": {
+                "shape": "EnableAlarmActionsInput"
+            }
+        },
+        "GetMetricStatistics": {
+            "documentation": "<p> Gets statistics for the specified metric. </p> <p> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. </p> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul> <p> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to Cloudwatch, go to <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html\">Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>",
+            "input": {
+                "shape": "GetMetricStatisticsInput"
+            },
+            "output": {
+                "shape": "GetMetricStatisticsOutput"
+            }
+        },
+        "ListMetrics": {
+            "documentation": "<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given metric. </p>",
+            "input": {
+                "shape": "ListMetricsInput"
+            },
+            "output": {
+                "shape": "ListMetricsOutput"
+            }
+        },
+        "PutMetricAlarm": {
+            "documentation": "<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p>",
+            "input": {
+                "shape": "PutMetricAlarmInput"
+            }
+        },
+        "PutMetricData": {
+            "documentation": "<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls to the <a>ListMetrics</a> action.</p> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important> <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p>",
+            "input": {
+                "shape": "PutMetricDataInput"
+            }
+        },
+        "SetAlarmState": {
+            "documentation": "<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>",
+            "input": {
+                "shape": "SetAlarmStateInput"
+            }
+        }
+    },
+    "shapes": {
+        "ActionPrefix": {
+            "type": "string"
+        },
+        "ActionsEnabled": {
+            "type": "boolean"
+        },
+        "AlarmArn": {
+            "type": "string"
+        },
+        "AlarmDescription": {
+            "type": "string"
+        },
+        "AlarmHistoryItem": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmName",
+                    "shape": "AlarmName",
+                    "documentation": "<p> The descriptive name for the alarm. </p>"
+                },
+                {
+                    "name": "Timestamp",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>"
+                },
+                {
+                    "name": "HistoryItemType",
+                    "shape": "HistoryItemType",
+                    "documentation": "<p> The type of alarm history item. </p>"
+                },
+                {
+                    "name": "HistorySummary",
+                    "shape": "HistorySummary",
+                    "documentation": "<p> A human-readable summary of the alarm history. </p>"
+                },
+                {
+                    "name": "HistoryData",
+                    "shape": "HistoryData",
+                    "documentation": "<p> Machine-readable data about the alarm in JSON format. </p>"
+                }
+            ]
+        },
+        "AlarmHistoryItems": {
+            "type": "list"
+        },
+        "AlarmName": {
+            "type": "string"
+        },
+        "AlarmNamePrefix": {
+            "type": "string"
+        },
+        "AlarmNames": {
+            "type": "list"
+        },
+        "AwsQueryErrorMessage": {
+            "type": "string"
+        },
+        "ComparisonOperator": {
+            "type": "string"
+        },
+        "Datapoint": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Timestamp",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>"
+                },
+                {
+                    "name": "SampleCount",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The number of metric values that contributed to the aggregate value of this datapoint. </p>"
+                },
+                {
+                    "name": "Average",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The average of metric values that correspond to the datapoint. </p>"
+                },
+                {
+                    "name": "Sum",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The sum of metric values used for the datapoint. </p>"
+                },
+                {
+                    "name": "Minimum",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The minimum metric value used for the datapoint. </p>"
+                },
+                {
+                    "name": "Maximum",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The maximum of the metric value used for the datapoint. </p>"
+                },
+                {
+                    "name": "Unit",
+                    "shape": "StandardUnit",
+                    "documentation": "<p> The standard unit used for the datapoint. </p>"
+                }
+            ]
+        },
+        "DatapointValue": {
+            "type": "double"
+        },
+        "Datapoints": {
+            "type": "list"
+        },
+        "DeleteAlarmsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmNames",
+                    "shape": "AlarmNames",
+                    "documentation": "<p> A list of alarms to be deleted. </p>"
+                }
+            ]
+        },
+        "DescribeAlarmHistoryInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmName",
+                    "shape": "AlarmName",
+                    "documentation": "<p> The name of the alarm. </p>"
+                },
+                {
+                    "name": "HistoryItemType",
+                    "shape": "HistoryItemType",
+                    "documentation": "<p> The type of alarm histories to retrieve. </p>"
+                },
+                {
+                    "name": "StartDate",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The starting date to retrieve alarm history. </p>"
+                },
+                {
+                    "name": "EndDate",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The ending date to retrieve alarm history. </p>"
+                },
+                {
+                    "name": "MaxRecords",
+                    "shape": "MaxRecords",
+                    "documentation": "<p> The maximum number of alarm history records to retrieve. </p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p> The token returned by a previous call to indicate that there is more data available. </p>"
+                }
+            ]
+        },
+        "DescribeAlarmHistoryOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmHistoryItems",
+                    "shape": "AlarmHistoryItems",
+                    "documentation": "<p> A list of alarm histories in JSON format. </p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p> A string that marks the start of the next batch of returned results. </p>"
+                }
+            ]
+        },
+        "DescribeAlarmsForMetricInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name of the metric. </p>"
+                },
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace of the metric. </p>"
+                },
+                {
+                    "name": "Statistic",
+                    "shape": "Statistic",
+                    "documentation": "<p> The statistic for the metric. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "Dimensions",
+                    "documentation": "<p> The list of dimensions associated with the metric. </p>"
+                },
+                {
+                    "name": "Period",
+                    "shape": "Period",
+                    "documentation": "<p> The period in seconds over which the statistic is applied. </p>"
+                },
+                {
+                    "name": "Unit",
+                    "shape": "StandardUnit",
+                    "documentation": "<p> The unit for the metric. </p>"
+                }
+            ]
+        },
+        "DescribeAlarmsForMetricOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MetricAlarms",
+                    "shape": "MetricAlarms",
+                    "documentation": "<p> A list of information for each alarm with the specified metric. </p>"
+                }
+            ]
+        },
+        "DescribeAlarmsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmNames",
+                    "shape": "AlarmNames",
+                    "documentation": "<p> A list of alarm names to retrieve information for. </p>"
+                },
+                {
+                    "name": "AlarmNamePrefix",
+                    "shape": "AlarmNamePrefix",
+                    "documentation": "<p> The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified. </p>"
+                },
+                {
+                    "name": "StateValue",
+                    "shape": "StateValue",
+                    "documentation": "<p> The state value to be used in matching alarms. </p>"
+                },
+                {
+                    "name": "ActionPrefix",
+                    "shape": "ActionPrefix",
+                    "documentation": "<p> The action name prefix. </p>"
+                },
+                {
+                    "name": "MaxRecords",
+                    "shape": "MaxRecords",
+                    "documentation": "<p> The maximum number of alarm descriptions to retrieve. </p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p> The token returned by a previous call to indicate that there is more data available. </p>"
+                }
+            ]
+        },
+        "DescribeAlarmsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MetricAlarms",
+                    "shape": "MetricAlarms",
+                    "documentation": "<p> A list of information for the specified alarms. </p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p> A string that marks the start of the next batch of returned results. </p>"
+                }
+            ]
+        },
+        "Dimension": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DimensionName",
+                    "documentation": "<p> The name of the dimension. </p>"
+                },
+                {
+                    "name": "Value",
+                    "shape": "DimensionValue",
+                    "documentation": "<p> The value representing the dimension measurement </p>"
+                }
+            ]
+        },
+        "DimensionFilter": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Name",
+                    "shape": "DimensionName",
+                    "documentation": "<p> The dimension name to be matched. </p>"
+                },
+                {
+                    "name": "Value",
+                    "shape": "DimensionValue",
+                    "documentation": "<p> The value of the dimension to be matched. </p>"
+                }
+            ]
+        },
+        "DimensionFilters": {
+            "type": "list"
+        },
+        "DimensionName": {
+            "type": "string"
+        },
+        "DimensionValue": {
+            "type": "string"
+        },
+        "Dimensions": {
+            "type": "list"
+        },
+        "DisableAlarmActionsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmNames",
+                    "shape": "AlarmNames",
+                    "documentation": "<p> The names of the alarms to disable actions for. </p>"
+                }
+            ]
+        },
+        "EnableAlarmActionsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmNames",
+                    "shape": "AlarmNames",
+                    "documentation": "<p> The names of the alarms to enable actions for. </p>"
+                }
+            ]
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "EvaluationPeriods": {
+            "type": "integer"
+        },
+        "FaultDescription": {
+            "type": "string"
+        },
+        "GetMetricStatisticsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace of the metric, with or without spaces. </p>"
+                },
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name of the metric, with or without spaces. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "Dimensions",
+                    "documentation": "<p> A list of dimensions describing qualities of the metric. </p>"
+                },
+                {
+                    "name": "StartTime",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. </p>"
+                },
+                {
+                    "name": "EndTime",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. </p>"
+                },
+                {
+                    "name": "Period",
+                    "shape": "Period",
+                    "documentation": "<p> The granularity, in seconds, of the returned datapoints. <code>Period</code> must be at least 60 seconds and must be a multiple of 60. The default value is 60. </p>"
+                },
+                {
+                    "name": "Statistics",
+                    "shape": "Statistics",
+                    "documentation": "<p> The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic\">Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values: <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>"
+                },
+                {
+                    "name": "Unit",
+                    "shape": "StandardUnit",
+                    "documentation": "<p> The unit for the metric. </p>"
+                }
+            ]
+        },
+        "GetMetricStatisticsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Label",
+                    "shape": "MetricLabel",
+                    "documentation": "<p> A label describing the specified metric. </p>"
+                },
+                {
+                    "name": "Datapoints",
+                    "shape": "Datapoints",
+                    "documentation": "<p> The datapoints for the specified metric. </p>"
+                }
+            ]
+        },
+        "HistoryData": {
+            "type": "string"
+        },
+        "HistoryItemType": {
+            "type": "string"
+        },
+        "HistorySummary": {
+            "type": "string"
+        },
+        "InternalServiceFault": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Message",
+                    "shape": "FaultDescription",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "InvalidFormatFault": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "InvalidNextToken": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "InvalidParameterCombinationException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "AwsQueryErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "InvalidParameterValueException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "AwsQueryErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "LimitExceededFault": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "ListMetricsInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace to filter against. </p>"
+                },
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name of the metric to filter against. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "DimensionFilters",
+                    "documentation": "<p> A list of dimensions to filter against. </p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p> The token returned by a previous call to indicate that there is more data available. </p>"
+                }
+            ]
+        },
+        "ListMetricsOutput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Metrics",
+                    "shape": "Metrics",
+                    "documentation": "<p> A list of metrics used to generate statistics for an AWS account. </p>"
+                },
+                {
+                    "name": "NextToken",
+                    "shape": "NextToken",
+                    "documentation": "<p> A string that marks the start of the next batch of returned results. </p>"
+                }
+            ]
+        },
+        "MaxRecords": {
+            "type": "integer"
+        },
+        "Metric": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace of the metric. </p>"
+                },
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name of the metric. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "Dimensions",
+                    "documentation": "<p> A list of dimensions associated with the metric. </p>"
+                }
+            ]
+        },
+        "MetricAlarm": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmName",
+                    "shape": "AlarmName",
+                    "documentation": "<p> The name of the alarm. </p>"
+                },
+                {
+                    "name": "AlarmArn",
+                    "shape": "AlarmArn",
+                    "documentation": "<p> The Amazon Resource Name (ARN) of the alarm. </p>"
+                },
+                {
+                    "name": "AlarmDescription",
+                    "shape": "AlarmDescription",
+                    "documentation": "<p> The description for the alarm. </p>"
+                },
+                {
+                    "name": "AlarmConfigurationUpdatedTimestamp",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>"
+                },
+                {
+                    "name": "ActionsEnabled",
+                    "shape": "ActionsEnabled",
+                    "documentation": "<p> Indicates whether actions should be executed during any changes to the alarm's state. </p>"
+                },
+                {
+                    "name": "OKActions",
+                    "shape": "ResourceList",
+                    "documentation": "<p> The list of actions to execute when this alarm transitions into an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>"
+                },
+                {
+                    "name": "AlarmActions",
+                    "shape": "ResourceList",
+                    "documentation": "<p> The list of actions to execute when this alarm transitions into an <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>"
+                },
+                {
+                    "name": "InsufficientDataActions",
+                    "shape": "ResourceList",
+                    "documentation": "<p> The list of actions to execute when this alarm transitions into an <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic or triggering an Auto Scaling policy. </p> <important>The current WSDL lists this attribute as <code>UnknownActions</code>.</important>"
+                },
+                {
+                    "name": "StateValue",
+                    "shape": "StateValue",
+                    "documentation": "<p> The state value for the alarm. </p>"
+                },
+                {
+                    "name": "StateReason",
+                    "shape": "StateReason",
+                    "documentation": "<p> A human-readable explanation for the alarm's state. </p>"
+                },
+                {
+                    "name": "StateReasonData",
+                    "shape": "StateReasonData",
+                    "documentation": "<p> An explanation for the alarm's state in machine-readable JSON format </p>"
+                },
+                {
+                    "name": "StateUpdatedTimestamp",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>"
+                },
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name of the alarm's metric. </p>"
+                },
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace of alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Statistic",
+                    "shape": "Statistic",
+                    "documentation": "<p> The statistic to apply to the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "Dimensions",
+                    "documentation": "<p> The list of dimensions associated with the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Period",
+                    "shape": "Period",
+                    "documentation": "<p> The period in seconds over which the statistic is applied. </p>"
+                },
+                {
+                    "name": "Unit",
+                    "shape": "StandardUnit",
+                    "documentation": "<p> The unit of the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "EvaluationPeriods",
+                    "shape": "EvaluationPeriods",
+                    "documentation": "<p> The number of periods over which data is compared to the specified threshold. </p>"
+                },
+                {
+                    "name": "Threshold",
+                    "shape": "Threshold",
+                    "documentation": "<p> The value against which the specified statistic is compared. </p>"
+                },
+                {
+                    "name": "ComparisonOperator",
+                    "shape": "ComparisonOperator",
+                    "documentation": "<p> The arithmetic operation to use when comparing the specified <code>Statistic</code> and <code>Threshold</code>. The specified <code>Statistic</code> value is used as the first operand. </p>"
+                }
+            ]
+        },
+        "MetricAlarms": {
+            "type": "list"
+        },
+        "MetricData": {
+            "type": "list"
+        },
+        "MetricDatum": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name of the metric. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "Dimensions",
+                    "documentation": "<p> A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to append .member.N to it (e.g., Dimensions.member.N). </p>"
+                },
+                {
+                    "name": "Timestamp",
+                    "shape": "Timestamp",
+                    "documentation": "<p> The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>"
+                },
+                {
+                    "name": "Value",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The value for the metric. </p> <important>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important>"
+                },
+                {
+                    "name": "StatisticValues",
+                    "shape": "StatisticSet",
+                    "documentation": "<p> A set of statistical values describing the metric. </p>"
+                },
+                {
+                    "name": "Unit",
+                    "shape": "StandardUnit",
+                    "documentation": "<p> The unit of the metric. </p>"
+                }
+            ]
+        },
+        "MetricLabel": {
+            "type": "string"
+        },
+        "MetricName": {
+            "type": "string"
+        },
+        "Metrics": {
+            "type": "list"
+        },
+        "MissingRequiredParameterException": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "AwsQueryErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NextToken": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "integer"
+        },
+        "PutMetricAlarmInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmName",
+                    "shape": "AlarmName",
+                    "documentation": "<p> The descriptive name for the alarm. This name must be unique within the user's AWS account </p>"
+                },
+                {
+                    "name": "AlarmDescription",
+                    "shape": "AlarmDescription",
+                    "documentation": "<p> The description for the alarm. </p>"
+                },
+                {
+                    "name": "ActionsEnabled",
+                    "shape": "ActionsEnabled",
+                    "documentation": "<p> Indicates whether or not actions should be executed during any changes to the alarm's state. </p>"
+                },
+                {
+                    "name": "OKActions",
+                    "shape": "ResourceList",
+                    "documentation": "<p> The list of actions to execute when this alarm transitions into an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy. </p>"
+                },
+                {
+                    "name": "AlarmActions",
+                    "shape": "ResourceList",
+                    "documentation": "<p> The list of actions to execute when this alarm transitions into an <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy. </p>"
+                },
+                {
+                    "name": "InsufficientDataActions",
+                    "shape": "ResourceList",
+                    "documentation": "<p> The list of actions to execute when this alarm transitions into an <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy. </p>"
+                },
+                {
+                    "name": "MetricName",
+                    "shape": "MetricName",
+                    "documentation": "<p> The name for the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace for the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Statistic",
+                    "shape": "Statistic",
+                    "documentation": "<p> The statistic to apply to the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Dimensions",
+                    "shape": "Dimensions",
+                    "documentation": "<p> The dimensions for the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "Period",
+                    "shape": "Period",
+                    "documentation": "<p> The period in seconds over which the specified statistic is applied. </p>"
+                },
+                {
+                    "name": "Unit",
+                    "shape": "StandardUnit",
+                    "documentation": "<p> The unit for the alarm's associated metric. </p>"
+                },
+                {
+                    "name": "EvaluationPeriods",
+                    "shape": "EvaluationPeriods",
+                    "documentation": "<p> The number of periods over which data is compared to the specified threshold. </p>"
+                },
+                {
+                    "name": "Threshold",
+                    "shape": "Threshold",
+                    "documentation": "<p> The value against which the specified statistic is compared. </p>"
+                },
+                {
+                    "name": "ComparisonOperator",
+                    "shape": "ComparisonOperator",
+                    "documentation": "<p> The arithmetic operation to use when comparing the specified <code>Statistic</code> and <code>Threshold</code>. The specified <code>Statistic</code> value is used as the first operand. </p>"
+                }
+            ]
+        },
+        "PutMetricDataInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "Namespace",
+                    "shape": "Namespace",
+                    "documentation": "<p> The namespace for the metric data. </p>"
+                },
+                {
+                    "name": "MetricData",
+                    "shape": "MetricData",
+                    "documentation": "<p> A list of data describing the metric. </p>"
+                }
+            ]
+        },
+        "ResourceList": {
+            "type": "list"
+        },
+        "ResourceName": {
+            "type": "string"
+        },
+        "ResourceNotFound": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "message",
+                    "shape": "ErrorMessage",
+                    "documentation": "<p></p>"
+                }
+            ]
+        },
+        "SetAlarmStateInput": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "AlarmName",
+                    "shape": "AlarmName",
+                    "documentation": "<p> The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters. </p>"
+                },
+                {
+                    "name": "StateValue",
+                    "shape": "StateValue",
+                    "documentation": "<p> The value of the state. </p>"
+                },
+                {
+                    "name": "StateReason",
+                    "shape": "StateReason",
+                    "documentation": "<p> The reason that this alarm is set to this specific state (in human-readable text format) </p>"
+                },
+                {
+                    "name": "StateReasonData",
+                    "shape": "StateReasonData",
+                    "documentation": "<p> The reason that this alarm is set to this specific state (in machine-readable JSON format) </p>"
+                }
+            ]
+        },
+        "StandardUnit": {
+            "type": "string"
+        },
+        "StateReason": {
+            "type": "string"
+        },
+        "StateReasonData": {
+            "type": "string"
+        },
+        "StateValue": {
+            "type": "string"
+        },
+        "Statistic": {
+            "type": "string"
+        },
+        "StatisticSet": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "SampleCount",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The number of samples used for the statistic set. </p>"
+                },
+                {
+                    "name": "Sum",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The sum of values for the sample set. </p>"
+                },
+                {
+                    "name": "Minimum",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The minimum value of the sample set. </p>"
+                },
+                {
+                    "name": "Maximum",
+                    "shape": "DatapointValue",
+                    "documentation": "<p> The maximum value of the sample set. </p>"
+                }
+            ]
+        },
+        "Statistics": {
+            "type": "list"
+        },
+        "Threshold": {
+            "type": "double"
+        },
+        "Timestamp": {
+            "type": "timestamp"
+        }
+    }
+}
