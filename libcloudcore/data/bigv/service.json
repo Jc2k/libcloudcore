@@ -1,73 +1,94 @@
 {
-  "metadata": {
-    "request-pipeline": [
-      "libcloudcore.auth.basic_auth:BasicAuth",
-      "libcloudcore.serializers.json:JsonSerializer"
-    ],
-    "http": {
-        "method": "GET",
-        "endpoint": "uk0.bigv.io"
-    }
-  },
-  "documentation":"",
-  "operations": {
-    "list_accounts": {
-      "http": {
-         "uri": "/accounts"
-      },
-      "input": {"shape":"ListAccountsRequest"},
-      "output": {"shape":"ListAccountsResponse"}
-    },
-    "list_virtual_machines": {
-      "name":"list_virtual_machines",
-      "http": {
-         "uri": "/accounts/{account_id}/groups/{group_id}/virtual_machines"
-      },
-      "input":{"shape":"ListVirtualMachinesRequest"},
-      "output":{"shape":"ListVirtualMachinesResponse"},
-      "errors":[],
-      "documentation":""
-    }
-  },
-  "shapes": {
-    "Account": {
-        "type": "structure",
-        "members": {
-          "id": {"shape": "String"},
-          "name": {"shape": "String"},
-          "suspended": {"shape": "Boolean"}
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.auth.basic_auth:BasicAuth",
+            "libcloudcore.serializers.json:JsonSerializer"
+        ],
+        "http": {
+            "method": "GET",
+            "endpoint": "uk0.bigv.io"
         }
     },
-    "Integer": {
-        "type": "integer"
-    },
-    "ListAccountsRequest": {
-        "type": "structure"
-    },
-    "ListAccountsResponse": {
-        "type": "list",
-        "of": "Account"
-    },
-    "ListVirtualMachinesRequest": {
-        "type": "structure",
-        "required": [
-            "account_id",
-            "group_id"
-        ],
-        "members": {
-            "account_id": {
-                "shape": "Integer",
-                "documentation": ""
+    "documentation": "",
+    "operations": {
+        "list_accounts": {
+            "http": {
+                "uri": "/accounts"
             },
-            "group_id": {
-                "shape": "Integer",
-                "documentation": ""
+            "input": {
+                "shape": "ListAccountsRequest"
+            },
+            "output": {
+                "shape": "ListAccountsResponse"
+            }
+        },
+        "list_virtual_machines": {
+            "name": "list_virtual_machines",
+            "http": {
+                "uri": "/accounts/{account_id}/groups/{group_id}/virtual_machines"
+            },
+            "input": {
+                "shape": "ListVirtualMachinesRequest"
+            },
+            "output": {
+                "shape": "ListVirtualMachinesResponse"
+            },
+            "errors": [],
+            "documentation": ""
+        }
+    },
+    "shapes": {
+        "Account": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "id",
+                    "shape": "String"
+                },
+                {
+                    "name": "name",
+                    "shape": "String"
+                },
+                {
+                    "name": "suspended",
+                    "shape": "Boolean"
+                }
+            ]
+        },
+        "Integer": {
+            "type": "integer"
+        },
+        "ListAccountsRequest": {
+            "type": "structure"
+        },
+        "ListAccountsResponse": {
+            "type": "list",
+            "of": "Account"
+        },
+        "ListVirtualMachinesRequest": {
+            "type": "structure",
+            "required": [
+                "account_id",
+                "group_id"
+            ],
+            "members": [
+                {
+                    "name": "account_id",
+                    "shape": "Integer",
+                    "documentation": ""
+                },
+                {
+                    "name": "group_id",
+                    "shape": "Integer",
+                    "documentation": ""
+                }
+            ]
+        },
+        "ListVirtualMachinesResponse": {
+            "type": "list",
+            "member": {
+                "shape": "Server"
             }
         }
-    },
-    "ListVirtualMachinesResponse": {
-        "type": "list",
-        "member": {"shape": "Server"}
     }
-  }
 }

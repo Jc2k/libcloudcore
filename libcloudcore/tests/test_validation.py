@@ -168,12 +168,11 @@ class TestValidateStructure(unittest.TestCase):
                 },
                 'TestShape': {
                     'type': 'structure',
-                    'members': {
-                        'foo': {
-                            'shape': 'String',
-                            'required': True,
-                        }
-                    }
+                    'members': [{
+                        'name': 'foo',
+                        'shape': 'String',
+                        'required': True,
+                    }]
                 }
             }
         })
@@ -215,11 +214,10 @@ class TestValidateList(unittest.TestCase):
                 },
                 'TestStructure': {
                     'type': 'structure',
-                    'members': {
-                        'foo': {
-                            'shape': 'String',
-                        }
-                    }
+                    'members': [{
+                        'name': 'foo',
+                        'shape': 'String',
+                    }]
                 },
                 'TestShape': {
                     'type': 'list',
@@ -331,12 +329,11 @@ class TestLayer(unittest.TestCase):
                 },
                 'TestShape': {
                     'type': 'structure',
-                    'members': {
-                        'foo': {
-                            'shape': 'String',
-                            'required': True,
-                        }
-                    }
+                    'members': [{
+                        'name': 'foo',
+                        'shape': 'String',
+                        'required': True,
+                    }]
                 }
             }
         })

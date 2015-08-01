@@ -56,12 +56,12 @@ class Parser(ShapeVisitor):
 
     def visit_structure(self, shape, value):
         out = {}
-        for k, v in value.items():
-            member = shape.get_member(k)
-            out[member.name] = self.visit(
-                member.shape,
-                value[member.name],
-            )
+        for member in shape.iter_members():
+            if member.name in value:
+                out[member.name] = self.visit(
+                    member.shape,
+                    value[member.name],
+                )
         return out
 
 
@@ -90,12 +90,12 @@ class Serializer(ShapeVisitor):
 
     def visit_structure(self, shape, value):
         out = {}
-        for k, v in value.items():
-            member = shape.get_member(k)
-            out[member.name] = self.visit(
-                member.shape,
-                value[member.name],
-            )
+        for member in shape.iter_members():
+            if member.name in value:
+                out[member.name] = self.visit(
+                    member.shape,
+                    value[member.name],
+                )
         return out
 
 

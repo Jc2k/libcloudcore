@@ -83,55 +83,72 @@ class Parser(ShapeVisitor):
 
 class Serializer(ShapeVisitor):
 
-    def visit_string(self, parent, shape, value):
-        node = ElementTree.SubElement(parent, shape.wire_name)
+    def visit(self, parent, shape, name, value):
+        visit_fn_name = "visit_{}".format(shape.type)
+        try:
+            visit_fn = getattr(self, visit_fn_name)
+        except AttributeError:
+            raise NotImplementedError(visit_fn_name)
+        return visit_fn(parent, shape, name, value)
+
+    def visit_string(self, parent, shape, name, value):
+        node = ElementTree.SubElement(parent, name)
         node.text = value
         return node
 
-    def visit_integer(self, parent, shape, value):
-        node = ElementTree.SubElement(parent, shape.wire_name)
+    def visit_integer(self, parent, shape, name, value):
+        node = ElementTree.SubElement(parent, name)
         node.text = str(value)
         return node
 
-    def visit_list(self, parent, shape, value):
-        # subshape = shape.of
-        node = ElementTree.SubElement(parent, shape.wire_name)
-        for subvalue in value:
-            # result.append(self.visit(subshape, subvalue))
-            pass
+    def visit_boolean(self, parent, shape, name, value):
+        node = ElementTree.SubElement(parent, name)
+        node.text = "true" if value else "false"
         return node
 
-    def visit_map(self, parent, shape, value):
+    def visit_list(self, parent, shape, name, value):
+        subshape = shape.of
+        node = ElementTree.SubElement(parent, name)
+        for subvalue in value:
+            self.visit(node, subshape, subshape.name, subvalue)
+        return node
+
+    def visit_map(self, parent, shape, name, value):
         # key_shape = shape.key_shape
         # value_shape = shape.value_shape
-        node = ElementTree.SubElement(parent, shape.wire_name)
+        node = ElementTree.SubElement(parent, name)
         for k, v in value.items():
             # out[self.visit(key_shape, k)] = self.visit(value_shape, v)
             pass
         return node
 
-    def visit_structure(self, parent, shape, value):
-        node = ElementTree.SubElement(parent, shape.wire_name)
-        for k, v in value.items():
-            member = shape.get_member(k)
-            self.visit(
-                node,
-                member.shape,
-                value[member.name],
-            )
+    def visit_structure(self, parent, shape, name, value):
+        node = ElementTree.SubElement(parent, name)
+        for member in shape.iter_members():
+            print(member.name)
+            if member.name in value:
+                self.visit(
+                    node,
+                    member.shape,
+                    member.name,
+                    value[member.name]
+                )
         return node
 
 
 class XmlSerializer(layer.Layer):
 
     def _serialize(self, operation, **params):
-        root = ElementTree.Element('')
+        root = ElementTree.Element('DummyRoot')
         Serializer().visit(
             root,
             operation.input_shape,
+            operation.input_shape.name,
             params,
         )
-        return ElementTree.tostring(root, encoding='utf-8')
+        real_root = root.getchildren()[0]
+        real_root.set("xmlns", "https://route53.amazonaws.com/doc/2013-04-01/")
+        return ElementTree.tostring(real_root, encoding='utf-8')
 
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'text/xml'

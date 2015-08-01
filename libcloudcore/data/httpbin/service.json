@@ -1,167 +1,199 @@
 {
-  "metadata":{
-    "request-pipeline": [
-      "libcloudcore.serializers.json:JsonSerializer"
-    ],
-    "http": {
-      "scheme": "http",
-      "port": 80
-    }
-  },
-  "documentation":"",
-  "operations":{
-    "get":{
-        "name":"get",
-        "http":{
-          "method": "GET",
-          "uri": "/get"
-        },
-        "input":{"shape":"GetRequest"},
-        "output":{"shape":"GetResponse"},
-        "errors":[],
-        "documentation":""
-    },
-    "ip":{
-      "name":"ip",
-      "http":{
-        "method": "GET",
-        "uri": "/ip"
-      },
-      "input":{"shape":"IpRequest"},
-      "output":{"shape":"IpResponse"},
-      "errors":[],
-      "documentation":""
-    },
-    "post": {
-          "name":"post",
-          "http":{
-            "method": "POST",
-            "uri": "/post"
-          },
-          "input":{"shape":"PostRequest"},
-          "output":{"shape":"PostResponse"},
-          "errors":[],
-          "documentation":""
-    }
-  },
-  "waiters": {
-      "wait_get": {
-          "operation": "get",
-          "delay": 1,
-          "max-attempts": 1,
-          "checks": [{
-              "type": "status",
-              "expected": 200,
-              "state": "complete"
-          }]
-      }
-  },
-  "shapes": {
-    "String": {
-        "type": "string"
-    },
-    "Args": {
-        "type": "map",
-        "key": "String",
-        "value": "String"
-    },
-    "ArgsList": {
-        "type": "list",
-        "of": "Args"
-    },
-    "Headers": {
-        "type": "map",
-        "key": "String",
-        "value": "String"
-    },
-    "GetRequest": {
-      "type": "structure",
-      "members": {
-          "foo": {
-              "shape": "String",
-              "target": "query"
-          }
-      }
-    },
-    "GetResponse": {
-      "type": "structure",
-      "members": {
-          "args": {
-              "shape": "Args"
-          },
-          "headers": {
-              "shape": "Headers"
-          },
-          "origin": {
-              "shape": "String"
-          },
-          "url": {
-              "shape": "String"
-          }
-      }
-    },
-    "IpRequest": {
-      "type": "structure",
-      "members": {}
-    },
-    "IpResponse": {
-      "type": "structure",
-      "members": {
-          "origin": {
-              "shape": "String"
-          }
-      }
-    },
-    "PostRequest": {
-      "type": "structure",
-      "members": {
-          "args": {
-              "shape": "Args"
-          },
-          "args_list": {
-              "shape": "ArgsList"
-          }
-      }
-    },
-    "PostResponseJson": {
-        "type": "structure",
-        "members": {
-            "args": {
-                "shape": "Args"
-            },
-            "args_list": {
-                "shape": "ArgsList"
-            }
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.json:JsonSerializer"
+        ],
+        "http": {
+            "scheme": "http",
+            "port": 80
         }
     },
-    "PostResponse": {
-      "type": "structure",
-      "members": {
-          "args": {
-              "shape": "Args"
-          },
-          "headers": {
-              "shape": "Headers"
-          },
-          "origin": {
-              "shape": "String"
-          },
-          "url": {
-              "shape": "String"
-          },
-          "form": {
-              "shape": "String"
-          },
-          "data": {
-              "shape": "String"
-          },
-          "files": {
-              "shape": "String"
-          },
-          "json": {
-              "shape": "PostResponseJson"
-          }
-      }
+    "documentation": "",
+    "operations": {
+        "get": {
+            "name": "get",
+            "http": {
+                "method": "GET",
+                "uri": "/get"
+            },
+            "input": {
+                "shape": "GetRequest"
+            },
+            "output": {
+                "shape": "GetResponse"
+            },
+            "errors": [],
+            "documentation": ""
+        },
+        "ip": {
+            "name": "ip",
+            "http": {
+                "method": "GET",
+                "uri": "/ip"
+            },
+            "input": {
+                "shape": "IpRequest"
+            },
+            "output": {
+                "shape": "IpResponse"
+            },
+            "errors": [],
+            "documentation": ""
+        },
+        "post": {
+            "name": "post",
+            "http": {
+                "method": "POST",
+                "uri": "/post"
+            },
+            "input": {
+                "shape": "PostRequest"
+            },
+            "output": {
+                "shape": "PostResponse"
+            },
+            "errors": [],
+            "documentation": ""
+        }
+    },
+    "waiters": {
+        "wait_get": {
+            "operation": "get",
+            "delay": 1,
+            "max-attempts": 1,
+            "checks": [
+                {
+                    "type": "status",
+                    "expected": 200,
+                    "state": "complete"
+                }
+            ]
+        }
+    },
+    "shapes": {
+        "String": {
+            "type": "string"
+        },
+        "Args": {
+            "type": "map",
+            "key": "String",
+            "value": "String"
+        },
+        "ArgsList": {
+            "type": "list",
+            "of": "Args"
+        },
+        "Headers": {
+            "type": "map",
+            "key": "String",
+            "value": "String"
+        },
+        "GetRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "foo",
+                    "shape": "String",
+                    "target": "query"
+                }
+            ]
+        },
+        "GetResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "args",
+                    "shape": "Args"
+                },
+                {
+                    "name": "headers",
+                    "shape": "Headers"
+                },
+                {
+                    "name": "origin",
+                    "shape": "String"
+                },
+                {
+                    "name": "url",
+                    "shape": "String"
+                }
+            ]
+        },
+        "IpRequest": {
+            "type": "structure",
+            "members": []
+        },
+        "IpResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "origin",
+                    "shape": "String"
+                }
+            ]
+        },
+        "PostRequest": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "args",
+                    "shape": "Args"
+                },
+                {
+                    "name": "args_list",
+                    "shape": "ArgsList"
+                }
+            ]
+        },
+        "PostResponseJson": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "args",
+                    "shape": "Args"
+                },
+                {
+                    "name": "args_list",
+                    "shape": "ArgsList"
+                }
+            ]
+        },
+        "PostResponse": {
+            "type": "structure",
+            "members": [
+                {
+                    "name": "args",
+                    "shape": "Args"
+                },
+                {
+                    "name": "headers",
+                    "shape": "Headers"
+                },
+                {
+                    "name": "origin",
+                    "shape": "String"
+                },
+                {
+                    "name": "url",
+                    "shape": "String"
+                },
+                {
+                    "name": "form",
+                    "shape": "String"
+                },
+                {
+                    "name": "data",
+                    "shape": "String"
+                },
+                {
+                    "name": "files",
+                    "shape": "String"
+                },
+                {
+                    "name": "json",
+                    "shape": "PostResponseJson"
+                }
+            ]
+        }
     }
-  }
 }

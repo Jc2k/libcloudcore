@@ -1,30 +1,34 @@
 {
-  "metadata":{
-    "request-pipeline": [
-      "libcloudcore.auth.oauth:OAuth",
-      "libcloudcore.serializers.json:JsonSerializer"
-    ]
-  },
-  "documentation":"",
-  "operations":{
-    "create_server":{
-      "name":"CreateServer",
-      "http":{
-        "method":"PUT",
-        "uri":"/{metadata.version}/servers"
-      },
-      "input":{"shape":"CreateServerRequest"},
-      "output":{"shape":"CreateServerResponse"},
-      "errors":[],
-      "documentation":""
-    }
-  },
-  "shapes": {
-    "CreateServerRequest": {
-      "type": "structure"
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.auth.oauth:OAuth",
+            "libcloudcore.serializers.json:JsonSerializer"
+        ]
     },
-    "CreateServerResponse": {
-      "type": "structure"
+    "documentation": "",
+    "operations": {
+        "create_server": {
+            "name": "CreateServer",
+            "http": {
+                "method": "PUT",
+                "uri": "/{metadata.version}/servers"
+            },
+            "input": {
+                "shape": "CreateServerRequest"
+            },
+            "output": {
+                "shape": "CreateServerResponse"
+            },
+            "errors": [],
+            "documentation": ""
+        }
+    },
+    "shapes": {
+        "CreateServerRequest": {
+            "type": "structure"
+        },
+        "CreateServerResponse": {
+            "type": "structure"
+        }
     }
-  }
 }

@@ -25,13 +25,25 @@ from .waiters import Waiter
 class Integer(Shape):
     kind = "integer"
 
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
+
 
 class String(Shape):
     kind = "string"
 
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
+
 
 class Boolean(Shape):
     kind = "boolean"
+
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
 
 
 class Member(Shape):
@@ -53,17 +65,23 @@ class Structure(Shape):
 
     kind = "structure"
 
-    def iter_members(self):
-        for key, value in self._shape['members'].items():
-            yield Member(self.model, key, value)
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
 
-    def get_member(self, name):
-        return Member(self.model, name, self._shape['members'][name])
+    def iter_members(self):
+        for member in self._shape['members']:
+            print(member)
+            yield Member(self.model, member['name'], member)
 
 
 class List(Shape):
 
     kind = "list"
+
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
 
     @property
     def of(self):
@@ -73,6 +91,10 @@ class List(Shape):
 class Map(Shape):
 
     kind = "map"
+
+    @property
+    def wire_name(self):
+        return self.operation.get('wire_name', self.name)
 
     @property
     def key_shape(self):
