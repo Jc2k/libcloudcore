@@ -1,5 +1,31 @@
 {
     "metadata": {},
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "AddPermission": {
             "documentation": "<p>Adds a permission to the access policy associated with the specified AWS Lambda function. In a \"push event\" model, the access policy attached to the Lambda function grants Amazon S3 or a user application permission for the Lambda <code>lambda:Invoke</code> action. For information about the push model, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html\">AWS Lambda: How it Works</a>. Each Lambda function has one access policy associated with it. You can use the <code>AddPermission</code> API to add a permission to the policy. You have one access policy but it can have multiple permission statements.</p> <p>This operation requires permission for the <code>lambda:AddPermission</code> action.</p>",

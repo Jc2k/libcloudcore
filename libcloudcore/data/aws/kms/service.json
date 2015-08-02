@@ -1,5 +1,31 @@
 {
     "metadata": {},
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "CreateAlias": {
             "documentation": "<p> Creates a display name for a customer master key. An alias can be used to identify a key and should be unique. The console enforces a one-to-one mapping between the alias and a key. An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word \"alias\" followed by a forward slash (alias/). An alias that begins with \"aws\" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS). </p> <p>To associate an alias with a different key, call <a>UpdateAlias</a>.</p> <p>Note that you cannot create or update an alias that represents a key in another account.</p>",

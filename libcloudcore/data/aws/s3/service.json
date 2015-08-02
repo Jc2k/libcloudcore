@@ -1,5 +1,93 @@
 {
     "metadata": {},
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "in",
+                    [
+                        "us-east-1",
+                        null
+                    ]
+                ]
+            ],
+            "http": {
+                "host": "s3.amazonaws.com"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "in",
+                    [
+                        "us-east-1",
+                        "ap-northeast-1",
+                        "sa-east-1",
+                        "ap-southeast-1",
+                        "ap-southeast-2",
+                        "us-west-2",
+                        "us-west-1",
+                        "eu-west-1",
+                        "us-gov-west-1",
+                        "fips-us-gov-west-1"
+                    ]
+                ]
+            ],
+            "http": {
+                "host": "{service}-{region}.amazonaws.com"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "AbortMultipartUpload": {
             "documentation": "<p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed, so you don't get charged for the part storage, you should call the List Parts operation and ensure the parts list is empty.</p>",

@@ -4,6 +4,37 @@
             "": "https://iam.amazonaws.com/doc/2010-05-08/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.cn-north-1.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "us-gov"
+                ]
+            ],
+            "http": {
+                "host": "{service}.us-gov.amazonaws.com"
+            }
+        },
+        {
+            "http": {
+                "host": "iam.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "AddClientIDToOpenIDConnectProvider": {
             "documentation": "<p>Adds a new client ID (also known as audience) to the list of client IDs already registered for the specified IAM OpenID Connect provider.</p> <p>This action is idempotent; it does not fail or return an error if you add an existing client ID to the provider.</p>",

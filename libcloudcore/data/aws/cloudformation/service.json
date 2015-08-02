@@ -4,6 +4,32 @@
             "": "http://cloudformation.amazonaws.com/doc/2010-05-15/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "CancelUpdateStack": {
             "documentation": "<p>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>",

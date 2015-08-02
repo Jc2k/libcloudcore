@@ -1,5 +1,31 @@
 {
     "metadata": {},
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "CreateHapg": {
             "documentation": "<p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",

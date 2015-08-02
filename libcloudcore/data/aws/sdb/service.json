@@ -4,6 +4,44 @@
             "": "http://sdb.amazonaws.com/doc/2009-04-15/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "equals",
+                    "us-east-1"
+                ]
+            ],
+            "http": {
+                "host": "sdb.amazonaws.com"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "BatchDeleteAttributes": {
             "documentation": "<p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>",

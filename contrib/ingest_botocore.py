@@ -7,6 +7,42 @@ import os
 import botocore
 
 
+def process_endpoints(path, service, model):
+    with open(path, "r") as fp:
+        endpoints = json.load(fp)
+
+    CONSTRAINTS = {
+        "equals": "equals",
+        "notEquals": "not-equals",
+        "notStartsWith": "not-starts-with",
+        "startsWith": "starts-with",
+        "oneOf": "in",
+    }
+
+    for k in (service, "_default"):
+        for e in endpoints.get(k, []):
+            endpoint = collections.OrderedDict()
+            if 'constraints' in e:
+                endpoint['when'] = []
+                for constraint in e['constraints']:
+                    endpoint['when'].append((
+                        constraint[0],
+                        CONSTRAINTS[constraint[1]],
+                        constraint[2],
+                    ))
+
+            if 'uri' in e:
+                http = endpoint.setdefault('http', {})
+                http['host'] = e['uri'].split("://")[1]
+
+            model['endpoints'].append(endpoint)
+
+            if 'constraints' not in e:
+                # If there are no constraints then this is a 'match all' rules
+                # So break immediately - no need to include the default rules
+                return
+
+
 def process_service_2(path, model):
     with open(os.path.join(path, "service-2.json"), "r") as fp:
         service = json.load(fp, object_pairs_hook=collections.OrderedDict)
@@ -51,9 +87,11 @@ def process_service_2(path, model):
 def process_service(name, path, output_path):
     model = collections.OrderedDict()
     model['metadata'] = collections.OrderedDict()
+    model['endpoints'] = []
     model['operations'] = collections.OrderedDict()
     model['shapes'] = collections.OrderedDict()
 
+    process_endpoints(os.path.join(path, "../../_endpoints.json"), name, model)
     process_service_2(path, model)
 
     if not os.path.exists(output_path):

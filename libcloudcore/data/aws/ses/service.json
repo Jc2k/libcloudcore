@@ -4,6 +4,32 @@
             "": "http://ses.amazonaws.com/doc/2010-12-01/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "DeleteIdentity": {
             "documentation": "<p>Deletes the specified identity (email address or domain) from the list of verified identities.</p> <p>This action is throttled at one request per second.</p>",

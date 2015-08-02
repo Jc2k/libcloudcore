@@ -1,5 +1,31 @@
 {
     "metadata": {},
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "CreateAssociation": {
             "documentation": "<p>Associates the specified configuration document with the specified instance.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>",

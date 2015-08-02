@@ -4,6 +4,44 @@
             "": "http://importexport.amazonaws.com/doc/2010-06-01/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "not-starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "importexport.amazonaws.com"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "CancelJob": {
             "documentation": "This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.",

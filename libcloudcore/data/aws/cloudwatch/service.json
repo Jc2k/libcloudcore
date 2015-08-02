@@ -4,6 +4,32 @@
             "": "http://monitoring.amazonaws.com/doc/2010-08-01/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "DeleteAlarms": {
             "documentation": "<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>",

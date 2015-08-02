@@ -4,6 +4,44 @@
             "": "https://route53.amazonaws.com/doc/2013-04-01/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "not-starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "route53.amazonaws.com"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "AssociateVPCWithHostedZone": {
             "documentation": "<p> This action associates a VPC with an hosted zone. </p> <p> To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource. The request body must include an XML document with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns the <code>AssociateVPCWithHostedZoneResponse</code> element that contains <code>ChangeInfo</code> for you to track the progress of the <code>AssociateVPCWithHostedZoneRequest</code> you made. See <code>GetChange</code> operation for how to track the progress of your change.</p>",

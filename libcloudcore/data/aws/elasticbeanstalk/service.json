@@ -4,6 +4,32 @@
             "": "http://elasticbeanstalk.amazonaws.com/docs/2010-12-01/"
         }
     },
+    "endpoints": [
+        {
+            "when": [
+                [
+                    "region",
+                    "starts-with",
+                    "cn-"
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com.cn"
+            }
+        },
+        {
+            "when": [
+                [
+                    "region",
+                    "not-equals",
+                    null
+                ]
+            ],
+            "http": {
+                "host": "{service}.{region}.amazonaws.com"
+            }
+        }
+    ],
     "operations": {
         "AbortEnvironmentUpdate": {
             "documentation": "<p>Cancels in-progress environment configuration update or application version deployment.</p>",
