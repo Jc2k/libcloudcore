@@ -16,13 +16,13 @@
 
 class Visitor(object):
 
-    def visit(self, parent, shape, value):
+    def visit(self, shape, value):
         visit_fn_name = "visit_{}".format(shape.type)
         try:
             visit_fn = getattr(self, visit_fn_name)
         except AttributeError:
             raise NotImplementedError(visit_fn_name)
-        return visit_fn(parent, shape, value)
+        return visit_fn(shape, value)
 
-    def visit_string(self, parent, shape, value):
+    def visit_string(self, shape, value):
         return value

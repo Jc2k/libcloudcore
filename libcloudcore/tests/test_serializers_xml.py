@@ -14,27 +14,11 @@
 # limitations under the License.
 
 import unittest
-
+import xmltodict
 from libcloudcore.serializers.xml import XmlSerializer
 
-try:
-    import xml.etree.cElementTree as ElementTree
-except ImportError:
-    import xml.etree.ElementTree as ElementTree
 
-
-def xml_open(payload, encoding="utf-8"):
-    parser = ElementTree.XMLParser(
-        target=ElementTree.TreeBuilder(),
-        encoding=encoding,
-    )
-    parser.feed(payload)
-    return parser.close()
-
-
-class TestParseXml(unittest.TestCase):
-
-    maxDiff = 1024
+class TestXmlSerializer(unittest.TestCase):
 
     def setUp(self):
         from libcloudcore.drivers.aws.route53 import Driver
@@ -78,14 +62,6 @@ class TestParseXml(unittest.TestCase):
             "MaxItems": "10",
         })
 
-
-class TestSerializeXml(unittest.TestCase):
-
-    def setUp(self):
-        from libcloudcore.drivers.aws.route53 import Driver
-        self.model = Driver.model
-        self.layer = XmlSerializer()
-
     def test_serialize(self):
         operation = self.model.get_operation("ListHostedZonesByName")
 
@@ -121,31 +97,4 @@ class TestSerializeXml(unittest.TestCase):
             </HostedZones>
         </ListHostedZonesByNameResponse>""".strip()
 
-        self.assertXmlEqual(xml_open(result), xml_open(xml))
-
-    def assertXmlEqual(self, x1, x2):
-        self.assertEqual(x1.tag, x2.tag)
-        for name, value in x1.attrib.items():
-            self.assertEqual(
-                value,
-                x2.attrib.get(name)
-            )
-        for name in x2.attrib:
-            self.assertTrue(name not in x1.attrib)
-        self.assertXmlTextEqual(x1.text, x2.text)
-        self.assertXmlTextEqual(x1.tail, x2.tail)
-        cl1 = x1.getchildren()
-        cl2 = x2.getchildren()
-        self.assertEqual(len(cl1), len(cl2))
-        for c1, c2 in zip(cl1, cl2):
-            self.assertXmlEqual(c1, c2)
-
-    def assertXmlTextEqual(self, t1, t2):
-        if not t1 and not t2:
-            return
-        if t1 == '*' or t2 == '*':
-            return
-        self.assertEqual(
-            (t1 or '').strip(),
-            (t2 or '').strip(),
-        )
+        self.assertEqual(xmltodict.parse(result), xmltodict.parse(xml))
