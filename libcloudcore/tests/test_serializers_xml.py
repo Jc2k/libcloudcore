@@ -15,7 +15,9 @@
 
 import unittest
 import xmltodict
+
 from libcloudcore.serializers.xml import XmlSerializer
+from libcloudcore.tests import base
 
 
 class TestXmlSerializer(unittest.TestCase):
@@ -98,3 +100,30 @@ class TestXmlSerializer(unittest.TestCase):
         </ListHostedZonesByNameResponse>""".strip()
 
         self.assertEqual(xmltodict.parse(result), xmltodict.parse(xml))
+
+
+class TestXmlToDictEdges(base.DriverTestCase):
+
+    def setUp(self):
+        super(TestXmlToDictEdges, self).setUp()
+        from libcloudcore.drivers.xml import Driver
+        self.driver = Driver()
+        self.model = self.driver.model
+
+    def test_serialize_complicated_structure(self):
+        operation = self.model.get_operation("test_complicated_structure")
+        result = self.driver._serialize(
+            operation,
+            operation.output_shape,
+            text="TEXT",
+            attr="ATTR",
+            child="CHILD",
+        )
+        self.assertEqual(xmltodict.parse(result), {
+            "TestComplicatedStructure": {
+                "child": "CHILD",
+                "@attr": "ATTR",
+                "@xmlns": "http://www.example.com/",
+                "#text": "TEXT",
+            }
+        })

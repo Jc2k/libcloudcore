@@ -85,7 +85,11 @@ class Serializer(models.Visitor):
         nodes = []
         for subvalue in value:
             nodes.append({
-                subshape.name: self.visit(subshape, subshape.name, subvalue),
+                subshape.wire_name: self.visit(
+                    subshape,
+                    subshape.wire_name,
+                    subvalue
+                ),
             })
         return nodes
 
@@ -101,9 +105,9 @@ class Serializer(models.Visitor):
         structure = collections.OrderedDict()
         for member in shape.iter_members():
             if member.name in value:
-                structure[member.name] = self.visit(
+                structure[member.wire_name] = self.visit(
                     member.shape,
-                    member.name,
+                    member.wire_name,
                     value[member.name]
                 )
         return structure
@@ -129,6 +133,8 @@ class XmlSerializer(layer.Layer):
                 body["@xmlns:{}".format(ns)] = uri
             else:
                 body["@xmlns"] = uri
+
+        print(body)
 
         return xmltodict.unparse(
             {shape.name: body},
