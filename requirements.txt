@@ -1,4 +1,4 @@
-xmldict==0.9.2
+xmltodict==0.9.2
 jmespath==0.7.1
 six==1.9.0
 
