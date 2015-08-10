@@ -134,8 +134,6 @@ class XmlSerializer(layer.Layer):
             else:
                 body["@xmlns"] = uri
 
-        print(body)
-
         return xmltodict.unparse(
             {shape.name: body},
             pretty=True,
