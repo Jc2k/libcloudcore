@@ -33,14 +33,13 @@ class HttpBinThread(threading.Thread):
     def run(self):
         try:
             self._server = make_server('localhost', 0, httpbin_app)
-            # self._server.set_app(self.static_handler(_MediaFilesHandler(WSGIHandler())))
+            self.host, self.port = self._server.server_address
         except Exception as exc:
             self.exception = exc
             return
         finally:
             self.ready.set()
 
-        self.host, self.port = self._server.server_address
         self._server.serve_forever()
 
     def terminate(self):

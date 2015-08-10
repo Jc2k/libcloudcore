@@ -14,54 +14,32 @@
 # limitations under the License.
 
 from __future__ import absolute_import
+import collections
 
-try:
-    import xml.etree.cElementTree as ElementTree
-except ImportError:
-    from xml.etree import ElementTree
+import xmltodict
 
-from .. import layer
+from .. import models, layer
 
 
-class ShapeVisitor(object):
-
-    def visit(self, parent, shape, value):
-        visit_fn_name = "visit_{}".format(shape.type)
-        try:
-            visit_fn = getattr(self, visit_fn_name)
-        except AttributeError:
-            raise NotImplementedError(visit_fn_name)
-        return visit_fn(parent, shape, value)
-
-
-class Parser(ShapeVisitor):
-
-    def visit(self, shape, value):
-        visit_fn_name = "visit_{}".format(shape.type)
-        try:
-            visit_fn = getattr(self, visit_fn_name)
-        except AttributeError:
-            raise NotImplementedError(visit_fn_name)
-        return visit_fn(shape, value)
-
-    def visit_string(self, shape, value):
-        return value.text or ''
+class Parser(models.Visitor):
 
     def visit_integer(self, shape, value):
-        return int(value.text)
+        return int(value)
 
     visit_long = visit_integer
 
     def visit_boolean(self, shape, value):
-        if value.text == "true":
+        if value == "true":
             return True
         return False
 
     def visit_list(self, shape, value):
         subshape = shape.of
         result = []
-        for child in value.getchildren():
-            result.append(self.visit(subshape, child))
+        if not isinstance(value, list):
+            value = [value]
+        for child in value:
+            result.append(self.visit(subshape, child[subshape.name]))
         return result
 
     def visit_map(self, shape, value):
@@ -70,91 +48,96 @@ class Parser(ShapeVisitor):
         out = {}
         return out
 
-    def _prefix(self, name):
-        return '{https://route53.amazonaws.com/doc/2013-04-01/}' + name
-
     def visit_structure(self, shape, value):
         out = {}
         for member in shape.iter_members():
-            inner_value = value.find(self._prefix(member.name))
-            if inner_value is not None:
+            if member.name in value:
                 out[member.name] = self.visit(
                     member.shape,
-                    inner_value,
+                    value[member.name],
                 )
         return out
 
 
-class Serializer(ShapeVisitor):
+class Serializer(models.Visitor):
 
-    def visit(self, parent, shape, name, value):
+    def visit(self, shape, name, value):
         visit_fn_name = "visit_{}".format(shape.type)
         try:
             visit_fn = getattr(self, visit_fn_name)
         except AttributeError:
             raise NotImplementedError(visit_fn_name)
-        return visit_fn(parent, shape, name, value)
+        return visit_fn(shape, name, value)
 
-    def visit_string(self, parent, shape, name, value):
-        node = ElementTree.SubElement(parent, name)
-        node.text = value
-        return node
+    def visit_string(self, shape, name, value):
+        return value
 
-    def visit_integer(self, parent, shape, name, value):
-        node = ElementTree.SubElement(parent, name)
-        node.text = str(value)
-        return node
+    def visit_integer(self, shape, name, value):
+        return value
 
     visit_long = visit_integer
 
-    def visit_boolean(self, parent, shape, name, value):
-        node = ElementTree.SubElement(parent, name)
-        node.text = "true" if value else "false"
-        return node
+    def visit_boolean(self, shape, name, value):
+        return "true" if value else "false"
 
-    def visit_list(self, parent, shape, name, value):
+    def visit_list(self, shape, name, value):
         subshape = shape.of
-        node = ElementTree.SubElement(parent, name)
+        nodes = []
         for subvalue in value:
-            self.visit(node, subshape, subshape.name, subvalue)
-        return node
+            nodes.append({
+                subshape.wire_name: self.visit(
+                    subshape,
+                    subshape.wire_name,
+                    subvalue
+                ),
+            })
+        return nodes
 
-    def visit_map(self, parent, shape, name, value):
-        # key_shape = shape.key_shape
-        # value_shape = shape.value_shape
-        node = ElementTree.SubElement(parent, name)
+    def visit_map(self, shape, name, value):
+        key_shape = shape.key_shape
+        value_shape = shape.value_shape
+        nodes = {}
         for k, v in value.items():
-            # out[self.visit(key_shape, k)] = self.visit(value_shape, v)
-            pass
-        return node
+            nodes[self.visit(key_shape, k)] = self.visit(value_shape, v)
+        return nodes
 
-    def visit_structure(self, parent, shape, name, value):
-        node = ElementTree.SubElement(parent, name)
+    def visit_structure(self, shape, name, value):
+        structure = collections.OrderedDict()
         for member in shape.iter_members():
             if member.name in value:
-                self.visit(
-                    node,
+                structure[member.wire_name] = self.visit(
                     member.shape,
-                    member.name,
+                    member.wire_name,
                     value[member.name]
                 )
-        return node
+        return structure
 
 
 class XmlSerializer(layer.Layer):
 
+    def _namespaces(self, operation):
+        namespaces = {}
+        for ns, uri in operation.model.metadata.get("namespaces", {}).items():
+            namespaces[uri] = ns if ns else None
+        return namespaces
+
     def _serialize(self, operation, shape, **params):
-        root = ElementTree.Element('DummyRoot')
-        Serializer().visit(
-            root,
+        body = Serializer().visit(
             shape,
             shape.name,
             params,
         )
-        real_root = root.getchildren()[0]
-        for ns, uri in operation.model.metadata.get("namespaces", {}).items():
-            real_root.set("xmlns:{}".format(ns) if ns else "xmlns", uri)
-        return ElementTree.tostring(real_root, encoding='utf-8')
+
+        for uri, ns in self._namespaces(operation).items():
+            if ns:
+                body["@xmlns:{}".format(ns)] = uri
+            else:
+                body["@xmlns"] = uri
+
+        return xmltodict.unparse(
+            {shape.name: body},
+            pretty=True,
+        )
 
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'text/xml'
@@ -170,19 +153,16 @@ class XmlSerializer(layer.Layer):
             **params
         )
 
-    def _open_xml(self, body):
-        parser = ElementTree.XMLParser(
-            target=ElementTree.TreeBuilder(),
-            encoding="utf-8",
-        )
-        parser.feed(body)
-        return parser.close()
-
     def _parse_xml(self, operation, body):
-        root = self._open_xml(body)
+        payload = xmltodict.parse(
+            body,
+            process_namespaces=True,
+            namespaces=self._namespaces(operation),
+        )
+
         return Parser().visit(
             operation.output_shape,
-            root,
+            payload[operation.output_shape.name],
         )
 
     def after_call(self, operation, request, response):

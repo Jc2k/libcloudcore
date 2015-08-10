@@ -25,7 +25,7 @@ from libcloudcore.error_parser import ErrorParser
 from libcloudcore.layer import Layer
 from ..request import Request
 
-from . import httpbin
+from . import base, httpbin
 
 
 class TestDriver(unittest.TestCase):
@@ -65,7 +65,7 @@ class TestDriver(unittest.TestCase):
         )
 
 
-class TestActualRequests(httpbin.HttpBinTestCase):
+class TestActualRequests(base.DriverTestCase, httpbin.HttpBinTestCase):
 
     def setUp(self):
         super(TestActualRequests, self).setUp()

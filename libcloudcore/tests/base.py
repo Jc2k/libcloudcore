@@ -13,16 +13,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
+import sys
+import unittest
 
-class Visitor(object):
+from libcloudcore.importer import Importer
 
-    def visit(self, shape, value):
-        visit_fn_name = "visit_{}".format(shape.type)
-        try:
-            visit_fn = getattr(self, visit_fn_name)
-        except AttributeError:
-            raise NotImplementedError(visit_fn_name)
-        return visit_fn(shape, value)
 
-    def visit_string(self, shape, value):
-        return value
+class DriverTestCase(unittest.TestCase):
+
+    def setUp(self):
+        super(DriverTestCase, self).setUp()
+
+        self.test_search_path = os.path.join(
+            os.path.dirname(__file__),
+            "data",
+        )
+
+        for i in sys.meta_path:
+            if isinstance(i, Importer):
+                i.loader.search_path.insert(0, self.test_search_path)
+
+    def tearDown(self):
+        super(DriverTestCase, self).tearDown()
+
+        for i in sys.meta_path:
+            if isinstance(i, Importer):
+                i.loader.search_path.remove(self.test_search_path)

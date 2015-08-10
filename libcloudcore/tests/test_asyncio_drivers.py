@@ -25,7 +25,7 @@ from libcloudcore.error_parser import ErrorParser
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer
 from libcloudcore.layer import Layer
-from . import httpbin
+from . import httpbin, base
 
 
 @pytest.mark.skipif(sys.version_info < (3, 3), reason="asyncio")
@@ -54,7 +54,7 @@ class TestDriver(unittest.TestCase):
 
 
 @pytest.mark.skipif(sys.version_info < (3, 3), reason="asyncio")
-class TestActualRequests(httpbin.HttpBinTestCase):
+class TestActualRequests(base.DriverTestCase, httpbin.HttpBinTestCase):
 
     def setUp(self):
         super(TestActualRequests, self).setUp()

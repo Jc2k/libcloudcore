@@ -32,27 +32,32 @@ class Importer(object):
 
     def find_module(self, fullname, path):
         if fullname.startswith(self.module_prefix):
+            service = fullname[len(self.module_prefix):].replace(".", "/")
+            if self.loader.find(service):
+                return self
             return self
         return None
 
     def load_module(self, fullname):
+        if fullname in sys.modules:
+            return sys.modules[fullname]
+
         service = fullname[len(self.module_prefix):].replace(".", "/")
 
-        if self.is_namespace(service):
-            class Module(object):
-                __package__ = service
-        else:
-            class Module(object):
-                Driver = self.get_driver(service)
+        if not self.loader.find(service):
+            raise ImportError("No such module {}".format(fullname))
 
         module = sys.modules[fullname] = imp.new_module(fullname)
         module.__name__ = fullname
-        module.__path__ = [fullname]
         module.__loader__ = self
-        if self.is_namespace(service):
-            module.__package__ = fullname
-        else:
+        module.__path__ = [fullname]
+
+        if self.loader.is_service(service):
             module.Driver = self.get_driver(service)
+            module.__all__ = ['Driver']
+            module.__package__ = fullname.rpartition('.')[0]
+        elif self.loader.is_namespace(service):
+            module.__package__ = fullname
 
         return module
 
@@ -69,9 +74,6 @@ class Importer(object):
         setattr(method, "__doc__", waiter.documentation)
         setattr(method, "__name__", force_str(waiter.name))
         return method
-
-    def is_namespace(self, service):
-        return not self.loader.is_service(service)
 
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))

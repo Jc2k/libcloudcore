@@ -1,0 +1,29 @@
+{
+    "metadata": {
+        "namespaces": {
+            "": "http://www.example.com/"
+        },
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
+    "operations": {
+        "test_complicated_structure": {
+            "input": {"shape": "TestComplicatedStructure"},
+            "output": {"shape": "TestComplicatedStructure"}
+        }
+    },
+    "shapes": {
+        "String": {
+            "type": "string"
+        },
+        "TestComplicatedStructure": {
+            "type": "structure",
+            "members": [
+                {"name": "text", "wire_name": "#text", "shape": "String"},
+                {"name": "attr", "wire_name": "@attr", "shape": "String"},
+                {"name": "child", "wire_name": "child", "shape": "String"}
+            ]
+        }
+    }
+}
