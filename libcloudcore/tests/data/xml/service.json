@@ -1,0 +1,26 @@
+{
+    "metadata": {
+        "namespaces": {
+            "": "http://www.example.com/"
+        }
+    },
+    "operations": {
+        "test_complicated_structure": {
+            "input": {"shape": "TestComplicatedStructure"},
+            "output": {"shape": "TestComplicatedStructure"}
+        },
+    },
+    "shapes": {
+        "String": {
+            "type": "string",
+        },
+        "TestComplicatedStructure": {
+            "type": "structure",
+            "members": [
+                {"text": {"wire_name": "#text", "shape": "String"}},
+                {"attr": {"wire_name": "@attr", "shape": "String"}},
+                {"child": {"wire_name": "child", "shape": "String"}}
+            ]
+        }
+    }
+}

@@ -38,6 +38,12 @@ class Loader(object):
             return True
         return False
 
+    def is_namespace(self, service):
+        namespace = self.find(service)
+        if namespace and os.path.isdir(namespace):
+            return True
+        return False
+
     def load_service(self, service):
         return self.load_from_search_path(service + '/service.json')
 
