@@ -1,0 +1,2879 @@
+{
+    "metadata": {},
+    "endpoints": [],
+    "operations": {
+        "createDataCenter": {
+            "output": {
+                "shape": "createDataCenterResponse"
+            },
+            "input": {
+                "shape": "createDataCenter"
+            }
+        },
+        "updateDataCenter": {
+            "output": {
+                "shape": "updateDataCenterResponse"
+            },
+            "input": {
+                "shape": "updateDataCenter"
+            }
+        },
+        "clearDataCenter": {
+            "output": {
+                "shape": "clearDataCenterResponse"
+            },
+            "input": {
+                "shape": "clearDataCenter"
+            }
+        },
+        "deleteDataCenter": {
+            "output": {
+                "shape": "deleteDataCenterResponse"
+            },
+            "input": {
+                "shape": "deleteDataCenter"
+            }
+        },
+        "getAllDataCenters": {
+            "output": {
+                "shape": "getAllDataCentersResponse"
+            },
+            "input": {
+                "shape": "getAllDataCenters"
+            }
+        },
+        "createServer": {
+            "output": {
+                "shape": "createServerResponse"
+            },
+            "input": {
+                "shape": "createServer"
+            }
+        },
+        "updateServer": {
+            "output": {
+                "shape": "updateServerResponse"
+            },
+            "input": {
+                "shape": "updateServer"
+            }
+        },
+        "deleteServer": {
+            "output": {
+                "shape": "deleteServerResponse"
+            },
+            "input": {
+                "shape": "deleteServer"
+            }
+        },
+        "stopServer": {
+            "output": {
+                "shape": "stopServerResponse"
+            },
+            "input": {
+                "shape": "stopServer"
+            }
+        },
+        "startServer": {
+            "output": {
+                "shape": "startServerResponse"
+            },
+            "input": {
+                "shape": "startServer"
+            }
+        },
+        "resetServer": {
+            "output": {
+                "shape": "resetServerResponse"
+            },
+            "input": {
+                "shape": "resetServer"
+            }
+        },
+        "getServer": {
+            "output": {
+                "shape": "getServerResponse"
+            },
+            "input": {
+                "shape": "getServer"
+            }
+        },
+        "getAllServers": {
+            "output": {
+                "shape": "getAllServersResponse"
+            },
+            "input": {
+                "shape": "getAllServers"
+            }
+        },
+        "getAllStorages": {
+            "output": {
+                "shape": "getAllStoragesResponse"
+            },
+            "input": {
+                "shape": "getAllStorages"
+            }
+        },
+        "createNic": {
+            "output": {
+                "shape": "createNicResponse"
+            },
+            "input": {
+                "shape": "createNic"
+            }
+        },
+        "deleteNic": {
+            "output": {
+                "shape": "deleteNicResponse"
+            },
+            "input": {
+                "shape": "deleteNic"
+            }
+        },
+        "updateNic": {
+            "output": {
+                "shape": "updateNicResponse"
+            },
+            "input": {
+                "shape": "updateNic"
+            }
+        },
+        "getNic": {
+            "output": {
+                "shape": "getNicResponse"
+            },
+            "input": {
+                "shape": "getNic"
+            }
+        },
+        "getAllNic": {
+            "output": {
+                "shape": "getAllNicResponse"
+            },
+            "input": {
+                "shape": "getAllNic"
+            }
+        },
+        "setInternetAccess": {
+            "output": {
+                "shape": "setInternetAccessResponse"
+            },
+            "input": {
+                "shape": "setInternetAccess"
+            }
+        },
+        "createStorage": {
+            "output": {
+                "shape": "createStorageResponse"
+            },
+            "input": {
+                "shape": "createStorage"
+            }
+        },
+        "updateStorage": {
+            "output": {
+                "shape": "updateStorageResponse"
+            },
+            "input": {
+                "shape": "updateStorage"
+            }
+        },
+        "deleteStorage": {
+            "output": {
+                "shape": "deleteStorageResponse"
+            },
+            "input": {
+                "shape": "deleteStorage"
+            }
+        },
+        "connectStorageToServer": {
+            "output": {
+                "shape": "connectStorageToServerResponse"
+            },
+            "input": {
+                "shape": "connectStorageToServer"
+            }
+        },
+        "disconnectStorageFromServer": {
+            "output": {
+                "shape": "disconnectStorageFromServerResponse"
+            },
+            "input": {
+                "shape": "disconnectStorageFromServer"
+            }
+        },
+        "deleteImage": {
+            "output": {
+                "shape": "deleteImageResponse"
+            },
+            "input": {
+                "shape": "deleteImage"
+            }
+        },
+        "updateImage": {
+            "output": {
+                "shape": "updateImageResponse"
+            },
+            "input": {
+                "shape": "updateImage"
+            }
+        },
+        "getAllImages": {
+            "output": {
+                "shape": "getAllImagesResponse"
+            },
+            "input": {
+                "shape": "getAllImages"
+            }
+        },
+        "setImageOsType": {
+            "output": {
+                "shape": "setImageOsTypeResponse"
+            },
+            "input": {
+                "shape": "setImageOsType"
+            }
+        },
+        "addRomDriveToServer": {
+            "output": {
+                "shape": "addRomDriveToServerResponse"
+            },
+            "input": {
+                "shape": "addRomDriveToServer"
+            }
+        },
+        "removeRomDriveFromServer": {
+            "output": {
+                "shape": "removeRomDriveFromServerResponse"
+            },
+            "input": {
+                "shape": "removeRomDriveFromServer"
+            }
+        },
+        "getImage": {
+            "output": {
+                "shape": "getImageResponse"
+            },
+            "input": {
+                "shape": "getImage"
+            }
+        },
+        "getDataCenter": {
+            "output": {
+                "shape": "getDataCenterResponse"
+            },
+            "input": {
+                "shape": "getDataCenter"
+            }
+        },
+        "getDataCenterState": {
+            "output": {
+                "shape": "getDataCenterStateResponse"
+            },
+            "input": {
+                "shape": "getDataCenterState"
+            }
+        },
+        "getStorage": {
+            "output": {
+                "shape": "getStorageResponse"
+            },
+            "input": {
+                "shape": "getStorage"
+            }
+        },
+        "reservePublicIpBlock": {
+            "output": {
+                "shape": "reservePublicIpBlockResponse"
+            },
+            "input": {
+                "shape": "reservePublicIpBlock"
+            }
+        },
+        "releasePublicIpBlock": {
+            "output": {
+                "shape": "releasePublicIpBlockResponse"
+            },
+            "input": {
+                "shape": "releasePublicIpBlock"
+            }
+        },
+        "addPublicIpToNic": {
+            "output": {
+                "shape": "addPublicIpToNicResponse"
+            },
+            "input": {
+                "shape": "addPublicIpToNic"
+            }
+        },
+        "removePublicIpFromNic": {
+            "output": {
+                "shape": "removePublicIpFromNicResponse"
+            },
+            "input": {
+                "shape": "removePublicIpFromNic"
+            }
+        },
+        "getAllPublicIpBlocks": {
+            "output": {
+                "shape": "getAllPublicIpBlocksResponse"
+            },
+            "input": {
+                "shape": "getAllPublicIpBlocks"
+            }
+        },
+        "getPublicIpBlock": {
+            "output": {
+                "shape": "getPublicIpBlockResponse"
+            },
+            "input": {
+                "shape": "getPublicIpBlock"
+            }
+        },
+        "createLoadBalancer": {
+            "output": {
+                "shape": "createLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "createLoadBalancer"
+            }
+        },
+        "updateLoadBalancer": {
+            "output": {
+                "shape": "updateLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "updateLoadBalancer"
+            }
+        },
+        "deleteLoadBalancer": {
+            "output": {
+                "shape": "deleteLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "deleteLoadBalancer"
+            }
+        },
+        "getLoadBalancer": {
+            "output": {
+                "shape": "getLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "getLoadBalancer"
+            }
+        },
+        "getAllLoadBalancers": {
+            "output": {
+                "shape": "getAllLoadBalancersResponse"
+            },
+            "input": {
+                "shape": "getAllLoadBalancers"
+            }
+        },
+        "registerServersOnLoadBalancer": {
+            "output": {
+                "shape": "registerServersOnLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "registerServersOnLoadBalancer"
+            }
+        },
+        "deregisterServersOnLoadBalancer": {
+            "output": {
+                "shape": "deregisterServersOnLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "deregisterServersOnLoadBalancer"
+            }
+        },
+        "activateLoadBalancingOnServers": {
+            "output": {
+                "shape": "activateLoadBalancingOnServersResponse"
+            },
+            "input": {
+                "shape": "activateLoadBalancingOnServers"
+            }
+        },
+        "deactivateLoadBalancingOnServers": {
+            "output": {
+                "shape": "deactivateLoadBalancingOnServersResponse"
+            },
+            "input": {
+                "shape": "deactivateLoadBalancingOnServers"
+            }
+        },
+        "addFirewallRulesToNic": {
+            "output": {
+                "shape": "addFirewallRulesToNicResponse"
+            },
+            "input": {
+                "shape": "addFirewallRulesToNic"
+            }
+        },
+        "addFirewallRulesToLoadBalancer": {
+            "output": {
+                "shape": "addFirewallRulesToLoadBalancerResponse"
+            },
+            "input": {
+                "shape": "addFirewallRulesToLoadBalancer"
+            }
+        },
+        "removeFirewallRules": {
+            "output": {
+                "shape": "removeFirewallRulesResponse"
+            },
+            "input": {
+                "shape": "removeFirewallRules"
+            }
+        },
+        "activateFirewalls": {
+            "output": {
+                "shape": "activateFirewallsResponse"
+            },
+            "input": {
+                "shape": "activateFirewalls"
+            }
+        },
+        "deactivateFirewalls": {
+            "output": {
+                "shape": "deactivateFirewallsResponse"
+            },
+            "input": {
+                "shape": "deactivateFirewalls"
+            }
+        },
+        "deleteFirewalls": {
+            "output": {
+                "shape": "deleteFirewallsResponse"
+            },
+            "input": {
+                "shape": "deleteFirewalls"
+            }
+        },
+        "getFirewall": {
+            "output": {
+                "shape": "getFirewallResponse"
+            },
+            "input": {
+                "shape": "getFirewall"
+            }
+        },
+        "getAllFirewalls": {
+            "output": {
+                "shape": "getAllFirewallsResponse"
+            },
+            "input": {
+                "shape": "getAllFirewalls"
+            }
+        },
+        "getAllSnapshots": {
+            "output": {
+                "shape": "getAllSnapshotsResponse"
+            },
+            "input": {
+                "shape": "getAllSnapshots"
+            }
+        },
+        "updateSnapshot": {
+            "output": {
+                "shape": "updateSnapshotResponse"
+            },
+            "input": {
+                "shape": "updateSnapshot"
+            }
+        },
+        "getSnapshot": {
+            "output": {
+                "shape": "getSnapshotResponse"
+            },
+            "input": {
+                "shape": "getSnapshot"
+            }
+        },
+        "createSnapshot": {
+            "output": {
+                "shape": "createSnapshotResponse"
+            },
+            "input": {
+                "shape": "createSnapshot"
+            }
+        },
+        "deleteSnapshot": {
+            "output": {
+                "shape": "deleteSnapshotResponse"
+            },
+            "input": {
+                "shape": "deleteSnapshot"
+            }
+        },
+        "rollbackSnapshot": {
+            "output": {
+                "shape": "rollbackSnapshotResponse"
+            },
+            "input": {
+                "shape": "rollbackSnapshot"
+            }
+        },
+        "getNotifications": {
+            "output": {
+                "shape": "getNotificationsResponse"
+            },
+            "input": {
+                "shape": "getNotifications"
+            }
+        },
+        "deleteNotifications": {
+            "output": {
+                "shape": "deleteNotificationsResponse"
+            },
+            "input": {
+                "shape": "deleteNotifications"
+            }
+        }
+    },
+    "shapes": {
+        "faultCode": {
+            "type": "xs:string",
+            "choices": [
+                "BAD_REQUEST",
+                "UNEXPECTED",
+                "UNAUTHORIZED",
+                "RESOURCE_NOT_FOUND",
+                "RESOURCE_DELETED",
+                "PROVISIONING_IN_PROCESS",
+                "PROVISIONING_NO_CHANGES",
+                "OVER_LIMIT_SETTING",
+                "SERVER_EXCEED_CAPACITY",
+                "SERVICE_UNAVAILABLE"
+            ]
+        },
+        "protocol": {
+            "type": "xs:string",
+            "choices": [
+                "TCP",
+                "UDP",
+                "ICMP",
+                "ANY"
+            ]
+        },
+        "provisioningState": {
+            "type": "xs:string",
+            "choices": [
+                "INACTIVE",
+                "INPROCESS",
+                "AVAILABLE",
+                "DELETED",
+                "ERROR"
+            ]
+        },
+        "busType": {
+            "type": "xs:string",
+            "choices": [
+                "IDE",
+                "SCSI",
+                "VIRTIO"
+            ]
+        },
+        "virtualMachineState": {
+            "type": "xs:string",
+            "choices": [
+                "NOSTATE",
+                "RUNNING",
+                "BLOCKED",
+                "PAUSED",
+                "SHUTDOWN",
+                "SHUTOFF",
+                "CRASHED"
+            ]
+        },
+        "osType": {
+            "type": "xs:string",
+            "choices": [
+                "UNKNOWN",
+                "WINDOWS",
+                "LINUX",
+                "OTHER"
+            ]
+        },
+        "availabilityZone": {
+            "type": "xs:string",
+            "choices": [
+                "AUTO",
+                "ZONE_1",
+                "ZONE_2"
+            ]
+        },
+        "location": {
+            "type": "xs:string",
+            "choices": [
+                "de/fkb",
+                "de/fra",
+                "us/las",
+                "us/lasdev"
+            ]
+        },
+        "imageType": {
+            "type": "xs:string",
+            "choices": [
+                "HDD",
+                "CDROM"
+            ]
+        },
+        "loadBalancerAlgorithm": {
+            "type": "xs:string",
+            "choices": [
+                "ROUND_ROBIN"
+            ]
+        },
+        "notificationCode": {
+            "type": "xs:string",
+            "choices": [
+                "OTHER",
+                "SHUTDOWN_SERVER_FAILED"
+            ]
+        },
+        "virtualItemType": {
+            "type": "xs:string",
+            "choices": [
+                "TYPE_OTHER",
+                "TYPE_SERVER",
+                "TYPE_STORAGE",
+                "TYPE_IMAGE",
+                "TYPE_LOADBALANCER",
+                "TYPE_NIC",
+                "TYPE_FIREWALL"
+            ]
+        },
+        "createSnapshot": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createSnapshotRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createSnapshotRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "storageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "description"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "snapshotName"
+                }
+            ]
+        },
+        "createSnapshotReturn": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createSnapshotResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createSnapshotResponse": {},
+        "requestResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "requestId"
+                }
+            ]
+        },
+        "ProfitbricksServiceFault": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "faultCode",
+                    "name": "faultCode"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "httpCode"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "message"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "requestId"
+                }
+            ]
+        },
+        "releasePublicIpBlock": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "blockId"
+                }
+            ]
+        },
+        "releasePublicIpBlockResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                }
+            ]
+        },
+        "getNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "nic",
+                    "name": "return"
+                }
+            ]
+        },
+        "nic": {},
+        "versionResponse": {},
+        "firewall": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "boolean",
+                    "name": "active"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallId"
+                },
+                {
+                    "min": "0",
+                    "shape": "firewallRule",
+                    "name": "firewallRules"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                },
+                {
+                    "min": "0",
+                    "shape": "provisioningState",
+                    "name": "provisioningState"
+                }
+            ]
+        },
+        "firewallRule": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallRuleId"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "icmpCode"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "icmpType"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "name"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "portRangeEnd"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "portRangeStart"
+                },
+                {
+                    "min": "0",
+                    "shape": "protocol",
+                    "name": "protocol"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "sourceIp"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "sourceMac"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "targetIp"
+                }
+            ]
+        },
+        "deleteImage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageId"
+                }
+            ]
+        },
+        "deleteImageResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "getServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "server",
+                    "name": "return"
+                }
+            ]
+        },
+        "server": {},
+        "connectedStorage": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "boolean",
+                    "name": "bootDevice"
+                },
+                {
+                    "min": "0",
+                    "shape": "busType",
+                    "name": "busType"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "deviceNumber"
+                },
+                {
+                    "min": "0",
+                    "shape": "long",
+                    "name": "size"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageName"
+                }
+            ]
+        },
+        "romDrive": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "boolean",
+                    "name": "bootDevice"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageName"
+                }
+            ]
+        },
+        "addPublicIpToNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "ip"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                }
+            ]
+        },
+        "addPublicIpToNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "setInternetAccess": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "lanId"
+                },
+                {
+                    "min": 0,
+                    "shape": "boolean",
+                    "name": "internetAccess"
+                }
+            ]
+        },
+        "setInternetAccessResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "deleteDataCenter": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                }
+            ]
+        },
+        "deleteDataCenterResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "deleteLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                }
+            ]
+        },
+        "deleteLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getAllNic": {},
+        "getAllNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "nic",
+                    "name": "return"
+                }
+            ]
+        },
+        "reservePublicIpBlock": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createReservePublicIpBlockRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createReservePublicIpBlockRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "int",
+                    "name": "blockSize"
+                },
+                {
+                    "min": 0,
+                    "shape": "location",
+                    "name": "location"
+                }
+            ]
+        },
+        "reservePublicIpBlockResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "ipBlockResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "ipBlockResponse": {},
+        "deleteServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "deleteServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getFirewall": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallId"
+                }
+            ]
+        },
+        "getFirewallResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "firewall",
+                    "name": "return"
+                }
+            ]
+        },
+        "deactivateLoadBalancingOnServers": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverIds"
+                }
+            ]
+        },
+        "deactivateLoadBalancingOnServersResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getAllImages": {},
+        "getAllImagesResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "image",
+                    "name": "return"
+                }
+            ]
+        },
+        "image": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "bootable"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "description"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageName"
+                },
+                {
+                    "min": "0",
+                    "shape": "long",
+                    "name": "imageSize"
+                },
+                {
+                    "min": "0",
+                    "shape": "imageType",
+                    "name": "imageType"
+                },
+                {
+                    "min": "0",
+                    "shape": "location",
+                    "name": "location"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "osType",
+                    "name": "osType"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "public"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverIds"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "writeable"
+                }
+            ]
+        },
+        "deactivateFirewalls": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallIds"
+                }
+            ]
+        },
+        "deactivateFirewallsResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "deleteNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                }
+            ]
+        },
+        "deleteNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "removePublicIpFromNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "ip"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                }
+            ]
+        },
+        "removePublicIpFromNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "updateServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateServerRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateServerRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "serverId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverName"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "cores"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "ram"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "bootFromStorageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "bootFromImageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "osType",
+                    "name": "osType"
+                },
+                {
+                    "min": "0",
+                    "shape": "availabilityZone",
+                    "name": "availabilityZone"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotUnPlug"
+                }
+            ]
+        },
+        "updateServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "stopServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "stopServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "disconnectStorageFromServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "disconnectStorageFromServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createDataCenter": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createDataCenterRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createDataCenterRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "dataCenterName"
+                },
+                {
+                    "min": 0,
+                    "shape": "location",
+                    "name": "location"
+                }
+            ]
+        },
+        "createDataCenterResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createDcResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createDcResponse": {},
+        "createNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createNicRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createNicRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "serverId"
+                },
+                {
+                    "min": 0,
+                    "shape": "int",
+                    "name": "lanId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicName"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "ip"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "dhcpActive"
+                }
+            ]
+        },
+        "createNicReturn": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createNicResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createNicResponse": {},
+        "addFirewallRulesToLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "firewallRuleRequest",
+                    "name": "request"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                }
+            ]
+        },
+        "firewallRuleRequest": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "icmpCode"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "icmpType"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "name"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "portRangeEnd"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "portRangeStart"
+                },
+                {
+                    "min": "0",
+                    "shape": "protocol",
+                    "name": "protocol"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "sourceIp"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "sourceMac"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "targetIp"
+                }
+            ]
+        },
+        "addFirewallRulesToLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "firewall",
+                    "name": "return"
+                }
+            ]
+        },
+        "removeRomDriveFromServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "removeRomDriveFromServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getAllServers": {},
+        "getAllServersResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "server",
+                    "name": "return"
+                }
+            ]
+        },
+        "getAllPublicIpBlocks": {},
+        "getAllPublicIpBlocksResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "ipBlock",
+                    "name": "return"
+                }
+            ]
+        },
+        "ipBlock": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "blockId"
+                },
+                {
+                    "min": "0",
+                    "shape": "location",
+                    "name": "location"
+                },
+                {
+                    "min": "0",
+                    "shape": "publicIp",
+                    "name": "publicIps"
+                }
+            ]
+        },
+        "publicIp": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "ip"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                }
+            ]
+        },
+        "createLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createLbRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createLbRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "dataCenterId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerName"
+                },
+                {
+                    "min": "0",
+                    "shape": "loadBalancerAlgorithm",
+                    "name": "loadBalancerAlgorithm"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "ip"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "lanId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverIds"
+                }
+            ]
+        },
+        "createLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createLbResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createLbResponse": {},
+        "updateSnapshot": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateSnapshotRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateSnapshotRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "snapshotId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "description"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "snapshotName"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "bootable"
+                },
+                {
+                    "min": "0",
+                    "shape": "osType",
+                    "name": "osType"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotUnPlug"
+                }
+            ]
+        },
+        "updateSnapshotResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "updateStorage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateStorageRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateStorageRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "storageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "long",
+                    "name": "size"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageName"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "mountImageId"
+                }
+            ]
+        },
+        "updateStorageResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                }
+            ]
+        },
+        "getLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "loadBalancer",
+                    "name": "return"
+                }
+            ]
+        },
+        "loadBalancer": {},
+        "balancedServer": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "boolean",
+                    "name": "activate"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "balancedNicId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverName"
+                }
+            ]
+        },
+        "rollbackSnapshot": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "rollbackSnapshotRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "rollbackSnapshotRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "storageId"
+                },
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "snapshotId"
+                }
+            ]
+        },
+        "rollbackSnapshotResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "registerServersOnLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverIds"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                }
+            ]
+        },
+        "registerServersOnLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "registerLbServerResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "registerLbServerResponse": {},
+        "getAllFirewalls": {},
+        "getAllFirewallsResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "firewall",
+                    "name": "return"
+                }
+            ]
+        },
+        "startServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "startServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "activateLoadBalancingOnServers": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverIds"
+                }
+            ]
+        },
+        "activateLoadBalancingOnServersResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getAllSnapshots": {},
+        "getAllSnapshotsResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "snapshot",
+                    "name": "return"
+                }
+            ]
+        },
+        "snapshot": {},
+        "createStorage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createStorageRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createStorageRequest": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageName"
+                },
+                {
+                    "min": 0,
+                    "shape": "long",
+                    "name": "size"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "mountImageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "profitBricksImagePassword"
+                }
+            ]
+        },
+        "createStorageReturn": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createStorageResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createStorageResponse": {},
+        "deregisterServersOnLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverIds"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                }
+            ]
+        },
+        "deregisterServersOnLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "updateDataCenter": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateDcRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateDcRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "dataCenterId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterName"
+                }
+            ]
+        },
+        "updateDataCenterResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "updateImage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateImageRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateImageRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "imageName"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "description"
+                },
+                {
+                    "min": "0",
+                    "shape": "osType",
+                    "name": "osType"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "bootable"
+                }
+            ]
+        },
+        "updateImageResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "addRomDriveToServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "romDriveRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "romDriveRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "serverId"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "deviceNumber"
+                }
+            ]
+        },
+        "addRomDriveToServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "updateNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateNicRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateNicRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "nicId"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "lanId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicName"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "ip"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "dhcpActive"
+                }
+            ]
+        },
+        "updateNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getAllDataCenters": {},
+        "getAllDataCentersResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "dataCenterIdentifier",
+                    "name": "return"
+                }
+            ]
+        },
+        "dataCenterIdentifier": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterName"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "dataCenterVersion"
+                },
+                {
+                    "min": "0",
+                    "shape": "provisioningState",
+                    "name": "provisioningState"
+                }
+            ]
+        },
+        "getAllLoadBalancers": {},
+        "getAllLoadBalancersResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "loadBalancer",
+                    "name": "return"
+                }
+            ]
+        },
+        "createServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createServerRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "createServerRequest": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                },
+                {
+                    "min": 0,
+                    "shape": "int",
+                    "name": "cores"
+                },
+                {
+                    "min": 0,
+                    "shape": "int",
+                    "name": "ram"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverName"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "bootFromStorageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "bootFromImageId"
+                },
+                {
+                    "min": 0,
+                    "shape": "boolean",
+                    "name": "internetAccess"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "lanId"
+                },
+                {
+                    "min": "0",
+                    "shape": "osType",
+                    "name": "osType"
+                },
+                {
+                    "min": "0",
+                    "shape": "availabilityZone",
+                    "name": "availabilityZone"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "cpuHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "ramHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "nicHotUnPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotPlug"
+                },
+                {
+                    "min": "0",
+                    "shape": "boolean",
+                    "name": "discVirtioHotUnPlug"
+                }
+            ]
+        },
+        "createServerReturn": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "createServerResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "createServerResponse": {},
+        "deleteNotifications": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "notificationId"
+                }
+            ]
+        },
+        "deleteNotificationsResponse": {},
+        "addFirewallRulesToNic": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "firewallRuleRequest",
+                    "name": "request"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "nicId"
+                }
+            ]
+        },
+        "addFirewallRulesToNicResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "firewall",
+                    "name": "return"
+                }
+            ]
+        },
+        "getStorage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageId"
+                }
+            ]
+        },
+        "getStorageResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "storage",
+                    "name": "return"
+                }
+            ]
+        },
+        "storage": {},
+        "mountImage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageName"
+                }
+            ]
+        },
+        "deleteFirewalls": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallIds"
+                }
+            ]
+        },
+        "deleteFirewallsResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getDataCenter": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                }
+            ]
+        },
+        "getDataCenterResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "dataCenter",
+                    "name": "return"
+                }
+            ]
+        },
+        "dataCenter": {},
+        "deleteSnapshot": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "snapshotId"
+                }
+            ]
+        },
+        "deleteSnapshotResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "updateLoadBalancer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "updateLbRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "updateLbRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "loadBalancerId"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "loadBalancerName"
+                },
+                {
+                    "min": "0",
+                    "shape": "loadBalancerAlgorithm",
+                    "name": "loadBalancerAlgorithm"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "ip"
+                }
+            ]
+        },
+        "updateLoadBalancerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "deleteStorage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "storageId"
+                }
+            ]
+        },
+        "deleteStorageResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getSnapshot": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "snapshotId"
+                }
+            ]
+        },
+        "getSnapshotResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "snapshot",
+                    "name": "return"
+                }
+            ]
+        },
+        "connectStorageToServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "connectStorageRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "connectStorageRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "serverId"
+                },
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "storageId"
+                },
+                {
+                    "min": "0",
+                    "shape": "busType",
+                    "name": "busType"
+                },
+                {
+                    "min": "0",
+                    "shape": "int",
+                    "name": "deviceNumber"
+                }
+            ]
+        },
+        "connectStorageToServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "removeFirewallRules": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallRuleIds"
+                }
+            ]
+        },
+        "removeFirewallRulesResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getNotifications": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "networkUUID"
+                }
+            ]
+        },
+        "getNotificationsResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "notification",
+                    "name": "return"
+                }
+            ]
+        },
+        "notification": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "id"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "networkUUid"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "relatedItemUuid"
+                },
+                {
+                    "min": "0",
+                    "shape": "dateTime",
+                    "name": "timestamp"
+                },
+                {
+                    "min": "0",
+                    "shape": "notificationCode",
+                    "name": "messageCode"
+                },
+                {
+                    "min": "0",
+                    "shape": "virtualItemType",
+                    "name": "relatedItemType"
+                },
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "message"
+                }
+            ]
+        },
+        "getAllStorages": {},
+        "getAllStoragesResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "storage",
+                    "name": "return"
+                }
+            ]
+        },
+        "getPublicIpBlock": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "blockId"
+                }
+            ]
+        },
+        "getPublicIpBlockResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "ipBlock",
+                    "name": "return"
+                }
+            ]
+        },
+        "clearDataCenter": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                }
+            ]
+        },
+        "clearDataCenterResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getDataCenterState": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "dataCenterId"
+                }
+            ]
+        },
+        "getDataCenterStateResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "provisioningState",
+                    "name": "return"
+                }
+            ]
+        },
+        "setImageOsType": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "imageOsTypeRequest",
+                    "name": "request"
+                }
+            ]
+        },
+        "imageOsTypeRequest": {
+            "members": [
+                {
+                    "min": 0,
+                    "shape": "string",
+                    "name": "imageId"
+                },
+                {
+                    "min": 0,
+                    "shape": "osType",
+                    "name": "osType"
+                }
+            ]
+        },
+        "setImageOsTypeResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "activateFirewalls": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "firewallIds"
+                }
+            ]
+        },
+        "activateFirewallsResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "versionResponse",
+                    "name": "return"
+                }
+            ]
+        },
+        "getImage": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "imageId"
+                }
+            ]
+        },
+        "getImageResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "image",
+                    "name": "return"
+                }
+            ]
+        },
+        "resetServer": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "string",
+                    "name": "serverId"
+                }
+            ]
+        },
+        "resetServerResponse": {
+            "members": [
+                {
+                    "min": "0",
+                    "shape": "requestResponse",
+                    "name": "return"
+                }
+            ]
+        }
+    }
+}
