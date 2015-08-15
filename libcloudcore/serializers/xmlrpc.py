@@ -22,30 +22,21 @@ from .. import layer
 
 class XmlrpcSerializer(layer.Layer):
 
-    def before_call(self, request, operation, **params):
-        request.method = 'POST'
-        request.headers['Content-Type'] = 'text/xml'
-
+    def serialize(self, operation, shape, **params):
         args = []
         for member in operation.input_shape.iter_members():
             if member.destination == 'body':
                 args.append(params[member.name])
 
-        request.body = xmlrpc_client.dumps(
+        return xmlrpc_client.dumps(
             tuple(args),
             operation.wire_name,
             allow_none=True,
         )
 
-        return super(XmlrpcSerializer, self).before_call(
-            request,
-            operation,
-            **params
-        )
-
-    def after_call(self, operation, request, response):
+    def deserialize(self, operation, shape, body):
         try:
-            args, methodname = xmlrpc_client.loads(response.body)
+            args, methodname = xmlrpc_client.loads(body)
             return args[0]
         except xmlrpc_client.Fault as e:
             return {
@@ -54,3 +45,16 @@ class XmlrpcSerializer(layer.Layer):
                     "Message": e.faultString,
                 }
             }
+
+    def before_call(self, request, operation, **params):
+        request.method = 'POST'
+        request.headers['Content-Type'] = 'text/xml'
+        request.body = self.serialize(operation, operation.input_shape, **params)
+        return super(XmlrpcSerializer, self).before_call(
+            request,
+            operation,
+            **params
+        )
+
+    def after_call(self, operation, request, response):
+        return self.deserialize(operation, operation.output_shape, response.body)

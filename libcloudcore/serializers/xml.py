@@ -121,7 +121,7 @@ class XmlSerializer(layer.Layer):
             namespaces[uri] = ns if ns else None
         return namespaces
 
-    def _serialize(self, operation, shape, **params):
+    def serialize(self, operation, shape, **params):
         body = Serializer().visit(
             shape,
             shape.name,
@@ -139,9 +139,17 @@ class XmlSerializer(layer.Layer):
             pretty=True,
         )
 
+    def deserialize(self, operation, shape, body):
+        payload = xmltodict.parse(
+            body,
+            process_namespaces=True,
+            namespaces=self._namespaces(operation),
+        )
+        return Parser().visit(shape, payload[shape.name])
+
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'text/xml'
-        request.body = self._serialize(
+        request.body = self.serialize(
             operation,
             operation.input_shape,
             **params
@@ -153,17 +161,5 @@ class XmlSerializer(layer.Layer):
             **params
         )
 
-    def _parse_xml(self, operation, body):
-        payload = xmltodict.parse(
-            body,
-            process_namespaces=True,
-            namespaces=self._namespaces(operation),
-        )
-
-        return Parser().visit(
-            operation.output_shape,
-            payload[operation.output_shape.name],
-        )
-
     def after_call(self, operation, request, response):
-        return self._parse_xml(response.body)
+        return self.deserialize(operation, operation.output_shape, response.body)
