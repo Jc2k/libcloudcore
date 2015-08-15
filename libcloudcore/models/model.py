@@ -34,6 +34,14 @@ class Boolean(Shape):
     kind = "boolean"
 
 
+class Timestamp(Shape):
+    kind = "timestamp"
+
+
+class Blob(Shape):
+    kind = "blob"
+
+
 class Member(Shape):
 
     @property
@@ -62,7 +70,7 @@ class Structure(Shape):
         return self._shape.get('wire_name', self.name)
 
     def iter_members(self):
-        for member in self._shape['members']:
+        for member in self._shape.get('members', []):
             yield Member(self.model, member['name'], member)
 
 
@@ -154,7 +162,11 @@ class Model(object):
         'string': String,
         'integer': Integer,
         'long': Integer,
+        'float': Integer,
+        'double': Integer,
         'boolean': Boolean,
+        'blob': Blob,
+        'timestamp': Timestamp,
     }
 
     def __init__(self, model):
@@ -220,3 +232,6 @@ class Model(object):
             )
         waiter = self.waiters[name]
         return Waiter(self, name, waiter)
+
+    def __repr__(self):
+        return "Model<{}>".format(self.name)

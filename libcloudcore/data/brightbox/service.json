@@ -25,10 +25,12 @@
     },
     "shapes": {
         "CreateServerRequest": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CreateServerResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         }
     }
 }

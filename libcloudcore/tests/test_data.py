@@ -29,6 +29,61 @@ def find_services():
             yield os.path.relpath(path, root)
 
 
+def resolve_structure(shape, state):
+    for member in shape.iter_members():
+        resolve_shape(member.shape, state)
+
+
+def resolve_list(shape, state):
+    assert "of" in shape._shape
+    resolve_shape(shape.of, state)
+
+
+def resolve_map(shape, state):
+    pass
+
+
+def resolve_int(shape, state):
+    pass
+
+
+def resolve_boolean(shape, state):
+    pass
+
+
+def resolve_string(shape, state):
+    pass
+
+
+def resolve_blob(shape, state):
+    pass
+
+
+def resolve_timestamp(shape, state):
+    pass
+
+
+def resolve_shape(shape, state):
+    if shape.name in state:
+        return
+    state.add(shape.name)
+    resolvers = {
+        "structure": resolve_structure,
+        "list": resolve_list,
+        "map": resolve_map,
+        "long": resolve_int,
+        "integer": resolve_int,
+        "float": resolve_int,
+        "double": resolve_int,
+        "boolean": resolve_boolean,
+        "string": resolve_string,
+        "blob": resolve_blob,
+        "timestamp": resolve_timestamp,
+    }
+    assert shape.type in tuple(resolvers.keys())
+    return resolvers[shape.type](shape, state)
+
+
 @pytest.mark.parametrize('service', find_services())
 def test_data(service):
     session = Importer(__name__)
@@ -36,5 +91,7 @@ def test_data(service):
     for operation in driver.model.get_operations():
         if operation.input_shape:
             assert len(operation.input_shape.name) > 0
+            resolve_shape(operation.input_shape, set())
         if operation.output_shape:
             assert len(operation.output_shape.name) > 0
+            resolve_shape(operation.output_shape, set())

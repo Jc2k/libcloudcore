@@ -77,6 +77,8 @@ class Importer(object):
 
     def get_driver(self, service):
         model = Model(self.loader.load_service(service))
+        if not model.name:
+            model.name = service
 
         bases = (Driver, self.backend) + model.request_pipeline
 

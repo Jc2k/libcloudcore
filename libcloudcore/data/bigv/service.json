@@ -55,11 +55,18 @@
                 }
             ]
         },
+        "String": {
+            "type": "string"
+        },
+        "Boolean": {
+            "type": "boolean"
+        },
         "Integer": {
             "type": "integer"
         },
         "ListAccountsRequest": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ListAccountsResponse": {
             "type": "list",
@@ -86,9 +93,11 @@
         },
         "ListVirtualMachinesResponse": {
             "type": "list",
-            "member": {
-                "shape": "Server"
-            }
+            "of": "Server"
+        },
+        "Server": {
+            "type": "structure",
+            "members": []
         }
     }
 }

@@ -3467,6 +3467,9 @@
         }
     },
     "shapes": {
+        "String": {
+            "type": "string"
+        },
         "ApiKey": {
             "type": "string",
             "regex": "^[a-z0-9]{24}$",
@@ -3483,7 +3486,8 @@
             ]
         },
         "HostingVmListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "VersionInfoRequest": {
             "type": "structure",
@@ -3519,7 +3523,8 @@
             ]
         },
         "AccountCreditResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "AccountInfoRequest": {
             "type": "structure",
@@ -3532,7 +3537,8 @@
             ]
         },
         "AccountInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CatalogListRequest": {
             "type": "structure",
@@ -3558,7 +3564,8 @@
             ]
         },
         "CatalogListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertChangeDcvRequest": {
             "type": "structure",
@@ -3580,7 +3587,8 @@
             ]
         },
         "CertChangeDcvResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertCountRequest": {
             "type": "structure",
@@ -3597,7 +3605,8 @@
             ]
         },
         "CertCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertCreateRequest": {
             "type": "structure",
@@ -3615,7 +3624,8 @@
             ]
         },
         "CertCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertDeleteRequest": {
             "type": "structure",
@@ -3637,7 +3647,8 @@
             ]
         },
         "CertDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertGetDcvParamsRequest": {
             "type": "structure",
@@ -3655,7 +3666,8 @@
             ]
         },
         "CertGetDcvParamsResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertHostedCountRequest": {
             "type": "structure",
@@ -3672,7 +3684,8 @@
             ]
         },
         "CertHostedCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertHostedCreateRequest": {
             "type": "structure",
@@ -3690,7 +3703,8 @@
             ]
         },
         "CertHostedCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertHostedDeleteRequest": {
             "type": "structure",
@@ -3708,7 +3722,8 @@
             ]
         },
         "CertHostedDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertHostedInfoRequest": {
             "type": "structure",
@@ -3726,7 +3741,8 @@
             ]
         },
         "CertHostedInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertHostedListRequest": {
             "type": "structure",
@@ -3743,7 +3759,8 @@
             ]
         },
         "CertHostedListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertInfoRequest": {
             "type": "structure",
@@ -3761,7 +3778,8 @@
             ]
         },
         "CertInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertListRequest": {
             "type": "structure",
@@ -3778,7 +3796,8 @@
             ]
         },
         "CertListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertPackageListRequest": {
             "type": "structure",
@@ -3795,7 +3814,8 @@
             ]
         },
         "CertPackageListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertRenewRequest": {
             "type": "structure",
@@ -3818,7 +3838,8 @@
             ]
         },
         "CertRenewResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertResendDcvRequest": {
             "type": "structure",
@@ -3836,7 +3857,8 @@
             ]
         },
         "CertResendDcvResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "CertUpdateRequest": {
             "type": "structure",
@@ -3859,7 +3881,8 @@
             ]
         },
         "CertUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ChangeownerCreateRequest": {
             "type": "structure",
@@ -3882,7 +3905,8 @@
             ]
         },
         "ChangeownerCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactBalanceRequest": {
             "type": "structure",
@@ -3895,7 +3919,8 @@
             ]
         },
         "ContactBalanceResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactCanAssociateRequest": {
             "type": "structure",
@@ -3918,7 +3943,8 @@
             ]
         },
         "ContactCanAssociateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactCanAssociateDomainRequest": {
             "type": "structure",
@@ -3941,7 +3967,8 @@
             ]
         },
         "ContactCanAssociateDomainResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactCountRequest": {
             "type": "structure",
@@ -3958,7 +3985,8 @@
             ]
         },
         "ContactCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactCreateRequest": {
             "type": "structure",
@@ -3976,7 +4004,8 @@
             ]
         },
         "ContactCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactDeleteRequest": {
             "type": "structure",
@@ -3993,7 +4022,8 @@
             ]
         },
         "ContactDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactInfoRequest": {
             "type": "structure",
@@ -4010,7 +4040,8 @@
             ]
         },
         "ContactInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactListRequest": {
             "type": "structure",
@@ -4027,7 +4058,8 @@
             ]
         },
         "ContactListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactReachabilityResendRequest": {
             "type": "structure",
@@ -4045,7 +4077,8 @@
             ]
         },
         "ContactReachabilityResendResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactReleaseRequest": {
             "type": "structure",
@@ -4063,7 +4096,8 @@
             ]
         },
         "ContactReleaseResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "ContactUpdateRequest": {
             "type": "structure",
@@ -4086,7 +4120,8 @@
             ]
         },
         "ContactUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DatacenterListRequest": {
             "type": "structure",
@@ -4103,7 +4138,8 @@
             ]
         },
         "DatacenterListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskCountRequest": {
             "type": "structure",
@@ -4120,7 +4156,8 @@
             ]
         },
         "DiskCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskCreateRequest": {
             "type": "structure",
@@ -4138,7 +4175,8 @@
             ]
         },
         "DiskCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskCreateFromRequest": {
             "type": "structure",
@@ -4161,7 +4199,8 @@
             ]
         },
         "DiskCreateFromResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskDeleteRequest": {
             "type": "structure",
@@ -4179,7 +4218,8 @@
             ]
         },
         "DiskDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskInfoRequest": {
             "type": "structure",
@@ -4197,7 +4237,8 @@
             ]
         },
         "DiskInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskListRequest": {
             "type": "structure",
@@ -4214,7 +4255,8 @@
             ]
         },
         "DiskListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskListKernelsRequest": {
             "type": "structure",
@@ -4232,7 +4274,8 @@
             ]
         },
         "DiskListKernelsResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskListOptionsRequest": {
             "type": "structure",
@@ -4250,7 +4293,8 @@
             ]
         },
         "DiskListOptionsResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskRollbackFromRequest": {
             "type": "structure",
@@ -4268,7 +4312,8 @@
             ]
         },
         "DiskRollbackFromResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DiskUpdateRequest": {
             "type": "structure",
@@ -4291,7 +4336,8 @@
             ]
         },
         "DiskUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainAutorenewActivateRequest": {
             "type": "structure",
@@ -4313,7 +4359,8 @@
             ]
         },
         "DomainAutorenewActivateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainAutorenewDeactivateRequest": {
             "type": "structure",
@@ -4331,7 +4378,8 @@
             ]
         },
         "DomainAutorenewDeactivateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainAvailableRequest": {
             "type": "structure",
@@ -4353,7 +4401,8 @@
             ]
         },
         "DomainAvailableResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainClaimsAcceptRequest": {
             "type": "structure",
@@ -4371,7 +4420,8 @@
             ]
         },
         "DomainClaimsAcceptResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainClaimsCheckRequest": {
             "type": "structure",
@@ -4393,7 +4443,8 @@
             ]
         },
         "DomainClaimsCheckResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainClaimsInfoRequest": {
             "type": "structure",
@@ -4411,7 +4462,8 @@
             ]
         },
         "DomainClaimsInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainContactsSetRequest": {
             "type": "structure",
@@ -4434,7 +4486,8 @@
             ]
         },
         "DomainContactsSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainCountRequest": {
             "type": "structure",
@@ -4451,7 +4504,8 @@
             ]
         },
         "DomainCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainCreateRequest": {
             "type": "structure",
@@ -4474,7 +4528,8 @@
             ]
         },
         "DomainCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDeleteAcceptRequest": {
             "type": "structure",
@@ -4497,7 +4552,8 @@
             ]
         },
         "DomainDeleteAcceptResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDeleteAvailableRequest": {
             "type": "structure",
@@ -4515,7 +4571,8 @@
             ]
         },
         "DomainDeleteAvailableResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDeleteDeclineRequest": {
             "type": "structure",
@@ -4538,7 +4595,8 @@
             ]
         },
         "DomainDeleteDeclineResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDeleteInfoRequest": {
             "type": "structure",
@@ -4560,7 +4618,8 @@
             ]
         },
         "DomainDeleteInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDeleteProceedRequest": {
             "type": "structure",
@@ -4578,7 +4637,8 @@
             ]
         },
         "DomainDeleteProceedResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDnssecCreateRequest": {
             "type": "structure",
@@ -4601,7 +4661,8 @@
             ]
         },
         "DomainDnssecCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDnssecDeleteRequest": {
             "type": "structure",
@@ -4619,7 +4680,8 @@
             ]
         },
         "DomainDnssecDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainDnssecListRequest": {
             "type": "structure",
@@ -4637,7 +4699,8 @@
             ]
         },
         "DomainDnssecListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainEoiCountRequest": {
             "type": "structure",
@@ -4654,7 +4717,8 @@
             ]
         },
         "DomainEoiCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainEoiCreateRequest": {
             "type": "structure",
@@ -4672,7 +4736,8 @@
             ]
         },
         "DomainEoiCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainEoiDeleteRequest": {
             "type": "structure",
@@ -4690,7 +4755,8 @@
             ]
         },
         "DomainEoiDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainEoiInfoRequest": {
             "type": "structure",
@@ -4708,7 +4774,8 @@
             ]
         },
         "DomainEoiInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainEoiListRequest": {
             "type": "structure",
@@ -4725,7 +4792,8 @@
             ]
         },
         "DomainEoiListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainForwardCountRequest": {
             "type": "structure",
@@ -4747,7 +4815,8 @@
             ]
         },
         "DomainForwardCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainForwardCreateRequest": {
             "type": "structure",
@@ -4775,7 +4844,8 @@
             ]
         },
         "DomainForwardCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainForwardDeleteRequest": {
             "type": "structure",
@@ -4798,7 +4868,8 @@
             ]
         },
         "DomainForwardDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainForwardListRequest": {
             "type": "structure",
@@ -4820,7 +4891,8 @@
             ]
         },
         "DomainForwardListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainForwardUpdateRequest": {
             "type": "structure",
@@ -4848,7 +4920,8 @@
             ]
         },
         "DomainForwardUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainGandimailActivateRequest": {
             "type": "structure",
@@ -4870,7 +4943,8 @@
             ]
         },
         "DomainGandimailActivateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainGandimailDeactivateRequest": {
             "type": "structure",
@@ -4888,7 +4962,8 @@
             ]
         },
         "DomainGandimailDeactivateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainGandimailInfoRequest": {
             "type": "structure",
@@ -4906,7 +4981,8 @@
             ]
         },
         "DomainGandimailInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainHostCountRequest": {
             "type": "structure",
@@ -4928,7 +5004,8 @@
             ]
         },
         "DomainHostCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainHostCreateRequest": {
             "type": "structure",
@@ -4951,7 +5028,8 @@
             ]
         },
         "DomainHostCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainHostDeleteRequest": {
             "type": "structure",
@@ -4969,7 +5047,8 @@
             ]
         },
         "DomainHostDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainHostInfoRequest": {
             "type": "structure",
@@ -4987,7 +5066,8 @@
             ]
         },
         "DomainHostInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainHostListRequest": {
             "type": "structure",
@@ -5009,7 +5089,8 @@
             ]
         },
         "DomainHostListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainHostUpdateRequest": {
             "type": "structure",
@@ -5032,7 +5113,8 @@
             ]
         },
         "DomainHostUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainInfoRequest": {
             "type": "structure",
@@ -5050,7 +5132,8 @@
             ]
         },
         "DomainInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainListRequest": {
             "type": "structure",
@@ -5067,7 +5150,8 @@
             ]
         },
         "DomainListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxAliasSetRequest": {
             "type": "structure",
@@ -5095,7 +5179,8 @@
             ]
         },
         "DomainMailboxAliasSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxCountRequest": {
             "type": "structure",
@@ -5117,7 +5202,8 @@
             ]
         },
         "DomainMailboxCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxCreateRequest": {
             "type": "structure",
@@ -5145,7 +5231,8 @@
             ]
         },
         "DomainMailboxCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxDeleteRequest": {
             "type": "structure",
@@ -5168,7 +5255,8 @@
             ]
         },
         "DomainMailboxDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxInfoRequest": {
             "type": "structure",
@@ -5191,7 +5279,8 @@
             ]
         },
         "DomainMailboxInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxListRequest": {
             "type": "structure",
@@ -5213,7 +5302,8 @@
             ]
         },
         "DomainMailboxListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxPurgeRequest": {
             "type": "structure",
@@ -5236,7 +5326,8 @@
             ]
         },
         "DomainMailboxPurgeResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxResponderActivateRequest": {
             "type": "structure",
@@ -5264,7 +5355,8 @@
             ]
         },
         "DomainMailboxResponderActivateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxResponderDeactivateRequest": {
             "type": "structure",
@@ -5291,7 +5383,8 @@
             ]
         },
         "DomainMailboxResponderDeactivateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMailboxUpdateRequest": {
             "type": "structure",
@@ -5319,7 +5412,8 @@
             ]
         },
         "DomainMailboxUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainMiscUkrightsRequest": {
             "type": "structure",
@@ -5337,7 +5431,8 @@
             ]
         },
         "DomainMiscUkrightsResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainNameserversSetRequest": {
             "type": "structure",
@@ -5364,7 +5459,8 @@
             ]
         },
         "DomainNameserversSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainOwnerSetRequest": {
             "type": "structure",
@@ -5387,7 +5483,8 @@
             ]
         },
         "DomainOwnerSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPackmailAutorenewRequest": {
             "type": "structure",
@@ -5410,7 +5507,8 @@
             ]
         },
         "DomainPackmailAutorenewResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPackmailCreateRequest": {
             "type": "structure",
@@ -5433,7 +5531,8 @@
             ]
         },
         "DomainPackmailCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPackmailDeleteRequest": {
             "type": "structure",
@@ -5451,7 +5550,8 @@
             ]
         },
         "DomainPackmailDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPackmailInfoRequest": {
             "type": "structure",
@@ -5469,7 +5569,8 @@
             ]
         },
         "DomainPackmailInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPackmailRenewRequest": {
             "type": "structure",
@@ -5492,7 +5593,8 @@
             ]
         },
         "DomainPackmailRenewResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPackmailUpdateRequest": {
             "type": "structure",
@@ -5515,7 +5617,8 @@
             ]
         },
         "DomainPackmailUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPriceRequest": {
             "type": "structure",
@@ -5537,7 +5640,8 @@
             ]
         },
         "DomainPriceResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainPushRequest": {
             "type": "structure",
@@ -5560,7 +5664,8 @@
             ]
         },
         "DomainPushResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainReleaseRequest": {
             "type": "structure",
@@ -5578,7 +5683,8 @@
             ]
         },
         "DomainReleaseResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainRenewRequest": {
             "type": "structure",
@@ -5601,7 +5707,8 @@
             ]
         },
         "DomainRenewResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainResellerSetRequest": {
             "type": "structure",
@@ -5619,7 +5726,8 @@
             ]
         },
         "DomainResellerSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainRestoreRequest": {
             "type": "structure",
@@ -5642,7 +5750,8 @@
             ]
         },
         "DomainRestoreResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainSmdCountRequest": {
             "type": "structure",
@@ -5659,7 +5768,8 @@
             ]
         },
         "DomainSmdCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainSmdCreateRequest": {
             "type": "structure",
@@ -5677,7 +5787,8 @@
             ]
         },
         "DomainSmdCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainSmdDeleteRequest": {
             "type": "structure",
@@ -5695,7 +5806,8 @@
             ]
         },
         "DomainSmdDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainSmdExtractRequest": {
             "type": "structure",
@@ -5713,7 +5825,8 @@
             ]
         },
         "DomainSmdExtractResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainSmdInfoRequest": {
             "type": "structure",
@@ -5731,7 +5844,8 @@
             ]
         },
         "DomainSmdInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainSmdListRequest": {
             "type": "structure",
@@ -5748,7 +5862,8 @@
             ]
         },
         "DomainSmdListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainStatusLockRequest": {
             "type": "structure",
@@ -5766,7 +5881,8 @@
             ]
         },
         "DomainStatusLockResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainStatusUnlockRequest": {
             "type": "structure",
@@ -5784,7 +5900,8 @@
             ]
         },
         "DomainStatusUnlockResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainTldListRequest": {
             "type": "structure",
@@ -5801,7 +5918,8 @@
             ]
         },
         "DomainTldListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainTldRegionRequest": {
             "type": "structure",
@@ -5818,7 +5936,8 @@
             ]
         },
         "DomainTldRegionResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainTransferinAvailableRequest": {
             "type": "structure",
@@ -5840,7 +5959,8 @@
             ]
         },
         "DomainTransferinAvailableResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainTransferinProceedRequest": {
             "type": "structure",
@@ -5863,7 +5983,8 @@
             ]
         },
         "DomainTransferinProceedResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainWebredirCountRequest": {
             "type": "structure",
@@ -5885,7 +6006,8 @@
             ]
         },
         "DomainWebredirCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainWebredirCreateRequest": {
             "type": "structure",
@@ -5908,7 +6030,8 @@
             ]
         },
         "DomainWebredirCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainWebredirDeleteRequest": {
             "type": "structure",
@@ -5931,7 +6054,8 @@
             ]
         },
         "DomainWebredirDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainWebredirListRequest": {
             "type": "structure",
@@ -5953,7 +6077,8 @@
             ]
         },
         "DomainWebredirListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainWebredirUpdateRequest": {
             "type": "structure",
@@ -5981,7 +6106,8 @@
             ]
         },
         "DomainWebredirUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneCloneRequest": {
             "type": "structure",
@@ -6007,7 +6133,8 @@
             ]
         },
         "DomainZoneCloneResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneCountRequest": {
             "type": "structure",
@@ -6024,7 +6151,8 @@
             ]
         },
         "DomainZoneCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneCreateRequest": {
             "type": "structure",
@@ -6042,7 +6170,8 @@
             ]
         },
         "DomainZoneCreateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneDeleteRequest": {
             "type": "structure",
@@ -6060,7 +6189,8 @@
             ]
         },
         "DomainZoneDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneInfoRequest": {
             "type": "structure",
@@ -6078,7 +6208,8 @@
             ]
         },
         "DomainZoneInfoResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneListRequest": {
             "type": "structure",
@@ -6095,7 +6226,8 @@
             ]
         },
         "DomainZoneListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneRecordAddRequest": {
             "type": "structure",
@@ -6123,7 +6255,8 @@
             ]
         },
         "DomainZoneRecordAddResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneRecordCountRequest": {
             "type": "structure",
@@ -6150,7 +6283,8 @@
             ]
         },
         "DomainZoneRecordCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneRecordDeleteRequest": {
             "type": "structure",
@@ -6177,7 +6311,8 @@
             ]
         },
         "DomainZoneRecordDeleteResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneRecordListRequest": {
             "type": "structure",
@@ -6204,7 +6339,8 @@
             ]
         },
         "DomainZoneRecordListResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneRecordSetRequest": {
             "type": "structure",
@@ -6232,7 +6368,8 @@
             ]
         },
         "DomainZoneRecordSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneRecordUpdateRequest": {
             "type": "structure",
@@ -6265,7 +6402,8 @@
             ]
         },
         "DomainZoneRecordUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneSetRequest": {
             "type": "structure",
@@ -6288,7 +6426,8 @@
             ]
         },
         "DomainZoneSetResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneUpdateRequest": {
             "type": "structure",
@@ -6311,7 +6450,8 @@
             ]
         },
         "DomainZoneUpdateResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneVersionCountRequest": {
             "type": "structure",
@@ -6329,7 +6469,8 @@
             ]
         },
         "DomainZoneVersionCountResponse": {
-            "type": "structure"
+            "type": "structure",
+            "members": []
         },
         "DomainZoneVersionDeleteRequest": {
             "type": "structure",
