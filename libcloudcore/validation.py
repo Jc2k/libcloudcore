@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import datetime
 import re
 import six
 from collections import namedtuple
@@ -153,6 +154,11 @@ def _validate_integer(field, shape, value, report):
         return
 
     if not _check_range(field, value, shape.min, shape.max, report):
+        return
+
+
+def _validate_timestamp(field, shape, value, report):
+    if not _check_type(field, value, datetime.datetime, report):
         return
 
 
