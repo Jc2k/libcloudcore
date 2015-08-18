@@ -26,9 +26,12 @@ from libcloudcore import models
 
 # FIXME: \r is encoded as \n
 # FIXME: \x0b is not a well formed token according to expat
-# xml.parsers.expat.ExpatError: not well-formed (invalid token): line 5, column 16
+# xml.parsers.expat.ExpatError: not well-formed (invalid token)
 # FIXME ditto for \x0c
-PRINTABLE = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n'
+PRINTABLE = (
+    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKL'
+    'MNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n'
+)
 
 
 def find_services():
@@ -56,7 +59,7 @@ class StrategyBuilder(models.Visitor):
         self.active = set()
 
     def visit(self, shape):
-        assert shape.type != None
+        assert shape.type is not None
         visit_fn_name = "visit_{}".format(shape.type)
         try:
             visit_fn = getattr(self, visit_fn_name)
@@ -149,7 +152,7 @@ def roundtrip(driver, operation, shape):
     def inner(data):
         try:
             driver.validate(shape, data)
-        except exceptions.ParameterError:
+        except ParameterError:
             assume(False)
 
         serialized = driver.serialize(operation, shape, data)
@@ -161,8 +164,8 @@ def roundtrip(driver, operation, shape):
     return inner()
 
 
-@pytest.mark.parametrize('driver_name,operation_name,driver,operation', find_operations())
-def test_data(driver_name, operation_name, driver, operation):
+@pytest.mark.parametrize('d,o,driver,operation', find_operations())
+def test_data(d, o, driver, operation):
     if operation.input_shape:
         assert len(operation.input_shape.name) > 0
 

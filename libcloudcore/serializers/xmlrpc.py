@@ -58,4 +58,8 @@ class XmlrpcSerializer(layer.Layer):
         )
 
     def after_call(self, operation, request, response):
-        return self.deserialize(operation, operation.output_shape, response.body)
+        return self.deserialize(
+            operation,
+            operation.output_shape,
+            response.body,
+        )

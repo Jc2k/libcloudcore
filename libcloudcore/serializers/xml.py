@@ -61,7 +61,7 @@ class Parser(models.Visitor):
         return result
 
     def visit_map(self, shape, value):
-        #FIXME: Make Key/Value configurable
+        # FIXME: Make Key/Value configurable
         if not value:
             return {}
         if not isinstance(value, list):
@@ -136,7 +136,7 @@ class Serializer(models.Visitor):
         return nodes
 
     def visit_map(self, shape, name, value):
-        #FIXME: Make Key/Value configurable
+        # FIXME: Make Key/Value configurable
         key_shape = shape.key_shape
         value_shape = shape.value_shape
         if not value:
@@ -211,4 +211,8 @@ class XmlSerializer(layer.Layer):
         )
 
     def after_call(self, operation, request, response):
-        return self.deserialize(operation, operation.output_shape, response.body)
+        return self.deserialize(
+            operation,
+            operation.output_shape,
+            response.body
+        )
