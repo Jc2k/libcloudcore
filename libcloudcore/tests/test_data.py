@@ -17,7 +17,7 @@ import os
 
 import pytest
 
-from hypothesis import given, strategies, Settings
+from hypothesis import given, assume, strategies, Settings
 
 from libcloudcore.exceptions import ParameterError
 from libcloudcore.importer import Importer
@@ -140,21 +140,24 @@ class StrategyBuilder(models.Visitor):
 def roundtrip(driver, operation, shape):
     strategy = StrategyBuilder().visit(shape)
 
-    @given(strategy, settings=Settings(min_satisfying_examples=1))
+    settings = Settings(
+        min_satisfying_examples=1,
+        max_examples=10,
+    )
+
+    @given(strategy, settings=settings)
     def inner(data):
-        serialized = driver.serialize(
-            operation,
-            shape,
-            data
-        )
+        try:
+            driver.validate(shape, data)
+        except exceptions.ParameterError:
+            assume(False)
+
+        serialized = driver.serialize(operation, shape, data)
         assert isinstance(serialized, str)
 
-        deserialized = driver.deserialize(
-            operation,
-            shape,
-            serialized
-        )
+        deserialized = driver.deserialize(operation, shape, serialized)
         assert data == deserialized
+
     return inner()
 
 

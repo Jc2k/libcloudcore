@@ -173,13 +173,15 @@ def validate_shape(shape, value):
 
 class Validation(Layer):
 
-    def before_call(self, request, operation, **params):
-        report = validate_shape(operation.input_shape, params)
+    def validate(self, shape, params):
+        report = validate_shape(shape, params)
         if report:
             raise ParameterError("\n".join(
                 "{}: {}".format(r.field, r.message) for r in report,
             ))
 
+    def before_call(self, request, operation, **params):
+        self.validate(operation.input_shape, params)
         return super(Validation, self).before_call(
             request,
             operation,
