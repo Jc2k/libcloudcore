@@ -18,7 +18,7 @@ from libcloudcore.layer import Layer
 
 class TokenAuth(Layer):
 
-    def __init__(self, token):
+    def __init__(self, token=None):
         self.token = token
 
     def before_call(self, request, operation, **params):

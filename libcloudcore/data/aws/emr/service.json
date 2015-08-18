@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -175,6 +179,7 @@
         },
         "AddInstanceGroupsInput": {
             "type": "structure",
+            "documentation": "<p>Input to an AddInstanceGroups call.</p>",
             "members": [
                 {
                     "name": "InstanceGroups",
@@ -190,6 +195,7 @@
         },
         "AddInstanceGroupsOutput": {
             "type": "structure",
+            "documentation": "<p>Output from an AddInstanceGroups call.</p>",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -205,6 +211,7 @@
         },
         "AddJobFlowStepsInput": {
             "type": "structure",
+            "documentation": "<p> The input argument to the <a>AddJobFlowSteps</a> operation. </p>",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -220,6 +227,7 @@
         },
         "AddJobFlowStepsOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>AddJobFlowSteps</a> operation. </p>",
             "members": [
                 {
                     "name": "StepIds",
@@ -230,6 +238,7 @@
         },
         "AddTagsInput": {
             "type": "structure",
+            "documentation": "<p>This input identifies a cluster and a list of tags to attach. </p>",
             "members": [
                 {
                     "name": "ResourceId",
@@ -245,10 +254,12 @@
         },
         "AddTagsOutput": {
             "type": "structure",
+            "documentation": "<p>This output indicates the result of adding tags to a resource. </p>",
             "members": []
         },
         "Application": {
             "type": "structure",
+            "documentation": "<p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html\">Launch a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li>\"mapr-m3\" - launch the job flow using MapR M3 Edition.</li> <li>\"mapr-m5\" - launch the job flow using MapR M5 Edition.</li> <li>\"mapr\" with the user arguments specifying \"--edition,m3\" or \"--edition,m5\" - launch the job flow using MapR M3 or M5 Edition, respectively.</li> </ul> <note><p>In Amazon EMR releases 4.0 and greater, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.</p></note>",
             "members": [
                 {
                     "name": "Name",
@@ -281,6 +292,7 @@
         },
         "BootstrapActionConfig": {
             "type": "structure",
+            "documentation": "<p>Configuration of a bootstrap action.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -300,6 +312,7 @@
         },
         "BootstrapActionDetail": {
             "type": "structure",
+            "documentation": "<p>Reports the configuration of a bootstrap action in a job flow.</p>",
             "members": [
                 {
                     "name": "BootstrapActionConfig",
@@ -314,6 +327,7 @@
         },
         "Cluster": {
             "type": "structure",
+            "documentation": "<p>The detailed description of the cluster.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -409,6 +423,7 @@
         },
         "ClusterStateChangeReason": {
             "type": "structure",
+            "documentation": "<p>The reason that the cluster changed to its current state.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -431,6 +446,7 @@
         },
         "ClusterStatus": {
             "type": "structure",
+            "documentation": "<p>The detailed status of the cluster.</p>",
             "members": [
                 {
                     "name": "State",
@@ -451,6 +467,7 @@
         },
         "ClusterSummary": {
             "type": "structure",
+            "documentation": "<p>The summary description of the cluster.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -480,6 +497,7 @@
         },
         "ClusterTimeline": {
             "type": "structure",
+            "documentation": "<p>Represents the timeline of the cluster's lifecycle.</p>",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -500,6 +518,7 @@
         },
         "Command": {
             "type": "structure",
+            "documentation": "<p>An entity describing an executable that runs on a cluster.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -524,6 +543,7 @@
         },
         "Configuration": {
             "type": "structure",
+            "documentation": "<note><p>Amazon EMR releases 4.x or later.</p></note> <p>Specifies a hardware and software configuration of the EMR cluster. This includes configurations for applications and software bundled with Amazon EMR. The Configuration object is a JSON object which is defined by a classification and a set of properties. Configurations can be nested, so a configuration may have its own Configuration objects listed.</p>",
             "members": [
                 {
                     "name": "Classification",
@@ -551,6 +571,7 @@
         },
         "DescribeClusterInput": {
             "type": "structure",
+            "documentation": "<p>This input determines which cluster to describe.</p>",
             "members": [
                 {
                     "name": "ClusterId",
@@ -561,6 +582,7 @@
         },
         "DescribeClusterOutput": {
             "type": "structure",
+            "documentation": "<p>This output contains the description of the cluster.</p>",
             "members": [
                 {
                     "name": "Cluster",
@@ -571,6 +593,7 @@
         },
         "DescribeJobFlowsInput": {
             "type": "structure",
+            "documentation": "<p> The input for the <a>DescribeJobFlows</a> operation. </p>",
             "members": [
                 {
                     "name": "CreatedAfter",
@@ -596,6 +619,7 @@
         },
         "DescribeJobFlowsOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>DescribeJobFlows</a> operation. </p>",
             "members": [
                 {
                     "name": "JobFlows",
@@ -606,6 +630,7 @@
         },
         "DescribeStepInput": {
             "type": "structure",
+            "documentation": "<p>This input determines which step to describe.</p>",
             "members": [
                 {
                     "name": "ClusterId",
@@ -621,6 +646,7 @@
         },
         "DescribeStepOutput": {
             "type": "structure",
+            "documentation": "<p>This output contains the description of the cluster step.</p>",
             "members": [
                 {
                     "name": "Step",
@@ -635,6 +661,7 @@
         },
         "Ec2InstanceAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>",
             "members": [
                 {
                     "name": "Ec2KeyName",
@@ -686,6 +713,7 @@
         },
         "HadoopJarStepConfig": {
             "type": "structure",
+            "documentation": "<p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>",
             "members": [
                 {
                     "name": "Properties",
@@ -711,6 +739,7 @@
         },
         "HadoopStepConfig": {
             "type": "structure",
+            "documentation": "<p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>",
             "members": [
                 {
                     "name": "Jar",
@@ -736,6 +765,7 @@
         },
         "Instance": {
             "type": "structure",
+            "documentation": "<p>Represents an EC2 instance provisioned as part of cluster.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -776,6 +806,7 @@
         },
         "InstanceGroup": {
             "type": "structure",
+            "documentation": "<p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -831,6 +862,7 @@
         },
         "InstanceGroupConfig": {
             "type": "structure",
+            "documentation": "<p>Configuration defining a new instance group.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -875,6 +907,7 @@
         },
         "InstanceGroupDetail": {
             "type": "structure",
+            "documentation": "<p>Detailed information about an instance group. </p>",
             "members": [
                 {
                     "name": "InstanceGroupId",
@@ -965,6 +998,7 @@
         },
         "InstanceGroupModifyConfig": {
             "type": "structure",
+            "documentation": "<p>Modify an instance group size.</p>",
             "members": [
                 {
                     "name": "InstanceGroupId",
@@ -992,6 +1026,7 @@
         },
         "InstanceGroupStateChangeReason": {
             "type": "structure",
+            "documentation": "<p>The status change reason details for the instance group.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -1010,6 +1045,7 @@
         },
         "InstanceGroupStatus": {
             "type": "structure",
+            "documentation": "<p>The details of the instance group status.</p>",
             "members": [
                 {
                     "name": "State",
@@ -1030,6 +1066,7 @@
         },
         "InstanceGroupTimeline": {
             "type": "structure",
+            "documentation": "<p>The timeline of the instance group lifecycle.</p>",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -1070,6 +1107,7 @@
         },
         "InstanceStateChangeReason": {
             "type": "structure",
+            "documentation": "<p>The details of the status change reason for the instance.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -1088,6 +1126,7 @@
         },
         "InstanceStatus": {
             "type": "structure",
+            "documentation": "<p>The instance status details.</p>",
             "members": [
                 {
                     "name": "State",
@@ -1108,6 +1147,7 @@
         },
         "InstanceTimeline": {
             "type": "structure",
+            "documentation": "<p>The timeline of the instance lifecycle.</p>",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -1134,10 +1174,12 @@
         },
         "InternalServerError": {
             "type": "structure",
+            "documentation": "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>",
             "members": []
         },
         "InternalServerException": {
             "type": "structure",
+            "documentation": "<p>This exception occurs when there is an internal failure in the EMR service.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1148,6 +1190,7 @@
         },
         "InvalidRequestException": {
             "type": "structure",
+            "documentation": "<p>This exception occurs when there is something wrong with user input.</p>",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -1163,6 +1206,7 @@
         },
         "JobFlowDetail": {
             "type": "structure",
+            "documentation": "<p> A description of a job flow.</p>",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -1231,7 +1275,8 @@
             "of": "JobFlowDetail"
         },
         "JobFlowExecutionState": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p> The type of instance. </p> <enumValues> <value name=\"JobFlowExecutionState$COMPLETED\"> <p>A small instance</p> </value> <value name=\"JobFlowExecutionState$FAILED\"> <p>A large instance</p> </value> </enumValues>"
         },
         "JobFlowExecutionStateList": {
             "type": "list",
@@ -1239,6 +1284,7 @@
         },
         "JobFlowExecutionStatusDetail": {
             "type": "structure",
+            "documentation": "<p>Describes the status of the job flow.</p>",
             "members": [
                 {
                     "name": "State",
@@ -1274,6 +1320,7 @@
         },
         "JobFlowInstancesConfig": {
             "type": "structure",
+            "documentation": "<p>A description of the Amazon EC2 instance running the job flow. A valid JobFlowInstancesConfig must contain at least InstanceGroups, which is the recommended configuration. However, a valid alternative is to have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present).</p>",
             "members": [
                 {
                     "name": "MasterInstanceType",
@@ -1349,6 +1396,7 @@
         },
         "JobFlowInstancesDetail": {
             "type": "structure",
+            "documentation": "<p>Specify the type of Amazon EC2 instances to run the job flow on.</p>",
             "members": [
                 {
                     "name": "MasterInstanceType",
@@ -1419,6 +1467,7 @@
         },
         "KeyValue": {
             "type": "structure",
+            "documentation": "<p>A key value pair.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -1438,6 +1487,7 @@
         },
         "ListBootstrapActionsInput": {
             "type": "structure",
+            "documentation": "<p>This input determines which bootstrap actions to retrieve.</p>",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1453,6 +1503,7 @@
         },
         "ListBootstrapActionsOutput": {
             "type": "structure",
+            "documentation": "<p>This output contains the boostrap actions detail .</p>",
             "members": [
                 {
                     "name": "BootstrapActions",
@@ -1468,6 +1519,7 @@
         },
         "ListClustersInput": {
             "type": "structure",
+            "documentation": "<p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>",
             "members": [
                 {
                     "name": "CreatedAfter",
@@ -1493,6 +1545,7 @@
         },
         "ListClustersOutput": {
             "type": "structure",
+            "documentation": "<p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>",
             "members": [
                 {
                     "name": "Clusters",
@@ -1508,6 +1561,7 @@
         },
         "ListInstanceGroupsInput": {
             "type": "structure",
+            "documentation": "<p>This input determines which instance groups to retrieve.</p>",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1523,6 +1577,7 @@
         },
         "ListInstanceGroupsOutput": {
             "type": "structure",
+            "documentation": "<p>This input determines which instance groups to retrieve.</p>",
             "members": [
                 {
                     "name": "InstanceGroups",
@@ -1538,6 +1593,7 @@
         },
         "ListInstancesInput": {
             "type": "structure",
+            "documentation": "<p>This input determines which instances to list.</p>",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1563,6 +1619,7 @@
         },
         "ListInstancesOutput": {
             "type": "structure",
+            "documentation": "<p>This output contains the list of instances.</p>",
             "members": [
                 {
                     "name": "Instances",
@@ -1578,6 +1635,7 @@
         },
         "ListStepsInput": {
             "type": "structure",
+            "documentation": "<p>This input determines which steps to list.</p>",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1603,6 +1661,7 @@
         },
         "ListStepsOutput": {
             "type": "structure",
+            "documentation": "<p>This output contains the list of steps.</p>",
             "members": [
                 {
                     "name": "Steps",
@@ -1624,6 +1683,7 @@
         },
         "ModifyInstanceGroupsInput": {
             "type": "structure",
+            "documentation": "<p>Change the size of some instance groups.</p>",
             "members": [
                 {
                     "name": "InstanceGroups",
@@ -1638,6 +1698,7 @@
         },
         "PlacementType": {
             "type": "structure",
+            "documentation": "<p>The Amazon EC2 location for the job flow.</p>",
             "members": [
                 {
                     "name": "AvailabilityZone",
@@ -1648,6 +1709,7 @@
         },
         "RemoveTagsInput": {
             "type": "structure",
+            "documentation": "<p>This input identifies a cluster and a list of tags to remove. </p>",
             "members": [
                 {
                     "name": "ResourceId",
@@ -1663,6 +1725,7 @@
         },
         "RemoveTagsOutput": {
             "type": "structure",
+            "documentation": "<p>This output indicates the result of removing tags from a resource. </p>",
             "members": []
         },
         "ResourceId": {
@@ -1670,6 +1733,7 @@
         },
         "RunJobFlowInput": {
             "type": "structure",
+            "documentation": "<p> Input to the <a>RunJobFlow</a> operation. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -1755,6 +1819,7 @@
         },
         "RunJobFlowOutput": {
             "type": "structure",
+            "documentation": "<p> The result of the <a>RunJobFlow</a> operation. </p>",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -1765,6 +1830,7 @@
         },
         "ScriptBootstrapActionConfig": {
             "type": "structure",
+            "documentation": "<p>Configuration of the script to run during a bootstrap action.</p>",
             "members": [
                 {
                     "name": "Path",
@@ -1784,6 +1850,7 @@
         },
         "SetTerminationProtectionInput": {
             "type": "structure",
+            "documentation": "<p> The input argument to the <a>TerminationProtection</a> operation. </p>",
             "members": [
                 {
                     "name": "JobFlowIds",
@@ -1799,6 +1866,7 @@
         },
         "SetVisibleToAllUsersInput": {
             "type": "structure",
+            "documentation": "<p>The input to the SetVisibleToAllUsers action.</p>",
             "members": [
                 {
                     "name": "JobFlowIds",
@@ -1814,6 +1882,7 @@
         },
         "Step": {
             "type": "structure",
+            "documentation": "<p>This represents a step in a cluster.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1844,6 +1913,7 @@
         },
         "StepConfig": {
             "type": "structure",
+            "documentation": "<p>Specification of a job flow step.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -1868,6 +1938,7 @@
         },
         "StepDetail": {
             "type": "structure",
+            "documentation": "<p>Combines the execution state and configuration of a step.</p>",
             "members": [
                 {
                     "name": "StepConfig",
@@ -1890,6 +1961,7 @@
         },
         "StepExecutionStatusDetail": {
             "type": "structure",
+            "documentation": "<p>The execution state of a step.</p>",
             "members": [
                 {
                     "name": "State",
@@ -1930,6 +2002,7 @@
         },
         "StepStateChangeReason": {
             "type": "structure",
+            "documentation": "<p>The details of the step state change reason. </p>",
             "members": [
                 {
                     "name": "Code",
@@ -1952,6 +2025,7 @@
         },
         "StepStatus": {
             "type": "structure",
+            "documentation": "<p>The execution status details of the cluster step. </p>",
             "members": [
                 {
                     "name": "State",
@@ -1972,6 +2046,7 @@
         },
         "StepSummary": {
             "type": "structure",
+            "documentation": "<p>The summary of the cluster step.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -2006,6 +2081,7 @@
         },
         "StepTimeline": {
             "type": "structure",
+            "documentation": "<p>The timeline of the cluster step lifecycle. </p>",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -2032,10 +2108,13 @@
             "of": "String"
         },
         "StringMap": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "String"
         },
         "SupportedProductConfig": {
             "type": "structure",
+            "documentation": "<p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -2055,6 +2134,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clu\\ sters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html\">Tagging Amazon EMR Resources</a>. </p>",
             "members": [
                 {
                     "name": "Key",
@@ -2074,6 +2154,7 @@
         },
         "TerminateJobFlowsInput": {
             "type": "structure",
+            "documentation": "<p> Input to the <a>TerminateJobFlows</a> operation. </p>",
             "members": [
                 {
                     "name": "JobFlowIds",

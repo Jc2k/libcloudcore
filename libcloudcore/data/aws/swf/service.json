@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -274,6 +278,7 @@
         },
         "ActivityTask": {
             "type": "structure",
+            "documentation": "<p>Unit of work sent to an activity worker.</p>",
             "members": [
                 {
                     "name": "taskToken",
@@ -309,6 +314,7 @@
         },
         "ActivityTaskCancelRequestedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskCancelRequested</code> event.</p>",
             "members": [
                 {
                     "name": "decisionTaskCompletedEventId",
@@ -324,6 +330,7 @@
         },
         "ActivityTaskCanceledEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskCanceled</code> event.</p>",
             "members": [
                 {
                     "name": "details",
@@ -349,6 +356,7 @@
         },
         "ActivityTaskCompletedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskCompleted</code> event.</p>",
             "members": [
                 {
                     "name": "result",
@@ -369,6 +377,7 @@
         },
         "ActivityTaskFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskFailed</code> event.</p>",
             "members": [
                 {
                     "name": "reason",
@@ -394,6 +403,7 @@
         },
         "ActivityTaskScheduledEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskScheduled</code> event.</p>",
             "members": [
                 {
                     "name": "activityType",
@@ -454,6 +464,7 @@
         },
         "ActivityTaskStartedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskStarted</code> event.</p>",
             "members": [
                 {
                     "name": "identity",
@@ -469,6 +480,7 @@
         },
         "ActivityTaskStatus": {
             "type": "structure",
+            "documentation": "<p>Status information about an activity task.</p>",
             "members": [
                 {
                     "name": "cancelRequested",
@@ -479,6 +491,7 @@
         },
         "ActivityTaskTimedOutEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ActivityTaskTimedOut</code> event.</p>",
             "members": [
                 {
                     "name": "timeoutType",
@@ -507,6 +520,7 @@
         },
         "ActivityType": {
             "type": "structure",
+            "documentation": "<p>Represents an activity type.</p>",
             "members": [
                 {
                     "name": "name",
@@ -522,6 +536,7 @@
         },
         "ActivityTypeConfiguration": {
             "type": "structure",
+            "documentation": "<p>Configuration settings registered with the activity type.</p>",
             "members": [
                 {
                     "name": "defaultTaskStartToCloseTimeout",
@@ -557,6 +572,7 @@
         },
         "ActivityTypeDetail": {
             "type": "structure",
+            "documentation": "<p>Detailed information about an activity type.</p>",
             "members": [
                 {
                     "name": "typeInfo",
@@ -572,6 +588,7 @@
         },
         "ActivityTypeInfo": {
             "type": "structure",
+            "documentation": "<p>Detailed information about an activity type.</p>",
             "members": [
                 {
                     "name": "activityType",
@@ -606,6 +623,7 @@
         },
         "ActivityTypeInfos": {
             "type": "structure",
+            "documentation": "<p>Contains a paginated list of activity type information structures.</p>",
             "members": [
                 {
                     "name": "typeInfos",
@@ -621,6 +639,7 @@
         },
         "CancelTimerDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>CancelTimer</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "timerId",
@@ -634,6 +653,7 @@
         },
         "CancelTimerFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>CancelTimerFailed</code> event.</p>",
             "members": [
                 {
                     "name": "timerId",
@@ -654,6 +674,7 @@
         },
         "CancelWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>CancelWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "details",
@@ -667,6 +688,7 @@
         },
         "CancelWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>CancelWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "cause",
@@ -688,6 +710,7 @@
         },
         "ChildWorkflowExecutionCanceledEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -718,6 +741,7 @@
         },
         "ChildWorkflowExecutionCompletedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionCompleted</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -748,6 +772,7 @@
         },
         "ChildWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -783,6 +808,7 @@
         },
         "ChildWorkflowExecutionStartedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionStarted</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -803,6 +829,7 @@
         },
         "ChildWorkflowExecutionTerminatedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionTerminated</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -828,6 +855,7 @@
         },
         "ChildWorkflowExecutionTimedOutEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionTimedOut</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -861,6 +889,7 @@
         },
         "CloseStatusFilter": {
             "type": "structure",
+            "documentation": "<p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>",
             "members": [
                 {
                     "name": "status",
@@ -871,6 +900,7 @@
         },
         "CompleteWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>CompleteWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "result",
@@ -884,6 +914,7 @@
         },
         "CompleteWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>CompleteWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "cause",
@@ -899,6 +930,7 @@
         },
         "ContinueAsNewWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tag</code>: <i>Optional.</i>. A tag used to identify the workflow execution</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "input",
@@ -945,6 +977,7 @@
         },
         "ContinueAsNewWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "cause",
@@ -1066,6 +1099,7 @@
         },
         "Decision": {
             "type": "structure",
+            "documentation": "<p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <b>CancelTimer</b>: cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</li> <li> <b>CancelWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li> <li> <b>CompleteWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</li> <li> <b>ContinueAsNewWorkflowExecution</b>: closes the workflow execution and starts a new workflow execution of the same type using the same workflow id and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</li> <li> <b>FailWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</li> <li> <b>RecordMarker</b>: records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they do not need to look at the history beyond the marker event.</li> <li> <b>RequestCancelActivityTask</b>: attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</li> <li> <b>RequestCancelExternalWorkflowExecution</b>: requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>ScheduleActivityTask</b>: schedules an activity task.</li> <li> <b>SignalExternalWorkflowExecution</b>: requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>StartChildWorkflowExecution</b>: requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer will fire after the specified delay and record a <code>TimerFired</code> event.</li> </ul> <p><b>Access Control</b></p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <p><b>Decision Failure</b></p> <p>Decisions can fail for several reasons</p> <ul> <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and will therefore fail.</li> <li>A limit on your account was reached.</li> <li>The decision lacks sufficient permissions.</li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b> parameter indicates the cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <ul> <li> <b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed. This could happen if the activity type specified in the decision is not registered, is in a deprecated state, or the decision is not properly configured.</li> <li> <b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask decision failed. This could happen if there is no open activity task with the specified activityId.</li> <li> <b>StartTimerFailed</b>: a StartTimer decision failed. This could happen if there is another open timer with the same timerId.</li> <li> <b>CancelTimerFailed</b>: a CancelTimer decision failed. This could happen if there is no open timer with the specified timerId.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution decision failed. This could happen if the workflow type specified is not registered, is deprecated, or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: a SignalExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: a RequestCancelExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>CancelWorkflowExecutionFailed</b>: a CancelWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>CompleteWorkflowExecutionFailed</b>: a CompleteWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>ContinueAsNewWorkflowExecutionFailed</b>: a ContinueAsNewWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</li> <li> <b>FailWorkflowExecutionFailed</b>: a FailWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An UnhandledDecision fault will be returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</note> <p><b>How to Code a Decision</b></p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a> </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a> </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a> </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a> </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RecordMarkerDecisionAttributes</a> </li> <li> <a>StartTimerDecisionAttributes</a> </li> <li> <a>CancelTimerDecisionAttributes</a> </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>",
             "members": [
                 {
                     "name": "decisionType",
@@ -1140,6 +1174,7 @@
         },
         "DecisionTask": {
             "type": "structure",
+            "documentation": "<p>A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.</p>",
             "members": [
                 {
                     "name": "taskToken",
@@ -1180,6 +1215,7 @@
         },
         "DecisionTaskCompletedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>DecisionTaskCompleted</code> event.</p>",
             "members": [
                 {
                     "name": "executionContext",
@@ -1200,6 +1236,7 @@
         },
         "DecisionTaskScheduledEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>",
             "members": [
                 {
                     "name": "taskList",
@@ -1220,6 +1257,7 @@
         },
         "DecisionTaskStartedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>DecisionTaskStarted</code> event.</p>",
             "members": [
                 {
                     "name": "identity",
@@ -1235,6 +1273,7 @@
         },
         "DecisionTaskTimedOutEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>DecisionTaskTimedOut</code> event.</p>",
             "members": [
                 {
                     "name": "timeoutType",
@@ -1368,6 +1407,7 @@
         },
         "DomainAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p>Returned if the specified domain already exists. You will get this fault even if the existing domain is in deprecated status.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1378,6 +1418,7 @@
         },
         "DomainConfiguration": {
             "type": "structure",
+            "documentation": "<p>Contains the configuration settings of a domain.</p>",
             "members": [
                 {
                     "name": "workflowExecutionRetentionPeriodInDays",
@@ -1388,6 +1429,7 @@
         },
         "DomainDeprecatedFault": {
             "type": "structure",
+            "documentation": "<p>Returned when the specified domain has been deprecated.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1398,6 +1440,7 @@
         },
         "DomainDetail": {
             "type": "structure",
+            "documentation": "<p>Contains details of a domain.</p>",
             "members": [
                 {
                     "name": "domainInfo",
@@ -1411,6 +1454,7 @@
         },
         "DomainInfo": {
             "type": "structure",
+            "documentation": "<p>Contains general information about a domain.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1435,6 +1479,7 @@
         },
         "DomainInfos": {
             "type": "structure",
+            "documentation": "<p>Contains a paginated collection of DomainInfo structures.</p>",
             "members": [
                 {
                     "name": "domainInfos",
@@ -1474,6 +1519,7 @@
         },
         "ExecutionTimeFilter": {
             "type": "structure",
+            "documentation": "<p>Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href=\"https://en.wikipedia.org/wiki/Unix_time\">Unix Time format</a>. For example: <code>\"oldestDate\": 1325376070.</code></p>",
             "members": [
                 {
                     "name": "oldestDate",
@@ -1489,6 +1535,7 @@
         },
         "ExternalWorkflowExecutionCancelRequestedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -1504,6 +1551,7 @@
         },
         "ExternalWorkflowExecutionSignaledEventAttributes": {
             "type": "structure",
+            "documentation": "<p> Provides details of the <code>ExternalWorkflowExecutionSignaled</code> event.</p>",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -1519,6 +1567,7 @@
         },
         "FailWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>FailWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "reason",
@@ -1537,6 +1586,7 @@
         },
         "FailWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>FailWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "cause",
@@ -1585,6 +1635,7 @@
         },
         "History": {
             "type": "structure",
+            "documentation": "<p>Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.</p>",
             "members": [
                 {
                     "name": "events",
@@ -1600,6 +1651,7 @@
         },
         "HistoryEvent": {
             "type": "structure",
+            "documentation": "<p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <b>WorkflowExecutionStarted</b>: The workflow execution was started.</li> <li> <b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful completion.</li> <li> <b>WorkflowExecutionFailed</b>: The workflow execution closed due to a failure.</li> <li> <b>WorkflowExecutionTimedOut</b>: The workflow execution was closed because a time out was exceeded.</li> <li> <b>WorkflowExecutionCanceled</b>: The workflow execution was successfully canceled and closed.</li> <li> <b>WorkflowExecutionTerminated</b>: The workflow execution was terminated.</li> <li> <b>WorkflowExecutionContinuedAsNew</b>: The workflow execution was closed and a new execution of the same type was created with the same workflowId.</li> <li> <b>WorkflowExecutionCancelRequested</b>: A request to cancel this workflow execution was made.</li> <li> <b>DecisionTaskScheduled</b>: A decision task was scheduled for the workflow execution.</li> <li> <b>DecisionTaskStarted</b>: The decision task was dispatched to a decider.</li> <li> <b>DecisionTaskCompleted</b>: The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</li> <li> <b>DecisionTaskTimedOut</b>: The decision task timed out.</li> <li> <b>ActivityTaskScheduled</b>: An activity task was scheduled for execution.</li> <li> <b>ScheduleActivityTaskFailed</b>: Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly, for example the activity type specified is not registered.</li> <li> <b>ActivityTaskStarted</b>: The scheduled activity task was dispatched to a worker.</li> <li> <b>ActivityTaskCompleted</b>: An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</li> <li> <b>ActivityTaskFailed</b>: An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</li> <li> <b>ActivityTaskTimedOut</b>: The activity task timed out.</li> <li> <b>ActivityTaskCanceled</b>: The activity task was successfully canceled.</li> <li> <b>ActivityTaskCancelRequested</b>: A <code>RequestCancelActivityTask</code> decision was received by the system.</li> <li> <b>RequestCancelActivityTaskFailed</b>: Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured properly.</li> <li> <b>WorkflowExecutionSignaled</b>: An external signal was received for the workflow execution.</li> <li> <b>MarkerRecorded</b>: A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</li> <li> <b>TimerStarted</b>: A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</li> <li> <b>StartTimerFailed</b>: Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer already exists with the specified timer Id.</li> <li> <b>TimerFired</b>: A timer, previously started for this workflow execution, fired.</li> <li> <b>TimerCanceled</b>: A timer, previously started for this workflow execution, was successfully canceled.</li> <li> <b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no timer exists with the specified timer Id.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request was made to start a child workflow execution.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: Failed to process StartChildWorkflowExecution decision. This happens when the decision is not configured properly, for example the workflow type specified is not registered.</li> <li> <b>ChildWorkflowExecutionStarted</b>: A child workflow execution was successfully started.</li> <li> <b>ChildWorkflowExecutionCompleted</b>: A child workflow execution, started by this workflow execution, completed successfully and was closed.</li> <li> <b>ChildWorkflowExecutionFailed</b>: A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</li> <li> <b>ChildWorkflowExecutionTimedOut</b>: A child workflow execution, started by this workflow execution, timed out and was closed.</li> <li> <b>ChildWorkflowExecutionCanceled</b>: A child workflow execution, started by this workflow execution, was canceled and closed.</li> <li> <b>ChildWorkflowExecutionTerminated</b>: A child workflow execution, started by this workflow execution, was terminated.</li> <li> <b>SignalExternalWorkflowExecutionInitiated</b>: A request to signal an external workflow was made.</li> <li> <b>ExternalWorkflowExecutionSignaled</b>: A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: The request to signal an external workflow execution failed.</li> <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b>: A request was made to request the cancellation of an external workflow execution.</li> <li> <b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external workflow execution was successfully delivered to the target execution.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: Request to cancel an external workflow execution failed.</li> </ul>",
             "members": [
                 {
                     "name": "eventTimestamp",
@@ -1862,6 +1914,7 @@
         },
         "LimitExceededFault": {
             "type": "structure",
+            "documentation": "<p>Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2073,6 +2126,7 @@
         },
         "MarkerRecordedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>MarkerRecorded</code> event.</p>",
             "members": [
                 {
                     "name": "markerName",
@@ -2099,6 +2153,7 @@
         },
         "OperationNotPermittedFault": {
             "type": "structure",
+            "documentation": "<p>Returned when the caller does not have sufficient permissions to invoke the action.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2115,6 +2170,7 @@
         },
         "PendingTaskCount": {
             "type": "structure",
+            "documentation": "<p>Contains the count of tasks in a task list.</p>",
             "members": [
                 {
                     "name": "count",
@@ -2200,6 +2256,7 @@
         },
         "RecordMarkerDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RecordMarker</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "markerName",
@@ -2218,6 +2275,7 @@
         },
         "RecordMarkerFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RecordMarkerFailed</code> event.</p>",
             "members": [
                 {
                     "name": "markerName",
@@ -2366,6 +2424,7 @@
         },
         "RequestCancelActivityTaskDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RequestCancelActivityTask</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "activityId",
@@ -2379,6 +2438,7 @@
         },
         "RequestCancelActivityTaskFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RequestCancelActivityTaskFailed</code> event.</p>",
             "members": [
                 {
                     "name": "activityId",
@@ -2399,6 +2459,7 @@
         },
         "RequestCancelExternalWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2422,6 +2483,7 @@
         },
         "RequestCancelExternalWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2456,6 +2518,7 @@
         },
         "RequestCancelExternalWorkflowExecutionInitiatedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2574,6 +2637,7 @@
         },
         "Run": {
             "type": "structure",
+            "documentation": "<p>Specifies the <code>runId</code> of a workflow execution.</p>",
             "members": [
                 {
                     "name": "runId",
@@ -2590,6 +2654,7 @@
         },
         "ScheduleActivityTaskDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ScheduleActivityTask</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "activityType",
@@ -2648,6 +2713,7 @@
         },
         "ScheduleActivityTaskFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>ScheduleActivityTaskFailed</code> event.</p>",
             "members": [
                 {
                     "name": "activityType",
@@ -2673,6 +2739,7 @@
         },
         "SignalExternalWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2706,6 +2773,7 @@
         },
         "SignalExternalWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>SignalExternalWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2740,6 +2808,7 @@
         },
         "SignalExternalWorkflowExecutionInitiatedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2808,6 +2877,7 @@
         },
         "StartChildWorkflowExecutionDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>StartChildWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagList.member.N</code>: The key is \"swf:tagList.N\" where N is the tag number from 0 to 4, inclusive.</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> <li><code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "workflowType",
@@ -2866,6 +2936,7 @@
         },
         "StartChildWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>StartChildWorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "workflowType",
@@ -2900,6 +2971,7 @@
         },
         "StartChildWorkflowExecutionInitiatedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>StartChildWorkflowExecutionInitiated</code> event.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -2960,6 +3032,7 @@
         },
         "StartTimerDecisionAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>StartTimer</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
             "members": [
                 {
                     "name": "timerId",
@@ -2983,6 +3056,7 @@
         },
         "StartTimerFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>StartTimerFailed</code> event.</p>",
             "members": [
                 {
                     "name": "timerId",
@@ -3061,6 +3135,7 @@
         },
         "TagFilter": {
             "type": "structure",
+            "documentation": "<p>Used to filter the workflow executions in visibility APIs based on a tag.</p>",
             "members": [
                 {
                     "name": "tag",
@@ -3075,6 +3150,7 @@
         },
         "TaskList": {
             "type": "structure",
+            "documentation": "<p>Represents a task list.</p>",
             "members": [
                 {
                     "name": "name",
@@ -3129,6 +3205,7 @@
         },
         "TimerCanceledEventAttributes": {
             "type": "structure",
+            "documentation": "<p> Provides details of the <code>TimerCanceled</code> event. </p>",
             "members": [
                 {
                     "name": "timerId",
@@ -3149,6 +3226,7 @@
         },
         "TimerFiredEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>TimerFired</code> event.</p>",
             "members": [
                 {
                     "name": "timerId",
@@ -3167,6 +3245,7 @@
         },
         "TimerStartedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>TimerStarted</code> event.</p>",
             "members": [
                 {
                     "name": "timerId",
@@ -3198,6 +3277,7 @@
         },
         "TypeAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p>Returned if the type already exists in the specified domain. You will get this fault even if the existing type is in deprecated status. You can specify another version if the intent is to create a new distinct version of the type.</p>",
             "members": [
                 {
                     "name": "message",
@@ -3208,6 +3288,7 @@
         },
         "TypeDeprecatedFault": {
             "type": "structure",
+            "documentation": "<p>Returned when the specified activity or workflow type was already deprecated.</p>",
             "members": [
                 {
                     "name": "message",
@@ -3218,6 +3299,7 @@
         },
         "UnknownResourceFault": {
             "type": "structure",
+            "documentation": "<p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>",
             "members": [
                 {
                     "name": "message",
@@ -3234,6 +3316,7 @@
         },
         "WorkflowExecution": {
             "type": "structure",
+            "documentation": "<p>Represents a workflow execution.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -3249,6 +3332,7 @@
         },
         "WorkflowExecutionAlreadyStartedFault": {
             "type": "structure",
+            "documentation": "<p>Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in the specified domain.</p>",
             "members": [
                 {
                     "name": "message",
@@ -3262,6 +3346,7 @@
         },
         "WorkflowExecutionCancelRequestedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionCancelRequested</code> event.</p>",
             "members": [
                 {
                     "name": "externalWorkflowExecution",
@@ -3282,6 +3367,7 @@
         },
         "WorkflowExecutionCanceledEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionCanceled</code> event.</p>",
             "members": [
                 {
                     "name": "details",
@@ -3297,6 +3383,7 @@
         },
         "WorkflowExecutionCompletedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionCompleted</code> event.</p>",
             "members": [
                 {
                     "name": "result",
@@ -3312,6 +3399,7 @@
         },
         "WorkflowExecutionConfiguration": {
             "type": "structure",
+            "documentation": "<p>The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.</p>",
             "members": [
                 {
                     "name": "taskStartToCloseTimeout",
@@ -3342,6 +3430,7 @@
         },
         "WorkflowExecutionContinuedAsNewEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionContinuedAsNew</code> event.</p>",
             "members": [
                 {
                     "name": "input",
@@ -3394,6 +3483,7 @@
         },
         "WorkflowExecutionCount": {
             "type": "structure",
+            "documentation": "<p>Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a></p>",
             "members": [
                 {
                     "name": "count",
@@ -3409,6 +3499,7 @@
         },
         "WorkflowExecutionDetail": {
             "type": "structure",
+            "documentation": "<p>Contains details about a workflow execution.</p>",
             "members": [
                 {
                     "name": "executionInfo",
@@ -3439,6 +3530,7 @@
         },
         "WorkflowExecutionFailedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionFailed</code> event.</p>",
             "members": [
                 {
                     "name": "reason",
@@ -3459,6 +3551,7 @@
         },
         "WorkflowExecutionFilter": {
             "type": "structure",
+            "documentation": "<p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>",
             "members": [
                 {
                     "name": "workflowId",
@@ -3469,6 +3562,7 @@
         },
         "WorkflowExecutionInfo": {
             "type": "structure",
+            "documentation": "<p>Contains information about a workflow execution. </p>",
             "members": [
                 {
                     "name": "execution",
@@ -3523,6 +3617,7 @@
         },
         "WorkflowExecutionInfos": {
             "type": "structure",
+            "documentation": "<p>Contains a paginated list of information about workflow executions.</p>",
             "members": [
                 {
                     "name": "executionInfos",
@@ -3538,6 +3633,7 @@
         },
         "WorkflowExecutionOpenCounts": {
             "type": "structure",
+            "documentation": "<p>Contains the counts of open tasks, child workflow executions and timers for a workflow execution.</p>",
             "members": [
                 {
                     "name": "openActivityTasks",
@@ -3563,6 +3659,7 @@
         },
         "WorkflowExecutionSignaledEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionSignaled</code> event.</p>",
             "members": [
                 {
                     "name": "signalName",
@@ -3588,6 +3685,7 @@
         },
         "WorkflowExecutionStartedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of <code>WorkflowExecutionStarted</code> event.</p>",
             "members": [
                 {
                     "name": "input",
@@ -3650,6 +3748,7 @@
         },
         "WorkflowExecutionTerminatedEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionTerminated</code> event.</p>",
             "members": [
                 {
                     "name": "reason",
@@ -3675,6 +3774,7 @@
         },
         "WorkflowExecutionTimedOutEventAttributes": {
             "type": "structure",
+            "documentation": "<p>Provides details of the <code>WorkflowExecutionTimedOut</code> event.</p>",
             "members": [
                 {
                     "name": "timeoutType",
@@ -3696,6 +3796,7 @@
         },
         "WorkflowType": {
             "type": "structure",
+            "documentation": "<p>Represents a workflow type.</p>",
             "members": [
                 {
                     "name": "name",
@@ -3711,6 +3812,7 @@
         },
         "WorkflowTypeConfiguration": {
             "type": "structure",
+            "documentation": "<p>The configuration settings of a workflow type.</p>",
             "members": [
                 {
                     "name": "defaultTaskStartToCloseTimeout",
@@ -3741,6 +3843,7 @@
         },
         "WorkflowTypeDetail": {
             "type": "structure",
+            "documentation": "<p>Contains details about a workflow type.</p>",
             "members": [
                 {
                     "name": "typeInfo",
@@ -3756,6 +3859,7 @@
         },
         "WorkflowTypeFilter": {
             "type": "structure",
+            "documentation": "<p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>",
             "members": [
                 {
                     "name": "name",
@@ -3771,6 +3875,7 @@
         },
         "WorkflowTypeInfo": {
             "type": "structure",
+            "documentation": "<p>Contains information about a workflow type.</p>",
             "members": [
                 {
                     "name": "workflowType",
@@ -3805,6 +3910,7 @@
         },
         "WorkflowTypeInfos": {
             "type": "structure",
+            "documentation": "<p>Contains a paginated list of information structures about workflow types.</p>",
             "members": [
                 {
                     "name": "typeInfos",

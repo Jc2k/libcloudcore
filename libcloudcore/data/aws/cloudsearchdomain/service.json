@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -64,6 +68,7 @@
         },
         "Bucket": {
             "type": "structure",
+            "documentation": "<p>A container for facet information. </p>",
             "members": [
                 {
                     "name": "value",
@@ -79,6 +84,7 @@
         },
         "BucketInfo": {
             "type": "structure",
+            "documentation": "<p>A container for the calculated facet values and counts.</p>",
             "members": [
                 {
                     "name": "buckets",
@@ -102,6 +108,7 @@
         },
         "DocumentServiceException": {
             "type": "structure",
+            "documentation": "<p>Information about any problems encountered while processing an upload request.</p>",
             "members": [
                 {
                     "name": "status",
@@ -117,6 +124,7 @@
         },
         "DocumentServiceWarning": {
             "type": "structure",
+            "documentation": "<p>A warning returned by the document service when an issue is discovered while processing an upload request.</p>",
             "members": [
                 {
                     "name": "message",
@@ -133,20 +141,26 @@
             "type": "string"
         },
         "Exprs": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "String"
         },
         "Facet": {
             "type": "string"
         },
         "Facets": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "BucketInfo"
         },
         "FieldValue": {
             "type": "list",
             "of": "String"
         },
         "Fields": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "FieldValue"
         },
         "FilterQuery": {
             "type": "string"
@@ -155,10 +169,13 @@
             "type": "string"
         },
         "Highlights": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "String"
         },
         "Hit": {
             "type": "structure",
+            "documentation": "<p>Information about a document that matches the search request.</p>",
             "members": [
                 {
                     "name": "id",
@@ -188,6 +205,7 @@
         },
         "Hits": {
             "type": "structure",
+            "documentation": "<p>The collection of documents that match the search request.</p>",
             "members": [
                 {
                     "name": "found",
@@ -231,6 +249,7 @@
         },
         "SearchException": {
             "type": "structure",
+            "documentation": "<p>Information about any problems encountered while processing a search request.</p>",
             "members": [
                 {
                     "name": "message",
@@ -241,6 +260,7 @@
         },
         "SearchRequest": {
             "type": "structure",
+            "documentation": "<p>Container for the parameters to the <code>Search</code> request.</p>",
             "members": [
                 {
                     "name": "cursor",
@@ -337,6 +357,7 @@
         },
         "SearchResponse": {
             "type": "structure",
+            "documentation": "<p>The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.</p>",
             "members": [
                 {
                     "name": "status",
@@ -357,6 +378,7 @@
         },
         "SearchStatus": {
             "type": "structure",
+            "documentation": "<p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>",
             "members": [
                 {
                     "name": "timems",
@@ -384,6 +406,7 @@
         },
         "SuggestModel": {
             "type": "structure",
+            "documentation": "<p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>",
             "members": [
                 {
                     "name": "query",
@@ -404,6 +427,7 @@
         },
         "SuggestRequest": {
             "type": "structure",
+            "documentation": "<p>Container for the parameters to the <code>Suggest</code> request.</p>",
             "members": [
                 {
                     "name": "query",
@@ -430,6 +454,7 @@
         },
         "SuggestResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>Suggest</code> request.</p>",
             "members": [
                 {
                     "name": "status",
@@ -445,6 +470,7 @@
         },
         "SuggestStatus": {
             "type": "structure",
+            "documentation": "<p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>",
             "members": [
                 {
                     "name": "timems",
@@ -463,6 +489,7 @@
         },
         "SuggestionMatch": {
             "type": "structure",
+            "documentation": "<p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>",
             "members": [
                 {
                     "name": "suggestion",
@@ -490,6 +517,7 @@
         },
         "UploadDocumentsRequest": {
             "type": "structure",
+            "documentation": "<p>Container for the parameters to the <code>UploadDocuments</code> request.</p>",
             "members": [
                 {
                     "name": "documents",
@@ -507,6 +535,7 @@
         },
         "UploadDocumentsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to an <code>UploadDocuments</code> request.</p>",
             "members": [
                 {
                     "name": "status",

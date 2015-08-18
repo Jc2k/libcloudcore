@@ -71,16 +71,18 @@ class TestXmlSerializer(unittest.TestCase):
         result = self.layer.serialize(
             operation,
             operation.output_shape,
-            HostedZones=[{
-                "Id": "/hostedzone/ZONE_ID",
-                "Name": "www.example.com",
-                "CallerReference": "CALLER_REFERENCE",
-                "Config": {
-                    "Comment": "COMMENT",
-                    "PrivateZone": True,
-                },
-                "ResourceRecordSetCount": 0,
-            }],
+            dict(
+                HostedZones=[{
+                    "Id": "/hostedzone/ZONE_ID",
+                    "Name": "www.example.com",
+                    "CallerReference": "CALLER_REFERENCE",
+                    "Config": {
+                        "Comment": "COMMENT",
+                        "PrivateZone": True,
+                    },
+                    "ResourceRecordSetCount": 0,
+                }],
+            ),
         )
 
         xml = """
@@ -116,9 +118,11 @@ class TestXmlToDictEdges(base.DriverTestCase):
         result = self.driver.serialize(
             operation,
             operation.output_shape,
-            text="TEXT",
-            attr="ATTR",
-            child="CHILD",
+            dict(
+                text="TEXT",
+                attr="ATTR",
+                child="CHILD",
+            ),
         )
         self.assertEqual(xmltodict.parse(result), {
             "TestComplicatedStructure": {

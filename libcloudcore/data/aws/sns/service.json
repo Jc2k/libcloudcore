@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://sns.amazonaws.com/doc/2010-03-31/"
         }
@@ -259,6 +262,7 @@
         },
         "AuthorizationErrorException": {
             "type": "structure",
+            "documentation": "<p>Indicates that the user has been denied access to the requested resource.</p>",
             "members": [
                 {
                     "name": "message",
@@ -271,6 +275,7 @@
         },
         "ConfirmSubscriptionInput": {
             "type": "structure",
+            "documentation": "Input for ConfirmSubscription action.",
             "members": [
                 {
                     "name": "TopicArn",
@@ -291,6 +296,7 @@
         },
         "ConfirmSubscriptionResponse": {
             "type": "structure",
+            "documentation": "Response for ConfirmSubscriptions action.",
             "members": [
                 {
                     "name": "SubscriptionArn",
@@ -301,6 +307,7 @@
         },
         "CreateEndpointResponse": {
             "type": "structure",
+            "documentation": "<p>Response from CreateEndpoint action.</p>",
             "members": [
                 {
                     "name": "EndpointArn",
@@ -311,6 +318,7 @@
         },
         "CreatePlatformApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Input for CreatePlatformApplication action.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -331,6 +339,7 @@
         },
         "CreatePlatformApplicationResponse": {
             "type": "structure",
+            "documentation": "<p>Response from CreatePlatformApplication action.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -341,6 +350,7 @@
         },
         "CreatePlatformEndpointInput": {
             "type": "structure",
+            "documentation": "<p>Input for CreatePlatformEndpoint action.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -366,6 +376,7 @@
         },
         "CreateTopicInput": {
             "type": "structure",
+            "documentation": "<p>Input for CreateTopic action.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -376,6 +387,7 @@
         },
         "CreateTopicResponse": {
             "type": "structure",
+            "documentation": "<p>Response from CreateTopic action.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -390,6 +402,7 @@
         },
         "DeleteEndpointInput": {
             "type": "structure",
+            "documentation": "<p>Input for DeleteEndpoint action.</p>",
             "members": [
                 {
                     "name": "EndpointArn",
@@ -400,6 +413,7 @@
         },
         "DeletePlatformApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Input for DeletePlatformApplication action.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -420,6 +434,7 @@
         },
         "Endpoint": {
             "type": "structure",
+            "documentation": "<p>Endpoint for mobile app and device.</p>",
             "members": [
                 {
                     "name": "EndpointArn",
@@ -435,6 +450,7 @@
         },
         "EndpointDisabledException": {
             "type": "structure",
+            "documentation": "<p>Exception error indicating endpoint disabled.</p>",
             "members": [
                 {
                     "name": "message",
@@ -445,6 +461,7 @@
         },
         "GetEndpointAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for GetEndpointAttributes action.</p>",
             "members": [
                 {
                     "name": "EndpointArn",
@@ -455,6 +472,7 @@
         },
         "GetEndpointAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Response from GetEndpointAttributes of the EndpointArn.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -465,6 +483,7 @@
         },
         "GetPlatformApplicationAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for GetPlatformApplicationAttributes action.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -475,6 +494,7 @@
         },
         "GetPlatformApplicationAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Response for GetPlatformApplicationAttributes action.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -485,6 +505,7 @@
         },
         "GetSubscriptionAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for GetSubscriptionAttributes.</p>",
             "members": [
                 {
                     "name": "SubscriptionArn",
@@ -495,6 +516,7 @@
         },
         "GetSubscriptionAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Response for GetSubscriptionAttributes action.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -505,6 +527,7 @@
         },
         "GetTopicAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for GetTopicAttributes action.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -515,6 +538,7 @@
         },
         "GetTopicAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Response for GetTopicAttributes action.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -525,6 +549,7 @@
         },
         "InternalErrorException": {
             "type": "structure",
+            "documentation": "<p>Indicates an internal service error.</p>",
             "members": [
                 {
                     "name": "message",
@@ -534,6 +559,7 @@
         },
         "InvalidParameterException": {
             "type": "structure",
+            "documentation": "<p>Indicates that a request parameter does not comply with the associated constraints.</p>",
             "members": [
                 {
                     "name": "message",
@@ -543,6 +569,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
+            "documentation": "<p>Indicates that a request parameter does not comply with the associated constraints.</p>",
             "members": [
                 {
                     "name": "message",
@@ -552,6 +579,7 @@
         },
         "ListEndpointsByPlatformApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Input for ListEndpointsByPlatformApplication action.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -567,6 +595,7 @@
         },
         "ListEndpointsByPlatformApplicationResponse": {
             "type": "structure",
+            "documentation": "<p>Response for ListEndpointsByPlatformApplication action.</p>",
             "members": [
                 {
                     "name": "Endpoints",
@@ -590,6 +619,7 @@
         },
         "ListPlatformApplicationsInput": {
             "type": "structure",
+            "documentation": "<p>Input for ListPlatformApplications action.</p>",
             "members": [
                 {
                     "name": "NextToken",
@@ -600,6 +630,7 @@
         },
         "ListPlatformApplicationsResponse": {
             "type": "structure",
+            "documentation": "<p>Response for ListPlatformApplications action.</p>",
             "members": [
                 {
                     "name": "PlatformApplications",
@@ -615,6 +646,7 @@
         },
         "ListSubscriptionsByTopicInput": {
             "type": "structure",
+            "documentation": "<p>Input for ListSubscriptionsByTopic action.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -630,6 +662,7 @@
         },
         "ListSubscriptionsByTopicResponse": {
             "type": "structure",
+            "documentation": "<p>Response for ListSubscriptionsByTopic action.</p>",
             "members": [
                 {
                     "name": "Subscriptions",
@@ -645,6 +678,7 @@
         },
         "ListSubscriptionsInput": {
             "type": "structure",
+            "documentation": "Input for ListSubscriptions action.",
             "members": [
                 {
                     "name": "NextToken",
@@ -655,6 +689,7 @@
         },
         "ListSubscriptionsResponse": {
             "type": "structure",
+            "documentation": "<p>Response for ListSubscriptions action</p>",
             "members": [
                 {
                     "name": "Subscriptions",
@@ -680,6 +715,7 @@
         },
         "ListTopicsResponse": {
             "type": "structure",
+            "documentation": "<p>Response for ListTopics action.</p>",
             "members": [
                 {
                     "name": "Topics",
@@ -694,13 +730,18 @@
             ]
         },
         "MapStringToString": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "String"
         },
         "MessageAttributeMap": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "MessageAttributeValue"
         },
         "MessageAttributeValue": {
             "type": "structure",
+            "documentation": "<p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/api/API_Publish.html\">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html\">Using Amazon SNS Message Attributes</a>.</p>",
             "members": [
                 {
                     "name": "DataType",
@@ -721,6 +762,7 @@
         },
         "NotFoundException": {
             "type": "structure",
+            "documentation": "<p>Indicates that the requested resource does not exist.</p>",
             "members": [
                 {
                     "name": "message",
@@ -730,6 +772,7 @@
         },
         "PlatformApplication": {
             "type": "structure",
+            "documentation": "<p>Platform application object.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -745,6 +788,7 @@
         },
         "PlatformApplicationDisabledException": {
             "type": "structure",
+            "documentation": "<p>Exception error indicating platform application disabled.</p>",
             "members": [
                 {
                     "name": "message",
@@ -755,6 +799,7 @@
         },
         "PublishInput": {
             "type": "structure",
+            "documentation": "<p>Input for Publish action.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -790,6 +835,7 @@
         },
         "PublishResponse": {
             "type": "structure",
+            "documentation": "<p>Response for Publish action.</p>",
             "members": [
                 {
                     "name": "MessageId",
@@ -800,6 +846,7 @@
         },
         "RemovePermissionInput": {
             "type": "structure",
+            "documentation": "<p>Input for RemovePermission action.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -815,6 +862,7 @@
         },
         "SetEndpointAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for SetEndpointAttributes action.</p>",
             "members": [
                 {
                     "name": "EndpointArn",
@@ -830,6 +878,7 @@
         },
         "SetPlatformApplicationAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for SetPlatformApplicationAttributes action.</p>",
             "members": [
                 {
                     "name": "PlatformApplicationArn",
@@ -845,6 +894,7 @@
         },
         "SetSubscriptionAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for SetSubscriptionAttributes action.</p>",
             "members": [
                 {
                     "name": "SubscriptionArn",
@@ -865,6 +915,7 @@
         },
         "SetTopicAttributesInput": {
             "type": "structure",
+            "documentation": "<p>Input for SetTopicAttributes action.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -888,6 +939,7 @@
         },
         "SubscribeInput": {
             "type": "structure",
+            "documentation": "Input for Subscribe action.",
             "members": [
                 {
                     "name": "TopicArn",
@@ -908,6 +960,7 @@
         },
         "SubscribeResponse": {
             "type": "structure",
+            "documentation": "Response for Subscribe action.",
             "members": [
                 {
                     "name": "SubscriptionArn",
@@ -918,6 +971,7 @@
         },
         "Subscription": {
             "type": "structure",
+            "documentation": "<p>A wrapper type for the attributes of an Amazon SNS subscription.</p>",
             "members": [
                 {
                     "name": "SubscriptionArn",
@@ -947,10 +1001,13 @@
             ]
         },
         "SubscriptionAttributesMap": {
-            "type": "map"
+            "type": "map",
+            "key": "attributeName",
+            "value": "attributeValue"
         },
         "SubscriptionLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>",
             "members": [
                 {
                     "name": "message",
@@ -964,6 +1021,7 @@
         },
         "Topic": {
             "type": "structure",
+            "documentation": "<p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>",
             "members": [
                 {
                     "name": "TopicArn",
@@ -973,10 +1031,13 @@
             ]
         },
         "TopicAttributesMap": {
-            "type": "map"
+            "type": "map",
+            "key": "attributeName",
+            "value": "attributeValue"
         },
         "TopicLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Indicates that the customer already owns the maximum allowed number of topics.</p>",
             "members": [
                 {
                     "name": "message",
@@ -990,6 +1051,7 @@
         },
         "UnsubscribeInput": {
             "type": "structure",
+            "documentation": "<p>Input for Unsubscribe action.</p>",
             "members": [
                 {
                     "name": "SubscriptionArn",

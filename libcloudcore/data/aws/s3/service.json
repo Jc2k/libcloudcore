@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -613,6 +617,7 @@
         },
         "BucketAlreadyExists": {
             "type": "structure",
+            "documentation": "The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.",
             "members": []
         },
         "BucketCannedACL": {
@@ -1829,7 +1834,8 @@
             "type": "string"
         },
         "EncodingType": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response."
         },
         "Error": {
             "type": "structure",
@@ -1867,7 +1873,8 @@
             "of": "Error"
         },
         "Event": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Bucket event for which to send notifications."
         },
         "EventList": {
             "type": "list",
@@ -2950,6 +2957,7 @@
         },
         "LambdaFunctionConfiguration": {
             "type": "structure",
+            "documentation": "Container for specifying the AWS Lambda notification configuration.",
             "members": [
                 {
                     "name": "Id",
@@ -3496,7 +3504,9 @@
             "type": "string"
         },
         "Metadata": {
-            "type": "map"
+            "type": "map",
+            "key": "MetadataKey",
+            "value": "MetadataValue"
         },
         "MetadataDirective": {
             "type": "string"
@@ -3568,18 +3578,22 @@
         },
         "NoSuchBucket": {
             "type": "structure",
+            "documentation": "The specified bucket does not exist.",
             "members": []
         },
         "NoSuchKey": {
             "type": "structure",
+            "documentation": "The specified key does not exist.",
             "members": []
         },
         "NoSuchUpload": {
             "type": "structure",
+            "documentation": "The specified multipart upload does not exist.",
             "members": []
         },
         "NoncurrentVersionExpiration": {
             "type": "structure",
+            "documentation": "Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.",
             "members": [
                 {
                     "name": "NoncurrentDays",
@@ -3590,6 +3604,7 @@
         },
         "NoncurrentVersionTransition": {
             "type": "structure",
+            "documentation": "Container for the transition rule that describes when noncurrent objects transition to the GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the GLACIER storage class at a specific period in the object's lifetime.",
             "members": [
                 {
                     "name": "NoncurrentDays",
@@ -3605,6 +3620,7 @@
         },
         "NotificationConfiguration": {
             "type": "structure",
+            "documentation": "Container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off on the bucket.",
             "members": [
                 {
                     "name": "TopicConfigurations",
@@ -3641,7 +3657,8 @@
             ]
         },
         "NotificationId": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID."
         },
         "Object": {
             "type": "structure",
@@ -3675,6 +3692,7 @@
         },
         "ObjectAlreadyInActiveTierError": {
             "type": "structure",
+            "documentation": "This operation is not allowed against this storage tier",
             "members": []
         },
         "ObjectCannedACL": {
@@ -3708,6 +3726,7 @@
         },
         "ObjectNotInActiveTierError": {
             "type": "structure",
+            "documentation": "The source object of the COPY operation is not in the active tier and is only stored in Amazon Glacier.",
             "members": []
         },
         "ObjectStorageClass": {
@@ -4499,6 +4518,7 @@
         },
         "QueueConfiguration": {
             "type": "structure",
+            "documentation": "Container for specifying an configuration when you want Amazon S3 to publish events to an Amazon Simple Queue Service (Amazon SQS) queue.",
             "members": [
                 {
                     "name": "Id",
@@ -4603,6 +4623,7 @@
         },
         "ReplicationConfiguration": {
             "type": "structure",
+            "documentation": "Container for replication rules. You can add as many as 1,000 rules. Total replication configuration size can be up to 2 MB.",
             "members": [
                 {
                     "name": "Role",
@@ -4652,10 +4673,12 @@
             "type": "string"
         },
         "RequestCharged": {
-            "type": "string"
+            "type": "string",
+            "documentation": "If present, indicates that the requester was successfully charged for the request."
         },
         "RequestPayer": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html"
         },
         "RequestPaymentConfiguration": {
             "type": "structure",
@@ -4889,6 +4912,7 @@
         },
         "TopicConfiguration": {
             "type": "structure",
+            "documentation": "Container for specifying the configuration when you want Amazon S3 to publish events to an Amazon Simple Notification Service (Amazon SNS) topic.",
             "members": [
                 {
                     "name": "Id",

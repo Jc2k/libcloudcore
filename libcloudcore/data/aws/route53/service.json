@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "https://route53.amazonaws.com/doc/2013-04-01/"
         }
@@ -320,6 +323,7 @@
         },
         "AliasTarget": {
             "type": "structure",
+            "documentation": "<p><i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.</p> <p>For more information and an example, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html\">Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i></p>.",
             "members": [
                 {
                     "name": "HostedZoneId",
@@ -343,6 +347,7 @@
         },
         "AssociateVPCWithHostedZoneRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to associate a VPC with an hosted zone.</p>",
             "members": [
                 {
                     "name": "HostedZoneId",
@@ -365,6 +370,7 @@
         },
         "AssociateVPCWithHostedZoneResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the response information for the request.</p>",
             "members": [
                 {
                     "name": "ChangeInfo",
@@ -375,6 +381,7 @@
         },
         "Change": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the information for each change in a change batch request.</p>",
             "members": [
                 {
                     "name": "Action",
@@ -393,6 +400,7 @@
         },
         "ChangeBatch": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains an optional comment and the changes that you want to make with a change batch request.</p>",
             "members": [
                 {
                     "name": "Comment",
@@ -408,6 +416,7 @@
         },
         "ChangeInfo": {
             "type": "structure",
+            "documentation": "<p>A complex type that describes change information about changes made to your hosted zone.</p> <p>This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information about the change.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -433,6 +442,7 @@
         },
         "ChangeResourceRecordSetsRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains a change batch.</p>",
             "members": [
                 {
                     "name": "HostedZoneId",
@@ -450,6 +460,7 @@
         },
         "ChangeResourceRecordSetsResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the response for the request.</p>",
             "members": [
                 {
                     "name": "ChangeInfo",
@@ -463,6 +474,7 @@
         },
         "ChangeTagsForResourceRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about a request to add, change, or delete the tags that are associated with a resource.</p>",
             "members": [
                 {
                     "name": "ResourceType",
@@ -492,6 +504,7 @@
         },
         "ChangeTagsForResourceResponse": {
             "type": "structure",
+            "documentation": "<p>Empty response for the request.</p>",
             "members": []
         },
         "Changes": {
@@ -513,6 +526,7 @@
         },
         "CreateHealthCheckRequest": {
             "type": "structure",
+            "documentation": "<p>&gt;A complex type that contains information about the request to create a health check.</p>",
             "members": [
                 {
                     "name": "CallerReference",
@@ -528,6 +542,7 @@
         },
         "CreateHealthCheckResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the response information for the new health check.</p>",
             "members": [
                 {
                     "name": "HealthCheck",
@@ -545,6 +560,7 @@
         },
         "CreateHostedZoneRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to create a hosted zone.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -575,6 +591,7 @@
         },
         "CreateHostedZoneResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the response information for the new hosted zone.</p>",
             "members": [
                 {
                     "name": "HostedZone",
@@ -641,6 +658,7 @@
         },
         "DelegationSet": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains name server information.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -659,6 +677,7 @@
         },
         "DelegationSetAlreadyCreated": {
             "type": "structure",
+            "documentation": "<p>A delegation set with the same owner and caller reference combination has already been created.</p>",
             "members": [
                 {
                     "name": "message",
@@ -669,6 +688,7 @@
         },
         "DelegationSetAlreadyReusable": {
             "type": "structure",
+            "documentation": "<p>The specified delegation set has already been marked as reusable.</p>",
             "members": [
                 {
                     "name": "message",
@@ -679,6 +699,7 @@
         },
         "DelegationSetInUse": {
             "type": "structure",
+            "documentation": "<p>The specified delegation contains associated hosted zones which must be deleted before the reusable delegation set can be deleted.</p>",
             "members": [
                 {
                     "name": "message",
@@ -693,6 +714,7 @@
         },
         "DelegationSetNotAvailable": {
             "type": "structure",
+            "documentation": "<p>Route 53 allows some duplicate domain names, but there is a maximum number of duplicate names. This error indicates that you have reached that maximum. If you want to create another hosted zone with the same name and Route 53 generates this error, you can request an increase to the limit on the <a href=\"http://aws.amazon.com/route53-request/\">Contact Us</a> page.</p>",
             "members": [
                 {
                     "name": "message",
@@ -703,6 +725,7 @@
         },
         "DelegationSetNotReusable": {
             "type": "structure",
+            "documentation": "<p>The specified delegation set has not been marked as reusable.</p>",
             "members": [
                 {
                     "name": "message",
@@ -717,6 +740,7 @@
         },
         "DeleteHealthCheckRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the request information for delete health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckId",
@@ -729,10 +753,12 @@
         },
         "DeleteHealthCheckResponse": {
             "type": "structure",
+            "documentation": "<p>Empty response for the request.</p>",
             "members": []
         },
         "DeleteHostedZoneRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the hosted zone that you want to delete.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -745,6 +771,7 @@
         },
         "DeleteHostedZoneResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the response information for the request.</p>",
             "members": [
                 {
                     "name": "ChangeInfo",
@@ -755,6 +782,7 @@
         },
         "DeleteReusableDelegationSetRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the information for the delete request.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -767,6 +795,7 @@
         },
         "DeleteReusableDelegationSetResponse": {
             "type": "structure",
+            "documentation": "<p>Empty response for the request.</p>",
             "members": []
         },
         "DisassociateVPCComment": {
@@ -774,6 +803,7 @@
         },
         "DisassociateVPCFromHostedZoneRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to disassociate a VPC from an hosted zone.</p>",
             "members": [
                 {
                     "name": "HostedZoneId",
@@ -796,6 +826,7 @@
         },
         "DisassociateVPCFromHostedZoneResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing the response information for the request.</p>",
             "members": [
                 {
                     "name": "ChangeInfo",
@@ -819,6 +850,7 @@
         },
         "GeoLocation": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about a geo location.</p>",
             "members": [
                 {
                     "name": "ContinentCode",
@@ -851,6 +883,7 @@
         },
         "GeoLocationDetails": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about a <code>GeoLocation</code>.</p>",
             "members": [
                 {
                     "name": "ContinentCode",
@@ -896,6 +929,7 @@
         },
         "GetChangeRequest": {
             "type": "structure",
+            "documentation": "<p>The input for a GetChange request.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -908,6 +942,7 @@
         },
         "GetChangeResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the <code>ChangeInfo</code> element.</p>",
             "members": [
                 {
                     "name": "ChangeInfo",
@@ -918,10 +953,12 @@
         },
         "GetCheckerIpRangesRequest": {
             "type": "structure",
+            "documentation": "<p>Empty request.</p>",
             "members": []
         },
         "GetCheckerIpRangesResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the <code>CheckerIpRanges</code> element.</p>",
             "members": [
                 {
                     "name": "CheckerIpRanges",
@@ -932,6 +969,7 @@
         },
         "GetGeoLocationRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to get a geo location.</p>",
             "members": [
                 {
                     "name": "ContinentCode",
@@ -958,6 +996,7 @@
         },
         "GetGeoLocationResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about the specified geo location.</p>",
             "members": [
                 {
                     "name": "GeoLocationDetails",
@@ -968,10 +1007,12 @@
         },
         "GetHealthCheckCountRequest": {
             "type": "structure",
+            "documentation": "<p> To retrieve a count of all your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheckcount</code> resource.</p>",
             "members": []
         },
         "GetHealthCheckCountResponse": {
             "type": "structure",
+            "documentation": "<p> A complex type that contains the count of health checks associated with the current AWS account.</p>",
             "members": [
                 {
                     "name": "HealthCheckCount",
@@ -982,6 +1023,7 @@
         },
         "GetHealthCheckLastFailureReasonRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to get the most recent failure reason for a health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckId",
@@ -994,6 +1036,7 @@
         },
         "GetHealthCheckLastFailureReasonResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the most recent failure for the specified health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckObservations",
@@ -1004,6 +1047,7 @@
         },
         "GetHealthCheckRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to get a health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckId",
@@ -1016,6 +1060,7 @@
         },
         "GetHealthCheckResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about the specified health check.</p>",
             "members": [
                 {
                     "name": "HealthCheck",
@@ -1026,6 +1071,7 @@
         },
         "GetHealthCheckStatusRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to get health check status for a health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckId",
@@ -1038,6 +1084,7 @@
         },
         "GetHealthCheckStatusResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the status of the specified health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckObservations",
@@ -1048,10 +1095,12 @@
         },
         "GetHostedZoneCountRequest": {
             "type": "structure",
+            "documentation": "<p> To retrieve a count of all your hosted zones, send a <code>GET</code> request to the <code>2013-04-01/hostedzonecount</code> resource.</p>",
             "members": []
         },
         "GetHostedZoneCountResponse": {
             "type": "structure",
+            "documentation": "<p> A complex type that contains the count of hosted zones associated with the current AWS account.</p>",
             "members": [
                 {
                     "name": "HostedZoneCount",
@@ -1062,6 +1111,7 @@
         },
         "GetHostedZoneRequest": {
             "type": "structure",
+            "documentation": "<p> The input for a GetHostedZone request.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1074,6 +1124,7 @@
         },
         "GetHostedZoneResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about the specified hosted zone.</p>",
             "members": [
                 {
                     "name": "HostedZone",
@@ -1094,6 +1145,7 @@
         },
         "GetReusableDelegationSetRequest": {
             "type": "structure",
+            "documentation": "<p> The input for a GetReusableDelegationSet request.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1106,6 +1158,7 @@
         },
         "GetReusableDelegationSetResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about the specified reusable delegation set.</p>",
             "members": [
                 {
                     "name": "DelegationSet",
@@ -1116,6 +1169,7 @@
         },
         "HealthCheck": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains identifying information about the health check.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1141,6 +1195,7 @@
         },
         "HealthCheckAlreadyExists": {
             "type": "structure",
+            "documentation": "<p>The health check you are trying to create already exists. Route 53 returns this error when a health check has already been created with the specified <code>CallerReference</code>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1151,6 +1206,7 @@
         },
         "HealthCheckConfig": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the health check configuration.</p>",
             "members": [
                 {
                     "name": "IPAddress",
@@ -1202,6 +1258,7 @@
         },
         "HealthCheckInUse": {
             "type": "structure",
+            "documentation": "<p>There are resource records associated with this health check. Before you can delete the health check, you must disassociate it from the resource record sets.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1215,6 +1272,7 @@
         },
         "HealthCheckObservation": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the IP address of a Route 53 health checker and the reason for the health check status.</p>",
             "members": [
                 {
                     "name": "IPAddress",
@@ -1253,6 +1311,7 @@
         },
         "HostedZone": {
             "type": "structure",
+            "documentation": "<p>A complex type that contain information about the specified hosted zone.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1283,6 +1342,7 @@
         },
         "HostedZoneAlreadyExists": {
             "type": "structure",
+            "documentation": "<p>The hosted zone you are trying to create already exists. Route 53 returns this error when a hosted zone has already been created with the specified <code>CallerReference</code>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1293,6 +1353,7 @@
         },
         "HostedZoneConfig": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the XML document.</p>",
             "members": [
                 {
                     "name": "Comment",
@@ -1311,6 +1372,7 @@
         },
         "HostedZoneNotEmpty": {
             "type": "structure",
+            "documentation": "<p>The hosted zone contains resource record sets in addition to the default NS and SOA resource record sets. Before you can delete the hosted zone, you must delete the additional resource record sets.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1321,6 +1383,7 @@
         },
         "HostedZoneNotFound": {
             "type": "structure",
+            "documentation": "<p>The specified HostedZone cannot be found.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1344,6 +1407,7 @@
         },
         "IncompatibleVersion": {
             "type": "structure",
+            "documentation": "<p>The resource you are trying to access is unsupported on this Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1353,6 +1417,7 @@
         },
         "InvalidArgument": {
             "type": "structure",
+            "documentation": "<p>At least one of the specified arguments is invalid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1363,6 +1428,7 @@
         },
         "InvalidChangeBatch": {
             "type": "structure",
+            "documentation": "<p>This error contains a list of one or more error messages. Each error message indicates one error in the change batch. For more information, see <a href=\"http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html#example_Errors\">Example InvalidChangeBatch Errors</a>. </p>",
             "members": [
                 {
                     "name": "messages",
@@ -1373,6 +1439,7 @@
         },
         "InvalidDomainName": {
             "type": "structure",
+            "documentation": "<p>This error indicates that the specified domain name is not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1383,6 +1450,7 @@
         },
         "InvalidInput": {
             "type": "structure",
+            "documentation": "<p>Some value specified in the request is invalid or the XML document is malformed.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1393,6 +1461,7 @@
         },
         "InvalidVPCId": {
             "type": "structure",
+            "documentation": "<p>The hosted zone you are trying to create for your VPC_ID does not belong to you. Route 53 returns this error when the VPC specified by <code>VPCId</code> does not belong to you.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1406,6 +1475,7 @@
         },
         "LastVPCAssociation": {
             "type": "structure",
+            "documentation": "<p>The VPC you are trying to disassociate from the hosted zone is the last the VPC that is associated with the hosted zone. Route 53 currently doesn't support disassociate the last VPC from the hosted zone.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1416,6 +1486,7 @@
         },
         "LimitsExceeded": {
             "type": "structure",
+            "documentation": "<p>The limits specified for a resource have been exceeded.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1426,6 +1497,7 @@
         },
         "ListGeoLocationsRequest": {
             "type": "structure",
+            "documentation": "<p> The input for a ListGeoLocations request.</p>",
             "members": [
                 {
                     "name": "StartContinentCode",
@@ -1459,6 +1531,7 @@
         },
         "ListGeoLocationsResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the geo locations that are returned by the request and information about the response.</p>",
             "members": [
                 {
                     "name": "GeoLocationDetailsList",
@@ -1494,6 +1567,7 @@
         },
         "ListHealthChecksRequest": {
             "type": "structure",
+            "documentation": "<p> To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code> resource. The response to this request includes a <code>HealthChecks</code> element with zero or more <code>HealthCheck</code> child elements. By default, the list of health checks is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the health check that the list begins with.</p> <note> Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100.</note>",
             "members": [
                 {
                     "name": "Marker",
@@ -1513,6 +1587,7 @@
         },
         "ListHealthChecksResponse": {
             "type": "structure",
+            "documentation": "<p> A complex type that contains the response for the request.</p>",
             "members": [
                 {
                     "name": "HealthChecks",
@@ -1543,6 +1618,7 @@
         },
         "ListHostedZonesByNameRequest": {
             "type": "structure",
+            "documentation": "<p>To retrieve a list of your hosted zones in lexicographic order, send a <code>GET</code> request to the <code>2013-04-01/hostedzonesbyname</code> resource. The response to this request includes a <code>HostedZones</code> element with zero or more <code>HostedZone</code> child elements lexicographically ordered by DNS name. By default, the list of hosted zones is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and <code>HostedZoneId</code> parameters to control the hosted zone that the list begins with.</p> <p>For more information about listing hosted zones, see <a href=\"http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html\">Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "DNSName",
@@ -1569,6 +1645,7 @@
         },
         "ListHostedZonesByNameResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the response for the request.</p>",
             "members": [
                 {
                     "name": "HostedZones",
@@ -1609,6 +1686,7 @@
         },
         "ListHostedZonesRequest": {
             "type": "structure",
+            "documentation": "<p> To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>2013-04-01/hostedzone</code> resource. The response to this request includes a <code>HostedZones</code> element with zero or more <code>HostedZone</code> child elements. By default, the list of hosted zones is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the hosted zone that the list begins with. For more information about listing hosted zones, see <a href=\"http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html\">Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <note> Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100.</note>",
             "members": [
                 {
                     "name": "Marker",
@@ -1634,6 +1712,7 @@
         },
         "ListHostedZonesResponse": {
             "type": "structure",
+            "documentation": "<p> A complex type that contains the response for the request.</p>",
             "members": [
                 {
                     "name": "HostedZones",
@@ -1664,6 +1743,7 @@
         },
         "ListResourceRecordSetsRequest": {
             "type": "structure",
+            "documentation": "<p> The input for a ListResourceRecordSets request.</p>",
             "members": [
                 {
                     "name": "HostedZoneId",
@@ -1704,6 +1784,7 @@
         },
         "ListResourceRecordSetsResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the resource record sets that are returned by the request and information about the response.</p>",
             "members": [
                 {
                     "name": "ResourceRecordSets",
@@ -1739,6 +1820,7 @@
         },
         "ListReusableDelegationSetsRequest": {
             "type": "structure",
+            "documentation": "<p> To retrieve a list of your reusable delegation sets, send a <code>GET</code> request to the <code>2013-04-01/delegationset</code> resource. The response to this request includes a <code>DelegationSets</code> element with zero or more <code>DelegationSet</code> child elements. By default, the list of reusable delegation sets is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the delegation set that the list begins with.</p> <note> Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100.</note>",
             "members": [
                 {
                     "name": "Marker",
@@ -1758,6 +1840,7 @@
         },
         "ListReusableDelegationSetsResponse": {
             "type": "structure",
+            "documentation": "<p> A complex type that contains the response for the request.</p>",
             "members": [
                 {
                     "name": "DelegationSets",
@@ -1788,6 +1871,7 @@
         },
         "ListTagsForResourceRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about a request for a list of the tags that are associated with an individual resource.</p>",
             "members": [
                 {
                     "name": "ResourceType",
@@ -1807,6 +1891,7 @@
         },
         "ListTagsForResourceResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing tags for the specified resource.</p>",
             "members": [
                 {
                     "name": "ResourceTagSet",
@@ -1817,6 +1902,7 @@
         },
         "ListTagsForResourcesRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about a request for a list of the tags that are associated with up to 10 specified resources.</p>",
             "members": [
                 {
                     "name": "ResourceType",
@@ -1834,6 +1920,7 @@
         },
         "ListTagsForResourcesResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing tags for the specified resources.</p>",
             "members": [
                 {
                     "name": "ResourceTagSets",
@@ -1853,6 +1940,7 @@
         },
         "NoSuchDelegationSet": {
             "type": "structure",
+            "documentation": "<p>The specified delegation set does not exist.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1863,6 +1951,7 @@
         },
         "NoSuchGeoLocation": {
             "type": "structure",
+            "documentation": "<p>The geo location you are trying to get does not exist.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1873,6 +1962,7 @@
         },
         "NoSuchHealthCheck": {
             "type": "structure",
+            "documentation": "<p>The health check you are trying to get or delete does not exist.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1907,6 +1997,7 @@
         },
         "PriorRequestNotComplete": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because Route 53 was still processing a prior request.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1916,6 +2007,7 @@
         },
         "PublicZoneVPCAssociation": {
             "type": "structure",
+            "documentation": "<p>The hosted zone you are trying to associate VPC with doesn't have any VPC association. Route 53 currently doesn't support associate a VPC with a public hosted zone.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1944,6 +2036,7 @@
         },
         "ResourceRecord": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains the value of the <code>Value</code> element for the current resource record set.</p>",
             "members": [
                 {
                     "name": "Value",
@@ -1954,6 +2047,7 @@
         },
         "ResourceRecordSet": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the current resource record set.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -2034,6 +2128,7 @@
         },
         "ResourceTagSet": {
             "type": "structure",
+            "documentation": "<p>A complex type containing a resource and its associated tags.</p>",
             "members": [
                 {
                     "name": "ResourceType",
@@ -2067,6 +2162,7 @@
         },
         "StatusReport": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the health check status for the current observation.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -2085,6 +2181,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>A single tag containing a key and value.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -2145,6 +2242,7 @@
         },
         "TooManyHostedZones": {
             "type": "structure",
+            "documentation": "<p>This error indicates that you've reached the maximum number of hosted zones that can be created for the current AWS account. You can request an increase to the limit on the <a href=\"http://aws.amazon.com/route53-request/\">Contact Us</a> page.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2155,6 +2253,7 @@
         },
         "UpdateHealthCheckRequest": {
             "type": "structure",
+            "documentation": "<p>&gt;A complex type that contains information about the request to update a health check.</p>",
             "members": [
                 {
                     "name": "HealthCheckId",
@@ -2211,6 +2310,7 @@
         },
         "UpdateHostedZoneCommentRequest": {
             "type": "structure",
+            "documentation": "<p>A complex type that contains information about the request to update a hosted zone comment.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -2228,6 +2328,7 @@
         },
         "UpdateHostedZoneCommentResponse": {
             "type": "structure",
+            "documentation": "<p>A complex type containing information about the specified hosted zone after the update.</p>",
             "members": [
                 {
                     "name": "HostedZone",
@@ -2250,6 +2351,7 @@
         },
         "VPCAssociationNotFound": {
             "type": "structure",
+            "documentation": "<p>The VPC you specified is not currently associated with the hosted zone.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2259,13 +2361,15 @@
             ]
         },
         "VPCId": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>A VPC ID</p>"
         },
         "VPCRegion": {
             "type": "string"
         },
         "VPCs": {
             "type": "list",
+            "documentation": "<p>A list of VPCs</p>",
             "of": "VPC"
         }
     }

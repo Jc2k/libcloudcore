@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "https://sts.amazonaws.com/doc/2011-06-15/"
         }
@@ -134,6 +137,7 @@
         },
         "AssumeRoleResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>",
             "members": [
                 {
                     "name": "Credentials",
@@ -184,6 +188,7 @@
         },
         "AssumeRoleWithSAMLResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>",
             "members": [
                 {
                     "name": "Credentials",
@@ -262,6 +267,7 @@
         },
         "AssumeRoleWithWebIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>",
             "members": [
                 {
                     "name": "Credentials",
@@ -297,6 +303,7 @@
         },
         "AssumedRoleUser": {
             "type": "structure",
+            "documentation": "<p>The identifiers for the temporary security credentials that the operation returns. </p>",
             "members": [
                 {
                     "name": "AssumedRoleId",
@@ -315,6 +322,7 @@
         },
         "Credentials": {
             "type": "structure",
+            "documentation": "<p>AWS credentials for API authentication.</p>",
             "members": [
                 {
                     "name": "AccessKeyId",
@@ -350,6 +358,7 @@
         },
         "DecodeAuthorizationMessageResponse": {
             "type": "structure",
+            "documentation": "<p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request. </p>",
             "members": [
                 {
                     "name": "DecodedMessage",
@@ -360,6 +369,7 @@
         },
         "ExpiredTokenException": {
             "type": "structure",
+            "documentation": "<p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request. </p>",
             "members": [
                 {
                     "name": "message",
@@ -369,6 +379,7 @@
         },
         "FederatedUser": {
             "type": "structure",
+            "documentation": "<p>Identifiers for the federated user that is associated with the credentials.</p>",
             "members": [
                 {
                     "name": "FederatedUserId",
@@ -404,6 +415,7 @@
         },
         "GetFederationTokenResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>",
             "members": [
                 {
                     "name": "Credentials",
@@ -444,6 +456,7 @@
         },
         "GetSessionTokenResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>",
             "members": [
                 {
                     "name": "Credentials",
@@ -454,6 +467,7 @@
         },
         "IDPCommunicationErrorException": {
             "type": "structure",
+            "documentation": "<p>The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity provider might be down or not responding. </p>",
             "members": [
                 {
                     "name": "message",
@@ -463,6 +477,7 @@
         },
         "IDPRejectedClaimException": {
             "type": "structure",
+            "documentation": "<p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p> <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>",
             "members": [
                 {
                     "name": "message",
@@ -472,6 +487,7 @@
         },
         "InvalidAuthorizationMessageException": {
             "type": "structure",
+            "documentation": "<p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
             "members": [
                 {
                     "name": "message",
@@ -481,6 +497,7 @@
         },
         "InvalidIdentityTokenException": {
             "type": "structure",
+            "documentation": "<p>The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request. </p>",
             "members": [
                 {
                     "name": "message",
@@ -493,6 +510,7 @@
         },
         "MalformedPolicyDocumentException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>",
             "members": [
                 {
                     "name": "message",
@@ -505,6 +523,7 @@
         },
         "PackedPolicyTooLargeException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the policy document was too large. The error message describes how big the policy document is, in packed form, as a percentage of what the API allows.</p>",
             "members": [
                 {
                     "name": "message",

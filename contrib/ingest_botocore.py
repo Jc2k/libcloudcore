@@ -65,6 +65,8 @@ def process_service_2(path, model):
     for name, shape in service.get("shapes", {}).items():
         s = shapes[name] = collections.OrderedDict()
         s['type'] = shape['type']
+        if 'documentation' in shape:
+            s['documentation'] = shape['documentation']
         if s['type'] == 'structure':
             s['members'] = []
             for k, v in shape['members'].items():
@@ -73,6 +75,9 @@ def process_service_2(path, model):
                 s['members'].append(m)
         elif s['type'] == 'list':
             s['of'] = shape['member']['shape']
+        elif s['type'] == 'map':
+            s['key'] = shape['key']['shape']
+            s['value'] = shape['value']['shape']
 
     operations = model['operations']
     for name, operation in service.get("operations", {}).items():
@@ -90,6 +95,10 @@ def process_service(name, path, output_path):
     model['endpoints'] = []
     model['operations'] = collections.OrderedDict()
     model['shapes'] = collections.OrderedDict()
+
+    model['metadata']["request-pipeline"] = [
+        "libcloudcore.serializers.xml:XmlSerializer"
+    ]
 
     process_endpoints(os.path.join(path, "../../_endpoints.json"), name, model)
     process_service_2(path, model)

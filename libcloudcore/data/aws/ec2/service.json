@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://ec2.amazonaws.com/doc/2015-04-15"
         }
@@ -1524,6 +1527,7 @@
         },
         "AccountAttribute": {
             "type": "structure",
+            "documentation": "<p>Describes an account attribute.</p>",
             "members": [
                 {
                     "name": "AttributeName",
@@ -1552,6 +1556,7 @@
         },
         "AccountAttributeValue": {
             "type": "structure",
+            "documentation": "<p>Describes a value of an account attribute.</p>",
             "members": [
                 {
                     "name": "AttributeValue",
@@ -1567,6 +1572,7 @@
         },
         "ActiveInstance": {
             "type": "structure",
+            "documentation": "<p>Describes a running instance in a Spot fleet.</p>",
             "members": [
                 {
                     "name": "InstanceType",
@@ -1594,6 +1600,7 @@
         },
         "Address": {
             "type": "structure",
+            "documentation": "<p>Describes an Elastic IP address.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -2000,6 +2007,7 @@
         },
         "AttributeBooleanValue": {
             "type": "structure",
+            "documentation": "<p>The value to use when a resource attribute accepts a Boolean value.</p>",
             "members": [
                 {
                     "name": "Value",
@@ -2011,6 +2019,7 @@
         },
         "AttributeValue": {
             "type": "structure",
+            "documentation": "<p>The value to use for a resource attribute.</p>",
             "members": [
                 {
                     "name": "Value",
@@ -2137,6 +2146,7 @@
         },
         "AvailabilityZone": {
             "type": "structure",
+            "documentation": "<p>Describes an Availability Zone.</p>",
             "members": [
                 {
                     "name": "ZoneName",
@@ -2170,6 +2180,7 @@
         },
         "AvailabilityZoneMessage": {
             "type": "structure",
+            "documentation": "<p>Describes a message about an Availability Zone.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -2191,6 +2202,7 @@
         },
         "BlockDeviceMapping": {
             "type": "structure",
+            "documentation": "<p>Describes a block device mapping.</p>",
             "members": [
                 {
                     "name": "VirtualName",
@@ -2267,6 +2279,7 @@
         },
         "BundleTask": {
             "type": "structure",
+            "documentation": "<p>Describes a bundle task.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -2320,6 +2333,7 @@
         },
         "BundleTaskError": {
             "type": "structure",
+            "documentation": "<p>Describes an error for <a>BundleInstance</a>.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -2473,6 +2487,7 @@
         },
         "CancelSpotFleetRequestsError": {
             "type": "structure",
+            "documentation": "<p>Describes a Spot fleet error.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -2490,6 +2505,7 @@
         },
         "CancelSpotFleetRequestsErrorItem": {
             "type": "structure",
+            "documentation": "<p>Describes a Spot fleet request that was not successfully canceled.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestId",
@@ -2511,6 +2527,7 @@
         },
         "CancelSpotFleetRequestsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for CancelSpotFleetRequests.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -2534,6 +2551,7 @@
         },
         "CancelSpotFleetRequestsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of CancelSpotFleetRequests.</p>",
             "members": [
                 {
                     "name": "UnsuccessfulFleetRequests",
@@ -2551,6 +2569,7 @@
         },
         "CancelSpotFleetRequestsSuccessItem": {
             "type": "structure",
+            "documentation": "<p>Describes a Spot fleet request that was successfully canceled.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestId",
@@ -2581,6 +2600,7 @@
         },
         "CancelSpotInstanceRequestsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for CancelSpotInstanceRequests.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -2598,6 +2618,7 @@
         },
         "CancelSpotInstanceRequestsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the output of CancelSpotInstanceRequests.</p>",
             "members": [
                 {
                     "name": "CancelledSpotInstanceRequests",
@@ -2609,6 +2630,7 @@
         },
         "CancelledSpotInstanceRequest": {
             "type": "structure",
+            "documentation": "<p>Describes a request to cancel a Spot Instance.</p>",
             "members": [
                 {
                     "name": "SpotInstanceRequestId",
@@ -2630,6 +2652,7 @@
         },
         "ClassicLinkInstance": {
             "type": "structure",
+            "documentation": "<p>Describes a linked EC2-Classic instance.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -2663,6 +2686,7 @@
         },
         "ClientData": {
             "type": "structure",
+            "documentation": "<p>Describes the client-specific data.</p>",
             "members": [
                 {
                     "name": "UploadStart",
@@ -2733,6 +2757,7 @@
         },
         "ConversionTask": {
             "type": "structure",
+            "documentation": "<p>Describes a conversion task.</p>",
             "members": [
                 {
                     "name": "ConversionTaskId",
@@ -3499,6 +3524,7 @@
         },
         "CreateSpotDatafeedSubscriptionRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for CreateSpotDatafeedSubscription.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -3522,6 +3548,7 @@
         },
         "CreateSpotDatafeedSubscriptionResult": {
             "type": "structure",
+            "documentation": "<p>Contains the output of CreateSpotDatafeedSubscription.</p>",
             "members": [
                 {
                     "name": "SpotDatafeedSubscription",
@@ -3593,6 +3620,7 @@
         },
         "CreateVolumePermission": {
             "type": "structure",
+            "documentation": "<p>Describes the user or group to be added or removed from the permissions for a volume.</p>",
             "members": [
                 {
                     "name": "UserId",
@@ -3614,6 +3642,7 @@
         },
         "CreateVolumePermissionModifications": {
             "type": "structure",
+            "documentation": "<p>Describes modifications to the permissions for a volume.</p>",
             "members": [
                 {
                     "name": "Add",
@@ -3895,6 +3924,7 @@
         },
         "CustomerGateway": {
             "type": "structure",
+            "documentation": "<p>Describes a customer gateway.</p>",
             "members": [
                 {
                     "name": "CustomerGatewayId",
@@ -4194,6 +4224,7 @@
         },
         "DeleteSpotDatafeedSubscriptionRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DeleteSpotDatafeedSubscription.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -5803,6 +5834,7 @@
         },
         "DescribeSpotDatafeedSubscriptionRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeSpotDatafeedSubscription.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -5814,6 +5846,7 @@
         },
         "DescribeSpotDatafeedSubscriptionResult": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeSpotDatafeedSubscription.</p>",
             "members": [
                 {
                     "name": "SpotDatafeedSubscription",
@@ -5825,6 +5858,7 @@
         },
         "DescribeSpotFleetInstancesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeSpotFleetInstances.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -5854,6 +5888,7 @@
         },
         "DescribeSpotFleetInstancesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeSpotFleetInstances.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestId",
@@ -5877,6 +5912,7 @@
         },
         "DescribeSpotFleetRequestHistoryRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeSpotFleetRequestHistory.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -5918,6 +5954,7 @@
         },
         "DescribeSpotFleetRequestHistoryResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeSpotFleetRequestHistory.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestId",
@@ -5953,6 +5990,7 @@
         },
         "DescribeSpotFleetRequestsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeSpotFleetRequests.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -5982,6 +6020,7 @@
         },
         "DescribeSpotFleetRequestsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeSpotFleetRequests.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestConfigs",
@@ -5999,6 +6038,7 @@
         },
         "DescribeSpotInstanceRequestsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeSpotInstanceRequests.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -6022,6 +6062,7 @@
         },
         "DescribeSpotInstanceRequestsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeSpotInstanceRequests.</p>",
             "members": [
                 {
                     "name": "SpotInstanceRequests",
@@ -6033,6 +6074,7 @@
         },
         "DescribeSpotPriceHistoryRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeSpotPriceHistory.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -6092,6 +6134,7 @@
         },
         "DescribeSpotPriceHistoryResult": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeSpotPriceHistory.</p>",
             "members": [
                 {
                     "name": "SpotPriceHistory",
@@ -6770,6 +6813,7 @@
         },
         "DhcpConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes a DHCP configuration option.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -6791,6 +6835,7 @@
         },
         "DhcpOptions": {
             "type": "structure",
+            "documentation": "<p>Describes a set of DHCP options.</p>",
             "members": [
                 {
                     "name": "DhcpOptionsId",
@@ -6903,6 +6948,7 @@
         },
         "DiskImage": {
             "type": "structure",
+            "documentation": "<p>Describes a disk image.</p>",
             "members": [
                 {
                     "name": "Image",
@@ -6923,6 +6969,7 @@
         },
         "DiskImageDescription": {
             "type": "structure",
+            "documentation": "<p>Describes a disk image.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -6952,6 +6999,7 @@
         },
         "DiskImageDetail": {
             "type": "structure",
+            "documentation": "<p>Describes a disk image.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -6982,6 +7030,7 @@
         },
         "DiskImageVolumeDescription": {
             "type": "structure",
+            "documentation": "<p>Describes a disk image volume.</p>",
             "members": [
                 {
                     "name": "Size",
@@ -7005,6 +7054,7 @@
         },
         "EbsBlockDevice": {
             "type": "structure",
+            "documentation": "<p>Describes a block device for an EBS volume.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -7046,6 +7096,7 @@
         },
         "EbsInstanceBlockDevice": {
             "type": "structure",
+            "documentation": "<p>Describes a parameter used to set up an EBS volume in a block device mapping.</p>",
             "members": [
                 {
                     "name": "VolumeId",
@@ -7155,6 +7206,7 @@
         },
         "EventInformation": {
             "type": "structure",
+            "documentation": "<p>Describes a Spot fleet event.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -7188,6 +7240,7 @@
         },
         "ExportTask": {
             "type": "structure",
+            "documentation": "<p>Describes an instance export task.</p>",
             "members": [
                 {
                     "name": "ExportTaskId",
@@ -7240,6 +7293,7 @@
         },
         "ExportToS3Task": {
             "type": "structure",
+            "documentation": "<p>Describes the format and location for an instance export task.</p>",
             "members": [
                 {
                     "name": "DiskImageFormat",
@@ -7269,6 +7323,7 @@
         },
         "ExportToS3TaskSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes an instance export task.</p>",
             "members": [
                 {
                     "name": "DiskImageFormat",
@@ -7298,6 +7353,7 @@
         },
         "Filter": {
             "type": "structure",
+            "documentation": "<p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria, such as tags, attributes, or IDs.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -7321,6 +7377,7 @@
         },
         "FlowLog": {
             "type": "structure",
+            "documentation": "<p>Describes a flow log.</p>",
             "members": [
                 {
                     "name": "CreationTime",
@@ -7472,6 +7529,7 @@
         },
         "GroupIdentifier": {
             "type": "structure",
+            "documentation": "<p>Describes a security group.</p>",
             "members": [
                 {
                     "name": "GroupName",
@@ -7497,6 +7555,7 @@
         },
         "HistoryRecord": {
             "type": "structure",
+            "documentation": "<p>Describes an event in the history of the Spot fleet request.</p>",
             "members": [
                 {
                     "name": "Timestamp",
@@ -7527,6 +7586,7 @@
         },
         "IamInstanceProfile": {
             "type": "structure",
+            "documentation": "<p>Describes an IAM instance profile.</p>",
             "members": [
                 {
                     "name": "Arn",
@@ -7544,6 +7604,7 @@
         },
         "IamInstanceProfileSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes an IAM instance profile.</p>",
             "members": [
                 {
                     "name": "Arn",
@@ -7561,6 +7622,7 @@
         },
         "IcmpTypeCode": {
             "type": "structure",
+            "documentation": "<p>Describes the ICMP type and code.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -7578,6 +7640,7 @@
         },
         "Image": {
             "type": "structure",
+            "documentation": "<p>Describes an image.</p>",
             "members": [
                 {
                     "name": "ImageId",
@@ -7721,6 +7784,7 @@
         },
         "ImageAttribute": {
             "type": "structure",
+            "documentation": "<p>Describes an image attribute.</p>",
             "members": [
                 {
                     "name": "ImageId",
@@ -7776,6 +7840,7 @@
         },
         "ImageDiskContainer": {
             "type": "structure",
+            "documentation": "<p>Describes the disk container object for an import image task.</p>",
             "members": [
                 {
                     "name": "Description",
@@ -7956,6 +8021,7 @@
         },
         "ImportImageTask": {
             "type": "structure",
+            "documentation": "<p>Describes an import image task.</p>",
             "members": [
                 {
                     "name": "ImportTaskId",
@@ -8031,6 +8097,7 @@
         },
         "ImportInstanceLaunchSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes the launch specification for VM import.</p>",
             "members": [
                 {
                     "name": "Architecture",
@@ -8148,6 +8215,7 @@
         },
         "ImportInstanceTaskDetails": {
             "type": "structure",
+            "documentation": "<p>Describes an import instance task.</p>",
             "members": [
                 {
                     "name": "Volumes",
@@ -8177,6 +8245,7 @@
         },
         "ImportInstanceVolumeDetailItem": {
             "type": "structure",
+            "documentation": "<p>Describes an import volume task.</p>",
             "members": [
                 {
                     "name": "BytesConverted",
@@ -8326,6 +8395,7 @@
         },
         "ImportSnapshotTask": {
             "type": "structure",
+            "documentation": "<p>Describes an import snapshot task.</p>",
             "members": [
                 {
                     "name": "ImportTaskId",
@@ -8403,6 +8473,7 @@
         },
         "ImportVolumeTaskDetails": {
             "type": "structure",
+            "documentation": "<p>Describes an import volume task.</p>",
             "members": [
                 {
                     "name": "BytesConverted",
@@ -8438,6 +8509,7 @@
         },
         "Instance": {
             "type": "structure",
+            "documentation": "<p>Describes an instance.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -8665,6 +8737,7 @@
         },
         "InstanceAttribute": {
             "type": "structure",
+            "documentation": "<p>Describes an instance attribute.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -8756,6 +8829,7 @@
         },
         "InstanceBlockDeviceMapping": {
             "type": "structure",
+            "documentation": "<p>Describes a block device mapping.</p>",
             "members": [
                 {
                     "name": "DeviceName",
@@ -8777,6 +8851,7 @@
         },
         "InstanceBlockDeviceMappingSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes a block device mapping entry.</p>",
             "members": [
                 {
                     "name": "DeviceName",
@@ -8810,6 +8885,7 @@
         },
         "InstanceCount": {
             "type": "structure",
+            "documentation": "<p>Describes a Reserved Instance listing state.</p>",
             "members": [
                 {
                     "name": "State",
@@ -8831,6 +8907,7 @@
         },
         "InstanceExportDetails": {
             "type": "structure",
+            "documentation": "<p>Describes an instance to export.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -8859,6 +8936,7 @@
         },
         "InstanceMonitoring": {
             "type": "structure",
+            "documentation": "<p>Describes the monitoring information of the instance.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -8880,6 +8958,7 @@
         },
         "InstanceNetworkInterface": {
             "type": "structure",
+            "documentation": "<p>Describes a network interface.</p>",
             "members": [
                 {
                     "name": "NetworkInterfaceId",
@@ -8969,6 +9048,7 @@
         },
         "InstanceNetworkInterfaceAssociation": {
             "type": "structure",
+            "documentation": "<p>Describes association information for an Elastic IP address.</p>",
             "members": [
                 {
                     "name": "PublicIp",
@@ -8992,6 +9072,7 @@
         },
         "InstanceNetworkInterfaceAttachment": {
             "type": "structure",
+            "documentation": "<p>Describes a network interface attachment.</p>",
             "members": [
                 {
                     "name": "AttachmentId",
@@ -9031,6 +9112,7 @@
         },
         "InstanceNetworkInterfaceSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes a network interface.</p>",
             "members": [
                 {
                     "name": "NetworkInterfaceId",
@@ -9101,6 +9183,7 @@
         },
         "InstancePrivateIpAddress": {
             "type": "structure",
+            "documentation": "<p>Describes a private IP address.</p>",
             "members": [
                 {
                     "name": "PrivateIpAddress",
@@ -9134,6 +9217,7 @@
         },
         "InstanceState": {
             "type": "structure",
+            "documentation": "<p>Describes the current state of the instance.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -9151,6 +9235,7 @@
         },
         "InstanceStateChange": {
             "type": "structure",
+            "documentation": "<p>Describes an instance state change.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -9181,6 +9266,7 @@
         },
         "InstanceStatus": {
             "type": "structure",
+            "documentation": "<p>Describes the status of an instance.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -9222,6 +9308,7 @@
         },
         "InstanceStatusDetails": {
             "type": "structure",
+            "documentation": "<p>Describes the instance status.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -9249,6 +9336,7 @@
         },
         "InstanceStatusEvent": {
             "type": "structure",
+            "documentation": "<p>Describes a scheduled event for an instance.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -9286,6 +9374,7 @@
         },
         "InstanceStatusSummary": {
             "type": "structure",
+            "documentation": "<p>Describes the status of an instance.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -9313,6 +9402,7 @@
         },
         "InternetGateway": {
             "type": "structure",
+            "documentation": "<p>Describes an Internet gateway.</p>",
             "members": [
                 {
                     "name": "InternetGatewayId",
@@ -9336,6 +9426,7 @@
         },
         "InternetGatewayAttachment": {
             "type": "structure",
+            "documentation": "<p>Describes the attachment of a VPC to an Internet gateway.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -9361,6 +9452,7 @@
         },
         "IpPermission": {
             "type": "structure",
+            "documentation": "<p>Describes a security group rule.</p>",
             "members": [
                 {
                     "name": "IpProtocol",
@@ -9406,6 +9498,7 @@
         },
         "IpRange": {
             "type": "structure",
+            "documentation": "<p>Describes an IP range.</p>",
             "members": [
                 {
                     "name": "CidrIp",
@@ -9425,6 +9518,7 @@
         },
         "KeyPair": {
             "type": "structure",
+            "documentation": "<p>Describes a key pair.</p>",
             "members": [
                 {
                     "name": "KeyName",
@@ -9448,6 +9542,7 @@
         },
         "KeyPairInfo": {
             "type": "structure",
+            "documentation": "<p>Describes a key pair.</p>",
             "members": [
                 {
                     "name": "KeyName",
@@ -9469,6 +9564,7 @@
         },
         "LaunchPermission": {
             "type": "structure",
+            "documentation": "<p>Describes a launch permission.</p>",
             "members": [
                 {
                     "name": "UserId",
@@ -9490,6 +9586,7 @@
         },
         "LaunchPermissionModifications": {
             "type": "structure",
+            "documentation": "<p>Describes a launch permission modification.</p>",
             "members": [
                 {
                     "name": "Add",
@@ -9505,6 +9602,7 @@
         },
         "LaunchSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes the launch specification for an instance.</p>",
             "members": [
                 {
                     "name": "ImageId",
@@ -10017,6 +10115,7 @@
         },
         "Monitoring": {
             "type": "structure",
+            "documentation": "<p>Describes the monitoring for the instance.</p>",
             "members": [
                 {
                     "name": "State",
@@ -10068,6 +10167,7 @@
         },
         "MovingAddressStatus": {
             "type": "structure",
+            "documentation": "<p>Describes the status of a moving Elastic IP address.</p>",
             "members": [
                 {
                     "name": "PublicIp",
@@ -10089,6 +10189,7 @@
         },
         "NetworkAcl": {
             "type": "structure",
+            "documentation": "<p>Describes a network ACL.</p>",
             "members": [
                 {
                     "name": "NetworkAclId",
@@ -10130,6 +10231,7 @@
         },
         "NetworkAclAssociation": {
             "type": "structure",
+            "documentation": "<p>Describes an association between a network ACL and a subnet.</p>",
             "members": [
                 {
                     "name": "NetworkAclAssociationId",
@@ -10157,6 +10259,7 @@
         },
         "NetworkAclEntry": {
             "type": "structure",
+            "documentation": "<p>Describes an entry in a network ACL.</p>",
             "members": [
                 {
                     "name": "RuleNumber",
@@ -10212,6 +10315,7 @@
         },
         "NetworkInterface": {
             "type": "structure",
+            "documentation": "<p>Describes a network interface.</p>",
             "members": [
                 {
                     "name": "NetworkInterfaceId",
@@ -10325,6 +10429,7 @@
         },
         "NetworkInterfaceAssociation": {
             "type": "structure",
+            "documentation": "<p>Describes association information for an Elastic IP address.</p>",
             "members": [
                 {
                     "name": "PublicIp",
@@ -10360,6 +10465,7 @@
         },
         "NetworkInterfaceAttachment": {
             "type": "structure",
+            "documentation": "<p>Describes a network interface attachment.</p>",
             "members": [
                 {
                     "name": "AttachmentId",
@@ -10407,6 +10513,7 @@
         },
         "NetworkInterfaceAttachmentChanges": {
             "type": "structure",
+            "documentation": "<p>Describes an attachment change.</p>",
             "members": [
                 {
                     "name": "AttachmentId",
@@ -10435,6 +10542,7 @@
         },
         "NetworkInterfacePrivateIpAddress": {
             "type": "structure",
+            "documentation": "<p>Describes the private IP address of a network interface.</p>",
             "members": [
                 {
                     "name": "PrivateIpAddress",
@@ -10481,6 +10589,7 @@
         },
         "Placement": {
             "type": "structure",
+            "documentation": "<p>Describes the placement for the instance.</p>",
             "members": [
                 {
                     "name": "AvailabilityZone",
@@ -10504,6 +10613,7 @@
         },
         "PlacementGroup": {
             "type": "structure",
+            "documentation": "<p>Describes a placement group.</p>",
             "members": [
                 {
                     "name": "GroupName",
@@ -10544,6 +10654,7 @@
         },
         "PortRange": {
             "type": "structure",
+            "documentation": "<p>Describes a range of ports.</p>",
             "members": [
                 {
                     "name": "From",
@@ -10561,6 +10672,7 @@
         },
         "PrefixList": {
             "type": "structure",
+            "documentation": "<p>Describes prefixes for AWS services. </p>",
             "members": [
                 {
                     "name": "PrefixListId",
@@ -10584,6 +10696,7 @@
         },
         "PrefixListId": {
             "type": "structure",
+            "documentation": "<p>The ID of the prefix.</p>",
             "members": [
                 {
                     "name": "PrefixListId",
@@ -10603,6 +10716,7 @@
         },
         "PriceSchedule": {
             "type": "structure",
+            "documentation": "<p>Describes the price for a Reserved Instance.</p>",
             "members": [
                 {
                     "name": "Term",
@@ -10636,6 +10750,7 @@
         },
         "PriceScheduleSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes the price for a Reserved Instance.</p>",
             "members": [
                 {
                     "name": "Term",
@@ -10663,6 +10778,7 @@
         },
         "PricingDetail": {
             "type": "structure",
+            "documentation": "<p>Describes a Reserved Instance offering.</p>",
             "members": [
                 {
                     "name": "Price",
@@ -10684,6 +10800,7 @@
         },
         "PrivateIpAddressSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes a secondary private IP address for a network interface.</p>",
             "members": [
                 {
                     "name": "PrivateIpAddress",
@@ -10709,6 +10826,7 @@
         },
         "ProductCode": {
             "type": "structure",
+            "documentation": "<p>Describes a product code.</p>",
             "members": [
                 {
                     "name": "ProductCodeId",
@@ -10741,6 +10859,7 @@
         },
         "PropagatingVgw": {
             "type": "structure",
+            "documentation": "<p>Describes a virtual private gateway propagating route.</p>",
             "members": [
                 {
                     "name": "GatewayId",
@@ -10822,6 +10941,7 @@
         },
         "RecurringCharge": {
             "type": "structure",
+            "documentation": "<p>Describes a recurring charge.</p>",
             "members": [
                 {
                     "name": "Frequency",
@@ -10846,6 +10966,7 @@
         },
         "Region": {
             "type": "structure",
+            "documentation": "<p>Describes a region.</p>",
             "members": [
                 {
                     "name": "RegionName",
@@ -11228,6 +11349,7 @@
         },
         "RequestSpotFleetRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for RequestSpotFleet.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -11245,6 +11367,7 @@
         },
         "RequestSpotFleetResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of RequestSpotFleet.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestId",
@@ -11256,6 +11379,7 @@
         },
         "RequestSpotInstancesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for RequestSpotInstances.</p>",
             "members": [
                 {
                     "name": "DryRun",
@@ -11319,6 +11443,7 @@
         },
         "RequestSpotInstancesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the output of RequestSpotInstances.</p>",
             "members": [
                 {
                     "name": "SpotInstanceRequests",
@@ -11330,6 +11455,7 @@
         },
         "Reservation": {
             "type": "structure",
+            "documentation": "<p>Describes a reservation.</p>",
             "members": [
                 {
                     "name": "ReservationId",
@@ -11369,6 +11495,7 @@
         },
         "ReservedInstanceLimitPrice": {
             "type": "structure",
+            "documentation": "<p>Describes the limit price of a Reserved Instance offering.</p>",
             "members": [
                 {
                     "name": "Amount",
@@ -11389,6 +11516,7 @@
         },
         "ReservedInstances": {
             "type": "structure",
+            "documentation": "<p>Describes a Reserved Instance.</p>",
             "members": [
                 {
                     "name": "ReservedInstancesId",
@@ -11490,6 +11618,7 @@
         },
         "ReservedInstancesConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes the configuration settings for the modified Reserved Instances.</p>",
             "members": [
                 {
                     "name": "AvailabilityZone",
@@ -11523,6 +11652,7 @@
         },
         "ReservedInstancesId": {
             "type": "structure",
+            "documentation": "<p>Describes the ID of a Reserved Instance.</p>",
             "members": [
                 {
                     "name": "ReservedInstancesId",
@@ -11542,6 +11672,7 @@
         },
         "ReservedInstancesListing": {
             "type": "structure",
+            "documentation": "<p>Describes a Reserved Instance listing.</p>",
             "members": [
                 {
                     "name": "ReservedInstancesListingId",
@@ -11611,6 +11742,7 @@
         },
         "ReservedInstancesModification": {
             "type": "structure",
+            "documentation": "<p>Describes a Reserved Instance modification.</p>",
             "members": [
                 {
                     "name": "ReservedInstancesModificationId",
@@ -11699,6 +11831,7 @@
         },
         "ReservedInstancesOffering": {
             "type": "structure",
+            "documentation": "<p>Describes a Reserved Instance offering.</p>",
             "members": [
                 {
                     "name": "ReservedInstancesOfferingId",
@@ -12045,6 +12178,7 @@
         },
         "Route": {
             "type": "structure",
+            "documentation": "<p>Describes a route in a route table.</p>",
             "members": [
                 {
                     "name": "DestinationCidrBlock",
@@ -12114,6 +12248,7 @@
         },
         "RouteTable": {
             "type": "structure",
+            "documentation": "<p>Describes a route table.</p>",
             "members": [
                 {
                     "name": "RouteTableId",
@@ -12155,6 +12290,7 @@
         },
         "RouteTableAssociation": {
             "type": "structure",
+            "documentation": "<p>Describes an association between a route table and a subnet.</p>",
             "members": [
                 {
                     "name": "RouteTableAssociationId",
@@ -12195,6 +12331,7 @@
         },
         "RunInstancesMonitoringEnabled": {
             "type": "structure",
+            "documentation": "<p>Describes the monitoring for the instance.</p>",
             "members": [
                 {
                     "name": "Enabled",
@@ -12338,6 +12475,7 @@
         },
         "S3Storage": {
             "type": "structure",
+            "documentation": "<p>Describes the storage parameters for S3 and S3 buckets for an instance store-backed AMI.</p>",
             "members": [
                 {
                     "name": "Bucket",
@@ -12372,6 +12510,7 @@
         },
         "SecurityGroup": {
             "type": "structure",
+            "documentation": "<p>Describes a security group</p>",
             "members": [
                 {
                     "name": "OwnerId",
@@ -12440,6 +12579,7 @@
         },
         "Snapshot": {
             "type": "structure",
+            "documentation": "<p>Describes a snapshot.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -12520,6 +12660,7 @@
         },
         "SnapshotDetail": {
             "type": "structure",
+            "documentation": "<p>Describes the snapshot created from the imported disk.</p>",
             "members": [
                 {
                     "name": "DiskImageSize",
@@ -12588,6 +12729,7 @@
         },
         "SnapshotDiskContainer": {
             "type": "structure",
+            "documentation": "<p>The disk container object for the import snapshot request.</p>",
             "members": [
                 {
                     "name": "Description",
@@ -12623,6 +12765,7 @@
         },
         "SnapshotTaskDetail": {
             "type": "structure",
+            "documentation": "<p>Details about the import snapshot task.</p>",
             "members": [
                 {
                     "name": "DiskImageSize",
@@ -12682,6 +12825,7 @@
         },
         "SpotDatafeedSubscription": {
             "type": "structure",
+            "documentation": "<p>Describes the data feed for a Spot Instance.</p>",
             "members": [
                 {
                     "name": "OwnerId",
@@ -12717,6 +12861,7 @@
         },
         "SpotFleetLaunchSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes the launch specification for an instance.</p>",
             "members": [
                 {
                     "name": "ImageId",
@@ -12810,6 +12955,7 @@
         },
         "SpotFleetMonitoring": {
             "type": "structure",
+            "documentation": "<p>Describes whether monitoring is enabled.</p>",
             "members": [
                 {
                     "name": "Enabled",
@@ -12821,6 +12967,7 @@
         },
         "SpotFleetRequestConfig": {
             "type": "structure",
+            "documentation": "<p>Describes a Spot fleet request.</p>",
             "members": [
                 {
                     "name": "SpotFleetRequestId",
@@ -12844,6 +12991,7 @@
         },
         "SpotFleetRequestConfigData": {
             "type": "structure",
+            "documentation": "<p>Describes the configuration of a Spot fleet request.</p>",
             "members": [
                 {
                     "name": "ClientToken",
@@ -12901,6 +13049,7 @@
         },
         "SpotInstanceRequest": {
             "type": "structure",
+            "documentation": "<p>Describe a Spot Instance request.</p>",
             "members": [
                 {
                     "name": "SpotInstanceRequestId",
@@ -13013,6 +13162,7 @@
         },
         "SpotInstanceStateFault": {
             "type": "structure",
+            "documentation": "<p>Describes a Spot Instance state change.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -13030,6 +13180,7 @@
         },
         "SpotInstanceStatus": {
             "type": "structure",
+            "documentation": "<p>Describes the status of a Spot Instance request.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -13056,6 +13207,7 @@
         },
         "SpotPlacement": {
             "type": "structure",
+            "documentation": "<p>Describes Spot Instance placement.</p>",
             "members": [
                 {
                     "name": "AvailabilityZone",
@@ -13073,6 +13225,7 @@
         },
         "SpotPrice": {
             "type": "structure",
+            "documentation": "<p>Describes the maximum hourly price (bid) for any Spot Instance launched to fulfill the request.</p>",
             "members": [
                 {
                     "name": "InstanceType",
@@ -13149,6 +13302,7 @@
         },
         "StateReason": {
             "type": "structure",
+            "documentation": "<p>Describes a state change.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -13209,6 +13363,7 @@
         },
         "Storage": {
             "type": "structure",
+            "documentation": "<p>Describes the storage location for an instance store-backed AMI.</p>",
             "members": [
                 {
                     "name": "S3",
@@ -13222,6 +13377,7 @@
         },
         "Subnet": {
             "type": "structure",
+            "documentation": "<p>Describes a subnet.</p>",
             "members": [
                 {
                     "name": "SubnetId",
@@ -13295,6 +13451,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>Describes a tag.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -13312,6 +13469,7 @@
         },
         "TagDescription": {
             "type": "structure",
+            "documentation": "<p>Describes a tag.</p>",
             "members": [
                 {
                     "name": "ResourceId",
@@ -13431,6 +13589,7 @@
         },
         "UnsuccessfulItem": {
             "type": "structure",
+            "documentation": "<p>Information about items that were not successfully processed in a batch call.</p>",
             "members": [
                 {
                     "name": "ResourceId",
@@ -13448,6 +13607,7 @@
         },
         "UnsuccessfulItemError": {
             "type": "structure",
+            "documentation": "<p>Information about the error that occured. For more information about errors, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html\">Error Codes</a>.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -13469,6 +13629,7 @@
         },
         "UserBucket": {
             "type": "structure",
+            "documentation": "<p>Describes the S3 bucket for the disk image.</p>",
             "members": [
                 {
                     "name": "S3Bucket",
@@ -13484,6 +13645,7 @@
         },
         "UserBucketDetails": {
             "type": "structure",
+            "documentation": "<p>Describes the S3 bucket for the disk image.</p>",
             "members": [
                 {
                     "name": "S3Bucket",
@@ -13501,6 +13663,7 @@
         },
         "UserData": {
             "type": "structure",
+            "documentation": "<p>Describes the user data to be made available to an instance.</p>",
             "members": [
                 {
                     "name": "Data",
@@ -13516,6 +13679,7 @@
         },
         "UserIdGroupPair": {
             "type": "structure",
+            "documentation": "<p>Describes a security group and AWS account ID pair. </p>",
             "members": [
                 {
                     "name": "UserId",
@@ -13551,6 +13715,7 @@
         },
         "VgwTelemetry": {
             "type": "structure",
+            "documentation": "<p>Describes telemetry for a VPN tunnel.</p>",
             "members": [
                 {
                     "name": "OutsideIpAddress",
@@ -13593,6 +13758,7 @@
         },
         "Volume": {
             "type": "structure",
+            "documentation": "<p>Describes a volume.</p>",
             "members": [
                 {
                     "name": "VolumeId",
@@ -13670,6 +13836,7 @@
         },
         "VolumeAttachment": {
             "type": "structure",
+            "documentation": "<p>Describes volume attachment details.</p>",
             "members": [
                 {
                     "name": "VolumeId",
@@ -13721,6 +13888,7 @@
         },
         "VolumeDetail": {
             "type": "structure",
+            "documentation": "<p>Describes an EBS volume.</p>",
             "members": [
                 {
                     "name": "Size",
@@ -13743,6 +13911,7 @@
         },
         "VolumeStatusAction": {
             "type": "structure",
+            "documentation": "<p>Describes a volume status operation code.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -13776,6 +13945,7 @@
         },
         "VolumeStatusDetails": {
             "type": "structure",
+            "documentation": "<p>Describes a volume status.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -13797,6 +13967,7 @@
         },
         "VolumeStatusEvent": {
             "type": "structure",
+            "documentation": "<p>Describes a volume status event.</p>",
             "members": [
                 {
                     "name": "EventType",
@@ -13836,6 +14007,7 @@
         },
         "VolumeStatusInfo": {
             "type": "structure",
+            "documentation": "<p>Describes the status of a volume.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -13856,6 +14028,7 @@
         },
         "VolumeStatusItem": {
             "type": "structure",
+            "documentation": "<p>Describes the volume status.</p>",
             "members": [
                 {
                     "name": "VolumeId",
@@ -13901,6 +14074,7 @@
         },
         "Vpc": {
             "type": "structure",
+            "documentation": "<p>Describes a VPC.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -13948,6 +14122,7 @@
         },
         "VpcAttachment": {
             "type": "structure",
+            "documentation": "<p>Describes an attachment between a virtual private gateway and a VPC.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -13972,6 +14147,7 @@
         },
         "VpcClassicLink": {
             "type": "structure",
+            "documentation": "<p>Describes whether a VPC is enabled for ClassicLink.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -14003,6 +14179,7 @@
         },
         "VpcEndpoint": {
             "type": "structure",
+            "documentation": "<p>Describes a VPC endpoint.</p>",
             "members": [
                 {
                     "name": "VpcEndpointId",
@@ -14062,6 +14239,7 @@
         },
         "VpcPeeringConnection": {
             "type": "structure",
+            "documentation": "<p>Describes a VPC peering connection.</p>",
             "members": [
                 {
                     "name": "AccepterVpcInfo",
@@ -14107,6 +14285,7 @@
         },
         "VpcPeeringConnectionStateReason": {
             "type": "structure",
+            "documentation": "<p>Describes the status of a VPC peering connection.</p>",
             "members": [
                 {
                     "name": "Code",
@@ -14127,6 +14306,7 @@
         },
         "VpcPeeringConnectionVpcInfo": {
             "type": "structure",
+            "documentation": "<p>Describes a VPC in a VPC peering connection.</p>",
             "members": [
                 {
                     "name": "CidrBlock",
@@ -14153,6 +14333,7 @@
         },
         "VpnConnection": {
             "type": "structure",
+            "documentation": "<p>Describes a VPN connection.</p>",
             "members": [
                 {
                     "name": "VpnConnectionId",
@@ -14226,6 +14407,7 @@
         },
         "VpnConnectionOptions": {
             "type": "structure",
+            "documentation": "<p>Describes VPN connection options.</p>",
             "members": [
                 {
                     "name": "StaticRoutesOnly",
@@ -14237,6 +14419,7 @@
         },
         "VpnConnectionOptionsSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes VPN connection options.</p>",
             "members": [
                 {
                     "name": "StaticRoutesOnly",
@@ -14248,6 +14431,7 @@
         },
         "VpnGateway": {
             "type": "structure",
+            "documentation": "<p>Describes a virtual private gateway.</p>",
             "members": [
                 {
                     "name": "VpnGatewayId",
@@ -14300,6 +14484,7 @@
         },
         "VpnStaticRoute": {
             "type": "structure",
+            "documentation": "<p>Describes a static route for a VPN connection.</p>",
             "members": [
                 {
                     "name": "DestinationCidrBlock",
@@ -14370,6 +14555,7 @@
         },
         "RequestSpotLaunchSpecification": {
             "type": "structure",
+            "documentation": "<p>Describes the launch specification for an instance.</p>",
             "members": [
                 {
                     "name": "ImageId",

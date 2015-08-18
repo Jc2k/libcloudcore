@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -66,13 +70,16 @@
     },
     "shapes": {
         "AttributeMap": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "AttributeName": {
             "type": "string"
         },
         "AttributeValue": {
             "type": "structure",
+            "documentation": "<p>Represents the data for an attribute. You can set one, and only one, of the elements.</p> <p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed. </p>",
             "members": [
                 {
                     "name": "S",
@@ -141,6 +148,7 @@
         },
         "DescribeStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>DescribeStream</i> operation.</p>",
             "members": [
                 {
                     "name": "StreamArn",
@@ -161,6 +169,7 @@
         },
         "DescribeStreamOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>DescribeStream</i> operation.</p>",
             "members": [
                 {
                     "name": "StreamDescription",
@@ -174,6 +183,7 @@
         },
         "ExpiredIteratorException": {
             "type": "structure",
+            "documentation": "<p>The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i> action.</p>",
             "members": [
                 {
                     "name": "message",
@@ -184,6 +194,7 @@
         },
         "GetRecordsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>GetRecords</i> operation.</p>",
             "members": [
                 {
                     "name": "ShardIterator",
@@ -199,6 +210,7 @@
         },
         "GetRecordsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>GetRecords</i> operation.</p>",
             "members": [
                 {
                     "name": "Records",
@@ -214,6 +226,7 @@
         },
         "GetShardIteratorInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>GetShardIterator</i> operation.</p>",
             "members": [
                 {
                     "name": "StreamArn",
@@ -239,6 +252,7 @@
         },
         "GetShardIteratorOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>GetShardIterator</i> operation.</p>",
             "members": [
                 {
                     "name": "ShardIterator",
@@ -249,6 +263,7 @@
         },
         "InternalServerError": {
             "type": "structure",
+            "documentation": "<p>An error occurred on the server side.</p>",
             "members": [
                 {
                     "name": "message",
@@ -266,6 +281,7 @@
         },
         "KeySchemaElement": {
             "type": "structure",
+            "documentation": "<p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <i>KeySchemaElement</i> represents exactly one attribute of the primary key. For example, a hash type primary key would be represented by one <i>KeySchemaElement</i>. A hash-and-range type primary key would require one <i>KeySchemaElement</i> for the hash attribute, and another <i>KeySchemaElement</i> for the range attribute.</p>",
             "members": [
                 {
                     "name": "AttributeName",
@@ -284,6 +300,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries\">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -298,6 +315,7 @@
         },
         "ListStreamsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>ListStreams</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -318,6 +336,7 @@
         },
         "ListStreamsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>ListStreams</i> operation.</p>",
             "members": [
                 {
                     "name": "Streams",
@@ -332,7 +351,9 @@
             ]
         },
         "MapAttributeValue": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "NullAttributeValue": {
             "type": "boolean"
@@ -355,6 +376,7 @@
         },
         "Record": {
             "type": "structure",
+            "documentation": "<p>A description of a unique event within a stream.</p>",
             "members": [
                 {
                     "name": "eventID",
@@ -394,6 +416,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The operation tried to access a nonexistent stream. </p>",
             "members": [
                 {
                     "name": "message",
@@ -407,6 +430,7 @@
         },
         "SequenceNumberRange": {
             "type": "structure",
+            "documentation": "<p>The beginning and ending sequence numbers for the stream records contained within a shard.</p>",
             "members": [
                 {
                     "name": "StartingSequenceNumber",
@@ -422,6 +446,7 @@
         },
         "Shard": {
             "type": "structure",
+            "documentation": "<p>A uniquely identified group of stream records within a stream.</p>",
             "members": [
                 {
                     "name": "ShardId",
@@ -455,6 +480,7 @@
         },
         "Stream": {
             "type": "structure",
+            "documentation": "<p>Represents all of the data describing a particular stream.</p>",
             "members": [
                 {
                     "name": "StreamArn",
@@ -478,6 +504,7 @@
         },
         "StreamDescription": {
             "type": "structure",
+            "documentation": "<p>Represents all of the data describing a particular stream.</p>",
             "members": [
                 {
                     "name": "StreamArn",
@@ -532,6 +559,7 @@
         },
         "StreamRecord": {
             "type": "structure",
+            "documentation": "<p>A description of a single data modification that was performed on an item in a DynamoDB table.</p>",
             "members": [
                 {
                     "name": "Keys",
@@ -586,6 +614,7 @@
         },
         "TrimmedDataAccessException": {
             "type": "structure",
+            "documentation": "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>",
             "members": [
                 {
                     "name": "message",

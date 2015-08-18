@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -190,6 +194,7 @@
         },
         "Attribute": {
             "type": "structure",
+            "documentation": "<p>Represents a named directory attribute.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -215,6 +220,7 @@
         },
         "AuthenticationFailedException": {
             "type": "structure",
+            "documentation": "<p>An authentication error occurred.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -237,6 +243,7 @@
         },
         "ClientException": {
             "type": "structure",
+            "documentation": "<p>A client exception has occurred.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -253,6 +260,7 @@
         },
         "Computer": {
             "type": "structure",
+            "documentation": "<p>Contains information about a computer account in a directory.</p>",
             "members": [
                 {
                     "name": "ComputerId",
@@ -279,6 +287,7 @@
         },
         "ConnectDirectoryRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>ConnectDirectory</a> operation.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -314,6 +323,7 @@
         },
         "ConnectDirectoryResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>ConnectDirectory</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -330,6 +340,7 @@
         },
         "CreateAliasRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateAlias</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -345,6 +356,7 @@
         },
         "CreateAliasResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>CreateAlias</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -360,6 +372,7 @@
         },
         "CreateComputerRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateComputer</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -390,6 +403,7 @@
         },
         "CreateComputerResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results for the <a>CreateComputer</a> operation.</p>",
             "members": [
                 {
                     "name": "Computer",
@@ -400,6 +414,7 @@
         },
         "CreateDirectoryRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -435,6 +450,7 @@
         },
         "CreateDirectoryResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>CreateDirectory</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -445,6 +461,7 @@
         },
         "CreateSnapshotRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateSnapshot</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -460,6 +477,7 @@
         },
         "CreateSnapshotResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>CreateSnapshot</a> operation.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -470,6 +488,7 @@
         },
         "DeleteDirectoryRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DeleteDirectory</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -480,6 +499,7 @@
         },
         "DeleteDirectoryResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DeleteDirectory</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -490,6 +510,7 @@
         },
         "DeleteSnapshotRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DeleteSnapshot</a> operation.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -500,6 +521,7 @@
         },
         "DeleteSnapshotResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DeleteSnapshot</a> operation.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -510,6 +532,7 @@
         },
         "DescribeDirectoriesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeDirectories</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryIds",
@@ -530,6 +553,7 @@
         },
         "DescribeDirectoriesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DescribeDirectories</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryDescriptions",
@@ -545,6 +569,7 @@
         },
         "DescribeSnapshotsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeSnapshots</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -570,6 +595,7 @@
         },
         "DescribeSnapshotsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DescribeSnapshots</a> operation.</p>",
             "members": [
                 {
                     "name": "Snapshots",
@@ -588,6 +614,7 @@
         },
         "DirectoryConnectSettings": {
             "type": "structure",
+            "documentation": "<p>Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -613,6 +640,7 @@
         },
         "DirectoryConnectSettingsDescription": {
             "type": "structure",
+            "documentation": "<p>Contains information about an AD Connector directory.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -648,6 +676,7 @@
         },
         "DirectoryDescription": {
             "type": "structure",
+            "documentation": "<p>Contains information about an AWS Directory Service directory.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -743,6 +772,7 @@
         },
         "DirectoryDescriptions": {
             "type": "list",
+            "documentation": "<p>A list of directory descriptions.</p>",
             "of": "DirectoryDescription"
         },
         "DirectoryId": {
@@ -750,10 +780,12 @@
         },
         "DirectoryIds": {
             "type": "list",
+            "documentation": "<p>A list of directory identifiers.</p>",
             "of": "DirectoryId"
         },
         "DirectoryLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -767,6 +799,7 @@
         },
         "DirectoryLimits": {
             "type": "structure",
+            "documentation": "<p>Contains directory limit information for a region.</p>",
             "members": [
                 {
                     "name": "CloudOnlyDirectoriesLimit",
@@ -817,6 +850,7 @@
         },
         "DirectoryUnavailableException": {
             "type": "structure",
+            "documentation": "<p>The specified directory is unavailable or could not be found.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -830,6 +864,7 @@
         },
         "DirectoryVpcSettings": {
             "type": "structure",
+            "documentation": "<p>Contains information for the <a>CreateDirectory</a> operation when a Simple AD directory is being created.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -845,6 +880,7 @@
         },
         "DirectoryVpcSettingsDescription": {
             "type": "structure",
+            "documentation": "<p>Contains information about a Simple AD directory.</p>",
             "members": [
                 {
                     "name": "VpcId",
@@ -870,6 +906,7 @@
         },
         "DisableRadiusRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DisableRadius</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -880,10 +917,12 @@
         },
         "DisableRadiusResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DisableRadius</a> operation.</p>",
             "members": []
         },
         "DisableSsoRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DisableSso</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -904,6 +943,7 @@
         },
         "DisableSsoResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DisableSso</a> operation.</p>",
             "members": []
         },
         "DnsIpAddrs": {
@@ -912,6 +952,7 @@
         },
         "EnableRadiusRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>EnableRadius</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -927,10 +968,12 @@
         },
         "EnableRadiusResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>EnableRadius</a> operation.</p>",
             "members": []
         },
         "EnableSsoRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>EnableSso</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -951,10 +994,12 @@
         },
         "EnableSsoResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>EnableSso</a> operation.</p>",
             "members": []
         },
         "EntityAlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>The specified entity already exists.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -968,6 +1013,7 @@
         },
         "EntityDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The specified entity could not be found.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -980,14 +1026,17 @@
             ]
         },
         "ExceptionMessage": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>The descriptive message for the exception.</p>"
         },
         "GetDirectoryLimitsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>GetDirectoryLimits</a> operation.</p>",
             "members": []
         },
         "GetDirectoryLimitsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>GetDirectoryLimits</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryLimits",
@@ -998,6 +1047,7 @@
         },
         "GetSnapshotLimitsRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>GetSnapshotLimits</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -1008,6 +1058,7 @@
         },
         "GetSnapshotLimitsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>GetSnapshotLimits</a> operation.</p>",
             "members": [
                 {
                     "name": "SnapshotLimits",
@@ -1018,6 +1069,7 @@
         },
         "InsufficientPermissionsException": {
             "type": "structure",
+            "documentation": "<p>The account does not have sufficient permission to perform the operation.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1031,6 +1083,7 @@
         },
         "InvalidNextTokenException": {
             "type": "structure",
+            "documentation": "<p>The <i>NextToken</i> value is not valid.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1044,6 +1097,7 @@
         },
         "InvalidParameterException": {
             "type": "structure",
+            "documentation": "<p>One or more parameters are not valid.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1097,6 +1151,7 @@
         },
         "RadiusSettings": {
             "type": "structure",
+            "documentation": "<p>Contains information about a Remote Authentication Dial In User Service (RADIUS) server.</p>",
             "members": [
                 {
                     "name": "RadiusServers",
@@ -1150,10 +1205,12 @@
             "type": "integer"
         },
         "RequestId": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>The AWS request identifier.</p>"
         },
         "RestoreFromSnapshotRequest": {
             "type": "structure",
+            "documentation": "<p>An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -1164,6 +1221,7 @@
         },
         "RestoreFromSnapshotResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>RestoreFromSnapshot</a> operation.</p>",
             "members": []
         },
         "SID": {
@@ -1181,6 +1239,7 @@
         },
         "ServiceException": {
             "type": "structure",
+            "documentation": "<p>An exception has occurred in AWS Directory Service.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1194,6 +1253,7 @@
         },
         "Snapshot": {
             "type": "structure",
+            "documentation": "<p>Describes a directory snapshot.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -1232,10 +1292,12 @@
         },
         "SnapshotIds": {
             "type": "list",
+            "documentation": "<p>A list of directory snapshot identifiers.</p>",
             "of": "SnapshotId"
         },
         "SnapshotLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The maximum number of manual snapshots for the directory has been reached. You can use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1249,6 +1311,7 @@
         },
         "SnapshotLimits": {
             "type": "structure",
+            "documentation": "<p>Contains manual snapshot limit information for a directory.</p>",
             "members": [
                 {
                     "name": "ManualSnapshotsLimit",
@@ -1278,6 +1341,7 @@
         },
         "Snapshots": {
             "type": "list",
+            "documentation": "<p>A list of descriptions of directory snapshots.</p>",
             "of": "Snapshot"
         },
         "SsoEnabled": {
@@ -1298,6 +1362,7 @@
         },
         "UnsupportedOperationException": {
             "type": "structure",
+            "documentation": "<p>The operation is not supported.</p>",
             "members": [
                 {
                     "name": "Message",
@@ -1311,6 +1376,7 @@
         },
         "UpdateRadiusRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>UpdateRadius</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -1326,6 +1392,7 @@
         },
         "UpdateRadiusResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>UpdateRadius</a> operation.</p>",
             "members": []
         },
         "UseSameUsername": {

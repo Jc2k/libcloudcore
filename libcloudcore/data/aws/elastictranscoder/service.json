@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -191,10 +195,12 @@
         },
         "AccessDeniedException": {
             "type": "structure",
+            "documentation": "<p> General authentication failure. The request was not signed correctly. </p>",
             "members": []
         },
         "Artwork": {
             "type": "structure",
+            "documentation": "<p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.</p> <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to \"Replace\" and use an empty <code>Artwork</code> array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to \"Prepend\", \"Append\", or \"Fallback\", and use an empty <code>Artwork</code> array.</p>",
             "members": [
                 {
                     "name": "InputKey",
@@ -260,6 +266,7 @@
         },
         "AudioCodecOptions": {
             "type": "structure",
+            "documentation": "<p>Options associated with your audio codec.</p>",
             "members": [
                 {
                     "name": "Profile",
@@ -291,6 +298,7 @@
         },
         "AudioParameters": {
             "type": "structure",
+            "documentation": "<p>Parameters required for transcoding audio.</p>",
             "members": [
                 {
                     "name": "Codec",
@@ -338,6 +346,7 @@
         },
         "CancelJobRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>CancelJobRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -350,10 +359,12 @@
         },
         "CancelJobResponse": {
             "type": "structure",
+            "documentation": "<p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>",
             "members": []
         },
         "CaptionFormat": {
             "type": "structure",
+            "documentation": "<p>The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -387,6 +398,7 @@
         },
         "CaptionSource": {
             "type": "structure",
+            "documentation": "<p>A source file for the input sidecar captions used during the transcoding process.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -421,6 +433,7 @@
         },
         "Captions": {
             "type": "structure",
+            "documentation": "<p>The captions to be created, if any.</p>",
             "members": [
                 {
                     "name": "MergePolicy",
@@ -441,6 +454,7 @@
         },
         "Clip": {
             "type": "structure",
+            "documentation": "<p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>",
             "members": [
                 {
                     "name": "TimeSpan",
@@ -453,7 +467,9 @@
             "type": "string"
         },
         "CodecOptions": {
-            "type": "map"
+            "type": "map",
+            "key": "CodecOption",
+            "value": "CodecOption"
         },
         "Composition": {
             "type": "list",
@@ -461,6 +477,7 @@
         },
         "CreateJobOutput": {
             "type": "structure",
+            "documentation": "<p>The <code>CreateJobOutput</code> structure.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -525,6 +542,7 @@
         },
         "CreateJobPlaylist": {
             "type": "structure",
+            "documentation": "<p>Information about the master playlist.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -559,6 +577,7 @@
         },
         "CreateJobRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>CreateJobRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "PipelineId",
@@ -598,6 +617,7 @@
         },
         "CreateJobResponse": {
             "type": "structure",
+            "documentation": "<p>The CreateJobResponse structure.</p>",
             "members": [
                 {
                     "name": "Job",
@@ -608,6 +628,7 @@
         },
         "CreatePipelineRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>CreatePipelineRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -653,6 +674,7 @@
         },
         "CreatePipelineResponse": {
             "type": "structure",
+            "documentation": "<p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>",
             "members": [
                 {
                     "name": "Pipeline",
@@ -668,6 +690,7 @@
         },
         "CreatePresetRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>CreatePresetRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -703,6 +726,7 @@
         },
         "CreatePresetResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>CreatePresetResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Preset",
@@ -718,6 +742,7 @@
         },
         "DeletePipelineRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>DeletePipelineRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -730,10 +755,12 @@
         },
         "DeletePipelineResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>DeletePipelineResponse</code> structure.</p>",
             "members": []
         },
         "DeletePresetRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>DeletePresetRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -746,6 +773,7 @@
         },
         "DeletePresetResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>DeletePresetResponse</code> structure.</p>",
             "members": []
         },
         "Description": {
@@ -753,6 +781,7 @@
         },
         "DetectedProperties": {
             "type": "structure",
+            "documentation": "<p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>",
             "members": [
                 {
                     "name": "Width",
@@ -789,6 +818,7 @@
         },
         "Encryption": {
             "type": "structure",
+            "documentation": "<p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>",
             "members": [
                 {
                     "name": "Mode",
@@ -839,6 +869,7 @@
         },
         "HlsContentProtection": {
             "type": "structure",
+            "documentation": "<p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.</p>",
             "members": [
                 {
                     "name": "Method",
@@ -890,10 +921,12 @@
         },
         "InternalServiceException": {
             "type": "structure",
+            "documentation": "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>",
             "members": []
         },
         "Job": {
             "type": "structure",
+            "documentation": "<p>A section of the response body that provides information about the job that is created.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -954,6 +987,7 @@
         },
         "JobAlbumArt": {
             "type": "structure",
+            "documentation": "<p>The .jpg or .png file associated with an audio file.</p>",
             "members": [
                 {
                     "name": "MergePolicy",
@@ -972,6 +1006,7 @@
         },
         "JobInput": {
             "type": "structure",
+            "documentation": "<p>Information about the file that you're transcoding.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -1017,6 +1052,7 @@
         },
         "JobOutput": {
             "type": "structure",
+            "documentation": "<p><important>Outputs recommended instead.</important>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1134,6 +1170,7 @@
         },
         "JobWatermark": {
             "type": "structure",
+            "documentation": "<p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>",
             "members": [
                 {
                     "name": "PresetWatermarkId",
@@ -1180,10 +1217,12 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>",
             "members": []
         },
         "ListJobsByPipelineRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ListJobsByPipelineRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "PipelineId",
@@ -1210,6 +1249,7 @@
         },
         "ListJobsByPipelineResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>ListJobsByPipelineResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Jobs",
@@ -1225,6 +1265,7 @@
         },
         "ListJobsByStatusRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ListJobsByStatusRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -1251,6 +1292,7 @@
         },
         "ListJobsByStatusResponse": {
             "type": "structure",
+            "documentation": "<p> The <code>ListJobsByStatusResponse</code> structure. </p>",
             "members": [
                 {
                     "name": "Jobs",
@@ -1266,6 +1308,7 @@
         },
         "ListPipelinesRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ListPipelineRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Ascending",
@@ -1285,6 +1328,7 @@
         },
         "ListPipelinesResponse": {
             "type": "structure",
+            "documentation": "<p>A list of the pipelines associated with the current AWS account.</p>",
             "members": [
                 {
                     "name": "Pipelines",
@@ -1300,6 +1344,7 @@
         },
         "ListPresetsRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ListPresetsRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Ascending",
@@ -1319,6 +1364,7 @@
         },
         "ListPresetsResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>ListPresetsResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Presets",
@@ -1346,6 +1392,7 @@
         },
         "Notifications": {
             "type": "structure",
+            "documentation": "<p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</important>",
             "members": [
                 {
                     "name": "Progressing",
@@ -1390,6 +1437,7 @@
         },
         "Permission": {
             "type": "structure",
+            "documentation": "<p>The <code>Permission</code> structure.</p>",
             "members": [
                 {
                     "name": "GranteeType",
@@ -1414,6 +1462,7 @@
         },
         "Pipeline": {
             "type": "structure",
+            "documentation": "<p>The pipeline (queue) that is used to manage jobs.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1474,6 +1523,7 @@
         },
         "PipelineOutputConfig": {
             "type": "structure",
+            "documentation": "<p>The <code>PipelineOutputConfig</code> structure.</p>",
             "members": [
                 {
                     "name": "Bucket",
@@ -1504,6 +1554,7 @@
         },
         "PlayReadyDrm": {
             "type": "structure",
+            "documentation": "<p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>AES-CTR</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -1542,6 +1593,7 @@
         },
         "Playlist": {
             "type": "structure",
+            "documentation": "<p> Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -1589,6 +1641,7 @@
         },
         "Preset": {
             "type": "structure",
+            "documentation": "<p>Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1645,6 +1698,7 @@
         },
         "PresetWatermark": {
             "type": "structure",
+            "documentation": "<p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p> <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p> <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1711,6 +1765,7 @@
         },
         "ReadJobRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ReadJobRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1723,6 +1778,7 @@
         },
         "ReadJobResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>ReadJobResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Job",
@@ -1733,6 +1789,7 @@
         },
         "ReadPipelineRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ReadPipelineRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1745,6 +1802,7 @@
         },
         "ReadPipelineResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>ReadPipelineResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Pipeline",
@@ -1760,6 +1818,7 @@
         },
         "ReadPresetRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>ReadPresetRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1772,6 +1831,7 @@
         },
         "ReadPresetResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>ReadPresetResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Preset",
@@ -1785,10 +1845,12 @@
         },
         "ResourceInUseException": {
             "type": "structure",
+            "documentation": "<p> The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use. </p>",
             "members": []
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p> The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created. </p>",
             "members": []
         },
         "Role": {
@@ -1821,6 +1883,7 @@
         },
         "TestRoleRequest": {
             "type": "structure",
+            "documentation": "<p> The <code>TestRoleRequest</code> structure. </p>",
             "members": [
                 {
                     "name": "Role",
@@ -1846,6 +1909,7 @@
         },
         "TestRoleResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>TestRoleResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Success",
@@ -1867,6 +1931,7 @@
         },
         "Thumbnails": {
             "type": "structure",
+            "documentation": "<p>Thumbnails for videos.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -1918,6 +1983,7 @@
         },
         "TimeSpan": {
             "type": "structure",
+            "documentation": "<p>Settings that determine when a clip begins and how long it lasts.</p>",
             "members": [
                 {
                     "name": "StartTime",
@@ -1933,6 +1999,7 @@
         },
         "Timing": {
             "type": "structure",
+            "documentation": "<p>Details about the timing of a job.</p>",
             "members": [
                 {
                     "name": "SubmitTimeMillis",
@@ -1953,6 +2020,7 @@
         },
         "UpdatePipelineNotificationsRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>UpdatePipelineNotificationsRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -1970,6 +2038,7 @@
         },
         "UpdatePipelineNotificationsResponse": {
             "type": "structure",
+            "documentation": "<p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>",
             "members": [
                 {
                     "name": "Pipeline",
@@ -1980,6 +2049,7 @@
         },
         "UpdatePipelineRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>UpdatePipelineRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -2026,6 +2096,7 @@
         },
         "UpdatePipelineResponse": {
             "type": "structure",
+            "documentation": "<p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request. </p>",
             "members": [
                 {
                     "name": "Pipeline",
@@ -2040,6 +2111,7 @@
         },
         "UpdatePipelineStatusRequest": {
             "type": "structure",
+            "documentation": "<p>The <code>UpdatePipelineStatusRequest</code> structure.</p>",
             "members": [
                 {
                     "name": "Id",
@@ -2057,6 +2129,7 @@
         },
         "UpdatePipelineStatusResponse": {
             "type": "structure",
+            "documentation": "When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.",
             "members": [
                 {
                     "name": "Pipeline",
@@ -2066,10 +2139,13 @@
             ]
         },
         "UserMetadata": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "String"
         },
         "ValidationException": {
             "type": "structure",
+            "documentation": "<p>One or more required parameter values were not provided in the request.</p>",
             "members": []
         },
         "VerticalAlign": {
@@ -2083,6 +2159,7 @@
         },
         "VideoParameters": {
             "type": "structure",
+            "documentation": "<p>The <code>VideoParameters</code> structure.</p>",
             "members": [
                 {
                     "name": "Codec",
@@ -2163,6 +2240,7 @@
         },
         "Warning": {
             "type": "structure",
+            "documentation": "<p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>",
             "members": [
                 {
                     "name": "Code",

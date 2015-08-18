@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://sdb.amazonaws.com/doc/2009-04-15/"
         }
@@ -119,6 +122,7 @@
     "shapes": {
         "Attribute": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "Name",
@@ -144,6 +148,7 @@
         },
         "AttributeDoesNotExist": {
             "type": "structure",
+            "documentation": "<p>The specified attribute does not exist.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -311,6 +316,7 @@
         },
         "DuplicateItemName": {
             "type": "structure",
+            "documentation": "<p>The item name was specified more than once. </p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -361,6 +367,7 @@
         },
         "InvalidNextToken": {
             "type": "structure",
+            "documentation": "<p>The specified NextToken is not valid. </p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -370,6 +377,7 @@
         },
         "InvalidNumberPredicates": {
             "type": "structure",
+            "documentation": "<p>Too many predicates exist in the query expression.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -379,6 +387,7 @@
         },
         "InvalidNumberValueTests": {
             "type": "structure",
+            "documentation": "<p>Too many predicates exist in the query expression.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -388,6 +397,7 @@
         },
         "InvalidParameterValue": {
             "type": "structure",
+            "documentation": "<p>The value for a parameter is invalid.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -397,6 +407,7 @@
         },
         "InvalidQueryExpression": {
             "type": "structure",
+            "documentation": "<p>The specified query expression syntax is not valid.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -406,6 +417,7 @@
         },
         "Item": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "Name",
@@ -463,6 +475,7 @@
         },
         "MissingParameter": {
             "type": "structure",
+            "documentation": "<p>The request must contain the specified missing parameter.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -472,6 +485,7 @@
         },
         "NoSuchDomain": {
             "type": "structure",
+            "documentation": "<p>The specified domain does not exist.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -481,6 +495,7 @@
         },
         "NumberDomainAttributesExceeded": {
             "type": "structure",
+            "documentation": "<p>Too many attributes in this domain.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -490,6 +505,7 @@
         },
         "NumberDomainBytesExceeded": {
             "type": "structure",
+            "documentation": "<p>Too many bytes in this domain.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -499,6 +515,7 @@
         },
         "NumberDomainsExceeded": {
             "type": "structure",
+            "documentation": "<p>Too many domains exist per this account.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -508,6 +525,7 @@
         },
         "NumberItemAttributesExceeded": {
             "type": "structure",
+            "documentation": "<p>Too many attributes in this item.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -517,6 +535,7 @@
         },
         "NumberSubmittedAttributesExceeded": {
             "type": "structure",
+            "documentation": "<p>Too many attributes exist in a single call.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -526,6 +545,7 @@
         },
         "NumberSubmittedItemsExceeded": {
             "type": "structure",
+            "documentation": "<p>Too many items exist in a single call.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -560,6 +580,7 @@
         },
         "ReplaceableAttribute": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "Name",
@@ -584,6 +605,7 @@
         },
         "ReplaceableItem": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "Name",
@@ -604,6 +626,7 @@
         },
         "RequestTimeout": {
             "type": "structure",
+            "documentation": "<p>A timeout occurred when attempting to query the specified domain with specified query expression.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -651,6 +674,7 @@
         },
         "TooManyRequestedAttributes": {
             "type": "structure",
+            "documentation": "<p>Too many attributes requested.</p>",
             "members": [
                 {
                     "name": "BoxUsage",
@@ -660,6 +684,7 @@
         },
         "UpdateCondition": {
             "type": "structure",
+            "documentation": "<p> Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. </p>",
             "members": [
                 {
                     "name": "Name",

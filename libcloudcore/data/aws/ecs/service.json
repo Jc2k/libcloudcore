@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -286,6 +290,7 @@
         },
         "ClientException": {
             "type": "structure",
+            "documentation": "<p>These errors are usually caused by something the client did, such as use an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specify an identifier that is not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -295,6 +300,7 @@
         },
         "Cluster": {
             "type": "structure",
+            "documentation": "<p>A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.</p>",
             "members": [
                 {
                     "name": "clusterArn",
@@ -335,14 +341,17 @@
         },
         "ClusterContainsContainerInstancesException": {
             "type": "structure",
+            "documentation": "<p>You cannot delete a cluster that has registered container instances. You must first deregister the container instances before you can delete the cluster. For more information, see <a>DeregisterContainerInstance</a>.</p>",
             "members": []
         },
         "ClusterContainsServicesException": {
             "type": "structure",
+            "documentation": "<p>You cannot delete a cluster that contains services. You must first update the service to reduce its desired task count to 0 and then delete the service. For more information, see <a>UpdateService</a> and <a>DeleteService</a>.</p>",
             "members": []
         },
         "ClusterNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>",
             "members": []
         },
         "Clusters": {
@@ -351,6 +360,7 @@
         },
         "Container": {
             "type": "structure",
+            "documentation": "<p>A docker container that is part of a task.</p>",
             "members": [
                 {
                     "name": "containerArn",
@@ -391,6 +401,7 @@
         },
         "ContainerDefinition": {
             "type": "structure",
+            "documentation": "<p>Container definitions are used in task definitions to describe the different containers that are launched as part of a task.</p>",
             "members": [
                 {
                     "name": "name",
@@ -460,6 +471,7 @@
         },
         "ContainerInstance": {
             "type": "structure",
+            "documentation": "<p>An Amazon EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>",
             "members": [
                 {
                     "name": "containerInstanceArn",
@@ -519,6 +531,7 @@
         },
         "ContainerOverride": {
             "type": "structure",
+            "documentation": "<p>The overrides that should be sent to a container.</p>",
             "members": [
                 {
                     "name": "name",
@@ -661,6 +674,7 @@
         },
         "Deployment": {
             "type": "structure",
+            "documentation": "<p>The details of an Amazon ECS service deployment.</p>",
             "members": [
                 {
                     "name": "id",
@@ -931,6 +945,7 @@
         },
         "Failure": {
             "type": "structure",
+            "documentation": "<p>A failed resource.</p>",
             "members": [
                 {
                     "name": "arn",
@@ -950,6 +965,7 @@
         },
         "HostVolumeProperties": {
             "type": "structure",
+            "documentation": "<p>Details on a container instance host volume.</p>",
             "members": [
                 {
                     "name": "sourcePath",
@@ -963,10 +979,12 @@
         },
         "InvalidParameterException": {
             "type": "structure",
+            "documentation": "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>",
             "members": []
         },
         "KeyValuePair": {
             "type": "structure",
+            "documentation": "<p>A key and value pair object.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1222,6 +1240,7 @@
         },
         "LoadBalancer": {
             "type": "structure",
+            "documentation": "<p>Details on a load balancer that is used with a service.</p>",
             "members": [
                 {
                     "name": "loadBalancerName",
@@ -1249,10 +1268,12 @@
         },
         "MissingVersionException": {
             "type": "structure",
+            "documentation": "<p>Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and does not have enough information to proceed with an update. This could be because the agent running on the container instance is an older or custom version that does not use our version information.</p>",
             "members": []
         },
         "MountPoint": {
             "type": "structure",
+            "documentation": "<p>Details on a volume mount point that is used in a container definition.</p>",
             "members": [
                 {
                     "name": "sourceVolume",
@@ -1277,6 +1298,7 @@
         },
         "NetworkBinding": {
             "type": "structure",
+            "documentation": "<p>Details on the network bindings between a container and its host container instance.</p>",
             "members": [
                 {
                     "name": "bindIP",
@@ -1306,10 +1328,12 @@
         },
         "NoUpdateAvailableException": {
             "type": "structure",
+            "documentation": "<p>There is no update available for this Amazon ECS container agent. This could be because the agent is already running the latest version, or it is so old that there is no update path to the current version.</p>",
             "members": []
         },
         "PortMapping": {
             "type": "structure",
+            "documentation": "<p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.</p>",
             "members": [
                 {
                     "name": "containerPort",
@@ -1407,6 +1431,7 @@
         },
         "Resource": {
             "type": "structure",
+            "documentation": "<p>Describes the resources available for a container instance.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1491,6 +1516,7 @@
         },
         "ServerException": {
             "type": "structure",
+            "documentation": "<p>These errors are usually caused by a server-side issue.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1500,6 +1526,7 @@
         },
         "Service": {
             "type": "structure",
+            "documentation": "<p>Details on a service within a cluster</p>",
             "members": [
                 {
                     "name": "serviceArn",
@@ -1565,6 +1592,7 @@
         },
         "ServiceEvent": {
             "type": "structure",
+            "documentation": "<p>Details on an event associated with a service.</p>",
             "members": [
                 {
                     "name": "id",
@@ -1589,10 +1617,12 @@
         },
         "ServiceNotActiveException": {
             "type": "structure",
+            "documentation": "<p>The specified service is not active. You cannot update a service that is not active. If you have previously deleted a service, you can recreate it with <a>CreateService</a>.</p>",
             "members": []
         },
         "ServiceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.</p>",
             "members": []
         },
         "Services": {
@@ -1765,6 +1795,7 @@
         },
         "Task": {
             "type": "structure",
+            "documentation": "<p>Details on a task in a cluster.</p>",
             "members": [
                 {
                     "name": "taskArn",
@@ -1815,6 +1846,7 @@
         },
         "TaskDefinition": {
             "type": "structure",
+            "documentation": "<p>Details of a task definition.</p>",
             "members": [
                 {
                     "name": "taskDefinitionArn",
@@ -1853,6 +1885,7 @@
         },
         "TaskOverride": {
             "type": "structure",
+            "documentation": "<p>The overrides associated with a task.</p>",
             "members": [
                 {
                     "name": "containerOverrides",
@@ -1897,6 +1930,7 @@
         },
         "UpdateInProgressException": {
             "type": "structure",
+            "documentation": "<p>There is already a current Amazon ECS container agent update in progress on the specified container instance. If the container agent becomes disconnected while it is in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it will resume where it stopped previously.</p>",
             "members": []
         },
         "UpdateServiceRequest": {
@@ -1936,6 +1970,7 @@
         },
         "VersionInfo": {
             "type": "structure",
+            "documentation": "<p>The Docker and Amazon ECS container agent version information on a container instance.</p>",
             "members": [
                 {
                     "name": "agentVersion",
@@ -1956,6 +1991,7 @@
         },
         "Volume": {
             "type": "structure",
+            "documentation": "<p>A data volume used in a task definition.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1971,6 +2007,7 @@
         },
         "VolumeFrom": {
             "type": "structure",
+            "documentation": "<p>Details on a data volume from another container.</p>",
             "members": [
                 {
                     "name": "sourceContainer",

@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://ses.amazonaws.com/doc/2010-12-01/"
         }
@@ -228,6 +231,7 @@
         },
         "Body": {
             "type": "structure",
+            "documentation": "<p>Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest variety of email clients. </p>",
             "members": [
                 {
                     "name": "Text",
@@ -246,6 +250,7 @@
         },
         "Content": {
             "type": "structure",
+            "documentation": "<p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS. </p>",
             "members": [
                 {
                     "name": "Data",
@@ -264,6 +269,7 @@
         },
         "DeleteIdentityPolicyRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to delete an authorization policy applying to an identity.</p> <p>This request succeeds regardless of whether the specified policy exists.</p>",
             "members": [
                 {
                     "name": "Identity",
@@ -279,10 +285,12 @@
         },
         "DeleteIdentityPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         },
         "DeleteIdentityRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to delete an identity from the list of identities for the AWS Account.</p>",
             "members": [
                 {
                     "name": "Identity",
@@ -293,10 +301,12 @@
         },
         "DeleteIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         },
         "DeleteVerifiedEmailAddressRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to delete an address from the list of verified email addresses.</p>",
             "members": [
                 {
                     "name": "EmailAddress",
@@ -307,6 +317,7 @@
         },
         "Destination": {
             "type": "structure",
+            "documentation": "<p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <p> By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a href=\"http://tools.ietf.org/html/rfc2047\">RFC 2047</a>. </p>",
             "members": [
                 {
                     "name": "ToAddresses",
@@ -326,7 +337,9 @@
             ]
         },
         "DkimAttributes": {
-            "type": "map"
+            "type": "map",
+            "key": "Identity",
+            "value": "IdentityDkimAttributes"
         },
         "Domain": {
             "type": "string"
@@ -336,6 +349,7 @@
         },
         "GetIdentityDkimAttributesRequest": {
             "type": "structure",
+            "documentation": "<p>Given a list of verified identities, describes their DKIM attributes. The DKIM attributes of an email address identity includes whether DKIM signing is individually enabled or disabled for that address. The DKIM attributes of a domain name identity includes whether DKIM signing is enabled, as well as the DNS records (tokens) that must remain published in the domain name's DNS.</p>",
             "members": [
                 {
                     "name": "Identities",
@@ -346,6 +360,7 @@
         },
         "GetIdentityDkimAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a list of all the DKIM attributes for the specified identity.</p>",
             "members": [
                 {
                     "name": "DkimAttributes",
@@ -366,6 +381,7 @@
         },
         "GetIdentityNotificationAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Describes whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and specifies whether feedback forwarding is enabled for bounce and complaint notifications.</p>",
             "members": [
                 {
                     "name": "NotificationAttributes",
@@ -376,6 +392,7 @@
         },
         "GetIdentityPoliciesRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to retrieve the text of a list of authorization policies applying to an identity. </p>",
             "members": [
                 {
                     "name": "Identity",
@@ -391,6 +408,7 @@
         },
         "GetIdentityPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a map of policy names to policies returned from a successful <code>GetIdentityPolicies</code> request. </p>",
             "members": [
                 {
                     "name": "Policies",
@@ -401,6 +419,7 @@
         },
         "GetIdentityVerificationAttributesRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to provide the verification attributes for a list of identities.</p>",
             "members": [
                 {
                     "name": "Identities",
@@ -411,6 +430,7 @@
         },
         "GetIdentityVerificationAttributesResponse": {
             "type": "structure",
+            "documentation": "<p>Represents the verification attributes for a list of identities.</p>",
             "members": [
                 {
                     "name": "VerificationAttributes",
@@ -421,6 +441,7 @@
         },
         "GetSendQuotaResponse": {
             "type": "structure",
+            "documentation": "<p>Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request. </p>",
             "members": [
                 {
                     "name": "Max24HourSend",
@@ -441,6 +462,7 @@
         },
         "GetSendStatisticsResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code> request. This list contains aggregated data from the previous two weeks of sending activity. </p>",
             "members": [
                 {
                     "name": "SendDataPoints",
@@ -454,6 +476,7 @@
         },
         "IdentityDkimAttributes": {
             "type": "structure",
+            "documentation": "<p>Represents the DKIM attributes of a verified email address or a domain.</p>",
             "members": [
                 {
                     "name": "DkimEnabled",
@@ -478,6 +501,7 @@
         },
         "IdentityNotificationAttributes": {
             "type": "structure",
+            "documentation": "<p>Represents the notification attributes of an identity, including whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding is enabled for bounce and complaint notifications.</p>",
             "members": [
                 {
                     "name": "BounceTopic",
@@ -506,6 +530,7 @@
         },
         "IdentityVerificationAttributes": {
             "type": "structure",
+            "documentation": "<p>Represents the verification attributes of a single identity.</p>",
             "members": [
                 {
                     "name": "VerificationStatus",
@@ -521,10 +546,12 @@
         },
         "InvalidPolicyException": {
             "type": "structure",
+            "documentation": "Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.",
             "members": []
         },
         "ListIdentitiesRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to list all identities for the AWS Account.</p>",
             "members": [
                 {
                     "name": "IdentityType",
@@ -545,6 +572,7 @@
         },
         "ListIdentitiesResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a list of all verified identities for the AWS Account.</p>",
             "members": [
                 {
                     "name": "Identities",
@@ -560,6 +588,7 @@
         },
         "ListIdentityPoliciesRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to list all authorization policies, by name, applying to an identity.</p>",
             "members": [
                 {
                     "name": "Identity",
@@ -570,6 +599,7 @@
         },
         "ListIdentityPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a list of policy names returned from a successful <code>ListIdentityPolicies</code> request. </p>",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -580,6 +610,7 @@
         },
         "ListVerifiedEmailAddressesResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a list of all the email addresses verified for the current user.</p>",
             "members": [
                 {
                     "name": "VerifiedEmailAddresses",
@@ -599,6 +630,7 @@
         },
         "Message": {
             "type": "structure",
+            "documentation": "<p>Represents the message to be sent, composed of a subject and a body.</p>",
             "members": [
                 {
                     "name": "Subject",
@@ -620,13 +652,16 @@
         },
         "MessageRejected": {
             "type": "structure",
+            "documentation": "Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.",
             "members": []
         },
         "NextToken": {
             "type": "string"
         },
         "NotificationAttributes": {
-            "type": "map"
+            "type": "map",
+            "key": "Identity",
+            "value": "IdentityNotificationAttributes"
         },
         "NotificationTopic": {
             "type": "string"
@@ -635,13 +670,17 @@
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "documentation": "JSON representation of a valid policy."
         },
         "PolicyMap": {
-            "type": "map"
+            "type": "map",
+            "key": "PolicyName",
+            "value": "Policy"
         },
         "PolicyName": {
-            "type": "string"
+            "type": "string",
+            "documentation": "name of the policy."
         },
         "PolicyNameList": {
             "type": "list",
@@ -649,6 +688,7 @@
         },
         "PutIdentityPolicyRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to apply an authorization policy to an identity.</p>",
             "members": [
                 {
                     "name": "Identity",
@@ -669,10 +709,12 @@
         },
         "PutIdentityPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         },
         "RawMessage": {
             "type": "structure",
+            "documentation": "<p>Represents the raw data of the message.</p>",
             "members": [
                 {
                     "name": "Data",
@@ -686,6 +728,7 @@
         },
         "SendDataPoint": {
             "type": "structure",
+            "documentation": "<p>Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity. </p>",
             "members": [
                 {
                     "name": "Timestamp",
@@ -720,6 +763,7 @@
         },
         "SendEmailRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to send a single email message.</p> <p>This datatype can be used in application code to compose a message consisting of source, destination, message, reply-to, and return-path parts. This object can then be sent using the <code>SendEmail</code> action. </p>",
             "members": [
                 {
                     "name": "Source",
@@ -760,6 +804,7 @@
         },
         "SendEmailResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a unique message ID returned from a successful <code>SendEmail</code> request. </p>",
             "members": [
                 {
                     "name": "MessageId",
@@ -770,6 +815,7 @@
         },
         "SendRawEmailRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to send a raw email message.</p> <p>This datatype can be used in application code to compose a message consisting of source, destination, and raw message text. This object can then be sent using the <code>SendRawEmail</code> action. </p>",
             "members": [
                 {
                     "name": "Source",
@@ -805,6 +851,7 @@
         },
         "SendRawEmailResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a unique message ID returned from a successful <code>SendRawEmail</code> request. </p>",
             "members": [
                 {
                     "name": "MessageId",
@@ -818,6 +865,7 @@
         },
         "SetIdentityDkimEnabledRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to enable or disable DKIM signing for an identity.</p>",
             "members": [
                 {
                     "name": "Identity",
@@ -833,6 +881,7 @@
         },
         "SetIdentityDkimEnabledResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         },
         "SetIdentityFeedbackForwardingEnabledRequest": {
@@ -852,10 +901,12 @@
         },
         "SetIdentityFeedbackForwardingEnabledResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         },
         "SetIdentityNotificationTopicRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request to set or clear an identity's notification topic.</p>",
             "members": [
                 {
                     "name": "Identity",
@@ -876,13 +927,16 @@
         },
         "SetIdentityNotificationTopicResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         },
         "Timestamp": {
             "type": "timestamp"
         },
         "VerificationAttributes": {
-            "type": "map"
+            "type": "map",
+            "key": "Identity",
+            "value": "IdentityVerificationAttributes"
         },
         "VerificationStatus": {
             "type": "string"
@@ -896,6 +950,7 @@
         },
         "VerifyDomainDkimRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to begin DKIM verification for a domain.</p>",
             "members": [
                 {
                     "name": "Domain",
@@ -906,6 +961,7 @@
         },
         "VerifyDomainDkimResponse": {
             "type": "structure",
+            "documentation": "<p>Represents the DNS records that must be published in the domain name's DNS to complete DKIM setup.</p>",
             "members": [
                 {
                     "name": "DkimTokens",
@@ -916,6 +972,7 @@
         },
         "VerifyDomainIdentityRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to begin domain verification.</p>",
             "members": [
                 {
                     "name": "Domain",
@@ -926,6 +983,7 @@
         },
         "VerifyDomainIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>Represents a token used for domain ownership verification.</p>",
             "members": [
                 {
                     "name": "VerificationToken",
@@ -936,6 +994,7 @@
         },
         "VerifyEmailAddressRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to begin email address verification.</p>",
             "members": [
                 {
                     "name": "EmailAddress",
@@ -946,6 +1005,7 @@
         },
         "VerifyEmailIdentityRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request instructing the service to begin email address verification.</p>",
             "members": [
                 {
                     "name": "EmailAddress",
@@ -956,6 +1016,7 @@
         },
         "VerifyEmailIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
             "members": []
         }
     }

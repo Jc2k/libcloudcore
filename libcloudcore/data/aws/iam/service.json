@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "https://iam.amazonaws.com/doc/2010-05-08/"
         }
@@ -856,6 +859,7 @@
     "shapes": {
         "AccessKey": {
             "type": "structure",
+            "documentation": "<p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> actions. </p> <note>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key. </note>",
             "members": [
                 {
                     "name": "UserName",
@@ -886,6 +890,7 @@
         },
         "AccessKeyLastUsed": {
             "type": "structure",
+            "documentation": "<p>Contains information about the last time an AWS access key was used.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> action.</p>",
             "members": [
                 {
                     "name": "LastUsedDate",
@@ -906,6 +911,7 @@
         },
         "AccessKeyMetadata": {
             "type": "structure",
+            "documentation": "<p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> action.</p>",
             "members": [
                 {
                     "name": "UserName",
@@ -1018,6 +1024,7 @@
         },
         "AttachedPolicy": {
             "type": "structure",
+            "documentation": "<p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "PolicyName",
@@ -1060,6 +1067,7 @@
         },
         "CreateAccessKeyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateAccessKey</a> request. </p>",
             "members": [
                 {
                     "name": "AccessKey",
@@ -1095,6 +1103,7 @@
         },
         "CreateGroupResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateGroup</a> request. </p>",
             "members": [
                 {
                     "name": "Group",
@@ -1120,6 +1129,7 @@
         },
         "CreateInstanceProfileResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateInstanceProfile</a> request. </p>",
             "members": [
                 {
                     "name": "InstanceProfile",
@@ -1150,6 +1160,7 @@
         },
         "CreateLoginProfileResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateLoginProfile</a> request. </p>",
             "members": [
                 {
                     "name": "LoginProfile",
@@ -1180,6 +1191,7 @@
         },
         "CreateOpenIDConnectProviderResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateOpenIDConnectProvider</a> request. </p>",
             "members": [
                 {
                     "name": "OpenIDConnectProviderArn",
@@ -1215,6 +1227,7 @@
         },
         "CreatePolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreatePolicy</a> request. </p>",
             "members": [
                 {
                     "name": "Policy",
@@ -1244,6 +1257,7 @@
         },
         "CreatePolicyVersionResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreatePolicyVersion</a> request. </p>",
             "members": [
                 {
                     "name": "PolicyVersion",
@@ -1274,6 +1288,7 @@
         },
         "CreateRoleResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateRole</a> request. </p>",
             "members": [
                 {
                     "name": "Role",
@@ -1299,6 +1314,7 @@
         },
         "CreateSAMLProviderResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateSAMLProvider</a> request. </p>",
             "members": [
                 {
                     "name": "SAMLProviderArn",
@@ -1324,6 +1340,7 @@
         },
         "CreateUserResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateUser</a> request. </p>",
             "members": [
                 {
                     "name": "User",
@@ -1349,6 +1366,7 @@
         },
         "CreateVirtualMFADeviceResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>CreateVirtualMFADevice</a> request. </p>",
             "members": [
                 {
                     "name": "VirtualMFADevice",
@@ -1359,6 +1377,7 @@
         },
         "CredentialReportExpiredException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <a>GenerateCredentialReport</a>. For more information about credential report expiration, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html\">Getting Credential Reports</a> in the <i>Using IAM</i> guide.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1368,6 +1387,7 @@
         },
         "CredentialReportNotPresentException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the credential report does not exist. To generate a credential report, use <a>GenerateCredentialReport</a>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1377,6 +1397,7 @@
         },
         "CredentialReportNotReadyException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the credential report is still being generated.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1426,6 +1447,7 @@
         },
         "DeleteConflictException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities. </p>",
             "members": [
                 {
                     "name": "message",
@@ -1665,6 +1687,7 @@
         },
         "DuplicateCertificateException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the same certificate is associated with an IAM user in the account. </p>",
             "members": [
                 {
                     "name": "message",
@@ -1674,6 +1697,7 @@
         },
         "DuplicateSSHPublicKeyException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the SSH public key is already associated with the specified IAM user.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1708,6 +1732,7 @@
         },
         "EntityAlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because it attempted to create a resource that already exists.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1717,6 +1742,7 @@
         },
         "EntityTemporarilyUnmodifiableException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity. </p>",
             "members": [
                 {
                     "name": "message",
@@ -1729,6 +1755,7 @@
         },
         "GenerateCredentialReportResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GenerateCredentialReport</a> request. </p>",
             "members": [
                 {
                     "name": "State",
@@ -1754,6 +1781,7 @@
         },
         "GetAccessKeyLastUsedResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action.</p>",
             "members": [
                 {
                     "name": "UserName",
@@ -1789,6 +1817,7 @@
         },
         "GetAccountAuthorizationDetailsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request. </p>",
             "members": [
                 {
                     "name": "UserDetailList",
@@ -1824,6 +1853,7 @@
         },
         "GetAccountPasswordPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetAccountPasswordPolicy</a> request. </p>",
             "members": [
                 {
                     "name": "PasswordPolicy",
@@ -1833,6 +1863,7 @@
         },
         "GetAccountSummaryResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetAccountSummary</a> request. </p>",
             "members": [
                 {
                     "name": "SummaryMap",
@@ -1843,6 +1874,7 @@
         },
         "GetCredentialReportResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetCredentialReport</a> request. </p>",
             "members": [
                 {
                     "name": "Content",
@@ -1878,6 +1910,7 @@
         },
         "GetGroupPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetGroupPolicy</a> request. </p>",
             "members": [
                 {
                     "name": "GroupName",
@@ -1918,6 +1951,7 @@
         },
         "GetGroupResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetGroup</a> request. </p>",
             "members": [
                 {
                     "name": "Group",
@@ -1953,6 +1987,7 @@
         },
         "GetInstanceProfileResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetInstanceProfile</a> request. </p>",
             "members": [
                 {
                     "name": "InstanceProfile",
@@ -1973,6 +2008,7 @@
         },
         "GetLoginProfileResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetLoginProfile</a> request. </p>",
             "members": [
                 {
                     "name": "LoginProfile",
@@ -1993,6 +2029,7 @@
         },
         "GetOpenIDConnectProviderResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetOpenIDConnectProvider</a> request. </p>",
             "members": [
                 {
                     "name": "Url",
@@ -2027,6 +2064,7 @@
         },
         "GetPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetPolicy</a> request. </p>",
             "members": [
                 {
                     "name": "Policy",
@@ -2051,6 +2089,7 @@
         },
         "GetPolicyVersionResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetPolicyVersion</a> request. </p>",
             "members": [
                 {
                     "name": "PolicyVersion",
@@ -2076,6 +2115,7 @@
         },
         "GetRolePolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetRolePolicy</a> request. </p>",
             "members": [
                 {
                     "name": "RoleName",
@@ -2106,6 +2146,7 @@
         },
         "GetRoleResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetRole</a> request. </p>",
             "members": [
                 {
                     "name": "Role",
@@ -2126,6 +2167,7 @@
         },
         "GetSAMLProviderResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetSAMLProvider</a> request. </p>",
             "members": [
                 {
                     "name": "SAMLMetadataDocument",
@@ -2166,6 +2208,7 @@
         },
         "GetSSHPublicKeyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetSSHPublicKey</a> request.</p>",
             "members": [
                 {
                     "name": "SSHPublicKey",
@@ -2186,6 +2229,7 @@
         },
         "GetServerCertificateResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetServerCertificate</a> request. </p>",
             "members": [
                 {
                     "name": "ServerCertificate",
@@ -2211,6 +2255,7 @@
         },
         "GetUserPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetUserPolicy</a> request. </p>",
             "members": [
                 {
                     "name": "UserName",
@@ -2241,6 +2286,7 @@
         },
         "GetUserResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>GetUser</a> request. </p>",
             "members": [
                 {
                     "name": "User",
@@ -2251,6 +2297,7 @@
         },
         "Group": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM group entity.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <a>CreateGroup</a> </li> <li> <a>GetGroup</a> </li> <li> <a>ListGroups</a> </li> </ul>",
             "members": [
                 {
                     "name": "Path",
@@ -2281,6 +2328,7 @@
         },
         "GroupDetail": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM group, including all of the group's policies. </p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
             "members": [
                 {
                     "name": "Path",
@@ -2320,6 +2368,7 @@
         },
         "InstanceProfile": {
             "type": "structure",
+            "documentation": "<p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul>",
             "members": [
                 {
                     "name": "Path",
@@ -2355,6 +2404,7 @@
         },
         "InvalidAuthenticationCodeException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the authentication code was not recognized. The error message describes the specific error. </p>",
             "members": [
                 {
                     "name": "message",
@@ -2364,6 +2414,7 @@
         },
         "InvalidCertificateException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the certificate is invalid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2373,6 +2424,7 @@
         },
         "InvalidInputException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2382,6 +2434,7 @@
         },
         "InvalidPublicKeyException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the public key is malformed or otherwise invalid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2391,6 +2444,7 @@
         },
         "InvalidUserTypeException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the type of user for the transaction was incorrect.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2400,6 +2454,7 @@
         },
         "KeyPairMismatchException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the public key certificate and the private key do not match.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2409,6 +2464,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error message describes the limit exceeded. </p>",
             "members": [
                 {
                     "name": "message",
@@ -2438,6 +2494,7 @@
         },
         "ListAccessKeysResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListAccessKeys</a> request. </p>",
             "members": [
                 {
                     "name": "AccessKeyMetadata",
@@ -2473,6 +2530,7 @@
         },
         "ListAccountAliasesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListAccountAliases</a> request. </p>",
             "members": [
                 {
                     "name": "AccountAliases",
@@ -2518,6 +2576,7 @@
         },
         "ListAttachedGroupPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListAttachedGroupPolicies</a> request. </p>",
             "members": [
                 {
                     "name": "AttachedPolicies",
@@ -2563,6 +2622,7 @@
         },
         "ListAttachedRolePoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListAttachedRolePolicies</a> request. </p>",
             "members": [
                 {
                     "name": "AttachedPolicies",
@@ -2608,6 +2668,7 @@
         },
         "ListAttachedUserPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListAttachedUserPolicies</a> request. </p>",
             "members": [
                 {
                     "name": "AttachedPolicies",
@@ -2657,6 +2718,7 @@
         },
         "ListEntitiesForPolicyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListEntitiesForPolicy</a> request. </p>",
             "members": [
                 {
                     "name": "PolicyGroups",
@@ -2707,6 +2769,7 @@
         },
         "ListGroupPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListGroupPolicies</a> request. </p>",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -2747,6 +2810,7 @@
         },
         "ListGroupsForUserResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListGroupsForUser</a> request. </p>",
             "members": [
                 {
                     "name": "Groups",
@@ -2787,6 +2851,7 @@
         },
         "ListGroupsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListGroups</a> request. </p>",
             "members": [
                 {
                     "name": "Groups",
@@ -2827,6 +2892,7 @@
         },
         "ListInstanceProfilesForRoleResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListInstanceProfilesForRole</a> request. </p>",
             "members": [
                 {
                     "name": "InstanceProfiles",
@@ -2867,6 +2933,7 @@
         },
         "ListInstanceProfilesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListInstanceProfiles</a> request. </p>",
             "members": [
                 {
                     "name": "InstanceProfiles",
@@ -2907,6 +2974,7 @@
         },
         "ListMFADevicesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListMFADevices</a> request. </p>",
             "members": [
                 {
                     "name": "MFADevices",
@@ -2931,6 +2999,7 @@
         },
         "ListOpenIDConnectProvidersResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListOpenIDConnectProviders</a> request. </p>",
             "members": [
                 {
                     "name": "OpenIDConnectProviderList",
@@ -2971,6 +3040,7 @@
         },
         "ListPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListPolicies</a> request. </p>",
             "members": [
                 {
                     "name": "Policies",
@@ -3010,6 +3080,7 @@
         },
         "ListPolicyVersionsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListPolicyVersions</a> request. </p>",
             "members": [
                 {
                     "name": "Versions",
@@ -3050,6 +3121,7 @@
         },
         "ListRolePoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListRolePolicies</a> request. </p>",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -3090,6 +3162,7 @@
         },
         "ListRolesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListRoles</a> request. </p>",
             "members": [
                 {
                     "name": "Roles",
@@ -3114,6 +3187,7 @@
         },
         "ListSAMLProvidersResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListSAMLProviders</a> request. </p>",
             "members": [
                 {
                     "name": "SAMLProviderList",
@@ -3144,6 +3218,7 @@
         },
         "ListSSHPublicKeysResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListSSHPublicKeys</a> request.</p>",
             "members": [
                 {
                     "name": "SSHPublicKeys",
@@ -3184,6 +3259,7 @@
         },
         "ListServerCertificatesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListServerCertificates</a> request. </p>",
             "members": [
                 {
                     "name": "ServerCertificateMetadataList",
@@ -3224,6 +3300,7 @@
         },
         "ListSigningCertificatesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListSigningCertificates</a> request. </p>",
             "members": [
                 {
                     "name": "Certificates",
@@ -3264,6 +3341,7 @@
         },
         "ListUserPoliciesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListUserPolicies</a> request. </p>",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -3304,6 +3382,7 @@
         },
         "ListUsersResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListUsers</a> request. </p>",
             "members": [
                 {
                     "name": "Users",
@@ -3344,6 +3423,7 @@
         },
         "ListVirtualMFADevicesResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>ListVirtualMFADevices</a> request. </p>",
             "members": [
                 {
                     "name": "VirtualMFADevices",
@@ -3364,6 +3444,7 @@
         },
         "LoginProfile": {
             "type": "structure",
+            "documentation": "<p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> actions. </p>",
             "members": [
                 {
                     "name": "UserName",
@@ -3384,6 +3465,7 @@
         },
         "MFADevice": {
             "type": "structure",
+            "documentation": "<p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> action.</p>",
             "members": [
                 {
                     "name": "UserName",
@@ -3404,6 +3486,7 @@
         },
         "MalformedCertificateException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error. </p>",
             "members": [
                 {
                     "name": "message",
@@ -3413,6 +3496,7 @@
         },
         "MalformedPolicyDocumentException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the policy document was malformed. The error message describes the specific error. </p>",
             "members": [
                 {
                     "name": "message",
@@ -3422,6 +3506,7 @@
         },
         "ManagedPolicyDetail": {
             "type": "structure",
+            "documentation": "<p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p> <p>For more information about managed policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "PolicyName",
@@ -3485,6 +3570,7 @@
         },
         "NoSuchEntityException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because it referenced an entity that does not exist. The error message describes the entity. </p>",
             "members": [
                 {
                     "name": "message",
@@ -3494,6 +3580,7 @@
         },
         "OpenIDConnectProviderListEntry": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider.</p>",
             "members": [
                 {
                     "name": "Arn",
@@ -3503,13 +3590,16 @@
         },
         "OpenIDConnectProviderListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of IAM OpenID Connect providers.</p>",
             "of": "OpenIDConnectProviderListEntry"
         },
         "OpenIDConnectProviderUrlType": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>Contains a URL that specifies the endpoint for an OpenID Connect provider.</p>"
         },
         "PasswordPolicy": {
             "type": "structure",
+            "documentation": "<p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> action. </p>",
             "members": [
                 {
                     "name": "MinimumPasswordLength",
@@ -3565,6 +3655,7 @@
         },
         "PasswordPolicyViolationException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy. </p>",
             "members": [
                 {
                     "name": "message",
@@ -3574,6 +3665,7 @@
         },
         "Policy": {
             "type": "structure",
+            "documentation": "<p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "PolicyName",
@@ -3628,6 +3720,7 @@
         },
         "PolicyDetail": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
             "members": [
                 {
                     "name": "PolicyName",
@@ -3643,6 +3736,7 @@
         },
         "PolicyGroup": {
             "type": "structure",
+            "documentation": "<p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "GroupName",
@@ -3657,6 +3751,7 @@
         },
         "PolicyRole": {
             "type": "structure",
+            "documentation": "<p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "RoleName",
@@ -3671,6 +3766,7 @@
         },
         "PolicyUser": {
             "type": "structure",
+            "documentation": "<p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "UserName",
@@ -3685,6 +3781,7 @@
         },
         "PolicyVersion": {
             "type": "structure",
+            "documentation": "<p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
             "members": [
                 {
                     "name": "Document",
@@ -3852,6 +3949,7 @@
         },
         "Role": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM role.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a> </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p> </li> </ul>",
             "members": [
                 {
                     "name": "Path",
@@ -3887,6 +3985,7 @@
         },
         "RoleDetail": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
             "members": [
                 {
                     "name": "Path",
@@ -3938,6 +4037,7 @@
         },
         "SAMLProviderListEntry": {
             "type": "structure",
+            "documentation": "<p>Contains the list of SAML providers for this account.</p>",
             "members": [
                 {
                     "name": "Arn",
@@ -3965,6 +4065,7 @@
         },
         "SSHPublicKey": {
             "type": "structure",
+            "documentation": "<p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> actions. </p>",
             "members": [
                 {
                     "name": "UserName",
@@ -4004,6 +4105,7 @@
         },
         "SSHPublicKeyMetadata": {
             "type": "structure",
+            "documentation": "<p>Contains information about an SSH public key, without the key's body or fingerprint.</p> <p>This data type is used as a response element in the <a>ListSSHPublicKeys</a> action.</p>",
             "members": [
                 {
                     "name": "UserName",
@@ -4029,6 +4131,7 @@
         },
         "ServerCertificate": {
             "type": "structure",
+            "documentation": "<p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> action. </p>",
             "members": [
                 {
                     "name": "ServerCertificateMetadata",
@@ -4049,6 +4152,7 @@
         },
         "ServerCertificateMetadata": {
             "type": "structure",
+            "documentation": "<p>Contains information about a server certificate without its certificate body, certificate chain, and private key. </p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> actions. </p>",
             "members": [
                 {
                     "name": "Path",
@@ -4084,6 +4188,7 @@
         },
         "ServiceFailureException": {
             "type": "structure",
+            "documentation": "<p>The request processing has failed because of an unknown error, exception or failure. </p>",
             "members": [
                 {
                     "name": "message",
@@ -4107,6 +4212,7 @@
         },
         "SigningCertificate": {
             "type": "structure",
+            "documentation": "<p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> actions. </p>",
             "members": [
                 {
                     "name": "UserName",
@@ -4137,6 +4243,7 @@
         },
         "UnrecognizedPublicKeyEncodingException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>",
             "members": [
                 {
                     "name": "message",
@@ -4301,6 +4408,7 @@
         },
         "UpdateSAMLProviderResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>UpdateSAMLProvider</a> request. </p>",
             "members": [
                 {
                     "name": "SAMLProviderArn",
@@ -4406,6 +4514,7 @@
         },
         "UploadSSHPublicKeyResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>UploadSSHPublicKey</a> request.</p>",
             "members": [
                 {
                     "name": "SSHPublicKey",
@@ -4446,6 +4555,7 @@
         },
         "UploadServerCertificateResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>UploadServerCertificate</a> request. </p>",
             "members": [
                 {
                     "name": "ServerCertificateMetadata",
@@ -4471,6 +4581,7 @@
         },
         "UploadSigningCertificateResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a successful <a>UploadSigningCertificate</a> request. </p>",
             "members": [
                 {
                     "name": "Certificate",
@@ -4481,6 +4592,7 @@
         },
         "User": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM user entity.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul>",
             "members": [
                 {
                     "name": "Path",
@@ -4516,6 +4628,7 @@
         },
         "UserDetail": {
             "type": "structure",
+            "documentation": "<p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
             "members": [
                 {
                     "name": "Path",
@@ -4560,6 +4673,7 @@
         },
         "VirtualMFADevice": {
             "type": "structure",
+            "documentation": "<p>Contains information about a virtual MFA device.</p>",
             "members": [
                 {
                     "name": "SerialNumber",
@@ -4592,6 +4706,7 @@
         },
         "accessKeyMetadataListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of access key metadata.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> action.</p>",
             "of": "AccessKeyMetadata"
         },
         "accessKeySecretType": {
@@ -4605,7 +4720,8 @@
             "type": "string"
         },
         "arnType": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources. </p> <p>For more information about ARNs, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>"
         },
         "assignmentStatusType": {
             "type": "string"
@@ -4637,6 +4753,7 @@
         },
         "certificateListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of signing certificates.</p> <p>This data type is used as a response element in the <a>ListSigningCertificates</a> action.</p>",
             "of": "SigningCertificate"
         },
         "clientIDListType": {
@@ -4689,6 +4806,7 @@
         },
         "groupListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a>ListGroups</a> action.</p>",
             "of": "Group"
         },
         "groupNameListType": {
@@ -4703,6 +4821,7 @@
         },
         "instanceProfileListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of instance profiles.</p>",
             "of": "InstanceProfile"
         },
         "instanceProfileNameType": {
@@ -4746,6 +4865,7 @@
         },
         "mfaDeviceListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of MFA devices.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> and <a>ListVirtualMFADevices</a> actions. </p>",
             "of": "MFADevice"
         },
         "minimumPasswordLengthType": {
@@ -4789,6 +4909,7 @@
         },
         "policyNameListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> action.</p>",
             "of": "policyNameType"
         },
         "policyNameType": {
@@ -4821,6 +4942,7 @@
         },
         "roleListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a>ListRoles</a> action.</p>",
             "of": "Role"
         },
         "roleNameType": {
@@ -4849,17 +4971,21 @@
             "type": "string"
         },
         "summaryMapType": {
-            "type": "map"
+            "type": "map",
+            "key": "summaryKeyType",
+            "value": "summaryValueType"
         },
         "summaryValueType": {
             "type": "integer"
         },
         "thumbprintListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of thumbprints of identity provider server certificates.</p>",
             "of": "thumbprintType"
         },
         "thumbprintType": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>Contains a thumbprint for an identity provider's server certificate.</p> <p>The identity provider's server certificate thumbprint is the hex-encoded SHA-1 hash value of the self-signed X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string. </p>"
         },
         "unrecognizedPublicKeyEncodingMessage": {
             "type": "string"
@@ -4870,6 +4996,7 @@
         },
         "userListType": {
             "type": "list",
+            "documentation": "<p>Contains a list of users.</p> <p>This data type is used as a response element in the <a>GetGroup</a> and <a>ListUsers</a> actions. </p>",
             "of": "User"
         },
         "userNameType": {

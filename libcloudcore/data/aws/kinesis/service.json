@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -130,6 +134,7 @@
     "shapes": {
         "AddTagsToStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>AddTagsToStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -148,6 +153,7 @@
         },
         "CreateStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>CreateStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -166,6 +172,7 @@
         },
         "DeleteStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>DeleteStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -176,6 +183,7 @@
         },
         "DescribeStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>DescribeStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -199,6 +207,7 @@
         },
         "DescribeStreamOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>DescribeStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamDescription",
@@ -215,6 +224,7 @@
         },
         "ExpiredIteratorException": {
             "type": "structure",
+            "documentation": "<p>The provided iterator exceeds the maximum age allowed.</p>",
             "members": [
                 {
                     "name": "message",
@@ -225,6 +235,7 @@
         },
         "GetRecordsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <a>GetRecords</a>.</p>",
             "members": [
                 {
                     "name": "ShardIterator",
@@ -243,6 +254,7 @@
         },
         "GetRecordsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <a>GetRecords</a>.</p>",
             "members": [
                 {
                     "name": "Records",
@@ -263,6 +275,7 @@
         },
         "GetShardIteratorInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>GetShardIterator</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -288,6 +301,7 @@
         },
         "GetShardIteratorOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>GetShardIterator</code>.</p>",
             "members": [
                 {
                     "name": "ShardIterator",
@@ -301,6 +315,7 @@
         },
         "HashKeyRange": {
             "type": "structure",
+            "documentation": "<p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>",
             "members": [
                 {
                     "name": "StartingHashKey",
@@ -316,6 +331,7 @@
         },
         "InvalidArgumentException": {
             "type": "structure",
+            "documentation": "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>",
             "members": [
                 {
                     "name": "message",
@@ -326,6 +342,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>",
             "members": [
                 {
                     "name": "message",
@@ -336,6 +353,7 @@
         },
         "ListStreamsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>ListStreams</code>.</p>",
             "members": [
                 {
                     "name": "Limit",
@@ -354,6 +372,7 @@
         },
         "ListStreamsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>ListStreams</code>.</p>",
             "members": [
                 {
                     "name": "StreamNames",
@@ -369,6 +388,7 @@
         },
         "ListTagsForStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>ListTagsForStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -392,6 +412,7 @@
         },
         "ListTagsForStreamOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>ListTagsForStream</code>.</p>",
             "members": [
                 {
                     "name": "Tags",
@@ -407,6 +428,7 @@
         },
         "MergeShardsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>MergeShards</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -436,6 +458,7 @@
         },
         "ProvisionedThroughputExceededException": {
             "type": "structure",
+            "documentation": "<p>The request rate is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\" target=\"_blank\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -446,6 +469,7 @@
         },
         "PutRecordInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>PutRecord</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -476,6 +500,7 @@
         },
         "PutRecordOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>PutRecord</code>.</p>",
             "members": [
                 {
                     "name": "ShardId",
@@ -491,6 +516,7 @@
         },
         "PutRecordsInput": {
             "type": "structure",
+            "documentation": "<p>A <code>PutRecords</code> request.</p>",
             "members": [
                 {
                     "name": "Records",
@@ -506,6 +532,7 @@
         },
         "PutRecordsOutput": {
             "type": "structure",
+            "documentation": "<p><code>PutRecords</code> results.</p>",
             "members": [
                 {
                     "name": "FailedRecordCount",
@@ -521,6 +548,7 @@
         },
         "PutRecordsRequestEntry": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>PutRecords</code>.</p>",
             "members": [
                 {
                     "name": "Data",
@@ -545,6 +573,7 @@
         },
         "PutRecordsResultEntry": {
             "type": "structure",
+            "documentation": "<p>Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to your Amazon Kinesis stream includes SequenceNumber and ShardId in the result. A record that fails to be added to your Amazon Kinesis stream includes ErrorCode and ErrorMessage in the result.</p>",
             "members": [
                 {
                     "name": "SequenceNumber",
@@ -574,6 +603,7 @@
         },
         "Record": {
             "type": "structure",
+            "documentation": "<p>The unit of data of the Amazon Kinesis stream, which is composed of a sequence number, a partition key, and a data blob.</p>",
             "members": [
                 {
                     "name": "SequenceNumber",
@@ -598,6 +628,7 @@
         },
         "RemoveTagsFromStreamInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>RemoveTagsFromStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -613,6 +644,7 @@
         },
         "ResourceInUseException": {
             "type": "structure",
+            "documentation": "<p>The resource is not available for this operation. For example, you attempted to split a shard but the stream is not in the <code>ACTIVE</code> state.</p>",
             "members": [
                 {
                     "name": "message",
@@ -623,6 +655,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The requested resource could not be found. It might not be specified correctly, or it might not be in the <code>ACTIVE</code> state.</p>",
             "members": [
                 {
                     "name": "message",
@@ -636,6 +669,7 @@
         },
         "SequenceNumberRange": {
             "type": "structure",
+            "documentation": "<p>The range of possible sequence numbers for the shard.</p>",
             "members": [
                 {
                     "name": "StartingSequenceNumber",
@@ -651,6 +685,7 @@
         },
         "Shard": {
             "type": "structure",
+            "documentation": "<p>A uniquely identified group of data records in an Amazon Kinesis stream.</p>",
             "members": [
                 {
                     "name": "ShardId",
@@ -694,6 +729,7 @@
         },
         "SplitShardInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input for <code>SplitShard</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -717,6 +753,7 @@
         },
         "StreamDescription": {
             "type": "structure",
+            "documentation": "<p>Represents the output for <code>DescribeStream</code>.</p>",
             "members": [
                 {
                     "name": "StreamName",
@@ -757,6 +794,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>Metadata assigned to the stream, consisting of a key-value pair.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -782,7 +820,9 @@
             "of": "Tag"
         },
         "TagMap": {
-            "type": "map"
+            "type": "map",
+            "key": "TagKey",
+            "value": "TagValue"
         },
         "TagValue": {
             "type": "string"

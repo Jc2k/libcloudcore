@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -163,6 +167,7 @@
         },
         "AttributeDefinition": {
             "type": "structure",
+            "documentation": "<p>Represents an attribute for describing the key schema for the table and indexes.</p>",
             "members": [
                 {
                     "name": "AttributeName",
@@ -181,7 +186,9 @@
             "of": "AttributeDefinition"
         },
         "AttributeMap": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "AttributeName": {
             "type": "string"
@@ -191,10 +198,13 @@
             "of": "AttributeName"
         },
         "AttributeUpdates": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValueUpdate"
         },
         "AttributeValue": {
             "type": "structure",
+            "documentation": "<p>Represents the data for an attribute. You can set one, and only one, of the elements.</p> <p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed. </p>",
             "members": [
                 {
                     "name": "S",
@@ -254,6 +264,7 @@
         },
         "AttributeValueUpdate": {
             "type": "structure",
+            "documentation": "<p>For the <i>UpdateItem</i> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.</p> <note> <p>You cannot use <i>UpdateItem</i> to update any primary key attributes. Instead, you will need to delete the item, and then use <i>PutItem</i> to create a new item with new attributes.</p> </note> <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception.</p>",
             "members": [
                 {
                     "name": "Value",
@@ -271,6 +282,7 @@
         },
         "BatchGetItemInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>BatchGetItem</i> operation.</p>",
             "members": [
                 {
                     "name": "RequestItems",
@@ -285,6 +297,7 @@
         },
         "BatchGetItemOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>BatchGetItem</i> operation.</p>",
             "members": [
                 {
                     "name": "Responses",
@@ -304,13 +317,18 @@
             ]
         },
         "BatchGetRequestMap": {
-            "type": "map"
+            "type": "map",
+            "key": "TableName",
+            "value": "KeysAndAttributes"
         },
         "BatchGetResponseMap": {
-            "type": "map"
+            "type": "map",
+            "key": "TableName",
+            "value": "ItemList"
         },
         "BatchWriteItemInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>BatchWriteItem</i> operation.</p>",
             "members": [
                 {
                     "name": "RequestItems",
@@ -330,6 +348,7 @@
         },
         "BatchWriteItemOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>BatchWriteItem</i> operation.</p>",
             "members": [
                 {
                     "name": "UnprocessedItems",
@@ -349,7 +368,9 @@
             ]
         },
         "BatchWriteItemRequestMap": {
-            "type": "map"
+            "type": "map",
+            "key": "TableName",
+            "value": "WriteRequests"
         },
         "BinaryAttributeValue": {
             "type": "blob"
@@ -366,6 +387,7 @@
         },
         "Capacity": {
             "type": "structure",
+            "documentation": "<p>Represents the amount of provisioned throughput capacity consumed on a table or an index. </p>",
             "members": [
                 {
                     "name": "CapacityUnits",
@@ -379,6 +401,7 @@
         },
         "Condition": {
             "type": "structure",
+            "documentation": "<p>Represents the selection criteria for a <i>Query</i> or <i>Scan</i> operation:</p> <ul> <li> <p>For a <i>Query</i> operation, <i>Condition</i> is used for specifying the <i>KeyConditions</i> to use when querying a table or an index. For <i>KeyConditions</i>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p><i>Condition</i> is also used in a <i>QueryFilter</i>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <i>Scan</i> operation, <i>Condition</i> is used in a <i>ScanFilter</i>, which evaluates the scan results and returns only the desired values.</p> </li> </ul>",
             "members": [
                 {
                     "name": "AttributeValueList",
@@ -397,6 +420,7 @@
         },
         "ConditionalCheckFailedException": {
             "type": "structure",
+            "documentation": "<p>A condition specified in the operation could not be evaluated.</p>",
             "members": [
                 {
                     "name": "message",
@@ -413,6 +437,7 @@
         },
         "ConsumedCapacity": {
             "type": "structure",
+            "documentation": "<p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if the request asked for it. For more information, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html\">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -450,6 +475,7 @@
         },
         "CreateGlobalSecondaryIndexAction": {
             "type": "structure",
+            "documentation": "<p>Represents a new global secondary index to be added to an existing table.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -473,6 +499,7 @@
         },
         "CreateTableInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>CreateTable</i> operation.</p>",
             "members": [
                 {
                     "name": "AttributeDefinitions",
@@ -512,6 +539,7 @@
         },
         "CreateTableOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>CreateTable</i> operation.</p>",
             "members": [
                 {
                     "name": "TableDescription",
@@ -524,6 +552,7 @@
         },
         "DeleteGlobalSecondaryIndexAction": {
             "type": "structure",
+            "documentation": "<p>Represents a global secondary index to be deleted from an existing table.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -534,6 +563,7 @@
         },
         "DeleteItemInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>DeleteItem</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -588,6 +618,7 @@
         },
         "DeleteItemOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>DeleteItem</i> operation.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -607,6 +638,7 @@
         },
         "DeleteRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request to perform a <i>DeleteItem</i> operation on an item.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -617,6 +649,7 @@
         },
         "DeleteTableInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>DeleteTable</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -627,6 +660,7 @@
         },
         "DeleteTableOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>DeleteTable</i> operation.</p>",
             "members": [
                 {
                     "name": "TableDescription",
@@ -636,6 +670,7 @@
         },
         "DescribeTableInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>DescribeTable</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -646,6 +681,7 @@
         },
         "DescribeTableOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>DescribeTable</i> operation.</p>",
             "members": [
                 {
                     "name": "Table",
@@ -657,10 +693,13 @@
             "type": "string"
         },
         "ExpectedAttributeMap": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "ExpectedAttributeValue"
         },
         "ExpectedAttributeValue": {
             "type": "structure",
+            "documentation": "<p>Represents a condition to be compared with an attribute value. This condition can be used with <i>DeleteItem</i>, <i>PutItem</i> or <i>UpdateItem</i> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <i>ExpectedAttributeValue</i> in one of two different ways:</p> <ul> <li> <p>Use <i>AttributeValueList</i> to specify one or more values to compare against an attribute. Use <i>ComparisonOperator</i> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.</p> </li> <li> <p>Use <i>Value</i> to specify a value that DynamoDB will compare against an attribute. If the values match, then <i>ExpectedAttributeValue</i> evaluates to true and the conditional operation succeeds. Optionally, you can also set <i>Exists</i> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.</p> </li> </ul> <p><i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once, DynamoDB will return a <i>ValidationException</i> exception.</p>",
             "members": [
                 {
                     "name": "Value",
@@ -684,22 +723,29 @@
             ]
         },
         "ExpressionAttributeNameMap": {
-            "type": "map"
+            "type": "map",
+            "key": "ExpressionAttributeNameVariable",
+            "value": "AttributeName"
         },
         "ExpressionAttributeNameVariable": {
             "type": "string"
         },
         "ExpressionAttributeValueMap": {
-            "type": "map"
+            "type": "map",
+            "key": "ExpressionAttributeValueVariable",
+            "value": "AttributeValue"
         },
         "ExpressionAttributeValueVariable": {
             "type": "string"
         },
         "FilterConditionMap": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "Condition"
         },
         "GetItemInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>GetItem</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -739,6 +785,7 @@
         },
         "GetItemOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>GetItem</i> operation.</p>",
             "members": [
                 {
                     "name": "Item",
@@ -753,6 +800,7 @@
         },
         "GlobalSecondaryIndex": {
             "type": "structure",
+            "documentation": "<p>Represents the properties of a global secondary index.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -776,6 +824,7 @@
         },
         "GlobalSecondaryIndexDescription": {
             "type": "structure",
+            "documentation": "<p>Represents the properties of a global secondary index.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -832,6 +881,7 @@
         },
         "GlobalSecondaryIndexUpdate": {
             "type": "structure",
+            "documentation": "<p>Represents one of the following:</p> <ul> <li><p>A new global secondary index to be added to an existing table.</p></li> <li><p>New provisioned throughput parameters for an existing global secondary index.</p></li> <li><p>An existing global secondary index to be removed from an existing table.</p></li> </ul>",
             "members": [
                 {
                     "name": "Update",
@@ -865,6 +915,7 @@
         },
         "InternalServerError": {
             "type": "structure",
+            "documentation": "<p>An error occurred on the server side.</p>",
             "members": [
                 {
                     "name": "message",
@@ -874,10 +925,13 @@
             ]
         },
         "ItemCollectionKeyAttributeMap": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "ItemCollectionMetrics": {
             "type": "structure",
+            "documentation": "<p>Information about item collections, if any, that were affected by the operation. <i>ItemCollectionMetrics</i> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>",
             "members": [
                 {
                     "name": "ItemCollectionKey",
@@ -896,7 +950,9 @@
             "of": "ItemCollectionMetrics"
         },
         "ItemCollectionMetricsPerTable": {
-            "type": "map"
+            "type": "map",
+            "key": "TableName",
+            "value": "ItemCollectionMetricsMultiple"
         },
         "ItemCollectionSizeEstimateBound": {
             "type": "double"
@@ -907,6 +963,7 @@
         },
         "ItemCollectionSizeLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>",
             "members": [
                 {
                     "name": "message",
@@ -920,10 +977,14 @@
             "of": "AttributeMap"
         },
         "Key": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "KeyConditions": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "Condition"
         },
         "KeyExpression": {
             "type": "string"
@@ -941,6 +1002,7 @@
         },
         "KeySchemaElement": {
             "type": "structure",
+            "documentation": "<p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <i>KeySchemaElement</i> represents exactly one attribute of the primary key. For example, a hash type primary key would be represented by one <i>KeySchemaElement</i>. A hash-and-range type primary key would require one <i>KeySchemaElement</i> for the hash attribute, and another <i>KeySchemaElement</i> for the range attribute.</p>",
             "members": [
                 {
                     "name": "AttributeName",
@@ -959,6 +1021,7 @@
         },
         "KeysAndAttributes": {
             "type": "structure",
+            "documentation": "<p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute.</p>",
             "members": [
                 {
                     "name": "Keys",
@@ -989,6 +1052,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>, <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p> <p>Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at any point in time. Do not attempt to create more than one such table simultaneously.</p> <p>The total limit of tables in the <code>ACTIVE</code> state is 250.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1003,6 +1067,7 @@
         },
         "ListTablesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>ListTables</i> operation.</p>",
             "members": [
                 {
                     "name": "ExclusiveStartTableName",
@@ -1021,6 +1086,7 @@
         },
         "ListTablesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>ListTables</i> operation.</p>",
             "members": [
                 {
                     "name": "TableNames",
@@ -1036,6 +1102,7 @@
         },
         "LocalSecondaryIndex": {
             "type": "structure",
+            "documentation": "<p>Represents the properties of a local secondary index.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -1055,6 +1122,7 @@
         },
         "LocalSecondaryIndexDescription": {
             "type": "structure",
+            "documentation": "<p>Represents the properties of a local secondary index.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -1099,7 +1167,9 @@
             "type": "long"
         },
         "MapAttributeValue": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "NonKeyAttributeName": {
             "type": "string"
@@ -1126,6 +1196,7 @@
         },
         "Projection": {
             "type": "structure",
+            "documentation": "<p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>",
             "members": [
                 {
                     "name": "ProjectionType",
@@ -1147,6 +1218,7 @@
         },
         "ProvisionedThroughput": {
             "type": "structure",
+            "documentation": "<p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html\">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "ReadCapacityUnits",
@@ -1162,6 +1234,7 @@
         },
         "ProvisionedThroughputDescription": {
             "type": "structure",
+            "documentation": "<p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>",
             "members": [
                 {
                     "name": "LastIncreaseDateTime",
@@ -1192,6 +1265,7 @@
         },
         "ProvisionedThroughputExceededException": {
             "type": "structure",
+            "documentation": "<p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries\">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1202,6 +1276,7 @@
         },
         "PutItemInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>PutItem</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -1255,10 +1330,13 @@
             ]
         },
         "PutItemInputAttributeMap": {
-            "type": "map"
+            "type": "map",
+            "key": "AttributeName",
+            "value": "AttributeValue"
         },
         "PutItemOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>PutItem</i> operation.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -1278,6 +1356,7 @@
         },
         "PutRequest": {
             "type": "structure",
+            "documentation": "<p>Represents a request to perform a <i>PutItem</i> operation on an item.</p>",
             "members": [
                 {
                     "name": "Item",
@@ -1288,6 +1367,7 @@
         },
         "QueryInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>Query</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -1377,6 +1457,7 @@
         },
         "QueryOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>Query</i> operation.</p>",
             "members": [
                 {
                     "name": "Items",
@@ -1406,6 +1487,7 @@
         },
         "ResourceInUseException": {
             "type": "structure",
+            "documentation": "<p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1416,6 +1498,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1425,7 +1508,8 @@
             ]
         },
         "ReturnConsumedCapacity": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p><i>INDEXES</i> - The response includes the aggregate <i>ConsumedCapacity</i> for the operation, together with <i>ConsumedCapacity</i> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <i>GetItem</i> and <i>BatchGetItem</i>, do not access any indexes at all. In these cases, specifying <i>INDEXES</i> will only return <i>ConsumedCapacity</i> information for table(s).</p> </li> <li><p><i>TOTAL</i> - The response includes only the aggregate <i>ConsumedCapacity</i> for the operation.</p></li> <li><p><i>NONE</i> - No <i>ConsumedCapacity</i> details are included in the response.</p></li> </ul>"
         },
         "ReturnItemCollectionMetrics": {
             "type": "string"
@@ -1438,6 +1522,7 @@
         },
         "ScanInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a <i>Scan</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -1522,6 +1607,7 @@
         },
         "ScanOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a <i>Scan</i> operation.</p>",
             "members": [
                 {
                     "name": "Items",
@@ -1556,7 +1642,9 @@
             "type": "integer"
         },
         "SecondaryIndexesCapacityMap": {
-            "type": "map"
+            "type": "map",
+            "key": "IndexName",
+            "value": "Capacity"
         },
         "Select": {
             "type": "string"
@@ -1569,6 +1657,7 @@
         },
         "StreamSpecification": {
             "type": "structure",
+            "documentation": "<p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>",
             "members": [
                 {
                     "name": "StreamEnabled",
@@ -1597,6 +1686,7 @@
         },
         "TableDescription": {
             "type": "structure",
+            "documentation": "<p>Represents the properties of a table.</p>",
             "members": [
                 {
                     "name": "AttributeDefinitions",
@@ -1685,6 +1775,7 @@
         },
         "UpdateGlobalSecondaryIndexAction": {
             "type": "structure",
+            "documentation": "<p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>",
             "members": [
                 {
                     "name": "IndexName",
@@ -1699,6 +1790,7 @@
         },
         "UpdateItemInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an <i>UpdateItem</i> operation.</p>",
             "members": [
                 {
                     "name": "TableName",
@@ -1763,6 +1855,7 @@
         },
         "UpdateItemOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of an <i>UpdateItem</i> operation.</p>",
             "members": [
                 {
                     "name": "Attributes",
@@ -1781,6 +1874,7 @@
         },
         "UpdateTableInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an <i>UpdateTable</i> operation.</p>",
             "members": [
                 {
                     "name": "AttributeDefinitions",
@@ -1810,6 +1904,7 @@
         },
         "UpdateTableOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of an <i>UpdateTable</i> operation.</p>",
             "members": [
                 {
                     "name": "TableDescription",
@@ -1819,6 +1914,7 @@
         },
         "WriteRequest": {
             "type": "structure",
+            "documentation": "<p>Represents an operation to perform - either <i>DeleteItem</i> or <i>PutItem</i>. You can only request one of these operations, not both, in a single <i>WriteRequest</i>. If you do need to perform both of these operations, you will need to provide two separate <i>WriteRequest</i> objects.</p>",
             "members": [
                 {
                     "name": "PutRequest",

@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -274,6 +278,7 @@
     "shapes": {
         "AbortMultipartUploadInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to abort a multipart upload identified by the upload ID. </p> <p>For information about the underlying REST API, go to <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html\">Abort Multipart Upload</a>. For conceptual information, go to <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html\">Working with Archives in Amazon Glacier</a>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -300,6 +305,7 @@
         },
         "AbortVaultLockInput": {
             "type": "structure",
+            "documentation": "<p>The input values for <code>AbortVaultLock</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -322,6 +328,7 @@
         },
         "AddTagsToVaultInput": {
             "type": "structure",
+            "documentation": "<p>The input values for <code>AddTagsToVault</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -346,6 +353,7 @@
         },
         "ArchiveCreationOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p> <p>For information about the underlying REST API, go to <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html\">Upload Archive</a>. For conceptual information, go to <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html\">Working with Archives in Amazon Glacier</a>.</p>",
             "members": [
                 {
                     "name": "location",
@@ -372,6 +380,7 @@
         },
         "CompleteMultipartUploadInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon Glacier can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Amazon Glacier returns the URI path of the newly created archive resource.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -412,6 +421,7 @@
         },
         "CompleteVaultLockInput": {
             "type": "structure",
+            "documentation": "<p>The input values for <code>CompleteVaultLock</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -438,6 +448,7 @@
         },
         "CreateVaultInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to create a vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -457,6 +468,7 @@
         },
         "CreateVaultOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "location",
@@ -469,6 +481,7 @@
         },
         "DataRetrievalPolicy": {
             "type": "structure",
+            "documentation": "<p>Data retrieval policy.</p>",
             "members": [
                 {
                     "name": "Rules",
@@ -479,6 +492,7 @@
         },
         "DataRetrievalRule": {
             "type": "structure",
+            "documentation": "<p>Data retrieval policy rule.</p>",
             "members": [
                 {
                     "name": "Strategy",
@@ -501,6 +515,7 @@
         },
         "DeleteArchiveInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for deleting an archive from an Amazon Glacier vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -527,6 +542,7 @@
         },
         "DeleteVaultAccessPolicyInput": {
             "type": "structure",
+            "documentation": "<p>DeleteVaultAccessPolicy input.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -546,6 +562,7 @@
         },
         "DeleteVaultInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for deleting a vault from Amazon Glacier.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -565,6 +582,7 @@
         },
         "DeleteVaultNotificationsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for deleting a vault notification configuration from an Amazon Glacier vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -584,6 +602,7 @@
         },
         "DescribeJobInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for retrieving a job description.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -610,6 +629,7 @@
         },
         "DescribeVaultInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for retrieving metadata for a specific vault in Amazon Glacier.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -629,6 +649,7 @@
         },
         "DescribeVaultOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "VaultARN",
@@ -664,6 +685,7 @@
         },
         "GetDataRetrievalPolicyInput": {
             "type": "structure",
+            "documentation": "<p>Input for GetDataRetrievalPolicy.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -676,6 +698,7 @@
         },
         "GetDataRetrievalPolicyOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>",
             "members": [
                 {
                     "name": "Policy",
@@ -686,6 +709,7 @@
         },
         "GetJobOutputInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for downloading output of an Amazon Glacier job.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -719,6 +743,7 @@
         },
         "GetJobOutputOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "body",
@@ -770,6 +795,7 @@
         },
         "GetVaultAccessPolicyInput": {
             "type": "structure",
+            "documentation": "<p>Input for GetVaultAccessPolicy.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -789,6 +815,7 @@
         },
         "GetVaultAccessPolicyOutput": {
             "type": "structure",
+            "documentation": "<p>Output for GetVaultAccessPolicy.</p>",
             "members": [
                 {
                     "name": "policy",
@@ -799,6 +826,7 @@
         },
         "GetVaultLockInput": {
             "type": "structure",
+            "documentation": "<p>The input values for <code>GetVaultLock</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -818,6 +846,7 @@
         },
         "GetVaultLockOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "Policy",
@@ -843,6 +872,7 @@
         },
         "GetVaultNotificationsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for retrieving the notification configuration set on an Amazon Glacier vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -862,6 +892,7 @@
         },
         "GetVaultNotificationsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "vaultNotificationConfig",
@@ -872,6 +903,7 @@
         },
         "GlacierJobDescription": {
             "type": "structure",
+            "documentation": "<p>Describes an Amazon Glacier job.</p>",
             "members": [
                 {
                     "name": "JobId",
@@ -962,6 +994,7 @@
         },
         "InitiateJobInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for initiating an Amazon Glacier job.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -986,6 +1019,7 @@
         },
         "InitiateJobOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "location",
@@ -1005,6 +1039,7 @@
         },
         "InitiateMultipartUploadInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for initiating a multipart upload to an Amazon Glacier vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1038,6 +1073,7 @@
         },
         "InitiateMultipartUploadOutput": {
             "type": "structure",
+            "documentation": "<p>The Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "location",
@@ -1057,6 +1093,7 @@
         },
         "InitiateVaultLockInput": {
             "type": "structure",
+            "documentation": "<p>The input values for <code>InitiateVaultLock</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1081,6 +1118,7 @@
         },
         "InitiateVaultLockOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "lockId",
@@ -1093,6 +1131,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
+            "documentation": "<p>Returned if a parameter of the request is incorrectly specified. </p>",
             "members": [
                 {
                     "name": "type",
@@ -1112,6 +1151,7 @@
         },
         "InventoryRetrievalJobDescription": {
             "type": "structure",
+            "documentation": "<p>Describes the options for a range inventory retrieval job.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -1142,6 +1182,7 @@
         },
         "InventoryRetrievalJobInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for specifying a range inventory retrieval job.</p>",
             "members": [
                 {
                     "name": "StartDate",
@@ -1171,6 +1212,7 @@
         },
         "JobParameters": {
             "type": "structure",
+            "documentation": "<p>Provides options for defining a job.</p>",
             "members": [
                 {
                     "name": "Format",
@@ -1211,6 +1253,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Returned if the request results in a vault or account limit being exceeded.</p>",
             "members": [
                 {
                     "name": "type",
@@ -1230,6 +1273,7 @@
         },
         "ListJobsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for retrieving a job list for an Amazon Glacier vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1277,6 +1321,7 @@
         },
         "ListJobsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "JobList",
@@ -1292,6 +1337,7 @@
         },
         "ListMultipartUploadsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1325,6 +1371,7 @@
         },
         "ListMultipartUploadsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "UploadsList",
@@ -1340,6 +1387,7 @@
         },
         "ListPartsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1380,6 +1428,7 @@
         },
         "ListPartsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "MultipartUploadId",
@@ -1420,6 +1469,7 @@
         },
         "ListTagsForVaultInput": {
             "type": "structure",
+            "documentation": "<p>The input value for <code>ListTagsForVaultInput</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1439,6 +1489,7 @@
         },
         "ListTagsForVaultOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "Tags",
@@ -1449,6 +1500,7 @@
         },
         "ListVaultsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1475,6 +1527,7 @@
         },
         "ListVaultsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "VaultList",
@@ -1490,6 +1543,7 @@
         },
         "MissingParameterValueException": {
             "type": "structure",
+            "documentation": "<p>Returned if a required header or parameter is missing from the request.</p>",
             "members": [
                 {
                     "name": "type",
@@ -1520,6 +1574,7 @@
         },
         "PartListElement": {
             "type": "structure",
+            "documentation": "<p>A list of the part sizes of the multipart upload.</p>",
             "members": [
                 {
                     "name": "RangeInBytes",
@@ -1535,6 +1590,7 @@
         },
         "PolicyEnforcedException": {
             "type": "structure",
+            "documentation": "<p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>",
             "members": [
                 {
                     "name": "type",
@@ -1555,6 +1611,7 @@
         },
         "RemoveTagsFromVaultInput": {
             "type": "structure",
+            "documentation": "<p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1579,6 +1636,7 @@
         },
         "RequestTimeoutException": {
             "type": "structure",
+            "documentation": "<p>Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.</p>",
             "members": [
                 {
                     "name": "type",
@@ -1598,6 +1656,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>Returned if the specified resource, such as a vault, upload ID, or job ID, does not exist.</p>",
             "members": [
                 {
                     "name": "type",
@@ -1617,6 +1676,7 @@
         },
         "ServiceUnavailableException": {
             "type": "structure",
+            "documentation": "<p>Returned if the service cannot complete the request.</p>",
             "members": [
                 {
                     "name": "type",
@@ -1636,6 +1696,7 @@
         },
         "SetDataRetrievalPolicyInput": {
             "type": "structure",
+            "documentation": "<p>SetDataRetrievalPolicy input.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1653,6 +1714,7 @@
         },
         "SetVaultAccessPolicyInput": {
             "type": "structure",
+            "documentation": "<p>SetVaultAccessPolicy input.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1677,6 +1739,7 @@
         },
         "SetVaultNotificationsInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to configure notifications that will be sent when specific events happen to a vault.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1716,13 +1779,16 @@
             "of": "string"
         },
         "TagMap": {
-            "type": "map"
+            "type": "map",
+            "key": "TagKey",
+            "value": "TagValue"
         },
         "TagValue": {
             "type": "string"
         },
         "UploadArchiveInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to add an archive to a vault.</p>",
             "members": [
                 {
                     "name": "vaultName",
@@ -1761,6 +1827,7 @@
         },
         "UploadListElement": {
             "type": "structure",
+            "documentation": "<p>A list of in-progress multipart uploads for a vault.</p>",
             "members": [
                 {
                     "name": "MultipartUploadId",
@@ -1791,6 +1858,7 @@
         },
         "UploadMultipartPartInput": {
             "type": "structure",
+            "documentation": "<p>Provides options to upload a part of an archive in a multipart upload operation.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -1836,6 +1904,7 @@
         },
         "UploadMultipartPartOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the Amazon Glacier response to your request.</p>",
             "members": [
                 {
                     "name": "checksum",
@@ -1852,6 +1921,7 @@
         },
         "VaultAccessPolicy": {
             "type": "structure",
+            "documentation": "<p>Contains the vault access policy. </p>",
             "members": [
                 {
                     "name": "Policy",
@@ -1866,6 +1936,7 @@
         },
         "VaultLockPolicy": {
             "type": "structure",
+            "documentation": "<p>Contains the vault lock policy. </p>",
             "members": [
                 {
                     "name": "Policy",
@@ -1876,6 +1947,7 @@
         },
         "VaultNotificationConfig": {
             "type": "structure",
+            "documentation": "<p>Represents a vault's notification configuration.</p>",
             "members": [
                 {
                     "name": "SNSTopic",

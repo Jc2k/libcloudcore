@@ -22,11 +22,12 @@ from .. import layer
 
 class XmlrpcSerializer(layer.Layer):
 
-    def serialize(self, operation, shape, **params):
+    def serialize(self, operation, shape, params):
         args = []
-        for member in operation.input_shape.iter_members():
-            if member.destination == 'body':
-                args.append(params[member.name])
+        if operation.input_shape:
+            for member in operation.input_shape.iter_members():
+                if member.destination == 'body':
+                    args.append(params[member.name])
 
         return xmlrpc_client.dumps(
             tuple(args),
@@ -49,7 +50,7 @@ class XmlrpcSerializer(layer.Layer):
     def before_call(self, request, operation, **params):
         request.method = 'POST'
         request.headers['Content-Type'] = 'text/xml'
-        request.body = self.serialize(operation, operation.input_shape, **params)
+        request.body = self.serialize(operation, operation.input_shape, params)
         return super(XmlrpcSerializer, self).before_call(
             request,
             operation,

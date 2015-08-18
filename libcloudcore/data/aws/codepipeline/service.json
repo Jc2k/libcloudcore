@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -214,6 +218,7 @@
     "shapes": {
         "AWSSessionCredentials": {
             "type": "structure",
+            "documentation": "<p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline in AWS CodePipeline.</p>",
             "members": [
                 {
                     "name": "accessKeyId",
@@ -240,6 +245,7 @@
         },
         "AcknowledgeJobInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an acknowledge job action.</p>",
             "members": [
                 {
                     "name": "jobId",
@@ -255,6 +261,7 @@
         },
         "AcknowledgeJobOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of an acknowledge job action.</p>",
             "members": [
                 {
                     "name": "status",
@@ -265,6 +272,7 @@
         },
         "AcknowledgeThirdPartyJobInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an acknowledge third party job action.</p>",
             "members": [
                 {
                     "name": "jobId",
@@ -285,6 +293,7 @@
         },
         "AcknowledgeThirdPartyJobOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of an acknowledge third party job action.</p>",
             "members": [
                 {
                     "name": "status",
@@ -298,6 +307,7 @@
         },
         "ActionConfiguration": {
             "type": "structure",
+            "documentation": "<p>Represents information about an action configuration.</p>",
             "members": [
                 {
                     "name": "configuration",
@@ -310,10 +320,13 @@
             "type": "string"
         },
         "ActionConfigurationMap": {
-            "type": "map"
+            "type": "map",
+            "key": "ActionConfigurationKey",
+            "value": "ActionConfigurationValue"
         },
         "ActionConfigurationProperty": {
             "type": "structure",
+            "documentation": "<p>Represents information about an action configuration property.</p>",
             "members": [
                 {
                     "name": "name",
@@ -364,6 +377,7 @@
         },
         "ActionContext": {
             "type": "structure",
+            "documentation": "<p>Represents the context of an action within the stage of a pipeline to a job worker.</p>",
             "members": [
                 {
                     "name": "name",
@@ -374,6 +388,7 @@
         },
         "ActionDeclaration": {
             "type": "structure",
+            "documentation": "<p>Represents information about an action declaration.</p>",
             "members": [
                 {
                     "name": "name",
@@ -414,6 +429,7 @@
         },
         "ActionExecution": {
             "type": "structure",
+            "documentation": "<p>Represents information about how an action runs.</p>",
             "members": [
                 {
                     "name": "status",
@@ -460,6 +476,7 @@
         },
         "ActionNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified action cannot be found.</p>",
             "members": []
         },
         "ActionOwner": {
@@ -470,6 +487,7 @@
         },
         "ActionRevision": {
             "type": "structure",
+            "documentation": "<p>Represents information about the version (or revision) of an action.</p>",
             "members": [
                 {
                     "name": "revisionId",
@@ -493,6 +511,7 @@
         },
         "ActionState": {
             "type": "structure",
+            "documentation": "<p>Represents information about the state of an action.</p>",
             "members": [
                 {
                     "name": "actionName",
@@ -525,6 +544,7 @@
         },
         "ActionType": {
             "type": "structure",
+            "documentation": "<p>Returns information about the details of an action type. </p>",
             "members": [
                 {
                     "name": "id",
@@ -554,6 +574,7 @@
         },
         "ActionTypeId": {
             "type": "structure",
+            "documentation": "<p>Represents information about an action type.</p>",
             "members": [
                 {
                     "name": "category",
@@ -583,10 +604,12 @@
         },
         "ActionTypeNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified action type cannot be found.</p>",
             "members": []
         },
         "ActionTypeSettings": {
             "type": "structure",
+            "documentation": "<p>Returns information about the settings for an action type. </p>",
             "members": [
                 {
                     "name": "thirdPartyConfigurationUrl",
@@ -612,6 +635,7 @@
         },
         "Artifact": {
             "type": "structure",
+            "documentation": "<p>Represents information about an artifact that will be worked upon by actions in the pipeline.</p>",
             "members": [
                 {
                     "name": "name",
@@ -632,6 +656,7 @@
         },
         "ArtifactDetails": {
             "type": "structure",
+            "documentation": "<p>Returns information about the details of an artifact.</p>",
             "members": [
                 {
                     "name": "minimumCount",
@@ -651,6 +676,7 @@
         },
         "ArtifactLocation": {
             "type": "structure",
+            "documentation": "<p>Represents information about the location of an artifact.</p>",
             "members": [
                 {
                     "name": "type",
@@ -672,6 +698,7 @@
         },
         "ArtifactStore": {
             "type": "structure",
+            "documentation": "<p>The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it must meet the requirements for AWS CodePipeline. For more information, see the <ulink url=\"http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html\">Concepts</ulink>.</p>",
             "members": [
                 {
                     "name": "type",
@@ -693,6 +720,7 @@
         },
         "BlockerDeclaration": {
             "type": "structure",
+            "documentation": "<p>Represents information about a gate declaration.</p>",
             "members": [
                 {
                     "name": "name",
@@ -729,6 +757,7 @@
         },
         "CreateCustomActionTypeInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create custom action operation. </p>",
             "members": [
                 {
                     "name": "category",
@@ -766,6 +795,7 @@
         },
         "CreateCustomActionTypeOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create custom action operation.</p>",
             "members": [
                 {
                     "name": "actionType",
@@ -775,6 +805,7 @@
         },
         "CreatePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create pipeline action.</p>",
             "members": [
                 {
                     "name": "pipeline",
@@ -784,6 +815,7 @@
         },
         "CreatePipelineOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create pipeline action.</p>",
             "members": [
                 {
                     "name": "pipeline",
@@ -793,6 +825,7 @@
         },
         "CurrentRevision": {
             "type": "structure",
+            "documentation": "<p>Represents information about a current revision.</p>",
             "members": [
                 {
                     "name": "revision",
@@ -808,6 +841,7 @@
         },
         "DeleteCustomActionTypeInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a delete custom action operation. The custom action will be marked as deleted.</p>",
             "members": [
                 {
                     "name": "category",
@@ -828,6 +862,7 @@
         },
         "DeletePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a delete pipeline action.</p>",
             "members": [
                 {
                     "name": "name",
@@ -841,6 +876,7 @@
         },
         "DisableStageTransitionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a disable stage transition input action.</p>",
             "members": [
                 {
                     "name": "pipelineName",
@@ -869,6 +905,7 @@
         },
         "EnableStageTransitionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an enable stage transition action.</p>",
             "members": [
                 {
                     "name": "pipelineName",
@@ -892,6 +929,7 @@
         },
         "ErrorDetails": {
             "type": "structure",
+            "documentation": "<p>Represents information about an error in AWS CodePipeline.</p>",
             "members": [
                 {
                     "name": "code",
@@ -907,6 +945,7 @@
         },
         "ExecutionDetails": {
             "type": "structure",
+            "documentation": "<p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>",
             "members": [
                 {
                     "name": "summary",
@@ -933,6 +972,7 @@
         },
         "FailureDetails": {
             "type": "structure",
+            "documentation": "<p>Represents information about failure details.</p>",
             "members": [
                 {
                     "name": "type",
@@ -956,6 +996,7 @@
         },
         "GetJobDetailsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get job details action.</p>",
             "members": [
                 {
                     "name": "jobId",
@@ -966,6 +1007,7 @@
         },
         "GetJobDetailsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get job details action.</p>",
             "members": [
                 {
                     "name": "jobDetails",
@@ -976,6 +1018,7 @@
         },
         "GetPipelineInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get pipeline action.</p>",
             "members": [
                 {
                     "name": "name",
@@ -991,6 +1034,7 @@
         },
         "GetPipelineOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get pipeline action.</p>",
             "members": [
                 {
                     "name": "pipeline",
@@ -1000,6 +1044,7 @@
         },
         "GetPipelineStateInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get pipeline state action.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1010,6 +1055,7 @@
         },
         "GetPipelineStateOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get pipeline state action.</p>",
             "members": [
                 {
                     "name": "pipelineName",
@@ -1040,6 +1086,7 @@
         },
         "GetThirdPartyJobDetailsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get third party job details action.</p>",
             "members": [
                 {
                     "name": "jobId",
@@ -1055,6 +1102,7 @@
         },
         "GetThirdPartyJobDetailsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get third party job details action. </p>",
             "members": [
                 {
                     "name": "jobDetails",
@@ -1065,6 +1113,7 @@
         },
         "InputArtifact": {
             "type": "structure",
+            "documentation": "<p>Represents information about an artifact to be worked on, such as a test or build artifact.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1079,42 +1128,52 @@
         },
         "InvalidActionDeclarationException": {
             "type": "structure",
+            "documentation": "<p>The specified action declaration was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidBlockerDeclarationException": {
             "type": "structure",
+            "documentation": "<p>The specified gate declaration was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidClientTokenException": {
             "type": "structure",
+            "documentation": "<p>The client token was specified in an invalid format</p>",
             "members": []
         },
         "InvalidJobException": {
             "type": "structure",
+            "documentation": "<p>The specified job was specified in an invalid format or cannot be found.</p>",
             "members": []
         },
         "InvalidJobStateException": {
             "type": "structure",
+            "documentation": "<p>The specified job state was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidNextTokenException": {
             "type": "structure",
+            "documentation": "<p>The next token was specified in an invalid format. Make sure that the next token you provided is the token returned by a previous call.</p>",
             "members": []
         },
         "InvalidNonceException": {
             "type": "structure",
+            "documentation": "<p>The specified nonce was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidStageDeclarationException": {
             "type": "structure",
+            "documentation": "<p>The specified stage declaration was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidStructureException": {
             "type": "structure",
+            "documentation": "<p>The specified structure was specified in an invalid format.</p>",
             "members": []
         },
         "Job": {
             "type": "structure",
+            "documentation": "<p>Represents information about a job.</p>",
             "members": [
                 {
                     "name": "id",
@@ -1140,6 +1199,7 @@
         },
         "JobData": {
             "type": "structure",
+            "documentation": "<p>Represents additional information about a job required for a job worker to complete the job. </p>",
             "members": [
                 {
                     "name": "actionTypeId",
@@ -1176,6 +1236,7 @@
         },
         "JobDetails": {
             "type": "structure",
+            "documentation": "<p>Represents information about the details of a job.</p>",
             "members": [
                 {
                     "name": "id",
@@ -1202,6 +1263,7 @@
         },
         "JobNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified job was specified in an invalid format or cannot be found.</p>",
             "members": []
         },
         "JobStatus": {
@@ -1215,10 +1277,12 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>",
             "members": []
         },
         "ListActionTypesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list action types action.</p>",
             "members": [
                 {
                     "name": "actionOwnerFilter",
@@ -1234,6 +1298,7 @@
         },
         "ListActionTypesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list action types action.</p>",
             "members": [
                 {
                     "name": "actionTypes",
@@ -1249,6 +1314,7 @@
         },
         "ListPipelinesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list pipelines action. </p>",
             "members": [
                 {
                     "name": "nextToken",
@@ -1259,6 +1325,7 @@
         },
         "ListPipelinesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list pipelines action.</p>",
             "members": [
                 {
                     "name": "pipelines",
@@ -1292,6 +1359,7 @@
         },
         "OutputArtifact": {
             "type": "structure",
+            "documentation": "<p>Represents information about the output of an action.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1309,6 +1377,7 @@
         },
         "PipelineContext": {
             "type": "structure",
+            "documentation": "<p>Represents information about a pipeline to a job worker.</p>",
             "members": [
                 {
                     "name": "pipelineName",
@@ -1328,6 +1397,7 @@
         },
         "PipelineDeclaration": {
             "type": "structure",
+            "documentation": "<p>Represents the structure of actions and stages to be performed in the pipeline. </p>",
             "members": [
                 {
                     "name": "name",
@@ -1367,10 +1437,12 @@
         },
         "PipelineNameInUseException": {
             "type": "structure",
+            "documentation": "<p>The specified pipeline name is already in use.</p>",
             "members": []
         },
         "PipelineNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified pipeline was specified in an invalid format or cannot be found.</p>",
             "members": []
         },
         "PipelineStageDeclarationList": {
@@ -1379,6 +1451,7 @@
         },
         "PipelineSummary": {
             "type": "structure",
+            "documentation": "<p>Returns a summary of a pipeline.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1407,10 +1480,12 @@
         },
         "PipelineVersionNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified pipeline version was specified in an invalid format or cannot be found.</p>",
             "members": []
         },
         "PollForJobsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a poll for jobs action.</p>",
             "members": [
                 {
                     "name": "actionTypeId",
@@ -1430,6 +1505,7 @@
         },
         "PollForJobsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a poll for jobs action.</p>",
             "members": [
                 {
                     "name": "jobs",
@@ -1440,6 +1516,7 @@
         },
         "PollForThirdPartyJobsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a poll for third party jobs action.</p>",
             "members": [
                 {
                     "name": "actionTypeId",
@@ -1454,6 +1531,7 @@
         },
         "PollForThirdPartyJobsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a poll for third party jobs action.</p>",
             "members": [
                 {
                     "name": "jobs",
@@ -1464,6 +1542,7 @@
         },
         "PutActionRevisionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a put action revision action.</p>",
             "members": [
                 {
                     "name": "pipelineName",
@@ -1488,6 +1567,7 @@
         },
         "PutActionRevisionOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a put action revision action.</p>",
             "members": [
                 {
                     "name": "newRevision",
@@ -1503,6 +1583,7 @@
         },
         "PutJobFailureResultInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a put job failure result action. </p>",
             "members": [
                 {
                     "name": "jobId",
@@ -1518,6 +1599,7 @@
         },
         "PutJobSuccessResultInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a put job success result action. </p>",
             "members": [
                 {
                     "name": "jobId",
@@ -1543,6 +1625,7 @@
         },
         "PutThirdPartyJobFailureResultInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a third party job failure result action.</p>",
             "members": [
                 {
                     "name": "jobId",
@@ -1562,6 +1645,7 @@
         },
         "PutThirdPartyJobSuccessResultInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a put third party job success result action.</p>",
             "members": [
                 {
                     "name": "jobId",
@@ -1589,7 +1673,9 @@
             ]
         },
         "QueryParamMap": {
-            "type": "map"
+            "type": "map",
+            "key": "ActionConfigurationKey",
+            "value": "ActionConfigurationValue"
         },
         "Revision": {
             "type": "string"
@@ -1608,6 +1694,7 @@
         },
         "S3ArtifactLocation": {
             "type": "structure",
+            "documentation": "<p>The location of the Amazon S3 bucket that contains a revision.</p>",
             "members": [
                 {
                     "name": "bucketName",
@@ -1643,6 +1730,7 @@
         },
         "StageContext": {
             "type": "structure",
+            "documentation": "<p>Represents information about a stage to a job worker.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1653,6 +1741,7 @@
         },
         "StageDeclaration": {
             "type": "structure",
+            "documentation": "<p>Represents information about a stage and its definition.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1676,10 +1765,12 @@
         },
         "StageNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified stage was specified in an invalid format or cannot be found.</p>",
             "members": []
         },
         "StageState": {
             "type": "structure",
+            "documentation": "<p>Represents information about the state of the stage.</p>",
             "members": [
                 {
                     "name": "stageName",
@@ -1707,6 +1798,7 @@
         },
         "StartPipelineExecutionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a start pipeline execution action.</p>",
             "members": [
                 {
                     "name": "name",
@@ -1717,6 +1809,7 @@
         },
         "StartPipelineExecutionOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a start pipeline execution action.</p>",
             "members": [
                 {
                     "name": "pipelineExecutionId",
@@ -1727,6 +1820,7 @@
         },
         "ThirdPartyJob": {
             "type": "structure",
+            "documentation": "<p>A response to a PollForThirdPartyJobs request returned by AWS CodePipeline when there is a job to be worked upon by a partner action.</p>",
             "members": [
                 {
                     "name": "clientId",
@@ -1742,6 +1836,7 @@
         },
         "ThirdPartyJobData": {
             "type": "structure",
+            "documentation": "<p>Represents information about the job data for a partner action.</p>",
             "members": [
                 {
                     "name": "actionTypeId",
@@ -1778,6 +1873,7 @@
         },
         "ThirdPartyJobDetails": {
             "type": "structure",
+            "documentation": "<p>The details of a job sent in response to a GetThirdPartyJobDetails request.</p>",
             "members": [
                 {
                     "name": "id",
@@ -1808,6 +1904,7 @@
         },
         "TransitionState": {
             "type": "structure",
+            "documentation": "<p>Represents information about the state of transitions between one stage and another stage.</p>",
             "members": [
                 {
                     "name": "enabled",
@@ -1833,6 +1930,7 @@
         },
         "UpdatePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an update pipeline action.</p>",
             "members": [
                 {
                     "name": "pipeline",
@@ -1843,6 +1941,7 @@
         },
         "UpdatePipelineOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of an update pipeline action.</p>",
             "members": [
                 {
                     "name": "pipeline",
@@ -1859,6 +1958,7 @@
         },
         "ValidationException": {
             "type": "structure",
+            "documentation": "<p>The validation was specified in an invalid format.</p>",
             "members": []
         },
         "Version": {

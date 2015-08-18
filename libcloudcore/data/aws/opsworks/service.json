@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -550,6 +554,7 @@
     "shapes": {
         "AgentVersion": {
             "type": "structure",
+            "documentation": "<p>Describes an agent version.</p>",
             "members": [
                 {
                     "name": "Version",
@@ -569,6 +574,7 @@
         },
         "App": {
             "type": "structure",
+            "documentation": "<p>A description of the app.</p>",
             "members": [
                 {
                     "name": "AppId",
@@ -643,7 +649,9 @@
             ]
         },
         "AppAttributes": {
-            "type": "map"
+            "type": "map",
+            "key": "AppAttributesKeys",
+            "value": "String"
         },
         "AppAttributesKeys": {
             "type": "string"
@@ -720,6 +728,7 @@
         },
         "AutoScalingThresholds": {
             "type": "structure",
+            "documentation": "<p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks starts or stops load-based instances.</p>",
             "members": [
                 {
                     "name": "InstanceCount",
@@ -763,6 +772,7 @@
         },
         "BlockDeviceMapping": {
             "type": "structure",
+            "documentation": "<p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html\">BlockDeviceMapping</a> data type. </p>",
             "members": [
                 {
                     "name": "DeviceName",
@@ -795,6 +805,7 @@
         },
         "ChefConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes the Chef configuration.</p>",
             "members": [
                 {
                     "name": "ManageBerkshelf",
@@ -924,6 +935,7 @@
         },
         "CloneStackResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CloneStack</code> request.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -934,6 +946,7 @@
         },
         "Command": {
             "type": "structure",
+            "documentation": "<p>Describes a command.</p>",
             "members": [
                 {
                     "name": "CommandId",
@@ -1058,6 +1071,7 @@
         },
         "CreateAppResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CreateApp</code> request.</p>",
             "members": [
                 {
                     "name": "AppId",
@@ -1103,6 +1117,7 @@
         },
         "CreateDeploymentResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CreateDeployment</code> request.</p>",
             "members": [
                 {
                     "name": "DeploymentId",
@@ -1203,6 +1218,7 @@
         },
         "CreateInstanceResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CreateInstance</code> request.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -1303,6 +1319,7 @@
         },
         "CreateLayerResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CreateLayer</code> request.</p>",
             "members": [
                 {
                     "name": "LayerId",
@@ -1412,6 +1429,7 @@
         },
         "CreateStackResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CreateStack</code> request.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -1447,6 +1465,7 @@
         },
         "CreateUserProfileResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>CreateUserProfile</code> request.</p>",
             "members": [
                 {
                     "name": "IamUserArn",
@@ -1456,10 +1475,13 @@
             ]
         },
         "DailyAutoScalingSchedule": {
-            "type": "map"
+            "type": "map",
+            "key": "Hour",
+            "value": "Switch"
         },
         "DataSource": {
             "type": "structure",
+            "documentation": "<p>Describes an app's data source.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -1547,6 +1569,7 @@
         },
         "Deployment": {
             "type": "structure",
+            "documentation": "<p>Describes a deployment of a stack or app.</p>",
             "members": [
                 {
                     "name": "DeploymentId",
@@ -1611,6 +1634,7 @@
         },
         "DeploymentCommand": {
             "type": "structure",
+            "documentation": "<p>Used to specify a stack or deployment command.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -1625,7 +1649,9 @@
             ]
         },
         "DeploymentCommandArgs": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "Strings"
         },
         "DeploymentCommandName": {
             "type": "string"
@@ -1701,6 +1727,7 @@
         },
         "DescribeAgentVersionsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>",
             "members": [
                 {
                     "name": "AgentVersions",
@@ -1726,6 +1753,7 @@
         },
         "DescribeAppsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeApps</code> request.</p>",
             "members": [
                 {
                     "name": "Apps",
@@ -1756,6 +1784,7 @@
         },
         "DescribeCommandsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeCommands</code> request.</p>",
             "members": [
                 {
                     "name": "Commands",
@@ -1786,6 +1815,7 @@
         },
         "DescribeDeploymentsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeDeployments</code> request.</p>",
             "members": [
                 {
                     "name": "Deployments",
@@ -1821,6 +1851,7 @@
         },
         "DescribeEcsClustersResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>",
             "members": [
                 {
                     "name": "EcsClusters",
@@ -1856,6 +1887,7 @@
         },
         "DescribeElasticIpsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeElasticIps</code> request.</p>",
             "members": [
                 {
                     "name": "ElasticIps",
@@ -1881,6 +1913,7 @@
         },
         "DescribeElasticLoadBalancersResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeElasticLoadBalancers</code> request.</p>",
             "members": [
                 {
                     "name": "ElasticLoadBalancers",
@@ -1911,6 +1944,7 @@
         },
         "DescribeInstancesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeInstances</code> request.</p>",
             "members": [
                 {
                     "name": "Instances",
@@ -1936,6 +1970,7 @@
         },
         "DescribeLayersResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeLayers</code> request.</p>",
             "members": [
                 {
                     "name": "Layers",
@@ -1956,6 +1991,7 @@
         },
         "DescribeLoadBasedAutoScalingResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.</p>",
             "members": [
                 {
                     "name": "LoadBasedAutoScalingConfigurations",
@@ -1966,6 +2002,7 @@
         },
         "DescribeMyUserProfileResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>",
             "members": [
                 {
                     "name": "UserProfile",
@@ -1991,6 +2028,7 @@
         },
         "DescribePermissionsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribePermissions</code> request.</p>",
             "members": [
                 {
                     "name": "Permissions",
@@ -2021,6 +2059,7 @@
         },
         "DescribeRaidArraysResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>",
             "members": [
                 {
                     "name": "RaidArrays",
@@ -2046,6 +2085,7 @@
         },
         "DescribeRdsDbInstancesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>",
             "members": [
                 {
                     "name": "RdsDbInstances",
@@ -2076,6 +2116,7 @@
         },
         "DescribeServiceErrorsResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>",
             "members": [
                 {
                     "name": "ServiceErrors",
@@ -2096,6 +2137,7 @@
         },
         "DescribeStackProvisioningParametersResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeStackProvisioningParameters</code> request.</p>",
             "members": [
                 {
                     "name": "AgentInstallerUrl",
@@ -2121,6 +2163,7 @@
         },
         "DescribeStackSummaryResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeStackSummary</code> request.</p>",
             "members": [
                 {
                     "name": "StackSummary",
@@ -2141,6 +2184,7 @@
         },
         "DescribeStacksResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeStacks</code> request.</p>",
             "members": [
                 {
                     "name": "Stacks",
@@ -2161,6 +2205,7 @@
         },
         "DescribeTimeBasedAutoScalingResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.</p>",
             "members": [
                 {
                     "name": "TimeBasedAutoScalingConfigurations",
@@ -2181,6 +2226,7 @@
         },
         "DescribeUserProfilesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>",
             "members": [
                 {
                     "name": "UserProfiles",
@@ -2216,6 +2262,7 @@
         },
         "DescribeVolumesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>DescribeVolumes</code> request.</p>",
             "members": [
                 {
                     "name": "Volumes",
@@ -2254,6 +2301,7 @@
         },
         "EbsBlockDevice": {
             "type": "structure",
+            "documentation": "<p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html\">EbsBlockDevice</a> data type.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -2284,6 +2332,7 @@
         },
         "EcsCluster": {
             "type": "structure",
+            "documentation": "<p>Describes a registered Amazon ECS cluster.</p>",
             "members": [
                 {
                     "name": "EcsClusterArn",
@@ -2313,6 +2362,7 @@
         },
         "ElasticIp": {
             "type": "structure",
+            "documentation": "<p>Describes an Elastic IP address.</p>",
             "members": [
                 {
                     "name": "Ip",
@@ -2347,6 +2397,7 @@
         },
         "ElasticLoadBalancer": {
             "type": "structure",
+            "documentation": "<p>Describes an Elastic Load Balancing instance.</p>",
             "members": [
                 {
                     "name": "ElasticLoadBalancerName",
@@ -2401,6 +2452,7 @@
         },
         "EnvironmentVariable": {
             "type": "structure",
+            "documentation": "<p>Represents an app's environment variable.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -2435,6 +2487,7 @@
         },
         "GetHostnameSuggestionResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>GetHostnameSuggestion</code> request.</p>",
             "members": [
                 {
                     "name": "LayerId",
@@ -2465,6 +2518,7 @@
         },
         "GrantAccessResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>GrantAccess</code> request.</p>",
             "members": [
                 {
                     "name": "TemporaryCredential",
@@ -2478,6 +2532,7 @@
         },
         "Instance": {
             "type": "structure",
+            "documentation": "<p>Describes an instance.</p>",
             "members": [
                 {
                     "name": "AgentVersion",
@@ -2678,6 +2733,7 @@
         },
         "InstanceIdentity": {
             "type": "structure",
+            "documentation": "<p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html\">Instance Metadata and User Data</a>.</p>",
             "members": [
                 {
                     "name": "Document",
@@ -2697,6 +2753,7 @@
         },
         "InstancesCount": {
             "type": "structure",
+            "documentation": "<p>Describes how many instances a stack has for each status.</p>",
             "members": [
                 {
                     "name": "Assigning",
@@ -2800,6 +2857,7 @@
         },
         "Layer": {
             "type": "structure",
+            "documentation": "<p>Describes a layer.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -2908,7 +2966,9 @@
             ]
         },
         "LayerAttributes": {
-            "type": "map"
+            "type": "map",
+            "key": "LayerAttributesKeys",
+            "value": "String"
         },
         "LayerAttributesKeys": {
             "type": "string"
@@ -2922,6 +2982,7 @@
         },
         "LifecycleEventConfiguration": {
             "type": "structure",
+            "documentation": "<p>Specifies the lifecycle event configuration</p>",
             "members": [
                 {
                     "name": "Shutdown",
@@ -2932,6 +2993,7 @@
         },
         "LoadBasedAutoScalingConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes a layer's load-based auto scaling configuration.</p>",
             "members": [
                 {
                     "name": "LayerId",
@@ -2963,10 +3025,13 @@
             "type": "integer"
         },
         "Parameters": {
-            "type": "map"
+            "type": "map",
+            "key": "String",
+            "value": "String"
         },
         "Permission": {
             "type": "structure",
+            "documentation": "<p>Describes stack or user permissions.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -3001,6 +3066,7 @@
         },
         "RaidArray": {
             "type": "structure",
+            "documentation": "<p>Describes an instance's RAID array.</p>",
             "members": [
                 {
                     "name": "RaidArrayId",
@@ -3075,6 +3141,7 @@
         },
         "RdsDbInstance": {
             "type": "structure",
+            "documentation": "<p>Describes an Amazon RDS instance.</p>",
             "members": [
                 {
                     "name": "RdsDbInstanceArn",
@@ -3139,6 +3206,7 @@
         },
         "Recipes": {
             "type": "structure",
+            "documentation": "<p>AWS OpsWorks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder. </p>",
             "members": [
                 {
                     "name": "Setup",
@@ -3184,6 +3252,7 @@
         },
         "RegisterEcsClusterResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>",
             "members": [
                 {
                     "name": "EcsClusterArn",
@@ -3209,6 +3278,7 @@
         },
         "RegisterElasticIpResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>RegisterElasticIp</code> request.</p>",
             "members": [
                 {
                     "name": "ElasticIp",
@@ -3259,6 +3329,7 @@
         },
         "RegisterInstanceResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>RegisterInstanceResult</code> request.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -3309,6 +3380,7 @@
         },
         "RegisterVolumeResult": {
             "type": "structure",
+            "documentation": "<p>Contains the response to a <code>RegisterVolume</code> request.</p>",
             "members": [
                 {
                     "name": "VolumeId",
@@ -3319,6 +3391,7 @@
         },
         "ReportedOs": {
             "type": "structure",
+            "documentation": "<p>A registered instance's reported operating system.</p>",
             "members": [
                 {
                     "name": "Family",
@@ -3339,6 +3412,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>Indicates that a resource was not found.</p>",
             "members": [
                 {
                     "name": "message",
@@ -3352,6 +3426,7 @@
         },
         "SelfUserProfile": {
             "type": "structure",
+            "documentation": "<p>Describes a user's SSH information.</p>",
             "members": [
                 {
                     "name": "IamUserArn",
@@ -3377,6 +3452,7 @@
         },
         "ServiceError": {
             "type": "structure",
+            "documentation": "<p>Describes an AWS OpsWorks service error.</p>",
             "members": [
                 {
                     "name": "ServiceErrorId",
@@ -3486,6 +3562,7 @@
         },
         "ShutdownEventConfiguration": {
             "type": "structure",
+            "documentation": "<p>The Shutdown event configuration.</p>",
             "members": [
                 {
                     "name": "ExecutionTimeout",
@@ -3501,6 +3578,7 @@
         },
         "Source": {
             "type": "structure",
+            "documentation": "<p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html\">Creating Apps</a> or <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html\">Custom Recipes and Cookbooks</a>.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -3539,6 +3617,7 @@
         },
         "SslConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes an app's SSL configuration.</p>",
             "members": [
                 {
                     "name": "Certificate",
@@ -3559,6 +3638,7 @@
         },
         "Stack": {
             "type": "structure",
+            "documentation": "<p>Describes a stack.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -3672,13 +3752,16 @@
             ]
         },
         "StackAttributes": {
-            "type": "map"
+            "type": "map",
+            "key": "StackAttributesKeys",
+            "value": "String"
         },
         "StackAttributesKeys": {
             "type": "string"
         },
         "StackConfigurationManager": {
             "type": "structure",
+            "documentation": "<p>Describes the configuration manager.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -3694,6 +3777,7 @@
         },
         "StackSummary": {
             "type": "structure",
+            "documentation": "<p>Summarizes the number of layers, instances, and apps in a stack.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -3783,6 +3867,7 @@
         },
         "TemporaryCredential": {
             "type": "structure",
+            "documentation": "<p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>",
             "members": [
                 {
                     "name": "Username",
@@ -3808,6 +3893,7 @@
         },
         "TimeBasedAutoScalingConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes an instance's time-based auto scaling configuration.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -4241,6 +4327,7 @@
         },
         "UserProfile": {
             "type": "structure",
+            "documentation": "<p>Describes a user's SSH information.</p>",
             "members": [
                 {
                     "name": "IamUserArn",
@@ -4278,6 +4365,7 @@
         },
         "ValidationException": {
             "type": "structure",
+            "documentation": "<p>Indicates that a request was invalid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -4291,6 +4379,7 @@
         },
         "Volume": {
             "type": "structure",
+            "documentation": "<p>Describes an instance's Amazon EBS volume.</p>",
             "members": [
                 {
                     "name": "VolumeId",
@@ -4361,6 +4450,7 @@
         },
         "VolumeConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes an Amazon EBS volume configuration.</p>",
             "members": [
                 {
                     "name": "MountPoint",
@@ -4407,6 +4497,7 @@
         },
         "WeeklyAutoScalingSchedule": {
             "type": "structure",
+            "documentation": "<p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> <ul> <li>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</li> <li>The value indicates whether the instance should be online or offline for the specified period, and must be set to \"on\" or \"off\"</li> </ul> <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period. </p> <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> <p> <code> { \"12\":\"on\", \"13\":\"on\", \"14\":\"on\", \"15\":\"on\" } </code> </p>",
             "members": [
                 {
                     "name": "Monday",

@@ -33,6 +33,9 @@ class ShapeVisitor(object):
 
 class Parser(ShapeVisitor):
 
+    def visit_boolean(self, shape, value):
+        return value
+
     def visit_string(self, shape, value):
         return value
 
@@ -66,6 +69,9 @@ class Parser(ShapeVisitor):
 
 
 class Serializer(ShapeVisitor):
+
+    def visit_boolean(self, shape, value):
+        return value
 
     def visit_string(self, shape, value):
         return value
@@ -101,18 +107,18 @@ class Serializer(ShapeVisitor):
 
 class JsonSerializer(layer.Layer):
 
-    def serialize(self, operation, shape, **params):
+    def serialize(self, operation, shape, params):
         return json.dumps(Serializer().visit(shape, params))
 
     def deserialize(self, operation, shape, body):
         return Parser().visit(
             shape,
-            json.loads(body.decode("utf-8")),
+            json.loads(body),
         )
 
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'application/json'
-        request.body = self.serialize(operation, operation.input_shape, **params)
+        request.body = self.serialize(operation, operation.input_shape, params)
         return super(JsonSerializer, self).before_call(
             request,
             operation,
@@ -120,4 +126,4 @@ class JsonSerializer(layer.Layer):
         )
 
     def after_call(self, operation, request, response):
-        return self.deserialize(operation, operation.output_shape, response.body)
+        return self.deserialize(operation, operation.output_shape, response.body.decode("utf-8"))

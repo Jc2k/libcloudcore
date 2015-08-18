@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://importexport.amazonaws.com/doc/2010-06-01/"
         }
@@ -100,10 +103,12 @@
     },
     "shapes": {
         "APIVersion": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Specifies the version of the client tool."
         },
         "Artifact": {
             "type": "structure",
+            "documentation": "A discrete item that contains the description and URL of an artifact (such as a PDF).",
             "members": [
                 {
                     "name": "Description",
@@ -117,10 +122,12 @@
         },
         "ArtifactList": {
             "type": "list",
+            "documentation": "A collection of artifacts.",
             "of": "Artifact"
         },
         "BucketPermissionException": {
             "type": "structure",
+            "documentation": "The account specified does not have the appropriate bucket permissions.",
             "members": [
                 {
                     "name": "message",
@@ -130,6 +137,7 @@
         },
         "CancelJobInput": {
             "type": "structure",
+            "documentation": "Input structure for the CancelJob operation.",
             "members": [
                 {
                     "name": "JobId",
@@ -143,6 +151,7 @@
         },
         "CancelJobOutput": {
             "type": "structure",
+            "documentation": "Output structure for the CancelJob operation.",
             "members": [
                 {
                     "name": "Success",
@@ -152,6 +161,7 @@
         },
         "CanceledJobIdException": {
             "type": "structure",
+            "documentation": "The specified job ID has been canceled and is no longer valid.",
             "members": [
                 {
                     "name": "message",
@@ -160,10 +170,12 @@
             ]
         },
         "Carrier": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Name of the shipping company. This value is included when the LocationCode is \"Returned\"."
         },
         "CreateJobInput": {
             "type": "structure",
+            "documentation": "Input structure for the CreateJob operation.",
             "members": [
                 {
                     "name": "JobType",
@@ -189,6 +201,7 @@
         },
         "CreateJobOutput": {
             "type": "structure",
+            "documentation": "Output structure for the CreateJob operation.",
             "members": [
                 {
                     "name": "JobId",
@@ -218,6 +231,7 @@
         },
         "CreateJobQuotaExceededException": {
             "type": "structure",
+            "documentation": "Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.",
             "members": [
                 {
                     "name": "message",
@@ -226,22 +240,28 @@
             ]
         },
         "CreationDate": {
-            "type": "timestamp"
+            "type": "timestamp",
+            "documentation": "Timestamp of the CreateJob request in ISO8601 date format. For example \"2010-03-28T20:27:35Z\"."
         },
         "CurrentManifest": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The last manifest submitted, which will be used to process the job."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The associated description for this object."
         },
         "ErrorCount": {
-            "type": "integer"
+            "type": "integer",
+            "documentation": "Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors."
         },
         "ErrorMessage": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The human-readable description of a particular error."
         },
         "ExpiredJobIdException": {
             "type": "structure",
+            "documentation": "Indicates that the specified job has expired out of the system.",
             "members": [
                 {
                     "name": "message",
@@ -320,6 +340,7 @@
         },
         "GetStatusInput": {
             "type": "structure",
+            "documentation": "Input structure for the GetStatus operation.",
             "members": [
                 {
                     "name": "JobId",
@@ -333,6 +354,7 @@
         },
         "GetStatusOutput": {
             "type": "structure",
+            "documentation": "Output structure for the GetStatus operation.",
             "members": [
                 {
                     "name": "JobId",
@@ -402,6 +424,7 @@
         },
         "InvalidAccessKeyIdException": {
             "type": "structure",
+            "documentation": "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
             "members": [
                 {
                     "name": "message",
@@ -411,6 +434,7 @@
         },
         "InvalidAddressException": {
             "type": "structure",
+            "documentation": "The address specified in the manifest is invalid.",
             "members": [
                 {
                     "name": "message",
@@ -420,6 +444,7 @@
         },
         "InvalidCustomsException": {
             "type": "structure",
+            "documentation": "One or more customs parameters was invalid. Please correct and resubmit.",
             "members": [
                 {
                     "name": "message",
@@ -429,6 +454,7 @@
         },
         "InvalidFileSystemException": {
             "type": "structure",
+            "documentation": "File system specified in export manifest is invalid.",
             "members": [
                 {
                     "name": "message",
@@ -438,6 +464,7 @@
         },
         "InvalidJobIdException": {
             "type": "structure",
+            "documentation": "The JOBID was missing, not found, or not associated with the AWS account.",
             "members": [
                 {
                     "name": "message",
@@ -447,6 +474,7 @@
         },
         "InvalidManifestFieldException": {
             "type": "structure",
+            "documentation": "One or more manifest fields was invalid. Please correct and resubmit.",
             "members": [
                 {
                     "name": "message",
@@ -456,6 +484,7 @@
         },
         "InvalidParameterException": {
             "type": "structure",
+            "documentation": "One or more parameters had an invalid value.",
             "members": [
                 {
                     "name": "message",
@@ -465,6 +494,7 @@
         },
         "InvalidVersionException": {
             "type": "structure",
+            "documentation": "The client tool version is invalid.",
             "members": [
                 {
                     "name": "message",
@@ -473,13 +503,16 @@
             ]
         },
         "IsCanceled": {
-            "type": "boolean"
+            "type": "boolean",
+            "documentation": "Indicates whether the job was canceled."
         },
         "IsTruncated": {
-            "type": "boolean"
+            "type": "boolean",
+            "documentation": "Indicates whether the list of jobs was truncated. If true, then call ListJobs again using the last JobId element as the marker."
         },
         "Job": {
             "type": "structure",
+            "documentation": "Representation of a job returned by the ListJobs operation.",
             "members": [
                 {
                     "name": "JobId",
@@ -500,21 +533,25 @@
             ]
         },
         "JobId": {
-            "type": "string"
+            "type": "string",
+            "documentation": "A unique identifier which refers to a particular job."
         },
         "JobIdList": {
             "type": "list",
             "of": "GenericString"
         },
         "JobType": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Specifies whether the job to initiate is an import or export job."
         },
         "JobsList": {
             "type": "list",
+            "documentation": "A list container for Jobs returned by the ListJobs operation.",
             "of": "Job"
         },
         "ListJobsInput": {
             "type": "structure",
+            "documentation": "Input structure for the ListJobs operation.",
             "members": [
                 {
                     "name": "MaxJobs",
@@ -532,6 +569,7 @@
         },
         "ListJobsOutput": {
             "type": "structure",
+            "documentation": "Output structure for the ListJobs operation.",
             "members": [
                 {
                     "name": "Jobs",
@@ -544,19 +582,24 @@
             ]
         },
         "LocationCode": {
-            "type": "string"
+            "type": "string",
+            "documentation": "A token representing the location of the storage device, such as \"AtAWS\"."
         },
         "LocationMessage": {
-            "type": "string"
+            "type": "string",
+            "documentation": "A more human readable form of the physical location of the storage device."
         },
         "LogBucket": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Amazon S3 bucket for user logs."
         },
         "LogKey": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The key where the user logs were stored."
         },
         "MalformedManifestException": {
             "type": "structure",
+            "documentation": "Your manifest is not well-formed.",
             "members": [
                 {
                     "name": "message",
@@ -565,19 +608,24 @@
             ]
         },
         "Manifest": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The UTF-8 encoded text of the manifest file."
         },
         "ManifestAddendum": {
-            "type": "string"
+            "type": "string",
+            "documentation": "For internal use only."
         },
         "Marker": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse chronological order. See MaxJobs."
         },
         "MaxJobs": {
-            "type": "integer"
+            "type": "integer",
+            "documentation": "Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains &lt;IsTruncated&gt;true&lt;/IsTruncated&gt;. To return the additional jobs, see Marker."
         },
         "MissingCustomsException": {
             "type": "structure",
+            "documentation": "One or more required customs parameters was missing from the manifest.",
             "members": [
                 {
                     "name": "message",
@@ -587,6 +635,7 @@
         },
         "MissingManifestFieldException": {
             "type": "structure",
+            "documentation": "One or more required fields were missing from the manifest file. Please correct and resubmit.",
             "members": [
                 {
                     "name": "message",
@@ -596,6 +645,7 @@
         },
         "MissingParameterException": {
             "type": "structure",
+            "documentation": "One or more required parameters was missing from the request.",
             "members": [
                 {
                     "name": "message",
@@ -605,6 +655,7 @@
         },
         "MultipleRegionsException": {
             "type": "structure",
+            "documentation": "Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.",
             "members": [
                 {
                     "name": "message",
@@ -614,6 +665,7 @@
         },
         "NoSuchBucketException": {
             "type": "structure",
+            "documentation": "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.",
             "members": [
                 {
                     "name": "message",
@@ -622,28 +674,36 @@
             ]
         },
         "ProgressCode": {
-            "type": "string"
+            "type": "string",
+            "documentation": "A token representing the state of the job, such as \"Started\"."
         },
         "ProgressMessage": {
-            "type": "string"
+            "type": "string",
+            "documentation": "A more human readable form of the job status."
         },
         "Signature": {
-            "type": "string"
+            "type": "string",
+            "documentation": "An encrypted code used to authenticate the request and response, for example, \"DV+TpDfx1/TdSE9ktyK9k/bDTVI=\". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value."
         },
         "SignatureFileContents": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The actual text of the SIGNATURE file to be written to disk."
         },
         "Success": {
-            "type": "boolean"
+            "type": "boolean",
+            "documentation": "Specifies whether (true) or not (false) AWS Import/Export updated your job."
         },
         "TrackingNumber": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The shipping tracking number assigned by AWS Import/Export to the storage device when it's returned to you. We return this value when the LocationCode is \"Returned\"."
         },
         "URL": {
-            "type": "string"
+            "type": "string",
+            "documentation": "The URL for a given Artifact."
         },
         "UnableToCancelJobIdException": {
             "type": "structure",
+            "documentation": "AWS Import/Export cannot cancel the job",
             "members": [
                 {
                     "name": "message",
@@ -653,6 +713,7 @@
         },
         "UnableToUpdateJobIdException": {
             "type": "structure",
+            "documentation": "AWS Import/Export cannot update the job",
             "members": [
                 {
                     "name": "message",
@@ -662,6 +723,7 @@
         },
         "UpdateJobInput": {
             "type": "structure",
+            "documentation": "Input structure for the UpateJob operation.",
             "members": [
                 {
                     "name": "JobId",
@@ -687,6 +749,7 @@
         },
         "UpdateJobOutput": {
             "type": "structure",
+            "documentation": "Output structure for the UpateJob operation.",
             "members": [
                 {
                     "name": "Success",
@@ -703,10 +766,12 @@
             ]
         },
         "ValidateOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "documentation": "Validate the manifest and parameter values in the request but do not actually create a job."
         },
         "WarningMessage": {
-            "type": "string"
+            "type": "string",
+            "documentation": "An optional message notifying you of non-fatal issues with the job, such as use of an incompatible Amazon S3 bucket name."
         }
     }
 }
