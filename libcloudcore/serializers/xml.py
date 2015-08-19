@@ -20,6 +20,7 @@ import xmltodict
 import dateutil.parser
 
 from .. import models, layer
+from ..utils import force_str
 
 
 class Parser(models.Visitor):
@@ -182,10 +183,10 @@ class XmlSerializer(layer.Layer):
             else:
                 body["@xmlns"] = uri
 
-        return xmltodict.unparse(
+        return force_str(xmltodict.unparse(
             {shape.wire_name: body},
             pretty=True,
-        )
+        ))
 
     def deserialize(self, operation, shape, body):
         payload = xmltodict.parse(
