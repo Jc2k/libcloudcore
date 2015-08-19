@@ -116,7 +116,7 @@ class Serializer(models.Visitor):
     def visit_float(self, shape, name, value):
         # On python 2.7 we need to take care to repr() floats because
         # >>> str(float("-9999.999999999998"))
-        # '-10000.0’
+        # '-10000.0'
         return repr(value)
 
     visit_double = visit_float
