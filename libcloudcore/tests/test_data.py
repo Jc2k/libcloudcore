@@ -48,6 +48,8 @@ def find_operations():
     for service in find_services():
         if service == "gandi":
             continue
+        if service == "aws/dynamodb":
+            continue
         driver = session.get_driver(service)
         for operation in driver.model.get_operations():
             yield service, operation.name, driver, operation
@@ -112,7 +114,7 @@ class StrategyBuilder(models.Visitor):
     def visit_list(self, shape):
         return strategies.lists(
             self.visit(shape.of),
-            max_size=5,
+            max_size=1,
         )
 
     def visit_map(self, shape):
@@ -145,7 +147,7 @@ def roundtrip(driver, operation, shape):
 
     settings = Settings(
         min_satisfying_examples=1,
-        max_examples=10,
+        max_examples=3,
     )
 
     @given(strategy, settings=settings)

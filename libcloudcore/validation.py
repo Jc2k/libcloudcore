@@ -30,7 +30,7 @@ def _check_type(field, value, types, report):
         report.append(ReportItem(
             field,
             "invalid_type",
-            "passed {} but expected on of ({})".format(
+            "passed {} but expected one of ({})".format(
                 value,
                 ", ".join(str(t) for t in types)
             )
@@ -149,8 +149,20 @@ def _validate_string(field, shape, value, report):
         return
 
 
+def _validate_blob(field, shape, value, report):
+    return True
+
+
 def _validate_integer(field, shape, value, report):
     if not _check_type(field, value, six.integer_types, report):
+        return
+
+    if not _check_range(field, value, shape.min, shape.max, report):
+        return
+
+
+def _validate_float(field, shape, value, report):
+    if not _check_type(field, value, float, report):
         return
 
     if not _check_range(field, value, shape.min, shape.max, report):
