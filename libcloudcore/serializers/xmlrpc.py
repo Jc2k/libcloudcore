@@ -17,10 +17,12 @@ from __future__ import absolute_import
 
 from six.moves import xmlrpc_client
 
-from .. import layer
+from . import base
 
 
-class XmlrpcSerializer(layer.Layer):
+class XmlrpcSerializer(base.Serializer):
+
+    content_type = 'text/xml'
 
     def serialize(self, operation, shape, params):
         args = []
@@ -49,17 +51,8 @@ class XmlrpcSerializer(layer.Layer):
 
     def before_call(self, request, operation, **params):
         request.method = 'POST'
-        request.headers['Content-Type'] = 'text/xml'
-        request.body = self.serialize(operation, operation.input_shape, params)
         return super(XmlrpcSerializer, self).before_call(
             request,
             operation,
             **params
-        )
-
-    def after_call(self, operation, request, response):
-        return self.deserialize(
-            operation,
-            operation.output_shape,
-            response.body,
         )

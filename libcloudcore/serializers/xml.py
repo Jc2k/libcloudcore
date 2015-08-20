@@ -19,7 +19,8 @@ import collections
 import xmltodict
 import dateutil.parser
 
-from .. import models, layer
+from . import base
+from .. import models
 from ..utils import force_str
 
 
@@ -165,7 +166,9 @@ class Serializer(models.Visitor):
         return structure
 
 
-class XmlSerializer(layer.Layer):
+class XmlSerializer(base.Serializer):
+
+    content_type = 'text/xml'
 
     def _namespaces(self, operation):
         namespaces = {}
@@ -199,24 +202,3 @@ class XmlSerializer(layer.Layer):
             namespaces=self._namespaces(operation),
         )
         return Parser().visit(shape, payload[shape.name])
-
-    def before_call(self, request, operation, **params):
-        request.headers['Content-Type'] = 'text/xml'
-        request.body = self.serialize(
-            operation,
-            operation.input_shape,
-            params
-        )
-
-        return super(XmlSerializer, self).before_call(
-            request,
-            operation,
-            **params
-        )
-
-    def after_call(self, operation, request, response):
-        return self.deserialize(
-            operation,
-            operation.output_shape,
-            response.body
-        )

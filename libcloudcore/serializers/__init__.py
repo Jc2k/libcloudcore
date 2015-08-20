@@ -14,10 +14,12 @@
 # limitations under the License.
 
 from .json import JsonSerializer
+from .xml import XmlSerializer
 from .xmlrpc import XmlrpcSerializer
 
 
 __all__ = [
     'JsonSerializer',
+    'XmlSerializer',
     'XmlrpcSerializer',
 ]

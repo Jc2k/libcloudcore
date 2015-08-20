@@ -24,6 +24,7 @@ from libcloudcore.auth.basic_auth import BasicAuth
 from libcloudcore.error_parser import ErrorParser
 from libcloudcore.validation import Validation
 from libcloudcore.serializers import JsonSerializer
+from libcloudcore.serializers.base import Serializer
 from libcloudcore.layer import Layer
 from . import httpbin, base
 
@@ -48,6 +49,7 @@ class TestDriver(unittest.TestCase):
             AsnycioBackend,
             BasicAuth,
             JsonSerializer,
+            Serializer,
             Layer,
             object,
         ))
