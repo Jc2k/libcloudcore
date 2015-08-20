@@ -18,6 +18,7 @@ from __future__ import absolute_import
 import json
 
 from .. import layer
+from ..utils import force_str
 
 
 class ShapeVisitor(object):
@@ -113,7 +114,7 @@ class JsonSerializer(layer.Layer):
     def deserialize(self, operation, shape, body):
         return Parser().visit(
             shape,
-            json.loads(body),
+            json.loads(force_str(body)),
         )
 
     def before_call(self, request, operation, **params):
@@ -129,5 +130,5 @@ class JsonSerializer(layer.Layer):
         return self.deserialize(
             operation,
             operation.output_shape,
-            response.body.decode("utf-8"),
+            response.body,
         )
