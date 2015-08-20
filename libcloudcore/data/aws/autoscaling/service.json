@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://autoscaling.amazonaws.com/doc/2011-01-01/"
         }
@@ -405,6 +408,7 @@
         },
         "Activity": {
             "type": "structure",
+            "documentation": "<p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>",
             "members": [
                 {
                     "name": "ActivityId",
@@ -474,6 +478,7 @@
         },
         "AdjustmentType": {
             "type": "structure",
+            "documentation": "<p>Describes a policy adjustment type.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html\">Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "AdjustmentType",
@@ -488,6 +493,7 @@
         },
         "Alarm": {
             "type": "structure",
+            "documentation": "<p>Describes an alarm.</p>",
             "members": [
                 {
                     "name": "AlarmName",
@@ -507,6 +513,7 @@
         },
         "AlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p>You already have an Auto Scaling group or launch configuration with this name.</p>",
             "members": [
                 {
                     "name": "message",
@@ -556,6 +563,7 @@
         },
         "AutoScalingGroup": {
             "type": "structure",
+            "documentation": "<p>Describes an Auto Scaling group.</p>",
             "members": [
                 {
                     "name": "AutoScalingGroupName",
@@ -713,6 +721,7 @@
         },
         "AutoScalingInstanceDetails": {
             "type": "structure",
+            "documentation": "<p>Describes an EC2 instance associated with an Auto Scaling group.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -787,6 +796,7 @@
         },
         "BlockDeviceMapping": {
             "type": "structure",
+            "documentation": "<p>Describes a block device mapping.</p>",
             "members": [
                 {
                     "name": "VirtualName",
@@ -1086,6 +1096,7 @@
         },
         "DeletePolicyType": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "AutoScalingGroupName",
@@ -1485,6 +1496,7 @@
         },
         "Ebs": {
             "type": "structure",
+            "documentation": "<p>Describes an Amazon EBS volume.</p>",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -1538,6 +1550,7 @@
         },
         "EnabledMetric": {
             "type": "structure",
+            "documentation": "<p>Describes an enabled metric.</p>",
             "members": [
                 {
                     "name": "Metric",
@@ -1645,6 +1658,7 @@
         },
         "Filter": {
             "type": "structure",
+            "documentation": "<p>Describes a filter.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -1679,6 +1693,7 @@
         },
         "Instance": {
             "type": "structure",
+            "documentation": "<p>Describes an EC2 instance.</p>",
             "members": [
                 {
                     "name": "InstanceId",
@@ -1713,6 +1728,7 @@
         },
         "InstanceMonitoring": {
             "type": "structure",
+            "documentation": "<p>Describes whether instance monitoring is enabled.</p>",
             "members": [
                 {
                     "name": "Enabled",
@@ -1727,6 +1743,7 @@
         },
         "InvalidNextToken": {
             "type": "structure",
+            "documentation": "<p>The <code>NextToken</code> value is not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1736,6 +1753,7 @@
         },
         "LaunchConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes a launch configuration.</p>",
             "members": [
                 {
                     "name": "LaunchConfigurationName",
@@ -1895,6 +1913,7 @@
         },
         "LifecycleHook": {
             "type": "structure",
+            "documentation": "<p>Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action when an instance launches or terminates. When you have a lifecycle hook in place, the Auto Scaling group will either:</p> <ul> <li>Pause the instance after it launches, but before it is put into service</li> <li>Pause the instance as it terminates, but before it is fully terminated</li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html\">Auto Scaling Pending State</a> and <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html\">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "LifecycleHookName",
@@ -1959,6 +1978,7 @@
         },
         "LimitExceededFault": {
             "type": "structure",
+            "documentation": "<p>You have already reached a limit for your Auto Scaling resources (for example, groups, launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1972,6 +1992,7 @@
         },
         "LoadBalancerState": {
             "type": "structure",
+            "documentation": "<p>Describes the state of a load balancer.</p>",
             "members": [
                 {
                     "name": "LoadBalancerName",
@@ -2000,6 +2021,7 @@
         },
         "MetricCollectionType": {
             "type": "structure",
+            "documentation": "<p>Describes a metric.</p>",
             "members": [
                 {
                     "name": "Metric",
@@ -2014,6 +2036,7 @@
         },
         "MetricGranularityType": {
             "type": "structure",
+            "documentation": "<p>Describes a granularity of a metric.</p>",
             "members": [
                 {
                     "name": "Granularity",
@@ -2047,6 +2070,7 @@
         },
         "NotificationConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes a notification.</p>",
             "members": [
                 {
                     "name": "AutoScalingGroupName",
@@ -2111,6 +2135,7 @@
         },
         "ProcessType": {
             "type": "structure",
+            "documentation": "<p>Describes a process type.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html#process-types\">Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "ProcessName",
@@ -2344,6 +2369,7 @@
         },
         "ResourceContentionFault": {
             "type": "structure",
+            "documentation": "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>",
             "members": [
                 {
                     "name": "message",
@@ -2353,6 +2379,7 @@
         },
         "ResourceInUseFault": {
             "type": "structure",
+            "documentation": "<p>The Auto Scaling group or launch configuration can't be deleted because it is in use.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2365,6 +2392,7 @@
         },
         "ScalingActivityInProgressFault": {
             "type": "structure",
+            "documentation": "<p>The Auto Scaling group can't be deleted because there are scaling activities in progress.</p>",
             "members": [
                 {
                     "name": "message",
@@ -2381,6 +2409,7 @@
         },
         "ScalingPolicy": {
             "type": "structure",
+            "documentation": "<p>Describes a scaling policy.</p>",
             "members": [
                 {
                     "name": "AutoScalingGroupName",
@@ -2485,6 +2514,7 @@
         },
         "ScheduledUpdateGroupAction": {
             "type": "structure",
+            "documentation": "<p>Describes a scheduled update to an Auto Scaling group.</p>",
             "members": [
                 {
                     "name": "AutoScalingGroupName",
@@ -2597,6 +2627,7 @@
         },
         "StepAdjustment": {
             "type": "structure",
+            "documentation": "<p>Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.</p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>If you want the adjustment to be triggered when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>If you want the adjustment to be triggered when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul>",
             "members": [
                 {
                     "name": "MetricIntervalLowerBound",
@@ -2621,6 +2652,7 @@
         },
         "SuspendedProcess": {
             "type": "structure",
+            "documentation": "<p>Describes an Auto Scaling process that has been suspended. For more information, see <a>ProcessType</a>.</p>",
             "members": [
                 {
                     "name": "ProcessName",
@@ -2640,6 +2672,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>Describes a tag for an Auto Scaling group.</p>",
             "members": [
                 {
                     "name": "ResourceId",
@@ -2670,6 +2703,7 @@
         },
         "TagDescription": {
             "type": "structure",
+            "documentation": "<p>Describes a tag for an Auto Scaling group.</p>",
             "members": [
                 {
                     "name": "ResourceId",

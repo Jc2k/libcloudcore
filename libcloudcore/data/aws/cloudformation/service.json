@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://cloudformation.amazonaws.com/doc/2010-05-15/"
         }
@@ -183,10 +186,12 @@
         },
         "AlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>Resource with the name requested already exists.</p>",
             "members": []
         },
         "CancelUpdateStackInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>CancelUpdateStack</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -207,6 +212,7 @@
         },
         "CreateStackInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>CreateStack</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -272,6 +278,7 @@
         },
         "CreateStackOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>CreateStack</a> action.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -285,6 +292,7 @@
         },
         "DeleteStackInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>DeleteStack</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -298,6 +306,7 @@
         },
         "DescribeStackEventsInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>DescribeStackEvents</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -313,6 +322,7 @@
         },
         "DescribeStackEventsOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>DescribeStackEvents</a> action.</p>",
             "members": [
                 {
                     "name": "StackEvents",
@@ -328,6 +338,7 @@
         },
         "DescribeStackResourceInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>DescribeStackResource</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -343,6 +354,7 @@
         },
         "DescribeStackResourceOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>DescribeStackResource</a> action.</p>",
             "members": [
                 {
                     "name": "StackResourceDetail",
@@ -353,6 +365,7 @@
         },
         "DescribeStackResourcesInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>DescribeStackResources</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -373,6 +386,7 @@
         },
         "DescribeStackResourcesOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>DescribeStackResources</a> action.</p>",
             "members": [
                 {
                     "name": "StackResources",
@@ -383,6 +397,7 @@
         },
         "DescribeStacksInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>DescribeStacks</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -398,6 +413,7 @@
         },
         "DescribeStacksOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>DescribeStacks</a> action.</p>",
             "members": [
                 {
                     "name": "Stacks",
@@ -439,6 +455,7 @@
         },
         "EstimateTemplateCostOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>EstimateTemplateCost</a> action.</p>",
             "members": [
                 {
                     "name": "Url",
@@ -452,6 +469,7 @@
         },
         "GetStackPolicyInput": {
             "type": "structure",
+            "documentation": "<p>The input for the <a>GetStackPolicy</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -462,6 +480,7 @@
         },
         "GetStackPolicyOutput": {
             "type": "structure",
+            "documentation": "<p>The output for the <a>GetStackPolicy</a> action.</p>",
             "members": [
                 {
                     "name": "StackPolicyBody",
@@ -472,6 +491,7 @@
         },
         "GetTemplateInput": {
             "type": "structure",
+            "documentation": "<p>The input for a <a>GetTemplate</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -482,6 +502,7 @@
         },
         "GetTemplateOutput": {
             "type": "structure",
+            "documentation": "<p>The output for <a>GetTemplate</a> action.</p>",
             "members": [
                 {
                     "name": "TemplateBody",
@@ -492,6 +513,7 @@
         },
         "GetTemplateSummaryInput": {
             "type": "structure",
+            "documentation": "<p>The input for the <a>GetTemplateSummary</a> action.</p>",
             "members": [
                 {
                     "name": "TemplateBody",
@@ -512,6 +534,7 @@
         },
         "GetTemplateSummaryOutput": {
             "type": "structure",
+            "documentation": "<p>The output for the <a>GetTemplateSummary</a> action.</p>",
             "members": [
                 {
                     "name": "Parameters",
@@ -547,6 +570,7 @@
         },
         "InsufficientCapabilitiesException": {
             "type": "structure",
+            "documentation": "<p>The template contains resources with capabilities that were not specified in the Capabilities parameter.</p>",
             "members": []
         },
         "LastUpdatedTime": {
@@ -554,10 +578,12 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Quota for the resource has already been reached.</p>",
             "members": []
         },
         "ListStackResourcesInput": {
             "type": "structure",
+            "documentation": "<p>The input for the <a>ListStackResource</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -573,6 +599,7 @@
         },
         "ListStackResourcesOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>ListStackResources</a> action.</p>",
             "members": [
                 {
                     "name": "StackResourceSummaries",
@@ -588,6 +615,7 @@
         },
         "ListStacksInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>ListStacks</a> action.</p>",
             "members": [
                 {
                     "name": "NextToken",
@@ -603,6 +631,7 @@
         },
         "ListStacksOutput": {
             "type": "structure",
+            "documentation": "<p>The output for <a>ListStacks</a> action.</p>",
             "members": [
                 {
                     "name": "StackSummaries",
@@ -640,6 +669,7 @@
         },
         "Output": {
             "type": "structure",
+            "documentation": "<p>The Output data type.</p>",
             "members": [
                 {
                     "name": "OutputKey",
@@ -670,6 +700,7 @@
         },
         "Parameter": {
             "type": "structure",
+            "documentation": "<p>The Parameter data type.</p>",
             "members": [
                 {
                     "name": "ParameterKey",
@@ -690,6 +721,7 @@
         },
         "ParameterConstraints": {
             "type": "structure",
+            "documentation": "<p>A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.</p>",
             "members": [
                 {
                     "name": "AllowedValues",
@@ -700,6 +732,7 @@
         },
         "ParameterDeclaration": {
             "type": "structure",
+            "documentation": "<p>The ParameterDeclaration data type.</p>",
             "members": [
                 {
                     "name": "ParameterKey",
@@ -773,6 +806,7 @@
         },
         "SetStackPolicyInput": {
             "type": "structure",
+            "documentation": "<p>The input for the <a>SetStackPolicy</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -793,6 +827,7 @@
         },
         "SignalResourceInput": {
             "type": "structure",
+            "documentation": "<p>The input for the <a>SignalResource</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -818,6 +853,7 @@
         },
         "Stack": {
             "type": "structure",
+            "documentation": "<p>The Stack data type.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -893,6 +929,7 @@
         },
         "StackEvent": {
             "type": "structure",
+            "documentation": "<p>The StackEvent data type.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -973,6 +1010,7 @@
         },
         "StackResource": {
             "type": "structure",
+            "documentation": "<p>The StackResource data type.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -1023,6 +1061,7 @@
         },
         "StackResourceDetail": {
             "type": "structure",
+            "documentation": "<p>Contains detailed information about the specified stack resource.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -1082,6 +1121,7 @@
         },
         "StackResourceSummary": {
             "type": "structure",
+            "documentation": "<p>Contains high-level information about the specified stack resource.</p>",
             "members": [
                 {
                     "name": "LogicalResourceId",
@@ -1135,6 +1175,7 @@
         },
         "StackSummary": {
             "type": "structure",
+            "documentation": "<p>The StackSummary Data Type</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -1184,6 +1225,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>The Tag type is used by <code>CreateStack</code> in the <code>Tags</code> parameter. It allows you to specify a key/value pair that can be used to store information related to cost allocation for an AWS CloudFormation stack.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -1215,6 +1257,7 @@
         },
         "TemplateParameter": {
             "type": "structure",
+            "documentation": "<p>The TemplateParameter data type.</p>",
             "members": [
                 {
                     "name": "ParameterKey",
@@ -1253,6 +1296,7 @@
         },
         "UpdateStackInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>UpdateStack</a> action.</p>",
             "members": [
                 {
                     "name": "StackName",
@@ -1313,6 +1357,7 @@
         },
         "UpdateStackOutput": {
             "type": "structure",
+            "documentation": "<p>The output for a <a>UpdateStack</a> action.</p>",
             "members": [
                 {
                     "name": "StackId",
@@ -1332,6 +1377,7 @@
         },
         "ValidateTemplateInput": {
             "type": "structure",
+            "documentation": "<p>The input for <a>ValidateTemplate</a> action.</p>",
             "members": [
                 {
                     "name": "TemplateBody",
@@ -1347,6 +1393,7 @@
         },
         "ValidateTemplateOutput": {
             "type": "structure",
+            "documentation": "<p>The output for <a>ValidateTemplate</a> action.</p>",
             "members": [
                 {
                     "name": "Parameters",

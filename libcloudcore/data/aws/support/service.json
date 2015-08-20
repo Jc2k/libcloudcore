@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -172,6 +176,7 @@
         },
         "AddAttachmentsToSetResponse": {
             "type": "structure",
+            "documentation": "<p>The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation.</p>",
             "members": [
                 {
                     "name": "attachmentSetId",
@@ -187,6 +192,7 @@
         },
         "AddCommunicationToCaseRequest": {
             "type": "structure",
+            "documentation": "<p>To be written.</p>",
             "members": [
                 {
                     "name": "caseId",
@@ -212,6 +218,7 @@
         },
         "AddCommunicationToCaseResponse": {
             "type": "structure",
+            "documentation": "<p>The result of the <a>AddCommunicationToCase</a> operation.</p>",
             "members": [
                 {
                     "name": "result",
@@ -225,6 +232,7 @@
         },
         "Attachment": {
             "type": "structure",
+            "documentation": "<p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>",
             "members": [
                 {
                     "name": "fileName",
@@ -240,6 +248,7 @@
         },
         "AttachmentDetails": {
             "type": "structure",
+            "documentation": "<p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <a>DescribeAttachment</a> operation.</p>",
             "members": [
                 {
                     "name": "attachmentId",
@@ -258,6 +267,7 @@
         },
         "AttachmentIdNotFound": {
             "type": "structure",
+            "documentation": "<p>An attachment with the specified ID could not be found.</p>",
             "members": [
                 {
                     "name": "message",
@@ -268,6 +278,7 @@
         },
         "AttachmentLimitExceeded": {
             "type": "structure",
+            "documentation": "<p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>",
             "members": [
                 {
                     "name": "message",
@@ -282,6 +293,7 @@
         },
         "AttachmentSetExpired": {
             "type": "structure",
+            "documentation": "<p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>",
             "members": [
                 {
                     "name": "message",
@@ -295,6 +307,7 @@
         },
         "AttachmentSetIdNotFound": {
             "type": "structure",
+            "documentation": "<p>An attachment set with the specified ID could not be found.</p>",
             "members": [
                 {
                     "name": "message",
@@ -305,6 +318,7 @@
         },
         "AttachmentSetSizeLimitExceeded": {
             "type": "structure",
+            "documentation": "<p>A limit for the size of an attachment set has been exceeded. The limits are 3 attachments and 5 MB per attachment.</p>",
             "members": [
                 {
                     "name": "message",
@@ -325,6 +339,7 @@
         },
         "CaseCreationLimitExceeded": {
             "type": "structure",
+            "documentation": "<p>The case creation limit for the account has been exceeded. </p>",
             "members": [
                 {
                     "name": "message",
@@ -335,6 +350,7 @@
         },
         "CaseDetails": {
             "type": "structure",
+            "documentation": "<p>A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:</p> <ol> <li> <b>CaseID.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</li> <li> <b>CategoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.</li> <li> <b>DisplayId.</b> The identifier for the case on pages in the AWS Support Center.</li> <li> <b>Language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</li> <li> <b>RecentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are <code>Attachments</code>, <code>Body</code>, <code>CaseId</code>, <code>SubmittedBy</code>, and <code>TimeCreated</code>.</li> <li> <b>NextToken.</b> A resumption point for pagination.</li> <li> <b>ServiceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.</li> <li> <b>SeverityCode. </b>The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.</li> <li> <b>Status.</b> The status of the case in the AWS Support Center.</li> <li> <b>Subject.</b> The subject line of the case.</li> <li> <b>SubmittedBy.</b> The email address of the account that submitted the case.</li> <li> <b>TimeCreated.</b> The time the case was created, in ISO-8601 format.</li> </ol>",
             "members": [
                 {
                     "name": "caseId",
@@ -407,6 +423,7 @@
         },
         "CaseIdNotFound": {
             "type": "structure",
+            "documentation": "<p>The requested <code>CaseId</code> could not be located.</p>",
             "members": [
                 {
                     "name": "message",
@@ -424,6 +441,7 @@
         },
         "Category": {
             "type": "structure",
+            "documentation": "<p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service.</p>",
             "members": [
                 {
                     "name": "code",
@@ -456,6 +474,7 @@
         },
         "Communication": {
             "type": "structure",
+            "documentation": "<p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the account email address, and the date and time of the communication.</p>",
             "members": [
                 {
                     "name": "caseId",
@@ -543,6 +562,7 @@
         },
         "CreateCaseResponse": {
             "type": "structure",
+            "documentation": "<p>The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation. </p>",
             "members": [
                 {
                     "name": "caseId",
@@ -556,6 +576,7 @@
         },
         "DescribeAttachmentLimitExceeded": {
             "type": "structure",
+            "documentation": "<p>The limit for the number of <a>DescribeAttachment</a> requests in a short period of time has been exceeded.</p>",
             "members": [
                 {
                     "name": "message",
@@ -576,6 +597,7 @@
         },
         "DescribeAttachmentResponse": {
             "type": "structure",
+            "documentation": "<p>The content and file name of the attachment returned by the <a>DescribeAttachment</a> operation.</p>",
             "members": [
                 {
                     "name": "attachment",
@@ -636,6 +658,7 @@
         },
         "DescribeCasesResponse": {
             "type": "structure",
+            "documentation": "<p>Returns an array of <a>CaseDetails</a> objects and a <code>NextToken</code> that defines a point for pagination in the result set.</p>",
             "members": [
                 {
                     "name": "cases",
@@ -681,6 +704,7 @@
         },
         "DescribeCommunicationsResponse": {
             "type": "structure",
+            "documentation": "<p>The communications returned by the <a>DescribeCommunications</a> operation.</p>",
             "members": [
                 {
                     "name": "communications",
@@ -711,6 +735,7 @@
         },
         "DescribeServicesResponse": {
             "type": "structure",
+            "documentation": "<p>The list of AWS services returned by the <a>DescribeServices</a> operation.</p>",
             "members": [
                 {
                     "name": "services",
@@ -731,6 +756,7 @@
         },
         "DescribeSeverityLevelsResponse": {
             "type": "structure",
+            "documentation": "<p>The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation.</p>",
             "members": [
                 {
                     "name": "severityLevels",
@@ -751,6 +777,7 @@
         },
         "DescribeTrustedAdvisorCheckRefreshStatusesResponse": {
             "type": "structure",
+            "documentation": "<p>The statuses of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> operation.</p>",
             "members": [
                 {
                     "name": "statuses",
@@ -776,6 +803,7 @@
         },
         "DescribeTrustedAdvisorCheckResultResponse": {
             "type": "structure",
+            "documentation": "<p>The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a> operation.</p>",
             "members": [
                 {
                     "name": "result",
@@ -796,6 +824,7 @@
         },
         "DescribeTrustedAdvisorCheckSummariesResponse": {
             "type": "structure",
+            "documentation": "<p>The summaries of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckSummaries</a> operation.</p>",
             "members": [
                 {
                     "name": "summaries",
@@ -816,6 +845,7 @@
         },
         "DescribeTrustedAdvisorChecksResponse": {
             "type": "structure",
+            "documentation": "<p>Information about the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorChecks</a> operation.</p>",
             "members": [
                 {
                     "name": "checks",
@@ -847,6 +877,7 @@
         },
         "InternalServerError": {
             "type": "structure",
+            "documentation": "<p>An internal server error occurred.</p>",
             "members": [
                 {
                     "name": "message",
@@ -872,6 +903,7 @@
         },
         "RecentCaseCommunications": {
             "type": "structure",
+            "documentation": "<p>The five most recent communications associated with the case.</p>",
             "members": [
                 {
                     "name": "communications",
@@ -897,6 +929,7 @@
         },
         "RefreshTrustedAdvisorCheckResponse": {
             "type": "structure",
+            "documentation": "<p>The current refresh status of a Trusted Advisor check.</p>",
             "members": [
                 {
                     "name": "status",
@@ -917,6 +950,7 @@
         },
         "ResolveCaseResponse": {
             "type": "structure",
+            "documentation": "<p>The status of the case returned by the <a>ResolveCase</a> operation.</p>",
             "members": [
                 {
                     "name": "initialCaseStatus",
@@ -935,6 +969,7 @@
         },
         "Service": {
             "type": "structure",
+            "documentation": "<p>Information about an AWS service returned by the <a>DescribeServices</a> operation. </p>",
             "members": [
                 {
                     "name": "code",
@@ -972,6 +1007,7 @@
         },
         "SeverityLevel": {
             "type": "structure",
+            "documentation": "<p>A code and name pair that represent a severity level that can be applied to a support case. </p>",
             "members": [
                 {
                     "name": "code",
@@ -1016,6 +1052,7 @@
         },
         "TrustedAdvisorCategorySpecificSummary": {
             "type": "structure",
+            "documentation": "<p>The container for summary information that relates to the category of the Trusted Advisor check.</p>",
             "members": [
                 {
                     "name": "costOptimizing",
@@ -1026,6 +1063,7 @@
         },
         "TrustedAdvisorCheckDescription": {
             "type": "structure",
+            "documentation": "<p>The description and metadata for a Trusted Advisor check.</p>",
             "members": [
                 {
                     "name": "id",
@@ -1060,6 +1098,7 @@
         },
         "TrustedAdvisorCheckRefreshStatus": {
             "type": "structure",
+            "documentation": "<p>The refresh status of a Trusted Advisor check. </p>",
             "members": [
                 {
                     "name": "checkId",
@@ -1084,6 +1123,7 @@
         },
         "TrustedAdvisorCheckResult": {
             "type": "structure",
+            "documentation": "<p>The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>.</p>",
             "members": [
                 {
                     "name": "checkId",
@@ -1118,6 +1158,7 @@
         },
         "TrustedAdvisorCheckSummary": {
             "type": "structure",
+            "documentation": "<p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>",
             "members": [
                 {
                     "name": "checkId",
@@ -1156,6 +1197,7 @@
         },
         "TrustedAdvisorCostOptimizingSummary": {
             "type": "structure",
+            "documentation": "<p>The estimated cost savings that might be realized if the recommended actions are taken.</p>",
             "members": [
                 {
                     "name": "estimatedMonthlySavings",
@@ -1171,6 +1213,7 @@
         },
         "TrustedAdvisorResourceDetail": {
             "type": "structure",
+            "documentation": "<p>Contains information about a resource identified by a Trusted Advisor check. </p>",
             "members": [
                 {
                     "name": "status",
@@ -1205,6 +1248,7 @@
         },
         "TrustedAdvisorResourcesSummary": {
             "type": "structure",
+            "documentation": "<p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. </p>",
             "members": [
                 {
                     "name": "resourcesProcessed",

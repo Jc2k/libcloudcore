@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -130,10 +134,12 @@
     "shapes": {
         "AssociatedInstances": {
             "type": "structure",
+            "documentation": "<p>You must disassociate a configuration document from all instances before you can delete it.</p>",
             "members": []
         },
         "Association": {
             "type": "structure",
+            "documentation": "<p>Describes an association of a configuration document and an instance.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -149,10 +155,12 @@
         },
         "AssociationAlreadyExists": {
             "type": "structure",
+            "documentation": "<p>The specified association already exists.</p>",
             "members": []
         },
         "AssociationDescription": {
             "type": "structure",
+            "documentation": "<p>Describes an association.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -182,10 +190,12 @@
         },
         "AssociationDoesNotExist": {
             "type": "structure",
+            "documentation": "<p>The specified association does not exist.</p>",
             "members": []
         },
         "AssociationFilter": {
             "type": "structure",
+            "documentation": "<p>Describes a filter.</p>",
             "members": [
                 {
                     "name": "key",
@@ -211,6 +221,7 @@
         },
         "AssociationLimitExceeded": {
             "type": "structure",
+            "documentation": "<p>You can have at most 2,000 active associations.</p>",
             "members": []
         },
         "AssociationList": {
@@ -219,6 +230,7 @@
         },
         "AssociationStatus": {
             "type": "structure",
+            "documentation": "<p>Describes an association status.</p>",
             "members": [
                 {
                     "name": "Date",
@@ -264,6 +276,7 @@
         },
         "CreateAssociationBatchRequestEntry": {
             "type": "structure",
+            "documentation": "<p>Describes the association of a configuration document and an instance.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -425,6 +438,7 @@
         },
         "DocumentAlreadyExists": {
             "type": "structure",
+            "documentation": "<p>The specified configuration document already exists.</p>",
             "members": []
         },
         "DocumentContent": {
@@ -432,6 +446,7 @@
         },
         "DocumentDescription": {
             "type": "structure",
+            "documentation": "<p>Describes a configuration document.</p>",
             "members": [
                 {
                     "name": "Sha1",
@@ -457,6 +472,7 @@
         },
         "DocumentFilter": {
             "type": "structure",
+            "documentation": "<p>Describes a filter.</p>",
             "members": [
                 {
                     "name": "key",
@@ -482,6 +498,7 @@
         },
         "DocumentIdentifier": {
             "type": "structure",
+            "documentation": "<p>Describes the name of a configuration document.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -496,6 +513,7 @@
         },
         "DocumentLimitExceeded": {
             "type": "structure",
+            "documentation": "<p>You can have at most 100 active configuration documents.</p>",
             "members": []
         },
         "DocumentName": {
@@ -509,10 +527,12 @@
         },
         "DuplicateInstanceId": {
             "type": "structure",
+            "documentation": "<p>You cannot specify an instance ID in more than one association.</p>",
             "members": []
         },
         "FailedCreateAssociation": {
             "type": "structure",
+            "documentation": "<p>Describes a failed association.</p>",
             "members": [
                 {
                     "name": "Entry",
@@ -568,14 +588,17 @@
         },
         "InternalServerError": {
             "type": "structure",
+            "documentation": "<p>An error occurred on the server side.</p>",
             "members": []
         },
         "InvalidDocument": {
             "type": "structure",
+            "documentation": "<p>The configuration document is not valid.</p>",
             "members": []
         },
         "InvalidDocumentContent": {
             "type": "structure",
+            "documentation": "<p>The content for the configuration document is not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -586,10 +609,12 @@
         },
         "InvalidInstanceId": {
             "type": "structure",
+            "documentation": "<p>You must specify the ID of a running instance.</p>",
             "members": []
         },
         "InvalidNextToken": {
             "type": "structure",
+            "documentation": "<p>The specified token is not valid.</p>",
             "members": []
         },
         "ListAssociationsRequest": {
@@ -666,6 +691,7 @@
         },
         "MaxDocumentSizeExceeded": {
             "type": "structure",
+            "documentation": "<p>The size limit of a configuration document is 64 KB.</p>",
             "members": []
         },
         "MaxResults": {
@@ -682,6 +708,7 @@
         },
         "StatusUnchanged": {
             "type": "structure",
+            "documentation": "<p>The updated status is the same as the current status.</p>",
             "members": []
         },
         "String": {
@@ -689,6 +716,7 @@
         },
         "TooManyUpdates": {
             "type": "structure",
+            "documentation": "<p>There are concurrent updates for a resource that supports one update at a time.</p>",
             "members": []
         },
         "UpdateAssociationStatusRequest": {

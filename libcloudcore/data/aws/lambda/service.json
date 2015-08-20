@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -361,6 +365,7 @@
         },
         "EventSourceMappingConfiguration": {
             "type": "structure",
+            "documentation": "<p>Describes mapping between an Amazon Kinesis stream and a Lambda function.</p>",
             "members": [
                 {
                     "name": "UUID",
@@ -416,6 +421,7 @@
         },
         "FunctionCode": {
             "type": "structure",
+            "documentation": "<p>The code for the Lambda function.</p>",
             "members": [
                 {
                     "name": "ZipFile",
@@ -441,6 +447,7 @@
         },
         "FunctionCodeLocation": {
             "type": "structure",
+            "documentation": "<p>The object for the Lambda function location.</p>",
             "members": [
                 {
                     "name": "RepositoryType",
@@ -456,6 +463,7 @@
         },
         "FunctionConfiguration": {
             "type": "structure",
+            "documentation": "<p>A complex type that describes function metadata.</p>",
             "members": [
                 {
                     "name": "FunctionName",
@@ -554,6 +562,7 @@
         },
         "GetFunctionResponse": {
             "type": "structure",
+            "documentation": "<p>This response contains the object for the Lambda function location (see <a>API_FunctionCodeLocation</a></p>",
             "members": [
                 {
                     "name": "Configuration",
@@ -598,6 +607,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
+            "documentation": "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>",
             "members": [
                 {
                     "name": "Type",
@@ -611,6 +621,7 @@
         },
         "InvalidRequestContentException": {
             "type": "structure",
+            "documentation": "<p>The request body could not be parsed as JSON.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -662,6 +673,7 @@
         },
         "InvocationResponse": {
             "type": "structure",
+            "documentation": "<p>Upon success, returns an empty response. Otherwise, throws an exception.</p>",
             "members": [
                 {
                     "name": "StatusCode",
@@ -712,6 +724,7 @@
         },
         "InvokeAsyncResponse": {
             "type": "structure",
+            "documentation": "<p>Upon success, it returns empty response. Otherwise, throws an exception.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -756,6 +769,7 @@
         },
         "ListEventSourceMappingsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains a list of event sources (see <a>API_EventSourceMappingConfiguration</a>)</p>",
             "members": [
                 {
                     "name": "NextMarker",
@@ -790,6 +804,7 @@
         },
         "ListFunctionsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains a list of AWS Lambda function configurations (see <a>FunctionConfiguration</a>.</p>",
             "members": [
                 {
                     "name": "NextMarker",
@@ -817,6 +832,7 @@
         },
         "PolicyLengthExceededException": {
             "type": "structure",
+            "documentation": "<p>Lambda function access policy is limited to 20 KB.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -865,6 +881,7 @@
         },
         "ResourceConflictException": {
             "type": "structure",
+            "documentation": "<p>The resource already exists.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -878,6 +895,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.</p>",
             "members": [
                 {
                     "name": "Type",
@@ -906,6 +924,7 @@
         },
         "ServiceException": {
             "type": "structure",
+            "documentation": "<p>The AWS Lambda service encountered an internal error.</p>",
             "members": [
                 {
                     "name": "Type",

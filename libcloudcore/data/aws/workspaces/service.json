@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -120,6 +124,7 @@
         },
         "ComputeType": {
             "type": "structure",
+            "documentation": "<p>Contains information about the compute type of a WorkSpace bundle.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -130,6 +135,7 @@
         },
         "CreateWorkspacesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "Workspaces",
@@ -140,6 +146,7 @@
         },
         "CreateWorkspacesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the result of the <a>CreateWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -158,6 +165,7 @@
         },
         "DefaultWorkspaceCreationProperties": {
             "type": "structure",
+            "documentation": "<p>Contains default WorkSpace creation information.</p>",
             "members": [
                 {
                     "name": "EnableWorkDocs",
@@ -188,6 +196,7 @@
         },
         "DescribeWorkspaceBundlesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.</p>",
             "members": [
                 {
                     "name": "BundleIds",
@@ -208,6 +217,7 @@
         },
         "DescribeWorkspaceBundlesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DescribeWorkspaceBundles</a> operation.</p>",
             "members": [
                 {
                     "name": "Bundles",
@@ -223,6 +233,7 @@
         },
         "DescribeWorkspaceDirectoriesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.</p>",
             "members": [
                 {
                     "name": "DirectoryIds",
@@ -238,6 +249,7 @@
         },
         "DescribeWorkspaceDirectoriesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.</p>",
             "members": [
                 {
                     "name": "Directories",
@@ -253,6 +265,7 @@
         },
         "DescribeWorkspacesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "WorkspaceIds",
@@ -288,6 +301,7 @@
         },
         "DescribeWorkspacesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results for the <a>DescribeWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "Workspaces",
@@ -330,6 +344,7 @@
         },
         "FailedCreateWorkspaceRequest": {
             "type": "structure",
+            "documentation": "<p>Contains information about a WorkSpace that could not be created.</p>",
             "members": [
                 {
                     "name": "WorkspaceRequest",
@@ -366,6 +381,7 @@
         },
         "FailedWorkspaceChangeRequest": {
             "type": "structure",
+            "documentation": "<p>Contains information about a WorkSpace that could not be rebooted (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), or terminated (<a>TerminateWorkspaces</a>).</p>",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -386,6 +402,7 @@
         },
         "InvalidParameterValuesException": {
             "type": "structure",
+            "documentation": "<p>One or more parameter values are not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -408,6 +425,7 @@
         },
         "RebootRequest": {
             "type": "structure",
+            "documentation": "<p>Contains information used with the <a>RebootWorkspaces</a> operation to reboot a WorkSpace.</p>",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -422,6 +440,7 @@
         },
         "RebootWorkspacesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>RebootWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "RebootWorkspaceRequests",
@@ -432,6 +451,7 @@
         },
         "RebootWorkspacesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>RebootWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -442,6 +462,7 @@
         },
         "RebuildRequest": {
             "type": "structure",
+            "documentation": "<p>Contains information used with the <a>RebuildWorkspaces</a> operation to rebuild a WorkSpace.</p>",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -456,6 +477,7 @@
         },
         "RebuildWorkspacesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>RebuildWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "RebuildWorkspaceRequests",
@@ -466,6 +488,7 @@
         },
         "RebuildWorkspacesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>RebuildWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -479,6 +502,7 @@
         },
         "ResourceLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>Your resource limits have been exceeded.</p>",
             "members": [
                 {
                     "name": "message",
@@ -489,6 +513,7 @@
         },
         "ResourceUnavailableException": {
             "type": "structure",
+            "documentation": "<p>The specified resource is not available.</p>",
             "members": [
                 {
                     "name": "message",
@@ -514,6 +539,7 @@
         },
         "TerminateRequest": {
             "type": "structure",
+            "documentation": "<p>Contains information used with the <a>TerminateWorkspaces</a> operation to terminate a WorkSpace.</p>",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -528,6 +554,7 @@
         },
         "TerminateWorkspacesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>TerminateWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "TerminateWorkspaceRequests",
@@ -538,6 +565,7 @@
         },
         "TerminateWorkspacesResult": {
             "type": "structure",
+            "documentation": "<p>Contains the results of the <a>TerminateWorkspaces</a> operation.</p>",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -551,6 +579,7 @@
         },
         "UserStorage": {
             "type": "structure",
+            "documentation": "<p>Contains information about the user storage for a WorkSpace bundle.</p>",
             "members": [
                 {
                     "name": "Capacity",
@@ -561,6 +590,7 @@
         },
         "Workspace": {
             "type": "structure",
+            "documentation": "<p>Contains information about a WorkSpace.</p>",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -611,6 +641,7 @@
         },
         "WorkspaceBundle": {
             "type": "structure",
+            "documentation": "<p>Contains information about a WorkSpace bundle.</p>",
             "members": [
                 {
                     "name": "BundleId",
@@ -646,6 +677,7 @@
         },
         "WorkspaceDirectory": {
             "type": "structure",
+            "documentation": "<p>Contains information about an AWS Directory Service directory for use with Amazon WorkSpaces.</p>",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -731,6 +763,7 @@
         },
         "WorkspaceRequest": {
             "type": "structure",
+            "documentation": "<p>Contains information about a WorkSpace creation request.</p>",
             "members": [
                 {
                     "name": "DirectoryId",

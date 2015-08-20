@@ -49,7 +49,8 @@ class TestXmlSerializer(unittest.TestCase):
         </ListHostedZonesByNameResponse>""".strip()
 
         operation = self.model.get_operation("ListHostedZonesByName")
-        self.assertEqual(self.layer._parse_xml(operation, xml), {
+        shape = operation.output_shape
+        self.assertEqual(self.layer.deserialize(operation, shape, xml), {
             "HostedZones": [{
                 "Id": "/hostedzone/ZONE_ID",
                 "Name": "www.example.com",
@@ -67,19 +68,21 @@ class TestXmlSerializer(unittest.TestCase):
     def test_serialize(self):
         operation = self.model.get_operation("ListHostedZonesByName")
 
-        result = self.layer._serialize(
+        result = self.layer.serialize(
             operation,
             operation.output_shape,
-            HostedZones=[{
-                "Id": "/hostedzone/ZONE_ID",
-                "Name": "www.example.com",
-                "CallerReference": "CALLER_REFERENCE",
-                "Config": {
-                    "Comment": "COMMENT",
-                    "PrivateZone": True,
-                },
-                "ResourceRecordSetCount": 0,
-            }],
+            dict(
+                HostedZones=[{
+                    "Id": "/hostedzone/ZONE_ID",
+                    "Name": "www.example.com",
+                    "CallerReference": "CALLER_REFERENCE",
+                    "Config": {
+                        "Comment": "COMMENT",
+                        "PrivateZone": True,
+                    },
+                    "ResourceRecordSetCount": 0,
+                }],
+            ),
         )
 
         xml = """
@@ -112,12 +115,14 @@ class TestXmlToDictEdges(base.DriverTestCase):
 
     def test_serialize_complicated_structure(self):
         operation = self.model.get_operation("test_complicated_structure")
-        result = self.driver._serialize(
+        result = self.driver.serialize(
             operation,
             operation.output_shape,
-            text="TEXT",
-            attr="ATTR",
-            child="CHILD",
+            dict(
+                text="TEXT",
+                attr="ATTR",
+                child="CHILD",
+            ),
         )
         self.assertEqual(xmltodict.parse(result), {
             "TestComplicatedStructure": {

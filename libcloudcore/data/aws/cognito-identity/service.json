@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -190,6 +194,7 @@
         },
         "ConcurrentModificationException": {
             "type": "structure",
+            "documentation": "<p>Thrown if there are parallel requests to modify a resource.</p>",
             "members": [
                 {
                     "name": "message",
@@ -200,6 +205,7 @@
         },
         "CreateIdentityPoolInput": {
             "type": "structure",
+            "documentation": "<p>Input to the CreateIdentityPool action.</p>",
             "members": [
                 {
                     "name": "IdentityPoolName",
@@ -230,6 +236,7 @@
         },
         "Credentials": {
             "type": "structure",
+            "documentation": "<p>Credentials for the the provided identity ID.</p>",
             "members": [
                 {
                     "name": "AccessKeyId",
@@ -258,6 +265,7 @@
         },
         "DeleteIdentitiesInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>DeleteIdentities</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityIdsToDelete",
@@ -268,6 +276,7 @@
         },
         "DeleteIdentitiesResponse": {
             "type": "structure",
+            "documentation": "<p>Returned in response to a successful <code>DeleteIdentities</code> operation.</p>",
             "members": [
                 {
                     "name": "UnprocessedIdentityIds",
@@ -278,6 +287,7 @@
         },
         "DeleteIdentityPoolInput": {
             "type": "structure",
+            "documentation": "<p>Input to the DeleteIdentityPool action.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -288,6 +298,7 @@
         },
         "DescribeIdentityInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>DescribeIdentity</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -298,6 +309,7 @@
         },
         "DescribeIdentityPoolInput": {
             "type": "structure",
+            "documentation": "Input to the DescribeIdentityPool action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -311,6 +323,7 @@
         },
         "DeveloperUserAlreadyRegisteredException": {
             "type": "structure",
+            "documentation": "<p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>",
             "members": [
                 {
                     "name": "message",
@@ -331,6 +344,7 @@
         },
         "ExternalServiceException": {
             "type": "structure",
+            "documentation": "<p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>",
             "members": [
                 {
                     "name": "message",
@@ -341,6 +355,7 @@
         },
         "GetCredentialsForIdentityInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>GetCredentialsForIdentity</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -356,6 +371,7 @@
         },
         "GetCredentialsForIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -371,6 +387,7 @@
         },
         "GetIdInput": {
             "type": "structure",
+            "documentation": "Input to the GetId action.",
             "members": [
                 {
                     "name": "AccountId",
@@ -391,6 +408,7 @@
         },
         "GetIdResponse": {
             "type": "structure",
+            "documentation": "Returned in response to a GetId request.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -401,6 +419,7 @@
         },
         "GetIdentityPoolRolesInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>GetIdentityPoolRoles</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -411,6 +430,7 @@
         },
         "GetIdentityPoolRolesResponse": {
             "type": "structure",
+            "documentation": "<p>Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -426,6 +446,7 @@
         },
         "GetOpenIdTokenForDeveloperIdentityInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -451,6 +472,7 @@
         },
         "GetOpenIdTokenForDeveloperIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -466,6 +488,7 @@
         },
         "GetOpenIdTokenInput": {
             "type": "structure",
+            "documentation": "Input to the GetOpenIdToken action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -481,6 +504,7 @@
         },
         "GetOpenIdTokenResponse": {
             "type": "structure",
+            "documentation": "Returned in response to a successful GetOpenIdToken request.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -503,6 +527,7 @@
         },
         "IdentityDescription": {
             "type": "structure",
+            "documentation": "A description of the identity.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -535,6 +560,7 @@
         },
         "IdentityPool": {
             "type": "structure",
+            "documentation": "An object representing a Cognito identity pool.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -576,6 +602,7 @@
         },
         "IdentityPoolShortDescription": {
             "type": "structure",
+            "documentation": "A description of the identity pool.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -606,10 +633,13 @@
             "type": "string"
         },
         "IdentityProviders": {
-            "type": "map"
+            "type": "map",
+            "key": "IdentityProviderName",
+            "value": "IdentityProviderId"
         },
         "InternalErrorException": {
             "type": "structure",
+            "documentation": "Thrown when the service encounters an error during processing the request.",
             "members": [
                 {
                     "name": "message",
@@ -620,6 +650,7 @@
         },
         "InvalidIdentityPoolConfigurationException": {
             "type": "structure",
+            "documentation": "<p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>",
             "members": [
                 {
                     "name": "message",
@@ -630,6 +661,7 @@
         },
         "InvalidParameterException": {
             "type": "structure",
+            "documentation": "Thrown for missing or bad input parameter(s).",
             "members": [
                 {
                     "name": "message",
@@ -640,6 +672,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "Thrown when the total number of user pools has exceeded a preset limit.",
             "members": [
                 {
                     "name": "message",
@@ -650,6 +683,7 @@
         },
         "ListIdentitiesInput": {
             "type": "structure",
+            "documentation": "Input to the ListIdentities action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -675,6 +709,7 @@
         },
         "ListIdentitiesResponse": {
             "type": "structure",
+            "documentation": "The response to a ListIdentities request.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -695,6 +730,7 @@
         },
         "ListIdentityPoolsInput": {
             "type": "structure",
+            "documentation": "Input to the ListIdentityPools action.",
             "members": [
                 {
                     "name": "MaxResults",
@@ -710,6 +746,7 @@
         },
         "ListIdentityPoolsResponse": {
             "type": "structure",
+            "documentation": "The result of a successful ListIdentityPools action.",
             "members": [
                 {
                     "name": "IdentityPools",
@@ -728,10 +765,13 @@
             "of": "IdentityProviderName"
         },
         "LoginsMap": {
-            "type": "map"
+            "type": "map",
+            "key": "IdentityProviderName",
+            "value": "IdentityProviderToken"
         },
         "LookupDeveloperIdentityInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -762,6 +802,7 @@
         },
         "LookupDeveloperIdentityResponse": {
             "type": "structure",
+            "documentation": "<p>Returned in response to a successful <code>LookupDeveloperIdentity</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -782,6 +823,7 @@
         },
         "MergeDeveloperIdentitiesInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>MergeDeveloperIdentities</code> action.</p>",
             "members": [
                 {
                     "name": "SourceUserIdentifier",
@@ -807,6 +849,7 @@
         },
         "MergeDeveloperIdentitiesResponse": {
             "type": "structure",
+            "documentation": "<p>Returned in response to a successful <code>MergeDeveloperIdentities</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -817,6 +860,7 @@
         },
         "NotAuthorizedException": {
             "type": "structure",
+            "documentation": "Thrown when a user is not authorized to access the requested resource.",
             "members": [
                 {
                     "name": "message",
@@ -840,6 +884,7 @@
         },
         "ResourceConflictException": {
             "type": "structure",
+            "documentation": "Thrown when a user tries to use a login which is already linked to another account.",
             "members": [
                 {
                     "name": "message",
@@ -850,6 +895,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "Thrown when the requested resource (for example, a dataset or record) does not exist.",
             "members": [
                 {
                     "name": "message",
@@ -862,7 +908,9 @@
             "type": "string"
         },
         "RolesMap": {
-            "type": "map"
+            "type": "map",
+            "key": "RoleType",
+            "value": "ARNString"
         },
         "SecretKeyString": {
             "type": "string"
@@ -872,6 +920,7 @@
         },
         "SetIdentityPoolRolesInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>SetIdentityPoolRoles</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -893,6 +942,7 @@
         },
         "TooManyRequestsException": {
             "type": "structure",
+            "documentation": "Thrown when a request is throttled.",
             "members": [
                 {
                     "name": "message",
@@ -903,6 +953,7 @@
         },
         "UnlinkDeveloperIdentityInput": {
             "type": "structure",
+            "documentation": "<p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>",
             "members": [
                 {
                     "name": "IdentityId",
@@ -928,6 +979,7 @@
         },
         "UnlinkIdentityInput": {
             "type": "structure",
+            "documentation": "Input to the UnlinkIdentity action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -948,6 +1000,7 @@
         },
         "UnprocessedIdentityId": {
             "type": "structure",
+            "documentation": "<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>",
             "members": [
                 {
                     "name": "IdentityId",

@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -124,6 +128,7 @@
         },
         "BatchGetRepositoriesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a batch get repositories operation.</p>",
             "members": [
                 {
                     "name": "repositoryNames",
@@ -134,6 +139,7 @@
         },
         "BatchGetRepositoriesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a batch get repositories operation.</p>",
             "members": [
                 {
                     "name": "repositories",
@@ -149,10 +155,12 @@
         },
         "BranchDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The specified branch does not exist.</p>",
             "members": []
         },
         "BranchInfo": {
             "type": "structure",
+            "documentation": "<p>Returns information about a branch.</p>",
             "members": [
                 {
                     "name": "branchName",
@@ -171,6 +179,7 @@
         },
         "BranchNameExistsException": {
             "type": "structure",
+            "documentation": "<p>The specified branch name already exists.</p>",
             "members": []
         },
         "BranchNameList": {
@@ -179,6 +188,7 @@
         },
         "BranchNameRequiredException": {
             "type": "structure",
+            "documentation": "<p>A branch name is required but was not specified.</p>",
             "members": []
         },
         "CloneUrlHttp": {
@@ -189,6 +199,7 @@
         },
         "CommitDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>",
             "members": []
         },
         "CommitId": {
@@ -196,10 +207,12 @@
         },
         "CommitIdRequiredException": {
             "type": "structure",
+            "documentation": "<p>A commit ID was not specified.</p>",
             "members": []
         },
         "CreateBranchInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create branch operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -220,6 +233,7 @@
         },
         "CreateRepositoryInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create repository operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -235,6 +249,7 @@
         },
         "CreateRepositoryOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create repository operation.</p>",
             "members": [
                 {
                     "name": "repositoryMetadata",
@@ -248,6 +263,7 @@
         },
         "DeleteRepositoryInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a delete repository operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -258,6 +274,7 @@
         },
         "DeleteRepositoryOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a delete repository operation.</p>",
             "members": [
                 {
                     "name": "repositoryId",
@@ -268,26 +285,32 @@
         },
         "EncryptionIntegrityChecksFailedException": {
             "type": "structure",
+            "documentation": "<p>An encryption integrity check failed.</p>",
             "members": []
         },
         "EncryptionKeyAccessDeniedException": {
             "type": "structure",
+            "documentation": "<p>An encryption key could not be accessed.</p>",
             "members": []
         },
         "EncryptionKeyDisabledException": {
             "type": "structure",
+            "documentation": "<p>The encryption key is disabled.</p>",
             "members": []
         },
         "EncryptionKeyNotFoundException": {
             "type": "structure",
+            "documentation": "<p>No encryption key was found.</p>",
             "members": []
         },
         "EncryptionKeyUnavailableException": {
             "type": "structure",
+            "documentation": "<p>The encryption key is not available.</p>",
             "members": []
         },
         "GetBranchInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get branch operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -302,6 +325,7 @@
         },
         "GetBranchOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get branch operation.</p>",
             "members": [
                 {
                     "name": "branch",
@@ -312,6 +336,7 @@
         },
         "GetRepositoryInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get repository operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -322,6 +347,7 @@
         },
         "GetRepositoryOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get repository operation.</p>",
             "members": [
                 {
                     "name": "repositoryMetadata",
@@ -332,30 +358,37 @@
         },
         "InvalidBranchNameException": {
             "type": "structure",
+            "documentation": "<p>The specified branch name is not valid.</p>",
             "members": []
         },
         "InvalidCommitIdException": {
             "type": "structure",
+            "documentation": "<p>The specified commit ID is not valid.</p>",
             "members": []
         },
         "InvalidContinuationTokenException": {
             "type": "structure",
+            "documentation": "<p>The specified continuation token is not valid.</p>",
             "members": []
         },
         "InvalidOrderException": {
             "type": "structure",
+            "documentation": "<p>The specified sort order is not valid.</p>",
             "members": []
         },
         "InvalidRepositoryDescriptionException": {
             "type": "structure",
+            "documentation": "<p>The specified repository description is not valid.</p>",
             "members": []
         },
         "InvalidRepositoryNameException": {
             "type": "structure",
+            "documentation": "<p>At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</note>",
             "members": []
         },
         "InvalidSortByException": {
             "type": "structure",
+            "documentation": "<p>The specified sort by value is not valid.</p>",
             "members": []
         },
         "LastModifiedDate": {
@@ -363,6 +396,7 @@
         },
         "ListBranchesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list branches operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -378,6 +412,7 @@
         },
         "ListBranchesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list branches operation.</p>",
             "members": [
                 {
                     "name": "branches",
@@ -393,6 +428,7 @@
         },
         "ListRepositoriesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list repositories operation.</p>",
             "members": [
                 {
                     "name": "nextToken",
@@ -413,6 +449,7 @@
         },
         "ListRepositoriesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list repositories operation.</p>",
             "members": [
                 {
                     "name": "repositories",
@@ -428,6 +465,7 @@
         },
         "MaximumRepositoryNamesExceededException": {
             "type": "structure",
+            "documentation": "<p>The maximum number of allowed repository names was exceeded. Currently, this number is 25.</p>",
             "members": []
         },
         "NextToken": {
@@ -441,6 +479,7 @@
         },
         "RepositoryDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The specified repository does not exist.</p>",
             "members": []
         },
         "RepositoryId": {
@@ -448,10 +487,12 @@
         },
         "RepositoryLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>A repository resource limit was exceeded.</p>",
             "members": []
         },
         "RepositoryMetadata": {
             "type": "structure",
+            "documentation": "<p>Information about a repository.</p>",
             "members": [
                 {
                     "name": "accountId",
@@ -510,14 +551,17 @@
             "of": "RepositoryMetadata"
         },
         "RepositoryName": {
-            "type": "string"
+            "type": "string",
+            "documentation": "Repository name is restricted to alphanumeric characters (a-z, A-Z, 0-9), \".\", \"_\", and \"-\". Additionally, the suffix \".git\" is prohibited in a repository name."
         },
         "RepositoryNameExistsException": {
             "type": "structure",
+            "documentation": "<p>The specified repository name already exists.</p>",
             "members": []
         },
         "RepositoryNameIdPair": {
             "type": "structure",
+            "documentation": "<p>Information about a repository name and ID.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -540,10 +584,12 @@
         },
         "RepositoryNameRequiredException": {
             "type": "structure",
+            "documentation": "<p>A repository name is required but was not specified.</p>",
             "members": []
         },
         "RepositoryNamesRequiredException": {
             "type": "structure",
+            "documentation": "<p>A repository names object is required but was not specified.</p>",
             "members": []
         },
         "RepositoryNotFoundList": {
@@ -555,6 +601,7 @@
         },
         "UpdateDefaultBranchInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an update default branch operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -570,6 +617,7 @@
         },
         "UpdateRepositoryDescriptionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an update repository description operation.</p>",
             "members": [
                 {
                     "name": "repositoryName",
@@ -585,6 +633,7 @@
         },
         "UpdateRepositoryNameInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an update repository description operation.</p>",
             "members": [
                 {
                     "name": "oldName",

@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -196,6 +200,7 @@
     "shapes": {
         "ActivatePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for ActivatePipeline.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -216,10 +221,12 @@
         },
         "ActivatePipelineOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of ActivatePipeline.</p>",
             "members": []
         },
         "AddTagsInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for AddTags.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -235,10 +242,12 @@
         },
         "AddTagsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of AddTags.</p>",
             "members": []
         },
         "CreatePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for CreatePipeline.</p>",
             "members": [
                 {
                     "name": "name",
@@ -264,6 +273,7 @@
         },
         "CreatePipelineOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of CreatePipeline.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -274,6 +284,7 @@
         },
         "DeactivatePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DeactivatePipeline.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -289,10 +300,12 @@
         },
         "DeactivatePipelineOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DeactivatePipeline.</p>",
             "members": []
         },
         "DeletePipelineInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DeletePipeline.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -303,6 +316,7 @@
         },
         "DescribeObjectsInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribeObjects.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -328,6 +342,7 @@
         },
         "DescribeObjectsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribeObjects.</p>",
             "members": [
                 {
                     "name": "pipelineObjects",
@@ -348,6 +363,7 @@
         },
         "DescribePipelinesInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for DescribePipelines.</p>",
             "members": [
                 {
                     "name": "pipelineIds",
@@ -358,6 +374,7 @@
         },
         "DescribePipelinesOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of DescribePipelines.</p>",
             "members": [
                 {
                     "name": "pipelineDescriptionList",
@@ -368,6 +385,7 @@
         },
         "EvaluateExpressionInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for EvaluateExpression.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -388,6 +406,7 @@
         },
         "EvaluateExpressionOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of EvaluateExpression.</p>",
             "members": [
                 {
                     "name": "evaluatedExpression",
@@ -398,6 +417,7 @@
         },
         "Field": {
             "type": "structure",
+            "documentation": "<p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>",
             "members": [
                 {
                     "name": "key",
@@ -418,6 +438,7 @@
         },
         "GetPipelineDefinitionInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for GetPipelineDefinition.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -433,6 +454,7 @@
         },
         "GetPipelineDefinitionOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of GetPipelineDefinition.</p>",
             "members": [
                 {
                     "name": "pipelineObjects",
@@ -453,6 +475,7 @@
         },
         "InstanceIdentity": {
             "type": "structure",
+            "documentation": "<p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p>",
             "members": [
                 {
                     "name": "document",
@@ -468,6 +491,7 @@
         },
         "InternalServiceError": {
             "type": "structure",
+            "documentation": "<p>An internal service error occurred.</p>",
             "members": [
                 {
                     "name": "message",
@@ -478,6 +502,7 @@
         },
         "InvalidRequestException": {
             "type": "structure",
+            "documentation": "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>",
             "members": [
                 {
                     "name": "message",
@@ -488,6 +513,7 @@
         },
         "ListPipelinesInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for ListPipelines.</p>",
             "members": [
                 {
                     "name": "marker",
@@ -498,6 +524,7 @@
         },
         "ListPipelinesOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of ListPipelines.</p>",
             "members": [
                 {
                     "name": "pipelineIdList",
@@ -518,6 +545,7 @@
         },
         "Operator": {
             "type": "structure",
+            "documentation": "<p>Contains a logical operation for comparing the value of a field with a specified value.</p>",
             "members": [
                 {
                     "name": "type",
@@ -536,6 +564,7 @@
         },
         "ParameterAttribute": {
             "type": "structure",
+            "documentation": "<p>The attributes allowed or specified with a parameter object.</p>",
             "members": [
                 {
                     "name": "key",
@@ -555,6 +584,7 @@
         },
         "ParameterObject": {
             "type": "structure",
+            "documentation": "<p>Contains information about a parameter object.</p>",
             "members": [
                 {
                     "name": "id",
@@ -574,6 +604,7 @@
         },
         "ParameterValue": {
             "type": "structure",
+            "documentation": "<p>A value or list of parameter values. </p>",
             "members": [
                 {
                     "name": "id",
@@ -593,6 +624,7 @@
         },
         "PipelineDeletedException": {
             "type": "structure",
+            "documentation": "<p>The specified pipeline has been deleted.</p>",
             "members": [
                 {
                     "name": "message",
@@ -603,6 +635,7 @@
         },
         "PipelineDescription": {
             "type": "structure",
+            "documentation": "<p>Contains pipeline metadata.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -637,6 +670,7 @@
         },
         "PipelineIdName": {
             "type": "structure",
+            "documentation": "<p>Contains the name and identifier of a pipeline.</p>",
             "members": [
                 {
                     "name": "id",
@@ -652,6 +686,7 @@
         },
         "PipelineNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>",
             "members": [
                 {
                     "name": "message",
@@ -662,6 +697,7 @@
         },
         "PipelineObject": {
             "type": "structure",
+            "documentation": "<p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>",
             "members": [
                 {
                     "name": "id",
@@ -685,10 +721,13 @@
             "of": "PipelineObject"
         },
         "PipelineObjectMap": {
-            "type": "map"
+            "type": "map",
+            "key": "id",
+            "value": "PipelineObject"
         },
         "PollForTaskInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for PollForTask.</p>",
             "members": [
                 {
                     "name": "workerGroup",
@@ -709,6 +748,7 @@
         },
         "PollForTaskOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of PollForTask.</p>",
             "members": [
                 {
                     "name": "taskObject",
@@ -719,6 +759,7 @@
         },
         "PutPipelineDefinitionInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for PutPipelineDefinition.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -744,6 +785,7 @@
         },
         "PutPipelineDefinitionOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of PutPipelineDefinition.</p>",
             "members": [
                 {
                     "name": "validationErrors",
@@ -764,6 +806,7 @@
         },
         "Query": {
             "type": "structure",
+            "documentation": "<p>Defines the query to run against an object.</p>",
             "members": [
                 {
                     "name": "selectors",
@@ -774,6 +817,7 @@
         },
         "QueryObjectsInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for QueryObjects.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -804,6 +848,7 @@
         },
         "QueryObjectsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of QueryObjects.</p>",
             "members": [
                 {
                     "name": "ids",
@@ -824,6 +869,7 @@
         },
         "RemoveTagsInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for RemoveTags.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -839,10 +885,12 @@
         },
         "RemoveTagsOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of RemoveTags.</p>",
             "members": []
         },
         "ReportTaskProgressInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for ReportTaskProgress.</p>",
             "members": [
                 {
                     "name": "taskId",
@@ -858,6 +906,7 @@
         },
         "ReportTaskProgressOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of ReportTaskProgress.</p>",
             "members": [
                 {
                     "name": "canceled",
@@ -868,6 +917,7 @@
         },
         "ReportTaskRunnerHeartbeatInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for ReportTaskRunnerHeartbeat.</p>",
             "members": [
                 {
                     "name": "taskrunnerId",
@@ -888,6 +938,7 @@
         },
         "ReportTaskRunnerHeartbeatOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of ReportTaskRunnerHeartbeat.</p>",
             "members": [
                 {
                     "name": "terminate",
@@ -898,6 +949,7 @@
         },
         "Selector": {
             "type": "structure",
+            "documentation": "<p>A comparision that is used to determine whether a query should return this object.</p>",
             "members": [
                 {
                     "name": "fieldName",
@@ -912,10 +964,12 @@
         },
         "SelectorList": {
             "type": "list",
+            "documentation": "<p>The list of Selectors that define queries on individual fields.</p>",
             "of": "Selector"
         },
         "SetStatusInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for SetStatus.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -936,6 +990,7 @@
         },
         "SetTaskStatusInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for SetTaskStatus.</p>",
             "members": [
                 {
                     "name": "taskId",
@@ -966,10 +1021,12 @@
         },
         "SetTaskStatusOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of SetTaskStatus.</p>",
             "members": []
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>",
             "members": [
                 {
                     "name": "key",
@@ -985,6 +1042,7 @@
         },
         "TaskNotFoundException": {
             "type": "structure",
+            "documentation": "<p>The specified task was not found. </p>",
             "members": [
                 {
                     "name": "message",
@@ -995,6 +1053,7 @@
         },
         "TaskObject": {
             "type": "structure",
+            "documentation": "<p>Contains information about a pipeline task that is assigned to a task runner.</p>",
             "members": [
                 {
                     "name": "taskId",
@@ -1023,6 +1082,7 @@
         },
         "ValidatePipelineDefinitionInput": {
             "type": "structure",
+            "documentation": "<p>Contains the parameters for ValidatePipelineDefinition.</p>",
             "members": [
                 {
                     "name": "pipelineId",
@@ -1048,6 +1108,7 @@
         },
         "ValidatePipelineDefinitionOutput": {
             "type": "structure",
+            "documentation": "<p>Contains the output of ValidatePipelineDefinition.</p>",
             "members": [
                 {
                     "name": "validationErrors",
@@ -1068,6 +1129,7 @@
         },
         "ValidationError": {
             "type": "structure",
+            "documentation": "<p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>",
             "members": [
                 {
                     "name": "id",
@@ -1087,6 +1149,7 @@
         },
         "ValidationWarning": {
             "type": "structure",
+            "documentation": "<p>Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.</p>",
             "members": [
                 {
                     "name": "id",

@@ -17,23 +17,42 @@ from __future__ import absolute_import
 import collections
 
 import xmltodict
+import dateutil.parser
 
 from .. import models, layer
+from ..utils import force_str
 
 
 class Parser(models.Visitor):
+
+    def visit_string(self, shape, value):
+        return value or ''
+
+    def visit_blob(self, shape, value):
+        return value or ''
 
     def visit_integer(self, shape, value):
         return int(value)
 
     visit_long = visit_integer
 
+    def visit_float(self, shape, value):
+        return float(value)
+
+    def visit_double(self, shape, value):
+        return float(value)
+
     def visit_boolean(self, shape, value):
         if value == "true":
             return True
         return False
 
+    def visit_timestamp(self, shape, value):
+        return dateutil.parser.parse(value)
+
     def visit_list(self, shape, value):
+        if not value:
+            return []
         subshape = shape.of
         result = []
         if not isinstance(value, list):
@@ -43,12 +62,23 @@ class Parser(models.Visitor):
         return result
 
     def visit_map(self, shape, value):
-        # key_shape = shape.key_shape
-        # value_shape = shape.value_shape
+        # FIXME: Make Key/Value configurable
+        if not value:
+            return {}
+        if not isinstance(value, list):
+            value = [value]
         out = {}
+        key_shape = shape.key_shape
+        value_shape = shape.value_shape
+        for child in value:
+            key = self.visit(key_shape, child["Key"])
+            value = self.visit(value_shape, child["Value"])
+            out[key] = value
         return out
 
     def visit_structure(self, shape, value):
+        if not value:
+            return {}
         out = {}
         for member in shape.iter_members():
             if member.name in value:
@@ -70,35 +100,57 @@ class Serializer(models.Visitor):
         return visit_fn(shape, name, value)
 
     def visit_string(self, shape, name, value):
-        return value
+        return value or None
+
+    def visit_blob(self, shape, name, value):
+        return value or None
+
+    def visit_timestamp(self, shape, name, value):
+        return value.isoformat()
 
     def visit_integer(self, shape, name, value):
         return value
 
     visit_long = visit_integer
 
+    def visit_float(self, shape, name, value):
+        # On python 2.7 we need to take care to repr() floats because
+        # >>> str(float("-9999.999999999998"))
+        # '-10000.0'
+        return repr(value)
+
+    visit_double = visit_float
+
     def visit_boolean(self, shape, name, value):
         return "true" if value else "false"
 
     def visit_list(self, shape, name, value):
+        if not value:
+            return None
         subshape = shape.of
         nodes = []
         for subvalue in value:
             nodes.append({
-                subshape.wire_name: self.visit(
+                subshape.name: self.visit(
                     subshape,
                     subshape.wire_name,
                     subvalue
-                ),
+                )
             })
         return nodes
 
     def visit_map(self, shape, name, value):
+        # FIXME: Make Key/Value configurable
         key_shape = shape.key_shape
         value_shape = shape.value_shape
-        nodes = {}
+        if not value:
+            return None
+        nodes = []
         for k, v in value.items():
-            nodes[self.visit(key_shape, k)] = self.visit(value_shape, v)
+            nodes.append({
+                "Key": self.visit(key_shape, key_shape.name, k),
+                "Value": self.visit(value_shape, value_shape.name, v),
+            })
         return nodes
 
     def visit_structure(self, shape, name, value):
@@ -121,7 +173,7 @@ class XmlSerializer(layer.Layer):
             namespaces[uri] = ns if ns else None
         return namespaces
 
-    def _serialize(self, operation, shape, **params):
+    def serialize(self, operation, shape, params):
         body = Serializer().visit(
             shape,
             shape.name,
@@ -134,17 +186,26 @@ class XmlSerializer(layer.Layer):
             else:
                 body["@xmlns"] = uri
 
-        return xmltodict.unparse(
-            {shape.name: body},
+        return force_str(xmltodict.unparse(
+            {shape.wire_name: body},
             pretty=True,
+        ))
+
+    def deserialize(self, operation, shape, body):
+        payload = xmltodict.parse(
+            body,
+            strip_whitespace=False,
+            process_namespaces=True,
+            namespaces=self._namespaces(operation),
         )
+        return Parser().visit(shape, payload[shape.name])
 
     def before_call(self, request, operation, **params):
         request.headers['Content-Type'] = 'text/xml'
-        request.body = self._serialize(
+        request.body = self.serialize(
             operation,
             operation.input_shape,
-            **params
+            params
         )
 
         return super(XmlSerializer, self).before_call(
@@ -153,17 +214,9 @@ class XmlSerializer(layer.Layer):
             **params
         )
 
-    def _parse_xml(self, operation, body):
-        payload = xmltodict.parse(
-            body,
-            process_namespaces=True,
-            namespaces=self._namespaces(operation),
-        )
-
-        return Parser().visit(
-            operation.output_shape,
-            payload[operation.output_shape.name],
-        )
-
     def after_call(self, operation, request, response):
-        return self._parse_xml(response.body)
+        return self.deserialize(
+            operation,
+            operation.output_shape,
+            response.body
+        )

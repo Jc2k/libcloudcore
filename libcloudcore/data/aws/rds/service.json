@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://rds.amazonaws.com/doc/2014-10-31/"
         }
@@ -710,6 +713,7 @@
     "shapes": {
         "AccountAttributesMessage": {
             "type": "structure",
+            "documentation": "<p>Data returned by the <b>DescribeAccountAttributes</b> action.</p>",
             "members": [
                 {
                     "name": "AccountQuotas",
@@ -720,6 +724,7 @@
         },
         "AccountQuota": {
             "type": "structure",
+            "documentation": "<p>Describes a quota for an AWS account, for example, the number of DB instances allowed.</p>",
             "members": [
                 {
                     "name": "AccountQuotaName",
@@ -744,6 +749,7 @@
         },
         "AddSourceIdentifierToSubscriptionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -759,6 +765,7 @@
         },
         "AddTagsToResourceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ResourceName",
@@ -777,6 +784,7 @@
         },
         "ApplyPendingMaintenanceActionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ResourceIdentifier",
@@ -797,18 +805,22 @@
         },
         "AuthorizationAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> The specified CIDRIP or EC2 security group is already authorized for the specified DB security group. </p>",
             "members": []
         },
         "AuthorizationNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> Specified CIDRIP or EC2 security group is not authorized for the specified DB security group. </p> <p>RDS may not also be authorized via IAM to perform necessary actions on your behalf.</p>",
             "members": []
         },
         "AuthorizationQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> DB security group authorization quota has been reached. </p>",
             "members": []
         },
         "AuthorizeDBSecurityGroupIngressMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -839,6 +851,7 @@
         },
         "AvailabilityZone": {
             "type": "structure",
+            "documentation": "<p> Contains Availability Zone information. </p> <p> This data type is used as an element in the following data type: <ul><li><a>OrderableDBInstanceOption</a></li></ul></p>",
             "members": [
                 {
                     "name": "Name",
@@ -863,6 +876,7 @@
         },
         "Certificate": {
             "type": "structure",
+            "documentation": "<p>A CA certificate for an AWS account. </p>",
             "members": [
                 {
                     "name": "CertificateIdentifier",
@@ -897,6 +911,7 @@
         },
         "CertificateMessage": {
             "type": "structure",
+            "documentation": "<p>Data returned by the <b>DescribeCertificates</b> action.</p>",
             "members": [
                 {
                     "name": "Certificates",
@@ -912,10 +927,12 @@
         },
         "CertificateNotFoundFault": {
             "type": "structure",
+            "documentation": "<p><i>CertificateIdentifier</i> does not refer to an existing certificate. </p>",
             "members": []
         },
         "CharacterSet": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. </p>",
             "members": [
                 {
                     "name": "CharacterSetName",
@@ -931,6 +948,7 @@
         },
         "CopyDBClusterSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceDBClusterSnapshotIdentifier",
@@ -950,6 +968,7 @@
         },
         "CopyDBParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceDBParameterGroupIdentifier",
@@ -974,6 +993,7 @@
         },
         "CopyDBSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceDBSnapshotIdentifier",
@@ -998,6 +1018,7 @@
         },
         "CopyOptionGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceOptionGroupIdentifier",
@@ -1022,6 +1043,7 @@
         },
         "CreateDBClusterMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "AvailabilityZones",
@@ -1111,6 +1133,7 @@
         },
         "CreateDBClusterParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -1135,6 +1158,7 @@
         },
         "CreateDBClusterSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterSnapshotIdentifier",
@@ -1155,6 +1179,7 @@
         },
         "CreateDBInstanceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBName",
@@ -1393,6 +1418,7 @@
         },
         "CreateDBParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -1417,6 +1443,7 @@
         },
         "CreateDBSecurityGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -1436,6 +1463,7 @@
         },
         "CreateDBSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSnapshotIdentifier",
@@ -1455,6 +1483,7 @@
         },
         "CreateDBSubnetGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -1479,6 +1508,7 @@
         },
         "CreateEventSubscriptionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -1518,6 +1548,7 @@
         },
         "CreateOptionGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -1547,6 +1578,7 @@
         },
         "DBCluster": {
             "type": "structure",
+            "documentation": "<p>Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBCluster</a> </li> <li> <a>DeleteDBCluster</a> </li> <li> <a>FailoverDBCluster</a> </li> <li> <a>ModifyDBCluster</a> </li> <li> <a>RestoreDBClusterFromSnapshot</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>",
             "members": [
                 {
                     "name": "AllocatedStorage",
@@ -1662,6 +1694,7 @@
         },
         "DBClusterAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p>User already has a DB cluster with the given identifier. </p>",
             "members": []
         },
         "DBClusterList": {
@@ -1670,6 +1703,7 @@
         },
         "DBClusterMember": {
             "type": "structure",
+            "documentation": "<p>Contains information about an instance that is part of a DB cluster.</p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -1694,6 +1728,7 @@
         },
         "DBClusterMessage": {
             "type": "structure",
+            "documentation": "<p>Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.</p>",
             "members": [
                 {
                     "name": "Marker",
@@ -1709,6 +1744,7 @@
         },
         "DBClusterNotFoundFault": {
             "type": "structure",
+            "documentation": "<p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster. </p>",
             "members": []
         },
         "DBClusterOptionGroupMemberships": {
@@ -1717,6 +1753,7 @@
         },
         "DBClusterOptionGroupStatus": {
             "type": "structure",
+            "documentation": "<p>Contains status information for a DB cluster option group.</p>",
             "members": [
                 {
                     "name": "DBClusterOptionGroupName",
@@ -1732,6 +1769,7 @@
         },
         "DBClusterParameterGroup": {
             "type": "structure",
+            "documentation": "<p>Contains the result of a successful invocation of the <a>CreateDBClusterParameterGroup</a> action. </p> <p>This data type is used as a request parameter in the <a>DeleteDBClusterParameterGroup</a> action, and as a response element in the <a>DescribeDBClusterParameterGroups</a> action. </p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -1752,6 +1790,7 @@
         },
         "DBClusterParameterGroupDetails": {
             "type": "structure",
+            "documentation": "<p>Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.</p>",
             "members": [
                 {
                     "name": "Parameters",
@@ -1771,6 +1810,7 @@
         },
         "DBClusterParameterGroupNameMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -1781,10 +1821,12 @@
         },
         "DBClusterParameterGroupNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group. </p>",
             "members": []
         },
         "DBClusterParameterGroupsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "Marker",
@@ -1800,10 +1842,12 @@
         },
         "DBClusterQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota. </p>",
             "members": []
         },
         "DBClusterSnapshot": {
             "type": "structure",
+            "documentation": "<p>Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBClusterSnapshot</a> </li> <li> <a>DeleteDBClusterSnapshot</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>",
             "members": [
                 {
                     "name": "AvailabilityZones",
@@ -1884,6 +1928,7 @@
         },
         "DBClusterSnapshotAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p>User already has a DB cluster snapshot with the given identifier. </p>",
             "members": []
         },
         "DBClusterSnapshotList": {
@@ -1892,6 +1937,7 @@
         },
         "DBClusterSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p> Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -1907,10 +1953,12 @@
         },
         "DBClusterSnapshotNotFoundFault": {
             "type": "structure",
+            "documentation": "<p><i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot. </p>",
             "members": []
         },
         "DBEngineVersion": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. </p>",
             "members": [
                 {
                     "name": "Engine",
@@ -1955,6 +2003,7 @@
         },
         "DBEngineVersionMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -1970,6 +2019,7 @@
         },
         "DBInstance": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -2180,6 +2230,7 @@
         },
         "DBInstanceAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> User already has a DB instance with the given identifier. </p>",
             "members": []
         },
         "DBInstanceList": {
@@ -2188,6 +2239,7 @@
         },
         "DBInstanceMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBInstances</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -2203,10 +2255,12 @@
         },
         "DBInstanceNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance. </p>",
             "members": []
         },
         "DBInstanceStatusInfo": {
             "type": "structure",
+            "documentation": "<p>Provides a list of status information for a DB instance.</p>",
             "members": [
                 {
                     "name": "StatusType",
@@ -2236,10 +2290,12 @@
         },
         "DBLogFileNotFoundFault": {
             "type": "structure",
+            "documentation": "<p><i>LogFileName</i> does not refer to an existing DB log file.</p>",
             "members": []
         },
         "DBParameterGroup": {
             "type": "structure",
+            "documentation": "<p>Contains the result of a successful invocation of the <a>CreateDBParameterGroup</a> action. </p> <p>This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a> action, and as a response element in the <a>DescribeDBParameterGroups</a> action. </p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2260,10 +2316,12 @@
         },
         "DBParameterGroupAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> A DB parameter group with the same name exists. </p>",
             "members": []
         },
         "DBParameterGroupDetails": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action. </p>",
             "members": [
                 {
                     "name": "Parameters",
@@ -2283,6 +2341,7 @@
         },
         "DBParameterGroupNameMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action. </p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2293,14 +2352,17 @@
         },
         "DBParameterGroupNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group. </p>",
             "members": []
         },
         "DBParameterGroupQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed number of DB parameter groups. </p>",
             "members": []
         },
         "DBParameterGroupStatus": {
             "type": "structure",
+            "documentation": "<p> The status of the DB parameter group. </p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>CreateDBInstanceReadReplica</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a> </li> </ul>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2320,6 +2382,7 @@
         },
         "DBParameterGroupsMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -2335,6 +2398,7 @@
         },
         "DBSecurityGroup": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>DescribeDBSecurityGroups</a> </li> <li> <a>AuthorizeDBSecurityGroupIngress</a> </li> <li> <a>CreateDBSecurityGroup</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.</p>",
             "members": [
                 {
                     "name": "OwnerId",
@@ -2370,10 +2434,12 @@
         },
         "DBSecurityGroupAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> A DB security group with the name specified in <i>DBSecurityGroupName</i> already exists. </p>",
             "members": []
         },
         "DBSecurityGroupMembership": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the following actions: </p> <ul> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a> </li> <li> <a>RestoreDBInstanceToPointInTime</a> </li> </ul>",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -2393,6 +2459,7 @@
         },
         "DBSecurityGroupMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -2412,14 +2479,17 @@
         },
         "DBSecurityGroupNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group. </p>",
             "members": []
         },
         "DBSecurityGroupNotSupportedFault": {
             "type": "structure",
+            "documentation": "<p> A DB security group is not allowed for this action. </p>",
             "members": []
         },
         "DBSecurityGroupQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed number of DB security groups. </p>",
             "members": []
         },
         "DBSecurityGroups": {
@@ -2428,6 +2498,7 @@
         },
         "DBSnapshot": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBSnapshot</a> </li> <li> <a>DeleteDBSnapshot</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.</p>",
             "members": [
                 {
                     "name": "DBSnapshotIdentifier",
@@ -2548,6 +2619,7 @@
         },
         "DBSnapshotAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBSnapshotIdentifier</i> is already used by an existing snapshot. </p>",
             "members": []
         },
         "DBSnapshotList": {
@@ -2556,6 +2628,7 @@
         },
         "DBSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBSnapshots</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -2571,10 +2644,12 @@
         },
         "DBSnapshotNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot. </p>",
             "members": []
         },
         "DBSubnetGroup": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBSubnetGroup</a> </li> <li> <a>ModifyDBSubnetGroup</a> </li> <li> <a>DescribeDBSubnetGroups</a> </li> <li> <a>DeleteDBSubnetGroup</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -2605,14 +2680,17 @@
         },
         "DBSubnetGroupAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group. </p>",
             "members": []
         },
         "DBSubnetGroupDoesNotCoverEnoughAZs": {
             "type": "structure",
+            "documentation": "<p> Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone. </p>",
             "members": []
         },
         "DBSubnetGroupMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -2628,14 +2706,17 @@
         },
         "DBSubnetGroupNotAllowedFault": {
             "type": "structure",
+            "documentation": "<p> Indicates that the DBSubnetGroup should not be specified while creating read replicas that lie in the same region as the source instance. </p>",
             "members": []
         },
         "DBSubnetGroupNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group. </p>",
             "members": []
         },
         "DBSubnetGroupQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed number of DB subnet groups. </p>",
             "members": []
         },
         "DBSubnetGroups": {
@@ -2644,14 +2725,17 @@
         },
         "DBSubnetQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed number of subnets in a DB subnet groups. </p>",
             "members": []
         },
         "DBUpgradeDependencyFailureFault": {
             "type": "structure",
+            "documentation": "<p> The DB upgrade failed because a resource the DB depends on could not be modified. </p>",
             "members": []
         },
         "DeleteDBClusterMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -2672,6 +2756,7 @@
         },
         "DeleteDBClusterParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -2682,6 +2767,7 @@
         },
         "DeleteDBClusterSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterSnapshotIdentifier",
@@ -2692,6 +2778,7 @@
         },
         "DeleteDBInstanceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -2712,6 +2799,7 @@
         },
         "DeleteDBParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2722,6 +2810,7 @@
         },
         "DeleteDBSecurityGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -2732,6 +2821,7 @@
         },
         "DeleteDBSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSnapshotIdentifier",
@@ -2742,6 +2832,7 @@
         },
         "DeleteDBSubnetGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -2752,6 +2843,7 @@
         },
         "DeleteEventSubscriptionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -2762,6 +2854,7 @@
         },
         "DeleteOptionGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -2772,10 +2865,12 @@
         },
         "DescribeAccountAttributesMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": []
         },
         "DescribeCertificatesMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "CertificateIdentifier",
@@ -2801,6 +2896,7 @@
         },
         "DescribeDBClusterParameterGroupsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -2826,6 +2922,7 @@
         },
         "DescribeDBClusterParametersMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -2856,6 +2953,7 @@
         },
         "DescribeDBClusterSnapshotsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -2891,6 +2989,7 @@
         },
         "DescribeDBClustersMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -2961,6 +3060,7 @@
         },
         "DescribeDBInstancesMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -2986,6 +3086,7 @@
         },
         "DescribeDBLogFilesDetails": {
             "type": "structure",
+            "documentation": "<p>This data type is used as a response element to <a>DescribeDBLogFiles</a>.</p>",
             "members": [
                 {
                     "name": "LogFileName",
@@ -3010,6 +3111,7 @@
         },
         "DescribeDBLogFilesMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3050,6 +3152,7 @@
         },
         "DescribeDBLogFilesResponse": {
             "type": "structure",
+            "documentation": "<p> The response from a call to <a>DescribeDBLogFiles</a>. </p>",
             "members": [
                 {
                     "name": "DescribeDBLogFiles",
@@ -3065,6 +3168,7 @@
         },
         "DescribeDBParameterGroupsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -3120,6 +3224,7 @@
         },
         "DescribeDBSecurityGroupsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -3145,6 +3250,7 @@
         },
         "DescribeDBSnapshotsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3180,6 +3286,7 @@
         },
         "DescribeDBSubnetGroupsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -3205,6 +3312,7 @@
         },
         "DescribeEngineDefaultClusterParametersMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupFamily",
@@ -3230,6 +3338,7 @@
         },
         "DescribeEngineDefaultParametersMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupFamily",
@@ -3255,6 +3364,7 @@
         },
         "DescribeEventCategoriesMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceType",
@@ -3270,6 +3380,7 @@
         },
         "DescribeEventSubscriptionsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -3295,6 +3406,7 @@
         },
         "DescribeEventsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceIdentifier",
@@ -3345,6 +3457,7 @@
         },
         "DescribeOptionGroupOptionsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "EngineName",
@@ -3375,6 +3488,7 @@
         },
         "DescribeOptionGroupsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -3410,6 +3524,7 @@
         },
         "DescribeOrderableDBInstanceOptionsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "Engine",
@@ -3455,6 +3570,7 @@
         },
         "DescribePendingMaintenanceActionsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ResourceIdentifier",
@@ -3480,6 +3596,7 @@
         },
         "DescribeReservedDBInstancesMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ReservedDBInstanceId",
@@ -3535,6 +3652,7 @@
         },
         "DescribeReservedDBInstancesOfferingsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ReservedDBInstancesOfferingId",
@@ -3585,6 +3703,7 @@
         },
         "DomainMembership": {
             "type": "structure",
+            "documentation": "<p> An Active Directory Domain membership record associated with the DB instance. </p>",
             "members": [
                 {
                     "name": "Domain",
@@ -3605,10 +3724,12 @@
         },
         "DomainMembershipList": {
             "type": "list",
+            "documentation": "<p> List of Active Directory Domain membership records associated with a DB instance. </p>",
             "of": "DomainMembership"
         },
         "DomainNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> <i>Domain</i> does not refer to an existing Active Directory Domain. </p>",
             "members": []
         },
         "Double": {
@@ -3616,6 +3737,7 @@
         },
         "DownloadDBLogFilePortionDetails": {
             "type": "structure",
+            "documentation": "<p>This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.</p>",
             "members": [
                 {
                     "name": "LogFileData",
@@ -3636,6 +3758,7 @@
         },
         "DownloadDBLogFilePortionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3661,6 +3784,7 @@
         },
         "EC2SecurityGroup": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the following actions: </p> <ul> <li> <a>AuthorizeDBSecurityGroupIngress</a> </li> <li> <a>DescribeDBSecurityGroups</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a> </li> </ul>",
             "members": [
                 {
                     "name": "Status",
@@ -3690,6 +3814,7 @@
         },
         "Endpoint": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the following actions: </p> <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DescribeDBInstances</a> </li> <li> <a>DeleteDBInstance</a> </li> </ul>",
             "members": [
                 {
                     "name": "Address",
@@ -3705,6 +3830,7 @@
         },
         "EngineDefaults": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. </p>",
             "members": [
                 {
                     "name": "DBParameterGroupFamily",
@@ -3725,6 +3851,7 @@
         },
         "Event": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>DescribeEvents</a> action. </p>",
             "members": [
                 {
                     "name": "SourceIdentifier",
@@ -3759,6 +3886,7 @@
         },
         "EventCategoriesMap": {
             "type": "structure",
+            "documentation": "<p>Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.</p>",
             "members": [
                 {
                     "name": "SourceType",
@@ -3778,6 +3906,7 @@
         },
         "EventCategoriesMessage": {
             "type": "structure",
+            "documentation": "<p>Data returned from the <b>DescribeEventCategories</b> action.</p>",
             "members": [
                 {
                     "name": "EventCategoriesMapList",
@@ -3792,6 +3921,7 @@
         },
         "EventSubscription": {
             "type": "structure",
+            "documentation": "<p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>",
             "members": [
                 {
                     "name": "CustomerAwsId",
@@ -3842,6 +3972,7 @@
         },
         "EventSubscriptionQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p>You have reached the maximum number of event subscriptions.</p>",
             "members": []
         },
         "EventSubscriptionsList": {
@@ -3850,6 +3981,7 @@
         },
         "EventSubscriptionsMessage": {
             "type": "structure",
+            "documentation": "<p>Data returned by the <b>DescribeEventSubscriptions</b> action.</p>",
             "members": [
                 {
                     "name": "Marker",
@@ -3865,6 +3997,7 @@
         },
         "EventsMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeEvents</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -3880,6 +4013,7 @@
         },
         "FailoverDBClusterMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -3913,6 +4047,7 @@
         },
         "IPRange": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action. </p>",
             "members": [
                 {
                     "name": "Status",
@@ -3932,22 +4067,27 @@
         },
         "InstanceQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed number of DB instances. </p>",
             "members": []
         },
         "InsufficientDBClusterCapacityFault": {
             "type": "structure",
+            "documentation": "<p>The DB cluster does not have enough capacity for the current operation. </p>",
             "members": []
         },
         "InsufficientDBInstanceCapacityFault": {
             "type": "structure",
+            "documentation": "<p> Specified DB instance class is not available in the specified Availability Zone. </p>",
             "members": []
         },
         "InsufficientDomainCapacityFault": {
             "type": "structure",
+            "documentation": "<p> Requested Active Directory Domain has reached maximum number of instances. </p>",
             "members": []
         },
         "InsufficientStorageClusterCapacityFault": {
             "type": "structure",
+            "documentation": "<p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>",
             "members": []
         },
         "Integer": {
@@ -3958,62 +4098,77 @@
         },
         "InvalidDBClusterSnapshotStateFault": {
             "type": "structure",
+            "documentation": "<p>The supplied value is not a valid DB cluster snapshot state. </p>",
             "members": []
         },
         "InvalidDBClusterStateFault": {
             "type": "structure",
+            "documentation": "<p>The supplied value is not a valid DB cluster state. </p>",
             "members": []
         },
         "InvalidDBInstanceStateFault": {
             "type": "structure",
+            "documentation": "<p> The specified DB instance is not in the <i>available</i> state. </p>",
             "members": []
         },
         "InvalidDBParameterGroupStateFault": {
             "type": "structure",
+            "documentation": "<p> The DB parameter group cannot be deleted because it is in use. </p>",
             "members": []
         },
         "InvalidDBSecurityGroupStateFault": {
             "type": "structure",
+            "documentation": "<p> The state of the DB security group does not allow deletion. </p>",
             "members": []
         },
         "InvalidDBSnapshotStateFault": {
             "type": "structure",
+            "documentation": "<p> The state of the DB snapshot does not allow deletion. </p>",
             "members": []
         },
         "InvalidDBSubnetGroupFault": {
             "type": "structure",
+            "documentation": "<p> Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read replica of the same source instance. </p>",
             "members": []
         },
         "InvalidDBSubnetGroupStateFault": {
             "type": "structure",
+            "documentation": "<p> The DB subnet group cannot be deleted because it is in use. </p>",
             "members": []
         },
         "InvalidDBSubnetStateFault": {
             "type": "structure",
+            "documentation": "<p> The DB subnet is not in the <i>available</i> state. </p>",
             "members": []
         },
         "InvalidEventSubscriptionStateFault": {
             "type": "structure",
+            "documentation": "<p>This error can occur if someone else is modifying a subscription. You should retry the action.</p>",
             "members": []
         },
         "InvalidOptionGroupStateFault": {
             "type": "structure",
+            "documentation": "<p> The option group is not in the <i>available</i> state. </p>",
             "members": []
         },
         "InvalidRestoreFault": {
             "type": "structure",
+            "documentation": "<p> Cannot restore from vpc backup to non-vpc DB instance. </p>",
             "members": []
         },
         "InvalidSubnet": {
             "type": "structure",
+            "documentation": "<p> The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC. </p>",
             "members": []
         },
         "InvalidVPCNetworkStateFault": {
             "type": "structure",
+            "documentation": "<p> DB subnet group does not cover all Availability Zones after it is created because users' change. </p>",
             "members": []
         },
         "KMSKeyNotAccessibleFault": {
             "type": "structure",
+            "documentation": "<p> Error accessing KMS key. </p>",
             "members": []
         },
         "KeyList": {
@@ -4022,6 +4177,7 @@
         },
         "ListTagsForResourceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ResourceName",
@@ -4040,6 +4196,7 @@
         },
         "ModifyDBClusterMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -4100,6 +4257,7 @@
         },
         "ModifyDBClusterParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -4115,6 +4273,7 @@
         },
         "ModifyDBInstanceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -4240,6 +4399,7 @@
         },
         "ModifyDBParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -4255,6 +4415,7 @@
         },
         "ModifyDBSubnetGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -4275,6 +4436,7 @@
         },
         "ModifyEventSubscriptionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -4305,6 +4467,7 @@
         },
         "ModifyOptionGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -4330,6 +4493,7 @@
         },
         "Option": {
             "type": "structure",
+            "documentation": "<p> Option details. </p>",
             "members": [
                 {
                     "name": "OptionName",
@@ -4375,6 +4539,7 @@
         },
         "OptionConfiguration": {
             "type": "structure",
+            "documentation": "<p> A list of all available options </p>",
             "members": [
                 {
                     "name": "OptionName",
@@ -4409,6 +4574,7 @@
         },
         "OptionGroup": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -4449,10 +4615,12 @@
         },
         "OptionGroupAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> The option group you are trying to create already exists. </p>",
             "members": []
         },
         "OptionGroupMembership": {
             "type": "structure",
+            "documentation": "<p> Provides information on the option groups the DB instance is a member of. </p>",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -4472,10 +4640,12 @@
         },
         "OptionGroupNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> The specified option group could not be found. </p>",
             "members": []
         },
         "OptionGroupOption": {
             "type": "structure",
+            "documentation": "<p> Available option. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -4536,6 +4706,7 @@
         },
         "OptionGroupOptionSetting": {
             "type": "structure",
+            "documentation": "<p>Option group option settings are used to display settings available for each option with their default values and other information. These values are used with the DescribeOptionGroupOptions action. </p>",
             "members": [
                 {
                     "name": "SettingName",
@@ -4575,10 +4746,12 @@
         },
         "OptionGroupOptionsList": {
             "type": "list",
+            "documentation": "<p> List of available option group options. </p>",
             "of": "OptionGroupOption"
         },
         "OptionGroupOptionsMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "OptionGroupOptions",
@@ -4593,10 +4766,12 @@
         },
         "OptionGroupQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> The quota of 20 option groups was exceeded for this AWS account. </p>",
             "members": []
         },
         "OptionGroups": {
             "type": "structure",
+            "documentation": "<p> List of option groups. </p>",
             "members": [
                 {
                     "name": "OptionGroupsList",
@@ -4620,6 +4795,7 @@
         },
         "OptionSetting": {
             "type": "structure",
+            "documentation": "<p> Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -4686,6 +4862,7 @@
         },
         "OrderableDBInstanceOption": {
             "type": "structure",
+            "documentation": "<p> Contains a list of available options for a DB instance </p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action. </p>",
             "members": [
                 {
                     "name": "Engine",
@@ -4750,6 +4927,7 @@
         },
         "OrderableDBInstanceOptionsMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action. </p>",
             "members": [
                 {
                     "name": "OrderableDBInstanceOptions",
@@ -4765,6 +4943,7 @@
         },
         "Parameter": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions. </p> <p>This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a> actions.</p>",
             "members": [
                 {
                     "name": "ParameterName",
@@ -4824,6 +5003,7 @@
         },
         "PendingMaintenanceAction": {
             "type": "structure",
+            "documentation": "<p>Provides information about a pending maintenance action for a resource.</p>",
             "members": [
                 {
                     "name": "Action",
@@ -4867,6 +5047,7 @@
         },
         "PendingMaintenanceActionsMessage": {
             "type": "structure",
+            "documentation": "<p>Data returned from the <b>DescribePendingMaintenanceActions</b> action.</p>",
             "members": [
                 {
                     "name": "PendingMaintenanceActions",
@@ -4882,6 +5063,7 @@
         },
         "PendingModifiedValues": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>ModifyDBInstance</a> action. </p>",
             "members": [
                 {
                     "name": "DBInstanceClass",
@@ -4942,10 +5124,12 @@
         },
         "PointInTimeRestoreNotEnabledFault": {
             "type": "structure",
+            "documentation": "<p> <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0. </p>",
             "members": []
         },
         "PromoteReadReplicaMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -4966,10 +5150,12 @@
         },
         "ProvisionedIopsNotAvailableInAZFault": {
             "type": "structure",
+            "documentation": "<p> Provisioned IOPS not available in the specified Availability Zone. </p>",
             "members": []
         },
         "PurchaseReservedDBInstancesOfferingMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ReservedDBInstancesOfferingId",
@@ -4998,6 +5184,7 @@
         },
         "RebootDBInstanceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -5013,6 +5200,7 @@
         },
         "RecurringCharge": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>DescribeReservedDBInstancesOfferings</a> actions. </p>",
             "members": [
                 {
                     "name": "RecurringChargeAmount",
@@ -5032,6 +5220,7 @@
         },
         "RemoveSourceIdentifierFromSubscriptionMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -5047,6 +5236,7 @@
         },
         "RemoveTagsFromResourceMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "ResourceName",
@@ -5062,6 +5252,7 @@
         },
         "ReservedDBInstance": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>PurchaseReservedDBInstancesOffering</a> actions. </p>",
             "members": [
                 {
                     "name": "ReservedDBInstanceId",
@@ -5137,6 +5328,7 @@
         },
         "ReservedDBInstanceAlreadyExistsFault": {
             "type": "structure",
+            "documentation": "<p> User already has a reservation with the given identifier. </p>",
             "members": []
         },
         "ReservedDBInstanceList": {
@@ -5145,6 +5337,7 @@
         },
         "ReservedDBInstanceMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeReservedDBInstances</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -5160,14 +5353,17 @@
         },
         "ReservedDBInstanceNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> The specified reserved DB Instance not found. </p>",
             "members": []
         },
         "ReservedDBInstanceQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would exceed the user's DB Instance quota. </p>",
             "members": []
         },
         "ReservedDBInstancesOffering": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>DescribeReservedDBInstancesOfferings</a> action. </p>",
             "members": [
                 {
                     "name": "ReservedDBInstancesOfferingId",
@@ -5227,6 +5423,7 @@
         },
         "ReservedDBInstancesOfferingMessage": {
             "type": "structure",
+            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeReservedDBInstancesOfferings</a> action. </p>",
             "members": [
                 {
                     "name": "Marker",
@@ -5242,10 +5439,12 @@
         },
         "ReservedDBInstancesOfferingNotFoundFault": {
             "type": "structure",
+            "documentation": "<p> Specified offering does not exist. </p>",
             "members": []
         },
         "ResetDBClusterParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -5266,6 +5465,7 @@
         },
         "ResetDBParameterGroupMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -5286,10 +5486,12 @@
         },
         "ResourceNotFoundFault": {
             "type": "structure",
+            "documentation": "<p>The specified resource ID was not found. </p>",
             "members": []
         },
         "ResourcePendingMaintenanceActions": {
             "type": "structure",
+            "documentation": "<p>Describes the pending maintenance actions for a resource.</p>",
             "members": [
                 {
                     "name": "ResourceIdentifier",
@@ -5305,6 +5507,7 @@
         },
         "RestoreDBClusterFromSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "AvailabilityZones",
@@ -5365,6 +5568,7 @@
         },
         "RestoreDBClusterToPointInTimeMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -5414,6 +5618,7 @@
         },
         "RestoreDBInstanceFromDBSnapshotMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -5528,6 +5733,7 @@
         },
         "RestoreDBInstanceToPointInTimeMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "SourceDBInstanceIdentifier",
@@ -5652,6 +5858,7 @@
         },
         "RevokeDBSecurityGroupIngressMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -5682,18 +5889,22 @@
         },
         "SNSInvalidTopicFault": {
             "type": "structure",
+            "documentation": "<p>SNS has responded that there is a problem with the SND topic specified.</p>",
             "members": []
         },
         "SNSNoAuthorizationFault": {
             "type": "structure",
+            "documentation": "<p>You do not have permission to publish to the SNS topic ARN.</p>",
             "members": []
         },
         "SNSTopicArnNotFoundFault": {
             "type": "structure",
+            "documentation": "<p>The SNS topic ARN does not exist.</p>",
             "members": []
         },
         "SnapshotQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed number of DB snapshots. </p>",
             "members": []
         },
         "SourceIdsList": {
@@ -5702,6 +5913,7 @@
         },
         "SourceNotFoundFault": {
             "type": "structure",
+            "documentation": "<p>The requested source could not be found.</p>",
             "members": []
         },
         "SourceType": {
@@ -5709,10 +5921,12 @@
         },
         "StorageQuotaExceededFault": {
             "type": "structure",
+            "documentation": "<p> Request would result in user exceeding the allowed amount of storage available across all DB instances. </p>",
             "members": []
         },
         "StorageTypeNotSupportedFault": {
             "type": "structure",
+            "documentation": "<p> <i>StorageType</i> specified cannot be associated with the DB Instance. </p>",
             "members": []
         },
         "String": {
@@ -5720,6 +5934,7 @@
         },
         "Subnet": {
             "type": "structure",
+            "documentation": "<p> This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action. </p>",
             "members": [
                 {
                     "name": "SubnetIdentifier",
@@ -5739,6 +5954,7 @@
         },
         "SubnetAlreadyInUse": {
             "type": "structure",
+            "documentation": "<p> The DB subnet is already in use in the Availability Zone. </p>",
             "members": []
         },
         "SubnetIdentifierList": {
@@ -5751,14 +5967,17 @@
         },
         "SubscriptionAlreadyExistFault": {
             "type": "structure",
+            "documentation": "<p>The supplied subscription name already exists.</p>",
             "members": []
         },
         "SubscriptionCategoryNotFoundFault": {
             "type": "structure",
+            "documentation": "<p>The supplied category does not exist.</p>",
             "members": []
         },
         "SubscriptionNotFoundFault": {
             "type": "structure",
+            "documentation": "<p>The subscription name does not exist.</p>",
             "members": []
         },
         "SupportedCharacterSetsList": {
@@ -5770,6 +5989,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -5785,10 +6005,12 @@
         },
         "TagList": {
             "type": "list",
+            "documentation": "<p>A list of tags.</p>",
             "of": "Tag"
         },
         "TagListMessage": {
             "type": "structure",
+            "documentation": "<p></p>",
             "members": [
                 {
                     "name": "TagList",
@@ -5803,6 +6025,7 @@
         },
         "VpcSecurityGroupMembership": {
             "type": "structure",
+            "documentation": "<p>This data type is used as a response element for queries on VPC security group membership.</p>",
             "members": [
                 {
                     "name": "VpcSecurityGroupId",

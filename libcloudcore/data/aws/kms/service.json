@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -239,6 +243,7 @@
         },
         "AliasListEntry": {
             "type": "structure",
+            "documentation": "Contains information about an alias.",
             "members": [
                 {
                     "name": "AliasName",
@@ -262,6 +267,7 @@
         },
         "AlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because it attempted to create a resource that already exists.</p>",
             "members": [
                 {
                     "name": "message",
@@ -426,6 +432,7 @@
         },
         "DependencyTimeoutException": {
             "type": "structure",
+            "documentation": "<p>The system timed out while trying to fulfill the request.</p>",
             "members": [
                 {
                     "name": "message",
@@ -478,6 +485,7 @@
         },
         "DisabledException": {
             "type": "structure",
+            "documentation": "<p>A request was rejected because the specified key was marked as disabled.</p>",
             "members": [
                 {
                     "name": "message",
@@ -549,7 +557,9 @@
             "type": "string"
         },
         "EncryptionContextType": {
-            "type": "map"
+            "type": "map",
+            "key": "EncryptionContextKey",
+            "value": "EncryptionContextValue"
         },
         "EncryptionContextValue": {
             "type": "string"
@@ -719,6 +729,7 @@
         },
         "GrantConstraints": {
             "type": "structure",
+            "documentation": "Contains constraints on the grant.",
             "members": [
                 {
                     "name": "EncryptionContextSubset",
@@ -741,6 +752,7 @@
         },
         "GrantListEntry": {
             "type": "structure",
+            "documentation": "<p>Contains information about each entry in the grant list.</p>",
             "members": [
                 {
                     "name": "GrantId",
@@ -790,6 +802,7 @@
         },
         "InvalidAliasNameException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the specified alias name is not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -799,6 +812,7 @@
         },
         "InvalidArnException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because a specified ARN was not valid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -808,6 +822,7 @@
         },
         "InvalidCiphertextException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the specified ciphertext has been corrupted or is otherwise invalid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -817,6 +832,7 @@
         },
         "InvalidGrantTokenException": {
             "type": "structure",
+            "documentation": "<p>A grant token provided as part of the request is invalid.</p>",
             "members": [
                 {
                     "name": "message",
@@ -826,6 +842,7 @@
         },
         "InvalidKeyUsageException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the specified KeySpec parameter is not valid. The currently supported value is ENCRYPT/DECRYPT. </p>",
             "members": [
                 {
                     "name": "message",
@@ -835,6 +852,7 @@
         },
         "InvalidMarkerException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the marker that specifies where pagination should next begin is not valid. </p>",
             "members": [
                 {
                     "name": "message",
@@ -844,6 +862,7 @@
         },
         "KMSInternalException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because an internal exception occurred. This error can be retried.</p>",
             "members": [
                 {
                     "name": "message",
@@ -860,6 +879,7 @@
         },
         "KeyListEntry": {
             "type": "structure",
+            "documentation": "<p>Contains information about each entry in the key list.</p>",
             "members": [
                 {
                     "name": "KeyId",
@@ -875,6 +895,7 @@
         },
         "KeyMetadata": {
             "type": "structure",
+            "documentation": "Contains metadata associated with a specific key.",
             "members": [
                 {
                     "name": "AWSAccountId",
@@ -915,6 +936,7 @@
         },
         "KeyUnavailableException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the key was disabled, not found, or otherwise not available.</p>",
             "members": [
                 {
                     "name": "message",
@@ -927,6 +949,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because a quota was exceeded.</p>",
             "members": [
                 {
                     "name": "message",
@@ -1089,6 +1112,7 @@
         },
         "MalformedPolicyDocumentException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the specified policy is not syntactically or semantically correct. </p>",
             "members": [
                 {
                     "name": "message",
@@ -1101,6 +1125,7 @@
         },
         "NotFoundException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because the specified entity or resource could not be found. </p>",
             "members": [
                 {
                     "name": "message",
@@ -1234,6 +1259,7 @@
         },
         "UnsupportedOperationException": {
             "type": "structure",
+            "documentation": "<p>The request was rejected because a specified parameter is not supported.</p>",
             "members": [
                 {
                     "name": "message",

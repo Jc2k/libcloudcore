@@ -26,6 +26,10 @@ class Integer(Shape):
     kind = "integer"
 
 
+class Float(Shape):
+    kind = "float"
+
+
 class String(Shape):
     kind = "string"
 
@@ -162,8 +166,8 @@ class Model(object):
         'string': String,
         'integer': Integer,
         'long': Integer,
-        'float': Integer,
-        'double': Integer,
+        'float': Float,
+        'double': Float,
         'boolean': Boolean,
         'blob': Blob,
         'timestamp': Timestamp,

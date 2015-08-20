@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -295,6 +299,7 @@
     "shapes": {
         "AddTagsToOnPremisesInstancesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an adds tags to on-premises instance operation.</p>",
             "members": [
                 {
                     "name": "tags",
@@ -310,10 +315,12 @@
         },
         "ApplicationAlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>An application with the specified name already exists with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "ApplicationDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The application does not exist with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "ApplicationId": {
@@ -321,6 +328,7 @@
         },
         "ApplicationInfo": {
             "type": "structure",
+            "documentation": "<p>Information about an application.</p>",
             "members": [
                 {
                     "name": "applicationId",
@@ -346,6 +354,7 @@
         },
         "ApplicationLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>More applications were attempted to be created than were allowed.</p>",
             "members": []
         },
         "ApplicationName": {
@@ -353,6 +362,7 @@
         },
         "ApplicationNameRequiredException": {
             "type": "structure",
+            "documentation": "<p>The minimum number of required application names was not specified.</p>",
             "members": []
         },
         "ApplicationRevisionSortBy": {
@@ -368,6 +378,7 @@
         },
         "AutoScalingGroup": {
             "type": "structure",
+            "documentation": "<p>Information about an Auto Scaling group.</p>",
             "members": [
                 {
                     "name": "name",
@@ -397,6 +408,7 @@
         },
         "BatchGetApplicationsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a batch get applications operation.</p>",
             "members": [
                 {
                     "name": "applicationNames",
@@ -407,6 +419,7 @@
         },
         "BatchGetApplicationsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a batch get applications operation.</p>",
             "members": [
                 {
                     "name": "applicationsInfo",
@@ -417,6 +430,7 @@
         },
         "BatchGetDeploymentsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a batch get deployments operation.</p>",
             "members": [
                 {
                     "name": "deploymentIds",
@@ -427,6 +441,7 @@
         },
         "BatchGetDeploymentsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a batch get deployments operation.</p>",
             "members": [
                 {
                     "name": "deploymentsInfo",
@@ -437,6 +452,7 @@
         },
         "BatchGetOnPremisesInstancesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a batch get on-premises instances operation.</p>",
             "members": [
                 {
                     "name": "instanceNames",
@@ -447,6 +463,7 @@
         },
         "BatchGetOnPremisesInstancesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a batch get on-premises instances operation.</p>",
             "members": [
                 {
                     "name": "instanceInfos",
@@ -460,6 +477,7 @@
         },
         "BucketNameFilterRequiredException": {
             "type": "structure",
+            "documentation": "<p>A bucket name is required but was not provided.</p>",
             "members": []
         },
         "BundleType": {
@@ -470,6 +488,7 @@
         },
         "CreateApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create application operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -480,6 +499,7 @@
         },
         "CreateApplicationOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create application operation.</p>",
             "members": [
                 {
                     "name": "applicationId",
@@ -490,6 +510,7 @@
         },
         "CreateDeploymentConfigInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create deployment configuration operation.</p>",
             "members": [
                 {
                     "name": "deploymentConfigName",
@@ -505,6 +526,7 @@
         },
         "CreateDeploymentConfigOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create deployment configuration operation.</p>",
             "members": [
                 {
                     "name": "deploymentConfigId",
@@ -515,6 +537,7 @@
         },
         "CreateDeploymentGroupInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create deployment group operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -555,6 +578,7 @@
         },
         "CreateDeploymentGroupOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create deployment group operation.</p>",
             "members": [
                 {
                     "name": "deploymentGroupId",
@@ -565,6 +589,7 @@
         },
         "CreateDeploymentInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a create deployment operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -600,6 +625,7 @@
         },
         "CreateDeploymentOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a create deployment operation.</p>",
             "members": [
                 {
                     "name": "deploymentId",
@@ -610,6 +636,7 @@
         },
         "DeleteApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a delete application operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -620,6 +647,7 @@
         },
         "DeleteDeploymentConfigInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a delete deployment configuration operation.</p>",
             "members": [
                 {
                     "name": "deploymentConfigName",
@@ -630,6 +658,7 @@
         },
         "DeleteDeploymentGroupInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a delete deployment group operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -645,6 +674,7 @@
         },
         "DeleteDeploymentGroupOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a delete deployment group operation.</p>",
             "members": [
                 {
                     "name": "hooksNotCleanedUp",
@@ -655,14 +685,17 @@
         },
         "DeploymentAlreadyCompletedException": {
             "type": "structure",
+            "documentation": "<p>The deployment is already completed.</p>",
             "members": []
         },
         "DeploymentConfigAlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>A deployment configuration with the specified name already exists with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "DeploymentConfigDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The deployment configuration does not exist with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "DeploymentConfigId": {
@@ -670,10 +703,12 @@
         },
         "DeploymentConfigInUseException": {
             "type": "structure",
+            "documentation": "<p>The deployment configuration is still in use.</p>",
             "members": []
         },
         "DeploymentConfigInfo": {
             "type": "structure",
+            "documentation": "<p>Information about a deployment configuration.</p>",
             "members": [
                 {
                     "name": "deploymentConfigId",
@@ -699,6 +734,7 @@
         },
         "DeploymentConfigLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The deployment configurations limit was exceeded.</p>",
             "members": []
         },
         "DeploymentConfigName": {
@@ -706,6 +742,7 @@
         },
         "DeploymentConfigNameRequiredException": {
             "type": "structure",
+            "documentation": "<p>The deployment configuration name was not specified.</p>",
             "members": []
         },
         "DeploymentConfigsList": {
@@ -717,14 +754,17 @@
         },
         "DeploymentDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The deployment does not exist with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "DeploymentGroupAlreadyExistsException": {
             "type": "structure",
+            "documentation": "<p>A deployment group with the specified name already exists with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "DeploymentGroupDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The named deployment group does not exist with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "DeploymentGroupId": {
@@ -732,6 +772,7 @@
         },
         "DeploymentGroupInfo": {
             "type": "structure",
+            "documentation": "<p>Information about a deployment group.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -782,6 +823,7 @@
         },
         "DeploymentGroupLimitExceededException": {
             "type": "structure",
+            "documentation": "<p> The deployment groups limit was exceeded.</p>",
             "members": []
         },
         "DeploymentGroupName": {
@@ -789,6 +831,7 @@
         },
         "DeploymentGroupNameRequiredException": {
             "type": "structure",
+            "documentation": "<p>The deployment group name was not specified.</p>",
             "members": []
         },
         "DeploymentGroupsList": {
@@ -800,10 +843,12 @@
         },
         "DeploymentIdRequiredException": {
             "type": "structure",
+            "documentation": "<p>At least one deployment ID must be specified.</p>",
             "members": []
         },
         "DeploymentInfo": {
             "type": "structure",
+            "documentation": "<p>Information about a deployment.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -879,14 +924,17 @@
         },
         "DeploymentLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The number of allowed deployments was exceeded.</p>",
             "members": []
         },
         "DeploymentNotStartedException": {
             "type": "structure",
+            "documentation": "<p>The specified deployment has not started.</p>",
             "members": []
         },
         "DeploymentOverview": {
             "type": "structure",
+            "documentation": "<p>Information about the deployment status of the instances in the deployment.</p>",
             "members": [
                 {
                     "name": "Pending",
@@ -932,6 +980,7 @@
         },
         "DeregisterOnPremisesInstanceInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a deregister on-premises instance operation.</p>",
             "members": [
                 {
                     "name": "instanceName",
@@ -945,10 +994,12 @@
         },
         "DescriptionTooLongException": {
             "type": "structure",
+            "documentation": "<p>The description that was provided is too long.</p>",
             "members": []
         },
         "Diagnostics": {
             "type": "structure",
+            "documentation": "<p>Diagnostic information about executable scripts that are part of a deployment.</p>",
             "members": [
                 {
                     "name": "errorCode",
@@ -974,6 +1025,7 @@
         },
         "EC2TagFilter": {
             "type": "structure",
+            "documentation": "<p>Information about a tag filter.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -1007,6 +1059,7 @@
         },
         "ErrorInformation": {
             "type": "structure",
+            "documentation": "<p>Information about a deployment error.</p>",
             "members": [
                 {
                     "name": "code",
@@ -1025,6 +1078,7 @@
         },
         "GenericRevisionInfo": {
             "type": "structure",
+            "documentation": "<p>Information about an application revision.</p>",
             "members": [
                 {
                     "name": "description",
@@ -1055,6 +1109,7 @@
         },
         "GetApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get application operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1065,6 +1120,7 @@
         },
         "GetApplicationOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get application operation.</p>",
             "members": [
                 {
                     "name": "application",
@@ -1075,6 +1131,7 @@
         },
         "GetApplicationRevisionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get application revision operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1090,6 +1147,7 @@
         },
         "GetApplicationRevisionOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get application revision operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1110,6 +1168,7 @@
         },
         "GetDeploymentConfigInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get deployment configuration operation.</p>",
             "members": [
                 {
                     "name": "deploymentConfigName",
@@ -1120,6 +1179,7 @@
         },
         "GetDeploymentConfigOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get deployment configuration operation.</p>",
             "members": [
                 {
                     "name": "deploymentConfigInfo",
@@ -1130,6 +1190,7 @@
         },
         "GetDeploymentGroupInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get deployment group operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1145,6 +1206,7 @@
         },
         "GetDeploymentGroupOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get deployment group operation.</p>",
             "members": [
                 {
                     "name": "deploymentGroupInfo",
@@ -1155,6 +1217,7 @@
         },
         "GetDeploymentInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get deployment operation.</p>",
             "members": [
                 {
                     "name": "deploymentId",
@@ -1165,6 +1228,7 @@
         },
         "GetDeploymentInstanceInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get deployment instance operation.</p>",
             "members": [
                 {
                     "name": "deploymentId",
@@ -1180,6 +1244,7 @@
         },
         "GetDeploymentInstanceOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get deployment instance operation.</p>",
             "members": [
                 {
                     "name": "instanceSummary",
@@ -1190,6 +1255,7 @@
         },
         "GetDeploymentOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get deployment operation.</p>",
             "members": [
                 {
                     "name": "deploymentInfo",
@@ -1200,6 +1266,7 @@
         },
         "GetOnPremisesInstanceInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a get on-premises instance operation.</p>",
             "members": [
                 {
                     "name": "instanceName",
@@ -1210,6 +1277,7 @@
         },
         "GetOnPremisesInstanceOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a get on-premises instance operation.</p>",
             "members": [
                 {
                     "name": "instanceInfo",
@@ -1220,6 +1288,7 @@
         },
         "GitHubLocation": {
             "type": "structure",
+            "documentation": "<p>Information about the location of application artifacts that are stored in GitHub.</p>",
             "members": [
                 {
                     "name": "repository",
@@ -1238,10 +1307,12 @@
         },
         "IamUserArnAlreadyRegisteredException": {
             "type": "structure",
+            "documentation": "<p>The specified IAM user ARN is already registered with an on-premises instance.</p>",
             "members": []
         },
         "IamUserArnRequiredException": {
             "type": "structure",
+            "documentation": "<p>An IAM user ARN was not specified.</p>",
             "members": []
         },
         "InstanceArn": {
@@ -1252,6 +1323,7 @@
         },
         "InstanceDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The specified instance does not exist in the deployment group.</p>",
             "members": []
         },
         "InstanceId": {
@@ -1259,10 +1331,12 @@
         },
         "InstanceIdRequiredException": {
             "type": "structure",
+            "documentation": "<p>The instance ID was not specified.</p>",
             "members": []
         },
         "InstanceInfo": {
             "type": "structure",
+            "documentation": "<p>Information about an on-premises instance.</p>",
             "members": [
                 {
                     "name": "instanceName",
@@ -1302,6 +1376,7 @@
         },
         "InstanceLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>",
             "members": []
         },
         "InstanceName": {
@@ -1309,6 +1384,7 @@
         },
         "InstanceNameAlreadyRegisteredException": {
             "type": "structure",
+            "documentation": "<p>The specified on-premises instance name is already registered.</p>",
             "members": []
         },
         "InstanceNameList": {
@@ -1317,10 +1393,12 @@
         },
         "InstanceNameRequiredException": {
             "type": "structure",
+            "documentation": "<p>An on-premises instance name was not specified.</p>",
             "members": []
         },
         "InstanceNotRegisteredException": {
             "type": "structure",
+            "documentation": "<p>The specified on-premises instance is not registered.</p>",
             "members": []
         },
         "InstanceStatus": {
@@ -1332,6 +1410,7 @@
         },
         "InstanceSummary": {
             "type": "structure",
+            "documentation": "<p>Information about an instance in a deployment.</p>",
             "members": [
                 {
                     "name": "deploymentId",
@@ -1366,98 +1445,122 @@
         },
         "InvalidApplicationNameException": {
             "type": "structure",
+            "documentation": "<p>The application name was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidAutoScalingGroupException": {
             "type": "structure",
+            "documentation": "<p>The Auto Scaling group was specified in an invalid format or does not exist.</p>",
             "members": []
         },
         "InvalidBucketNameFilterException": {
             "type": "structure",
+            "documentation": "<p>The bucket name either doesn't exist or was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidDeployedStateFilterException": {
             "type": "structure",
+            "documentation": "<p>The deployed state filter was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidDeploymentConfigNameException": {
             "type": "structure",
+            "documentation": "<p>The deployment configuration name was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidDeploymentGroupNameException": {
             "type": "structure",
+            "documentation": "<p>The deployment group name was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidDeploymentIdException": {
             "type": "structure",
+            "documentation": "<p>At least one of the deployment IDs was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidDeploymentStatusException": {
             "type": "structure",
+            "documentation": "<p>The specified deployment status doesn't exist or cannot be determined.</p>",
             "members": []
         },
         "InvalidEC2TagException": {
             "type": "structure",
+            "documentation": "<p>The tag was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidIamUserArnException": {
             "type": "structure",
+            "documentation": "<p>The IAM user ARN was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidInstanceNameException": {
             "type": "structure",
+            "documentation": "<p>The specified on-premises instance name was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidInstanceStatusException": {
             "type": "structure",
+            "documentation": "<p>The specified instance status does not exist.</p>",
             "members": []
         },
         "InvalidKeyPrefixFilterException": {
             "type": "structure",
+            "documentation": "<p>The specified key prefix filter was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidMinimumHealthyHostValueException": {
             "type": "structure",
+            "documentation": "<p>The minimum healthy instances value was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidNextTokenException": {
             "type": "structure",
+            "documentation": "<p>The next token was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidOperationException": {
             "type": "structure",
+            "documentation": "<p>An invalid operation was detected.</p>",
             "members": []
         },
         "InvalidRegistrationStatusException": {
             "type": "structure",
+            "documentation": "<p>The registration status was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidRevisionException": {
             "type": "structure",
+            "documentation": "<p>The revision was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidRoleException": {
             "type": "structure",
+            "documentation": "<p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Auto Scaling.</p>",
             "members": []
         },
         "InvalidSortByException": {
             "type": "structure",
+            "documentation": "<p>The column name to sort by is either not present or was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidSortOrderException": {
             "type": "structure",
+            "documentation": "<p>The sort order was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidTagException": {
             "type": "structure",
+            "documentation": "<p>The specified tag was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidTagFilterException": {
             "type": "structure",
+            "documentation": "<p>The specified tag filter was specified in an invalid format.</p>",
             "members": []
         },
         "InvalidTimeRangeException": {
             "type": "structure",
+            "documentation": "<p>The specified time range was specified in an invalid format.</p>",
             "members": []
         },
         "Key": {
@@ -1468,6 +1571,7 @@
         },
         "LifecycleEvent": {
             "type": "structure",
+            "documentation": "<p>Information about a deployment lifecycle event.</p>",
             "members": [
                 {
                     "name": "lifecycleEventName",
@@ -1511,6 +1615,7 @@
         },
         "ListApplicationRevisionsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list application revisions operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1551,6 +1656,7 @@
         },
         "ListApplicationRevisionsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list application revisions operation.</p>",
             "members": [
                 {
                     "name": "revisions",
@@ -1566,6 +1672,7 @@
         },
         "ListApplicationsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list applications operation.</p>",
             "members": [
                 {
                     "name": "nextToken",
@@ -1576,6 +1683,7 @@
         },
         "ListApplicationsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list applications operation.</p>",
             "members": [
                 {
                     "name": "applications",
@@ -1591,6 +1699,7 @@
         },
         "ListDeploymentConfigsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list deployment configurations operation.</p>",
             "members": [
                 {
                     "name": "nextToken",
@@ -1601,6 +1710,7 @@
         },
         "ListDeploymentConfigsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list deployment configurations operation.</p>",
             "members": [
                 {
                     "name": "deploymentConfigsList",
@@ -1616,6 +1726,7 @@
         },
         "ListDeploymentGroupsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list deployment groups operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1631,6 +1742,7 @@
         },
         "ListDeploymentGroupsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list deployment groups operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1651,6 +1763,7 @@
         },
         "ListDeploymentInstancesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list deployment instances operation.</p>",
             "members": [
                 {
                     "name": "deploymentId",
@@ -1671,6 +1784,7 @@
         },
         "ListDeploymentInstancesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list deployment instances operation.</p>",
             "members": [
                 {
                     "name": "instancesList",
@@ -1686,6 +1800,7 @@
         },
         "ListDeploymentsInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list deployments operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1716,6 +1831,7 @@
         },
         "ListDeploymentsOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a list deployments operation.</p>",
             "members": [
                 {
                     "name": "deployments",
@@ -1731,6 +1847,7 @@
         },
         "ListOnPremisesInstancesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a list on-premises instances operation.</p>.",
             "members": [
                 {
                     "name": "registrationStatus",
@@ -1751,6 +1868,7 @@
         },
         "ListOnPremisesInstancesOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of list on-premises instances operation.</p>",
             "members": [
                 {
                     "name": "instanceNames",
@@ -1775,6 +1893,7 @@
         },
         "MinimumHealthyHosts": {
             "type": "structure",
+            "documentation": "<p>Information about minimum healthy instances.</p>",
             "members": [
                 {
                     "name": "value",
@@ -1799,6 +1918,7 @@
         },
         "RegisterApplicationRevisionInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a register application revision operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -1819,6 +1939,7 @@
         },
         "RegisterOnPremisesInstanceInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of register on-premises instance operation.</p>",
             "members": [
                 {
                     "name": "instanceName",
@@ -1837,6 +1958,7 @@
         },
         "RemoveTagsFromOnPremisesInstancesInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a remove tags from on-premises instances operation.</p>",
             "members": [
                 {
                     "name": "tags",
@@ -1855,10 +1977,12 @@
         },
         "RevisionDoesNotExistException": {
             "type": "structure",
+            "documentation": "<p>The named revision does not exist with the applicable IAM user or AWS account.</p>",
             "members": []
         },
         "RevisionLocation": {
             "type": "structure",
+            "documentation": "<p>Information about an application revision's location.</p>",
             "members": [
                 {
                     "name": "revisionType",
@@ -1884,6 +2008,7 @@
         },
         "RevisionRequiredException": {
             "type": "structure",
+            "documentation": "<p>The revision ID was not specified.</p>",
             "members": []
         },
         "Role": {
@@ -1891,6 +2016,7 @@
         },
         "RoleRequiredException": {
             "type": "structure",
+            "documentation": "<p>The role ID was not specified.</p>",
             "members": []
         },
         "S3Bucket": {
@@ -1901,6 +2027,7 @@
         },
         "S3Location": {
             "type": "structure",
+            "documentation": "<p>Information about the location of application artifacts that are stored in Amazon S3.</p>",
             "members": [
                 {
                     "name": "bucket",
@@ -1937,6 +2064,7 @@
         },
         "StopDeploymentInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of a stop deployment operation.</p>",
             "members": [
                 {
                     "name": "deploymentId",
@@ -1947,6 +2075,7 @@
         },
         "StopDeploymentOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of a stop deployment operation.</p>",
             "members": [
                 {
                     "name": "status",
@@ -1965,6 +2094,7 @@
         },
         "Tag": {
             "type": "structure",
+            "documentation": "<p>Information about a tag.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -1980,6 +2110,7 @@
         },
         "TagFilter": {
             "type": "structure",
+            "documentation": "<p>Information about an on-premises instance tag filter.</p>",
             "members": [
                 {
                     "name": "Key",
@@ -2007,6 +2138,7 @@
         },
         "TagLimitExceededException": {
             "type": "structure",
+            "documentation": "<p>The maximum allowed number of tags was exceeded.</p>",
             "members": []
         },
         "TagList": {
@@ -2015,10 +2147,12 @@
         },
         "TagRequiredException": {
             "type": "structure",
+            "documentation": "<p>A tag was not specified.</p>",
             "members": []
         },
         "TimeRange": {
             "type": "structure",
+            "documentation": "<p>Information about a time range.</p>",
             "members": [
                 {
                     "name": "start",
@@ -2037,6 +2171,7 @@
         },
         "UpdateApplicationInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an update application operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -2052,6 +2187,7 @@
         },
         "UpdateDeploymentGroupInput": {
             "type": "structure",
+            "documentation": "<p>Represents the input of an update deployment group operation.</p>",
             "members": [
                 {
                     "name": "applicationName",
@@ -2097,6 +2233,7 @@
         },
         "UpdateDeploymentGroupOutput": {
             "type": "structure",
+            "documentation": "<p>Represents the output of an update deployment group operation.</p>",
             "members": [
                 {
                     "name": "hooksNotCleanedUp",

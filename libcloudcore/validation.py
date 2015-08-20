@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import datetime
 import re
 import six
 from collections import namedtuple
@@ -29,7 +30,7 @@ def _check_type(field, value, types, report):
         report.append(ReportItem(
             field,
             "invalid_type",
-            "passed {} but expected on of ({})".format(
+            "passed {} but expected one of ({})".format(
                 value,
                 ", ".join(str(t) for t in types)
             )
@@ -148,11 +149,28 @@ def _validate_string(field, shape, value, report):
         return
 
 
+def _validate_blob(field, shape, value, report):
+    return True
+
+
 def _validate_integer(field, shape, value, report):
     if not _check_type(field, value, six.integer_types, report):
         return
 
     if not _check_range(field, value, shape.min, shape.max, report):
+        return
+
+
+def _validate_float(field, shape, value, report):
+    if not _check_type(field, value, float, report):
+        return
+
+    if not _check_range(field, value, shape.min, shape.max, report):
+        return
+
+
+def _validate_timestamp(field, shape, value, report):
+    if not _check_type(field, value, datetime.datetime, report):
         return
 
 
@@ -173,13 +191,15 @@ def validate_shape(shape, value):
 
 class Validation(Layer):
 
-    def before_call(self, request, operation, **params):
-        report = validate_shape(operation.input_shape, params)
+    def validate(self, shape, params):
+        report = validate_shape(shape, params)
         if report:
             raise ParameterError("\n".join(
                 "{}: {}".format(r.field, r.message) for r in report,
             ))
 
+    def before_call(self, request, operation, **params):
+        self.validate(operation.input_shape, params)
         return super(Validation, self).before_call(
             request,
             operation,

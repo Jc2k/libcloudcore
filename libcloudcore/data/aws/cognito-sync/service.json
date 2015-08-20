@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -181,6 +185,7 @@
     "shapes": {
         "AlreadyStreamedException": {
             "type": "structure",
+            "documentation": "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.",
             "members": [
                 {
                     "name": "message",
@@ -204,6 +209,7 @@
         },
         "BulkPublishRequest": {
             "type": "structure",
+            "documentation": "The input for the BulkPublish operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -216,6 +222,7 @@
         },
         "BulkPublishResponse": {
             "type": "structure",
+            "documentation": "The output for the BulkPublish operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -235,6 +242,7 @@
         },
         "CognitoStreams": {
             "type": "structure",
+            "documentation": "Configuration options for configure Cognito streams.",
             "members": [
                 {
                     "name": "StreamName",
@@ -255,6 +263,7 @@
         },
         "ConcurrentModificationException": {
             "type": "structure",
+            "documentation": "<p>Thrown if there are parallel requests to modify a resource.</p>",
             "members": [
                 {
                     "name": "message",
@@ -265,6 +274,7 @@
         },
         "Dataset": {
             "type": "structure",
+            "documentation": "A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -315,6 +325,7 @@
         },
         "DeleteDatasetRequest": {
             "type": "structure",
+            "documentation": "A request to delete the specific dataset.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -341,6 +352,7 @@
         },
         "DeleteDatasetResponse": {
             "type": "structure",
+            "documentation": "Response to a successful DeleteDataset request.",
             "members": [
                 {
                     "name": "Dataset",
@@ -351,6 +363,7 @@
         },
         "DescribeDatasetRequest": {
             "type": "structure",
+            "documentation": "A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -377,6 +390,7 @@
         },
         "DescribeDatasetResponse": {
             "type": "structure",
+            "documentation": "Response to a successful DescribeDataset request.",
             "members": [
                 {
                     "name": "Dataset",
@@ -387,6 +401,7 @@
         },
         "DescribeIdentityPoolUsageRequest": {
             "type": "structure",
+            "documentation": "A request for usage information about the identity pool.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -399,6 +414,7 @@
         },
         "DescribeIdentityPoolUsageResponse": {
             "type": "structure",
+            "documentation": "Response to a successful DescribeIdentityPoolUsage request.",
             "members": [
                 {
                     "name": "IdentityPoolUsage",
@@ -409,6 +425,7 @@
         },
         "DescribeIdentityUsageRequest": {
             "type": "structure",
+            "documentation": "A request for information about the usage of an identity pool.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -428,6 +445,7 @@
         },
         "DescribeIdentityUsageResponse": {
             "type": "structure",
+            "documentation": "The response to a successful DescribeIdentityUsage request.",
             "members": [
                 {
                     "name": "IdentityUsage",
@@ -441,6 +459,7 @@
         },
         "DuplicateRequestException": {
             "type": "structure",
+            "documentation": "An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.",
             "members": [
                 {
                     "name": "message",
@@ -450,13 +469,16 @@
             ]
         },
         "Events": {
-            "type": "map"
+            "type": "map",
+            "key": "CognitoEventType",
+            "value": "LambdaFunctionArn"
         },
         "ExceptionMessage": {
             "type": "string"
         },
         "GetBulkPublishDetailsRequest": {
             "type": "structure",
+            "documentation": "The input for the GetBulkPublishDetails operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -469,6 +491,7 @@
         },
         "GetBulkPublishDetailsResponse": {
             "type": "structure",
+            "documentation": "The output for the GetBulkPublishDetails operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -499,6 +522,7 @@
         },
         "GetCognitoEventsRequest": {
             "type": "structure",
+            "documentation": "<p>A request for a list of the configured Cognito Events</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -511,6 +535,7 @@
         },
         "GetCognitoEventsResponse": {
             "type": "structure",
+            "documentation": "<p>The response from the GetCognitoEvents request</p>",
             "members": [
                 {
                     "name": "Events",
@@ -521,6 +546,7 @@
         },
         "GetIdentityPoolConfigurationRequest": {
             "type": "structure",
+            "documentation": "<p>The input for the GetIdentityPoolConfiguration operation.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -533,6 +559,7 @@
         },
         "GetIdentityPoolConfigurationResponse": {
             "type": "structure",
+            "documentation": "<p>The output for the GetIdentityPoolConfiguration operation.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -559,6 +586,7 @@
         },
         "IdentityPoolUsage": {
             "type": "structure",
+            "documentation": "Usage information for the identity pool.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -588,6 +616,7 @@
         },
         "IdentityUsage": {
             "type": "structure",
+            "documentation": "Usage information for the identity.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -624,6 +653,7 @@
         },
         "InternalErrorException": {
             "type": "structure",
+            "documentation": "Indicates an internal service error.",
             "members": [
                 {
                     "name": "message",
@@ -644,6 +674,7 @@
         },
         "InvalidLambdaFunctionOutputException": {
             "type": "structure",
+            "documentation": "<p>The AWS Lambda function returned invalid output or an exception.</p>",
             "members": [
                 {
                     "name": "message",
@@ -654,6 +685,7 @@
         },
         "InvalidParameterException": {
             "type": "structure",
+            "documentation": "Thrown when a request parameter does not comply with the associated constraints.",
             "members": [
                 {
                     "name": "message",
@@ -667,6 +699,7 @@
         },
         "LambdaThrottledException": {
             "type": "structure",
+            "documentation": "<p>AWS Lambda throttled your account, please contact AWS Support</p>",
             "members": [
                 {
                     "name": "message",
@@ -677,6 +710,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
+            "documentation": "Thrown when the limit on the number of objects or operations has been exceeded.",
             "members": [
                 {
                     "name": "message",
@@ -687,6 +721,7 @@
         },
         "ListDatasetsRequest": {
             "type": "structure",
+            "documentation": "Request for a list of datasets for an identity.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -720,6 +755,7 @@
         },
         "ListDatasetsResponse": {
             "type": "structure",
+            "documentation": "Returned for a successful ListDatasets request.",
             "members": [
                 {
                     "name": "Datasets",
@@ -740,6 +776,7 @@
         },
         "ListIdentityPoolUsageRequest": {
             "type": "structure",
+            "documentation": "A request for usage information on an identity pool.",
             "members": [
                 {
                     "name": "NextToken",
@@ -759,6 +796,7 @@
         },
         "ListIdentityPoolUsageResponse": {
             "type": "structure",
+            "documentation": "Returned for a successful ListIdentityPoolUsage request.",
             "members": [
                 {
                     "name": "IdentityPoolUsages",
@@ -784,6 +822,7 @@
         },
         "ListRecordsRequest": {
             "type": "structure",
+            "documentation": "A request for a list of records.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -838,6 +877,7 @@
         },
         "ListRecordsResponse": {
             "type": "structure",
+            "documentation": "Returned for a successful ListRecordsRequest.",
             "members": [
                 {
                     "name": "Records",
@@ -895,6 +935,7 @@
         },
         "NotAuthorizedException": {
             "type": "structure",
+            "documentation": "Thrown when a user is not authorized to access the requested resource.",
             "members": [
                 {
                     "name": "message",
@@ -911,6 +952,7 @@
         },
         "PushSync": {
             "type": "structure",
+            "documentation": "<p>Configuration options to be applied to the identity pool.</p>",
             "members": [
                 {
                     "name": "ApplicationArns",
@@ -929,6 +971,7 @@
         },
         "Record": {
             "type": "structure",
+            "documentation": "The basic data structure of a dataset.",
             "members": [
                 {
                     "name": "Key",
@@ -971,6 +1014,7 @@
         },
         "RecordPatch": {
             "type": "structure",
+            "documentation": "An update operation for a record.",
             "members": [
                 {
                     "name": "Op",
@@ -1008,6 +1052,7 @@
         },
         "RegisterDeviceRequest": {
             "type": "structure",
+            "documentation": "<p>A request to RegisterDevice.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1037,6 +1082,7 @@
         },
         "RegisterDeviceResponse": {
             "type": "structure",
+            "documentation": "<p>Response to a RegisterDevice request.</p>",
             "members": [
                 {
                     "name": "DeviceId",
@@ -1047,6 +1093,7 @@
         },
         "ResourceConflictException": {
             "type": "structure",
+            "documentation": "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
             "members": [
                 {
                     "name": "message",
@@ -1057,6 +1104,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
+            "documentation": "Thrown if the resource doesn't exist.",
             "members": [
                 {
                     "name": "message",
@@ -1067,6 +1115,7 @@
         },
         "SetCognitoEventsRequest": {
             "type": "structure",
+            "documentation": "<p>A request to configure Cognito Events\"</p>\"",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1084,6 +1133,7 @@
         },
         "SetIdentityPoolConfigurationRequest": {
             "type": "structure",
+            "documentation": "<p>The input for the SetIdentityPoolConfiguration operation.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1106,6 +1156,7 @@
         },
         "SetIdentityPoolConfigurationResponse": {
             "type": "structure",
+            "documentation": "<p>The output for the SetIdentityPoolConfiguration operation</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1135,6 +1186,7 @@
         },
         "SubscribeToDatasetRequest": {
             "type": "structure",
+            "documentation": "<p>A request to SubscribeToDatasetRequest.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1168,6 +1220,7 @@
         },
         "SubscribeToDatasetResponse": {
             "type": "structure",
+            "documentation": "<p>Response to a SubscribeToDataset request.</p>",
             "members": []
         },
         "SyncSessionToken": {
@@ -1175,6 +1228,7 @@
         },
         "TooManyRequestsException": {
             "type": "structure",
+            "documentation": "Thrown if the request is throttled.",
             "members": [
                 {
                     "name": "message",
@@ -1185,6 +1239,7 @@
         },
         "UnsubscribeFromDatasetRequest": {
             "type": "structure",
+            "documentation": "<p>A request to UnsubscribeFromDataset.</p>",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1218,10 +1273,12 @@
         },
         "UnsubscribeFromDatasetResponse": {
             "type": "structure",
+            "documentation": "<p>Response to an UnsubscribeFromDataset request.</p>",
             "members": []
         },
         "UpdateRecordsRequest": {
             "type": "structure",
+            "documentation": "A request to post updates to records or add and delete records for a dataset and user.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1270,6 +1327,7 @@
         },
         "UpdateRecordsResponse": {
             "type": "structure",
+            "documentation": "Returned for a successful UpdateRecordsRequest.",
             "members": [
                 {
                     "name": "Records",

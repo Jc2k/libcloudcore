@@ -1,5 +1,9 @@
 {
-    "metadata": {},
+    "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ]
+    },
     "endpoints": [
         {
             "when": [
@@ -216,6 +220,7 @@
         },
         "CloudHsmInternalException": {
             "type": "structure",
+            "documentation": "<p>Indicates that an internal error occurred.</p>",
             "members": []
         },
         "CloudHsmObjectState": {
@@ -223,6 +228,7 @@
         },
         "CloudHsmServiceException": {
             "type": "structure",
+            "documentation": "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>",
             "members": [
                 {
                     "name": "message",
@@ -238,6 +244,7 @@
         },
         "CreateHapgRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateHapgRequest</a> action.</p>",
             "members": [
                 {
                     "name": "Label",
@@ -248,6 +255,7 @@
         },
         "CreateHapgResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>",
             "members": [
                 {
                     "name": "HapgArn",
@@ -258,6 +266,7 @@
         },
         "CreateHsmRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateHsm</a> action. </p>",
             "members": [
                 {
                     "name": "SubnetId",
@@ -311,6 +320,7 @@
         },
         "CreateHsmResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>CreateHsm</a> action.</p>",
             "members": [
                 {
                     "name": "HsmArn",
@@ -321,6 +331,7 @@
         },
         "CreateLunaClientRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>",
             "members": [
                 {
                     "name": "Label",
@@ -336,6 +347,7 @@
         },
         "CreateLunaClientResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>CreateLunaClient</a> action.</p>",
             "members": [
                 {
                     "name": "ClientArn",
@@ -346,6 +358,7 @@
         },
         "DeleteHapgRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DeleteHapg</a> action.</p>",
             "members": [
                 {
                     "name": "HapgArn",
@@ -356,6 +369,7 @@
         },
         "DeleteHapgResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>DeleteHapg</a> action.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -366,6 +380,7 @@
         },
         "DeleteHsmRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DeleteHsm</a> action. </p>",
             "members": [
                 {
                     "name": "HsmArn",
@@ -377,6 +392,7 @@
         },
         "DeleteHsmResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>DeleteHsm</a> action.</p>",
             "members": [
                 {
                     "name": "Status",
@@ -407,6 +423,7 @@
         },
         "DescribeHapgRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeHapg</a> action.</p>",
             "members": [
                 {
                     "name": "HapgArn",
@@ -417,6 +434,7 @@
         },
         "DescribeHapgResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>DescribeHapg</a> action.</p>",
             "members": [
                 {
                     "name": "HapgArn",
@@ -464,6 +482,7 @@
         },
         "DescribeHsmRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>DescribeHsm</a> action. </p>",
             "members": [
                 {
                     "name": "HsmArn",
@@ -479,6 +498,7 @@
         },
         "DescribeHsmResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>DescribeHsm</a> action.</p>",
             "members": [
                 {
                     "name": "HsmArn",
@@ -686,10 +706,12 @@
             "of": "HapgArn"
         },
         "HsmArn": {
-            "type": "string"
+            "type": "string",
+            "documentation": "<p>An ARN that identifies an HSM.</p>"
         },
         "HsmList": {
             "type": "list",
+            "documentation": "<p>Contains a list of ARNs that identify the HSMs.</p>",
             "of": "HsmArn"
         },
         "HsmSerialNumber": {
@@ -703,6 +725,7 @@
         },
         "InvalidRequestException": {
             "type": "structure",
+            "documentation": "<p>Indicates that one or more of the request parameters are not valid.</p>",
             "members": []
         },
         "IpAddress": {
@@ -713,6 +736,7 @@
         },
         "ListAvailableZonesRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>",
             "members": []
         },
         "ListAvailableZonesResponse": {
@@ -762,6 +786,7 @@
         },
         "ListHsmsResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>ListHsms</a> action.</p>",
             "members": [
                 {
                     "name": "HsmList",
@@ -832,6 +857,7 @@
         },
         "ModifyHsmRequest": {
             "type": "structure",
+            "documentation": "<p>Contains the inputs for the <a>ModifyHsm</a> action. </p>",
             "members": [
                 {
                     "name": "HsmArn",
@@ -873,6 +899,7 @@
         },
         "ModifyHsmResponse": {
             "type": "structure",
+            "documentation": "<p>Contains the output of the <a>ModifyHsm</a> action.</p>",
             "members": [
                 {
                     "name": "HsmArn",

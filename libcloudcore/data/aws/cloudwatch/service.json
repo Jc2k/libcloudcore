@@ -1,5 +1,8 @@
 {
     "metadata": {
+        "request-pipeline": [
+            "libcloudcore.serializers.xml:XmlSerializer"
+        ],
         "namespaces": {
             "": "http://monitoring.amazonaws.com/doc/2010-08-01/"
         }
@@ -128,6 +131,7 @@
         },
         "AlarmHistoryItem": {
             "type": "structure",
+            "documentation": "<p> The <code>AlarmHistoryItem</code> data type contains descriptive information about the history of a specific alarm. If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part of the <a>DescribeAlarmHistoryResult</a> data type. </p>",
             "members": [
                 {
                     "name": "AlarmName",
@@ -178,6 +182,7 @@
         },
         "Datapoint": {
             "type": "structure",
+            "documentation": "<p> The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data. </p>",
             "members": [
                 {
                     "name": "Timestamp",
@@ -270,6 +275,7 @@
         },
         "DescribeAlarmHistoryOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>DescribeAlarmHistory</a> action. </p>",
             "members": [
                 {
                     "name": "AlarmHistoryItems",
@@ -320,6 +326,7 @@
         },
         "DescribeAlarmsForMetricOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>DescribeAlarmsForMetric</a> action. </p>",
             "members": [
                 {
                     "name": "MetricAlarms",
@@ -365,6 +372,7 @@
         },
         "DescribeAlarmsOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>DescribeAlarms</a> action. </p>",
             "members": [
                 {
                     "name": "MetricAlarms",
@@ -380,6 +388,7 @@
         },
         "Dimension": {
             "type": "structure",
+            "documentation": "<p> The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair. </p> <p>For examples that use one or more dimensions, see <a>PutMetricData</a>.</p>",
             "members": [
                 {
                     "name": "Name",
@@ -395,6 +404,7 @@
         },
         "DimensionFilter": {
             "type": "structure",
+            "documentation": "<p> The <code>DimensionFilter</code> data type is used to filter <a>ListMetrics</a> results. </p>",
             "members": [
                 {
                     "name": "Name",
@@ -424,6 +434,7 @@
         },
         "DisableAlarmActionsInput": {
             "type": "structure",
+            "documentation": "<p> </p>",
             "members": [
                 {
                     "name": "AlarmNames",
@@ -498,6 +509,7 @@
         },
         "GetMetricStatisticsOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>GetMetricStatistics</a> action. </p>",
             "members": [
                 {
                     "name": "Label",
@@ -522,6 +534,7 @@
         },
         "InternalServiceFault": {
             "type": "structure",
+            "documentation": "<p> Indicates that the request processing has failed due to some unknown error, exception, or failure. </p>",
             "members": [
                 {
                     "name": "Message",
@@ -532,6 +545,7 @@
         },
         "InvalidFormatFault": {
             "type": "structure",
+            "documentation": "<p> Data was not syntactically valid JSON. </p>",
             "members": [
                 {
                     "name": "message",
@@ -542,6 +556,7 @@
         },
         "InvalidNextToken": {
             "type": "structure",
+            "documentation": "<p> The next token specified is invalid. </p>",
             "members": [
                 {
                     "name": "message",
@@ -552,6 +567,7 @@
         },
         "InvalidParameterCombinationException": {
             "type": "structure",
+            "documentation": "<p> Parameters that must not be used together were used together. </p>",
             "members": [
                 {
                     "name": "message",
@@ -562,6 +578,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
+            "documentation": "<p> Bad or out-of-range value was supplied for the input parameter. </p>",
             "members": [
                 {
                     "name": "message",
@@ -572,6 +589,7 @@
         },
         "LimitExceededFault": {
             "type": "structure",
+            "documentation": "<p> The quota for alarms for this customer has already been reached. </p>",
             "members": [
                 {
                     "name": "message",
@@ -607,6 +625,7 @@
         },
         "ListMetricsOutput": {
             "type": "structure",
+            "documentation": "<p> The output for the <a>ListMetrics</a> action. </p>",
             "members": [
                 {
                     "name": "Metrics",
@@ -625,6 +644,7 @@
         },
         "Metric": {
             "type": "structure",
+            "documentation": "<p> The <code>Metric</code> data type contains information about a specific metric. If you call <a>ListMetrics</a>, Amazon CloudWatch returns information contained by this data type. </p> <p> The example in the Examples section publishes two metrics named buffers and latency. Both metrics are in the examples namespace. Both metrics have two dimensions, InstanceID and InstanceType. </p>",
             "members": [
                 {
                     "name": "Namespace",
@@ -645,6 +665,7 @@
         },
         "MetricAlarm": {
             "type": "structure",
+            "documentation": "<p> The <a>MetricAlarm</a> data type represents an alarm. You can use <a>PutMetricAlarm</a> to create or update an alarm. </p>",
             "members": [
                 {
                     "name": "AlarmName",
@@ -763,6 +784,7 @@
         },
         "MetricDatum": {
             "type": "structure",
+            "documentation": "<p> The <code>MetricDatum</code> data type encapsulates the information sent with <a>PutMetricData</a> to either create a new metric or add new values to be aggregated into an existing metric. </p>",
             "members": [
                 {
                     "name": "MetricName",
@@ -808,6 +830,7 @@
         },
         "MissingRequiredParameterException": {
             "type": "structure",
+            "documentation": "<p> An input parameter that is mandatory for processing the request is not supplied. </p>",
             "members": [
                 {
                     "name": "message",
@@ -929,6 +952,7 @@
         },
         "ResourceNotFound": {
             "type": "structure",
+            "documentation": "<p> The named resource does not exist. </p>",
             "members": [
                 {
                     "name": "message",
@@ -979,6 +1003,7 @@
         },
         "StatisticSet": {
             "type": "structure",
+            "documentation": "<p> The <code>StatisticSet</code> data type describes the <code>StatisticValues</code> component of <a>MetricDatum</a>, and represents a set of statistics that describes a specific metric. </p>",
             "members": [
                 {
                     "name": "SampleCount",
