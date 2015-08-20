@@ -81,6 +81,43 @@ class TestValidateInteger(unittest.TestCase):
         self.assertEqual(report[0].code, "invalid_type")
 
 
+class TestValidateInteger(unittest.TestCase):
+
+    def setUp(self):
+        self.model = Model({
+            'shapes': {
+                'TestShape': {
+                    'type': 'float',
+                    'min': 0,
+                    'max': 1,
+                }
+            }
+        })
+
+    def test_validate_integer_0(self):
+        report = validate_shape(self.model.get_shape('TestShape'), 0)
+        self.assertEqual(len(report), 0)
+
+    def test_validate_integer_1(self):
+        report = validate_shape(self.model.get_shape('TestShape'), 1)
+        self.assertEqual(len(report), 0)
+
+    def test_validate_integer_min(self):
+        report = validate_shape(self.model.get_shape('TestShape'), -1)
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_range")
+
+    def test_validate_integer_max(self):
+        report = validate_shape(self.model.get_shape('TestShape'), -1)
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_range")
+
+    def test_validate_integer_type_check(self):
+        report = validate_shape(self.model.get_shape('TestShape'), "55")
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0].code, "invalid_type")
+
+
 class TestValidateString(unittest.TestCase):
 
     def test_validate_string_no(self):

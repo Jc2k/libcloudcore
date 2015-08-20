@@ -162,7 +162,7 @@ def _validate_integer(field, shape, value, report):
 
 
 def _validate_float(field, shape, value, report):
-    if not _check_type(field, value, float, report):
+    if not _check_type(field, value, (float, int), report):
         return
 
     if not _check_range(field, value, shape.min, shape.max, report):
