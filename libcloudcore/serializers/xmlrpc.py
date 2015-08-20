@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-from six.moves import xmlrpc_client
+from six.moves import xmlrpc_client, filter, zip
 
 from . import base
 
@@ -26,8 +26,8 @@ class XmlrpcSerializer(base.Serializer):
 
     def serialize(self, operation, shape, params):
         args = []
-        if operation.input_shape:
-            for member in operation.input_shape.iter_members():
+        if shape:
+            for member in shape.iter_members():
                 if member.destination == 'body':
                     args.append(params[member.name])
 
@@ -40,7 +40,6 @@ class XmlrpcSerializer(base.Serializer):
     def deserialize(self, operation, shape, body):
         try:
             args, methodname = xmlrpc_client.loads(body)
-            return args[0]
         except xmlrpc_client.Fault as e:
             return {
                 "Error": {
@@ -48,6 +47,17 @@ class XmlrpcSerializer(base.Serializer):
                     "Message": e.faultString,
                 }
             }
+
+        args_iter = zip(args, filter(
+            lambda m: m.destination == 'body',
+            shape.iter_members(),
+        ))
+
+        result = {}
+        for arg, member in args_iter:
+            result[member.name] = arg
+
+        return result
 
     def before_call(self, request, operation, **params):
         request.method = 'POST'

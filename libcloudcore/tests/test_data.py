@@ -46,8 +46,6 @@ def find_services():
 def find_operations():
     session = Importer(__name__)
     for service in find_services():
-        if service == "gandi":
-            continue
         if service == "aws/dynamodb":
             continue
         driver = session.get_driver(service)

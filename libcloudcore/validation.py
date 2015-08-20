@@ -67,7 +67,7 @@ def _check_range(field, value, min, max, report):
 
 
 def _check_regex(field, value, regex, report):
-    if regex is None or re.match(value, regex):
+    if regex is None or re.match(regex, value):
         return True
 
     report.append(ReportItem(
