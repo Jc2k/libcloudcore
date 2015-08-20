@@ -81,7 +81,7 @@ class TestValidateInteger(unittest.TestCase):
         self.assertEqual(report[0].code, "invalid_type")
 
 
-class TestValidateInteger(unittest.TestCase):
+class TestValidateFloat(unittest.TestCase):
 
     def setUp(self):
         self.model = Model({
