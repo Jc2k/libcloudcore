@@ -39,6 +39,11 @@ class Serializer(layer.Layer):
         )
 
     def after_call(self, operation, request, response):
+        if operation.is_streaming:
+            return {
+                "Body": response.body,
+            }
+
         return self.deserialize(
             operation,
             operation.output_shape,
