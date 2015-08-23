@@ -24,12 +24,12 @@ logger = logging.getLogger(__name__)
 
 class Driver(ErrorParser, Validation):
 
-    def _get_query_args(self, operation, request, **params):
-        query = {}
-        for member in operation.input_shape.iter_members():
-            if member.target == "query" and member.name in params:
-                query[member.name] = params[member.name]
-        return query
+    def _get_params_for(self, target, shape, params):
+        result = {}
+        for member in shape.iter_members():
+            if member.target == target and member.name in params:
+                result[member.name] = params[member.name]
+        return result
 
     def before_call(self, request, operation, **params):
         request.scheme = operation.http['scheme']
@@ -37,7 +37,12 @@ class Driver(ErrorParser, Validation):
         request.port = operation.http['port']
         request.uri = operation.http['uri'].lstrip("/").format(**params)
         request.method = operation.http['method']
-        request.query = self._get_query_args(operation, request, **params)
+
+        request.query = self._get_params_for(
+            "query",
+            operation.input_shape,
+            params,
+        )
 
         super(Driver, self).before_call(request, operation, **params)
 

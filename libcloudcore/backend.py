@@ -25,17 +25,26 @@ from . import exceptions
 import requests
 
 
+class StreamingBody(object):
+
+    def __init__(self, resp):
+        self.resp = resp
+
+
 class Driver(Layer):
 
     def _prepare_request(self, operation, **params):
         request = Request()
         return request
 
-    def _prepare_response(self, resp):
+    def _prepare_response(self, resp, is_streaming):
         """ Convert a libcloudcore request into a requests request """
         response = Response()
         response.status_code = resp.status_code
-        response.body = resp.content
+        if response.status_code < 300 and is_streaming:
+            response.body = StreamingBody(resp)
+        else:
+            response.body = resp.content
         return response
 
     def _do_call(self, request):
@@ -57,7 +66,7 @@ class Driver(Layer):
         request = self._prepare_request(operation, **params)
         self.before_call(request, operation, **params)
         response = self._do_call(request)
-        response = self._prepare_response(response)
+        response = self._prepare_response(response, operation.is_streaming)
         return self.after_call(operation, request, response)
 
     def wait(self, waiter, **params):

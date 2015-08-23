@@ -23,6 +23,15 @@ from libcloudcore import exceptions
 import aiohttp
 
 
+class StreamingBody(object):
+
+    def __init__(self, resp):
+        self.resp = resp
+
+    def read(self, size=None):
+        return self.resp.read(size)
+
+
 class Driver(Layer):
 
     @asyncio.coroutine
@@ -45,7 +54,11 @@ class Driver(Layer):
 
         response = Response()
         response.status_code = resp.status
-        response.body = yield from resp.read()
+
+        if response.status_code < 300 and operation.is_streaming:
+            response.body = StreamingBody(resp)
+        else:
+            response.body = yield from resp.read()
 
         return self.after_call(operation, request, response)
 

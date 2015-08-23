@@ -126,6 +126,10 @@ class Operation(Shape):
         self.documentation = operation.get('documentation', '')
 
     @property
+    def is_streaming(self):
+        return self.operation.get('is_streaming', False)
+
+    @property
     def http(self):
         http = dict(self.model.http_endpoint)
         http.update(self.operation.get('http', {}))
