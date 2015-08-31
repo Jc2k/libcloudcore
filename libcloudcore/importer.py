@@ -54,6 +54,7 @@ class Importer(object):
 
         if self.loader.is_service(service):
             module.Driver = self.get_driver(service)
+            module.Driver.__module__ = module
             module.__all__ = ['Driver']
             module.__package__ = fullname.rpartition('.')[0]
         elif self.loader.is_namespace(service):
@@ -94,4 +95,4 @@ class Importer(object):
         for waiter in model.get_waiters():
             attrs[waiter.name] = self.get_waiter_method(waiter)
 
-        return type(service, bases, attrs)
+        return type("Driver", bases, attrs)
