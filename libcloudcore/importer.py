@@ -53,7 +53,7 @@ class Importer(object):
         module.__path__ = [fullname]
 
         if self.loader.is_service(service):
-            module.Client = self.get_driver(service)
+            module.Client = self.get_client(service)
             module.Client.__module__ = module
             module.Driver = module.Client.Driver
             module.Driver.__module__ = module
@@ -85,15 +85,21 @@ class Importer(object):
 
         bases = (Driver, self.backend) + model.request_pipeline
 
-        driver_attrs = {
+        attrs = {
             'name': service,
             'model': model,
         }
 
+        return type("Driver", bases, attrs)
+
+    def get_client(self, service):
+        driver = self.get_driver(service)
+        model = driver.model
+
         attrs = {
             'name': service,
             '__doc__': model.documentation,
-            'Driver': type("Driver", bases, driver_attrs),
+            'Driver': driver,
         }
 
         for operation in model.get_operations():

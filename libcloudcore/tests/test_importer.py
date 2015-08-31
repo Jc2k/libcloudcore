@@ -27,6 +27,10 @@ class TestImporter(unittest.TestCase):
         driver = self.importer.get_driver("bigv")
         self.assertTrue(driver.name == "bigv")
 
-    def test_driver_has_operations(self):
-        driver = self.importer.get_driver("bigv")
+    def test_get_client(self):
+        client = self.importer.get_client("bigv")
+        self.assertTrue(client.name == "bigv")
+
+    def test_client_has_operations(self):
+        driver = self.importer.get_client("bigv")
         self.assertTrue(hasattr(driver, "list_virtual_machines"))
