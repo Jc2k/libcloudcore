@@ -60,9 +60,9 @@ class TestActualRequests(base.DriverTestCase, httpbin.HttpBinTestCase):
 
     def setUp(self):
         super(TestActualRequests, self).setUp()
-        from libcloudcore.asyncio.drivers.httpbin import Driver
-        self.driver = Driver()
-        self.driver.model._model['metadata']['http'] = {
+        from libcloudcore.asyncio.drivers.httpbin import Client
+        self.client = Client()
+        self.client.driver.model._model['metadata']['http'] = {
             'host': 'localhost',
             'port': self.server.port,
             'scheme': 'http',
@@ -74,20 +74,20 @@ class TestActualRequests(base.DriverTestCase, httpbin.HttpBinTestCase):
         return loop.run_until_complete(func(*args, **kwargs))
 
     def test_simple_get(self):
-        result = self.call(self.driver.ip)
+        result = self.call(self.client.ip)
         self.assertTrue('origin' in result)
 
     def test_get_args(self):
-        result = self.call(self.driver.get, foo="bar")
+        result = self.call(self.client.get, foo="bar")
         self.assertEqual(result["args"], {"foo": "bar"})
 
     def test_post(self):
-        result = self.call(self.driver.post, args={"foo": "bar"})
+        result = self.call(self.client.post, args={"foo": "bar"})
         self.assertEqual(result["json"]["args"], {"foo": "bar"})
 
     def test_post_2(self):
-        result = self.call(self.driver.post, args_list=[{"foo": "bar"}])
+        result = self.call(self.client.post, args_list=[{"foo": "bar"}])
         self.assertEqual(result["json"]["args_list"], [{"foo": "bar"}])
 
     def test_wait(self):
-        self.call(self.driver.wait_get, foo="bar")
+        self.call(self.client.wait_get, foo="bar")

@@ -71,28 +71,28 @@ class TestActualRequests(base.DriverTestCase, httpbin.HttpBinTestCase):
 
     def setUp(self):
         super(TestActualRequests, self).setUp()
-        from libcloudcore.drivers.httpbin import Driver
-        self.driver = Driver()
-        self.driver.model._model['metadata']['http'] = {
+        from libcloudcore.drivers.httpbin import Client
+        self.client = Client()
+        self.client.driver.model._model['metadata']['http'] = {
             'host': 'localhost',
             'port': self.server.port,
             'scheme': 'http',
         }
 
     def test_ip(self):
-        self.assertTrue('origin' in self.driver.ip())
+        self.assertTrue('origin' in self.client.ip())
 
     def test_get_args(self):
-        result = self.driver.get(foo="bar")
+        result = self.client.get(foo="bar")
         self.assertEqual(result["args"], {"foo": "bar"})
 
     def test_post(self):
-        result = self.driver.post(args={"foo": "bar"})
+        result = self.client.post(args={"foo": "bar"})
         self.assertEqual(result["json"]["args"], {"foo": "bar"})
 
     def test_post_2(self):
-        result = self.driver.post(args_list=[{"foo": "bar"}])
+        result = self.client.post(args_list=[{"foo": "bar"}])
         self.assertEqual(result["json"]["args_list"], [{"foo": "bar"}])
 
     def test_wait(self):
-        self.driver.wait_get(foo="bar")
+        self.client.wait_get(foo="bar")

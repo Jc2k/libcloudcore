@@ -20,7 +20,7 @@ from .loader import Loader
 from .models import Model
 from .driver import Driver
 from .utils import force_str
-from . import backend
+from . import backend, client
 
 
 class Importer(object):
@@ -53,9 +53,11 @@ class Importer(object):
         module.__path__ = [fullname]
 
         if self.loader.is_service(service):
-            module.Driver = self.get_driver(service)
+            module.Client = self.get_driver(service)
+            module.Client.__module__ = module
+            module.Driver = module.Client.Driver
             module.Driver.__module__ = module
-            module.__all__ = ['Driver']
+            module.__all__ = ['Client']
             module.__package__ = fullname.rpartition('.')[0]
         elif self.loader.is_namespace(service):
             module.__package__ = fullname
@@ -64,14 +66,14 @@ class Importer(object):
 
     def get_driver_method(self, operation):
         def method(self, *args, **kwargs):
-            return self.call(operation, *args, **kwargs)
+            return self.driver.call(operation, *args, **kwargs)
         setattr(method, "__doc__", operation.documentation)
         setattr(method, "__name__", force_str(operation.name))
         return method
 
     def get_waiter_method(self, waiter):
         def method(self, *args, **kwargs):
-            return self.wait(waiter, *args, **kwargs)
+            return self.driver.wait(waiter, *args, **kwargs)
         setattr(method, "__doc__", waiter.documentation)
         setattr(method, "__name__", force_str(waiter.name))
         return method
@@ -83,10 +85,15 @@ class Importer(object):
 
         bases = (Driver, self.backend) + model.request_pipeline
 
+        driver_attrs = {
+            'name': service,
+            'model': model,
+        }
+
         attrs = {
             'name': service,
             '__doc__': model.documentation,
-            'model': model,
+            'Driver': type("Driver", bases, driver_attrs),
         }
 
         for operation in model.get_operations():
@@ -95,4 +102,4 @@ class Importer(object):
         for waiter in model.get_waiters():
             attrs[waiter.name] = self.get_waiter_method(waiter)
 
-        return type("Driver", bases, attrs)
+        return type("Client", (client.Client, ), attrs)

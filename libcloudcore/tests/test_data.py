@@ -49,8 +49,8 @@ def find_operations():
         if service == "aws/dynamodb":
             continue
         driver = session.get_driver(service)
-        for operation in driver.model.get_operations():
-            yield service, operation.name, driver, operation
+        for operation in driver.Driver.model.get_operations():
+            yield service, operation.name, driver.Driver, operation
 
 
 class StrategyBuilder(models.Visitor):
