@@ -35,13 +35,13 @@
     ],
     "operations": {
         "DeleteAlarms": {
-            "documentation": "<p> Deletes all specified alarms. In the event of an error, no alarms are deleted. </p>",
+            "documentation": "Deletes all specified alarms. In the event of an error, no alarms are deleted.",
             "input": {
                 "shape": "DeleteAlarmsInput"
             }
         },
         "DescribeAlarmHistory": {
-            "documentation": "<p> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms. </p>",
+            "documentation": "Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns histories for all of the owner's alarms.",
             "input": {
                 "shape": "DescribeAlarmHistoryInput"
             },
@@ -50,7 +50,7 @@
             }
         },
         "DescribeAlarms": {
-            "documentation": "<p> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action. </p>",
+            "documentation": "Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action.",
             "input": {
                 "shape": "DescribeAlarmsInput"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DescribeAlarmsForMetric": {
-            "documentation": "<p> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </p>",
+            "documentation": "Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further.",
             "input": {
                 "shape": "DescribeAlarmsForMetricInput"
             },
@@ -68,19 +68,19 @@
             }
         },
         "DisableAlarmActions": {
-            "documentation": "<p> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute. </p>",
+            "documentation": "Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's actions will execute.",
             "input": {
                 "shape": "DisableAlarmActionsInput"
             }
         },
         "EnableAlarmActions": {
-            "documentation": "<p> Enables actions for the specified alarms. </p>",
+            "documentation": "Enables actions for the specified alarms.",
             "input": {
                 "shape": "EnableAlarmActionsInput"
             }
         },
         "GetMetricStatistics": {
-            "documentation": "<p> Gets statistics for the specified metric. </p> <p> The maximum number of data points returned from a single <code>GetMetricStatistics</code> request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. </p> <p> Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </p> <p> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </p> <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances over a span of 2 weeks</li> </ul> <p> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to Cloudwatch, go to <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html\">Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>",
+            "documentation": "Gets statistics for the specified metric. \n\n  The maximum number of data points returned from a single ``GetMetricStatistics`` request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. \n\n  Amazon CloudWatch aggregates data points based on the length of the ``period`` that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. \n\n  The following examples show various statistics allowed by the data point query maximum of 50,850 when you call ``GetMetricStatistics`` on Amazon EC2 instances with detailed (one-minute) monitoring enabled: \n\n \n\n  * Statistics for up to 400 instances for a span of one hour\n  * Statistics for up to 35 instances over a span of 24 hours\n  * Statistics for up to 2 instances over a span of 2 weeks\n \n  For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to Cloudwatch, go to `Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference <http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html>`_ in the *Amazon CloudWatch Developer Guide*.",
             "input": {
                 "shape": "GetMetricStatisticsInput"
             },
@@ -89,7 +89,7 @@
             }
         },
         "ListMetrics": {
-            "documentation": "<p> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given metric. </p>",
+            "documentation": "Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with GetMetricStatistics to obtain statistical data for a given metric.",
             "input": {
                 "shape": "ListMetricsInput"
             },
@@ -98,19 +98,19 @@
             }
         },
         "PutMetricAlarm": {
-            "documentation": "<p> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. </p> <p> When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed. </p>",
+            "documentation": "Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more Amazon Simple Notification Service resources with the alarm. \n\n  When this operation creates an alarm, the alarm state is immediately set to ``INSUFFICIENT_DATA``. The alarm is evaluated and its ``StateValue`` is set appropriately. Any actions associated with the ``StateValue`` is then executed.",
             "input": {
                 "shape": "PutMetricAlarmInput"
             }
         },
         "PutMetricData": {
-            "documentation": "<p> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls to the <a>ListMetrics</a> action.</p> <p> The size of a <function>PutMetricData</function> request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </p> <important> Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated. </important> <p>Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <code>GetMetricStatistics</code>.</p>",
+            "documentation": "Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls to the ListMetrics action.\n\n  The size of a PutMetricData request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. \n\n  Although the ``Value`` parameter accepts numbers of type ``Double``, Amazon CloudWatch truncates values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also truncated.  Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using ``GetMetricStatistics``.",
             "input": {
                 "shape": "PutMetricDataInput"
             }
         },
         "SetAlarmState": {
-            "documentation": "<p> Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state. </p>",
+            "documentation": "Temporarily sets the state of an alarm. When the updated ``StateValue`` differs from the previous value, the action configured for the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual state.",
             "input": {
                 "shape": "SetAlarmStateInput"
             }
@@ -131,7 +131,7 @@
         },
         "AlarmHistoryItem": {
             "type": "structure",
-            "documentation": "<p> The <code>AlarmHistoryItem</code> data type contains descriptive information about the history of a specific alarm. If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part of the <a>DescribeAlarmHistoryResult</a> data type. </p>",
+            "documentation": "The ``AlarmHistoryItem`` data type contains descriptive information about the history of a specific alarm. If you call DescribeAlarmHistory, Amazon CloudWatch returns this data type as part of the DescribeAlarmHistoryResult data type.",
             "members": [
                 {
                     "name": "AlarmName",
@@ -182,7 +182,7 @@
         },
         "Datapoint": {
             "type": "structure",
-            "documentation": "<p> The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data. </p>",
+            "documentation": "The ``Datapoint`` data type encapsulates the statistical data that Amazon CloudWatch computes from metric data.",
             "members": [
                 {
                     "name": "Timestamp",
@@ -275,7 +275,7 @@
         },
         "DescribeAlarmHistoryOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>DescribeAlarmHistory</a> action. </p>",
+            "documentation": "The output for the DescribeAlarmHistory action.",
             "members": [
                 {
                     "name": "AlarmHistoryItems",
@@ -326,7 +326,7 @@
         },
         "DescribeAlarmsForMetricOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>DescribeAlarmsForMetric</a> action. </p>",
+            "documentation": "The output for the DescribeAlarmsForMetric action.",
             "members": [
                 {
                     "name": "MetricAlarms",
@@ -372,7 +372,7 @@
         },
         "DescribeAlarmsOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>DescribeAlarms</a> action. </p>",
+            "documentation": "The output for the DescribeAlarms action.",
             "members": [
                 {
                     "name": "MetricAlarms",
@@ -388,7 +388,7 @@
         },
         "Dimension": {
             "type": "structure",
-            "documentation": "<p> The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair. </p> <p>For examples that use one or more dimensions, see <a>PutMetricData</a>.</p>",
+            "documentation": "The ``Dimension`` data type further expands on the identity of a metric using a Name, Value pair. \n\n For examples that use one or more dimensions, see PutMetricData.",
             "members": [
                 {
                     "name": "Name",
@@ -404,7 +404,7 @@
         },
         "DimensionFilter": {
             "type": "structure",
-            "documentation": "<p> The <code>DimensionFilter</code> data type is used to filter <a>ListMetrics</a> results. </p>",
+            "documentation": "The ``DimensionFilter`` data type is used to filter ListMetrics results.",
             "members": [
                 {
                     "name": "Name",
@@ -434,7 +434,7 @@
         },
         "DisableAlarmActionsInput": {
             "type": "structure",
-            "documentation": "<p> </p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "AlarmNames",
@@ -509,7 +509,7 @@
         },
         "GetMetricStatisticsOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>GetMetricStatistics</a> action. </p>",
+            "documentation": "The output for the GetMetricStatistics action.",
             "members": [
                 {
                     "name": "Label",
@@ -534,7 +534,7 @@
         },
         "InternalServiceFault": {
             "type": "structure",
-            "documentation": "<p> Indicates that the request processing has failed due to some unknown error, exception, or failure. </p>",
+            "documentation": "Indicates that the request processing has failed due to some unknown error, exception, or failure.",
             "members": [
                 {
                     "name": "Message",
@@ -545,7 +545,7 @@
         },
         "InvalidFormatFault": {
             "type": "structure",
-            "documentation": "<p> Data was not syntactically valid JSON. </p>",
+            "documentation": "Data was not syntactically valid JSON.",
             "members": [
                 {
                     "name": "message",
@@ -556,7 +556,7 @@
         },
         "InvalidNextToken": {
             "type": "structure",
-            "documentation": "<p> The next token specified is invalid. </p>",
+            "documentation": "The next token specified is invalid.",
             "members": [
                 {
                     "name": "message",
@@ -567,7 +567,7 @@
         },
         "InvalidParameterCombinationException": {
             "type": "structure",
-            "documentation": "<p> Parameters that must not be used together were used together. </p>",
+            "documentation": "Parameters that must not be used together were used together.",
             "members": [
                 {
                     "name": "message",
@@ -578,7 +578,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
-            "documentation": "<p> Bad or out-of-range value was supplied for the input parameter. </p>",
+            "documentation": "Bad or out-of-range value was supplied for the input parameter.",
             "members": [
                 {
                     "name": "message",
@@ -589,7 +589,7 @@
         },
         "LimitExceededFault": {
             "type": "structure",
-            "documentation": "<p> The quota for alarms for this customer has already been reached. </p>",
+            "documentation": "The quota for alarms for this customer has already been reached.",
             "members": [
                 {
                     "name": "message",
@@ -625,7 +625,7 @@
         },
         "ListMetricsOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>ListMetrics</a> action. </p>",
+            "documentation": "The output for the ListMetrics action.",
             "members": [
                 {
                     "name": "Metrics",
@@ -644,7 +644,7 @@
         },
         "Metric": {
             "type": "structure",
-            "documentation": "<p> The <code>Metric</code> data type contains information about a specific metric. If you call <a>ListMetrics</a>, Amazon CloudWatch returns information contained by this data type. </p> <p> The example in the Examples section publishes two metrics named buffers and latency. Both metrics are in the examples namespace. Both metrics have two dimensions, InstanceID and InstanceType. </p>",
+            "documentation": "The ``Metric`` data type contains information about a specific metric. If you call ListMetrics, Amazon CloudWatch returns information contained by this data type. \n\n  The example in the Examples section publishes two metrics named buffers and latency. Both metrics are in the examples namespace. Both metrics have two dimensions, InstanceID and InstanceType.",
             "members": [
                 {
                     "name": "Namespace",
@@ -665,7 +665,7 @@
         },
         "MetricAlarm": {
             "type": "structure",
-            "documentation": "<p> The <a>MetricAlarm</a> data type represents an alarm. You can use <a>PutMetricAlarm</a> to create or update an alarm. </p>",
+            "documentation": "The MetricAlarm data type represents an alarm. You can use PutMetricAlarm to create or update an alarm.",
             "members": [
                 {
                     "name": "AlarmName",
@@ -784,7 +784,7 @@
         },
         "MetricDatum": {
             "type": "structure",
-            "documentation": "<p> The <code>MetricDatum</code> data type encapsulates the information sent with <a>PutMetricData</a> to either create a new metric or add new values to be aggregated into an existing metric. </p>",
+            "documentation": "The ``MetricDatum`` data type encapsulates the information sent with PutMetricData to either create a new metric or add new values to be aggregated into an existing metric.",
             "members": [
                 {
                     "name": "MetricName",
@@ -830,7 +830,7 @@
         },
         "MissingRequiredParameterException": {
             "type": "structure",
-            "documentation": "<p> An input parameter that is mandatory for processing the request is not supplied. </p>",
+            "documentation": "An input parameter that is mandatory for processing the request is not supplied.",
             "members": [
                 {
                     "name": "message",
@@ -952,7 +952,7 @@
         },
         "ResourceNotFound": {
             "type": "structure",
-            "documentation": "<p> The named resource does not exist. </p>",
+            "documentation": "The named resource does not exist.",
             "members": [
                 {
                     "name": "message",
@@ -1003,7 +1003,7 @@
         },
         "StatisticSet": {
             "type": "structure",
-            "documentation": "<p> The <code>StatisticSet</code> data type describes the <code>StatisticValues</code> component of <a>MetricDatum</a>, and represents a set of statistics that describes a specific metric. </p>",
+            "documentation": "The ``StatisticSet`` data type describes the ``StatisticValues`` component of MetricDatum, and represents a set of statistics that describes a specific metric.",
             "members": [
                 {
                     "name": "SampleCount",

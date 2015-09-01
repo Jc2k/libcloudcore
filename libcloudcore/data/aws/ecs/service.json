@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateCluster": {
-            "documentation": "<p>Creates a new Amazon ECS cluster. By default, your account will receive a <code>default</code> cluster when you launch your first container instance. However, you can create your own cluster with a unique name with the <code>CreateCluster</code> action.</p>",
+            "documentation": "Creates a new Amazon ECS cluster. By default, your account will receive a ``default`` cluster when you launch your first container instance. However, you can create your own cluster with a unique name with the ``CreateCluster`` action.",
             "input": {
                 "shape": "CreateClusterRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateService": {
-            "documentation": "<p>Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below <code>desiredCount</code>, Amazon ECS will spawn another instantiation of the task in the specified cluster.</p>",
+            "documentation": "Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below ``desiredCount``, Amazon ECS will spawn another instantiation of the task in the specified cluster.",
             "input": {
                 "shape": "CreateServiceRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "DeleteCluster": {
-            "documentation": "<p>Deletes the specified cluster. You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with <a>ListContainerInstances</a> and deregister them with <a>DeregisterContainerInstance</a>.</p>",
+            "documentation": "Deletes the specified cluster. You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with ListContainerInstances and deregister them with DeregisterContainerInstance.",
             "input": {
                 "shape": "DeleteClusterRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DeleteService": {
-            "documentation": "<p>Deletes a specified service within a cluster.</p>",
+            "documentation": "Deletes a specified service within a cluster.",
             "input": {
                 "shape": "DeleteServiceRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "DeregisterContainerInstance": {
-            "documentation": "<p>Deregisters an Amazon ECS container instance from the specified cluster. This instance will no longer be available to run tasks.</p> <p>If you intend to use the container instance for some other purpose after deregistration, you should stop all of the tasks running on the container instance before deregistration to avoid any orphaned tasks from consuming resources.</p> <p>Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2 instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop billing.</p> <note><p>When you terminate a container instance, it is automatically deregistered from your cluster.</p></note>",
+            "documentation": "Deregisters an Amazon ECS container instance from the specified cluster. This instance will no longer be available to run tasks.\n\n If you intend to use the container instance for some other purpose after deregistration, you should stop all of the tasks running on the container instance before deregistration to avoid any orphaned tasks from consuming resources.\n\n Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2 instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop billing.\n\n When you terminate a container instance, it is automatically deregistered from your cluster.",
             "input": {
                 "shape": "DeregisterContainerInstanceRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "DeregisterTaskDefinition": {
-            "documentation": "<p>Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task definition can still scale up or down by modifying the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you cannot update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a 10 minute window following deregistration where these restrictions have not yet taken effect).</p>",
+            "documentation": "Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as ``INACTIVE``. Existing tasks and services that reference an ``INACTIVE`` task definition continue to run without disruption. Existing services that reference an ``INACTIVE`` task definition can still scale up or down by modifying the service's desired count.\n\n You cannot use an ``INACTIVE`` task definition to run new tasks or create new services, and you cannot update an existing service to reference an ``INACTIVE`` task definition (although there may be up to a 10 minute window following deregistration where these restrictions have not yet taken effect).",
             "input": {
                 "shape": "DeregisterTaskDefinitionRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "DescribeClusters": {
-            "documentation": "<p>Describes one or more of your clusters.</p>",
+            "documentation": "Describes one or more of your clusters.",
             "input": {
                 "shape": "DescribeClustersRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "DescribeContainerInstances": {
-            "documentation": "<p>Describes Amazon EC2 Container Service container instances. Returns metadata about registered and remaining resources on each container instance requested.</p>",
+            "documentation": "Describes Amazon EC2 Container Service container instances. Returns metadata about registered and remaining resources on each container instance requested.",
             "input": {
                 "shape": "DescribeContainerInstancesRequest"
             },
@@ -104,7 +104,7 @@
             }
         },
         "DescribeServices": {
-            "documentation": "<p>Describes the specified services running in your cluster.</p>",
+            "documentation": "Describes the specified services running in your cluster.",
             "input": {
                 "shape": "DescribeServicesRequest"
             },
@@ -113,7 +113,7 @@
             }
         },
         "DescribeTaskDefinition": {
-            "documentation": "<p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information on a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note> <p>You can only describe <code>INACTIVE</code> task definitions while an active task or service references them.</p> </note>",
+            "documentation": "Describes a task definition. You can specify a ``family`` and ``revision`` to find information on a specific task definition, or you can simply specify the family to find the latest ``ACTIVE`` revision in that family.\n\n  You can only describe ``INACTIVE`` task definitions while an active task or service references them.",
             "input": {
                 "shape": "DescribeTaskDefinitionRequest"
             },
@@ -122,7 +122,7 @@
             }
         },
         "DescribeTasks": {
-            "documentation": "<p>Describes a specified task or tasks.</p>",
+            "documentation": "Describes a specified task or tasks.",
             "input": {
                 "shape": "DescribeTasksRequest"
             },
@@ -131,7 +131,7 @@
             }
         },
         "DiscoverPollEndpoint": {
-            "documentation": "<note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Returns an endpoint for the Amazon EC2 Container Service agent to poll for updates.</p>",
+            "documentation": "This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.\n\n Returns an endpoint for the Amazon EC2 Container Service agent to poll for updates.",
             "input": {
                 "shape": "DiscoverPollEndpointRequest"
             },
@@ -140,7 +140,7 @@
             }
         },
         "ListClusters": {
-            "documentation": "<p>Returns a list of existing clusters.</p>",
+            "documentation": "Returns a list of existing clusters.",
             "input": {
                 "shape": "ListClustersRequest"
             },
@@ -149,7 +149,7 @@
             }
         },
         "ListContainerInstances": {
-            "documentation": "<p>Returns a list of container instances in a specified cluster.</p>",
+            "documentation": "Returns a list of container instances in a specified cluster.",
             "input": {
                 "shape": "ListContainerInstancesRequest"
             },
@@ -158,7 +158,7 @@
             }
         },
         "ListServices": {
-            "documentation": "<p>Lists the services that are running in a specified cluster.</p>",
+            "documentation": "Lists the services that are running in a specified cluster.",
             "input": {
                 "shape": "ListServicesRequest"
             },
@@ -167,7 +167,7 @@
             }
         },
         "ListTaskDefinitionFamilies": {
-            "documentation": "<p>Returns a list of task definition families that are registered to your account (which may include task definition families that no longer have any <code>ACTIVE</code> task definitions). You can filter the results with the <code>familyPrefix</code> parameter.</p>",
+            "documentation": "Returns a list of task definition families that are registered to your account (which may include task definition families that no longer have any ``ACTIVE`` task definitions). You can filter the results with the ``familyPrefix`` parameter.",
             "input": {
                 "shape": "ListTaskDefinitionFamiliesRequest"
             },
@@ -176,7 +176,7 @@
             }
         },
         "ListTaskDefinitions": {
-            "documentation": "<p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter or by status with the <code>status</code> parameter.</p>",
+            "documentation": "Returns a list of task definitions that are registered to your account. You can filter the results by family name with the ``familyPrefix`` parameter or by status with the ``status`` parameter.",
             "input": {
                 "shape": "ListTaskDefinitionsRequest"
             },
@@ -185,7 +185,7 @@
             }
         },
         "ListTasks": {
-            "documentation": "<p>Returns a list of tasks for a specified cluster. You can filter the results by family name, by a particular container instance, or by the desired status of the task with the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code> parameters.</p>",
+            "documentation": "Returns a list of tasks for a specified cluster. You can filter the results by family name, by a particular container instance, or by the desired status of the task with the ``family``, ``containerInstance``, and ``desiredStatus`` parameters.",
             "input": {
                 "shape": "ListTasksRequest"
             },
@@ -194,7 +194,7 @@
             }
         },
         "RegisterContainerInstance": {
-            "documentation": "<note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Registers an Amazon EC2 instance into the specified cluster. This instance will become available to place containers on.</p>",
+            "documentation": "This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.\n\n Registers an Amazon EC2 instance into the specified cluster. This instance will become available to place containers on.",
             "input": {
                 "shape": "RegisterContainerInstanceRequest"
             },
@@ -203,7 +203,7 @@
             }
         },
         "RegisterTaskDefinition": {
-            "documentation": "<p>Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>. Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more information on task definition parameters and defaults, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>",
+            "documentation": "Registers a new task definition from the supplied ``family`` and ``containerDefinitions``. Optionally, you can add data volumes to your containers with the ``volumes`` parameter. For more information on task definition parameters and defaults, see `Amazon ECS Task Definitions <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html>`_ in the *Amazon EC2 Container Service Developer Guide*.",
             "input": {
                 "shape": "RegisterTaskDefinitionRequest"
             },
@@ -212,7 +212,7 @@
             }
         },
         "RunTask": {
-            "documentation": "<p>Start a task using random placement and the default Amazon ECS scheduler. If you want to use your own scheduler or place a task on a specific container instance, use <code>StartTask</code> instead.</p> <important> <p>The <code>count</code> parameter is limited to 10 tasks per call.</p> </important>",
+            "documentation": "Start a task using random placement and the default Amazon ECS scheduler. If you want to use your own scheduler or place a task on a specific container instance, use ``StartTask`` instead.\n\n  The ``count`` parameter is limited to 10 tasks per call.",
             "input": {
                 "shape": "RunTaskRequest"
             },
@@ -221,7 +221,7 @@
             }
         },
         "StartTask": {
-            "documentation": "<p>Starts a new task from the specified task definition on the specified container instance or instances. If you want to use the default Amazon ECS scheduler to place your task, use <code>RunTask</code> instead.</p> <important> <p>The list of container instances to start tasks on is limited to 10.</p> </important>",
+            "documentation": "Starts a new task from the specified task definition on the specified container instance or instances. If you want to use the default Amazon ECS scheduler to place your task, use ``RunTask`` instead.\n\n  The list of container instances to start tasks on is limited to 10.",
             "input": {
                 "shape": "StartTaskRequest"
             },
@@ -230,7 +230,7 @@
             }
         },
         "StopTask": {
-            "documentation": "<p>Stops a running task.</p>",
+            "documentation": "Stops a running task.",
             "input": {
                 "shape": "StopTaskRequest"
             },
@@ -239,7 +239,7 @@
             }
         },
         "SubmitContainerStateChange": {
-            "documentation": "<note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Sent to acknowledge that a container changed states.</p>",
+            "documentation": "This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.\n\n Sent to acknowledge that a container changed states.",
             "input": {
                 "shape": "SubmitContainerStateChangeRequest"
             },
@@ -248,7 +248,7 @@
             }
         },
         "SubmitTaskStateChange": {
-            "documentation": "<note><p>This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.</p></note> <p>Sent to acknowledge that a task changed states.</p>",
+            "documentation": "This action is only used by the Amazon EC2 Container Service agent, and it is not intended for use outside of the agent.\n\n Sent to acknowledge that a task changed states.",
             "input": {
                 "shape": "SubmitTaskStateChangeRequest"
             },
@@ -257,7 +257,7 @@
             }
         },
         "UpdateContainerAgent": {
-            "documentation": "<p>Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent does not interrupt running tasks or services on the container instance. The process for updating the agent differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another operating system.</p> <p><code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other operating systems, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent\">Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>",
+            "documentation": "Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent does not interrupt running tasks or services on the container instance. The process for updating the agent differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another operating system.\n\n ``UpdateContainerAgent`` requires the Amazon ECS-optimized AMI or Amazon Linux with the ``ecs-init`` service installed and running. For help updating the Amazon ECS container agent on other operating systems, see `Manually Updating the Amazon ECS Container Agent <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent>`_ in the *Amazon EC2 Container Service Developer Guide*.",
             "input": {
                 "shape": "UpdateContainerAgentRequest"
             },
@@ -266,7 +266,7 @@
             }
         },
         "UpdateService": {
-            "documentation": "<p>Modify the desired count or task definition used in a service.</p> <p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code> parameter.</p> <p>You can use <code>UpdateService</code> to modify your task definition and deploy a new version of your service, one task at a time. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running. Because <code>UpdateService</code> starts a new version of the task before stopping an old version, your cluster must have capacity to support one more instantiation of the task when <code>UpdateService</code> is run. If your cluster cannot support another instantiation of the task used in your service, you can reduce the desired count of your service by one before modifying the task definition.</p>",
+            "documentation": "Modify the desired count or task definition used in a service.\n\n You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new ``desiredCount`` parameter.\n\n You can use ``UpdateService`` to modify your task definition and deploy a new version of your service, one task at a time. If you modify the task definition with ``UpdateService``, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running. Because ``UpdateService`` starts a new version of the task before stopping an old version, your cluster must have capacity to support one more instantiation of the task when ``UpdateService`` is run. If your cluster cannot support another instantiation of the task used in your service, you can reduce the desired count of your service by one before modifying the task definition.",
             "input": {
                 "shape": "UpdateServiceRequest"
             },
@@ -290,7 +290,7 @@
         },
         "ClientException": {
             "type": "structure",
-            "documentation": "<p>These errors are usually caused by something the client did, such as use an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specify an identifier that is not valid.</p>",
+            "documentation": "These errors are usually caused by something the client did, such as use an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specify an identifier that is not valid.",
             "members": [
                 {
                     "name": "message",
@@ -300,7 +300,7 @@
         },
         "Cluster": {
             "type": "structure",
-            "documentation": "<p>A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.</p>",
+            "documentation": "A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.",
             "members": [
                 {
                     "name": "clusterArn",
@@ -341,17 +341,17 @@
         },
         "ClusterContainsContainerInstancesException": {
             "type": "structure",
-            "documentation": "<p>You cannot delete a cluster that has registered container instances. You must first deregister the container instances before you can delete the cluster. For more information, see <a>DeregisterContainerInstance</a>.</p>",
+            "documentation": "You cannot delete a cluster that has registered container instances. You must first deregister the container instances before you can delete the cluster. For more information, see DeregisterContainerInstance.",
             "members": []
         },
         "ClusterContainsServicesException": {
             "type": "structure",
-            "documentation": "<p>You cannot delete a cluster that contains services. You must first update the service to reduce its desired task count to 0 and then delete the service. For more information, see <a>UpdateService</a> and <a>DeleteService</a>.</p>",
+            "documentation": "You cannot delete a cluster that contains services. You must first update the service to reduce its desired task count to 0 and then delete the service. For more information, see UpdateService and DeleteService.",
             "members": []
         },
         "ClusterNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>",
+            "documentation": "The specified cluster could not be found. You can view your available clusters with ListClusters. Amazon ECS clusters are region-specific.",
             "members": []
         },
         "Clusters": {
@@ -360,7 +360,7 @@
         },
         "Container": {
             "type": "structure",
-            "documentation": "<p>A docker container that is part of a task.</p>",
+            "documentation": "A docker container that is part of a task.",
             "members": [
                 {
                     "name": "containerArn",
@@ -401,7 +401,7 @@
         },
         "ContainerDefinition": {
             "type": "structure",
-            "documentation": "<p>Container definitions are used in task definitions to describe the different containers that are launched as part of a task.</p>",
+            "documentation": "Container definitions are used in task definitions to describe the different containers that are launched as part of a task.",
             "members": [
                 {
                     "name": "name",
@@ -471,7 +471,7 @@
         },
         "ContainerInstance": {
             "type": "structure",
-            "documentation": "<p>An Amazon EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>",
+            "documentation": "An Amazon EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.",
             "members": [
                 {
                     "name": "containerInstanceArn",
@@ -531,7 +531,7 @@
         },
         "ContainerOverride": {
             "type": "structure",
-            "documentation": "<p>The overrides that should be sent to a container.</p>",
+            "documentation": "The overrides that should be sent to a container.",
             "members": [
                 {
                     "name": "name",
@@ -674,7 +674,7 @@
         },
         "Deployment": {
             "type": "structure",
-            "documentation": "<p>The details of an Amazon ECS service deployment.</p>",
+            "documentation": "The details of an Amazon ECS service deployment.",
             "members": [
                 {
                     "name": "id",
@@ -945,7 +945,7 @@
         },
         "Failure": {
             "type": "structure",
-            "documentation": "<p>A failed resource.</p>",
+            "documentation": "A failed resource.",
             "members": [
                 {
                     "name": "arn",
@@ -965,7 +965,7 @@
         },
         "HostVolumeProperties": {
             "type": "structure",
-            "documentation": "<p>Details on a container instance host volume.</p>",
+            "documentation": "Details on a container instance host volume.",
             "members": [
                 {
                     "name": "sourcePath",
@@ -979,12 +979,12 @@
         },
         "InvalidParameterException": {
             "type": "structure",
-            "documentation": "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>",
+            "documentation": "The specified parameter is invalid. Review the available parameters for the API request.",
             "members": []
         },
         "KeyValuePair": {
             "type": "structure",
-            "documentation": "<p>A key and value pair object.</p>",
+            "documentation": "A key and value pair object.",
             "members": [
                 {
                     "name": "name",
@@ -1240,7 +1240,7 @@
         },
         "LoadBalancer": {
             "type": "structure",
-            "documentation": "<p>Details on a load balancer that is used with a service.</p>",
+            "documentation": "Details on a load balancer that is used with a service.",
             "members": [
                 {
                     "name": "loadBalancerName",
@@ -1268,12 +1268,12 @@
         },
         "MissingVersionException": {
             "type": "structure",
-            "documentation": "<p>Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and does not have enough information to proceed with an update. This could be because the agent running on the container instance is an older or custom version that does not use our version information.</p>",
+            "documentation": "Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and does not have enough information to proceed with an update. This could be because the agent running on the container instance is an older or custom version that does not use our version information.",
             "members": []
         },
         "MountPoint": {
             "type": "structure",
-            "documentation": "<p>Details on a volume mount point that is used in a container definition.</p>",
+            "documentation": "Details on a volume mount point that is used in a container definition.",
             "members": [
                 {
                     "name": "sourceVolume",
@@ -1298,7 +1298,7 @@
         },
         "NetworkBinding": {
             "type": "structure",
-            "documentation": "<p>Details on the network bindings between a container and its host container instance.</p>",
+            "documentation": "Details on the network bindings between a container and its host container instance.",
             "members": [
                 {
                     "name": "bindIP",
@@ -1328,12 +1328,12 @@
         },
         "NoUpdateAvailableException": {
             "type": "structure",
-            "documentation": "<p>There is no update available for this Amazon ECS container agent. This could be because the agent is already running the latest version, or it is so old that there is no update path to the current version.</p>",
+            "documentation": "There is no update available for this Amazon ECS container agent. This could be because the agent is already running the latest version, or it is so old that there is no update path to the current version.",
             "members": []
         },
         "PortMapping": {
             "type": "structure",
-            "documentation": "<p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.</p>",
+            "documentation": "Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.",
             "members": [
                 {
                     "name": "containerPort",
@@ -1431,7 +1431,7 @@
         },
         "Resource": {
             "type": "structure",
-            "documentation": "<p>Describes the resources available for a container instance.</p>",
+            "documentation": "Describes the resources available for a container instance.",
             "members": [
                 {
                     "name": "name",
@@ -1516,7 +1516,7 @@
         },
         "ServerException": {
             "type": "structure",
-            "documentation": "<p>These errors are usually caused by a server-side issue.</p>",
+            "documentation": "These errors are usually caused by a server-side issue.",
             "members": [
                 {
                     "name": "message",
@@ -1526,7 +1526,7 @@
         },
         "Service": {
             "type": "structure",
-            "documentation": "<p>Details on a service within a cluster</p>",
+            "documentation": "Details on a service within a cluster",
             "members": [
                 {
                     "name": "serviceArn",
@@ -1592,7 +1592,7 @@
         },
         "ServiceEvent": {
             "type": "structure",
-            "documentation": "<p>Details on an event associated with a service.</p>",
+            "documentation": "Details on an event associated with a service.",
             "members": [
                 {
                     "name": "id",
@@ -1617,12 +1617,12 @@
         },
         "ServiceNotActiveException": {
             "type": "structure",
-            "documentation": "<p>The specified service is not active. You cannot update a service that is not active. If you have previously deleted a service, you can recreate it with <a>CreateService</a>.</p>",
+            "documentation": "The specified service is not active. You cannot update a service that is not active. If you have previously deleted a service, you can recreate it with CreateService.",
             "members": []
         },
         "ServiceNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.</p>",
+            "documentation": "The specified service could not be found. You can view your available services with ListServices. Amazon ECS services are cluster-specific and region-specific.",
             "members": []
         },
         "Services": {
@@ -1795,7 +1795,7 @@
         },
         "Task": {
             "type": "structure",
-            "documentation": "<p>Details on a task in a cluster.</p>",
+            "documentation": "Details on a task in a cluster.",
             "members": [
                 {
                     "name": "taskArn",
@@ -1846,7 +1846,7 @@
         },
         "TaskDefinition": {
             "type": "structure",
-            "documentation": "<p>Details of a task definition.</p>",
+            "documentation": "Details of a task definition.",
             "members": [
                 {
                     "name": "taskDefinitionArn",
@@ -1885,7 +1885,7 @@
         },
         "TaskOverride": {
             "type": "structure",
-            "documentation": "<p>The overrides associated with a task.</p>",
+            "documentation": "The overrides associated with a task.",
             "members": [
                 {
                     "name": "containerOverrides",
@@ -1930,7 +1930,7 @@
         },
         "UpdateInProgressException": {
             "type": "structure",
-            "documentation": "<p>There is already a current Amazon ECS container agent update in progress on the specified container instance. If the container agent becomes disconnected while it is in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it will resume where it stopped previously.</p>",
+            "documentation": "There is already a current Amazon ECS container agent update in progress on the specified container instance. If the container agent becomes disconnected while it is in a transitional stage, such as ``PENDING`` or ``STAGING``, the update process can get stuck in that state. However, when the agent reconnects, it will resume where it stopped previously.",
             "members": []
         },
         "UpdateServiceRequest": {
@@ -1970,7 +1970,7 @@
         },
         "VersionInfo": {
             "type": "structure",
-            "documentation": "<p>The Docker and Amazon ECS container agent version information on a container instance.</p>",
+            "documentation": "The Docker and Amazon ECS container agent version information on a container instance.",
             "members": [
                 {
                     "name": "agentVersion",
@@ -1991,7 +1991,7 @@
         },
         "Volume": {
             "type": "structure",
-            "documentation": "<p>A data volume used in a task definition.</p>",
+            "documentation": "A data volume used in a task definition.",
             "members": [
                 {
                     "name": "name",
@@ -2007,7 +2007,7 @@
         },
         "VolumeFrom": {
             "type": "structure",
-            "documentation": "<p>Details on a data volume from another container.</p>",
+            "documentation": "Details on a data volume from another container.",
             "members": [
                 {
                     "name": "sourceContainer",

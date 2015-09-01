@@ -4,7 +4,146 @@ import collections
 import json
 import os
 
+from six.moves import html_parser
+
 import botocore
+
+
+class DocParser(html_parser.HTMLParser):
+
+    def __init__(self):
+        super(DocParser, self).__init__(self)
+        self.data = []
+        self.last_href = None
+
+    def handle_starttag(self, tag, attrs):
+        handler_name = 'start_%s' % tag
+        getattr(self, handler_name)(dict(attrs))
+
+    def handle_endtag(self, tag):
+        handler_name = 'end_%s' % tag
+        getattr(self, handler_name)()
+
+    def handle_data(self, data):
+        self.data.append(data)
+
+    def start_p(self, attrs):
+        pass
+
+    def end_p(self):
+        self.data.append('\n\n')
+
+    def start_a(self, attrs):
+        if 'href' in attrs:
+            self.data.append('`')
+            self.last_href = attrs['href']
+
+    def end_a(self):
+        if self.last_href:
+            self.data.append(' <{}>`_'.format(self.last_href))
+            self.last_href = None
+
+    def start_i(self, attrs):
+        self.data.append('*')
+
+    def end_i(self):
+        self.data.append('*')
+
+    def start_b(self, attrs):
+        self.data.append('**')
+
+    def end_b(self):
+        self.data.append('**')
+
+    def start_code(self, attrs):
+        self.data.append('``')
+
+    def end_code(self):
+        self.data.append('``')
+
+    def start_ul(self, attrs):
+        self.data.append('\n\n')
+
+    def end_ul(self):
+        self.data.append('\n')
+
+    def start_ol(self, attrs):
+        self.data.append('\n\n')
+
+    def end_ol(self):
+        self.data.append('\n')
+
+    def start_li(self, attrs):
+        self.data.append(' * ')
+
+    def end_li(self):
+        self.data.append('\n')
+
+    def start_note(self, attrs):
+        pass
+
+    def end_note(self):
+        pass
+
+    def start_important(self, attrs):
+        pass
+
+    def end_important(self):
+        pass
+
+    def start_caution(self, attrs):
+        pass
+
+    def end_caution(self):
+        pass
+
+    def start_function(self, attrs):
+        pass
+
+    def end_function(self):
+        pass
+
+    def start_member(self, attrs):
+        pass
+
+    def end_member(self):
+        pass
+
+    def start_ulink(self, attrs):
+        pass
+
+    def end_ulink(self):
+        pass
+
+    def start_enumvalues(self, attrs):
+        pass
+
+    def end_enumvalues(self):
+        pass
+
+    def start_value(self, attrs):
+        pass
+
+    def end_value(self):
+        pass
+
+    def start_title(self, attrs):
+        pass
+
+    def end_title(self):
+        pass
+
+    def start_replaceable(self, attrs):
+        pass
+
+    def end_replaceable(self):
+        pass
+
+    def parse(self, docstring):
+        self.feed(docstring)
+        result = ''.join(self.data)
+        self.data = []
+        return result.strip()
 
 
 def process_endpoints(path, service, model):
@@ -44,6 +183,8 @@ def process_endpoints(path, service, model):
 
 
 def process_service_2(path, model):
+    doc_parser = DocParser()
+
     with open(os.path.join(path, "service-2.json"), "r") as fp:
         service = json.load(fp, object_pairs_hook=collections.OrderedDict)
 
@@ -66,7 +207,7 @@ def process_service_2(path, model):
         s = shapes[name] = collections.OrderedDict()
         s['type'] = shape['type']
         if 'documentation' in shape:
-            s['documentation'] = shape['documentation']
+            s['documentation'] = doc_parser.parse(shape['documentation'])
         if s['type'] == 'structure':
             s['members'] = []
             for k, v in shape['members'].items():
@@ -82,7 +223,7 @@ def process_service_2(path, model):
     operations = model['operations']
     for name, operation in service.get("operations", {}).items():
         o = operations[name] = collections.OrderedDict()
-        o['documentation'] = operation.get('documentation', '')
+        o['documentation'] = doc_parser.parse(operation.get('documentation', ''))
         if 'input' in operation:
             o['input'] = {'shape': operation['input']['shape']}
         if 'output' in operation:

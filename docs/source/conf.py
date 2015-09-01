@@ -32,7 +32,6 @@ import shlex
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -287,4 +286,46 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
-autosummary_generate = True
+from jinja2.sandbox import SandboxedEnvironment
+from sphinx.jinja2glue import BuiltinTemplateLoader
+
+
+def find_services():
+    import libcloudcore
+    root = os.path.abspath(
+        os.path.join(os.path.dirname(libcloudcore.__file__), "data")
+    )
+    for path, dirs, files in os.walk(root):
+        if 'service.json' in files:
+            service = os.path.relpath(path, root).replace("/", ".")
+            yield "libcloudcore.drivers." + service
+
+
+def generate_ref(app):
+    ref_root = os.path.join(app.env.srcdir, "ref")
+    if not os.path.exists(ref_root):
+        os.makedirs(ref_root)
+
+    template_loader = BuiltinTemplateLoader()
+    template_loader.init(app.builder, dirs=[])
+    template_env = SandboxedEnvironment(loader=template_loader)
+
+    print("Generating reference index")
+    template = template_env.get_template('libcloudcore/index.rst.j2')
+    with open(os.path.join(ref_root, "index.rst"), "w") as fp:
+        fp.write(template.render(
+            modules=list(find_services()),
+        ))
+
+    template = template_env.get_template('libcloudcore/module.rst.j2')
+    for service in find_services():
+        print("Generating rst for {!r}".format(service))
+        with open(os.path.join(ref_root, "{}.rst".format(service)), "w") as fp:
+            fp.write(template.render(
+                module=service,
+                underline="=" * len(service),
+            ))
+
+
+def setup(app):
+    app.connect('builder-inited', generate_ref)

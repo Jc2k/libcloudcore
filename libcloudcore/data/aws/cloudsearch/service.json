@@ -35,7 +35,7 @@
     ],
     "operations": {
         "BuildSuggesters": {
-            "documentation": "<p>Indexes the search suggestions. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters\">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Indexes the search suggestions. For more information, see `Configuring Suggesters <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "BuildSuggestersRequest"
             },
@@ -44,7 +44,7 @@
             }
         },
         "CreateDomain": {
-            "documentation": "<p>Creates a new search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html\" target=\"_blank\">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Creates a new search domain. For more information, see `Creating a Search Domain <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "CreateDomainRequest"
             },
@@ -53,7 +53,7 @@
             }
         },
         "DefineAnalysisScheme": {
-            "documentation": "<p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Configures an analysis scheme that can be applied to a ``text`` or ``text-array`` field to define language-specific text processing options. For more information, see `Configuring Analysis Schemes <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DefineAnalysisSchemeRequest"
             },
@@ -62,7 +62,7 @@
             }
         },
         "DefineExpression": {
-            "documentation": "<p>Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Configures an ``Expression`` for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see `Configuring Expressions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DefineExpressionRequest"
             },
@@ -71,7 +71,7 @@
             }
         },
         "DefineIndexField": {
-            "documentation": "<p>Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "documentation": "Configures an ``IndexField`` for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the ``IndexFieldType``. If the field exists, the new configuration replaces the old one. For more information, see `Configuring Index Fields <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DefineIndexFieldRequest"
             },
@@ -80,7 +80,7 @@
             }
         },
         "DefineSuggester": {
-            "documentation": "<p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see `Getting Search Suggestions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DefineSuggesterRequest"
             },
@@ -89,7 +89,7 @@
             }
         },
         "DeleteAnalysisScheme": {
-            "documentation": "<p>Deletes an analysis scheme. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "documentation": "Deletes an analysis scheme. For more information, see `Configuring Analysis Schemes <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DeleteAnalysisSchemeRequest"
             },
@@ -98,7 +98,7 @@
             }
         },
         "DeleteDomain": {
-            "documentation": "<p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html\" target=\"_blank\">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "documentation": "Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see `Deleting a Search Domain <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DeleteDomainRequest"
             },
@@ -107,7 +107,7 @@
             }
         },
         "DeleteExpression": {
-            "documentation": "<p>Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Removes an ``Expression`` from the search domain. For more information, see `Configuring Expressions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DeleteExpressionRequest"
             },
@@ -116,7 +116,7 @@
             }
         },
         "DeleteIndexField": {
-            "documentation": "<p>Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Removes an ``IndexField`` from the search domain. For more information, see `Configuring Index Fields <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DeleteIndexFieldRequest"
             },
@@ -125,7 +125,7 @@
             }
         },
         "DeleteSuggester": {
-            "documentation": "<p>Deletes a suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Deletes a suggester. For more information, see `Getting Search Suggestions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DeleteSuggesterRequest"
             },
@@ -134,7 +134,7 @@
             }
         },
         "DescribeAnalysisSchemes": {
-            "documentation": "<p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a ``text`` field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the ``Deployed`` option to ``true`` to show the active configuration and exclude pending changes. For more information, see `Configuring Analysis Schemes <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeAnalysisSchemesRequest"
             },
@@ -143,7 +143,7 @@
             }
         },
         "DescribeAvailabilityOptions": {
-            "documentation": "<p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the ``Deployed`` option to ``true`` to show the active configuration and exclude pending changes. For more information, see `Configuring Availability Options <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeAvailabilityOptionsRequest"
             },
@@ -152,7 +152,7 @@
             }
         },
         "DescribeDomains": {
-            "documentation": "<p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a ``matchall`` request to your domain's search endpoint: ``q=matchallamp;q.parser=structuredamp;size=0``. For more information, see `Getting Information about a Search Domain <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeDomainsRequest"
             },
@@ -161,7 +161,7 @@
             }
         },
         "DescribeExpressions": {
-            "documentation": "<p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the ``Deployed`` option to ``true`` to show the active configuration and exclude pending changes. For more information, see `Configuring Expressions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeExpressionsRequest"
             },
@@ -170,7 +170,7 @@
             }
         },
         "DescribeIndexFields": {
-            "documentation": "<p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the ``Deployed`` option to ``true`` to show the active configuration and exclude pending changes. For more information, see `Getting Domain Information <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeIndexFieldsRequest"
             },
@@ -179,7 +179,7 @@
             }
         },
         "DescribeScalingParameters": {
-            "documentation": "<p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see `Configuring Scaling Options <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeScalingParametersRequest"
             },
@@ -188,7 +188,7 @@
             }
         },
         "DescribeServiceAccessPolicies": {
-            "documentation": "<p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the ``Deployed`` option to ``true`` to show the active configuration and exclude pending changes. For more information, see `Configuring Access for a Search Domain <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeServiceAccessPoliciesRequest"
             },
@@ -197,7 +197,7 @@
             }
         },
         "DescribeSuggesters": {
-            "documentation": "<p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the ``Deployed`` option to ``true`` to show the active configuration and exclude pending changes. For more information, see `Getting Search Suggestions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "DescribeSuggestersRequest"
             },
@@ -206,7 +206,7 @@
             }
         },
         "IndexDocuments": {
-            "documentation": "<p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>",
+            "documentation": "Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose OptionStatus is ``RequiresIndexDocuments``.",
             "input": {
                 "shape": "IndexDocumentsRequest"
             },
@@ -215,13 +215,13 @@
             }
         },
         "ListDomainNames": {
-            "documentation": "<p>Lists all search domains owned by an account.</p>",
+            "documentation": "Lists all search domains owned by an account.",
             "output": {
                 "shape": "ListDomainNamesResponse"
             }
         },
         "UpdateAvailabilityOptions": {
-            "documentation": "<p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
+            "documentation": "Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see `Configuring Availability Options <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "UpdateAvailabilityOptionsRequest"
             },
@@ -230,7 +230,7 @@
             }
         },
         "UpdateScalingParameters": {
-            "documentation": "<p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
+            "documentation": "Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see `Configuring Scaling Options <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html>`_ in the *Amazon CloudSearch Developer Guide*.",
             "input": {
                 "shape": "UpdateScalingParametersRequest"
             },
@@ -239,7 +239,7 @@
             }
         },
         "UpdateServiceAccessPolicies": {
-            "documentation": "<p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>",
+            "documentation": "Configures the access rules that control access to the domain's document and search endpoints. For more information, see ` Configuring Access for an Amazon CloudSearch Domain <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html>`_.",
             "input": {
                 "shape": "UpdateServiceAccessPoliciesRequest"
             },
@@ -251,15 +251,15 @@
     "shapes": {
         "APIVersion": {
             "type": "string",
-            "documentation": "<p>The Amazon CloudSearch API version for a domain: 2011-02-01 or 2013-01-01.</p>"
+            "documentation": "The Amazon CloudSearch API version for a domain: 2011-02-01 or 2013-01-01."
         },
         "ARN": {
             "type": "string",
-            "documentation": "<p>The Amazon Resource Name (ARN) of the search domain. See <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html\" target=\"_blank\">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>"
+            "documentation": "The Amazon Resource Name (ARN) of the search domain. See `Identifiers for IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html>`_ in *Using AWS Identity and Access Management* for more information."
         },
         "AccessPoliciesStatus": {
             "type": "structure",
-            "documentation": "<p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>",
+            "documentation": "The configured access rules for the domain's document and search endpoints, and the current status of those rules.",
             "members": [
                 {
                     "name": "Options",
@@ -276,7 +276,7 @@
         },
         "AnalysisOptions": {
             "type": "structure",
-            "documentation": "<p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>",
+            "documentation": "Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.",
             "members": [
                 {
                     "name": "Synonyms",
@@ -307,7 +307,7 @@
         },
         "AnalysisScheme": {
             "type": "structure",
-            "documentation": "<p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>",
+            "documentation": "Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: ``Synonyms``, ``Stopwords``, ``StemmingDictionary``, ``JapaneseTokenizationDictionary`` and ``AlgorithmicStemming``.",
             "members": [
                 {
                     "name": "AnalysisSchemeName",
@@ -325,11 +325,11 @@
         },
         "AnalysisSchemeLanguage": {
             "type": "string",
-            "documentation": "<p>An <a href=\"http://tools.ietf.org/html/rfc4646\" target=\"_blank\">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>"
+            "documentation": "An `IETF RFC 4646 <http://tools.ietf.org/html/rfc4646>`_ language code or ``mul`` for multiple languages."
         },
         "AnalysisSchemeStatus": {
             "type": "structure",
-            "documentation": "<p>The status and configuration of an <code>AnalysisScheme</code>.</p>",
+            "documentation": "The status and configuration of an ``AnalysisScheme``.",
             "members": [
                 {
                     "name": "Options",
@@ -343,12 +343,12 @@
         },
         "AnalysisSchemeStatusList": {
             "type": "list",
-            "documentation": "<p>A list of the analysis schemes configured for a domain.</p>",
+            "documentation": "A list of the analysis schemes configured for a domain.",
             "of": "AnalysisSchemeStatus"
         },
         "AvailabilityOptionsStatus": {
             "type": "structure",
-            "documentation": "<p>The status and configuration of the domain's availability options.</p>",
+            "documentation": "The status and configuration of the domain's availability options.",
             "members": [
                 {
                     "name": "Options",
@@ -363,7 +363,7 @@
         },
         "BaseException": {
             "type": "structure",
-            "documentation": "<p>An error occurred while processing the request.</p>",
+            "documentation": "An error occurred while processing the request.",
             "members": [
                 {
                     "name": "Code",
@@ -380,7 +380,7 @@
         },
         "BuildSuggestersRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>BuildSuggester</a></code> operation. Specifies the name of the domain you want to update.</p>",
+            "documentation": "Container for the parameters to the ``BuildSuggester`` operation. Specifies the name of the domain you want to update.",
             "members": [
                 {
                     "name": "DomainName",
@@ -390,7 +390,7 @@
         },
         "BuildSuggestersResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.</p>",
+            "documentation": "The result of a ``BuildSuggester`` request. Contains a list of the fields used for suggestions.",
             "members": [
                 {
                     "name": "FieldNames",
@@ -400,7 +400,7 @@
         },
         "CreateDomainRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain.</p>",
+            "documentation": "Container for the parameters to the ``CreateDomain`` operation. Specifies a name for the new search domain.",
             "members": [
                 {
                     "name": "DomainName",
@@ -411,7 +411,7 @@
         },
         "CreateDomainResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>",
+            "documentation": "The result of a ``CreateDomainRequest``. Contains the status of a newly created domain.",
             "members": [
                 {
                     "name": "DomainStatus",
@@ -421,7 +421,7 @@
         },
         "DateArrayOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a field that contains an array of dates. Present if ``IndexFieldType`` specifies the field is of type ``date-array``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -452,7 +452,7 @@
         },
         "DateOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if ``IndexFieldType`` specifies the field is of type ``date``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -487,7 +487,7 @@
         },
         "DefineAnalysisSchemeRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DefineAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>",
+            "documentation": "Container for the parameters to the ``DefineAnalysisScheme`` operation. Specifies the name of the domain you want to update and the analysis scheme configuration.",
             "members": [
                 {
                     "name": "DomainName",
@@ -501,7 +501,7 @@
         },
         "DefineAnalysisSchemeResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme.</p>",
+            "documentation": "The result of a ``DefineAnalysisScheme`` request. Contains the status of the newly-configured analysis scheme.",
             "members": [
                 {
                     "name": "AnalysisScheme",
@@ -511,7 +511,7 @@
         },
         "DefineExpressionRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>",
+            "documentation": "Container for the parameters to the ``DefineExpression`` operation. Specifies the name of the domain you want to update and the expression you want to configure.",
             "members": [
                 {
                     "name": "DomainName",
@@ -525,7 +525,7 @@
         },
         "DefineExpressionResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.</p>",
+            "documentation": "The result of a ``DefineExpression`` request. Contains the status of the newly-configured expression.",
             "members": [
                 {
                     "name": "Expression",
@@ -535,7 +535,7 @@
         },
         "DefineIndexFieldRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DefineIndexField</a></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>",
+            "documentation": "Container for the parameters to the ``DefineIndexField`` operation. Specifies the name of the domain you want to update and the index field configuration.",
             "members": [
                 {
                     "name": "DomainName",
@@ -550,7 +550,7 @@
         },
         "DefineIndexFieldResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field.</p>",
+            "documentation": "The result of a ``DefineIndexField`` request. Contains the status of the newly-configured index field.",
             "members": [
                 {
                     "name": "IndexField",
@@ -560,7 +560,7 @@
         },
         "DefineSuggesterRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>",
+            "documentation": "Container for the parameters to the ``DefineSuggester`` operation. Specifies the name of the domain you want to update and the suggester configuration.",
             "members": [
                 {
                     "name": "DomainName",
@@ -574,7 +574,7 @@
         },
         "DefineSuggesterResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>",
+            "documentation": "The result of a ``DefineSuggester`` request. Contains the status of the newly-configured suggester.",
             "members": [
                 {
                     "name": "Suggester",
@@ -584,7 +584,7 @@
         },
         "DeleteAnalysisSchemeRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>",
+            "documentation": "Container for the parameters to the ``DeleteAnalysisScheme`` operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete.",
             "members": [
                 {
                     "name": "DomainName",
@@ -599,7 +599,7 @@
         },
         "DeleteAnalysisSchemeResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.</p>",
+            "documentation": "The result of a ``DeleteAnalysisScheme`` request. Contains the status of the deleted analysis scheme.",
             "members": [
                 {
                     "name": "AnalysisScheme",
@@ -610,7 +610,7 @@
         },
         "DeleteDomainRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete.</p>",
+            "documentation": "Container for the parameters to the ``DeleteDomain`` operation. Specifies the name of the domain you want to delete.",
             "members": [
                 {
                     "name": "DomainName",
@@ -621,7 +621,7 @@
         },
         "DeleteDomainResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.</p>",
+            "documentation": "The result of a ``DeleteDomain`` request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.",
             "members": [
                 {
                     "name": "DomainStatus",
@@ -631,7 +631,7 @@
         },
         "DeleteExpressionRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DeleteExpression</a></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>",
+            "documentation": "Container for the parameters to the ``DeleteExpression`` operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.",
             "members": [
                 {
                     "name": "DomainName",
@@ -646,7 +646,7 @@
         },
         "DeleteExpressionResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted.</p>",
+            "documentation": "The result of a ``DeleteExpression`` request. Specifies the expression being deleted.",
             "members": [
                 {
                     "name": "Expression",
@@ -657,7 +657,7 @@
         },
         "DeleteIndexFieldRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>",
+            "documentation": "Container for the parameters to the ``DeleteIndexField`` operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.",
             "members": [
                 {
                     "name": "DomainName",
@@ -672,7 +672,7 @@
         },
         "DeleteIndexFieldResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code><a>DeleteIndexField</a></code> request.</p>",
+            "documentation": "The result of a ``DeleteIndexField`` request.",
             "members": [
                 {
                     "name": "IndexField",
@@ -683,7 +683,7 @@
         },
         "DeleteSuggesterRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DeleteSuggester</a></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>",
+            "documentation": "Container for the parameters to the ``DeleteSuggester`` operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.",
             "members": [
                 {
                     "name": "DomainName",
@@ -698,7 +698,7 @@
         },
         "DeleteSuggesterResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>",
+            "documentation": "The result of a ``DeleteSuggester`` request. Contains the status of the deleted suggester.",
             "members": [
                 {
                     "name": "Suggester",
@@ -709,7 +709,7 @@
         },
         "DescribeAnalysisSchemesRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>",
+            "documentation": "Container for the parameters to the ``DescribeAnalysisSchemes`` operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the ``Deployed`` option to ``true``.",
             "members": [
                 {
                     "name": "DomainName",
@@ -730,7 +730,7 @@
         },
         "DescribeAnalysisSchemesResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>",
+            "documentation": "The result of a ``DescribeAnalysisSchemes`` request. Contains the analysis schemes configured for the domain specified in the request.",
             "members": [
                 {
                     "name": "AnalysisSchemes",
@@ -741,7 +741,7 @@
         },
         "DescribeAvailabilityOptionsRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>",
+            "documentation": "Container for the parameters to the ``DescribeAvailabilityOptions`` operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to ``true``.",
             "members": [
                 {
                     "name": "DomainName",
@@ -757,7 +757,7 @@
         },
         "DescribeAvailabilityOptionsResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. </p>",
+            "documentation": "The result of a ``DescribeAvailabilityOptions`` request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request.",
             "members": [
                 {
                     "name": "AvailabilityOptions",
@@ -768,7 +768,7 @@
         },
         "DescribeDomainsRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>",
+            "documentation": "Container for the parameters to the ``DescribeDomains`` operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.",
             "members": [
                 {
                     "name": "DomainNames",
@@ -779,7 +779,7 @@
         },
         "DescribeDomainsResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.</p>",
+            "documentation": "The result of a ``DescribeDomains`` request. Contains the status of the domains specified in the request or all domains owned by the account.",
             "members": [
                 {
                     "name": "DomainStatusList",
@@ -789,7 +789,7 @@
         },
         "DescribeExpressionsRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>",
+            "documentation": "Container for the parameters to the ``DescribeDomains`` operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the ``Deployed`` option to ``true``.",
             "members": [
                 {
                     "name": "DomainName",
@@ -810,7 +810,7 @@
         },
         "DescribeExpressionsResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>",
+            "documentation": "The result of a ``DescribeExpressions`` request. Contains the expressions configured for the domain specified in the request.",
             "members": [
                 {
                     "name": "Expressions",
@@ -821,7 +821,7 @@
         },
         "DescribeIndexFieldsRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeIndexFields</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>",
+            "documentation": "Container for the parameters to the ``DescribeIndexFields`` operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the ``Deployed`` option to ``true``.",
             "members": [
                 {
                     "name": "DomainName",
@@ -842,7 +842,7 @@
         },
         "DescribeIndexFieldsResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>",
+            "documentation": "The result of a ``DescribeIndexFields`` request. Contains the index fields configured for the domain specified in the request.",
             "members": [
                 {
                     "name": "IndexFields",
@@ -853,7 +853,7 @@
         },
         "DescribeScalingParametersRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of the domain you want to describe. </p>",
+            "documentation": "Container for the parameters to the ``DescribeScalingParameters`` operation. Specifies the name of the domain you want to describe.",
             "members": [
                 {
                     "name": "DomainName",
@@ -863,7 +863,7 @@
         },
         "DescribeScalingParametersResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.</p>",
+            "documentation": "The result of a ``DescribeScalingParameters`` request. Contains the scaling parameters configured for the domain specified in the request.",
             "members": [
                 {
                     "name": "ScalingParameters",
@@ -873,7 +873,7 @@
         },
         "DescribeServiceAccessPoliciesRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>",
+            "documentation": "Container for the parameters to the ``DescribeServiceAccessPolicies`` operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the ``Deployed`` option to ``true``.",
             "members": [
                 {
                     "name": "DomainName",
@@ -889,7 +889,7 @@
         },
         "DescribeServiceAccessPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeServiceAccessPolicies</code> request.</p>",
+            "documentation": "The result of a ``DescribeServiceAccessPolicies`` request.",
             "members": [
                 {
                     "name": "AccessPolicies",
@@ -900,7 +900,7 @@
         },
         "DescribeSuggestersRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>",
+            "documentation": "Container for the parameters to the ``DescribeSuggester`` operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the ``Deployed`` option to ``true``.",
             "members": [
                 {
                     "name": "DomainName",
@@ -921,7 +921,7 @@
         },
         "DescribeSuggestersResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>DescribeSuggesters</code> request.</p>",
+            "documentation": "The result of a ``DescribeSuggesters`` request.",
             "members": [
                 {
                     "name": "Suggesters",
@@ -932,12 +932,12 @@
         },
         "DisabledOperationException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it attempted an operation which is not enabled.</p>",
+            "documentation": "The request was rejected because it attempted an operation which is not enabled.",
             "members": []
         },
         "DocumentSuggesterOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a search suggester.</p>",
+            "documentation": "Options for a search suggester.",
             "members": [
                 {
                     "name": "SourceField",
@@ -958,26 +958,26 @@
         },
         "DomainId": {
             "type": "string",
-            "documentation": "<p>An internally generated unique identifier for a domain.</p>"
+            "documentation": "An internally generated unique identifier for a domain."
         },
         "DomainName": {
             "type": "string",
-            "documentation": "<p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>"
+            "documentation": "A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen)."
         },
         "DomainNameList": {
             "type": "list",
-            "documentation": "<p>A list of domain names.</p>",
+            "documentation": "A list of domain names.",
             "of": "DomainName"
         },
         "DomainNameMap": {
             "type": "map",
-            "documentation": "<p>A collection of domain names.</p>",
+            "documentation": "A collection of domain names.",
             "key": "DomainName",
             "value": "APIVersion"
         },
         "DomainStatus": {
             "type": "structure",
-            "documentation": "<p>The current status of the search domain.</p>",
+            "documentation": "The current status of the search domain.",
             "members": [
                 {
                     "name": "DomainId",
@@ -1044,7 +1044,7 @@
         },
         "DomainStatusList": {
             "type": "list",
-            "documentation": "<p>A list that contains the status of each requested domain.</p>",
+            "documentation": "A list that contains the status of each requested domain.",
             "of": "DomainStatus"
         },
         "Double": {
@@ -1052,7 +1052,7 @@
         },
         "DoubleArrayOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a field that contains an array of double-precision 64-bit floating point values. Present if ``IndexFieldType`` specifies the field is of type ``double-array``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1083,7 +1083,7 @@
         },
         "DoubleOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a double-precision 64-bit floating point field. Present if ``IndexFieldType`` specifies the field is of type ``double``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1126,15 +1126,15 @@
         },
         "ErrorCode": {
             "type": "string",
-            "documentation": "<p>A machine-parsable string error or warning code.</p>"
+            "documentation": "A machine-parsable string error or warning code."
         },
         "ErrorMessage": {
             "type": "string",
-            "documentation": "<p>A human-readable string error or warning message.</p>"
+            "documentation": "A human-readable string error or warning message."
         },
         "Expression": {
             "type": "structure",
-            "documentation": "<p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>",
+            "documentation": "A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.",
             "members": [
                 {
                     "name": "ExpressionName",
@@ -1148,7 +1148,7 @@
         },
         "ExpressionStatus": {
             "type": "structure",
-            "documentation": "<p>The value of an <code>Expression</code> and its current status.</p>",
+            "documentation": "The value of an ``Expression`` and its current status.",
             "members": [
                 {
                     "name": "Options",
@@ -1163,32 +1163,32 @@
         },
         "ExpressionStatusList": {
             "type": "list",
-            "documentation": "<p>Contains the status of multiple expressions.</p>",
+            "documentation": "Contains the status of multiple expressions.",
             "of": "ExpressionStatus"
         },
         "ExpressionValue": {
             "type": "string",
-            "documentation": "<p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>"
+            "documentation": "The expression to evaluate for sorting while processing a search request. The ``Expression`` syntax is based on JavaScript expressions. For more information, see `Configuring Expressions <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html>`_ in the *Amazon CloudSearch Developer Guide*."
         },
         "FieldName": {
             "type": "string",
-            "documentation": "<p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>"
+            "documentation": "A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. \n\n Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. \n\n The name ``score`` is reserved and cannot be used as a field name. To reference a document's ID, you can use the name ``_id``."
         },
         "FieldNameCommaList": {
             "type": "string"
         },
         "FieldNameList": {
             "type": "list",
-            "documentation": "<p>A list of field names.</p>",
+            "documentation": "A list of field names.",
             "of": "FieldName"
         },
         "FieldValue": {
             "type": "string",
-            "documentation": "<p>The value of a field attribute.</p>"
+            "documentation": "The value of a field attribute."
         },
         "IndexDocumentsRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>IndexDocuments</a></code> operation. Specifies the name of the domain you want to re-index.</p>",
+            "documentation": "Container for the parameters to the ``IndexDocuments`` operation. Specifies the name of the domain you want to re-index.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1198,7 +1198,7 @@
         },
         "IndexDocumentsResponse": {
             "type": "structure",
-            "documentation": "<p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>",
+            "documentation": "The result of an ``IndexDocuments`` request. Contains the status of the indexing operation, including the fields being indexed.",
             "members": [
                 {
                     "name": "FieldNames",
@@ -1209,7 +1209,7 @@
         },
         "IndexField": {
             "type": "structure",
-            "documentation": "<p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>",
+            "documentation": "Configuration information for a field in the index, including its name, type, and options. The supported options depend on the ``IndexFieldType``.",
             "members": [
                 {
                     "name": "IndexFieldName",
@@ -1268,7 +1268,7 @@
         },
         "IndexFieldStatus": {
             "type": "structure",
-            "documentation": "<p>The value of an <code>IndexField</code> and its current status.</p>",
+            "documentation": "The value of an ``IndexField`` and its current status.",
             "members": [
                 {
                     "name": "Options",
@@ -1282,19 +1282,19 @@
         },
         "IndexFieldStatusList": {
             "type": "list",
-            "documentation": "<p>Contains the status of multiple index fields.</p>",
+            "documentation": "Contains the status of multiple index fields.",
             "of": "IndexFieldStatus"
         },
         "IndexFieldType": {
             "type": "string",
-            "documentation": "<p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>"
+            "documentation": "The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see `Configuring Index Fields <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html>`_ in the *Amazon CloudSearch Developer Guide*."
         },
         "InstanceCount": {
             "type": "integer"
         },
         "IntArrayOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a field that contains an array of 64-bit signed integers. Present if ``IndexFieldType`` specifies the field is of type ``int-array``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1325,7 +1325,7 @@
         },
         "IntOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a 64-bit signed integer field. Present if ``IndexFieldType`` specifies the field is of type ``int``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1361,17 +1361,17 @@
         },
         "InternalException": {
             "type": "structure",
-            "documentation": "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+            "documentation": "An internal error occurred while processing the request. If this problem persists, report an issue from the `Service Health Dashboard <http://status.aws.amazon.com/>`_.",
             "members": []
         },
         "InvalidTypeException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it specified an invalid type definition.</p>",
+            "documentation": "The request was rejected because it specified an invalid type definition.",
             "members": []
         },
         "LatLonOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if ``IndexFieldType`` specifies the field is of type ``latlon``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1406,7 +1406,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because a resource limit has already been met.</p>",
+            "documentation": "The request was rejected because a resource limit has already been met.",
             "members": []
         },
         "Limits": {
@@ -1424,7 +1424,7 @@
         },
         "ListDomainNamesResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.</p>",
+            "documentation": "The result of a ``ListDomainNames`` request. Contains a list of the domains owned by an account.",
             "members": [
                 {
                     "name": "DomainNames",
@@ -1435,7 +1435,7 @@
         },
         "LiteralArrayOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>",
+            "documentation": "Options for a field that contains an array of literal strings. Present if ``IndexFieldType`` specifies the field is of type ``literal-array``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1466,7 +1466,7 @@
         },
         "LiteralOptions": {
             "type": "structure",
-            "documentation": "<p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>",
+            "documentation": "Options for literal field. Present if ``IndexFieldType`` specifies the field is of type ``literal``. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1513,11 +1513,11 @@
         },
         "OptionState": {
             "type": "string",
-            "documentation": "<p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>"
+            "documentation": "The state of processing a change to an option. One of:\n\n \n\n  * RequiresIndexDocuments: The option's latest value will not be deployed until IndexDocuments has been called and indexing is complete.\n  * Processing: The option's latest value is in the process of being activated.\n  * Active: The option's latest value is fully deployed. \n  * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents."
         },
         "OptionStatus": {
             "type": "structure",
-            "documentation": "<p>The status of domain configuration option.</p>",
+            "documentation": "The status of domain configuration option.",
             "members": [
                 {
                     "name": "CreationDate",
@@ -1548,24 +1548,24 @@
         },
         "PartitionCount": {
             "type": "integer",
-            "documentation": "<p>The number of partitions used to hold the domain's index.</p>"
+            "documentation": "The number of partitions used to hold the domain's index."
         },
         "PartitionInstanceType": {
             "type": "string",
-            "documentation": "<p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>"
+            "documentation": "The instance type (such as ``search.m1.small``) on which an index partition is hosted."
         },
         "PolicyDocument": {
             "type": "string",
-            "documentation": "<p>Access rules for a domain's document or search service endpoints. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>"
+            "documentation": "Access rules for a domain's document or search service endpoints. For more information, see `Configuring Access for a Search Domain <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html>`_ in the *Amazon CloudSearch Developer Guide*. The maximum size of a policy document is 100 KB."
         },
         "ResourceNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+            "documentation": "The request was rejected because it attempted to reference a resource that does not exist.",
             "members": []
         },
         "ScalingParameters": {
             "type": "structure",
-            "documentation": "<p>The desired instance type and desired number of replicas of each index partition.</p>",
+            "documentation": "The desired instance type and desired number of replicas of each index partition.",
             "members": [
                 {
                     "name": "DesiredInstanceType",
@@ -1586,7 +1586,7 @@
         },
         "ScalingParametersStatus": {
             "type": "structure",
-            "documentation": "<p>The status and configuration of a search domain's scaling parameters. </p>",
+            "documentation": "The status and configuration of a search domain's scaling parameters.",
             "members": [
                 {
                     "name": "Options",
@@ -1600,11 +1600,11 @@
         },
         "SearchInstanceType": {
             "type": "string",
-            "documentation": "<p>The instance type (such as <code>search.m1.small</code>) that is being used to process search requests.</p>"
+            "documentation": "The instance type (such as ``search.m1.small``) that is being used to process search requests."
         },
         "ServiceEndpoint": {
             "type": "structure",
-            "documentation": "<p>The endpoint to which service requests can be submitted.</p>",
+            "documentation": "The endpoint to which service requests can be submitted.",
             "members": [
                 {
                     "name": "Endpoint",
@@ -1614,11 +1614,11 @@
         },
         "ServiceUrl": {
             "type": "string",
-            "documentation": "<p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>"
+            "documentation": "The endpoint to which service requests can be submitted. For example, ``search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com`` or ``doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com``."
         },
         "StandardName": {
             "type": "string",
-            "documentation": "<p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>"
+            "documentation": "Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore)."
         },
         "StandardNameList": {
             "type": "list",
@@ -1629,7 +1629,7 @@
         },
         "Suggester": {
             "type": "structure",
-            "documentation": "<p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>",
+            "documentation": "Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: ``FuzzyMatching``, ``SortExpression``.",
             "members": [
                 {
                     "name": "SuggesterName",
@@ -1646,7 +1646,7 @@
         },
         "SuggesterStatus": {
             "type": "structure",
-            "documentation": "<p>The value of a <code>Suggester</code> and its current status.</p>",
+            "documentation": "The value of a ``Suggester`` and its current status.",
             "members": [
                 {
                     "name": "Options",
@@ -1660,12 +1660,12 @@
         },
         "SuggesterStatusList": {
             "type": "list",
-            "documentation": "<p>Contains the status of multiple suggesters.</p>",
+            "documentation": "Contains the status of multiple suggesters.",
             "of": "SuggesterStatus"
         },
         "TextArrayOptions": {
             "type": "structure",
-            "documentation": "<p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>",
+            "documentation": "Options for a field that contains an array of text strings. Present if ``IndexFieldType`` specifies the field is of type ``text-array``. A ``text-array`` field is always searchable. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1696,7 +1696,7 @@
         },
         "TextOptions": {
             "type": "structure",
-            "documentation": "<p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>",
+            "documentation": "Options for text field. Present if ``IndexFieldType`` specifies the field is of type ``text``. A ``text`` field is always searchable. All options are enabled by default.",
             "members": [
                 {
                     "name": "DefaultValue",
@@ -1734,7 +1734,7 @@
         },
         "UpdateAvailabilityOptionsRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>UpdateAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>",
+            "documentation": "Container for the parameters to the ``UpdateAvailabilityOptions`` operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1749,7 +1749,7 @@
         },
         "UpdateAvailabilityOptionsResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options. </p>",
+            "documentation": "The result of a ``UpdateAvailabilityOptions`` request. Contains the status of the domain's availability options.",
             "members": [
                 {
                     "name": "AvailabilityOptions",
@@ -1760,7 +1760,7 @@
         },
         "UpdateScalingParametersRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>",
+            "documentation": "Container for the parameters to the ``UpdateScalingParameters`` operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1774,7 +1774,7 @@
         },
         "UpdateScalingParametersResponse": {
             "type": "structure",
-            "documentation": "<p>The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.</p>",
+            "documentation": "The result of a ``UpdateScalingParameters`` request. Contains the status of the newly-configured scaling parameters.",
             "members": [
                 {
                     "name": "ScalingParameters",
@@ -1784,7 +1784,7 @@
         },
         "UpdateServiceAccessPoliciesRequest": {
             "type": "structure",
-            "documentation": "<p>Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>",
+            "documentation": "Container for the parameters to the ``UpdateServiceAccessPolicies`` operation. Specifies the name of the domain you want to update and the access rules you want to configure.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1799,7 +1799,7 @@
         },
         "UpdateServiceAccessPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.</p>",
+            "documentation": "The result of an ``UpdateServiceAccessPolicies`` request. Contains the new access policies.",
             "members": [
                 {
                     "name": "AccessPolicies",

@@ -32,7 +32,7 @@
     ],
     "operations": {
         "AddInstanceGroups": {
-            "documentation": "<p>AddInstanceGroups adds an instance group to a running cluster.</p>",
+            "documentation": "AddInstanceGroups adds an instance group to a running cluster.",
             "input": {
                 "shape": "AddInstanceGroupsInput"
             },
@@ -41,7 +41,7 @@
             }
         },
         "AddJobFlowSteps": {
-            "documentation": "<p> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </p> <p>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html\">Add More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.</p> <p> A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </p> <p> Elastic MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully. </p> <p> You can only add steps to a job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p>",
+            "documentation": "AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. \n\n If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to `Add More than 256 Steps to a Job Flow <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html>`_ in the *Amazon Elastic MapReduce Developer's Guide*.\n\n  A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. \n\n  Elastic MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully. \n\n  You can only add steps to a job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.",
             "input": {
                 "shape": "AddJobFlowStepsInput"
             },
@@ -50,7 +50,7 @@
             }
         },
         "AddTags": {
-            "documentation": "<p>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html\">Tagging Amazon EMR Resources</a>. </p>",
+            "documentation": "Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see `Tagging Amazon EMR Resources <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html>`_.",
             "input": {
                 "shape": "AddTagsInput"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DescribeCluster": {
-            "documentation": "<p>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.</p>",
+            "documentation": "Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about the cluster steps, see ListSteps.",
             "input": {
                 "shape": "DescribeClusterInput"
             },
@@ -68,7 +68,7 @@
             }
         },
         "DescribeJobFlows": {
-            "documentation": "<p> This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.</p> <p> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.</p> <p> Regardless of supplied parameters, only job flows created within the last two months are returned.</p> <p> If no parameters are supplied, then job flows matching either of the following criteria are returned:</p> <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul> <p> Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. </p>",
+            "documentation": "This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.\n\n  DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.\n\n  Regardless of supplied parameters, only job flows created within the last two months are returned.\n\n  If no parameters are supplied, then job flows matching either of the following criteria are returned:\n\n \n\n  * Job flows created and completed in the last two weeks\n  *  Job flows created within the last two months that are in one of the following states: ``RUNNING``, ``WAITING``, ``SHUTTING_DOWN``, ``STARTING`` \n \n  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.",
             "input": {
                 "shape": "DescribeJobFlowsInput"
             },
@@ -77,7 +77,7 @@
             }
         },
         "DescribeStep": {
-            "documentation": "<p>Provides more detail about the cluster step.</p>",
+            "documentation": "Provides more detail about the cluster step.",
             "input": {
                 "shape": "DescribeStepInput"
             },
@@ -86,7 +86,7 @@
             }
         },
         "ListBootstrapActions": {
-            "documentation": "<p>Provides information about the bootstrap actions associated with a cluster.</p>",
+            "documentation": "Provides information about the bootstrap actions associated with a cluster.",
             "input": {
                 "shape": "ListBootstrapActionsInput"
             },
@@ -95,7 +95,7 @@
             }
         },
         "ListClusters": {
-            "documentation": "<p>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls. </p>",
+            "documentation": "Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.",
             "input": {
                 "shape": "ListClustersInput"
             },
@@ -104,7 +104,7 @@
             }
         },
         "ListInstanceGroups": {
-            "documentation": "<p>Provides all available details about the instance groups in a cluster.</p>",
+            "documentation": "Provides all available details about the instance groups in a cluster.",
             "input": {
                 "shape": "ListInstanceGroupsInput"
             },
@@ -113,7 +113,7 @@
             }
         },
         "ListInstances": {
-            "documentation": "<p>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for jobs, and the IP addresses for cluster instances, etc. </p>",
+            "documentation": "Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for jobs, and the IP addresses for cluster instances, etc.",
             "input": {
                 "shape": "ListInstancesInput"
             },
@@ -122,7 +122,7 @@
             }
         },
         "ListSteps": {
-            "documentation": "<p>Provides a list of steps for the cluster. </p>",
+            "documentation": "Provides a list of steps for the cluster.",
             "input": {
                 "shape": "ListStepsInput"
             },
@@ -131,13 +131,13 @@
             }
         },
         "ModifyInstanceGroups": {
-            "documentation": "<p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>",
+            "documentation": "ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.",
             "input": {
                 "shape": "ModifyInstanceGroupsInput"
             }
         },
         "RemoveTags": {
-            "documentation": "<p>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html\">Tagging Amazon EMR Resources</a>. </p> <p>The following example removes the stack tag with value Prod from a cluster:</p>",
+            "documentation": "Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see `Tagging Amazon EMR Resources <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html>`_. \n\n The following example removes the stack tag with value Prod from a cluster:",
             "input": {
                 "shape": "RemoveTagsInput"
             },
@@ -146,7 +146,7 @@
             }
         },
         "RunJobFlow": {
-            "documentation": "<p> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING state rather than shutting down once the steps have completed. </p> <p>For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p> <p>A maximum of 256 steps are allowed in each job flow.</p> <p>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html\">Add More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.</p> <p>For long running job flows, we recommend that you periodically store your results.</p>",
+            "documentation": "RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the JobFlowInstancesConfig ``KeepJobFlowAliveWhenNoSteps`` parameter is set to ``TRUE``, the job flow will transition to the WAITING state rather than shutting down once the steps have completed. \n\n For additional protection, you can set the JobFlowInstancesConfig ``TerminationProtected`` parameter to ``TRUE`` to lock the job flow and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.\n\n A maximum of 256 steps are allowed in each job flow.\n\n If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to `Add More than 256 Steps to a Job Flow <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html>`_ in the *Amazon Elastic MapReduce Developer's Guide*.\n\n For long running job flows, we recommend that you periodically store your results.",
             "input": {
                 "shape": "RunJobFlowInput"
             },
@@ -155,19 +155,19 @@
             }
         },
         "SetTerminationProtection": {
-            "documentation": "<p> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a cluster.</p> <p> SetTerminationProtection is used to prevent accidental termination of a job flow and to ensure that in the event of an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</p> <p> To terminate a job flow that has been locked by setting SetTerminationProtection to <code>true</code>, you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <code>false</code>. </p> <p> For more information, go to <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html\">Protecting a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i></p>",
+            "documentation": "SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a cluster.\n\n  SetTerminationProtection is used to prevent accidental termination of a job flow and to ensure that in the event of an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.\n\n  To terminate a job flow that has been locked by setting SetTerminationProtection to ``true``, you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to ``false``. \n\n  For more information, go to `Protecting a Job Flow from Termination <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html>`_ in the *Amazon Elastic MapReduce Developer's Guide.*",
             "input": {
                 "shape": "SetTerminationProtectionInput"
             }
         },
         "SetVisibleToAllUsers": {
-            "documentation": "<p>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action works on running job flows. You can also set the visibility of a job flow when you launch it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job flow.</p>",
+            "documentation": "Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action works on running job flows. You can also set the visibility of a job flow when you launch it using the ``VisibleToAllUsers`` parameter of RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job flow.",
             "input": {
                 "shape": "SetVisibleToAllUsersInput"
             }
         },
         "TerminateJobFlows": {
-            "documentation": "<p> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the job flow was created. </p> <p> The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow, it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances. </p>",
+            "documentation": "TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the job flow was created. \n\n  The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow, it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances.",
             "input": {
                 "shape": "TerminateJobFlowsInput"
             }
@@ -179,7 +179,7 @@
         },
         "AddInstanceGroupsInput": {
             "type": "structure",
-            "documentation": "<p>Input to an AddInstanceGroups call.</p>",
+            "documentation": "Input to an AddInstanceGroups call.",
             "members": [
                 {
                     "name": "InstanceGroups",
@@ -195,7 +195,7 @@
         },
         "AddInstanceGroupsOutput": {
             "type": "structure",
-            "documentation": "<p>Output from an AddInstanceGroups call.</p>",
+            "documentation": "Output from an AddInstanceGroups call.",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -211,7 +211,7 @@
         },
         "AddJobFlowStepsInput": {
             "type": "structure",
-            "documentation": "<p> The input argument to the <a>AddJobFlowSteps</a> operation. </p>",
+            "documentation": "The input argument to the AddJobFlowSteps operation.",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -227,7 +227,7 @@
         },
         "AddJobFlowStepsOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>AddJobFlowSteps</a> operation. </p>",
+            "documentation": "The output for the AddJobFlowSteps operation.",
             "members": [
                 {
                     "name": "StepIds",
@@ -238,7 +238,7 @@
         },
         "AddTagsInput": {
             "type": "structure",
-            "documentation": "<p>This input identifies a cluster and a list of tags to attach. </p>",
+            "documentation": "This input identifies a cluster and a list of tags to attach.",
             "members": [
                 {
                     "name": "ResourceId",
@@ -254,12 +254,12 @@
         },
         "AddTagsOutput": {
             "type": "structure",
-            "documentation": "<p>This output indicates the result of adding tags to a resource. </p>",
+            "documentation": "This output indicates the result of adding tags to a resource.",
             "members": []
         },
         "Application": {
             "type": "structure",
-            "documentation": "<p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html\">Launch a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li>\"mapr-m3\" - launch the job flow using MapR M3 Edition.</li> <li>\"mapr-m5\" - launch the job flow using MapR M5 Edition.</li> <li>\"mapr\" with the user arguments specifying \"--edition,m3\" or \"--edition,m5\" - launch the job flow using MapR M3 or M5 Edition, respectively.</li> </ul> <note><p>In Amazon EMR releases 4.0 and greater, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.</p></note>",
+            "documentation": "An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see `Launch a Job Flow on the MapR Distribution for Hadoop <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html>`_. Currently supported values are:\n\n \n\n  * \"mapr-m3\" - launch the job flow using MapR M3 Edition.\n  * \"mapr-m5\" - launch the job flow using MapR M5 Edition.\n  * \"mapr\" with the user arguments specifying \"--edition,m3\" or \"--edition,m5\" - launch the job flow using MapR M3 or M5 Edition, respectively.\n \n In Amazon EMR releases 4.0 and greater, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.",
             "members": [
                 {
                     "name": "Name",
@@ -292,7 +292,7 @@
         },
         "BootstrapActionConfig": {
             "type": "structure",
-            "documentation": "<p>Configuration of a bootstrap action.</p>",
+            "documentation": "Configuration of a bootstrap action.",
             "members": [
                 {
                     "name": "Name",
@@ -312,7 +312,7 @@
         },
         "BootstrapActionDetail": {
             "type": "structure",
-            "documentation": "<p>Reports the configuration of a bootstrap action in a job flow.</p>",
+            "documentation": "Reports the configuration of a bootstrap action in a job flow.",
             "members": [
                 {
                     "name": "BootstrapActionConfig",
@@ -327,7 +327,7 @@
         },
         "Cluster": {
             "type": "structure",
-            "documentation": "<p>The detailed description of the cluster.</p>",
+            "documentation": "The detailed description of the cluster.",
             "members": [
                 {
                     "name": "Id",
@@ -423,7 +423,7 @@
         },
         "ClusterStateChangeReason": {
             "type": "structure",
-            "documentation": "<p>The reason that the cluster changed to its current state.</p>",
+            "documentation": "The reason that the cluster changed to its current state.",
             "members": [
                 {
                     "name": "Code",
@@ -446,7 +446,7 @@
         },
         "ClusterStatus": {
             "type": "structure",
-            "documentation": "<p>The detailed status of the cluster.</p>",
+            "documentation": "The detailed status of the cluster.",
             "members": [
                 {
                     "name": "State",
@@ -467,7 +467,7 @@
         },
         "ClusterSummary": {
             "type": "structure",
-            "documentation": "<p>The summary description of the cluster.</p>",
+            "documentation": "The summary description of the cluster.",
             "members": [
                 {
                     "name": "Id",
@@ -497,7 +497,7 @@
         },
         "ClusterTimeline": {
             "type": "structure",
-            "documentation": "<p>Represents the timeline of the cluster's lifecycle.</p>",
+            "documentation": "Represents the timeline of the cluster's lifecycle.",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -518,7 +518,7 @@
         },
         "Command": {
             "type": "structure",
-            "documentation": "<p>An entity describing an executable that runs on a cluster.</p>",
+            "documentation": "An entity describing an executable that runs on a cluster.",
             "members": [
                 {
                     "name": "Name",
@@ -543,7 +543,7 @@
         },
         "Configuration": {
             "type": "structure",
-            "documentation": "<note><p>Amazon EMR releases 4.x or later.</p></note> <p>Specifies a hardware and software configuration of the EMR cluster. This includes configurations for applications and software bundled with Amazon EMR. The Configuration object is a JSON object which is defined by a classification and a set of properties. Configurations can be nested, so a configuration may have its own Configuration objects listed.</p>",
+            "documentation": "Amazon EMR releases 4.x or later.\n\n Specifies a hardware and software configuration of the EMR cluster. This includes configurations for applications and software bundled with Amazon EMR. The Configuration object is a JSON object which is defined by a classification and a set of properties. Configurations can be nested, so a configuration may have its own Configuration objects listed.",
             "members": [
                 {
                     "name": "Classification",
@@ -571,7 +571,7 @@
         },
         "DescribeClusterInput": {
             "type": "structure",
-            "documentation": "<p>This input determines which cluster to describe.</p>",
+            "documentation": "This input determines which cluster to describe.",
             "members": [
                 {
                     "name": "ClusterId",
@@ -582,7 +582,7 @@
         },
         "DescribeClusterOutput": {
             "type": "structure",
-            "documentation": "<p>This output contains the description of the cluster.</p>",
+            "documentation": "This output contains the description of the cluster.",
             "members": [
                 {
                     "name": "Cluster",
@@ -593,7 +593,7 @@
         },
         "DescribeJobFlowsInput": {
             "type": "structure",
-            "documentation": "<p> The input for the <a>DescribeJobFlows</a> operation. </p>",
+            "documentation": "The input for the DescribeJobFlows operation.",
             "members": [
                 {
                     "name": "CreatedAfter",
@@ -619,7 +619,7 @@
         },
         "DescribeJobFlowsOutput": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>DescribeJobFlows</a> operation. </p>",
+            "documentation": "The output for the DescribeJobFlows operation.",
             "members": [
                 {
                     "name": "JobFlows",
@@ -630,7 +630,7 @@
         },
         "DescribeStepInput": {
             "type": "structure",
-            "documentation": "<p>This input determines which step to describe.</p>",
+            "documentation": "This input determines which step to describe.",
             "members": [
                 {
                     "name": "ClusterId",
@@ -646,7 +646,7 @@
         },
         "DescribeStepOutput": {
             "type": "structure",
-            "documentation": "<p>This output contains the description of the cluster step.</p>",
+            "documentation": "This output contains the description of the cluster step.",
             "members": [
                 {
                     "name": "Step",
@@ -661,7 +661,7 @@
         },
         "Ec2InstanceAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>",
+            "documentation": "Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.",
             "members": [
                 {
                     "name": "Ec2KeyName",
@@ -713,7 +713,7 @@
         },
         "HadoopJarStepConfig": {
             "type": "structure",
-            "documentation": "<p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>",
+            "documentation": "A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.",
             "members": [
                 {
                     "name": "Properties",
@@ -739,7 +739,7 @@
         },
         "HadoopStepConfig": {
             "type": "structure",
-            "documentation": "<p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>",
+            "documentation": "A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.",
             "members": [
                 {
                     "name": "Jar",
@@ -765,7 +765,7 @@
         },
         "Instance": {
             "type": "structure",
-            "documentation": "<p>Represents an EC2 instance provisioned as part of cluster.</p>",
+            "documentation": "Represents an EC2 instance provisioned as part of cluster.",
             "members": [
                 {
                     "name": "Id",
@@ -806,7 +806,7 @@
         },
         "InstanceGroup": {
             "type": "structure",
-            "documentation": "<p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>",
+            "documentation": "This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.",
             "members": [
                 {
                     "name": "Id",
@@ -862,7 +862,7 @@
         },
         "InstanceGroupConfig": {
             "type": "structure",
-            "documentation": "<p>Configuration defining a new instance group.</p>",
+            "documentation": "Configuration defining a new instance group.",
             "members": [
                 {
                     "name": "Name",
@@ -907,7 +907,7 @@
         },
         "InstanceGroupDetail": {
             "type": "structure",
-            "documentation": "<p>Detailed information about an instance group. </p>",
+            "documentation": "Detailed information about an instance group.",
             "members": [
                 {
                     "name": "InstanceGroupId",
@@ -998,7 +998,7 @@
         },
         "InstanceGroupModifyConfig": {
             "type": "structure",
-            "documentation": "<p>Modify an instance group size.</p>",
+            "documentation": "Modify an instance group size.",
             "members": [
                 {
                     "name": "InstanceGroupId",
@@ -1026,7 +1026,7 @@
         },
         "InstanceGroupStateChangeReason": {
             "type": "structure",
-            "documentation": "<p>The status change reason details for the instance group.</p>",
+            "documentation": "The status change reason details for the instance group.",
             "members": [
                 {
                     "name": "Code",
@@ -1045,7 +1045,7 @@
         },
         "InstanceGroupStatus": {
             "type": "structure",
-            "documentation": "<p>The details of the instance group status.</p>",
+            "documentation": "The details of the instance group status.",
             "members": [
                 {
                     "name": "State",
@@ -1066,7 +1066,7 @@
         },
         "InstanceGroupTimeline": {
             "type": "structure",
-            "documentation": "<p>The timeline of the instance group lifecycle.</p>",
+            "documentation": "The timeline of the instance group lifecycle.",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -1107,7 +1107,7 @@
         },
         "InstanceStateChangeReason": {
             "type": "structure",
-            "documentation": "<p>The details of the status change reason for the instance.</p>",
+            "documentation": "The details of the status change reason for the instance.",
             "members": [
                 {
                     "name": "Code",
@@ -1126,7 +1126,7 @@
         },
         "InstanceStatus": {
             "type": "structure",
-            "documentation": "<p>The instance status details.</p>",
+            "documentation": "The instance status details.",
             "members": [
                 {
                     "name": "State",
@@ -1147,7 +1147,7 @@
         },
         "InstanceTimeline": {
             "type": "structure",
-            "documentation": "<p>The timeline of the instance lifecycle.</p>",
+            "documentation": "The timeline of the instance lifecycle.",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -1174,12 +1174,12 @@
         },
         "InternalServerError": {
             "type": "structure",
-            "documentation": "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>",
+            "documentation": "Indicates that an error occurred while processing the request and that the request was not completed.",
             "members": []
         },
         "InternalServerException": {
             "type": "structure",
-            "documentation": "<p>This exception occurs when there is an internal failure in the EMR service.</p>",
+            "documentation": "This exception occurs when there is an internal failure in the EMR service.",
             "members": [
                 {
                     "name": "Message",
@@ -1190,7 +1190,7 @@
         },
         "InvalidRequestException": {
             "type": "structure",
-            "documentation": "<p>This exception occurs when there is something wrong with user input.</p>",
+            "documentation": "This exception occurs when there is something wrong with user input.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -1206,7 +1206,7 @@
         },
         "JobFlowDetail": {
             "type": "structure",
-            "documentation": "<p> A description of a job flow.</p>",
+            "documentation": "A description of a job flow.",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -1276,7 +1276,7 @@
         },
         "JobFlowExecutionState": {
             "type": "string",
-            "documentation": "<p> The type of instance. </p> <enumValues> <value name=\"JobFlowExecutionState$COMPLETED\"> <p>A small instance</p> </value> <value name=\"JobFlowExecutionState$FAILED\"> <p>A large instance</p> </value> </enumValues>"
+            "documentation": "The type of instance. \n\n   A small instance\n\n   A large instance"
         },
         "JobFlowExecutionStateList": {
             "type": "list",
@@ -1284,7 +1284,7 @@
         },
         "JobFlowExecutionStatusDetail": {
             "type": "structure",
-            "documentation": "<p>Describes the status of the job flow.</p>",
+            "documentation": "Describes the status of the job flow.",
             "members": [
                 {
                     "name": "State",
@@ -1320,7 +1320,7 @@
         },
         "JobFlowInstancesConfig": {
             "type": "structure",
-            "documentation": "<p>A description of the Amazon EC2 instance running the job flow. A valid JobFlowInstancesConfig must contain at least InstanceGroups, which is the recommended configuration. However, a valid alternative is to have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present).</p>",
+            "documentation": "A description of the Amazon EC2 instance running the job flow. A valid JobFlowInstancesConfig must contain at least InstanceGroups, which is the recommended configuration. However, a valid alternative is to have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present).",
             "members": [
                 {
                     "name": "MasterInstanceType",
@@ -1396,7 +1396,7 @@
         },
         "JobFlowInstancesDetail": {
             "type": "structure",
-            "documentation": "<p>Specify the type of Amazon EC2 instances to run the job flow on.</p>",
+            "documentation": "Specify the type of Amazon EC2 instances to run the job flow on.",
             "members": [
                 {
                     "name": "MasterInstanceType",
@@ -1467,7 +1467,7 @@
         },
         "KeyValue": {
             "type": "structure",
-            "documentation": "<p>A key value pair.</p>",
+            "documentation": "A key value pair.",
             "members": [
                 {
                     "name": "Key",
@@ -1487,7 +1487,7 @@
         },
         "ListBootstrapActionsInput": {
             "type": "structure",
-            "documentation": "<p>This input determines which bootstrap actions to retrieve.</p>",
+            "documentation": "This input determines which bootstrap actions to retrieve.",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1503,7 +1503,7 @@
         },
         "ListBootstrapActionsOutput": {
             "type": "structure",
-            "documentation": "<p>This output contains the boostrap actions detail .</p>",
+            "documentation": "This output contains the boostrap actions detail .",
             "members": [
                 {
                     "name": "BootstrapActions",
@@ -1519,7 +1519,7 @@
         },
         "ListClustersInput": {
             "type": "structure",
-            "documentation": "<p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>",
+            "documentation": "This input determines how the ListClusters action filters the list of clusters that it returns.",
             "members": [
                 {
                     "name": "CreatedAfter",
@@ -1545,7 +1545,7 @@
         },
         "ListClustersOutput": {
             "type": "structure",
-            "documentation": "<p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>",
+            "documentation": "This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.",
             "members": [
                 {
                     "name": "Clusters",
@@ -1561,7 +1561,7 @@
         },
         "ListInstanceGroupsInput": {
             "type": "structure",
-            "documentation": "<p>This input determines which instance groups to retrieve.</p>",
+            "documentation": "This input determines which instance groups to retrieve.",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1577,7 +1577,7 @@
         },
         "ListInstanceGroupsOutput": {
             "type": "structure",
-            "documentation": "<p>This input determines which instance groups to retrieve.</p>",
+            "documentation": "This input determines which instance groups to retrieve.",
             "members": [
                 {
                     "name": "InstanceGroups",
@@ -1593,7 +1593,7 @@
         },
         "ListInstancesInput": {
             "type": "structure",
-            "documentation": "<p>This input determines which instances to list.</p>",
+            "documentation": "This input determines which instances to list.",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1619,7 +1619,7 @@
         },
         "ListInstancesOutput": {
             "type": "structure",
-            "documentation": "<p>This output contains the list of instances.</p>",
+            "documentation": "This output contains the list of instances.",
             "members": [
                 {
                     "name": "Instances",
@@ -1635,7 +1635,7 @@
         },
         "ListStepsInput": {
             "type": "structure",
-            "documentation": "<p>This input determines which steps to list.</p>",
+            "documentation": "This input determines which steps to list.",
             "members": [
                 {
                     "name": "ClusterId",
@@ -1661,7 +1661,7 @@
         },
         "ListStepsOutput": {
             "type": "structure",
-            "documentation": "<p>This output contains the list of steps.</p>",
+            "documentation": "This output contains the list of steps.",
             "members": [
                 {
                     "name": "Steps",
@@ -1683,7 +1683,7 @@
         },
         "ModifyInstanceGroupsInput": {
             "type": "structure",
-            "documentation": "<p>Change the size of some instance groups.</p>",
+            "documentation": "Change the size of some instance groups.",
             "members": [
                 {
                     "name": "InstanceGroups",
@@ -1698,7 +1698,7 @@
         },
         "PlacementType": {
             "type": "structure",
-            "documentation": "<p>The Amazon EC2 location for the job flow.</p>",
+            "documentation": "The Amazon EC2 location for the job flow.",
             "members": [
                 {
                     "name": "AvailabilityZone",
@@ -1709,7 +1709,7 @@
         },
         "RemoveTagsInput": {
             "type": "structure",
-            "documentation": "<p>This input identifies a cluster and a list of tags to remove. </p>",
+            "documentation": "This input identifies a cluster and a list of tags to remove.",
             "members": [
                 {
                     "name": "ResourceId",
@@ -1725,7 +1725,7 @@
         },
         "RemoveTagsOutput": {
             "type": "structure",
-            "documentation": "<p>This output indicates the result of removing tags from a resource. </p>",
+            "documentation": "This output indicates the result of removing tags from a resource.",
             "members": []
         },
         "ResourceId": {
@@ -1733,7 +1733,7 @@
         },
         "RunJobFlowInput": {
             "type": "structure",
-            "documentation": "<p> Input to the <a>RunJobFlow</a> operation. </p>",
+            "documentation": "Input to the RunJobFlow operation.",
             "members": [
                 {
                     "name": "Name",
@@ -1819,7 +1819,7 @@
         },
         "RunJobFlowOutput": {
             "type": "structure",
-            "documentation": "<p> The result of the <a>RunJobFlow</a> operation. </p>",
+            "documentation": "The result of the RunJobFlow operation.",
             "members": [
                 {
                     "name": "JobFlowId",
@@ -1830,7 +1830,7 @@
         },
         "ScriptBootstrapActionConfig": {
             "type": "structure",
-            "documentation": "<p>Configuration of the script to run during a bootstrap action.</p>",
+            "documentation": "Configuration of the script to run during a bootstrap action.",
             "members": [
                 {
                     "name": "Path",
@@ -1850,7 +1850,7 @@
         },
         "SetTerminationProtectionInput": {
             "type": "structure",
-            "documentation": "<p> The input argument to the <a>TerminationProtection</a> operation. </p>",
+            "documentation": "The input argument to the TerminationProtection operation.",
             "members": [
                 {
                     "name": "JobFlowIds",
@@ -1866,7 +1866,7 @@
         },
         "SetVisibleToAllUsersInput": {
             "type": "structure",
-            "documentation": "<p>The input to the SetVisibleToAllUsers action.</p>",
+            "documentation": "The input to the SetVisibleToAllUsers action.",
             "members": [
                 {
                     "name": "JobFlowIds",
@@ -1882,7 +1882,7 @@
         },
         "Step": {
             "type": "structure",
-            "documentation": "<p>This represents a step in a cluster.</p>",
+            "documentation": "This represents a step in a cluster.",
             "members": [
                 {
                     "name": "Id",
@@ -1913,7 +1913,7 @@
         },
         "StepConfig": {
             "type": "structure",
-            "documentation": "<p>Specification of a job flow step.</p>",
+            "documentation": "Specification of a job flow step.",
             "members": [
                 {
                     "name": "Name",
@@ -1938,7 +1938,7 @@
         },
         "StepDetail": {
             "type": "structure",
-            "documentation": "<p>Combines the execution state and configuration of a step.</p>",
+            "documentation": "Combines the execution state and configuration of a step.",
             "members": [
                 {
                     "name": "StepConfig",
@@ -1961,7 +1961,7 @@
         },
         "StepExecutionStatusDetail": {
             "type": "structure",
-            "documentation": "<p>The execution state of a step.</p>",
+            "documentation": "The execution state of a step.",
             "members": [
                 {
                     "name": "State",
@@ -2002,7 +2002,7 @@
         },
         "StepStateChangeReason": {
             "type": "structure",
-            "documentation": "<p>The details of the step state change reason. </p>",
+            "documentation": "The details of the step state change reason.",
             "members": [
                 {
                     "name": "Code",
@@ -2025,7 +2025,7 @@
         },
         "StepStatus": {
             "type": "structure",
-            "documentation": "<p>The execution status details of the cluster step. </p>",
+            "documentation": "The execution status details of the cluster step.",
             "members": [
                 {
                     "name": "State",
@@ -2046,7 +2046,7 @@
         },
         "StepSummary": {
             "type": "structure",
-            "documentation": "<p>The summary of the cluster step.</p>",
+            "documentation": "The summary of the cluster step.",
             "members": [
                 {
                     "name": "Id",
@@ -2081,7 +2081,7 @@
         },
         "StepTimeline": {
             "type": "structure",
-            "documentation": "<p>The timeline of the cluster step lifecycle. </p>",
+            "documentation": "The timeline of the cluster step lifecycle.",
             "members": [
                 {
                     "name": "CreationDateTime",
@@ -2114,7 +2114,7 @@
         },
         "SupportedProductConfig": {
             "type": "structure",
-            "documentation": "<p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. </p>",
+            "documentation": "The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.",
             "members": [
                 {
                     "name": "Name",
@@ -2134,7 +2134,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clu\\ sters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html\">Tagging Amazon EMR Resources</a>. </p>",
+            "documentation": "A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clu\\ sters to track your Amazon EMR resource allocation costs. For more information, see `Tagging Amazon EMR Resources <http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html>`_.",
             "members": [
                 {
                     "name": "Key",
@@ -2154,7 +2154,7 @@
         },
         "TerminateJobFlowsInput": {
             "type": "structure",
-            "documentation": "<p> Input to the <a>TerminateJobFlows</a> operation. </p>",
+            "documentation": "Input to the TerminateJobFlows operation.",
             "members": [
                 {
                     "name": "JobFlowIds",

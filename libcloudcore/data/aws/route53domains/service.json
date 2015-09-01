@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CheckDomainAvailability": {
-            "documentation": "<p>This operation checks the availability of one domain name. You can access this API without authenticating. Note that if the availability status of a domain is pending, you must submit another request to determine the availability of the domain name.</p>",
+            "documentation": "This operation checks the availability of one domain name. You can access this API without authenticating. Note that if the availability status of a domain is pending, you must submit another request to determine the availability of the domain name.",
             "input": {
                 "shape": "CheckDomainAvailabilityRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "DeleteTagsForDomain": {
-            "documentation": "<p>This operation deletes the specified tags for a domain.</p> <p>All tag operations are eventually consistent; subsequent operations may not immediately represent all issued operations.</p>",
+            "documentation": "This operation deletes the specified tags for a domain.\n\n All tag operations are eventually consistent; subsequent operations may not immediately represent all issued operations.",
             "input": {
                 "shape": "DeleteTagsForDomainRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "DisableDomainAutoRenew": {
-            "documentation": "<p>This operation disables automatic renewal of domain registration for the specified domain.</p> <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so if you disable automatic renewal, registration for the domain will not be renewed when the expiration date passes, and you will lose control of the domain name.</note>",
+            "documentation": "This operation disables automatic renewal of domain registration for the specified domain.\n\n Caution! Amazon Route 53 doesn't have a manual renewal process, so if you disable automatic renewal, registration for the domain will not be renewed when the expiration date passes, and you will lose control of the domain name.",
             "input": {
                 "shape": "DisableDomainAutoRenewRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DisableDomainTransferLock": {
-            "documentation": "<p>This operation removes the transfer lock on the domain (specifically the <code>clientTransferProhibited</code> status) to allow domain transfers. We recommend you refrain from performing this action unless you intend to transfer the domain to a different registrar. Successful submission returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>",
+            "documentation": "This operation removes the transfer lock on the domain (specifically the ``clientTransferProhibited`` status) to allow domain transfers. We recommend you refrain from performing this action unless you intend to transfer the domain to a different registrar. Successful submission returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.",
             "input": {
                 "shape": "DisableDomainTransferLockRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "EnableDomainAutoRenew": {
-            "documentation": "<p>This operation configures Amazon Route 53 to automatically renew the specified domain before the domain registration expires. The cost of renewing your domain registration is billed to your AWS account.</p> <p>The period during which you can renew a domain name varies by TLD. For a list of TLDs and their renewal policies, see <a href=\"http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times\">\"Renewal, restoration, and deletion times\"</a> on the website for our registrar partner, Gandi. Route 53 requires that you renew before the end of the renewal period that is listed on the Gandi website so we can complete processing before the deadline.</p>",
+            "documentation": "This operation configures Amazon Route 53 to automatically renew the specified domain before the domain registration expires. The cost of renewing your domain registration is billed to your AWS account.\n\n The period during which you can renew a domain name varies by TLD. For a list of TLDs and their renewal policies, see `\"Renewal, restoration, and deletion times\" <http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times>`_ on the website for our registrar partner, Gandi. Route 53 requires that you renew before the end of the renewal period that is listed on the Gandi website so we can complete processing before the deadline.",
             "input": {
                 "shape": "EnableDomainAutoRenewRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "EnableDomainTransferLock": {
-            "documentation": "<p>This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code> status) to prevent domain transfers. Successful submission returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>",
+            "documentation": "This operation sets the transfer lock on the domain (specifically the ``clientTransferProhibited`` status) to prevent domain transfers. Successful submission returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.",
             "input": {
                 "shape": "EnableDomainTransferLockRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "GetDomainDetail": {
-            "documentation": "<p>This operation returns detailed information about the domain. The domain's contact information is also returned as part of the output.</p>",
+            "documentation": "This operation returns detailed information about the domain. The domain's contact information is also returned as part of the output.",
             "input": {
                 "shape": "GetDomainDetailRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "GetOperationDetail": {
-            "documentation": "<p>This operation returns the current status of an operation that is not completed.</p>",
+            "documentation": "This operation returns the current status of an operation that is not completed.",
             "input": {
                 "shape": "GetOperationDetailRequest"
             },
@@ -104,7 +104,7 @@
             }
         },
         "ListDomains": {
-            "documentation": "<p>This operation returns all the domain names registered with Amazon Route 53 for the current AWS account.</p>",
+            "documentation": "This operation returns all the domain names registered with Amazon Route 53 for the current AWS account.",
             "input": {
                 "shape": "ListDomainsRequest"
             },
@@ -113,7 +113,7 @@
             }
         },
         "ListOperations": {
-            "documentation": "<p>This operation returns the operation IDs of operations that are not yet complete.</p>",
+            "documentation": "This operation returns the operation IDs of operations that are not yet complete.",
             "input": {
                 "shape": "ListOperationsRequest"
             },
@@ -122,7 +122,7 @@
             }
         },
         "ListTagsForDomain": {
-            "documentation": "<p>This operation returns all of the tags that are associated with the specified domain.</p> <p>All tag operations are eventually consistent; subsequent operations may not immediately represent all issued operations.</p>",
+            "documentation": "This operation returns all of the tags that are associated with the specified domain.\n\n All tag operations are eventually consistent; subsequent operations may not immediately represent all issued operations.",
             "input": {
                 "shape": "ListTagsForDomainRequest"
             },
@@ -131,7 +131,7 @@
             }
         },
         "RegisterDomain": {
-            "documentation": "<p>This operation registers a domain. Domains are registered by the AWS registrar partner, Gandi. For some top-level domains (TLDs), this operation requires extra parameters.</p> <p>When you register a domain, Amazon Route 53 does the following:</p> <ul> <li>Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name servers to your hosted zone and automatically updates your domain registration with the names of these name servers.</li> <li>Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of the renewal date so you can choose whether to renew the registration.</li> <li>Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner, Gandi, instead of the information you entered for registrant, admin, and tech contacts.</li> <li>If registration is successful, returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant is notified by email.</li> <li>Charges your AWS account an amount based on the top-level domain. For more information, see <a href=\"http://aws.amazon.com/route53/pricing/\">Amazon Route 53 Pricing</a>.</li> </ul>",
+            "documentation": "This operation registers a domain. Domains are registered by the AWS registrar partner, Gandi. For some top-level domains (TLDs), this operation requires extra parameters.\n\n When you register a domain, Amazon Route 53 does the following:\n\n \n\n  * Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name servers to your hosted zone and automatically updates your domain registration with the names of these name servers.\n  * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of the renewal date so you can choose whether to renew the registration.\n  * Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner, Gandi, instead of the information you entered for registrant, admin, and tech contacts.\n  * If registration is successful, returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant is notified by email.\n  * Charges your AWS account an amount based on the top-level domain. For more information, see `Amazon Route 53 Pricing <http://aws.amazon.com/route53/pricing/>`_.",
             "input": {
                 "shape": "RegisterDomainRequest"
             },
@@ -140,7 +140,7 @@
             }
         },
         "RetrieveDomainAuthCode": {
-            "documentation": "<p>This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>",
+            "documentation": "This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.",
             "input": {
                 "shape": "RetrieveDomainAuthCodeRequest"
             },
@@ -149,7 +149,7 @@
             }
         },
         "TransferDomain": {
-            "documentation": "<p>This operation transfers a domain from another registrar to Amazon Route 53. When the transfer is complete, the domain is registered with the AWS registrar partner, Gandi.</p> <p>For transfer requirements, a detailed procedure, and information about viewing the status of a domain transfer, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html\">Transferring Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer Guide.</p> <p>If the registrar for your domain is also the DNS service provider for the domain, we highly recommend that you consider transferring your DNS service to Amazon Route 53 or to another DNS service provider before you transfer your registration. Some registrars provide free DNS service when you purchase a domain registration. When you transfer the registration, the previous registrar will not renew your domain registration and could end your DNS service at any time.</p> <note>Caution! If the registrar for your domain is also the DNS service provider for the domain and you don't transfer DNS service to another provider, your website, email, and the web applications associated with the domain might become unavailable.</note> <p>If the transfer is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified by email.</p>",
+            "documentation": "This operation transfers a domain from another registrar to Amazon Route 53. When the transfer is complete, the domain is registered with the AWS registrar partner, Gandi.\n\n For transfer requirements, a detailed procedure, and information about viewing the status of a domain transfer, see `Transferring Registration for a Domain to Amazon Route 53 <http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html>`_ in the Amazon Route 53 Developer Guide.\n\n If the registrar for your domain is also the DNS service provider for the domain, we highly recommend that you consider transferring your DNS service to Amazon Route 53 or to another DNS service provider before you transfer your registration. Some registrars provide free DNS service when you purchase a domain registration. When you transfer the registration, the previous registrar will not renew your domain registration and could end your DNS service at any time.\n\n Caution! If the registrar for your domain is also the DNS service provider for the domain and you don't transfer DNS service to another provider, your website, email, and the web applications associated with the domain might become unavailable. If the transfer is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified by email.",
             "input": {
                 "shape": "TransferDomainRequest"
             },
@@ -158,7 +158,7 @@
             }
         },
         "UpdateDomainContact": {
-            "documentation": "<p>This operation updates the contact information for a particular domain. Information for at least one contact (registrant, administrator, or technical) must be supplied for update.</p> <p>If the update is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>",
+            "documentation": "This operation updates the contact information for a particular domain. Information for at least one contact (registrant, administrator, or technical) must be supplied for update.\n\n If the update is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.",
             "input": {
                 "shape": "UpdateDomainContactRequest"
             },
@@ -167,7 +167,7 @@
             }
         },
         "UpdateDomainContactPrivacy": {
-            "documentation": "<p>This operation updates the specified domain contact's privacy setting. When the privacy option is enabled, personal information such as postal or email address is hidden from the results of a public WHOIS query. The privacy services are provided by the AWS registrar, Gandi. For more information, see the <a href=\"http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en\">Gandi privacy features</a>.</p> <p>This operation only affects the privacy of the specified contact type (registrant, administrator, or tech). Successful acceptance returns an operation ID that you can use with GetOperationDetail to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>",
+            "documentation": "This operation updates the specified domain contact's privacy setting. When the privacy option is enabled, personal information such as postal or email address is hidden from the results of a public WHOIS query. The privacy services are provided by the AWS registrar, Gandi. For more information, see the `Gandi privacy features <http://www.gandi.net/domain/whois/?currency=USD&amp;lang=en>`_.\n\n This operation only affects the privacy of the specified contact type (registrant, administrator, or tech). Successful acceptance returns an operation ID that you can use with GetOperationDetail to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.",
             "input": {
                 "shape": "UpdateDomainContactPrivacyRequest"
             },
@@ -176,7 +176,7 @@
             }
         },
         "UpdateDomainNameservers": {
-            "documentation": "<p>This operation replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain. </p> <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>",
+            "documentation": "This operation replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain. \n\n If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.",
             "input": {
                 "shape": "UpdateDomainNameserversRequest"
             },
@@ -185,7 +185,7 @@
             }
         },
         "UpdateTagsForDomain": {
-            "documentation": "<p>This operation adds or updates tags for a specified domain.</p> <p>All tag operations are eventually consistent; subsequent operations may not immediately represent all issued operations.</p>",
+            "documentation": "This operation adds or updates tags for a specified domain.\n\n All tag operations are eventually consistent; subsequent operations may not immediately represent all issued operations.",
             "input": {
                 "shape": "UpdateTagsForDomainRequest"
             },
@@ -203,7 +203,7 @@
         },
         "CheckDomainAvailabilityRequest": {
             "type": "structure",
-            "documentation": "<p>The CheckDomainAvailability request contains the following elements.</p>",
+            "documentation": "The CheckDomainAvailability request contains the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -219,7 +219,7 @@
         },
         "CheckDomainAvailabilityResponse": {
             "type": "structure",
-            "documentation": "<p>The CheckDomainAvailability response includes the following elements.</p>",
+            "documentation": "The CheckDomainAvailability response includes the following elements.",
             "members": [
                 {
                     "name": "Availability",
@@ -233,7 +233,7 @@
         },
         "ContactDetail": {
             "type": "structure",
-            "documentation": "<p>ContactDetail includes the following elements.</p>",
+            "documentation": "ContactDetail includes the following elements.",
             "members": [
                 {
                     "name": "FirstName",
@@ -324,7 +324,7 @@
         },
         "DeleteTagsForDomainRequest": {
             "type": "structure",
-            "documentation": "<p>The DeleteTagsForDomainRequest includes the following elements.</p>",
+            "documentation": "The DeleteTagsForDomainRequest includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -357,7 +357,7 @@
         },
         "DisableDomainTransferLockRequest": {
             "type": "structure",
-            "documentation": "<p>The DisableDomainTransferLock request includes the following element.</p>",
+            "documentation": "The DisableDomainTransferLock request includes the following element.",
             "members": [
                 {
                     "name": "DomainName",
@@ -368,7 +368,7 @@
         },
         "DisableDomainTransferLockResponse": {
             "type": "structure",
-            "documentation": "<p>The DisableDomainTransferLock response includes the following element.</p>",
+            "documentation": "The DisableDomainTransferLock response includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -385,7 +385,7 @@
         },
         "DomainLimitExceeded": {
             "type": "structure",
-            "documentation": "<p>The number of domains has exceeded the allowed threshold for the account.</p>",
+            "documentation": "The number of domains has exceeded the allowed threshold for the account.",
             "members": [
                 {
                     "name": "message",
@@ -434,7 +434,7 @@
         },
         "DuplicateRequest": {
             "type": "structure",
-            "documentation": "<p>The request is already in progress for the domain.</p>",
+            "documentation": "The request is already in progress for the domain.",
             "members": [
                 {
                     "name": "message",
@@ -463,7 +463,7 @@
         },
         "EnableDomainTransferLockRequest": {
             "type": "structure",
-            "documentation": "<p>The EnableDomainTransferLock request includes the following element.</p>",
+            "documentation": "The EnableDomainTransferLock request includes the following element.",
             "members": [
                 {
                     "name": "DomainName",
@@ -474,7 +474,7 @@
         },
         "EnableDomainTransferLockResponse": {
             "type": "structure",
-            "documentation": "<p>The EnableDomainTransferLock response includes the following elements.</p>",
+            "documentation": "The EnableDomainTransferLock response includes the following elements.",
             "members": [
                 {
                     "name": "OperationId",
@@ -488,7 +488,7 @@
         },
         "ExtraParam": {
             "type": "structure",
-            "documentation": "<p>ExtraParam includes the following elements.</p>",
+            "documentation": "ExtraParam includes the following elements.",
             "members": [
                 {
                     "name": "Name",
@@ -517,7 +517,7 @@
         },
         "GetDomainDetailRequest": {
             "type": "structure",
-            "documentation": "<p>The GetDomainDetail request includes the following element.</p>",
+            "documentation": "The GetDomainDetail request includes the following element.",
             "members": [
                 {
                     "name": "DomainName",
@@ -528,7 +528,7 @@
         },
         "GetDomainDetailResponse": {
             "type": "structure",
-            "documentation": "<p>The GetDomainDetail response includes the following elements.</p>",
+            "documentation": "The GetDomainDetail response includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -639,7 +639,7 @@
         },
         "GetOperationDetailRequest": {
             "type": "structure",
-            "documentation": "<p>The GetOperationDetail request includes the following element.</p>",
+            "documentation": "The GetOperationDetail request includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -650,7 +650,7 @@
         },
         "GetOperationDetailResponse": {
             "type": "structure",
-            "documentation": "<p>The GetOperationDetail response includes the following elements.</p>",
+            "documentation": "The GetOperationDetail response includes the following elements.",
             "members": [
                 {
                     "name": "OperationId",
@@ -696,7 +696,7 @@
         },
         "InvalidInput": {
             "type": "structure",
-            "documentation": "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>",
+            "documentation": "The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.",
             "members": [
                 {
                     "name": "message",
@@ -709,7 +709,7 @@
         },
         "ListDomainsRequest": {
             "type": "structure",
-            "documentation": "<p>The ListDomains request includes the following elements.</p>",
+            "documentation": "The ListDomains request includes the following elements.",
             "members": [
                 {
                     "name": "Marker",
@@ -725,7 +725,7 @@
         },
         "ListDomainsResponse": {
             "type": "structure",
-            "documentation": "<p>The ListDomains response includes the following elements.</p>",
+            "documentation": "The ListDomains response includes the following elements.",
             "members": [
                 {
                     "name": "Domains",
@@ -741,7 +741,7 @@
         },
         "ListOperationsRequest": {
             "type": "structure",
-            "documentation": "<p>The ListOperations request includes the following elements.</p>",
+            "documentation": "The ListOperations request includes the following elements.",
             "members": [
                 {
                     "name": "Marker",
@@ -757,7 +757,7 @@
         },
         "ListOperationsResponse": {
             "type": "structure",
-            "documentation": "<p>The ListOperations response includes the following elements.</p>",
+            "documentation": "The ListOperations response includes the following elements.",
             "members": [
                 {
                     "name": "Operations",
@@ -773,7 +773,7 @@
         },
         "ListTagsForDomainRequest": {
             "type": "structure",
-            "documentation": "<p>The ListTagsForDomainRequest includes the following elements.</p>",
+            "documentation": "The ListTagsForDomainRequest includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -784,7 +784,7 @@
         },
         "ListTagsForDomainResponse": {
             "type": "structure",
-            "documentation": "<p>The ListTagsForDomain response includes the following elements.</p>",
+            "documentation": "The ListTagsForDomain response includes the following elements.",
             "members": [
                 {
                     "name": "TagList",
@@ -795,7 +795,7 @@
         },
         "Nameserver": {
             "type": "structure",
-            "documentation": "<p>Nameserver includes the following elements.</p>",
+            "documentation": "Nameserver includes the following elements.",
             "members": [
                 {
                     "name": "Name",
@@ -818,7 +818,7 @@
         },
         "OperationLimitExceeded": {
             "type": "structure",
-            "documentation": "<p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>",
+            "documentation": "The number of operations or jobs running exceeded the allowed threshold for the account.",
             "members": [
                 {
                     "name": "message",
@@ -831,7 +831,7 @@
         },
         "OperationSummary": {
             "type": "structure",
-            "documentation": "<p>OperationSummary includes the following elements.</p>",
+            "documentation": "OperationSummary includes the following elements.",
             "members": [
                 {
                     "name": "OperationId",
@@ -870,7 +870,7 @@
         },
         "RegisterDomainRequest": {
             "type": "structure",
-            "documentation": "<p>The RegisterDomain request includes the following elements.</p>",
+            "documentation": "The RegisterDomain request includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -926,7 +926,7 @@
         },
         "RegisterDomainResponse": {
             "type": "structure",
-            "documentation": "<p>The RegisterDomain response includes the following element.</p>",
+            "documentation": "The RegisterDomain response includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -952,7 +952,7 @@
         },
         "RetrieveDomainAuthCodeRequest": {
             "type": "structure",
-            "documentation": "<p>The RetrieveDomainAuthCode request includes the following element.</p>",
+            "documentation": "The RetrieveDomainAuthCode request includes the following element.",
             "members": [
                 {
                     "name": "DomainName",
@@ -963,7 +963,7 @@
         },
         "RetrieveDomainAuthCodeResponse": {
             "type": "structure",
-            "documentation": "<p>The RetrieveDomainAuthCode response includes the following element.</p>",
+            "documentation": "The RetrieveDomainAuthCode response includes the following element.",
             "members": [
                 {
                     "name": "AuthCode",
@@ -977,7 +977,7 @@
         },
         "TLDRulesViolation": {
             "type": "structure",
-            "documentation": "<p>The top-level domain does not support this operation.</p>",
+            "documentation": "The top-level domain does not support this operation.",
             "members": [
                 {
                     "name": "message",
@@ -987,7 +987,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>Each tag includes the following elements.</p>",
+            "documentation": "Each tag includes the following elements.",
             "members": [
                 {
                     "name": "Key",
@@ -1020,7 +1020,7 @@
         },
         "TransferDomainRequest": {
             "type": "structure",
-            "documentation": "<p>The TransferDomain request includes the following elements.</p>",
+            "documentation": "The TransferDomain request includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1086,7 +1086,7 @@
         },
         "TransferDomainResponse": {
             "type": "structure",
-            "documentation": "<p>The TranserDomain response includes the following element.</p>",
+            "documentation": "The TranserDomain response includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -1097,7 +1097,7 @@
         },
         "UnsupportedTLD": {
             "type": "structure",
-            "documentation": "<p>Amazon Route 53 does not support this top-level domain.</p>",
+            "documentation": "Amazon Route 53 does not support this top-level domain.",
             "members": [
                 {
                     "name": "message",
@@ -1107,7 +1107,7 @@
         },
         "UpdateDomainContactPrivacyRequest": {
             "type": "structure",
-            "documentation": "<p>The UpdateDomainContactPrivacy request includes the following elements.</p>",
+            "documentation": "The UpdateDomainContactPrivacy request includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1133,7 +1133,7 @@
         },
         "UpdateDomainContactPrivacyResponse": {
             "type": "structure",
-            "documentation": "<p>The UpdateDomainContactPrivacy response includes the following element.</p>",
+            "documentation": "The UpdateDomainContactPrivacy response includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -1144,7 +1144,7 @@
         },
         "UpdateDomainContactRequest": {
             "type": "structure",
-            "documentation": "<p>The UpdateDomainContact request includes the following elements.</p>",
+            "documentation": "The UpdateDomainContact request includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1170,7 +1170,7 @@
         },
         "UpdateDomainContactResponse": {
             "type": "structure",
-            "documentation": "<p>The UpdateDomainContact response includes the following element.</p>",
+            "documentation": "The UpdateDomainContact response includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -1181,7 +1181,7 @@
         },
         "UpdateDomainNameserversRequest": {
             "type": "structure",
-            "documentation": "<p>The UpdateDomainNameserver request includes the following elements.</p>",
+            "documentation": "The UpdateDomainNameserver request includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",
@@ -1202,7 +1202,7 @@
         },
         "UpdateDomainNameserversResponse": {
             "type": "structure",
-            "documentation": "<p>The UpdateDomainNameservers response includes the following element.</p>",
+            "documentation": "The UpdateDomainNameservers response includes the following element.",
             "members": [
                 {
                     "name": "OperationId",
@@ -1213,7 +1213,7 @@
         },
         "UpdateTagsForDomainRequest": {
             "type": "structure",
-            "documentation": "<p>The UpdateTagsForDomainRequest includes the following elements.</p>",
+            "documentation": "The UpdateTagsForDomainRequest includes the following elements.",
             "members": [
                 {
                     "name": "DomainName",

@@ -32,31 +32,31 @@
     ],
     "operations": {
         "AssignInstance": {
-            "documentation": "<p>Assign a registered instance to a layer.</p> <ul> <li>You can assign registered on-premises instances to any layer type.</li> <li>You can assign registered Amazon EC2 instances only to custom layers.</li> <li>You cannot use this action with instances that were created with AWS OpsWorks.</li> </ul> <p><b>Required Permissions</b>: To use this action, an AWS Identity and Access Management (IAM) user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Assign a registered instance to a layer.\n\n \n\n  * You can assign registered on-premises instances to any layer type.\n  * You can assign registered Amazon EC2 instances only to custom layers.\n  * You cannot use this action with instances that were created with AWS OpsWorks.\n \n **Required Permissions**: To use this action, an AWS Identity and Access Management (IAM) user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "AssignInstanceRequest"
             }
         },
         "AssignVolume": {
-            "documentation": "<p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling <a>RegisterVolume</a>. After you register the volume, you must call <a>UpdateVolume</a> to specify a mount point before calling <code>AssignVolume</code>. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling RegisterVolume. After you register the volume, you must call UpdateVolume to specify a mount point before calling ``AssignVolume``. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "AssignVolumeRequest"
             }
         },
         "AssociateElasticIp": {
-            "documentation": "<p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling <a>RegisterElasticIp</a>. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling RegisterElasticIp. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "AssociateElasticIpRequest"
             }
         },
         "AttachElasticLoadBalancer": {
-            "documentation": "<p>Attaches an Elastic Load Balancing load balancer to a specified layer. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html\">Elastic Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html\"> Elastic Load Balancing Developer Guide</a>.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Attaches an Elastic Load Balancing load balancer to a specified layer. For more information, see `Elastic Load Balancing <http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html>`_.\n\n  You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see ` Elastic Load Balancing Developer Guide <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html>`_.\n\n  **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "AttachElasticLoadBalancerRequest"
             }
         },
         "CloneStack": {
-            "documentation": "<p>Creates a clone of a specified stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html\">Clone a Stack</a>. By default, all parameters are set to the values used by the parent stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Creates a clone of a specified stack. For more information, see `Clone a Stack <http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html>`_. By default, all parameters are set to the values used by the parent stack.\n\n **Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CloneStackRequest"
             },
@@ -65,7 +65,7 @@
             }
         },
         "CreateApp": {
-            "documentation": "<p>Creates an app for a specified stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html\">Creating Apps</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Creates an app for a specified stack. For more information, see `Creating Apps <http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CreateAppRequest"
             },
@@ -74,7 +74,7 @@
             }
         },
         "CreateDeployment": {
-            "documentation": "<p>Runs deployment or stack commands. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html\">Deploying Apps</a> and <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html\">Run Stack Commands</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Runs deployment or stack commands. For more information, see `Deploying Apps <http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html>`_ and `Run Stack Commands <http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CreateDeploymentRequest"
             },
@@ -83,7 +83,7 @@
             }
         },
         "CreateInstance": {
-            "documentation": "<p>Creates an instance in a specified stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html\">Adding an Instance to a Layer</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Creates an instance in a specified stack. For more information, see `Adding an Instance to a Layer <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CreateInstanceRequest"
             },
@@ -92,7 +92,7 @@
             }
         },
         "CreateLayer": {
-            "documentation": "<p>Creates a layer. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html\">How to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Creates a layer. For more information, see `How to Create a Layer <http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html>`_.\n\n  You should use **CreateLayer** for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, **CreateLayer** fails. A stack can have an arbitrary number of custom layers, so you can call **CreateLayer** as many times as you like for that layer type.\n\n  **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CreateLayerRequest"
             },
@@ -101,7 +101,7 @@
             }
         },
         "CreateStack": {
-            "documentation": "<p>Creates a new stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html\">Create a New Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Creates a new stack. For more information, see `Create a New Stack <http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CreateStackRequest"
             },
@@ -110,7 +110,7 @@
             }
         },
         "CreateUserProfile": {
-            "documentation": "<p>Creates a new user profile.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Creates a new user profile.\n\n **Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "CreateUserProfileRequest"
             },
@@ -119,67 +119,67 @@
             }
         },
         "DeleteApp": {
-            "documentation": "<p>Deletes a specified app.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deletes a specified app.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeleteAppRequest"
             }
         },
         "DeleteInstance": {
-            "documentation": "<p>Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html\">Deleting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.\n\n For more information, see `Deleting Instances <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeleteInstanceRequest"
             }
         },
         "DeleteLayer": {
-            "documentation": "<p>Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html\">How to Delete a Layer</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see `How to Delete a Layer <http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeleteLayerRequest"
             }
         },
         "DeleteStack": {
-            "documentation": "<p>Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html\">Shut Down a Stack</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see `Shut Down a Stack <http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeleteStackRequest"
             }
         },
         "DeleteUserProfile": {
-            "documentation": "<p>Deletes a user profile.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deletes a user profile.\n\n **Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeleteUserProfileRequest"
             }
         },
         "DeregisterEcsCluster": {
-            "documentation": "<p>Deregisters a specified Amazon ECS cluster from a stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete\"> Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\"></a>.</p>",
+            "documentation": "Deregisters a specified Amazon ECS cluster from a stack. For more information, see ` Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see ` <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeregisterEcsClusterRequest"
             }
         },
         "DeregisterElasticIp": {
-            "documentation": "<p>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeregisterElasticIpRequest"
             }
         },
         "DeregisterInstance": {
-            "documentation": "<p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action can not be used with instances that were created with AWS OpsWorks.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action can not be used with instances that were created with AWS OpsWorks.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeregisterInstanceRequest"
             }
         },
         "DeregisterRdsDbInstance": {
-            "documentation": "<p>Deregisters an Amazon RDS instance.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deregisters an Amazon RDS instance.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeregisterRdsDbInstanceRequest"
             }
         },
         "DeregisterVolume": {
-            "documentation": "<p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DeregisterVolumeRequest"
             }
         },
         "DescribeAgentVersions": {
-            "documentation": "<p>Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>",
+            "documentation": "Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager. ``DescribeAgentVersions`` returns a list of available agent versions for the specified stack or configuration manager.",
             "input": {
                 "shape": "DescribeAgentVersionsRequest"
             },
@@ -188,7 +188,7 @@
             }
         },
         "DescribeApps": {
-            "documentation": "<p>Requests a description of a specified set of apps.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Requests a description of a specified set of apps.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeAppsRequest"
             },
@@ -197,7 +197,7 @@
             }
         },
         "DescribeCommands": {
-            "documentation": "<p>Describes the results of specified commands.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes the results of specified commands.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeCommandsRequest"
             },
@@ -206,7 +206,7 @@
             }
         },
         "DescribeDeployments": {
-            "documentation": "<p>Requests a description of a specified set of deployments.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Requests a description of a specified set of deployments.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeDeploymentsRequest"
             },
@@ -215,7 +215,7 @@
             }
         },
         "DescribeEcsClusters": {
-            "documentation": "<p>Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks currently supports only one cluster per layer, so the result set has a maximum of one element.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permission. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the ``MaxResults`` and ``NextToken`` parameters to paginate the response. However, AWS OpsWorks currently supports only one cluster per layer, so the result set has a maximum of one element.\n\n **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permission. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeEcsClustersRequest"
             },
@@ -224,7 +224,7 @@
             }
         },
         "DescribeElasticIps": {
-            "documentation": "<p>Describes <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP addresses</a>.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes `Elastic IP addresses <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html>`_.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeElasticIpsRequest"
             },
@@ -233,7 +233,7 @@
             }
         },
         "DescribeElasticLoadBalancers": {
-            "documentation": "<p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes a stack's Elastic Load Balancing instances.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeElasticLoadBalancersRequest"
             },
@@ -242,7 +242,7 @@
             }
         },
         "DescribeInstances": {
-            "documentation": "<p>Requests a description of a set of instances.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Requests a description of a set of instances.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeInstancesRequest"
             },
@@ -251,7 +251,7 @@
             }
         },
         "DescribeLayers": {
-            "documentation": "<p>Requests a description of one or more layers in a specified stack.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Requests a description of one or more layers in a specified stack.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeLayersRequest"
             },
@@ -260,7 +260,7 @@
             }
         },
         "DescribeLoadBasedAutoScaling": {
-            "documentation": "<p>Describes load-based auto scaling configurations for specified layers.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes load-based auto scaling configurations for specified layers.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeLoadBasedAutoScalingRequest"
             },
@@ -269,13 +269,13 @@
             }
         },
         "DescribeMyUserProfile": {
-            "documentation": "<p>Describes a user's SSH information.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes a user's SSH information.\n\n **Required Permissions**: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "output": {
                 "shape": "DescribeMyUserProfileResult"
             }
         },
         "DescribePermissions": {
-            "documentation": "<p>Describes the permissions for a specified stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes the permissions for a specified stack.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribePermissionsRequest"
             },
@@ -284,7 +284,7 @@
             }
         },
         "DescribeRaidArrays": {
-            "documentation": "<p>Describe an instance's RAID arrays.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describe an instance's RAID arrays.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeRaidArraysRequest"
             },
@@ -293,7 +293,7 @@
             }
         },
         "DescribeRdsDbInstances": {
-            "documentation": "<p>Describes Amazon RDS instances.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes Amazon RDS instances.\n\n **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeRdsDbInstancesRequest"
             },
@@ -302,7 +302,7 @@
             }
         },
         "DescribeServiceErrors": {
-            "documentation": "<p>Describes AWS OpsWorks service errors.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes AWS OpsWorks service errors.\n\n **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeServiceErrorsRequest"
             },
@@ -311,7 +311,7 @@
             }
         },
         "DescribeStackProvisioningParameters": {
-            "documentation": "<p>Requests a description of a stack's provisioning parameters.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Requests a description of a stack's provisioning parameters.\n\n **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeStackProvisioningParametersRequest"
             },
@@ -320,7 +320,7 @@
             }
         },
         "DescribeStackSummary": {
-            "documentation": "<p>Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <code>running_setup</code> or <code>online</code>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as ``running_setup`` or ``online``.\n\n **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeStackSummaryRequest"
             },
@@ -329,7 +329,7 @@
             }
         },
         "DescribeStacks": {
-            "documentation": "<p>Requests a description of one or more stacks.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Requests a description of one or more stacks.\n\n **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeStacksRequest"
             },
@@ -338,7 +338,7 @@
             }
         },
         "DescribeTimeBasedAutoScaling": {
-            "documentation": "<p>Describes time-based auto scaling configurations for specified instances.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes time-based auto scaling configurations for specified instances.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeTimeBasedAutoScalingRequest"
             },
@@ -347,7 +347,7 @@
             }
         },
         "DescribeUserProfiles": {
-            "documentation": "<p>Describe specified users.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describe specified users.\n\n **Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeUserProfilesRequest"
             },
@@ -356,7 +356,7 @@
             }
         },
         "DescribeVolumes": {
-            "documentation": "<p>Describes an instance's Amazon EBS volumes.</p> <note> <p>You must specify at least one of the parameters.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Describes an instance's Amazon EBS volumes.\n\n  You must specify at least one of the parameters.\n\n  **Required Permissions**: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DescribeVolumesRequest"
             },
@@ -365,19 +365,19 @@
             }
         },
         "DetachElasticLoadBalancer": {
-            "documentation": "<p>Detaches a specified Elastic Load Balancing instance from its layer.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Detaches a specified Elastic Load Balancing instance from its layer.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DetachElasticLoadBalancerRequest"
             }
         },
         "DisassociateElasticIp": {
-            "documentation": "<p>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "DisassociateElasticIpRequest"
             }
         },
         "GetHostnameSuggestion": {
-            "documentation": "<p>Gets a generated host name for the specified layer, based on the current host name theme.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Gets a generated host name for the specified layer, based on the current host name theme.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "GetHostnameSuggestionRequest"
             },
@@ -386,7 +386,7 @@
             }
         },
         "GrantAccess": {
-            "documentation": "<note>This action can be used only with Windows stacks.</note> <p>Grants RDP access to a Windows instance for a specified time period.</p>",
+            "documentation": "This action can be used only with Windows stacks. Grants RDP access to a Windows instance for a specified time period.",
             "input": {
                 "shape": "GrantAccessRequest"
             },
@@ -395,13 +395,13 @@
             }
         },
         "RebootInstance": {
-            "documentation": "<p>Reboots a specified instance. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html\">Starting, Stopping, and Rebooting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Reboots a specified instance. For more information, see `Starting, Stopping, and Rebooting Instances <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "RebootInstanceRequest"
             }
         },
         "RegisterEcsCluster": {
-            "documentation": "<p>Registers a specified Amazon ECS cluster with a stack. You can register only one cluster with a stack. A cluster can be registered with only one stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html\"> Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\"> Managing User Permissions</a>.</p>",
+            "documentation": "Registers a specified Amazon ECS cluster with a stack. You can register only one cluster with a stack. A cluster can be registered with only one stack. For more information, see ` Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see ` Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "RegisterEcsClusterRequest"
             },
@@ -410,7 +410,7 @@
             }
         },
         "RegisterElasticIp": {
-            "documentation": "<p>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is already registered, you must first deregister it by calling <a>DeregisterElasticIp</a>. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is already registered, you must first deregister it by calling DeregisterElasticIp. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "RegisterElasticIpRequest"
             },
@@ -419,7 +419,7 @@
             }
         },
         "RegisterInstance": {
-            "documentation": "<p>Registers instances with a specified stack that were created outside of AWS OpsWorks.</p> <note>We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html\"> Registering an Instance with an AWS OpsWorks Stack</a>.</note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Registers instances with a specified stack that were created outside of AWS OpsWorks.\n\n We do not recommend using this action to register instances. The complete registration operation has two primary steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack. ``RegisterInstance`` handles only the second step. You should instead use the AWS CLI ``register`` command, which performs the entire registration operation. For more information, see ` Registering an Instance with an AWS OpsWorks Stack <http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html>`_. **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "RegisterInstanceRequest"
             },
@@ -428,13 +428,13 @@
             }
         },
         "RegisterRdsDbInstance": {
-            "documentation": "<p>Registers an Amazon RDS instance with a stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Registers an Amazon RDS instance with a stack.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "RegisterRdsDbInstanceRequest"
             }
         },
         "RegisterVolume": {
-            "documentation": "<p>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is already registered, you must first deregister it by calling <a>DeregisterVolume</a>. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is already registered, you must first deregister it by calling DeregisterVolume. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "RegisterVolumeRequest"
             },
@@ -443,109 +443,109 @@
             }
         },
         "SetLoadBasedAutoScaling": {
-            "documentation": "<p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html\">Managing Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p> </note> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Specify the load-based auto scaling configuration for a specified layer. For more information, see `Managing Load with Time-based and Load-based Instances <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html>`_.\n\n  To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.\n\n  **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "SetLoadBasedAutoScalingRequest"
             }
         },
         "SetPermission": {
-            "documentation": "<p>Specifies a user's permissions. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html\">Security and Permissions</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Specifies a user's permissions. For more information, see `Security and Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "SetPermissionRequest"
             }
         },
         "SetTimeBasedAutoScaling": {
-            "documentation": "<p>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html\">Managing Load with Time-based and Load-based Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Specify the time-based auto scaling configuration for a specified instance. For more information, see `Managing Load with Time-based and Load-based Instances <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "SetTimeBasedAutoScalingRequest"
             }
         },
         "StartInstance": {
-            "documentation": "<p>Starts a specified instance. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html\">Starting, Stopping, and Rebooting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Starts a specified instance. For more information, see `Starting, Stopping, and Rebooting Instances <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "StartInstanceRequest"
             }
         },
         "StartStack": {
-            "documentation": "<p>Starts a stack's instances. </p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Starts a stack's instances. \n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "StartStackRequest"
             }
         },
         "StopInstance": {
-            "documentation": "<p>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html\">Starting, Stopping, and Rebooting Instances</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see `Starting, Stopping, and Rebooting Instances <http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "StopInstanceRequest"
             }
         },
         "StopStack": {
-            "documentation": "<p>Stops a specified stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Stops a specified stack.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "StopStackRequest"
             }
         },
         "UnassignInstance": {
-            "documentation": "<p>Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned instance and can be assigned to another layer, as needed. You cannot use this action with instances that were created with AWS OpsWorks.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned instance and can be assigned to another layer, as needed. You cannot use this action with instances that were created with AWS OpsWorks.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UnassignInstanceRequest"
             }
         },
         "UnassignVolume": {
-            "documentation": "<p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UnassignVolumeRequest"
             }
         },
         "UpdateApp": {
-            "documentation": "<p>Updates a specified app.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a specified app.\n\n **Required Permissions**: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateAppRequest"
             }
         },
         "UpdateElasticIp": {
-            "documentation": "<p>Updates a registered Elastic IP address's name. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a registered Elastic IP address's name. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateElasticIpRequest"
             }
         },
         "UpdateInstance": {
-            "documentation": "<p>Updates a specified instance.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a specified instance.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateInstanceRequest"
             }
         },
         "UpdateLayer": {
-            "documentation": "<p>Updates a specified layer.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a specified layer.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateLayerRequest"
             }
         },
         "UpdateMyUserProfile": {
-            "documentation": "<p>Updates a user's SSH public key.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a user's SSH public key.\n\n **Required Permissions**: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateMyUserProfileRequest"
             }
         },
         "UpdateRdsDbInstance": {
-            "documentation": "<p>Updates an Amazon RDS instance.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates an Amazon RDS instance.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateRdsDbInstanceRequest"
             }
         },
         "UpdateStack": {
-            "documentation": "<p>Updates a specified stack.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a specified stack.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateStackRequest"
             }
         },
         "UpdateUserProfile": {
-            "documentation": "<p>Updates a specified user profile.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates a specified user profile.\n\n **Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateUserProfileRequest"
             }
         },
         "UpdateVolume": {
-            "documentation": "<p>Updates an Amazon EBS volume's name or mount point. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html\">Resource Management</a>.</p> <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html\">Managing User Permissions</a>.</p>",
+            "documentation": "Updates an Amazon EBS volume's name or mount point. For more information, see `Resource Management <http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html>`_.\n\n **Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see `Managing User Permissions <http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html>`_.",
             "input": {
                 "shape": "UpdateVolumeRequest"
             }
@@ -554,7 +554,7 @@
     "shapes": {
         "AgentVersion": {
             "type": "structure",
-            "documentation": "<p>Describes an agent version.</p>",
+            "documentation": "Describes an agent version.",
             "members": [
                 {
                     "name": "Version",
@@ -574,7 +574,7 @@
         },
         "App": {
             "type": "structure",
-            "documentation": "<p>A description of the app.</p>",
+            "documentation": "A description of the app.",
             "members": [
                 {
                     "name": "AppId",
@@ -728,7 +728,7 @@
         },
         "AutoScalingThresholds": {
             "type": "structure",
-            "documentation": "<p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks starts or stops load-based instances.</p>",
+            "documentation": "Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks starts or stops load-based instances.",
             "members": [
                 {
                     "name": "InstanceCount",
@@ -772,7 +772,7 @@
         },
         "BlockDeviceMapping": {
             "type": "structure",
-            "documentation": "<p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html\">BlockDeviceMapping</a> data type. </p>",
+            "documentation": "Describes a block device mapping. This data type maps directly to the Amazon EC2 `BlockDeviceMapping <http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html>`_ data type.",
             "members": [
                 {
                     "name": "DeviceName",
@@ -805,7 +805,7 @@
         },
         "ChefConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes the Chef configuration.</p>",
+            "documentation": "Describes the Chef configuration.",
             "members": [
                 {
                     "name": "ManageBerkshelf",
@@ -935,7 +935,7 @@
         },
         "CloneStackResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CloneStack</code> request.</p>",
+            "documentation": "Contains the response to a ``CloneStack`` request.",
             "members": [
                 {
                     "name": "StackId",
@@ -946,7 +946,7 @@
         },
         "Command": {
             "type": "structure",
-            "documentation": "<p>Describes a command.</p>",
+            "documentation": "Describes a command.",
             "members": [
                 {
                     "name": "CommandId",
@@ -1071,7 +1071,7 @@
         },
         "CreateAppResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CreateApp</code> request.</p>",
+            "documentation": "Contains the response to a ``CreateApp`` request.",
             "members": [
                 {
                     "name": "AppId",
@@ -1117,7 +1117,7 @@
         },
         "CreateDeploymentResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CreateDeployment</code> request.</p>",
+            "documentation": "Contains the response to a ``CreateDeployment`` request.",
             "members": [
                 {
                     "name": "DeploymentId",
@@ -1218,7 +1218,7 @@
         },
         "CreateInstanceResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CreateInstance</code> request.</p>",
+            "documentation": "Contains the response to a ``CreateInstance`` request.",
             "members": [
                 {
                     "name": "InstanceId",
@@ -1319,7 +1319,7 @@
         },
         "CreateLayerResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CreateLayer</code> request.</p>",
+            "documentation": "Contains the response to a ``CreateLayer`` request.",
             "members": [
                 {
                     "name": "LayerId",
@@ -1429,7 +1429,7 @@
         },
         "CreateStackResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CreateStack</code> request.</p>",
+            "documentation": "Contains the response to a ``CreateStack`` request.",
             "members": [
                 {
                     "name": "StackId",
@@ -1465,7 +1465,7 @@
         },
         "CreateUserProfileResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>CreateUserProfile</code> request.</p>",
+            "documentation": "Contains the response to a ``CreateUserProfile`` request.",
             "members": [
                 {
                     "name": "IamUserArn",
@@ -1481,7 +1481,7 @@
         },
         "DataSource": {
             "type": "structure",
-            "documentation": "<p>Describes an app's data source.</p>",
+            "documentation": "Describes an app's data source.",
             "members": [
                 {
                     "name": "Type",
@@ -1569,7 +1569,7 @@
         },
         "Deployment": {
             "type": "structure",
-            "documentation": "<p>Describes a deployment of a stack or app.</p>",
+            "documentation": "Describes a deployment of a stack or app.",
             "members": [
                 {
                     "name": "DeploymentId",
@@ -1634,7 +1634,7 @@
         },
         "DeploymentCommand": {
             "type": "structure",
-            "documentation": "<p>Used to specify a stack or deployment command.</p>",
+            "documentation": "Used to specify a stack or deployment command.",
             "members": [
                 {
                     "name": "Name",
@@ -1727,7 +1727,7 @@
         },
         "DescribeAgentVersionsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeAgentVersions`` request.",
             "members": [
                 {
                     "name": "AgentVersions",
@@ -1753,7 +1753,7 @@
         },
         "DescribeAppsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeApps</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeApps`` request.",
             "members": [
                 {
                     "name": "Apps",
@@ -1784,7 +1784,7 @@
         },
         "DescribeCommandsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeCommands</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeCommands`` request.",
             "members": [
                 {
                     "name": "Commands",
@@ -1815,7 +1815,7 @@
         },
         "DescribeDeploymentsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeDeployments</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeDeployments`` request.",
             "members": [
                 {
                     "name": "Deployments",
@@ -1851,7 +1851,7 @@
         },
         "DescribeEcsClustersResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeEcsClusters`` request.",
             "members": [
                 {
                     "name": "EcsClusters",
@@ -1887,7 +1887,7 @@
         },
         "DescribeElasticIpsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeElasticIps</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeElasticIps`` request.",
             "members": [
                 {
                     "name": "ElasticIps",
@@ -1913,7 +1913,7 @@
         },
         "DescribeElasticLoadBalancersResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeElasticLoadBalancers</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeElasticLoadBalancers`` request.",
             "members": [
                 {
                     "name": "ElasticLoadBalancers",
@@ -1944,7 +1944,7 @@
         },
         "DescribeInstancesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeInstances</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeInstances`` request.",
             "members": [
                 {
                     "name": "Instances",
@@ -1970,7 +1970,7 @@
         },
         "DescribeLayersResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeLayers</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeLayers`` request.",
             "members": [
                 {
                     "name": "Layers",
@@ -1991,7 +1991,7 @@
         },
         "DescribeLoadBasedAutoScalingResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeLoadBasedAutoScaling`` request.",
             "members": [
                 {
                     "name": "LoadBasedAutoScalingConfigurations",
@@ -2002,7 +2002,7 @@
         },
         "DescribeMyUserProfileResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeMyUserProfile`` request.",
             "members": [
                 {
                     "name": "UserProfile",
@@ -2028,7 +2028,7 @@
         },
         "DescribePermissionsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribePermissions</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribePermissions`` request.",
             "members": [
                 {
                     "name": "Permissions",
@@ -2059,7 +2059,7 @@
         },
         "DescribeRaidArraysResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeRaidArrays`` request.",
             "members": [
                 {
                     "name": "RaidArrays",
@@ -2085,7 +2085,7 @@
         },
         "DescribeRdsDbInstancesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeRdsDbInstances`` request.",
             "members": [
                 {
                     "name": "RdsDbInstances",
@@ -2116,7 +2116,7 @@
         },
         "DescribeServiceErrorsResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeServiceErrors`` request.",
             "members": [
                 {
                     "name": "ServiceErrors",
@@ -2137,7 +2137,7 @@
         },
         "DescribeStackProvisioningParametersResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeStackProvisioningParameters</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeStackProvisioningParameters`` request.",
             "members": [
                 {
                     "name": "AgentInstallerUrl",
@@ -2163,7 +2163,7 @@
         },
         "DescribeStackSummaryResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeStackSummary</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeStackSummary`` request.",
             "members": [
                 {
                     "name": "StackSummary",
@@ -2184,7 +2184,7 @@
         },
         "DescribeStacksResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeStacks</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeStacks`` request.",
             "members": [
                 {
                     "name": "Stacks",
@@ -2205,7 +2205,7 @@
         },
         "DescribeTimeBasedAutoScalingResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeTimeBasedAutoScaling`` request.",
             "members": [
                 {
                     "name": "TimeBasedAutoScalingConfigurations",
@@ -2226,7 +2226,7 @@
         },
         "DescribeUserProfilesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeUserProfiles`` request.",
             "members": [
                 {
                     "name": "UserProfiles",
@@ -2262,7 +2262,7 @@
         },
         "DescribeVolumesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>DescribeVolumes</code> request.</p>",
+            "documentation": "Contains the response to a ``DescribeVolumes`` request.",
             "members": [
                 {
                     "name": "Volumes",
@@ -2301,7 +2301,7 @@
         },
         "EbsBlockDevice": {
             "type": "structure",
-            "documentation": "<p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html\">EbsBlockDevice</a> data type.</p>",
+            "documentation": "Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 `EbsBlockDevice <http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html>`_ data type.",
             "members": [
                 {
                     "name": "SnapshotId",
@@ -2332,7 +2332,7 @@
         },
         "EcsCluster": {
             "type": "structure",
-            "documentation": "<p>Describes a registered Amazon ECS cluster.</p>",
+            "documentation": "Describes a registered Amazon ECS cluster.",
             "members": [
                 {
                     "name": "EcsClusterArn",
@@ -2362,7 +2362,7 @@
         },
         "ElasticIp": {
             "type": "structure",
-            "documentation": "<p>Describes an Elastic IP address.</p>",
+            "documentation": "Describes an Elastic IP address.",
             "members": [
                 {
                     "name": "Ip",
@@ -2397,7 +2397,7 @@
         },
         "ElasticLoadBalancer": {
             "type": "structure",
-            "documentation": "<p>Describes an Elastic Load Balancing instance.</p>",
+            "documentation": "Describes an Elastic Load Balancing instance.",
             "members": [
                 {
                     "name": "ElasticLoadBalancerName",
@@ -2452,7 +2452,7 @@
         },
         "EnvironmentVariable": {
             "type": "structure",
-            "documentation": "<p>Represents an app's environment variable.</p>",
+            "documentation": "Represents an app's environment variable.",
             "members": [
                 {
                     "name": "Key",
@@ -2487,7 +2487,7 @@
         },
         "GetHostnameSuggestionResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>GetHostnameSuggestion</code> request.</p>",
+            "documentation": "Contains the response to a ``GetHostnameSuggestion`` request.",
             "members": [
                 {
                     "name": "LayerId",
@@ -2518,7 +2518,7 @@
         },
         "GrantAccessResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>GrantAccess</code> request.</p>",
+            "documentation": "Contains the response to a ``GrantAccess`` request.",
             "members": [
                 {
                     "name": "TemporaryCredential",
@@ -2532,7 +2532,7 @@
         },
         "Instance": {
             "type": "structure",
-            "documentation": "<p>Describes an instance.</p>",
+            "documentation": "Describes an instance.",
             "members": [
                 {
                     "name": "AgentVersion",
@@ -2733,7 +2733,7 @@
         },
         "InstanceIdentity": {
             "type": "structure",
-            "documentation": "<p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html\">Instance Metadata and User Data</a>.</p>",
+            "documentation": "Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see `Instance Metadata and User Data <http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html>`_.",
             "members": [
                 {
                     "name": "Document",
@@ -2753,7 +2753,7 @@
         },
         "InstancesCount": {
             "type": "structure",
-            "documentation": "<p>Describes how many instances a stack has for each status.</p>",
+            "documentation": "Describes how many instances a stack has for each status.",
             "members": [
                 {
                     "name": "Assigning",
@@ -2857,7 +2857,7 @@
         },
         "Layer": {
             "type": "structure",
-            "documentation": "<p>Describes a layer.</p>",
+            "documentation": "Describes a layer.",
             "members": [
                 {
                     "name": "StackId",
@@ -2982,7 +2982,7 @@
         },
         "LifecycleEventConfiguration": {
             "type": "structure",
-            "documentation": "<p>Specifies the lifecycle event configuration</p>",
+            "documentation": "Specifies the lifecycle event configuration",
             "members": [
                 {
                     "name": "Shutdown",
@@ -2993,7 +2993,7 @@
         },
         "LoadBasedAutoScalingConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes a layer's load-based auto scaling configuration.</p>",
+            "documentation": "Describes a layer's load-based auto scaling configuration.",
             "members": [
                 {
                     "name": "LayerId",
@@ -3031,7 +3031,7 @@
         },
         "Permission": {
             "type": "structure",
-            "documentation": "<p>Describes stack or user permissions.</p>",
+            "documentation": "Describes stack or user permissions.",
             "members": [
                 {
                     "name": "StackId",
@@ -3066,7 +3066,7 @@
         },
         "RaidArray": {
             "type": "structure",
-            "documentation": "<p>Describes an instance's RAID array.</p>",
+            "documentation": "Describes an instance's RAID array.",
             "members": [
                 {
                     "name": "RaidArrayId",
@@ -3141,7 +3141,7 @@
         },
         "RdsDbInstance": {
             "type": "structure",
-            "documentation": "<p>Describes an Amazon RDS instance.</p>",
+            "documentation": "Describes an Amazon RDS instance.",
             "members": [
                 {
                     "name": "RdsDbInstanceArn",
@@ -3206,7 +3206,7 @@
         },
         "Recipes": {
             "type": "structure",
-            "documentation": "<p>AWS OpsWorks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder. </p>",
+            "documentation": "AWS OpsWorks supports five lifecycle events: **setup**, **configuration**, **deploy**, **undeploy**, and **shutdown**. For each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks runs custom event recipes after the standard recipes. ``LayerCustomRecipes`` specifies the custom recipes for a particular layer to be run in response to each of the five events. \n\n To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.",
             "members": [
                 {
                     "name": "Setup",
@@ -3252,7 +3252,7 @@
         },
         "RegisterEcsClusterResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>",
+            "documentation": "Contains the response to a ``RegisterEcsCluster`` request.",
             "members": [
                 {
                     "name": "EcsClusterArn",
@@ -3278,7 +3278,7 @@
         },
         "RegisterElasticIpResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>RegisterElasticIp</code> request.</p>",
+            "documentation": "Contains the response to a ``RegisterElasticIp`` request.",
             "members": [
                 {
                     "name": "ElasticIp",
@@ -3329,7 +3329,7 @@
         },
         "RegisterInstanceResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>RegisterInstanceResult</code> request.</p>",
+            "documentation": "Contains the response to a ``RegisterInstanceResult`` request.",
             "members": [
                 {
                     "name": "InstanceId",
@@ -3380,7 +3380,7 @@
         },
         "RegisterVolumeResult": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a <code>RegisterVolume</code> request.</p>",
+            "documentation": "Contains the response to a ``RegisterVolume`` request.",
             "members": [
                 {
                     "name": "VolumeId",
@@ -3391,7 +3391,7 @@
         },
         "ReportedOs": {
             "type": "structure",
-            "documentation": "<p>A registered instance's reported operating system.</p>",
+            "documentation": "A registered instance's reported operating system.",
             "members": [
                 {
                     "name": "Family",
@@ -3412,7 +3412,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
-            "documentation": "<p>Indicates that a resource was not found.</p>",
+            "documentation": "Indicates that a resource was not found.",
             "members": [
                 {
                     "name": "message",
@@ -3426,7 +3426,7 @@
         },
         "SelfUserProfile": {
             "type": "structure",
-            "documentation": "<p>Describes a user's SSH information.</p>",
+            "documentation": "Describes a user's SSH information.",
             "members": [
                 {
                     "name": "IamUserArn",
@@ -3452,7 +3452,7 @@
         },
         "ServiceError": {
             "type": "structure",
-            "documentation": "<p>Describes an AWS OpsWorks service error.</p>",
+            "documentation": "Describes an AWS OpsWorks service error.",
             "members": [
                 {
                     "name": "ServiceErrorId",
@@ -3562,7 +3562,7 @@
         },
         "ShutdownEventConfiguration": {
             "type": "structure",
-            "documentation": "<p>The Shutdown event configuration.</p>",
+            "documentation": "The Shutdown event configuration.",
             "members": [
                 {
                     "name": "ExecutionTimeout",
@@ -3578,7 +3578,7 @@
         },
         "Source": {
             "type": "structure",
-            "documentation": "<p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html\">Creating Apps</a> or <a href=\"http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html\">Custom Recipes and Cookbooks</a>.</p>",
+            "documentation": "Contains the information required to retrieve an app or cookbook from a repository. For more information, see `Creating Apps <http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html>`_ or `Custom Recipes and Cookbooks <http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html>`_.",
             "members": [
                 {
                     "name": "Type",
@@ -3617,7 +3617,7 @@
         },
         "SslConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes an app's SSL configuration.</p>",
+            "documentation": "Describes an app's SSL configuration.",
             "members": [
                 {
                     "name": "Certificate",
@@ -3638,7 +3638,7 @@
         },
         "Stack": {
             "type": "structure",
-            "documentation": "<p>Describes a stack.</p>",
+            "documentation": "Describes a stack.",
             "members": [
                 {
                     "name": "StackId",
@@ -3761,7 +3761,7 @@
         },
         "StackConfigurationManager": {
             "type": "structure",
-            "documentation": "<p>Describes the configuration manager.</p>",
+            "documentation": "Describes the configuration manager.",
             "members": [
                 {
                     "name": "Name",
@@ -3777,7 +3777,7 @@
         },
         "StackSummary": {
             "type": "structure",
-            "documentation": "<p>Summarizes the number of layers, instances, and apps in a stack.</p>",
+            "documentation": "Summarizes the number of layers, instances, and apps in a stack.",
             "members": [
                 {
                     "name": "StackId",
@@ -3867,7 +3867,7 @@
         },
         "TemporaryCredential": {
             "type": "structure",
-            "documentation": "<p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>",
+            "documentation": "Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.",
             "members": [
                 {
                     "name": "Username",
@@ -3893,7 +3893,7 @@
         },
         "TimeBasedAutoScalingConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes an instance's time-based auto scaling configuration.</p>",
+            "documentation": "Describes an instance's time-based auto scaling configuration.",
             "members": [
                 {
                     "name": "InstanceId",
@@ -4327,7 +4327,7 @@
         },
         "UserProfile": {
             "type": "structure",
-            "documentation": "<p>Describes a user's SSH information.</p>",
+            "documentation": "Describes a user's SSH information.",
             "members": [
                 {
                     "name": "IamUserArn",
@@ -4365,7 +4365,7 @@
         },
         "ValidationException": {
             "type": "structure",
-            "documentation": "<p>Indicates that a request was invalid.</p>",
+            "documentation": "Indicates that a request was invalid.",
             "members": [
                 {
                     "name": "message",
@@ -4379,7 +4379,7 @@
         },
         "Volume": {
             "type": "structure",
-            "documentation": "<p>Describes an instance's Amazon EBS volume.</p>",
+            "documentation": "Describes an instance's Amazon EBS volume.",
             "members": [
                 {
                     "name": "VolumeId",
@@ -4450,7 +4450,7 @@
         },
         "VolumeConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes an Amazon EBS volume configuration.</p>",
+            "documentation": "Describes an Amazon EBS volume configuration.",
             "members": [
                 {
                     "name": "MountPoint",
@@ -4497,7 +4497,7 @@
         },
         "WeeklyAutoScalingSchedule": {
             "type": "structure",
-            "documentation": "<p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> <ul> <li>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</li> <li>The value indicates whether the instance should be online or offline for the specified period, and must be set to \"on\" or \"off\"</li> </ul> <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period. </p> <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> <p> <code> { \"12\":\"on\", \"13\":\"on\", \"14\":\"on\", \"15\":\"on\" } </code> </p>",
+            "documentation": "Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.\n\n \n\n  * The key is the time period (a UTC hour) and must be an integer from 0 - 23.\n  * The value indicates whether the instance should be online or offline for the specified period, and must be set to \"on\" or \"off\"\n \n The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period. \n\n The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.\n\n  `` { \"12\":\"on\", \"13\":\"on\", \"14\":\"on\", \"15\":\"on\" } ``",
             "members": [
                 {
                     "name": "Monday",

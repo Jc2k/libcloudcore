@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateTrail": {
-            "documentation": "<p>From the command line, use <code>create-subscription</code>. </p> <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>",
+            "documentation": "From the command line, use ``create-subscription``. \n\n Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.",
             "input": {
                 "shape": "CreateTrailRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "DeleteTrail": {
-            "documentation": "<p>Deletes a trail.</p>",
+            "documentation": "Deletes a trail.",
             "input": {
                 "shape": "DeleteTrailRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "DescribeTrails": {
-            "documentation": "<p>Retrieves settings for the trail associated with the current region for your account.</p>",
+            "documentation": "Retrieves settings for the trail associated with the current region for your account.",
             "input": {
                 "shape": "DescribeTrailsRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "GetTrailStatus": {
-            "documentation": "<p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. </p>",
+            "documentation": "Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail.",
             "input": {
                 "shape": "GetTrailStatusRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "LookupEvents": {
-            "documentation": "<p>Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account. Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during the last seven days. Lookup supports five different attributes: time range (defined by a start time and end time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number of attributes that can be specified in any one lookup request are time range and one other attribute. The default number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results. The rate of lookup requests is limited to one per second per account.</p> <important>Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.</important>",
+            "documentation": "Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account. Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during the last seven days. Lookup supports five different attributes: time range (defined by a start time and end time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number of attributes that can be specified in any one lookup request are time range and one other attribute. The default number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results. The rate of lookup requests is limited to one per second per account.\n\n Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.",
             "input": {
                 "shape": "LookupEventsRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "StartLogging": {
-            "documentation": "<p>Starts the recording of AWS API calls and log file delivery for a trail.</p>",
+            "documentation": "Starts the recording of AWS API calls and log file delivery for a trail.",
             "input": {
                 "shape": "StartLoggingRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "StopLogging": {
-            "documentation": "<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording.</p>",
+            "documentation": "Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording.",
             "input": {
                 "shape": "StopLoggingRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "UpdateTrail": {
-            "documentation": "<p>From the command line, use <code>update-subscription</code>.</p> <p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. </p>",
+            "documentation": "From the command line, use ``update-subscription``.\n\n Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket.",
             "input": {
                 "shape": "UpdateTrailRequest"
             },
@@ -110,12 +110,12 @@
         },
         "CloudWatchLogsDeliveryUnavailableException": {
             "type": "structure",
-            "documentation": "<p>Cannot set a CloudWatch Logs delivery for this region.</p>",
+            "documentation": "Cannot set a CloudWatch Logs delivery for this region.",
             "members": []
         },
         "CreateTrailRequest": {
             "type": "structure",
-            "documentation": "<p>Specifies the settings for each trail.</p>",
+            "documentation": "Specifies the settings for each trail.",
             "members": [
                 {
                     "name": "Name",
@@ -200,7 +200,7 @@
         },
         "DeleteTrailRequest": {
             "type": "structure",
-            "documentation": "<a>The request that specifies the name of a trail to delete.</a>",
+            "documentation": "The request that specifies the name of a trail to delete.",
             "members": [
                 {
                     "name": "Name",
@@ -211,12 +211,12 @@
         },
         "DeleteTrailResponse": {
             "type": "structure",
-            "documentation": "<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>",
+            "documentation": "Returns the objects or data listed below if successful. Otherwise, returns an error.",
             "members": []
         },
         "DescribeTrailsRequest": {
             "type": "structure",
-            "documentation": "<p>Returns information about the trail.</p>",
+            "documentation": "Returns information about the trail.",
             "members": [
                 {
                     "name": "trailNameList",
@@ -227,7 +227,7 @@
         },
         "DescribeTrailsResponse": {
             "type": "structure",
-            "documentation": "<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>",
+            "documentation": "Returns the objects or data listed below if successful. Otherwise, returns an error.",
             "members": [
                 {
                     "name": "trailList",
@@ -238,7 +238,7 @@
         },
         "Event": {
             "type": "structure",
-            "documentation": "<p>Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event. </p>",
+            "documentation": "Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.",
             "members": [
                 {
                     "name": "EventId",
@@ -278,7 +278,7 @@
         },
         "GetTrailStatusRequest": {
             "type": "structure",
-            "documentation": "<p>The name of a trail about which you want the current status.</p>",
+            "documentation": "The name of a trail about which you want the current status.",
             "members": [
                 {
                     "name": "Name",
@@ -289,7 +289,7 @@
         },
         "GetTrailStatusResponse": {
             "type": "structure",
-            "documentation": "<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>",
+            "documentation": "Returns the objects or data listed below if successful. Otherwise, returns an error.",
             "members": [
                 {
                     "name": "IsLogging",
@@ -340,67 +340,67 @@
         },
         "InsufficientS3BucketPolicyException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>",
+            "documentation": "This exception is thrown when the policy on the S3 bucket is not sufficient.",
             "members": []
         },
         "InsufficientSnsTopicPolicyException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the policy on the SNS topic is not sufficient.</p>",
+            "documentation": "This exception is thrown when the policy on the SNS topic is not sufficient.",
             "members": []
         },
         "InvalidCloudWatchLogsLogGroupArnException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the provided CloudWatch log group is not valid.</p>",
+            "documentation": "This exception is thrown when the provided CloudWatch log group is not valid.",
             "members": []
         },
         "InvalidCloudWatchLogsRoleArnException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the provided role is not valid.</p>",
+            "documentation": "This exception is thrown when the provided role is not valid.",
             "members": []
         },
         "InvalidLookupAttributesException": {
             "type": "structure",
-            "documentation": "<p>Occurs when an invalid lookup attribute is specified.</p>",
+            "documentation": "Occurs when an invalid lookup attribute is specified.",
             "members": []
         },
         "InvalidMaxResultsException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown if the limit specified is invalid. </p>",
+            "documentation": "This exception is thrown if the limit specified is invalid.",
             "members": []
         },
         "InvalidNextTokenException": {
             "type": "structure",
-            "documentation": "<p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid. </p>",
+            "documentation": "Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid.",
             "members": []
         },
         "InvalidS3BucketNameException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the provided S3 bucket name is not valid.</p>",
+            "documentation": "This exception is thrown when the provided S3 bucket name is not valid.",
             "members": []
         },
         "InvalidS3PrefixException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the provided S3 prefix is not valid.</p>",
+            "documentation": "This exception is thrown when the provided S3 prefix is not valid.",
             "members": []
         },
         "InvalidSnsTopicNameException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the provided SNS topic name is not valid. </p>",
+            "documentation": "This exception is thrown when the provided SNS topic name is not valid.",
             "members": []
         },
         "InvalidTimeRangeException": {
             "type": "structure",
-            "documentation": "<p>Occurs if the timestamp values are invalid. Either the start time occurs after the end time or the time range is outside the range of possible values. </p>",
+            "documentation": "Occurs if the timestamp values are invalid. Either the start time occurs after the end time or the time range is outside the range of possible values.",
             "members": []
         },
         "InvalidTrailNameException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the provided trail name is not valid.</p>",
+            "documentation": "This exception is thrown when the provided trail name is not valid.",
             "members": []
         },
         "LookupAttribute": {
             "type": "structure",
-            "documentation": "<p>Specifies an attribute and value that filter the events returned.</p>",
+            "documentation": "Specifies an attribute and value that filter the events returned.",
             "members": [
                 {
                     "name": "AttributeKey",
@@ -423,7 +423,7 @@
         },
         "LookupEventsRequest": {
             "type": "structure",
-            "documentation": "<p>Contains a request for LookupEvents.</p>",
+            "documentation": "Contains a request for LookupEvents.",
             "members": [
                 {
                     "name": "LookupAttributes",
@@ -454,7 +454,7 @@
         },
         "LookupEventsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains a response to a LookupEvents action.</p>",
+            "documentation": "Contains a response to a LookupEvents action.",
             "members": [
                 {
                     "name": "Events",
@@ -473,7 +473,7 @@
         },
         "MaximumNumberOfTrailsExceededException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the maximum number of trails is reached.</p>",
+            "documentation": "This exception is thrown when the maximum number of trails is reached.",
             "members": []
         },
         "NextToken": {
@@ -481,7 +481,7 @@
         },
         "Resource": {
             "type": "structure",
-            "documentation": "<p>Specifies the type and name of a resource referenced by an event.</p>",
+            "documentation": "Specifies the type and name of a resource referenced by an event.",
             "members": [
                 {
                     "name": "ResourceType",
@@ -497,17 +497,17 @@
         },
         "ResourceList": {
             "type": "list",
-            "documentation": "<p>A list of resources referenced by the event returned.</p>",
+            "documentation": "A list of resources referenced by the event returned.",
             "of": "Resource"
         },
         "S3BucketDoesNotExistException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the specified S3 bucket does not exist.</p>",
+            "documentation": "This exception is thrown when the specified S3 bucket does not exist.",
             "members": []
         },
         "StartLoggingRequest": {
             "type": "structure",
-            "documentation": "<p>The request to CloudTrail to start logging AWS API calls for an account.</p>",
+            "documentation": "The request to CloudTrail to start logging AWS API calls for an account.",
             "members": [
                 {
                     "name": "Name",
@@ -518,12 +518,12 @@
         },
         "StartLoggingResponse": {
             "type": "structure",
-            "documentation": "<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>",
+            "documentation": "Returns the objects or data listed below if successful. Otherwise, returns an error.",
             "members": []
         },
         "StopLoggingRequest": {
             "type": "structure",
-            "documentation": "<p>Passes the request to CloudTrail to stop logging AWS API calls for the specified account.</p>",
+            "documentation": "Passes the request to CloudTrail to stop logging AWS API calls for the specified account.",
             "members": [
                 {
                     "name": "Name",
@@ -534,7 +534,7 @@
         },
         "StopLoggingResponse": {
             "type": "structure",
-            "documentation": "<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>",
+            "documentation": "Returns the objects or data listed below if successful. Otherwise, returns an error.",
             "members": []
         },
         "String": {
@@ -542,7 +542,7 @@
         },
         "Trail": {
             "type": "structure",
-            "documentation": "<p>The settings for a trail.</p>",
+            "documentation": "The settings for a trail.",
             "members": [
                 {
                     "name": "Name",
@@ -583,7 +583,7 @@
         },
         "TrailAlreadyExistsException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the specified trail already exists.</p>",
+            "documentation": "This exception is thrown when the specified trail already exists.",
             "members": []
         },
         "TrailList": {
@@ -596,12 +596,12 @@
         },
         "TrailNotFoundException": {
             "type": "structure",
-            "documentation": "<p>This exception is thrown when the trail with the given name is not found.</p>",
+            "documentation": "This exception is thrown when the trail with the given name is not found.",
             "members": []
         },
         "UpdateTrailRequest": {
             "type": "structure",
-            "documentation": "<p>Specifies settings to update for the trail.</p>",
+            "documentation": "Specifies settings to update for the trail.",
             "members": [
                 {
                     "name": "Name",

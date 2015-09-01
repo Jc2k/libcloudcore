@@ -32,7 +32,7 @@
     ],
     "operations": {
         "BulkPublish": {
-            "documentation": "<p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "BulkPublishRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "DeleteDataset": {
-            "documentation": "<p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+            "documentation": "Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.\n\n This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.",
             "input": {
                 "shape": "DeleteDatasetRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "DescribeDataset": {
-            "documentation": "<p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>",
+            "documentation": "Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.\n\n This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.",
             "input": {
                 "shape": "DescribeDatasetRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DescribeIdentityPoolUsage": {
-            "documentation": "<p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Gets usage details (for example, data storage) about a particular identity pool.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "DescribeIdentityPoolUsageRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "DescribeIdentityUsage": {
-            "documentation": "<p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+            "documentation": "Gets usage information for an identity, including number of datasets and data usage.\n\n This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.",
             "input": {
                 "shape": "DescribeIdentityUsageRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "GetBulkPublishDetails": {
-            "documentation": "<p>Get the status of the last BulkPublish operation for an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Get the status of the last BulkPublish operation for an identity pool.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "GetBulkPublishDetailsRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "GetCognitoEvents": {
-            "documentation": "<p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Gets the events and the corresponding Lambda functions associated with an identity pool.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "GetCognitoEventsRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "GetIdentityPoolConfiguration": {
-            "documentation": "<p>Gets the configuration settings of an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Gets the configuration settings of an identity pool.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "GetIdentityPoolConfigurationRequest"
             },
@@ -104,7 +104,7 @@
             }
         },
         "ListDatasets": {
-            "documentation": "<p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>",
+            "documentation": "Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.\n\n ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.",
             "input": {
                 "shape": "ListDatasetsRequest"
             },
@@ -113,7 +113,7 @@
             }
         },
         "ListIdentityPoolUsage": {
-            "documentation": "<p>Gets a list of identity pools registered with Cognito.</p> <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Gets a list of identity pools registered with Cognito.\n\n ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "ListIdentityPoolUsageRequest"
             },
@@ -122,7 +122,7 @@
             }
         },
         "ListRecords": {
-            "documentation": "<p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>",
+            "documentation": "Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.\n\n ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.",
             "input": {
                 "shape": "ListRecordsRequest"
             },
@@ -131,7 +131,7 @@
             }
         },
         "RegisterDevice": {
-            "documentation": "<p>Registers a device to receive push sync notifications.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+            "documentation": "Registers a device to receive push sync notifications.\n\n This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.",
             "input": {
                 "shape": "RegisterDeviceRequest"
             },
@@ -140,13 +140,13 @@
             }
         },
         "SetCognitoEvents": {
-            "documentation": "<p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "SetCognitoEventsRequest"
             }
         },
         "SetIdentityPoolConfiguration": {
-            "documentation": "<p>Sets the necessary configuration for push sync.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+            "documentation": "Sets the necessary configuration for push sync.\n\n This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.",
             "input": {
                 "shape": "SetIdentityPoolConfigurationRequest"
             },
@@ -155,7 +155,7 @@
             }
         },
         "SubscribeToDataset": {
-            "documentation": "<p>Subscribes to receive notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+            "documentation": "Subscribes to receive notifications when a dataset is modified by another device.\n\n This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.",
             "input": {
                 "shape": "SubscribeToDatasetRequest"
             },
@@ -164,7 +164,7 @@
             }
         },
         "UnsubscribeFromDataset": {
-            "documentation": "<p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+            "documentation": "Unsubscribes from receiving notifications when a dataset is modified by another device.\n\n This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.",
             "input": {
                 "shape": "UnsubscribeFromDatasetRequest"
             },
@@ -173,7 +173,7 @@
             }
         },
         "UpdateRecords": {
-            "documentation": "<p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p> <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+            "documentation": "Posts updates to records and adds and deletes records for a dataset and user.\n\n The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.\n\n For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.\n\n This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.",
             "input": {
                 "shape": "UpdateRecordsRequest"
             },
@@ -263,7 +263,7 @@
         },
         "ConcurrentModificationException": {
             "type": "structure",
-            "documentation": "<p>Thrown if there are parallel requests to modify a resource.</p>",
+            "documentation": "Thrown if there are parallel requests to modify a resource.",
             "members": [
                 {
                     "name": "message",
@@ -522,7 +522,7 @@
         },
         "GetCognitoEventsRequest": {
             "type": "structure",
-            "documentation": "<p>A request for a list of the configured Cognito Events</p>",
+            "documentation": "A request for a list of the configured Cognito Events",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -535,7 +535,7 @@
         },
         "GetCognitoEventsResponse": {
             "type": "structure",
-            "documentation": "<p>The response from the GetCognitoEvents request</p>",
+            "documentation": "The response from the GetCognitoEvents request",
             "members": [
                 {
                     "name": "Events",
@@ -546,7 +546,7 @@
         },
         "GetIdentityPoolConfigurationRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the GetIdentityPoolConfiguration operation.</p>",
+            "documentation": "The input for the GetIdentityPoolConfiguration operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -559,7 +559,7 @@
         },
         "GetIdentityPoolConfigurationResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the GetIdentityPoolConfiguration operation.</p>",
+            "documentation": "The output for the GetIdentityPoolConfiguration operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -674,7 +674,7 @@
         },
         "InvalidLambdaFunctionOutputException": {
             "type": "structure",
-            "documentation": "<p>The AWS Lambda function returned invalid output or an exception.</p>",
+            "documentation": "The AWS Lambda function returned invalid output or an exception.",
             "members": [
                 {
                     "name": "message",
@@ -699,7 +699,7 @@
         },
         "LambdaThrottledException": {
             "type": "structure",
-            "documentation": "<p>AWS Lambda throttled your account, please contact AWS Support</p>",
+            "documentation": "AWS Lambda throttled your account, please contact AWS Support",
             "members": [
                 {
                     "name": "message",
@@ -952,7 +952,7 @@
         },
         "PushSync": {
             "type": "structure",
-            "documentation": "<p>Configuration options to be applied to the identity pool.</p>",
+            "documentation": "Configuration options to be applied to the identity pool.",
             "members": [
                 {
                     "name": "ApplicationArns",
@@ -1052,7 +1052,7 @@
         },
         "RegisterDeviceRequest": {
             "type": "structure",
-            "documentation": "<p>A request to RegisterDevice.</p>",
+            "documentation": "A request to RegisterDevice.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1082,7 +1082,7 @@
         },
         "RegisterDeviceResponse": {
             "type": "structure",
-            "documentation": "<p>Response to a RegisterDevice request.</p>",
+            "documentation": "Response to a RegisterDevice request.",
             "members": [
                 {
                     "name": "DeviceId",
@@ -1115,7 +1115,7 @@
         },
         "SetCognitoEventsRequest": {
             "type": "structure",
-            "documentation": "<p>A request to configure Cognito Events\"</p>\"",
+            "documentation": "A request to configure Cognito Events\"\n\n\"",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1133,7 +1133,7 @@
         },
         "SetIdentityPoolConfigurationRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the SetIdentityPoolConfiguration operation.</p>",
+            "documentation": "The input for the SetIdentityPoolConfiguration operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1156,7 +1156,7 @@
         },
         "SetIdentityPoolConfigurationResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the SetIdentityPoolConfiguration operation</p>",
+            "documentation": "The output for the SetIdentityPoolConfiguration operation",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1186,7 +1186,7 @@
         },
         "SubscribeToDatasetRequest": {
             "type": "structure",
-            "documentation": "<p>A request to SubscribeToDatasetRequest.</p>",
+            "documentation": "A request to SubscribeToDatasetRequest.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1220,7 +1220,7 @@
         },
         "SubscribeToDatasetResponse": {
             "type": "structure",
-            "documentation": "<p>Response to a SubscribeToDataset request.</p>",
+            "documentation": "Response to a SubscribeToDataset request.",
             "members": []
         },
         "SyncSessionToken": {
@@ -1239,7 +1239,7 @@
         },
         "UnsubscribeFromDatasetRequest": {
             "type": "structure",
-            "documentation": "<p>A request to UnsubscribeFromDataset.</p>",
+            "documentation": "A request to UnsubscribeFromDataset.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -1273,7 +1273,7 @@
         },
         "UnsubscribeFromDatasetResponse": {
             "type": "structure",
-            "documentation": "<p>Response to an UnsubscribeFromDataset request.</p>",
+            "documentation": "Response to an UnsubscribeFromDataset request.",
             "members": []
         },
         "UpdateRecordsRequest": {

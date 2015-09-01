@@ -35,13 +35,13 @@
     ],
     "operations": {
         "CancelUpdateStack": {
-            "documentation": "<p>Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>",
+            "documentation": "Cancels an update on the specified stack. If the call completes successfully, the stack will roll back the update and revert to the previous stack configuration.\n\n Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.",
             "input": {
                 "shape": "CancelUpdateStackInput"
             }
         },
         "CreateStack": {
-            "documentation": "<p>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p>",
+            "documentation": "Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the DescribeStacks API.",
             "input": {
                 "shape": "CreateStackInput"
             },
@@ -50,13 +50,13 @@
             }
         },
         "DeleteStack": {
-            "documentation": "<p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has been completed successfully.</p>",
+            "documentation": "Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the DescribeStacks API if the deletion has been completed successfully.",
             "input": {
                 "shape": "DeleteStackInput"
             }
         },
         "DescribeStackEvents": {
-            "documentation": "<p>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html\">Stacks</a> in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</note>",
+            "documentation": "Returns all stack related events for a specified stack. For more information about a stack's event history, go to `Stacks <http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html>`_ in the AWS CloudFormation User Guide.\n\n You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).",
             "input": {
                 "shape": "DescribeStackEventsInput"
             },
@@ -65,7 +65,7 @@
             }
         },
         "DescribeStackResource": {
-            "documentation": "<p>Returns a description of the specified resource in the specified stack.</p> <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p>",
+            "documentation": "Returns a description of the specified resource in the specified stack.\n\n For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.",
             "input": {
                 "shape": "DescribeStackResourceInput"
             },
@@ -74,7 +74,7 @@
             }
         },
         "DescribeStackResources": {
-            "documentation": "<p>Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p> <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide\">AWS CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</note>",
+            "documentation": "Returns AWS resource descriptions for running and deleted stacks. If ``StackName`` is specified, all the associated resources that are part of the stack are returned. If ``PhysicalResourceId`` is specified, the associated resources of the stack that the resource belongs to are returned.\n\n Only the first 100 resources will be returned. If your stack has more resources than this, you should use ``ListStackResources`` instead. For deleted stacks, ``DescribeStackResources`` returns resource information for up to 90 days after the stack has been deleted.\n\n You must specify either ``StackName`` or ``PhysicalResourceId``, but not both. In addition, you can specify ``LogicalResourceId`` to filter the returned result. For more information about resources, the ``LogicalResourceId`` and ``PhysicalResourceId``, go to the `AWS CloudFormation User Guide <http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide>`_.\n\n A ``ValidationError`` is returned if you specify both ``StackName`` and ``PhysicalResourceId`` in the same request.",
             "input": {
                 "shape": "DescribeStackResourcesInput"
             },
@@ -83,7 +83,7 @@
             }
         },
         "DescribeStacks": {
-            "documentation": "<p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>",
+            "documentation": "Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.",
             "input": {
                 "shape": "DescribeStacksInput"
             },
@@ -92,7 +92,7 @@
             }
         },
         "EstimateTemplateCost": {
-            "documentation": "<p>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>",
+            "documentation": "Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.",
             "input": {
                 "shape": "EstimateTemplateCostInput"
             },
@@ -101,7 +101,7 @@
             }
         },
         "GetStackPolicy": {
-            "documentation": "<p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p>",
+            "documentation": "Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.",
             "input": {
                 "shape": "GetStackPolicyInput"
             },
@@ -110,7 +110,7 @@
             }
         },
         "GetTemplate": {
-            "documentation": "<p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> If the template does not exist, a <code>ValidationError</code> is returned. </note>",
+            "documentation": "Returns the template body for a specified stack. You can get the template for running or deleted stacks.\n\n For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.\n\n  If the template does not exist, a ``ValidationError`` is returned.",
             "input": {
                 "shape": "GetTemplateInput"
             },
@@ -119,7 +119,7 @@
             }
         },
         "GetTemplateSummary": {
-            "documentation": "<p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a running or deleted stack.</p> <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a <code>ValidationError</code> is returned.</p>",
+            "documentation": "Returns information about a new or existing template. The ``GetTemplateSummary`` action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.\n\n You can use the ``GetTemplateSummary`` action when you submit a template, or you can get template information for a running or deleted stack.\n\n For deleted stacks, ``GetTemplateSummary`` returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a ``ValidationError`` is returned.",
             "input": {
                 "shape": "GetTemplateSummaryInput"
             },
@@ -128,7 +128,7 @@
             }
         },
         "ListStackResources": {
-            "documentation": "<p>Returns descriptions of all resources of the specified stack.</p> <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>",
+            "documentation": "Returns descriptions of all resources of the specified stack.\n\n For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.",
             "input": {
                 "shape": "ListStackResourcesInput"
             },
@@ -137,7 +137,7 @@
             }
         },
         "ListStacks": {
-            "documentation": "<p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>",
+            "documentation": "Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).",
             "input": {
                 "shape": "ListStacksInput"
             },
@@ -146,19 +146,19 @@
             }
         },
         "SetStackPolicy": {
-            "documentation": "<p>Sets a stack policy for a specified stack.</p>",
+            "documentation": "Sets a stack policy for a specified stack.",
             "input": {
                 "shape": "SetStackPolicyInput"
             }
         },
         "SignalResource": {
-            "documentation": "<p>Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p>",
+            "documentation": "Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.",
             "input": {
                 "shape": "SignalResourceInput"
             }
         },
         "UpdateStack": {
-            "documentation": "<p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.</p> <p>For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html\">Updating a Stack</a>.</p>",
+            "documentation": "Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the DescribeStacks action.\n\n To get a copy of the template for an existing stack, you can use the GetTemplate action.\n\n Tags that were associated with this stack during creation time will still be associated with the stack after an ``UpdateStack`` operation.\n\n For more information about creating an update template, updating a stack, and monitoring the progress of the update, see `Updating a Stack <http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html>`_.",
             "input": {
                 "shape": "UpdateStackInput"
             },
@@ -167,7 +167,7 @@
             }
         },
         "ValidateTemplate": {
-            "documentation": "<p>Validates a specified template.</p>",
+            "documentation": "Validates a specified template.",
             "input": {
                 "shape": "ValidateTemplateInput"
             },
@@ -186,12 +186,12 @@
         },
         "AlreadyExistsException": {
             "type": "structure",
-            "documentation": "<p>Resource with the name requested already exists.</p>",
+            "documentation": "Resource with the name requested already exists.",
             "members": []
         },
         "CancelUpdateStackInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>CancelUpdateStack</a> action.</p>",
+            "documentation": "The input for CancelUpdateStack action.",
             "members": [
                 {
                     "name": "StackName",
@@ -212,7 +212,7 @@
         },
         "CreateStackInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>CreateStack</a> action.</p>",
+            "documentation": "The input for CreateStack action.",
             "members": [
                 {
                     "name": "StackName",
@@ -278,7 +278,7 @@
         },
         "CreateStackOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>CreateStack</a> action.</p>",
+            "documentation": "The output for a CreateStack action.",
             "members": [
                 {
                     "name": "StackId",
@@ -292,7 +292,7 @@
         },
         "DeleteStackInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>DeleteStack</a> action.</p>",
+            "documentation": "The input for DeleteStack action.",
             "members": [
                 {
                     "name": "StackName",
@@ -306,7 +306,7 @@
         },
         "DescribeStackEventsInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>DescribeStackEvents</a> action.</p>",
+            "documentation": "The input for DescribeStackEvents action.",
             "members": [
                 {
                     "name": "StackName",
@@ -322,7 +322,7 @@
         },
         "DescribeStackEventsOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>DescribeStackEvents</a> action.</p>",
+            "documentation": "The output for a DescribeStackEvents action.",
             "members": [
                 {
                     "name": "StackEvents",
@@ -338,7 +338,7 @@
         },
         "DescribeStackResourceInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>DescribeStackResource</a> action.</p>",
+            "documentation": "The input for DescribeStackResource action.",
             "members": [
                 {
                     "name": "StackName",
@@ -354,7 +354,7 @@
         },
         "DescribeStackResourceOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>DescribeStackResource</a> action.</p>",
+            "documentation": "The output for a DescribeStackResource action.",
             "members": [
                 {
                     "name": "StackResourceDetail",
@@ -365,7 +365,7 @@
         },
         "DescribeStackResourcesInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>DescribeStackResources</a> action.</p>",
+            "documentation": "The input for DescribeStackResources action.",
             "members": [
                 {
                     "name": "StackName",
@@ -386,7 +386,7 @@
         },
         "DescribeStackResourcesOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>DescribeStackResources</a> action.</p>",
+            "documentation": "The output for a DescribeStackResources action.",
             "members": [
                 {
                     "name": "StackResources",
@@ -397,7 +397,7 @@
         },
         "DescribeStacksInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>DescribeStacks</a> action.</p>",
+            "documentation": "The input for DescribeStacks action.",
             "members": [
                 {
                     "name": "StackName",
@@ -413,7 +413,7 @@
         },
         "DescribeStacksOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>DescribeStacks</a> action.</p>",
+            "documentation": "The output for a DescribeStacks action.",
             "members": [
                 {
                     "name": "Stacks",
@@ -455,7 +455,7 @@
         },
         "EstimateTemplateCostOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>EstimateTemplateCost</a> action.</p>",
+            "documentation": "The output for a EstimateTemplateCost action.",
             "members": [
                 {
                     "name": "Url",
@@ -469,7 +469,7 @@
         },
         "GetStackPolicyInput": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>GetStackPolicy</a> action.</p>",
+            "documentation": "The input for the GetStackPolicy action.",
             "members": [
                 {
                     "name": "StackName",
@@ -480,7 +480,7 @@
         },
         "GetStackPolicyOutput": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>GetStackPolicy</a> action.</p>",
+            "documentation": "The output for the GetStackPolicy action.",
             "members": [
                 {
                     "name": "StackPolicyBody",
@@ -491,7 +491,7 @@
         },
         "GetTemplateInput": {
             "type": "structure",
-            "documentation": "<p>The input for a <a>GetTemplate</a> action.</p>",
+            "documentation": "The input for a GetTemplate action.",
             "members": [
                 {
                     "name": "StackName",
@@ -502,7 +502,7 @@
         },
         "GetTemplateOutput": {
             "type": "structure",
-            "documentation": "<p>The output for <a>GetTemplate</a> action.</p>",
+            "documentation": "The output for GetTemplate action.",
             "members": [
                 {
                     "name": "TemplateBody",
@@ -513,7 +513,7 @@
         },
         "GetTemplateSummaryInput": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>GetTemplateSummary</a> action.</p>",
+            "documentation": "The input for the GetTemplateSummary action.",
             "members": [
                 {
                     "name": "TemplateBody",
@@ -534,7 +534,7 @@
         },
         "GetTemplateSummaryOutput": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>GetTemplateSummary</a> action.</p>",
+            "documentation": "The output for the GetTemplateSummary action.",
             "members": [
                 {
                     "name": "Parameters",
@@ -570,7 +570,7 @@
         },
         "InsufficientCapabilitiesException": {
             "type": "structure",
-            "documentation": "<p>The template contains resources with capabilities that were not specified in the Capabilities parameter.</p>",
+            "documentation": "The template contains resources with capabilities that were not specified in the Capabilities parameter.",
             "members": []
         },
         "LastUpdatedTime": {
@@ -578,12 +578,12 @@
         },
         "LimitExceededException": {
             "type": "structure",
-            "documentation": "<p>Quota for the resource has already been reached.</p>",
+            "documentation": "Quota for the resource has already been reached.",
             "members": []
         },
         "ListStackResourcesInput": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>ListStackResource</a> action.</p>",
+            "documentation": "The input for the ListStackResource action.",
             "members": [
                 {
                     "name": "StackName",
@@ -599,7 +599,7 @@
         },
         "ListStackResourcesOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>ListStackResources</a> action.</p>",
+            "documentation": "The output for a ListStackResources action.",
             "members": [
                 {
                     "name": "StackResourceSummaries",
@@ -615,7 +615,7 @@
         },
         "ListStacksInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>ListStacks</a> action.</p>",
+            "documentation": "The input for ListStacks action.",
             "members": [
                 {
                     "name": "NextToken",
@@ -631,7 +631,7 @@
         },
         "ListStacksOutput": {
             "type": "structure",
-            "documentation": "<p>The output for <a>ListStacks</a> action.</p>",
+            "documentation": "The output for ListStacks action.",
             "members": [
                 {
                     "name": "StackSummaries",
@@ -669,7 +669,7 @@
         },
         "Output": {
             "type": "structure",
-            "documentation": "<p>The Output data type.</p>",
+            "documentation": "The Output data type.",
             "members": [
                 {
                     "name": "OutputKey",
@@ -700,7 +700,7 @@
         },
         "Parameter": {
             "type": "structure",
-            "documentation": "<p>The Parameter data type.</p>",
+            "documentation": "The Parameter data type.",
             "members": [
                 {
                     "name": "ParameterKey",
@@ -721,7 +721,7 @@
         },
         "ParameterConstraints": {
             "type": "structure",
-            "documentation": "<p>A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.</p>",
+            "documentation": "A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the ``AllowedValues`` property.",
             "members": [
                 {
                     "name": "AllowedValues",
@@ -732,7 +732,7 @@
         },
         "ParameterDeclaration": {
             "type": "structure",
-            "documentation": "<p>The ParameterDeclaration data type.</p>",
+            "documentation": "The ParameterDeclaration data type.",
             "members": [
                 {
                     "name": "ParameterKey",
@@ -806,7 +806,7 @@
         },
         "SetStackPolicyInput": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>SetStackPolicy</a> action.</p>",
+            "documentation": "The input for the SetStackPolicy action.",
             "members": [
                 {
                     "name": "StackName",
@@ -827,7 +827,7 @@
         },
         "SignalResourceInput": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>SignalResource</a> action.</p>",
+            "documentation": "The input for the SignalResource action.",
             "members": [
                 {
                     "name": "StackName",
@@ -853,7 +853,7 @@
         },
         "Stack": {
             "type": "structure",
-            "documentation": "<p>The Stack data type.</p>",
+            "documentation": "The Stack data type.",
             "members": [
                 {
                     "name": "StackId",
@@ -929,7 +929,7 @@
         },
         "StackEvent": {
             "type": "structure",
-            "documentation": "<p>The StackEvent data type.</p>",
+            "documentation": "The StackEvent data type.",
             "members": [
                 {
                     "name": "StackId",
@@ -1010,7 +1010,7 @@
         },
         "StackResource": {
             "type": "structure",
-            "documentation": "<p>The StackResource data type.</p>",
+            "documentation": "The StackResource data type.",
             "members": [
                 {
                     "name": "StackName",
@@ -1061,7 +1061,7 @@
         },
         "StackResourceDetail": {
             "type": "structure",
-            "documentation": "<p>Contains detailed information about the specified stack resource.</p>",
+            "documentation": "Contains detailed information about the specified stack resource.",
             "members": [
                 {
                     "name": "StackName",
@@ -1121,7 +1121,7 @@
         },
         "StackResourceSummary": {
             "type": "structure",
-            "documentation": "<p>Contains high-level information about the specified stack resource.</p>",
+            "documentation": "Contains high-level information about the specified stack resource.",
             "members": [
                 {
                     "name": "LogicalResourceId",
@@ -1175,7 +1175,7 @@
         },
         "StackSummary": {
             "type": "structure",
-            "documentation": "<p>The StackSummary Data Type</p>",
+            "documentation": "The StackSummary Data Type",
             "members": [
                 {
                     "name": "StackId",
@@ -1225,7 +1225,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>The Tag type is used by <code>CreateStack</code> in the <code>Tags</code> parameter. It allows you to specify a key/value pair that can be used to store information related to cost allocation for an AWS CloudFormation stack.</p>",
+            "documentation": "The Tag type is used by ``CreateStack`` in the ``Tags`` parameter. It allows you to specify a key/value pair that can be used to store information related to cost allocation for an AWS CloudFormation stack.",
             "members": [
                 {
                     "name": "Key",
@@ -1257,7 +1257,7 @@
         },
         "TemplateParameter": {
             "type": "structure",
-            "documentation": "<p>The TemplateParameter data type.</p>",
+            "documentation": "The TemplateParameter data type.",
             "members": [
                 {
                     "name": "ParameterKey",
@@ -1296,7 +1296,7 @@
         },
         "UpdateStackInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>UpdateStack</a> action.</p>",
+            "documentation": "The input for UpdateStack action.",
             "members": [
                 {
                     "name": "StackName",
@@ -1357,7 +1357,7 @@
         },
         "UpdateStackOutput": {
             "type": "structure",
-            "documentation": "<p>The output for a <a>UpdateStack</a> action.</p>",
+            "documentation": "The output for a UpdateStack action.",
             "members": [
                 {
                     "name": "StackId",
@@ -1377,7 +1377,7 @@
         },
         "ValidateTemplateInput": {
             "type": "structure",
-            "documentation": "<p>The input for <a>ValidateTemplate</a> action.</p>",
+            "documentation": "The input for ValidateTemplate action.",
             "members": [
                 {
                     "name": "TemplateBody",
@@ -1393,7 +1393,7 @@
         },
         "ValidateTemplateOutput": {
             "type": "structure",
-            "documentation": "<p>The output for <a>ValidateTemplate</a> action.</p>",
+            "documentation": "The output for ValidateTemplate action.",
             "members": [
                 {
                     "name": "Parameters",

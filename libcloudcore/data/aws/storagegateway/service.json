@@ -32,7 +32,7 @@
     ],
     "operations": {
         "ActivateGateway": {
-            "documentation": "<p>This operation activates the gateway you previously deployed on your host. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html\"> Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the region you want to use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.</p> <note>You must turn on the gateway VM before you can activate your gateway.</note>",
+            "documentation": "This operation activates the gateway you previously deployed on your host. For more information, see ` Activate the AWS Storage Gateway <http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html>`_. In the activation process, you specify information such as the region you want to use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account; for more information, see UpdateGatewayInformation.\n\n You must turn on the gateway VM before you can activate your gateway.",
             "input": {
                 "shape": "ActivateGatewayInput"
             },
@@ -41,7 +41,7 @@
             }
         },
         "AddCache": {
-            "documentation": "<p>This operation configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only for the gateway-cached volume architecture (see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html\">Storage Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add cache, and one or more disk IDs that you want to configure as cache. </p>",
+            "documentation": "This operation configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only for the gateway-cached volume architecture (see `Storage Gateway Concepts <http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html>`_).\n\n In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add cache, and one or more disk IDs that you want to configure as cache.",
             "input": {
                 "shape": "AddCacheInput"
             },
@@ -50,7 +50,7 @@
             }
         },
         "AddUploadBuffer": {
-            "documentation": "<p>This operation configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for both the gateway-stored and gateway-cached volume architectures. </p> <p> In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and one or more disk IDs that you want to configure as upload buffer.</p>",
+            "documentation": "This operation configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for both the gateway-stored and gateway-cached volume architectures. \n\n  In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and one or more disk IDs that you want to configure as upload buffer.",
             "input": {
                 "shape": "AddUploadBufferInput"
             },
@@ -59,7 +59,7 @@
             }
         },
         "AddWorkingStorage": {
-            "documentation": "<p>This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the gateway-stored volume architecture. This operation is deprecated method in cached-volumes API version (20120630). Use AddUploadBuffer instead.</p> <note><p>Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to add upload buffer to a stored-volume gateway.</p></note> <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to configure as working storage.</p>",
+            "documentation": "This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the gateway-stored volume architecture. This operation is deprecated method in cached-volumes API version (20120630). Use AddUploadBuffer instead.\n\n Working storage is also referred to as upload buffer. You can also use the AddUploadBuffer operation to add upload buffer to a stored-volume gateway.\n\n In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to configure as working storage.",
             "input": {
                 "shape": "AddWorkingStorageInput"
             },
@@ -68,7 +68,7 @@
             }
         },
         "CancelArchival": {
-            "documentation": "<p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated. </p>",
+            "documentation": "Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.",
             "input": {
                 "shape": "CancelArchivalInput"
             },
@@ -77,7 +77,7 @@
             }
         },
         "CancelRetrieval": {
-            "documentation": "<p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated. The virtual tape is returned to the VTS.</p>",
+            "documentation": "Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated. The virtual tape is returned to the VTS.",
             "input": {
                 "shape": "CancelRetrievalInput"
             },
@@ -86,7 +86,7 @@
             }
         },
         "CreateCachediSCSIVolume": {
-            "documentation": "<p>This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.</p> <note>Cache storage must be allocated to the gateway before you can create a cached volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note> <p>In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>",
+            "documentation": "This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.\n\n Cache storage must be allocated to the gateway before you can create a cached volume. Use the AddCache operation to add cache storage to a gateway.  In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.",
             "input": {
                 "shape": "CreateCachediSCSIVolumeInput"
             },
@@ -95,7 +95,7 @@
             }
         },
         "CreateSnapshot": {
-            "documentation": "<p>This operation initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API enables you to take ad-hoc snapshot. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html\">Working With Snapshots in the AWS Storage Gateway Console</a>.</p> <p>In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</p> <note>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or DeleteSnapshot in the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html\">EC2 API reference</a>.</note>",
+            "documentation": "This operation initiates a snapshot of a volume.\n\n AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API enables you to take ad-hoc snapshot. For more information, see `Working With Snapshots in the AWS Storage Gateway Console <http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html>`_.\n\n In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.\n\n To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or DeleteSnapshot in the `EC2 API reference <http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html>`_.",
             "input": {
                 "shape": "CreateSnapshotInput"
             },
@@ -104,7 +104,7 @@
             }
         },
         "CreateSnapshotFromVolumeRecoveryPoint": {
-            "documentation": "<p>This operation initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached volume architecture (see ).</p> <p>A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use <a>ListVolumeRecoveryPoints</a>.</p> <p>In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the volume by providing its Amazon Resource Name (ARN). You must also provide a description for the snapshot. When AWS Storage Gateway takes a snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</p> <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, in <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>",
+            "documentation": "This operation initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached volume architecture (see ).\n\n A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use ListVolumeRecoveryPoints.\n\n In the ``CreateSnapshotFromVolumeRecoveryPoint`` request, you identify the volume by providing its Amazon Resource Name (ARN). You must also provide a description for the snapshot. When AWS Storage Gateway takes a snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.\n\n  To list or delete a snapshot, you must use the Amazon EC2 API. For more information, in *Amazon Elastic Compute Cloud API Reference*.",
             "input": {
                 "shape": "CreateSnapshotFromVolumeRecoveryPointInput"
             },
@@ -113,7 +113,7 @@
             }
         },
         "CreateStorediSCSIVolume": {
-            "documentation": "<p>This operation creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume architecture. </p> <p>The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the disk, create volume from an existing snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any existing data on the disk is erased.</p> <p>In the request you must specify the gateway and the disk information on which you are creating the volume. In response, AWS Storage Gateway creates the volume and returns volume information such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>",
+            "documentation": "This operation creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume architecture. \n\n The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the disk, create volume from an existing snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any existing data on the disk is erased.\n\n In the request you must specify the gateway and the disk information on which you are creating the volume. In response, AWS Storage Gateway creates the volume and returns volume information such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.",
             "input": {
                 "shape": "CreateStorediSCSIVolumeInput"
             },
@@ -122,7 +122,7 @@
             }
         },
         "CreateTapes": {
-            "documentation": "<p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.</p> <note>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>",
+            "documentation": "Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.\n\n Cache storage must be allocated to the gateway before you can create virtual tapes. Use the AddCache operation to add cache storage to a gateway.",
             "input": {
                 "shape": "CreateTapesInput"
             },
@@ -131,7 +131,7 @@
             }
         },
         "DeleteBandwidthRateLimit": {
-            "documentation": "<p>This operation deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate limit, or you can delete both. If you delete only one of the limits, the other limit remains unchanged. To specify which gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+            "documentation": "This operation deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate limit, or you can delete both. If you delete only one of the limits, the other limit remains unchanged. To specify which gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your request.",
             "input": {
                 "shape": "DeleteBandwidthRateLimitInput"
             },
@@ -140,7 +140,7 @@
             }
         },
         "DeleteChapCredentials": {
-            "documentation": "<p>This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair.</p>",
+            "documentation": "This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair.",
             "input": {
                 "shape": "DeleteChapCredentialsInput"
             },
@@ -149,7 +149,7 @@
             }
         },
         "DeleteGateway": {
-            "documentation": "<p>This operation deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name (ARN) of the gateway in your request. The operation deletes the gateway; however, it does not delete the gateway virtual machine (VM) from your host computer.</p> <p>After you delete a gateway, you cannot reactivate it. Completed snapshots of the gateway volumes are not deleted upon deleting the gateway, however, pending snapshots will not complete. After you delete a gateway, your next step is to remove it from your environment.</p> <important> <p>You no longer pay software charges after the gateway is deleted; however, your existing Amazon EBS snapshots persist and you will continue to be billed for these snapshots.\u00a0You can choose to remove all remaining Amazon EBS snapshots by canceling your Amazon EC2 subscription.\u00a0 If you prefer not to cancel your Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2 console. For more information, see the <a href=\"http://aws.amazon.com/storagegateway\"> AWS Storage Gateway Detail Page</a>. </p> </important>",
+            "documentation": "This operation deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name (ARN) of the gateway in your request. The operation deletes the gateway; however, it does not delete the gateway virtual machine (VM) from your host computer.\n\n After you delete a gateway, you cannot reactivate it. Completed snapshots of the gateway volumes are not deleted upon deleting the gateway, however, pending snapshots will not complete. After you delete a gateway, your next step is to remove it from your environment.\n\n  You no longer pay software charges after the gateway is deleted; however, your existing Amazon EBS snapshots persist and you will continue to be billed for these snapshots.\u00a0You can choose to remove all remaining Amazon EBS snapshots by canceling your Amazon EC2 subscription.\u00a0 If you prefer not to cancel your Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2 console. For more information, see the ` AWS Storage Gateway Detail Page <http://aws.amazon.com/storagegateway>`_.",
             "input": {
                 "shape": "DeleteGatewayInput"
             },
@@ -158,7 +158,7 @@
             }
         },
         "DeleteSnapshotSchedule": {
-            "documentation": "<p> This operation deletes a snapshot of a volume. </p> <p> You can take snapshots of your gateway volumes on a scheduled or ad-hoc basis. This API enables you to delete a snapshot schedule for a volume. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html\">Working with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its Amazon Resource Name (ARN). </p> <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>",
+            "documentation": "This operation deletes a snapshot of a volume. \n\n  You can take snapshots of your gateway volumes on a scheduled or ad-hoc basis. This API enables you to delete a snapshot schedule for a volume. For more information, see `Working with Snapshots <http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html>`_. In the ``DeleteSnapshotSchedule`` request, you identify the volume by providing its Amazon Resource Name (ARN). \n\n  To list or delete a snapshot, you must use the Amazon EC2 API. in *Amazon Elastic Compute Cloud API Reference*.",
             "input": {
                 "shape": "DeleteSnapshotScheduleInput"
             },
@@ -167,7 +167,7 @@
             }
         },
         "DeleteTape": {
-            "documentation": "<p>Deletes the specified virtual tape.</p>",
+            "documentation": "Deletes the specified virtual tape.",
             "input": {
                 "shape": "DeleteTapeInput"
             },
@@ -176,7 +176,7 @@
             }
         },
         "DeleteTapeArchive": {
-            "documentation": "<p>Deletes the specified virtual tape from the virtual tape shelf (VTS).</p>",
+            "documentation": "Deletes the specified virtual tape from the virtual tape shelf (VTS).",
             "input": {
                 "shape": "DeleteTapeArchiveInput"
             },
@@ -185,7 +185,7 @@
             }
         },
         "DeleteVolume": {
-            "documentation": "<p>This operation delete the specified gateway volume that you previously created using the <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk that was configured as the storage volume is not deleted. You can reuse the local disk to create another storage volume. </p> <p>Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You should also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html\">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request, you must provide the Amazon Resource Name (ARN) of the storage volume you want to delete.</p>",
+            "documentation": "This operation delete the specified gateway volume that you previously created using the CreateStorediSCSIVolume API. For gateway-stored volumes, the local disk that was configured as the storage volume is not deleted. You can reuse the local disk to create another storage volume. \n\n Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You should also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query snapshots on the volume you are deleting and check the snapshot status. For more information, go to `DescribeSnapshots <http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html>`_ in the *Amazon Elastic Compute Cloud API Reference*.\n\n In the request, you must provide the Amazon Resource Name (ARN) of the storage volume you want to delete.",
             "input": {
                 "shape": "DeleteVolumeInput"
             },
@@ -194,7 +194,7 @@
             }
         },
         "DescribeBandwidthRateLimit": {
-            "documentation": "<p>This operation returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth rate limiting is in effect.</p> <p>This operation only returns a value for a bandwidth rate limit only if the limit is set. If no limits are set for the gateway, then this operation returns only the gateway ARN in the response body. To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+            "documentation": "This operation returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth rate limiting is in effect.\n\n This operation only returns a value for a bandwidth rate limit only if the limit is set. If no limits are set for the gateway, then this operation returns only the gateway ARN in the response body. To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.",
             "input": {
                 "shape": "DescribeBandwidthRateLimitInput"
             },
@@ -203,7 +203,7 @@
             }
         },
         "DescribeCache": {
-            "documentation": "<p>This operation returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume architecture. </p> <p> The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and used. </p>",
+            "documentation": "This operation returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume architecture. \n\n  The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and used.",
             "input": {
                 "shape": "DescribeCacheInput"
             },
@@ -212,7 +212,7 @@
             }
         },
         "DescribeCachediSCSIVolumes": {
-            "documentation": "<p>This operation returns a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume architecture.</p> <p> The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by volume Amazon Resource Name (ARN). </p>",
+            "documentation": "This operation returns a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume architecture.\n\n  The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by volume Amazon Resource Name (ARN).",
             "input": {
                 "shape": "DescribeCachediSCSIVolumesInput"
             },
@@ -221,7 +221,7 @@
             }
         },
         "DescribeChapCredentials": {
-            "documentation": "<p>This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair.</p>",
+            "documentation": "This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair.",
             "input": {
                 "shape": "DescribeChapCredentialsInput"
             },
@@ -230,7 +230,7 @@
             }
         },
         "DescribeGatewayInformation": {
-            "documentation": "<p>This operation returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+            "documentation": "This operation returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.",
             "input": {
                 "shape": "DescribeGatewayInformationInput"
             },
@@ -239,7 +239,7 @@
             }
         },
         "DescribeMaintenanceStartTime": {
-            "documentation": "<p>This operation returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone.</p>",
+            "documentation": "This operation returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone.",
             "input": {
                 "shape": "DescribeMaintenanceStartTimeInput"
             },
@@ -248,7 +248,7 @@
             }
         },
         "DescribeSnapshotSchedule": {
-            "documentation": "<p>This operation describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals at which snapshots are automatically initiated on the volume.</p>",
+            "documentation": "This operation describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals at which snapshots are automatically initiated on the volume.",
             "input": {
                 "shape": "DescribeSnapshotScheduleInput"
             },
@@ -257,7 +257,7 @@
             }
         },
         "DescribeStorediSCSIVolumes": {
-            "documentation": "<p>This operation returns the description of the gateway volumes specified in the request. The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by volume ARNs.</p>",
+            "documentation": "This operation returns the description of the gateway volumes specified in the request. The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by volume ARNs.",
             "input": {
                 "shape": "DescribeStorediSCSIVolumesInput"
             },
@@ -266,7 +266,7 @@
             }
         },
         "DescribeTapeArchives": {
-            "documentation": "<p>Returns a description of specified virtual tapes in the virtual tape shelf (VTS). </p> <p>If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description of all virtual tapes found in the VTS associated with your account.</p>",
+            "documentation": "Returns a description of specified virtual tapes in the virtual tape shelf (VTS). \n\n If a specific ``TapeARN`` is not specified, AWS Storage Gateway returns a description of all virtual tapes found in the VTS associated with your account.",
             "input": {
                 "shape": "DescribeTapeArchivesInput"
             },
@@ -275,7 +275,7 @@
             }
         },
         "DescribeTapeRecoveryPoints": {
-            "documentation": "<p>Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.</p> <p>A recovery point is a point in time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.</p>",
+            "documentation": "Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.\n\n A recovery point is a point in time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.",
             "input": {
                 "shape": "DescribeTapeRecoveryPointsInput"
             },
@@ -284,7 +284,7 @@
             }
         },
         "DescribeTapes": {
-            "documentation": "<p>Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes associated with the specified gateway.</p>",
+            "documentation": "Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a ``TapeARN`` is not specified, returns a description of all virtual tapes associated with the specified gateway.",
             "input": {
                 "shape": "DescribeTapesInput"
             },
@@ -293,7 +293,7 @@
             }
         },
         "DescribeUploadBuffer": {
-            "documentation": "<p>This operation returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored and gateway-cached volume architectures. </p> <p> The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload buffer space allocated and used.</p>",
+            "documentation": "This operation returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored and gateway-cached volume architectures. \n\n  The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload buffer space allocated and used.",
             "input": {
                 "shape": "DescribeUploadBufferInput"
             },
@@ -302,7 +302,7 @@
             }
         },
         "DescribeVTLDevices": {
-            "documentation": "<p>Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS Storage Gateway returns VTL device information. </p> <p>The list of VTL devices must be from one gateway.</p>",
+            "documentation": "Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS Storage Gateway returns VTL device information. \n\n The list of VTL devices must be from one gateway.",
             "input": {
                 "shape": "DescribeVTLDevicesInput"
             },
@@ -311,7 +311,7 @@
             }
         },
         "DescribeWorkingStorage": {
-            "documentation": "<p>This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.</p> <note><p>Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add upload buffer to a stored-volume gateway.</p></note> <p>The response includes disk IDs that are configured as working storage, and it includes the amount of working storage allocated and used.</p>",
+            "documentation": "This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.\n\n Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add upload buffer to a stored-volume gateway.\n\n The response includes disk IDs that are configured as working storage, and it includes the amount of working storage allocated and used.",
             "input": {
                 "shape": "DescribeWorkingStorageInput"
             },
@@ -320,7 +320,7 @@
             }
         },
         "DisableGateway": {
-            "documentation": "<p>Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can disable the gateway so you can recover virtual tapes. </p> <p>Use this operation for a gateway-VTL that is not reachable or not functioning.</p> <important>Once a gateway is disabled it cannot be enabled.</important>",
+            "documentation": "Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can disable the gateway so you can recover virtual tapes. \n\n Use this operation for a gateway-VTL that is not reachable or not functioning.\n\n Once a gateway is disabled it cannot be enabled.",
             "input": {
                 "shape": "DisableGatewayInput"
             },
@@ -329,7 +329,7 @@
             }
         },
         "ListGateways": {
-            "documentation": "<p>This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN).</p> <p>By default, the operation returns a maximum of 100 gateways. This operation supports pagination that allows you to optionally reduce the number of gateways returned in a response.</p> <p>If you have more gateways than are returned in a response-that is, the response returns only a truncated list of your gateways-the response contains a marker that you can specify in your next request to fetch the next page of gateways.</p>",
+            "documentation": "This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN).\n\n By default, the operation returns a maximum of 100 gateways. This operation supports pagination that allows you to optionally reduce the number of gateways returned in a response.\n\n If you have more gateways than are returned in a response-that is, the response returns only a truncated list of your gateways-the response contains a marker that you can specify in your next request to fetch the next page of gateways.",
             "input": {
                 "shape": "ListGatewaysInput"
             },
@@ -338,7 +338,7 @@
             }
         },
         "ListLocalDisks": {
-            "documentation": "<p>This operation returns a list of the gateway's local disks. To specify which gateway to describe, you use the Amazon Resource Name (ARN) of the gateway in the body of the request.</p> <p>The request returns a list of all disks, specifying which are configured as working storage, cache storage, or stored volume or not configured at all. The response includes a <code>DiskStatus</code> field. This field can have a value of present (the disk is available to use), missing (the disk is no longer connected to the gateway), or mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk content is corrupted). </p>",
+            "documentation": "This operation returns a list of the gateway's local disks. To specify which gateway to describe, you use the Amazon Resource Name (ARN) of the gateway in the body of the request.\n\n The request returns a list of all disks, specifying which are configured as working storage, cache storage, or stored volume or not configured at all. The response includes a ``DiskStatus`` field. This field can have a value of present (the disk is available to use), missing (the disk is no longer connected to the gateway), or mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk content is corrupted).",
             "input": {
                 "shape": "ListLocalDisksInput"
             },
@@ -347,7 +347,7 @@
             }
         },
         "ListVolumeInitiators": {
-            "documentation": "<p>This operation lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume is being used or not.</p>",
+            "documentation": "This operation lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume is being used or not.",
             "input": {
                 "shape": "ListVolumeInitiatorsInput"
             },
@@ -356,7 +356,7 @@
             }
         },
         "ListVolumeRecoveryPoints": {
-            "documentation": "<p>This operation lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume architecture.</p> <p>Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p>",
+            "documentation": "This operation lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume architecture.\n\n Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery point use the CreateSnapshotFromVolumeRecoveryPoint operation.",
             "input": {
                 "shape": "ListVolumeRecoveryPointsInput"
             },
@@ -365,7 +365,7 @@
             }
         },
         "ListVolumes": {
-            "documentation": "<p>This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> API.</p> <p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes.</p>",
+            "documentation": "This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the DescribeStorediSCSIVolumes API.\n\n The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the ``Limit`` field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes.",
             "input": {
                 "shape": "ListVolumesInput"
             },
@@ -374,7 +374,7 @@
             }
         },
         "ResetCache": {
-            "documentation": "<p>This operation resets all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage. If your cache disk encounters a error, the gateway prevents read and write operations on virtual tapes in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a cache is reset, the gateway loses its cache storage. At this point you can reconfigure the disks as cache disks. </p> <important> <p>If the cache disk you are resetting contains data that has not been uploaded to Amazon S3 yet, that data can be lost. After you reset cache disks, there will be no configured cache disks left in the gateway, so you must configure at least one new cache disk for your gateway to function properly.</p> </important>",
+            "documentation": "This operation resets all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage. If your cache disk encounters a error, the gateway prevents read and write operations on virtual tapes in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a cache is reset, the gateway loses its cache storage. At this point you can reconfigure the disks as cache disks. \n\n  If the cache disk you are resetting contains data that has not been uploaded to Amazon S3 yet, that data can be lost. After you reset cache disks, there will be no configured cache disks left in the gateway, so you must configure at least one new cache disk for your gateway to function properly.",
             "input": {
                 "shape": "ResetCacheInput"
             },
@@ -383,7 +383,7 @@
             }
         },
         "RetrieveTapeArchive": {
-            "documentation": "<p>Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway, even though it is also listed in the VTS.</p> <p>Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must archive the tape again before you can retrieve it to another gateway.</p>",
+            "documentation": "Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway, even though it is also listed in the VTS.\n\n Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must archive the tape again before you can retrieve it to another gateway.",
             "input": {
                 "shape": "RetrieveTapeArchiveInput"
             },
@@ -392,7 +392,7 @@
             }
         },
         "RetrieveTapeRecoveryPoint": {
-            "documentation": "<p>Retrieves the recovery point for the specified virtual tape.</p> <p>A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.</p> <note>The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.</note>",
+            "documentation": "Retrieves the recovery point for the specified virtual tape.\n\n A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.\n\n The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.",
             "input": {
                 "shape": "RetrieveTapeRecoveryPointInput"
             },
@@ -401,7 +401,7 @@
             }
         },
         "ShutdownGateway": {
-            "documentation": "<p>This operation shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p> <p>The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.</p> <note>If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable conditions.</note> <p>After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>, <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.</p> <note>When you make a shutdown request, you will get a <code>200 OK</code> success response immediately. However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a> API to check the status. For more information, see <a>ActivateGateway</a>.</note> <p>If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to no longer pay software charges associated with the gateway.</p>",
+            "documentation": "This operation shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.\n\n The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.\n\n If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable conditions. After the gateway is shutdown, you cannot call any other API except StartGateway, DescribeGatewayInformation, and ListGateways. For more information, see ActivateGateway. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.\n\n When you make a shutdown request, you will get a ``200 OK`` success response immediately. However, it might take some time for the gateway to shut down. You can call the DescribeGatewayInformation API to check the status. For more information, see ActivateGateway. If do not intend to use the gateway again, you must delete the gateway (using DeleteGateway) to no longer pay software charges associated with the gateway.",
             "input": {
                 "shape": "ShutdownGatewayInput"
             },
@@ -410,7 +410,7 @@
             }
         },
         "StartGateway": {
-            "documentation": "<p>This operation starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p> <note>When you make a request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check the status before making any additional API calls. For more information, see <a>ActivateGateway</a>.</note> <p>To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+            "documentation": "This operation starts a gateway that you previously shut down (see ShutdownGateway). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.\n\n When you make a request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to be ready. You should call DescribeGatewayInformation and check the status before making any additional API calls. For more information, see ActivateGateway. To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your request.",
             "input": {
                 "shape": "StartGatewayInput"
             },
@@ -419,7 +419,7 @@
             }
         },
         "UpdateBandwidthRateLimit": {
-            "documentation": "<p>This operation updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have any limitations on its bandwidth usage and could potentially use the maximum available bandwidth.</p> <p>To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+            "documentation": "This operation updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains.\n\n By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have any limitations on its bandwidth usage and could potentially use the maximum available bandwidth.\n\n To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.",
             "input": {
                 "shape": "UpdateBandwidthRateLimitInput"
             },
@@ -428,7 +428,7 @@
             }
         },
         "UpdateChapCredentials": {
-            "documentation": "<p>This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added security, you might use it.</p> <important> <p>When you update CHAP credentials, all existing connections on the target are closed and initiators must reconnect with the new credentials.</p> </important>",
+            "documentation": "This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added security, you might use it.\n\n  When you update CHAP credentials, all existing connections on the target are closed and initiators must reconnect with the new credentials.",
             "input": {
                 "shape": "UpdateChapCredentialsInput"
             },
@@ -437,7 +437,7 @@
             }
         },
         "UpdateGatewayInformation": {
-            "documentation": "<p>This operation updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+            "documentation": "This operation updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.",
             "input": {
                 "shape": "UpdateGatewayInformationInput"
             },
@@ -446,7 +446,7 @@
             }
         },
         "UpdateGatewaySoftwareNow": {
-            "documentation": "<p>This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update. </p> <note>When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a> to verify the gateway is in the <code>STATE_RUNNING</code> state.</note> <important>A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings\">Customizing Your Windows iSCSI Settings</a> and <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings\">Customizing Your Linux iSCSI Settings</a>, respectively.</important>",
+            "documentation": "This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update. \n\n When you make this request, you get a ``200 OK`` success response immediately. However, it might take some time for the update to complete. You can call DescribeGatewayInformation to verify the gateway is in the ``STATE_RUNNING`` state. A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see `Customizing Your Windows iSCSI Settings <http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings>`_ and `Customizing Your Linux iSCSI Settings <http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings>`_, respectively.",
             "input": {
                 "shape": "UpdateGatewaySoftwareNowInput"
             },
@@ -455,7 +455,7 @@
             }
         },
         "UpdateMaintenanceStartTime": {
-            "documentation": "<p>This operation updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone.</p>",
+            "documentation": "This operation updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone.",
             "input": {
                 "shape": "UpdateMaintenanceStartTimeInput"
             },
@@ -464,7 +464,7 @@
             }
         },
         "UpdateSnapshotSchedule": {
-            "documentation": "<p>This operation updates a snapshot schedule configured for a gateway volume.</p> <p>The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You can use this API to change the snapshot schedule configured for the volume.</p> <p>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</p>",
+            "documentation": "This operation updates a snapshot schedule configured for a gateway volume.\n\n The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You can use this API to change the snapshot schedule configured for the volume.\n\n In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.",
             "input": {
                 "shape": "UpdateSnapshotScheduleInput"
             },
@@ -473,7 +473,7 @@
             }
         },
         "UpdateVTLDeviceType": {
-            "documentation": "<p>This operation updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer type for the gateway-VTL. This operation enables you to select a different type of medium changer after a gateway-VTL is activated.</p>",
+            "documentation": "This operation updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer type for the gateway-VTL. This operation enables you to select a different type of medium changer after a gateway-VTL is activated.",
             "input": {
                 "shape": "UpdateVTLDeviceTypeInput"
             },
@@ -485,7 +485,7 @@
     "shapes": {
         "ActivateGatewayInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>ActivateGatewayInput$ActivationKey</a> </li> <li> <a>GatewayName</a> </li> <li> <a>ActivateGatewayInput$GatewayRegion</a> </li> <li> <a>ActivateGatewayInput$GatewayTimezone</a> </li> <li> <a>ActivateGatewayInput$GatewayType</a> </li> <li> <a>ActivateGatewayInput$TapeDriveType</a> </li> <li> <a>ActivateGatewayInput$MediumChangerType</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  ActivateGatewayInput$ActivationKey \n  *  GatewayName \n  *  ActivateGatewayInput$GatewayRegion \n  *  ActivateGatewayInput$GatewayTimezone \n  *  ActivateGatewayInput$GatewayType \n  *  ActivateGatewayInput$TapeDriveType \n  *  ActivateGatewayInput$MediumChangerType",
             "members": [
                 {
                     "name": "ActivationKey",
@@ -525,7 +525,7 @@
         },
         "ActivateGatewayOutput": {
             "type": "structure",
-            "documentation": "<p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p>",
+            "documentation": "AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -582,7 +582,7 @@
         },
         "AddWorkingStorageInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>AddWorkingStorageInput$DiskIds</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  AddWorkingStorageInput$DiskIds",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -597,7 +597,7 @@
         },
         "AddWorkingStorageOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway for which working storage was configured.</p>",
+            "documentation": "A JSON object containing the of the gateway for which working storage was configured.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -657,7 +657,7 @@
         },
         "CancelArchivalInput": {
             "type": "structure",
-            "documentation": "<p>CancelArchivalInput</p>",
+            "documentation": "CancelArchivalInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -672,7 +672,7 @@
         },
         "CancelArchivalOutput": {
             "type": "structure",
-            "documentation": "<p>CancelArchivalOutput</p>",
+            "documentation": "CancelArchivalOutput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -683,7 +683,7 @@
         },
         "CancelRetrievalInput": {
             "type": "structure",
-            "documentation": "<p>CancelRetrievalInput</p>",
+            "documentation": "CancelRetrievalInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -698,7 +698,7 @@
         },
         "CancelRetrievalOutput": {
             "type": "structure",
-            "documentation": "<p>CancelRetrievalOutput</p>",
+            "documentation": "CancelRetrievalOutput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -713,7 +713,7 @@
         },
         "ChapInfo": {
             "type": "structure",
-            "documentation": "<p>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.</p>",
+            "documentation": "Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.",
             "members": [
                 {
                     "name": "TargetARN",
@@ -817,7 +817,7 @@
         },
         "CreateSnapshotInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>CreateSnapshotInput$SnapshotDescription</a> </li> <li> <a>CreateSnapshotInput$VolumeARN</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  CreateSnapshotInput$SnapshotDescription \n  *  CreateSnapshotInput$VolumeARN",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -833,7 +833,7 @@
         },
         "CreateSnapshotOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -849,7 +849,7 @@
         },
         "CreateStorediSCSIVolumeInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>CreateStorediSCSIVolumeInput$DiskId</a> </li> <li> <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </li> <li> <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </li> <li> <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </li> <li> <a>CreateStorediSCSIVolumeInput$TargetName</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  CreateStorediSCSIVolumeInput$DiskId \n  *  CreateStorediSCSIVolumeInput$NetworkInterfaceId \n  *  CreateStorediSCSIVolumeInput$PreserveExistingData \n  *  CreateStorediSCSIVolumeInput$SnapshotId \n  *  CreateStorediSCSIVolumeInput$TargetName",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -884,7 +884,7 @@
         },
         "CreateStorediSCSIVolumeOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -905,7 +905,7 @@
         },
         "CreateTapesInput": {
             "type": "structure",
-            "documentation": "<p>CreateTapesInput</p>",
+            "documentation": "CreateTapesInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -936,7 +936,7 @@
         },
         "CreateTapesOutput": {
             "type": "structure",
-            "documentation": "<p>CreateTapeOutput</p>",
+            "documentation": "CreateTapeOutput",
             "members": [
                 {
                     "name": "TapeARNs",
@@ -963,7 +963,7 @@
         },
         "DeleteBandwidthRateLimitOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway whose bandwidth rate information was deleted.</p>",
+            "documentation": "A JSON object containing the of the gateway whose bandwidth rate information was deleted.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -973,7 +973,7 @@
         },
         "DeleteChapCredentialsInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>DeleteChapCredentialsInput$InitiatorName</a> </li> <li> <a>DeleteChapCredentialsInput$TargetARN</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  DeleteChapCredentialsInput$InitiatorName \n  *  DeleteChapCredentialsInput$TargetARN",
             "members": [
                 {
                     "name": "TargetARN",
@@ -989,7 +989,7 @@
         },
         "DeleteChapCredentialsOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "TargetARN",
@@ -1005,7 +1005,7 @@
         },
         "DeleteGatewayInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the id of the gateway to delete.</p>",
+            "documentation": "A JSON object containing the id of the gateway to delete.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1015,7 +1015,7 @@
         },
         "DeleteGatewayOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the id of the deleted gateway.</p>",
+            "documentation": "A JSON object containing the id of the deleted gateway.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1043,7 +1043,7 @@
         },
         "DeleteTapeArchiveInput": {
             "type": "structure",
-            "documentation": "<p>DeleteTapeArchiveInput</p>",
+            "documentation": "DeleteTapeArchiveInput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -1054,7 +1054,7 @@
         },
         "DeleteTapeArchiveOutput": {
             "type": "structure",
-            "documentation": "<p>DeleteTapeArchiveOutput</p>",
+            "documentation": "DeleteTapeArchiveOutput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -1065,7 +1065,7 @@
         },
         "DeleteTapeInput": {
             "type": "structure",
-            "documentation": "<p>DeleteTapeInput</p>",
+            "documentation": "DeleteTapeInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1081,7 +1081,7 @@
         },
         "DeleteTapeOutput": {
             "type": "structure",
-            "documentation": "<p>DeleteTapeOutput</p>",
+            "documentation": "DeleteTapeOutput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -1092,7 +1092,7 @@
         },
         "DeleteVolumeInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete.</p>",
+            "documentation": "A JSON object containing the DeleteVolumeInput$VolumeARN to delete.",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -1103,7 +1103,7 @@
         },
         "DeleteVolumeOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the storage volume that was deleted</p>",
+            "documentation": "A JSON object containing the of the storage volume that was deleted",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -1114,7 +1114,7 @@
         },
         "DescribeBandwidthRateLimitInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway.</p>",
+            "documentation": "A JSON object containing the of the gateway.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1124,7 +1124,7 @@
         },
         "DescribeBandwidthRateLimitOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1195,7 +1195,7 @@
         },
         "DescribeCachediSCSIVolumesOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "CachediSCSIVolumes",
@@ -1206,7 +1206,7 @@
         },
         "DescribeChapCredentialsInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.</p>",
+            "documentation": "A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.",
             "members": [
                 {
                     "name": "TargetARN",
@@ -1217,7 +1217,7 @@
         },
         "DescribeChapCredentialsOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing a .</p>",
+            "documentation": "A JSON object containing a .",
             "members": [
                 {
                     "name": "ChapCredentials",
@@ -1228,7 +1228,7 @@
         },
         "DescribeGatewayInformationInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the id of the gateway.</p>",
+            "documentation": "A JSON object containing the id of the gateway.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1238,7 +1238,7 @@
         },
         "DescribeGatewayInformationOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1283,7 +1283,7 @@
         },
         "DescribeMaintenanceStartTimeInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway.</p>",
+            "documentation": "A JSON object containing the of the gateway.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1318,7 +1318,7 @@
         },
         "DescribeSnapshotScheduleInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume.</p>",
+            "documentation": "A JSON object containing the DescribeSnapshotScheduleInput$VolumeARN of the volume.",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -1354,7 +1354,7 @@
         },
         "DescribeStorediSCSIVolumesInput": {
             "type": "structure",
-            "documentation": "<p>A JSON Object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.</p>",
+            "documentation": "A JSON Object containing a list of DescribeStorediSCSIVolumesInput$VolumeARNs.",
             "members": [
                 {
                     "name": "VolumeARNs",
@@ -1374,7 +1374,7 @@
         },
         "DescribeTapeArchivesInput": {
             "type": "structure",
-            "documentation": "<p>DescribeTapeArchivesInput</p>",
+            "documentation": "DescribeTapeArchivesInput",
             "members": [
                 {
                     "name": "TapeARNs",
@@ -1395,7 +1395,7 @@
         },
         "DescribeTapeArchivesOutput": {
             "type": "structure",
-            "documentation": "<p>DescribeTapeArchivesOutput</p>",
+            "documentation": "DescribeTapeArchivesOutput",
             "members": [
                 {
                     "name": "TapeArchives",
@@ -1411,7 +1411,7 @@
         },
         "DescribeTapeRecoveryPointsInput": {
             "type": "structure",
-            "documentation": "<p>DescribeTapeRecoveryPointsInput</p>",
+            "documentation": "DescribeTapeRecoveryPointsInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1431,7 +1431,7 @@
         },
         "DescribeTapeRecoveryPointsOutput": {
             "type": "structure",
-            "documentation": "<p>DescribeTapeRecoveryPointsOutput</p>",
+            "documentation": "DescribeTapeRecoveryPointsOutput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1451,7 +1451,7 @@
         },
         "DescribeTapesInput": {
             "type": "structure",
-            "documentation": "<p>DescribeTapesInput</p>",
+            "documentation": "DescribeTapesInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1476,7 +1476,7 @@
         },
         "DescribeTapesOutput": {
             "type": "structure",
-            "documentation": "<p>DescribeTapesOutput</p>",
+            "documentation": "DescribeTapesOutput",
             "members": [
                 {
                     "name": "Tapes",
@@ -1522,7 +1522,7 @@
         },
         "DescribeVTLDevicesInput": {
             "type": "structure",
-            "documentation": "<p>DescribeVTLDevicesInput</p>",
+            "documentation": "DescribeVTLDevicesInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1547,7 +1547,7 @@
         },
         "DescribeVTLDevicesOutput": {
             "type": "structure",
-            "documentation": "<p>DescribeVTLDevicesOutput</p>",
+            "documentation": "DescribeVTLDevicesOutput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1567,7 +1567,7 @@
         },
         "DescribeWorkingStorageInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway.</p>",
+            "documentation": "A JSON object containing the of the gateway.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1577,7 +1577,7 @@
         },
         "DescribeWorkingStorageOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1608,7 +1608,7 @@
         },
         "DeviceiSCSIAttributes": {
             "type": "structure",
-            "documentation": "<p>Lists iSCSI information about a VTL device.</p>",
+            "documentation": "Lists iSCSI information about a VTL device.",
             "members": [
                 {
                     "name": "TargetARN",
@@ -1634,7 +1634,7 @@
         },
         "DisableGatewayInput": {
             "type": "structure",
-            "documentation": "<p>DisableGatewayInput</p>",
+            "documentation": "DisableGatewayInput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1644,7 +1644,7 @@
         },
         "DisableGatewayOutput": {
             "type": "structure",
-            "documentation": "<p>DisableGatewayOutput</p>",
+            "documentation": "DisableGatewayOutput",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1708,7 +1708,7 @@
         },
         "GatewayARN": {
             "type": "string",
-            "documentation": "<p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and region.</p>"
+            "documentation": "The Amazon Resource Name (ARN) of the gateway. Use the ListGateways operation to return a list of gateways for your account and region."
         },
         "GatewayId": {
             "type": "string"
@@ -1732,7 +1732,7 @@
         },
         "GatewayName": {
             "type": "string",
-            "documentation": "<p>A unique identifier for your gateway. This name becomes part of the gateway Amazon Resources Name (ARN) which is what you use as an input to other operations.</p>"
+            "documentation": "A unique identifier for your gateway. This name becomes part of the gateway Amazon Resources Name (ARN) which is what you use as an input to other operations."
         },
         "GatewayNetworkInterfaces": {
             "type": "list",
@@ -1766,7 +1766,7 @@
         },
         "InternalServerError": {
             "type": "structure",
-            "documentation": "<p>An internal server error has occurred during the request. See the error and message fields for more information.</p>",
+            "documentation": "An internal server error has occurred during the request. See the error and message fields for more information.",
             "members": [
                 {
                     "name": "message",
@@ -1782,7 +1782,7 @@
         },
         "InvalidGatewayRequestException": {
             "type": "structure",
-            "documentation": "<p>An exception occurred because an invalid gateway request was issued to the service. See the error and message fields for more information.</p>",
+            "documentation": "An exception occurred because an invalid gateway request was issued to the service. See the error and message fields for more information.",
             "members": [
                 {
                     "name": "message",
@@ -1804,7 +1804,7 @@
         },
         "ListGatewaysInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <a>ListGatewaysInput$Limit</a> </li> <li> <a>ListGatewaysInput$Marker</a> </li> </ul>",
+            "documentation": "A JSON object containing zero or more of the following fields:\n\n \n\n  *  ListGatewaysInput$Limit \n  *  ListGatewaysInput$Marker",
             "members": [
                 {
                     "name": "Marker",
@@ -1833,7 +1833,7 @@
         },
         "ListLocalDisksInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway.</p>",
+            "documentation": "A JSON object containing the of the gateway.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1856,7 +1856,7 @@
         },
         "ListVolumeInitiatorsInput": {
             "type": "structure",
-            "documentation": "<p>ListVolumeInitiatorsInput</p>",
+            "documentation": "ListVolumeInitiatorsInput",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -1867,7 +1867,7 @@
         },
         "ListVolumeInitiatorsOutput": {
             "type": "structure",
-            "documentation": "<p>ListVolumeInitiatorsOutput</p>",
+            "documentation": "ListVolumeInitiatorsOutput",
             "members": [
                 {
                     "name": "Initiators",
@@ -1900,7 +1900,7 @@
         },
         "ListVolumesInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <a>ListVolumesInput$Limit</a> </li> <li> <a>ListVolumesInput$Marker</a> </li> </ul>",
+            "documentation": "A JSON object that contains one or more of the following fields:\n\n \n\n  *  ListVolumesInput$Limit \n  *  ListVolumesInput$Marker",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -1946,7 +1946,7 @@
         },
         "NetworkInterface": {
             "type": "structure",
-            "documentation": "<p>Describes a gateway's network interface.</p>",
+            "documentation": "Describes a gateway's network interface.",
             "members": [
                 {
                     "name": "Ipv4Address",
@@ -2003,7 +2003,7 @@
         },
         "RetrieveTapeArchiveInput": {
             "type": "structure",
-            "documentation": "<p>RetrieveTapeArchiveInput</p>",
+            "documentation": "RetrieveTapeArchiveInput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2019,7 +2019,7 @@
         },
         "RetrieveTapeArchiveOutput": {
             "type": "structure",
-            "documentation": "<p>RetrieveTapeArchiveOutput</p>",
+            "documentation": "RetrieveTapeArchiveOutput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2030,7 +2030,7 @@
         },
         "RetrieveTapeRecoveryPointInput": {
             "type": "structure",
-            "documentation": "<p>RetrieveTapeRecoveryPointInput</p>",
+            "documentation": "RetrieveTapeRecoveryPointInput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2045,7 +2045,7 @@
         },
         "RetrieveTapeRecoveryPointOutput": {
             "type": "structure",
-            "documentation": "<p>RetrieveTapeRecoveryPointOutput</p>",
+            "documentation": "RetrieveTapeRecoveryPointOutput",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2056,7 +2056,7 @@
         },
         "ShutdownGatewayInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway to shut down.</p>",
+            "documentation": "A JSON object containing the of the gateway to shut down.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2066,7 +2066,7 @@
         },
         "ShutdownGatewayOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway that was shut down.</p>",
+            "documentation": "A JSON object containing the of the gateway that was shut down.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2082,7 +2082,7 @@
         },
         "StartGatewayInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway to start.</p>",
+            "documentation": "A JSON object containing the of the gateway to start.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2092,7 +2092,7 @@
         },
         "StartGatewayOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway that was restarted.</p>",
+            "documentation": "A JSON object containing the of the gateway that was restarted.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2102,7 +2102,7 @@
         },
         "StorageGatewayError": {
             "type": "structure",
-            "documentation": "<p>Provides additional information about an error that was returned by the service as an or. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>",
+            "documentation": "Provides additional information about an error that was returned by the service as an or. See the ``errorCode`` and ``errorDetails`` members for more information about the error.",
             "members": [
                 {
                     "name": "errorCode",
@@ -2167,7 +2167,7 @@
         },
         "Tape": {
             "type": "structure",
-            "documentation": "<p>Describes a virtual tape object.</p>",
+            "documentation": "Describes a virtual tape object.",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2210,7 +2210,7 @@
         },
         "TapeArchive": {
             "type": "structure",
-            "documentation": "<p>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</p>",
+            "documentation": "Represents a virtual tape that is archived in the virtual tape shelf (VTS).",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2262,7 +2262,7 @@
         },
         "TapeRecoveryPointInfo": {
             "type": "structure",
-            "documentation": "<p>Describes a recovery point. </p>",
+            "documentation": "Describes a recovery point.",
             "members": [
                 {
                     "name": "TapeARN",
@@ -2313,7 +2313,7 @@
         },
         "UpdateBandwidthRateLimitInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a> </li> <li> <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec \n  *  UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2333,7 +2333,7 @@
         },
         "UpdateBandwidthRateLimitOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway whose throttle information was updated.</p>",
+            "documentation": "A JSON object containing the of the gateway whose throttle information was updated.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2343,7 +2343,7 @@
         },
         "UpdateChapCredentialsInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>UpdateChapCredentialsInput$InitiatorName</a> </li> <li> <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </li> <li> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </li> <li> <a>UpdateChapCredentialsInput$TargetARN</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  UpdateChapCredentialsInput$InitiatorName \n  *  UpdateChapCredentialsInput$SecretToAuthenticateInitiator \n  *  UpdateChapCredentialsInput$SecretToAuthenticateTarget \n  *  UpdateChapCredentialsInput$TargetARN",
             "members": [
                 {
                     "name": "TargetARN",
@@ -2369,7 +2369,7 @@
         },
         "UpdateChapCredentialsOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p>",
+            "documentation": "A JSON object containing the following fields:",
             "members": [
                 {
                     "name": "TargetARN",
@@ -2402,7 +2402,7 @@
         },
         "UpdateGatewayInformationOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway that was updated.</p>",
+            "documentation": "A JSON object containing the of the gateway that was updated.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2412,7 +2412,7 @@
         },
         "UpdateGatewaySoftwareNowInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway to update.</p>",
+            "documentation": "A JSON object containing the of the gateway to update.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2422,7 +2422,7 @@
         },
         "UpdateGatewaySoftwareNowOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway that was updated.</p>",
+            "documentation": "A JSON object containing the of the gateway that was updated.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2432,7 +2432,7 @@
         },
         "UpdateMaintenanceStartTimeInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the following fields:</p> <ul> <li> <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a> </li> <li> <a>UpdateMaintenanceStartTimeInput$HourOfDay</a> </li> <li> <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a> </li> </ul>",
+            "documentation": "A JSON object containing the following fields:\n\n \n\n  *  UpdateMaintenanceStartTimeInput$DayOfWeek \n  *  UpdateMaintenanceStartTimeInput$HourOfDay \n  *  UpdateMaintenanceStartTimeInput$MinuteOfHour",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2457,7 +2457,7 @@
         },
         "UpdateMaintenanceStartTimeOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the gateway whose maintenance start time is updated.</p>",
+            "documentation": "A JSON object containing the of the gateway whose maintenance start time is updated.",
             "members": [
                 {
                     "name": "GatewayARN",
@@ -2467,7 +2467,7 @@
         },
         "UpdateSnapshotScheduleInput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing one or more of the following fields:</p> <ul> <li> <a>UpdateSnapshotScheduleInput$Description</a> </li> <li> <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </li> <li> <a>UpdateSnapshotScheduleInput$StartAt</a> </li> <li> <a>UpdateSnapshotScheduleInput$VolumeARN</a> </li> </ul>",
+            "documentation": "A JSON object containing one or more of the following fields:\n\n \n\n  *  UpdateSnapshotScheduleInput$Description \n  *  UpdateSnapshotScheduleInput$RecurrenceInHours \n  *  UpdateSnapshotScheduleInput$StartAt \n  *  UpdateSnapshotScheduleInput$VolumeARN",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -2493,7 +2493,7 @@
         },
         "UpdateSnapshotScheduleOutput": {
             "type": "structure",
-            "documentation": "<p>A JSON object containing the of the updated storage volume.</p>",
+            "documentation": "A JSON object containing the of the updated storage volume.",
             "members": [
                 {
                     "name": "VolumeARN",
@@ -2503,7 +2503,7 @@
         },
         "UpdateVTLDeviceTypeInput": {
             "type": "structure",
-            "documentation": "<p>UpdateVTLDeviceTypeInput</p>",
+            "documentation": "UpdateVTLDeviceTypeInput",
             "members": [
                 {
                     "name": "VTLDeviceARN",
@@ -2519,7 +2519,7 @@
         },
         "UpdateVTLDeviceTypeOutput": {
             "type": "structure",
-            "documentation": "<p>UpdateVTLDeviceTypeOutput</p>",
+            "documentation": "UpdateVTLDeviceTypeOutput",
             "members": [
                 {
                     "name": "VTLDeviceARN",
@@ -2530,7 +2530,7 @@
         },
         "VTLDevice": {
             "type": "structure",
-            "documentation": "<p> Represents a device object associated with a gateway-VTL. </p>",
+            "documentation": "Represents a device object associated with a gateway-VTL.",
             "members": [
                 {
                     "name": "VTLDeviceARN",
@@ -2636,7 +2636,7 @@
         },
         "VolumeiSCSIAttributes": {
             "type": "structure",
-            "documentation": "<p>Lists iSCSI information about a volume.</p>",
+            "documentation": "Lists iSCSI information about a volume.",
             "members": [
                 {
                     "name": "TargetARN",

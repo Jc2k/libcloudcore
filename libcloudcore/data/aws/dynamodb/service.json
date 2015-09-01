@@ -44,7 +44,7 @@
     ],
     "operations": {
         "BatchGetItem": {
-            "documentation": "<p>The <i>BatchGetItem</i> operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.</p> <p>A single operation can retrieve up to 16 MB of data, which can contain as many as 100 items. <i>BatchGetItem</i> will return a partial result if the response size limit is exceeded, the table's provisioned throughput is exceeded, or an internal processing failure occurs. If a partial result is returned, the operation returns a value for <i>UnprocessedKeys</i>. You can use this value to retry the operation starting with the next item to get.</p> <important><p>If you request more than 100 items <i>BatchGetItem</i> will return a <i>ValidationException</i> with the message \"Too many items requested for the BatchGetItem call\".</p></important> <p>For example, if you ask to retrieve 100 items, but each individual item is 300 KB in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also returns an appropriate <i>UnprocessedKeys</i> value so you can get the next page of results. If desired, your application can include its own logic to assemble the pages of results into one data set.</p> <p>If <i>none</i> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then <i>BatchGetItem</i> will return a <i>ProvisionedThroughputExceededException</i>. If <i>at least one</i> of the items is successfully processed, then <i>BatchGetItem</i> completes successfully, while returning the keys of the unread items in <i>UnprocessedKeys</i>.</p> <important> <p>If DynamoDB returns any unprocessed items, you should retry the batch operation on those items. However, <i>we strongly recommend that you use an exponential backoff algorithm</i>. If you retry the batch operation immediately, the underlying read or write requests can still fail due to throttling on the individual tables. If you delay the batch operation using exponential backoff, the individual requests in the batch are much more likely to succeed.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations\">Batch Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </important> <p>By default, <i>BatchGetItem</i> performs eventually consistent reads on every table in the request. If you want strongly consistent reads instead, you can set <i>ConsistentRead</i> to <code>true</code> for any or all tables.</p> <p>In order to minimize response latency, <i>BatchGetItem</i> retrieves items in parallel.</p> <p>When designing your application, keep in mind that DynamoDB does not return attributes in any particular order. To help parse the response by item, include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</p> <p>If a requested item does not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of read. For more information, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations\">Capacity Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
+            "documentation": "The *BatchGetItem* operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.\n\n A single operation can retrieve up to 16 MB of data, which can contain as many as 100 items. *BatchGetItem* will return a partial result if the response size limit is exceeded, the table's provisioned throughput is exceeded, or an internal processing failure occurs. If a partial result is returned, the operation returns a value for *UnprocessedKeys*. You can use this value to retry the operation starting with the next item to get.\n\n If you request more than 100 items *BatchGetItem* will return a *ValidationException* with the message \"Too many items requested for the BatchGetItem call\".\n\n For example, if you ask to retrieve 100 items, but each individual item is 300 KB in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also returns an appropriate *UnprocessedKeys* value so you can get the next page of results. If desired, your application can include its own logic to assemble the pages of results into one data set.\n\n If *none* of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then *BatchGetItem* will return a *ProvisionedThroughputExceededException*. If *at least one* of the items is successfully processed, then *BatchGetItem* completes successfully, while returning the keys of the unread items in *UnprocessedKeys*.\n\n  If DynamoDB returns any unprocessed items, you should retry the batch operation on those items. However, *we strongly recommend that you use an exponential backoff algorithm*. If you retry the batch operation immediately, the underlying read or write requests can still fail due to throttling on the individual tables. If you delay the batch operation using exponential backoff, the individual requests in the batch are much more likely to succeed.\n\n For more information, see `Batch Operations and Error Handling <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations>`_ in the *Amazon DynamoDB Developer Guide*.\n\n  By default, *BatchGetItem* performs eventually consistent reads on every table in the request. If you want strongly consistent reads instead, you can set *ConsistentRead* to ``true`` for any or all tables.\n\n In order to minimize response latency, *BatchGetItem* retrieves items in parallel.\n\n When designing your application, keep in mind that DynamoDB does not return attributes in any particular order. To help parse the response by item, include the primary key values for the items in your request in the *AttributesToGet* parameter.\n\n If a requested item does not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of read. For more information, see `Capacity Units Calculations <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations>`_ in the *Amazon DynamoDB Developer Guide*.",
             "input": {
                 "shape": "BatchGetItemInput"
             },
@@ -53,7 +53,7 @@
             }
         },
         "BatchWriteItem": {
-            "documentation": "<p>The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 400 KB.</p> <note> <p><i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i> API.</p> </note> <p>The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i> are atomic; however <i>BatchWriteItem</i> as a whole is not. If any requested operations fail because the table's provisioned throughput is exceeded or an internal processing failure occurs, the failed operations are returned in the <i>UnprocessedItems</i> response parameter. You can investigate and optionally resend the requests. Typically, you would call <i>BatchWriteItem</i> in a loop. Each iteration would check for unprocessed items and submit a new <i>BatchWriteItem</i> request with those unprocessed items until all items have been processed.</p> <p>Note that if <i>none</i> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then <i>BatchWriteItem</i> will return a <i>ProvisionedThroughputExceededException</i>.</p> <important> <p>If DynamoDB returns any unprocessed items, you should retry the batch operation on those items. However, <i>we strongly recommend that you use an exponential backoff algorithm</i>. If you retry the batch operation immediately, the underlying read or write requests can still fail due to throttling on the individual tables. If you delay the batch operation using exponential backoff, the individual requests in the batch are much more likely to succeed.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations\">Batch Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </important> <p>With <i>BatchWriteItem</i>, you can efficiently write or delete large amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database into DynamoDB. In order to improve performance with these large-scale operations, <i>BatchWriteItem</i> does not behave in the same way as individual <i>PutItem</i> and <i>DeleteItem</i> calls would. For example, you cannot specify conditions on individual put and delete requests, and <i>BatchWriteItem</i> does not return deleted items in the response.</p> <p>If you use a programming language that supports concurrency, you can use threads to write items in parallel. Your application must include the necessary logic to manage the threads. With languages that don't support threading, you must update or delete the specified items one at a time. In both situations, <i>BatchWriteItem</i> provides an alternative where the API performs the specified put and delete operations in parallel, giving you the power of the thread pool approach without having to introduce complexity into your application.</p> <p>Parallel processing reduces latency, but each specified put and delete request consumes the same number of write capacity units whether it is processed in parallel or not. Delete operations on nonexistent items consume one write capacity unit.</p> <p>If one or more of the following is true, DynamoDB rejects the entire batch write operation:</p> <ul> <li> <p>One or more tables specified in the <i>BatchWriteItem</i> request does not exist.</p> </li> <li> <p>Primary key attributes specified on an item in the request do not match those in the corresponding table's primary key schema.</p> </li> <li> <p>You try to perform multiple operations on the same item in the same <i>BatchWriteItem</i> request. For example, you cannot put and delete the same item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16 MB.</p> </li> </ul>",
+            "documentation": "The *BatchWriteItem* operation puts or deletes multiple items in one or more tables. A single call to *BatchWriteItem* can write up to 16 MB of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 400 KB.\n\n  *BatchWriteItem* cannot update items. To update items, use the *UpdateItem* API.\n\n  The individual *PutItem* and *DeleteItem* operations specified in *BatchWriteItem* are atomic; however *BatchWriteItem* as a whole is not. If any requested operations fail because the table's provisioned throughput is exceeded or an internal processing failure occurs, the failed operations are returned in the *UnprocessedItems* response parameter. You can investigate and optionally resend the requests. Typically, you would call *BatchWriteItem* in a loop. Each iteration would check for unprocessed items and submit a new *BatchWriteItem* request with those unprocessed items until all items have been processed.\n\n Note that if *none* of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then *BatchWriteItem* will return a *ProvisionedThroughputExceededException*.\n\n  If DynamoDB returns any unprocessed items, you should retry the batch operation on those items. However, *we strongly recommend that you use an exponential backoff algorithm*. If you retry the batch operation immediately, the underlying read or write requests can still fail due to throttling on the individual tables. If you delay the batch operation using exponential backoff, the individual requests in the batch are much more likely to succeed.\n\n For more information, see `Batch Operations and Error Handling <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations>`_ in the *Amazon DynamoDB Developer Guide*.\n\n  With *BatchWriteItem*, you can efficiently write or delete large amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database into DynamoDB. In order to improve performance with these large-scale operations, *BatchWriteItem* does not behave in the same way as individual *PutItem* and *DeleteItem* calls would. For example, you cannot specify conditions on individual put and delete requests, and *BatchWriteItem* does not return deleted items in the response.\n\n If you use a programming language that supports concurrency, you can use threads to write items in parallel. Your application must include the necessary logic to manage the threads. With languages that don't support threading, you must update or delete the specified items one at a time. In both situations, *BatchWriteItem* provides an alternative where the API performs the specified put and delete operations in parallel, giving you the power of the thread pool approach without having to introduce complexity into your application.\n\n Parallel processing reduces latency, but each specified put and delete request consumes the same number of write capacity units whether it is processed in parallel or not. Delete operations on nonexistent items consume one write capacity unit.\n\n If one or more of the following is true, DynamoDB rejects the entire batch write operation:\n\n \n\n  *  One or more tables specified in the *BatchWriteItem* request does not exist.\n\n \n  *  Primary key attributes specified on an item in the request do not match those in the corresponding table's primary key schema.\n\n \n  *  You try to perform multiple operations on the same item in the same *BatchWriteItem* request. For example, you cannot put and delete the same item in the same *BatchWriteItem* request. \n\n \n  *  There are more than 25 requests in the batch.\n\n \n  *  Any individual item in a batch exceeds 400 KB.\n\n \n  *  The total request size exceeds 16 MB.",
             "input": {
                 "shape": "BatchWriteItemInput"
             },
@@ -62,7 +62,7 @@
             }
         },
         "CreateTable": {
-            "documentation": "<p>The <i>CreateTable</i> operation adds a new table to your account. In an AWS account, table names must be unique within each region. That is, you can have two tables with same name if you create the tables in different regions.</p> <p><i>CreateTable</i> is an asynchronous operation. Upon receiving a <i>CreateTable</i> request, DynamoDB immediately returns a response with a <i>TableStatus</i> of <code>CREATING</code>. After the table is created, DynamoDB sets the <i>TableStatus</i> to <code>ACTIVE</code>. You can perform read and write operations only on an <code>ACTIVE</code> table. </p> <p>You can optionally define secondary indexes on the new table, as part of the <i>CreateTable</i> operation. If you want to create multiple tables with secondary indexes on them, you must create the tables sequentially. Only one table with secondary indexes can be in the <code>CREATING</code> state at any given time.</p> <p>You can use the <i>DescribeTable</i> API to check the table status.</p>",
+            "documentation": "The *CreateTable* operation adds a new table to your account. In an AWS account, table names must be unique within each region. That is, you can have two tables with same name if you create the tables in different regions.\n\n *CreateTable* is an asynchronous operation. Upon receiving a *CreateTable* request, DynamoDB immediately returns a response with a *TableStatus* of ``CREATING``. After the table is created, DynamoDB sets the *TableStatus* to ``ACTIVE``. You can perform read and write operations only on an ``ACTIVE`` table. \n\n You can optionally define secondary indexes on the new table, as part of the *CreateTable* operation. If you want to create multiple tables with secondary indexes on them, you must create the tables sequentially. Only one table with secondary indexes can be in the ``CREATING`` state at any given time.\n\n You can use the *DescribeTable* API to check the table status.",
             "input": {
                 "shape": "CreateTableInput"
             },
@@ -71,7 +71,7 @@
             }
         },
         "DeleteItem": {
-            "documentation": "<p>Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists, or if it has an expected attribute value.</p> <p>In addition to deleting an item, you can also return the item's attribute values in the same operation, using the <i>ReturnValues</i> parameter.</p> <p>Unless you specify conditions, the <i>DeleteItem</i> is an idempotent operation; running it multiple times on the same item or attribute does <i>not</i> result in an error response.</p> <p>Conditional deletes are useful for deleting items only if specific conditions are met. If those conditions are met, DynamoDB performs the delete. Otherwise, the item is not deleted. </p>",
+            "documentation": "Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists, or if it has an expected attribute value.\n\n In addition to deleting an item, you can also return the item's attribute values in the same operation, using the *ReturnValues* parameter.\n\n Unless you specify conditions, the *DeleteItem* is an idempotent operation; running it multiple times on the same item or attribute does *not* result in an error response.\n\n Conditional deletes are useful for deleting items only if specific conditions are met. If those conditions are met, DynamoDB performs the delete. Otherwise, the item is not deleted.",
             "input": {
                 "shape": "DeleteItemInput"
             },
@@ -80,7 +80,7 @@
             }
         },
         "DeleteTable": {
-            "documentation": "<p>The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i> request, the specified table is in the <code>DELETING</code> state until DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code> state, you can delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code> states, then DynamoDB returns a <i>ResourceInUseException</i>. If the specified table does not exist, DynamoDB returns a <i>ResourceNotFoundException</i>. If table is already in the <code>DELETING</code> state, no error is returned. </p> <note> <p>DynamoDB might continue to accept data read and write operations, such as <i>GetItem</i> and <i>PutItem</i>, on a table in the <code>DELETING</code> state until the table deletion is complete.</p> </note> <p>When you delete a table, any indexes on that table are also deleted.</p> <p>If you have DynamoDB Streams enabled on the table, then the corresponding stream on that table goes into the <code>DISABLED</code> state, and the stream is automatically deleted after 24 hours.</p> <p>Use the <i>DescribeTable</i> API to check the status of the table. </p>",
+            "documentation": "The *DeleteTable* operation deletes a table and all of its items. After a *DeleteTable* request, the specified table is in the ``DELETING`` state until DynamoDB completes the deletion. If the table is in the ``ACTIVE`` state, you can delete it. If a table is in ``CREATING`` or ``UPDATING`` states, then DynamoDB returns a *ResourceInUseException*. If the specified table does not exist, DynamoDB returns a *ResourceNotFoundException*. If table is already in the ``DELETING`` state, no error is returned. \n\n  DynamoDB might continue to accept data read and write operations, such as *GetItem* and *PutItem*, on a table in the ``DELETING`` state until the table deletion is complete.\n\n  When you delete a table, any indexes on that table are also deleted.\n\n If you have DynamoDB Streams enabled on the table, then the corresponding stream on that table goes into the ``DISABLED`` state, and the stream is automatically deleted after 24 hours.\n\n Use the *DescribeTable* API to check the status of the table.",
             "input": {
                 "shape": "DeleteTableInput"
             },
@@ -89,7 +89,7 @@
             }
         },
         "DescribeTable": {
-            "documentation": "<p>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.</p> <note> <p>If you issue a DescribeTable request immediately after a CreateTable request, DynamoDB might return a ResourceNotFoundException. This is because DescribeTable uses an eventually consistent query, and the metadata for your table might not be available at that moment. Wait for a few seconds, and then try the DescribeTable request again.</p> </note>",
+            "documentation": "Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.\n\n  If you issue a DescribeTable request immediately after a CreateTable request, DynamoDB might return a ResourceNotFoundException. This is because DescribeTable uses an eventually consistent query, and the metadata for your table might not be available at that moment. Wait for a few seconds, and then try the DescribeTable request again.",
             "input": {
                 "shape": "DescribeTableInput"
             },
@@ -98,7 +98,7 @@
             }
         },
         "GetItem": {
-            "documentation": "<p>The <i>GetItem</i> operation returns a set of attributes for the item with the given primary key. If there is no matching item, <i>GetItem</i> does not return any data.</p> <p><i>GetItem</i> provides an eventually consistent read by default. If your application requires a strongly consistent read, set <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read might take more time than an eventually consistent read, it always returns the last updated value.</p>",
+            "documentation": "The *GetItem* operation returns a set of attributes for the item with the given primary key. If there is no matching item, *GetItem* does not return any data.\n\n *GetItem* provides an eventually consistent read by default. If your application requires a strongly consistent read, set *ConsistentRead* to ``true``. Although a strongly consistent read might take more time than an eventually consistent read, it always returns the last updated value.",
             "input": {
                 "shape": "GetItemInput"
             },
@@ -107,7 +107,7 @@
             }
         },
         "ListTables": {
-            "documentation": "<p>Returns an array of table names associated with the current account and endpoint. The output from <i>ListTables</i> is paginated, with each page returning a maximum of 100 table names.</p>",
+            "documentation": "Returns an array of table names associated with the current account and endpoint. The output from *ListTables* is paginated, with each page returning a maximum of 100 table names.",
             "input": {
                 "shape": "ListTablesInput"
             },
@@ -116,7 +116,7 @@
             }
         },
         "PutItem": {
-            "documentation": "<p>Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new item already exists in the specified table, the new item completely replaces the existing item. You can perform a conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute values. </p> <p>In addition to putting an item, you can also return the item's attribute values in the same operation, using the <i>ReturnValues</i> parameter.</p> <p>When you add an item, the primary key attribute(s) are the only required attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes cannot be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception.</p> <p>You can request that <i>PutItem</i> return either a copy of the original item (before the update) or a copy of the updated item (after the update). For more information, see the <i>ReturnValues</i> description below.</p> <note> <p>To prevent a new item from replacing an existing item, use a conditional put operation with <i>ComparisonOperator</i> set to <code>NULL</code> for the primary key attribute, or attributes.</p> </note> <p>For more information about using this API, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html\">Working with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
+            "documentation": "Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new item already exists in the specified table, the new item completely replaces the existing item. You can perform a conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute values. \n\n In addition to putting an item, you can also return the item's attribute values in the same operation, using the *ReturnValues* parameter.\n\n When you add an item, the primary key attribute(s) are the only required attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes cannot be empty. Requests with empty values will be rejected with a *ValidationException* exception.\n\n You can request that *PutItem* return either a copy of the original item (before the update) or a copy of the updated item (after the update). For more information, see the *ReturnValues* description below.\n\n  To prevent a new item from replacing an existing item, use a conditional put operation with *ComparisonOperator* set to ``NULL`` for the primary key attribute, or attributes.\n\n  For more information about using this API, see `Working with Items <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html>`_ in the *Amazon DynamoDB Developer Guide*.",
             "input": {
                 "shape": "PutItemInput"
             },
@@ -125,7 +125,7 @@
             }
         },
         "Query": {
-            "documentation": "<p>A <i>Query</i> operation uses the primary key of a table or a secondary index to directly access items from that table or index.</p> <p>Use the <i>KeyConditionExpression</i> parameter to provide a specific hash key value. The <i>Query</i> operation will return all of the items from the table or index with that hash key value. You can optionally narrow the scope of the <i>Query</i> operation by specifying a range key value and a comparison operator in <i>KeyConditionExpression</i>. You can use the <i>ScanIndexForward</i> parameter to get results in forward or reverse order, by range key or by index key. </p> <p>Queries that do not return results consume the minimum number of read capacity units for that type of read operation.</p> <p>If the total number of items meeting the query criteria exceeds the result set size limit of 1 MB, the query stops and results are returned to the user with the <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if you have used the <i>Limit</i> parameter. </p> <p>You can query a table, a local secondary index, or a global secondary index. For a query on a table or on a local secondary index, you can set the <i>ConsistentRead</i> parameter to <code>true</code> and obtain a strongly consistent result. Global secondary indexes support eventually consistent reads only, so do not specify <i>ConsistentRead</i> when querying a global secondary index.</p>",
+            "documentation": "A *Query* operation uses the primary key of a table or a secondary index to directly access items from that table or index.\n\n Use the *KeyConditionExpression* parameter to provide a specific hash key value. The *Query* operation will return all of the items from the table or index with that hash key value. You can optionally narrow the scope of the *Query* operation by specifying a range key value and a comparison operator in *KeyConditionExpression*. You can use the *ScanIndexForward* parameter to get results in forward or reverse order, by range key or by index key. \n\n Queries that do not return results consume the minimum number of read capacity units for that type of read operation.\n\n If the total number of items meeting the query criteria exceeds the result set size limit of 1 MB, the query stops and results are returned to the user with the *LastEvaluatedKey* element to continue the query in a subsequent operation. Unlike a *Scan* operation, a *Query* operation never returns both an empty result set and a *LastEvaluatedKey* value. *LastEvaluatedKey* is only provided if the results exceed 1 MB, or if you have used the *Limit* parameter. \n\n You can query a table, a local secondary index, or a global secondary index. For a query on a table or on a local secondary index, you can set the *ConsistentRead* parameter to ``true`` and obtain a strongly consistent result. Global secondary indexes support eventually consistent reads only, so do not specify *ConsistentRead* when querying a global secondary index.",
             "input": {
                 "shape": "QueryInput"
             },
@@ -134,7 +134,7 @@
             }
         },
         "Scan": {
-            "documentation": "<p>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in a table or a secondary index. To have DynamoDB return fewer items, you can provide a <i>ScanFilter</i> operation.</p> <p>If the total number of scanned items exceeds the maximum data set size limit of 1 MB, the scan stops and results are returned to the user as a <i>LastEvaluatedKey</i> value to continue the scan in a subsequent operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria. </p> <p>By default, <i>Scan</i> operations proceed sequentially; however, for faster performance on a large table or secondary index, applications can request a parallel <i>Scan</i> operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For more information, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan\">Parallel Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>By default, <i>Scan</i> uses eventually consistent reads when acessing the data in the table or local secondary index. However, you can use strongly consistent reads instead by setting the <i>ConsistentRead</i> parameter to <i>true</i>.</p>",
+            "documentation": "The *Scan* operation returns one or more items and item attributes by accessing every item in a table or a secondary index. To have DynamoDB return fewer items, you can provide a *ScanFilter* operation.\n\n If the total number of scanned items exceeds the maximum data set size limit of 1 MB, the scan stops and results are returned to the user as a *LastEvaluatedKey* value to continue the scan in a subsequent operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria. \n\n By default, *Scan* operations proceed sequentially; however, for faster performance on a large table or secondary index, applications can request a parallel *Scan* operation by providing the *Segment* and *TotalSegments* parameters. For more information, see `Parallel Scan <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan>`_ in the *Amazon DynamoDB Developer Guide*.\n\n By default, *Scan* uses eventually consistent reads when acessing the data in the table or local secondary index. However, you can use strongly consistent reads instead by setting the *ConsistentRead* parameter to *true*.",
             "input": {
                 "shape": "ScanInput"
             },
@@ -143,7 +143,7 @@
             }
         },
         "UpdateItem": {
-            "documentation": "<p> Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values). If conditions are specified and the item does not exist, then the operation fails and a new item is not created. </p> <p>You can also return the item's attribute values in the same <i>UpdateItem</i> operation using the <i>ReturnValues</i> parameter.</p>",
+            "documentation": "Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values). If conditions are specified and the item does not exist, then the operation fails and a new item is not created. \n\n You can also return the item's attribute values in the same *UpdateItem* operation using the *ReturnValues* parameter.",
             "input": {
                 "shape": "UpdateItemInput"
             },
@@ -152,7 +152,7 @@
             }
         },
         "UpdateTable": {
-            "documentation": "<p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p> <p>You can only perform one of the following operations at once:</p> <ul> <li><p>Modify the provisioned throughput settings of the table.</p></li> <li><p>Enable or disable Streams on the table.</p></li> <li><p>Remove a global secondary index from the table.</p></li> <li> <p>Create a new global secondary index on the table. Once the index begins backfilling, you can use <i>UpdateTable</i> to perform other operations.</p> </li> </ul> <p><i>UpdateTable</i> is an asynchronous operation; while it is executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue another <i>UpdateTable</i> request. When the table returns to the <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.</p>",
+            "documentation": "Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.\n\n You can only perform one of the following operations at once:\n\n \n\n  * Modify the provisioned throughput settings of the table.\n\n\n  * Enable or disable Streams on the table.\n\n\n  * Remove a global secondary index from the table.\n\n\n  *  Create a new global secondary index on the table. Once the index begins backfilling, you can use *UpdateTable* to perform other operations.\n\n \n \n *UpdateTable* is an asynchronous operation; while it is executing, the table status changes from ``ACTIVE`` to ``UPDATING``. While it is ``UPDATING``, you cannot issue another *UpdateTable* request. When the table returns to the ``ACTIVE`` state, the *UpdateTable* operation is complete.",
             "input": {
                 "shape": "UpdateTableInput"
             },
@@ -167,7 +167,7 @@
         },
         "AttributeDefinition": {
             "type": "structure",
-            "documentation": "<p>Represents an attribute for describing the key schema for the table and indexes.</p>",
+            "documentation": "Represents an attribute for describing the key schema for the table and indexes.",
             "members": [
                 {
                     "name": "AttributeName",
@@ -204,7 +204,7 @@
         },
         "AttributeValue": {
             "type": "structure",
-            "documentation": "<p>Represents the data for an attribute. You can set one, and only one, of the elements.</p> <p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed. </p>",
+            "documentation": "Represents the data for an attribute. You can set one, and only one, of the elements.\n\n Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.",
             "members": [
                 {
                     "name": "S",
@@ -264,7 +264,7 @@
         },
         "AttributeValueUpdate": {
             "type": "structure",
-            "documentation": "<p>For the <i>UpdateItem</i> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.</p> <note> <p>You cannot use <i>UpdateItem</i> to update any primary key attributes. Instead, you will need to delete the item, and then use <i>PutItem</i> to create a new item with new attributes.</p> </note> <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception.</p>",
+            "documentation": "For the *UpdateItem* operation, represents the attributes to be modified, the action to perform on each, and the new value for each.\n\n  You cannot use *UpdateItem* to update any primary key attributes. Instead, you will need to delete the item, and then use *PutItem* to create a new item with new attributes.\n\n  Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a *ValidationException* exception.",
             "members": [
                 {
                     "name": "Value",
@@ -282,7 +282,7 @@
         },
         "BatchGetItemInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>BatchGetItem</i> operation.</p>",
+            "documentation": "Represents the input of a *BatchGetItem* operation.",
             "members": [
                 {
                     "name": "RequestItems",
@@ -297,7 +297,7 @@
         },
         "BatchGetItemOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>BatchGetItem</i> operation.</p>",
+            "documentation": "Represents the output of a *BatchGetItem* operation.",
             "members": [
                 {
                     "name": "Responses",
@@ -328,7 +328,7 @@
         },
         "BatchWriteItemInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>BatchWriteItem</i> operation.</p>",
+            "documentation": "Represents the input of a *BatchWriteItem* operation.",
             "members": [
                 {
                     "name": "RequestItems",
@@ -348,7 +348,7 @@
         },
         "BatchWriteItemOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>BatchWriteItem</i> operation.</p>",
+            "documentation": "Represents the output of a *BatchWriteItem* operation.",
             "members": [
                 {
                     "name": "UnprocessedItems",
@@ -387,7 +387,7 @@
         },
         "Capacity": {
             "type": "structure",
-            "documentation": "<p>Represents the amount of provisioned throughput capacity consumed on a table or an index. </p>",
+            "documentation": "Represents the amount of provisioned throughput capacity consumed on a table or an index.",
             "members": [
                 {
                     "name": "CapacityUnits",
@@ -401,7 +401,7 @@
         },
         "Condition": {
             "type": "structure",
-            "documentation": "<p>Represents the selection criteria for a <i>Query</i> or <i>Scan</i> operation:</p> <ul> <li> <p>For a <i>Query</i> operation, <i>Condition</i> is used for specifying the <i>KeyConditions</i> to use when querying a table or an index. For <i>KeyConditions</i>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p><i>Condition</i> is also used in a <i>QueryFilter</i>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <i>Scan</i> operation, <i>Condition</i> is used in a <i>ScanFilter</i>, which evaluates the scan results and returns only the desired values.</p> </li> </ul>",
+            "documentation": "Represents the selection criteria for a *Query* or *Scan* operation:\n\n \n\n  *  For a *Query* operation, *Condition* is used for specifying the *KeyConditions* to use when querying a table or an index. For *KeyConditions*, only the following comparison operators are supported:\n\n  ``EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN`` \n\n *Condition* is also used in a *QueryFilter*, which evaluates the query results and returns only the desired values.\n\n \n  *  For a *Scan* operation, *Condition* is used in a *ScanFilter*, which evaluates the scan results and returns only the desired values.",
             "members": [
                 {
                     "name": "AttributeValueList",
@@ -420,7 +420,7 @@
         },
         "ConditionalCheckFailedException": {
             "type": "structure",
-            "documentation": "<p>A condition specified in the operation could not be evaluated.</p>",
+            "documentation": "A condition specified in the operation could not be evaluated.",
             "members": [
                 {
                     "name": "message",
@@ -437,7 +437,7 @@
         },
         "ConsumedCapacity": {
             "type": "structure",
-            "documentation": "<p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if the request asked for it. For more information, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html\">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
+            "documentation": "The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. *ConsumedCapacity* is only returned if the request asked for it. For more information, see `Provisioned Throughput <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html>`_ in the *Amazon DynamoDB Developer Guide*.",
             "members": [
                 {
                     "name": "TableName",
@@ -475,7 +475,7 @@
         },
         "CreateGlobalSecondaryIndexAction": {
             "type": "structure",
-            "documentation": "<p>Represents a new global secondary index to be added to an existing table.</p>",
+            "documentation": "Represents a new global secondary index to be added to an existing table.",
             "members": [
                 {
                     "name": "IndexName",
@@ -499,7 +499,7 @@
         },
         "CreateTableInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateTable</i> operation.</p>",
+            "documentation": "Represents the input of a *CreateTable* operation.",
             "members": [
                 {
                     "name": "AttributeDefinitions",
@@ -539,7 +539,7 @@
         },
         "CreateTableOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>CreateTable</i> operation.</p>",
+            "documentation": "Represents the output of a *CreateTable* operation.",
             "members": [
                 {
                     "name": "TableDescription",
@@ -552,7 +552,7 @@
         },
         "DeleteGlobalSecondaryIndexAction": {
             "type": "structure",
-            "documentation": "<p>Represents a global secondary index to be deleted from an existing table.</p>",
+            "documentation": "Represents a global secondary index to be deleted from an existing table.",
             "members": [
                 {
                     "name": "IndexName",
@@ -563,7 +563,7 @@
         },
         "DeleteItemInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteItem</i> operation.</p>",
+            "documentation": "Represents the input of a *DeleteItem* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -618,7 +618,7 @@
         },
         "DeleteItemOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DeleteItem</i> operation.</p>",
+            "documentation": "Represents the output of a *DeleteItem* operation.",
             "members": [
                 {
                     "name": "Attributes",
@@ -638,7 +638,7 @@
         },
         "DeleteRequest": {
             "type": "structure",
-            "documentation": "<p>Represents a request to perform a <i>DeleteItem</i> operation on an item.</p>",
+            "documentation": "Represents a request to perform a *DeleteItem* operation on an item.",
             "members": [
                 {
                     "name": "Key",
@@ -649,7 +649,7 @@
         },
         "DeleteTableInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteTable</i> operation.</p>",
+            "documentation": "Represents the input of a *DeleteTable* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -660,7 +660,7 @@
         },
         "DeleteTableOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DeleteTable</i> operation.</p>",
+            "documentation": "Represents the output of a *DeleteTable* operation.",
             "members": [
                 {
                     "name": "TableDescription",
@@ -670,7 +670,7 @@
         },
         "DescribeTableInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeTable</i> operation.</p>",
+            "documentation": "Represents the input of a *DescribeTable* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -681,7 +681,7 @@
         },
         "DescribeTableOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeTable</i> operation.</p>",
+            "documentation": "Represents the output of a *DescribeTable* operation.",
             "members": [
                 {
                     "name": "Table",
@@ -699,7 +699,7 @@
         },
         "ExpectedAttributeValue": {
             "type": "structure",
-            "documentation": "<p>Represents a condition to be compared with an attribute value. This condition can be used with <i>DeleteItem</i>, <i>PutItem</i> or <i>UpdateItem</i> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <i>ExpectedAttributeValue</i> in one of two different ways:</p> <ul> <li> <p>Use <i>AttributeValueList</i> to specify one or more values to compare against an attribute. Use <i>ComparisonOperator</i> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.</p> </li> <li> <p>Use <i>Value</i> to specify a value that DynamoDB will compare against an attribute. If the values match, then <i>ExpectedAttributeValue</i> evaluates to true and the conditional operation succeeds. Optionally, you can also set <i>Exists</i> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.</p> </li> </ul> <p><i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once, DynamoDB will return a <i>ValidationException</i> exception.</p>",
+            "documentation": "Represents a condition to be compared with an attribute value. This condition can be used with *DeleteItem*, *PutItem* or *UpdateItem* operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use *ExpectedAttributeValue* in one of two different ways:\n\n \n\n  *  Use *AttributeValueList* to specify one or more values to compare against an attribute. Use *ComparisonOperator* to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.\n\n \n  *  Use *Value* to specify a value that DynamoDB will compare against an attribute. If the values match, then *ExpectedAttributeValue* evaluates to true and the conditional operation succeeds. Optionally, you can also set *Exists* to false, indicating that you *do not* expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.\n\n \n \n *Value* and *Exists* are incompatible with *AttributeValueList* and *ComparisonOperator*. Note that if you use both sets of parameters at once, DynamoDB will return a *ValidationException* exception.",
             "members": [
                 {
                     "name": "Value",
@@ -745,7 +745,7 @@
         },
         "GetItemInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>GetItem</i> operation.</p>",
+            "documentation": "Represents the input of a *GetItem* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -785,7 +785,7 @@
         },
         "GetItemOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>GetItem</i> operation.</p>",
+            "documentation": "Represents the output of a *GetItem* operation.",
             "members": [
                 {
                     "name": "Item",
@@ -800,7 +800,7 @@
         },
         "GlobalSecondaryIndex": {
             "type": "structure",
-            "documentation": "<p>Represents the properties of a global secondary index.</p>",
+            "documentation": "Represents the properties of a global secondary index.",
             "members": [
                 {
                     "name": "IndexName",
@@ -824,7 +824,7 @@
         },
         "GlobalSecondaryIndexDescription": {
             "type": "structure",
-            "documentation": "<p>Represents the properties of a global secondary index.</p>",
+            "documentation": "Represents the properties of a global secondary index.",
             "members": [
                 {
                     "name": "IndexName",
@@ -881,7 +881,7 @@
         },
         "GlobalSecondaryIndexUpdate": {
             "type": "structure",
-            "documentation": "<p>Represents one of the following:</p> <ul> <li><p>A new global secondary index to be added to an existing table.</p></li> <li><p>New provisioned throughput parameters for an existing global secondary index.</p></li> <li><p>An existing global secondary index to be removed from an existing table.</p></li> </ul>",
+            "documentation": "Represents one of the following:\n\n \n\n  * A new global secondary index to be added to an existing table.\n\n\n  * New provisioned throughput parameters for an existing global secondary index.\n\n\n  * An existing global secondary index to be removed from an existing table.",
             "members": [
                 {
                     "name": "Update",
@@ -915,7 +915,7 @@
         },
         "InternalServerError": {
             "type": "structure",
-            "documentation": "<p>An error occurred on the server side.</p>",
+            "documentation": "An error occurred on the server side.",
             "members": [
                 {
                     "name": "message",
@@ -931,7 +931,7 @@
         },
         "ItemCollectionMetrics": {
             "type": "structure",
-            "documentation": "<p>Information about item collections, if any, that were affected by the operation. <i>ItemCollectionMetrics</i> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>",
+            "documentation": "Information about item collections, if any, that were affected by the operation. *ItemCollectionMetrics* is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.",
             "members": [
                 {
                     "name": "ItemCollectionKey",
@@ -963,7 +963,7 @@
         },
         "ItemCollectionSizeLimitExceededException": {
             "type": "structure",
-            "documentation": "<p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>",
+            "documentation": "An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.",
             "members": [
                 {
                     "name": "message",
@@ -1002,7 +1002,7 @@
         },
         "KeySchemaElement": {
             "type": "structure",
-            "documentation": "<p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <i>KeySchemaElement</i> represents exactly one attribute of the primary key. For example, a hash type primary key would be represented by one <i>KeySchemaElement</i>. A hash-and-range type primary key would require one <i>KeySchemaElement</i> for the hash attribute, and another <i>KeySchemaElement</i> for the range attribute.</p>",
+            "documentation": "Represents *a single element* of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.\n\n A *KeySchemaElement* represents exactly one attribute of the primary key. For example, a hash type primary key would be represented by one *KeySchemaElement*. A hash-and-range type primary key would require one *KeySchemaElement* for the hash attribute, and another *KeySchemaElement* for the range attribute.",
             "members": [
                 {
                     "name": "AttributeName",
@@ -1021,7 +1021,7 @@
         },
         "KeysAndAttributes": {
             "type": "structure",
-            "documentation": "<p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute.</p>",
+            "documentation": "Represents a set of primary keys and, for each key, the attributes to retrieve from the table.\n\n For each primary key, you must provide *all* of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide *both* the hash attribute and the range attribute.",
             "members": [
                 {
                     "name": "Keys",
@@ -1052,7 +1052,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
-            "documentation": "<p>The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>, <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p> <p>Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at any point in time. Do not attempt to create more than one such table simultaneously.</p> <p>The total limit of tables in the <code>ACTIVE</code> state is 250.</p>",
+            "documentation": "The number of concurrent table requests (cumulative number of tables in the ``CREATING``, ``DELETING`` or ``UPDATING`` state) exceeds the maximum allowed of 10.\n\n Also, for tables with secondary indexes, only one of those tables can be in the ``CREATING`` state at any point in time. Do not attempt to create more than one such table simultaneously.\n\n The total limit of tables in the ``ACTIVE`` state is 250.",
             "members": [
                 {
                     "name": "message",
@@ -1067,7 +1067,7 @@
         },
         "ListTablesInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>ListTables</i> operation.</p>",
+            "documentation": "Represents the input of a *ListTables* operation.",
             "members": [
                 {
                     "name": "ExclusiveStartTableName",
@@ -1086,7 +1086,7 @@
         },
         "ListTablesOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>ListTables</i> operation.</p>",
+            "documentation": "Represents the output of a *ListTables* operation.",
             "members": [
                 {
                     "name": "TableNames",
@@ -1102,7 +1102,7 @@
         },
         "LocalSecondaryIndex": {
             "type": "structure",
-            "documentation": "<p>Represents the properties of a local secondary index.</p>",
+            "documentation": "Represents the properties of a local secondary index.",
             "members": [
                 {
                     "name": "IndexName",
@@ -1122,7 +1122,7 @@
         },
         "LocalSecondaryIndexDescription": {
             "type": "structure",
-            "documentation": "<p>Represents the properties of a local secondary index.</p>",
+            "documentation": "Represents the properties of a local secondary index.",
             "members": [
                 {
                     "name": "IndexName",
@@ -1196,7 +1196,7 @@
         },
         "Projection": {
             "type": "structure",
-            "documentation": "<p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>",
+            "documentation": "Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.",
             "members": [
                 {
                     "name": "ProjectionType",
@@ -1218,7 +1218,7 @@
         },
         "ProvisionedThroughput": {
             "type": "structure",
-            "documentation": "<p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html\">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
+            "documentation": "Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the *UpdateTable* operation.\n\n For current minimum and maximum provisioned throughput values, see `Limits <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html>`_ in the *Amazon DynamoDB Developer Guide*.",
             "members": [
                 {
                     "name": "ReadCapacityUnits",
@@ -1234,7 +1234,7 @@
         },
         "ProvisionedThroughputDescription": {
             "type": "structure",
-            "documentation": "<p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>",
+            "documentation": "Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.",
             "members": [
                 {
                     "name": "LastIncreaseDateTime",
@@ -1265,7 +1265,7 @@
         },
         "ProvisionedThroughputExceededException": {
             "type": "structure",
-            "documentation": "<p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries\">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
+            "documentation": "Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to `Error Retries and Exponential Backoff <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries>`_ in the *Amazon DynamoDB Developer Guide*.",
             "members": [
                 {
                     "name": "message",
@@ -1276,7 +1276,7 @@
         },
         "PutItemInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>PutItem</i> operation.</p>",
+            "documentation": "Represents the input of a *PutItem* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -1336,7 +1336,7 @@
         },
         "PutItemOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>PutItem</i> operation.</p>",
+            "documentation": "Represents the output of a *PutItem* operation.",
             "members": [
                 {
                     "name": "Attributes",
@@ -1356,7 +1356,7 @@
         },
         "PutRequest": {
             "type": "structure",
-            "documentation": "<p>Represents a request to perform a <i>PutItem</i> operation on an item.</p>",
+            "documentation": "Represents a request to perform a *PutItem* operation on an item.",
             "members": [
                 {
                     "name": "Item",
@@ -1367,7 +1367,7 @@
         },
         "QueryInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>Query</i> operation.</p>",
+            "documentation": "Represents the input of a *Query* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -1457,7 +1457,7 @@
         },
         "QueryOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>Query</i> operation.</p>",
+            "documentation": "Represents the output of a *Query* operation.",
             "members": [
                 {
                     "name": "Items",
@@ -1487,7 +1487,7 @@
         },
         "ResourceInUseException": {
             "type": "structure",
-            "documentation": "<p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>",
+            "documentation": "The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the ``CREATING`` state.",
             "members": [
                 {
                     "name": "message",
@@ -1498,7 +1498,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>",
+            "documentation": "The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be ``ACTIVE``.",
             "members": [
                 {
                     "name": "message",
@@ -1509,7 +1509,7 @@
         },
         "ReturnConsumedCapacity": {
             "type": "string",
-            "documentation": "<p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p><i>INDEXES</i> - The response includes the aggregate <i>ConsumedCapacity</i> for the operation, together with <i>ConsumedCapacity</i> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <i>GetItem</i> and <i>BatchGetItem</i>, do not access any indexes at all. In these cases, specifying <i>INDEXES</i> will only return <i>ConsumedCapacity</i> information for table(s).</p> </li> <li><p><i>TOTAL</i> - The response includes only the aggregate <i>ConsumedCapacity</i> for the operation.</p></li> <li><p><i>NONE</i> - No <i>ConsumedCapacity</i> details are included in the response.</p></li> </ul>"
+            "documentation": "Determines the level of detail about provisioned throughput consumption that is returned in the response:\n\n \n\n  *  *INDEXES* - The response includes the aggregate *ConsumedCapacity* for the operation, together with *ConsumedCapacity* for each table and secondary index that was accessed.\n\n Note that some operations, such as *GetItem* and *BatchGetItem*, do not access any indexes at all. In these cases, specifying *INDEXES* will only return *ConsumedCapacity* information for table(s).\n\n \n  * *TOTAL* - The response includes only the aggregate *ConsumedCapacity* for the operation.\n\n\n  * *NONE* - No *ConsumedCapacity* details are included in the response."
         },
         "ReturnItemCollectionMetrics": {
             "type": "string"
@@ -1522,7 +1522,7 @@
         },
         "ScanInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>Scan</i> operation.</p>",
+            "documentation": "Represents the input of a *Scan* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -1607,7 +1607,7 @@
         },
         "ScanOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>Scan</i> operation.</p>",
+            "documentation": "Represents the output of a *Scan* operation.",
             "members": [
                 {
                     "name": "Items",
@@ -1657,7 +1657,7 @@
         },
         "StreamSpecification": {
             "type": "structure",
-            "documentation": "<p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>",
+            "documentation": "Represents the DynamoDB Streams configuration for a table in DynamoDB.",
             "members": [
                 {
                     "name": "StreamEnabled",
@@ -1686,7 +1686,7 @@
         },
         "TableDescription": {
             "type": "structure",
-            "documentation": "<p>Represents the properties of a table.</p>",
+            "documentation": "Represents the properties of a table.",
             "members": [
                 {
                     "name": "AttributeDefinitions",
@@ -1775,7 +1775,7 @@
         },
         "UpdateGlobalSecondaryIndexAction": {
             "type": "structure",
-            "documentation": "<p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>",
+            "documentation": "Represents the new provisioned throughput settings to be applied to a global secondary index.",
             "members": [
                 {
                     "name": "IndexName",
@@ -1790,7 +1790,7 @@
         },
         "UpdateItemInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an <i>UpdateItem</i> operation.</p>",
+            "documentation": "Represents the input of an *UpdateItem* operation.",
             "members": [
                 {
                     "name": "TableName",
@@ -1855,7 +1855,7 @@
         },
         "UpdateItemOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <i>UpdateItem</i> operation.</p>",
+            "documentation": "Represents the output of an *UpdateItem* operation.",
             "members": [
                 {
                     "name": "Attributes",
@@ -1874,7 +1874,7 @@
         },
         "UpdateTableInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an <i>UpdateTable</i> operation.</p>",
+            "documentation": "Represents the input of an *UpdateTable* operation.",
             "members": [
                 {
                     "name": "AttributeDefinitions",
@@ -1904,7 +1904,7 @@
         },
         "UpdateTableOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <i>UpdateTable</i> operation.</p>",
+            "documentation": "Represents the output of an *UpdateTable* operation.",
             "members": [
                 {
                     "name": "TableDescription",
@@ -1914,7 +1914,7 @@
         },
         "WriteRequest": {
             "type": "structure",
-            "documentation": "<p>Represents an operation to perform - either <i>DeleteItem</i> or <i>PutItem</i>. You can only request one of these operations, not both, in a single <i>WriteRequest</i>. If you do need to perform both of these operations, you will need to provide two separate <i>WriteRequest</i> objects.</p>",
+            "documentation": "Represents an operation to perform - either *DeleteItem* or *PutItem*. You can only request one of these operations, not both, in a single *WriteRequest*. If you do need to perform both of these operations, you will need to provide two separate *WriteRequest* objects.",
             "members": [
                 {
                     "name": "PutRequest",

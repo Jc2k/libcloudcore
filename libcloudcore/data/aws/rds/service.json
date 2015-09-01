@@ -47,7 +47,7 @@
     ],
     "operations": {
         "AddSourceIdentifierToSubscription": {
-            "documentation": "<p>Adds a source identifier to an existing RDS event notification subscription.</p>",
+            "documentation": "Adds a source identifier to an existing RDS event notification subscription.",
             "input": {
                 "shape": "AddSourceIdentifierToSubscriptionMessage"
             },
@@ -56,13 +56,13 @@
             }
         },
         "AddTagsToResource": {
-            "documentation": "<p> Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon RDS resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p> <p>For an overview on tagging Amazon RDS resources, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html\">Tagging Amazon RDS Resources</a>.</p>",
+            "documentation": "Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon RDS resources, or used in a Condition statement in an IAM policy for Amazon RDS.\n\n For an overview on tagging Amazon RDS resources, see `Tagging Amazon RDS Resources <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html>`_.",
             "input": {
                 "shape": "AddTagsToResourceMessage"
             }
         },
         "ApplyPendingMaintenanceAction": {
-            "documentation": "<p>Applies a pending maintenance action to a resource (for example, to a DB instance).</p>",
+            "documentation": "Applies a pending maintenance action to a resource (for example, to a DB instance).",
             "input": {
                 "shape": "ApplyPendingMaintenanceActionMessage"
             },
@@ -71,7 +71,7 @@
             }
         },
         "AuthorizeDBSecurityGroupIngress": {
-            "documentation": "<p> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot authorize ingress from an EC2 security group in one region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another. </note> <p>For an overview of CIDR ranges, go to the <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Wikipedia Tutorial</a>. </p>",
+            "documentation": "Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). \n\n  You cannot authorize ingress from an EC2 security group in one region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.  For an overview of CIDR ranges, go to the `Wikipedia Tutorial <http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_.",
             "input": {
                 "shape": "AuthorizeDBSecurityGroupIngressMessage"
             },
@@ -80,7 +80,7 @@
             }
         },
         "CopyDBClusterSnapshot": {
-            "documentation": "<p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "CopyDBClusterSnapshotMessage"
             },
@@ -89,7 +89,7 @@
             }
         },
         "CopyDBParameterGroup": {
-            "documentation": "<p> Copies the specified DB parameter group. </p>",
+            "documentation": "Copies the specified DB parameter group.",
             "input": {
                 "shape": "CopyDBParameterGroupMessage"
             },
@@ -98,7 +98,7 @@
             }
         },
         "CopyDBSnapshot": {
-            "documentation": "<p> Copies the specified DBSnapshot. The source DBSnapshot must be in the \"available\" state. </p>",
+            "documentation": "Copies the specified DBSnapshot. The source DBSnapshot must be in the \"available\" state.",
             "input": {
                 "shape": "CopyDBSnapshotMessage"
             },
@@ -107,7 +107,7 @@
             }
         },
         "CopyOptionGroup": {
-            "documentation": "<p>Copies the specified option group. </p>",
+            "documentation": "Copies the specified option group.",
             "input": {
                 "shape": "CopyOptionGroupMessage"
             },
@@ -116,7 +116,7 @@
             }
         },
         "CreateDBCluster": {
-            "documentation": "<p>Creates a new Amazon Aurora DB cluster. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Creates a new Amazon Aurora DB cluster. For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "CreateDBClusterMessage"
             },
@@ -125,7 +125,7 @@
             }
         },
         "CreateDBClusterParameterGroup": {
-            "documentation": "<p> Creates a new DB cluster parameter group. </p> <p> Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster. </p> <p> A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after creating it using <a>ModifyDBClusterParameterGroup</a>. Once you've created a DB cluster parameter group, you need to associate it with your DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with a running DB cluster, you need to reboot the DB instances in the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect. </p> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter group has been created or modified.</p> </important> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Creates a new DB cluster parameter group. \n\n  Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster. \n\n  A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after creating it using ModifyDBClusterParameterGroup. Once you've created a DB cluster parameter group, you need to associate it with your DB cluster using ModifyDBCluster. When you associate a new DB cluster parameter group with a running DB cluster, you need to reboot the DB instances in the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect. \n\n  After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the ``character_set_database`` parameter. You can use the *Parameter Groups* option of the `Amazon RDS console <https://console.aws.amazon.com/rds/>`_ or the DescribeDBClusterParameters command to verify that your DB cluster parameter group has been created or modified.\n\n  For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "CreateDBClusterParameterGroupMessage"
             },
@@ -134,7 +134,7 @@
             }
         },
         "CreateDBClusterSnapshot": {
-            "documentation": "<p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "CreateDBClusterSnapshotMessage"
             },
@@ -143,7 +143,7 @@
             }
         },
         "CreateDBInstance": {
-            "documentation": "<p> Creates a new DB instance. </p>",
+            "documentation": "Creates a new DB instance.",
             "input": {
                 "shape": "CreateDBInstanceMessage"
             },
@@ -152,7 +152,7 @@
             }
         },
         "CreateDBInstanceReadReplica": {
-            "documentation": "<p> Creates a DB instance for a DB instance running MySQL or PostgreSQL that acts as a Read Replica of a source DB instance. </p> <p> All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance, except as specified below. </p> <important> <p> The source DB instance must have backup retention enabled. </p> </important>",
+            "documentation": "Creates a DB instance for a DB instance running MySQL or PostgreSQL that acts as a Read Replica of a source DB instance. \n\n  All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance, except as specified below. \n\n   The source DB instance must have backup retention enabled.",
             "input": {
                 "shape": "CreateDBInstanceReadReplicaMessage"
             },
@@ -161,7 +161,7 @@
             }
         },
         "CreateDBParameterGroup": {
-            "documentation": "<p> Creates a new DB parameter group. </p> <p> A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've created a DB parameter group, you need to associate it with your DB instance using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect. </p> <important> <p>After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB parameter group has been created or modified.</p> </important>",
+            "documentation": "Creates a new DB parameter group. \n\n  A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it using *ModifyDBParameterGroup*. Once you've created a DB parameter group, you need to associate it with your DB instance using *ModifyDBInstance*. When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect. \n\n  After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the ``character_set_database`` parameter. You can use the *Parameter Groups* option of the `Amazon RDS console <https://console.aws.amazon.com/rds/>`_ or the *DescribeDBParameters* command to verify that your DB parameter group has been created or modified.",
             "input": {
                 "shape": "CreateDBParameterGroupMessage"
             },
@@ -170,7 +170,7 @@
             }
         },
         "CreateDBSecurityGroup": {
-            "documentation": "<p> Creates a new DB security group. DB security groups control access to a DB instance. </p>",
+            "documentation": "Creates a new DB security group. DB security groups control access to a DB instance.",
             "input": {
                 "shape": "CreateDBSecurityGroupMessage"
             },
@@ -179,7 +179,7 @@
             }
         },
         "CreateDBSnapshot": {
-            "documentation": "<p> Creates a DBSnapshot. The source DBInstance must be in \"available\" state. </p>",
+            "documentation": "Creates a DBSnapshot. The source DBInstance must be in \"available\" state.",
             "input": {
                 "shape": "CreateDBSnapshotMessage"
             },
@@ -188,7 +188,7 @@
             }
         },
         "CreateDBSubnetGroup": {
-            "documentation": "<p> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>",
+            "documentation": "Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region.",
             "input": {
                 "shape": "CreateDBSubnetGroupMessage"
             },
@@ -197,7 +197,7 @@
             }
         },
         "CreateEventSubscription": {
-            "documentation": "<p>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.</p>",
+            "documentation": "Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.\n\n You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.\n\n If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.",
             "input": {
                 "shape": "CreateEventSubscriptionMessage"
             },
@@ -206,7 +206,7 @@
             }
         },
         "CreateOptionGroup": {
-            "documentation": "<p> Creates a new option group. You can create up to 20 option groups. </p>",
+            "documentation": "Creates a new option group. You can create up to 20 option groups.",
             "input": {
                 "shape": "CreateOptionGroupMessage"
             },
@@ -215,7 +215,7 @@
             }
         },
         "DeleteDBCluster": {
-            "documentation": "<p>The DeleteDBCluster action deletes a previously provisioned DB cluster. A successful response from the web service indicates the request was received correctly. When you delete a DB cluster, all automated backups for that DB cluster are deleted and cannot be recovered. Manual DB cluster snapshots of the DB cluster to be deleted are not deleted. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "The DeleteDBCluster action deletes a previously provisioned DB cluster. A successful response from the web service indicates the request was received correctly. When you delete a DB cluster, all automated backups for that DB cluster are deleted and cannot be recovered. Manual DB cluster snapshots of the DB cluster to be deleted are not deleted. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DeleteDBClusterMessage"
             },
@@ -224,13 +224,13 @@
             }
         },
         "DeleteDBClusterParameterGroup": {
-            "documentation": "<p> Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted cannot be associated with any DB clusters. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted cannot be associated with any DB clusters. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DeleteDBClusterParameterGroupMessage"
             }
         },
         "DeleteDBClusterSnapshot": {
-            "documentation": "<p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated. </p> <note>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</note> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated. \n\n The DB cluster snapshot must be in the ``available`` state to be deleted. For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DeleteDBClusterSnapshotMessage"
             },
@@ -239,7 +239,7 @@
             }
         },
         "DeleteDBInstance": {
-            "documentation": "<p> The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the request was received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted. </p> <p> If a final DB snapshot is requested the status of the RDS instance will be \"deleting\" until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this operation. The action cannot be canceled or reverted once submitted. </p> <p>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to \"true\".</p>",
+            "documentation": "The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the request was received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted. \n\n  If a final DB snapshot is requested the status of the RDS instance will be \"deleting\" until the DB snapshot is created. The API action ``DescribeDBInstance`` is used to monitor the status of this operation. The action cannot be canceled or reverted once submitted. \n\n Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to \"true\".",
             "input": {
                 "shape": "DeleteDBInstanceMessage"
             },
@@ -248,19 +248,19 @@
             }
         },
         "DeleteDBParameterGroup": {
-            "documentation": "<p> Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB instances. </p>",
+            "documentation": "Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB instances.",
             "input": {
                 "shape": "DeleteDBParameterGroupMessage"
             }
         },
         "DeleteDBSecurityGroup": {
-            "documentation": "<p> Deletes a DB security group. </p> <note>The specified DB security group must not be associated with any DB instances.</note>",
+            "documentation": "Deletes a DB security group. \n\n The specified DB security group must not be associated with any DB instances.",
             "input": {
                 "shape": "DeleteDBSecurityGroupMessage"
             }
         },
         "DeleteDBSnapshot": {
-            "documentation": "<p> Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated. </p> <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>",
+            "documentation": "Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated. \n\n The DBSnapshot must be in the ``available`` state to be deleted.",
             "input": {
                 "shape": "DeleteDBSnapshotMessage"
             },
@@ -269,13 +269,13 @@
             }
         },
         "DeleteDBSubnetGroup": {
-            "documentation": "<p> Deletes a DB subnet group. </p> <note>The specified database subnet group must not be associated with any DB instances.</note>",
+            "documentation": "Deletes a DB subnet group. \n\n The specified database subnet group must not be associated with any DB instances.",
             "input": {
                 "shape": "DeleteDBSubnetGroupMessage"
             }
         },
         "DeleteEventSubscription": {
-            "documentation": "<p>Deletes an RDS event notification subscription.</p>",
+            "documentation": "Deletes an RDS event notification subscription.",
             "input": {
                 "shape": "DeleteEventSubscriptionMessage"
             },
@@ -284,13 +284,13 @@
             }
         },
         "DeleteOptionGroup": {
-            "documentation": "<p> Deletes an existing option group. </p>",
+            "documentation": "Deletes an existing option group.",
             "input": {
                 "shape": "DeleteOptionGroupMessage"
             }
         },
         "DescribeAccountAttributes": {
-            "documentation": "<p>Lists all of the attributes for a customer account. The attributes include Amazon RDS quotas for the account, such as the number of DB instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value. </p> <p>This command does not take any parameters.</p>",
+            "documentation": "Lists all of the attributes for a customer account. The attributes include Amazon RDS quotas for the account, such as the number of DB instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value. \n\n This command does not take any parameters.",
             "input": {
                 "shape": "DescribeAccountAttributesMessage"
             },
@@ -299,7 +299,7 @@
             }
         },
         "DescribeCertificates": {
-            "documentation": "<p> Lists the set of CA certificates provided by Amazon RDS for this AWS account. </p>",
+            "documentation": "Lists the set of CA certificates provided by Amazon RDS for this AWS account.",
             "input": {
                 "shape": "DescribeCertificatesMessage"
             },
@@ -308,7 +308,7 @@
             }
         },
         "DescribeDBClusterParameterGroups": {
-            "documentation": "<p> Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list will contain only the description of the specified DB cluster parameter group. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Returns a list of ``DBClusterParameterGroup`` descriptions. If a ``DBClusterParameterGroupName`` parameter is specified, the list will contain only the description of the specified DB cluster parameter group. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DescribeDBClusterParameterGroupsMessage"
             },
@@ -317,7 +317,7 @@
             }
         },
         "DescribeDBClusterParameters": {
-            "documentation": "<p> Returns the detailed parameter list for a particular DB cluster parameter group. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Returns the detailed parameter list for a particular DB cluster parameter group. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DescribeDBClusterParametersMessage"
             },
@@ -326,7 +326,7 @@
             }
         },
         "DescribeDBClusterSnapshots": {
-            "documentation": "<p>Returns information about DB cluster snapshots. This API supports pagination. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Returns information about DB cluster snapshots. This API supports pagination. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DescribeDBClusterSnapshotsMessage"
             },
@@ -335,7 +335,7 @@
             }
         },
         "DescribeDBClusters": {
-            "documentation": "<p>Returns information about provisioned Aurora DB clusters. This API supports pagination. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Returns information about provisioned Aurora DB clusters. This API supports pagination. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DescribeDBClustersMessage"
             },
@@ -344,7 +344,7 @@
             }
         },
         "DescribeDBEngineVersions": {
-            "documentation": "<p> Returns a list of the available DB engines. </p>",
+            "documentation": "Returns a list of the available DB engines.",
             "input": {
                 "shape": "DescribeDBEngineVersionsMessage"
             },
@@ -353,7 +353,7 @@
             }
         },
         "DescribeDBInstances": {
-            "documentation": "<p> Returns information about provisioned RDS instances. This API supports pagination. </p>",
+            "documentation": "Returns information about provisioned RDS instances. This API supports pagination.",
             "input": {
                 "shape": "DescribeDBInstancesMessage"
             },
@@ -362,7 +362,7 @@
             }
         },
         "DescribeDBLogFiles": {
-            "documentation": "<p> Returns a list of DB log files for the DB instance. </p>",
+            "documentation": "Returns a list of DB log files for the DB instance.",
             "input": {
                 "shape": "DescribeDBLogFilesMessage"
             },
@@ -371,7 +371,7 @@
             }
         },
         "DescribeDBParameterGroups": {
-            "documentation": "<p> Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified, the list will contain only the description of the specified DB parameter group. </p>",
+            "documentation": "Returns a list of ``DBParameterGroup`` descriptions. If a ``DBParameterGroupName`` is specified, the list will contain only the description of the specified DB parameter group.",
             "input": {
                 "shape": "DescribeDBParameterGroupsMessage"
             },
@@ -380,7 +380,7 @@
             }
         },
         "DescribeDBParameters": {
-            "documentation": "<p> Returns the detailed parameter list for a particular DB parameter group. </p>",
+            "documentation": "Returns the detailed parameter list for a particular DB parameter group.",
             "input": {
                 "shape": "DescribeDBParametersMessage"
             },
@@ -389,7 +389,7 @@
             }
         },
         "DescribeDBSecurityGroups": {
-            "documentation": "<p> Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified, the list will contain only the descriptions of the specified DB security group. </p>",
+            "documentation": "Returns a list of ``DBSecurityGroup`` descriptions. If a ``DBSecurityGroupName`` is specified, the list will contain only the descriptions of the specified DB security group.",
             "input": {
                 "shape": "DescribeDBSecurityGroupsMessage"
             },
@@ -398,7 +398,7 @@
             }
         },
         "DescribeDBSnapshots": {
-            "documentation": "<p> Returns information about DB snapshots. This API supports pagination. </p>",
+            "documentation": "Returns information about DB snapshots. This API supports pagination.",
             "input": {
                 "shape": "DescribeDBSnapshotsMessage"
             },
@@ -407,7 +407,7 @@
             }
         },
         "DescribeDBSubnetGroups": {
-            "documentation": "<p> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. </p> <p>For an overview of CIDR ranges, go to the <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Wikipedia Tutorial</a>. </p>",
+            "documentation": "Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup. \n\n For an overview of CIDR ranges, go to the `Wikipedia Tutorial <http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`_.",
             "input": {
                 "shape": "DescribeDBSubnetGroupsMessage"
             },
@@ -416,7 +416,7 @@
             }
         },
         "DescribeEngineDefaultClusterParameters": {
-            "documentation": "<p> Returns the default engine and system parameter information for the cluster database engine. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Returns the default engine and system parameter information for the cluster database engine. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DescribeEngineDefaultClusterParametersMessage"
             },
@@ -425,7 +425,7 @@
             }
         },
         "DescribeEngineDefaultParameters": {
-            "documentation": "<p> Returns the default engine and system parameter information for the specified database engine. </p>",
+            "documentation": "Returns the default engine and system parameter information for the specified database engine.",
             "input": {
                 "shape": "DescribeEngineDefaultParametersMessage"
             },
@@ -434,7 +434,7 @@
             }
         },
         "DescribeEventCategories": {
-            "documentation": "<p>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in the <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html\"> Events</a> topic in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in the ` Events <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html>`_ topic in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "DescribeEventCategoriesMessage"
             },
@@ -443,7 +443,7 @@
             }
         },
         "DescribeEventSubscriptions": {
-            "documentation": "<p>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </p> <p>If you specify a SubscriptionName, lists the description for that subscription.</p>",
+            "documentation": "Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. \n\n If you specify a SubscriptionName, lists the description for that subscription.",
             "input": {
                 "shape": "DescribeEventSubscriptionsMessage"
             },
@@ -452,7 +452,7 @@
             }
         },
         "DescribeEvents": {
-            "documentation": "<p> Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned. </p>",
+            "documentation": "Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned.",
             "input": {
                 "shape": "DescribeEventsMessage"
             },
@@ -461,7 +461,7 @@
             }
         },
         "DescribeOptionGroupOptions": {
-            "documentation": "<p> Describes all available options. </p>",
+            "documentation": "Describes all available options.",
             "input": {
                 "shape": "DescribeOptionGroupOptionsMessage"
             },
@@ -470,7 +470,7 @@
             }
         },
         "DescribeOptionGroups": {
-            "documentation": "<p> Describes the available option groups. </p>",
+            "documentation": "Describes the available option groups.",
             "input": {
                 "shape": "DescribeOptionGroupsMessage"
             },
@@ -479,7 +479,7 @@
             }
         },
         "DescribeOrderableDBInstanceOptions": {
-            "documentation": "<p> Returns a list of orderable DB instance options for the specified engine. </p>",
+            "documentation": "Returns a list of orderable DB instance options for the specified engine.",
             "input": {
                 "shape": "DescribeOrderableDBInstanceOptionsMessage"
             },
@@ -488,7 +488,7 @@
             }
         },
         "DescribePendingMaintenanceActions": {
-            "documentation": "<p>Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.</p>",
+            "documentation": "Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.",
             "input": {
                 "shape": "DescribePendingMaintenanceActionsMessage"
             },
@@ -497,7 +497,7 @@
             }
         },
         "DescribeReservedDBInstances": {
-            "documentation": "<p> Returns information about reserved DB instances for this account, or about a specified reserved DB instance. </p>",
+            "documentation": "Returns information about reserved DB instances for this account, or about a specified reserved DB instance.",
             "input": {
                 "shape": "DescribeReservedDBInstancesMessage"
             },
@@ -506,7 +506,7 @@
             }
         },
         "DescribeReservedDBInstancesOfferings": {
-            "documentation": "<p> Lists available reserved DB instance offerings. </p>",
+            "documentation": "Lists available reserved DB instance offerings.",
             "input": {
                 "shape": "DescribeReservedDBInstancesOfferingsMessage"
             },
@@ -515,7 +515,7 @@
             }
         },
         "DownloadDBLogFilePortion": {
-            "documentation": "<p> Downloads all or a portion of the specified log file, up to 1 MB in size. </p>",
+            "documentation": "Downloads all or a portion of the specified log file, up to 1 MB in size.",
             "input": {
                 "shape": "DownloadDBLogFilePortionMessage"
             },
@@ -524,7 +524,7 @@
             }
         },
         "FailoverDBCluster": {
-            "documentation": "<p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster promotes one of the read-only instances in the DB cluster to the master DB instance (the cluster writer) and deletes the current primary instance.</p> <p>Amazon Aurora will automatically fail over to a read-only instance, if one exists, when the primary instance fails. You can force a failover when you want to simulate a failure of a DB instance for testing. Because each instance in a DB cluster has its own endpoint address, you will need to clean up and re-establish any existing connections that use those endpoint addresses when the failover is complete.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Forces a failover for a DB cluster.\n\n A failover for a DB cluster promotes one of the read-only instances in the DB cluster to the master DB instance (the cluster writer) and deletes the current primary instance.\n\n Amazon Aurora will automatically fail over to a read-only instance, if one exists, when the primary instance fails. You can force a failover when you want to simulate a failure of a DB instance for testing. Because each instance in a DB cluster has its own endpoint address, you will need to clean up and re-establish any existing connections that use those endpoint addresses when the failover is complete.\n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "FailoverDBClusterMessage"
             },
@@ -533,7 +533,7 @@
             }
         },
         "ListTagsForResource": {
-            "documentation": "<p> Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging an Amazon RDS resource, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html\">Tagging Amazon RDS Resources</a>.</p>",
+            "documentation": "Lists all tags on an Amazon RDS resource.\n\n For an overview on tagging an Amazon RDS resource, see `Tagging Amazon RDS Resources <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html>`_.",
             "input": {
                 "shape": "ListTagsForResourceMessage"
             },
@@ -542,7 +542,7 @@
             }
         },
         "ModifyDBCluster": {
-            "documentation": "<p>Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "ModifyDBClusterMessage"
             },
@@ -551,7 +551,7 @@
             }
         },
         "ModifyDBClusterParameterGroup": {
-            "documentation": "<p> Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p> <note> <p> Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB cluster associated with the parameter group before the change can take effect. </p> </note> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter group has been created or modified.</p> </important>",
+            "documentation": "Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: ``ParameterName``, ``ParameterValue``, and ``ApplyMethod``. A maximum of 20 parameters can be modified in a single request. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*\n\n   Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB cluster associated with the parameter group before the change can take effect. \n\n   After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the ``character_set_database`` parameter. You can use the *Parameter Groups* option of the `Amazon RDS console <https://console.aws.amazon.com/rds/>`_ or the DescribeDBClusterParameters command to verify that your DB cluster parameter group has been created or modified.",
             "input": {
                 "shape": "ModifyDBClusterParameterGroupMessage"
             },
@@ -560,7 +560,7 @@
             }
         },
         "ModifyDBInstance": {
-            "documentation": "<p> Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. </p>",
+            "documentation": "Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request.",
             "input": {
                 "shape": "ModifyDBInstanceMessage"
             },
@@ -569,7 +569,7 @@
             }
         },
         "ModifyDBParameterGroup": {
-            "documentation": "<p> Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <note> <p> Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB instance associated with the parameter group before the change can take effect. </p> </note> <important> <p>After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the modify action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB parameter group has been created or modified.</p> </important>",
+            "documentation": "Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: ``ParameterName``, ``ParameterValue``, and ``ApplyMethod``. A maximum of 20 parameters can be modified in a single request. \n\n   Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB instance associated with the parameter group before the change can take effect. \n\n   After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the modify action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the ``character_set_database`` parameter. You can use the *Parameter Groups* option of the `Amazon RDS console <https://console.aws.amazon.com/rds/>`_ or the *DescribeDBParameters* command to verify that your DB parameter group has been created or modified.",
             "input": {
                 "shape": "ModifyDBParameterGroupMessage"
             },
@@ -578,7 +578,7 @@
             }
         },
         "ModifyDBSubnetGroup": {
-            "documentation": "<p> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </p>",
+            "documentation": "Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region.",
             "input": {
                 "shape": "ModifyDBSubnetGroupMessage"
             },
@@ -587,7 +587,7 @@
             }
         },
         "ModifyEventSubscription": {
-            "documentation": "<p>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list of the event categories for a given SourceType in the <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html\">Events</a> topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.</p>",
+            "documentation": "Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the AddSourceIdentifierToSubscription and RemoveSourceIdentifierFromSubscription calls.\n\n You can see a list of the event categories for a given SourceType in the `Events <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html>`_ topic in the Amazon RDS User Guide or by using the **DescribeEventCategories** action.",
             "input": {
                 "shape": "ModifyEventSubscriptionMessage"
             },
@@ -596,7 +596,7 @@
             }
         },
         "ModifyOptionGroup": {
-            "documentation": "<p> Modifies an existing option group. </p>",
+            "documentation": "Modifies an existing option group.",
             "input": {
                 "shape": "ModifyOptionGroupMessage"
             },
@@ -605,7 +605,7 @@
             }
         },
         "PromoteReadReplica": {
-            "documentation": "<p> Promotes a Read Replica DB instance to a standalone DB instance. </p> <note> <p>We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary instance, backups are taken based on your backup settings.</p> </note>",
+            "documentation": "Promotes a Read Replica DB instance to a standalone DB instance. \n\n  We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary instance, backups are taken based on your backup settings.",
             "input": {
                 "shape": "PromoteReadReplicaMessage"
             },
@@ -614,7 +614,7 @@
             }
         },
         "PurchaseReservedDBInstancesOffering": {
-            "documentation": "<p> Purchases a reserved DB instance offering. </p>",
+            "documentation": "Purchases a reserved DB instance offering.",
             "input": {
                 "shape": "PurchaseReservedDBInstancesOfferingMessage"
             },
@@ -623,7 +623,7 @@
             }
         },
         "RebootDBInstance": {
-            "documentation": "<p> Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. An Amazon RDS event is created when the reboot is completed. </p> <p> If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force a failover to test the availability of your DB instance deployment or to restore operations to the original AZ after a failover occurs. </p> <p> The time required to reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions. </p>",
+            "documentation": "Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. An Amazon RDS event is created when the reboot is completed. \n\n  If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force a failover to test the availability of your DB instance deployment or to restore operations to the original AZ after a failover occurs. \n\n  The time required to reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions.",
             "input": {
                 "shape": "RebootDBInstanceMessage"
             },
@@ -632,7 +632,7 @@
             }
         },
         "RemoveSourceIdentifierFromSubscription": {
-            "documentation": "<p>Removes a source identifier from an existing RDS event notification subscription.</p>",
+            "documentation": "Removes a source identifier from an existing RDS event notification subscription.",
             "input": {
                 "shape": "RemoveSourceIdentifierFromSubscriptionMessage"
             },
@@ -641,13 +641,13 @@
             }
         },
         "RemoveTagsFromResource": {
-            "documentation": "<p> Removes metadata tags from an Amazon RDS resource.</p> <p>For an overview on tagging an Amazon RDS resource, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html\">Tagging Amazon RDS Resources</a>.</p>",
+            "documentation": "Removes metadata tags from an Amazon RDS resource.\n\n For an overview on tagging an Amazon RDS resource, see `Tagging Amazon RDS Resources <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html>`_.",
             "input": {
                 "shape": "RemoveTagsFromResourceMessage"
             }
         },
         "ResetDBClusterParameterGroup": {
-            "documentation": "<p> Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters. </p> <p> When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <a>RebootDBInstance</a> request. You must call <a>RebootDBInstance</a> for every DB instance in your DB cluster that you want the updated static parameter to apply to.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters submit a list of the following: ``ParameterName`` and ``ApplyMethod``. To reset the entire DB cluster parameter group, specify the ``DBClusterParameterGroupName`` and ``ResetAllParameters`` parameters. \n\n  When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to ``pending-reboot`` to take effect on the next DB instance restart or RebootDBInstance request. You must call RebootDBInstance for every DB instance in your DB cluster that you want the updated static parameter to apply to.\n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "ResetDBClusterParameterGroupMessage"
             },
@@ -656,7 +656,7 @@
             }
         },
         "ResetDBParameterGroup": {
-            "documentation": "<p> Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request. </p>",
+            "documentation": "Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the following: ``ParameterName`` and ``ApplyMethod``. To reset the entire DB parameter group, specify the ``DBParameterGroup`` name and ``ResetAllParameters`` parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to ``pending-reboot`` to take effect on the next DB instance restart or ``RebootDBInstance`` request.",
             "input": {
                 "shape": "ResetDBParameterGroupMessage"
             },
@@ -665,7 +665,7 @@
             }
         },
         "RestoreDBClusterFromSnapshot": {
-            "documentation": "<p>Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "RestoreDBClusterFromSnapshotMessage"
             },
@@ -674,7 +674,7 @@
             }
         },
         "RestoreDBClusterToPointInTime": {
-            "documentation": "<p> Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i></p>",
+            "documentation": "Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before ``LatestRestorableTime`` for up to ``BackupRetentionPeriod`` days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group. \n\n For more information on Amazon Aurora, see `Aurora on Amazon RDS <http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html>`_ in the *Amazon RDS User Guide.*",
             "input": {
                 "shape": "RestoreDBClusterToPointInTimeMessage"
             },
@@ -683,7 +683,7 @@
             }
         },
         "RestoreDBInstanceFromDBSnapshot": {
-            "documentation": "<p>Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the most of original configuration, but in a system chosen availability zone with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored AZ deployment and not a single-AZ deployment. </p> <p>If your intent is to replace your original DB instance with the new, restored DB instance, then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB instances with the same name. Once you have renamed your original DB instance with a different identifier, then you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB instance created from the snapshot.</p>",
+            "documentation": "Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the most of original configuration, but in a system chosen availability zone with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored AZ deployment and not a single-AZ deployment. \n\n If your intent is to replace your original DB instance with the new, restored DB instance, then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB instances with the same name. Once you have renamed your original DB instance with a different identifier, then you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB instance created from the snapshot.",
             "input": {
                 "shape": "RestoreDBInstanceFromDBSnapshotMessage"
             },
@@ -692,7 +692,7 @@
             }
         },
         "RestoreDBInstanceToPointInTime": {
-            "documentation": "<p> Restores a DB instance to an arbitrary point-in-time. Users can restore to any point in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The target database is created with the most of original configuration, but in a system chosen availability zone with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment. </p>",
+            "documentation": "Restores a DB instance to an arbitrary point-in-time. Users can restore to any point in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The target database is created with the most of original configuration, but in a system chosen availability zone with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.",
             "input": {
                 "shape": "RestoreDBInstanceToPointInTimeMessage"
             },
@@ -701,7 +701,7 @@
             }
         },
         "RevokeDBSecurityGroupIngress": {
-            "documentation": "<p> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId). </p>",
+            "documentation": "Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).",
             "input": {
                 "shape": "RevokeDBSecurityGroupIngressMessage"
             },
@@ -713,7 +713,7 @@
     "shapes": {
         "AccountAttributesMessage": {
             "type": "structure",
-            "documentation": "<p>Data returned by the <b>DescribeAccountAttributes</b> action.</p>",
+            "documentation": "Data returned by the **DescribeAccountAttributes** action.",
             "members": [
                 {
                     "name": "AccountQuotas",
@@ -724,7 +724,7 @@
         },
         "AccountQuota": {
             "type": "structure",
-            "documentation": "<p>Describes a quota for an AWS account, for example, the number of DB instances allowed.</p>",
+            "documentation": "Describes a quota for an AWS account, for example, the number of DB instances allowed.",
             "members": [
                 {
                     "name": "AccountQuotaName",
@@ -749,7 +749,7 @@
         },
         "AddSourceIdentifierToSubscriptionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -765,7 +765,7 @@
         },
         "AddTagsToResourceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ResourceName",
@@ -784,7 +784,7 @@
         },
         "ApplyPendingMaintenanceActionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ResourceIdentifier",
@@ -805,22 +805,22 @@
         },
         "AuthorizationAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> The specified CIDRIP or EC2 security group is already authorized for the specified DB security group. </p>",
+            "documentation": "The specified CIDRIP or EC2 security group is already authorized for the specified DB security group.",
             "members": []
         },
         "AuthorizationNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> Specified CIDRIP or EC2 security group is not authorized for the specified DB security group. </p> <p>RDS may not also be authorized via IAM to perform necessary actions on your behalf.</p>",
+            "documentation": "Specified CIDRIP or EC2 security group is not authorized for the specified DB security group. \n\n RDS may not also be authorized via IAM to perform necessary actions on your behalf.",
             "members": []
         },
         "AuthorizationQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> DB security group authorization quota has been reached. </p>",
+            "documentation": "DB security group authorization quota has been reached.",
             "members": []
         },
         "AuthorizeDBSecurityGroupIngressMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -851,7 +851,7 @@
         },
         "AvailabilityZone": {
             "type": "structure",
-            "documentation": "<p> Contains Availability Zone information. </p> <p> This data type is used as an element in the following data type: <ul><li><a>OrderableDBInstanceOption</a></li></ul></p>",
+            "documentation": "Contains Availability Zone information. \n\n  This data type is used as an element in the following data type: \n\n * OrderableDBInstanceOption",
             "members": [
                 {
                     "name": "Name",
@@ -876,7 +876,7 @@
         },
         "Certificate": {
             "type": "structure",
-            "documentation": "<p>A CA certificate for an AWS account. </p>",
+            "documentation": "A CA certificate for an AWS account.",
             "members": [
                 {
                     "name": "CertificateIdentifier",
@@ -911,7 +911,7 @@
         },
         "CertificateMessage": {
             "type": "structure",
-            "documentation": "<p>Data returned by the <b>DescribeCertificates</b> action.</p>",
+            "documentation": "Data returned by the **DescribeCertificates** action.",
             "members": [
                 {
                     "name": "Certificates",
@@ -927,12 +927,12 @@
         },
         "CertificateNotFoundFault": {
             "type": "structure",
-            "documentation": "<p><i>CertificateIdentifier</i> does not refer to an existing certificate. </p>",
+            "documentation": "*CertificateIdentifier* does not refer to an existing certificate.",
             "members": []
         },
         "CharacterSet": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. </p>",
+            "documentation": "This data type is used as a response element in the action DescribeDBEngineVersions.",
             "members": [
                 {
                     "name": "CharacterSetName",
@@ -948,7 +948,7 @@
         },
         "CopyDBClusterSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceDBClusterSnapshotIdentifier",
@@ -968,7 +968,7 @@
         },
         "CopyDBParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceDBParameterGroupIdentifier",
@@ -993,7 +993,7 @@
         },
         "CopyDBSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceDBSnapshotIdentifier",
@@ -1018,7 +1018,7 @@
         },
         "CopyOptionGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceOptionGroupIdentifier",
@@ -1043,7 +1043,7 @@
         },
         "CreateDBClusterMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "AvailabilityZones",
@@ -1133,7 +1133,7 @@
         },
         "CreateDBClusterParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -1158,7 +1158,7 @@
         },
         "CreateDBClusterSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterSnapshotIdentifier",
@@ -1179,7 +1179,7 @@
         },
         "CreateDBInstanceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBName",
@@ -1418,7 +1418,7 @@
         },
         "CreateDBParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -1443,7 +1443,7 @@
         },
         "CreateDBSecurityGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -1463,7 +1463,7 @@
         },
         "CreateDBSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSnapshotIdentifier",
@@ -1483,7 +1483,7 @@
         },
         "CreateDBSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -1508,7 +1508,7 @@
         },
         "CreateEventSubscriptionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -1548,7 +1548,7 @@
         },
         "CreateOptionGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -1578,7 +1578,7 @@
         },
         "DBCluster": {
             "type": "structure",
-            "documentation": "<p>Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBCluster</a> </li> <li> <a>DeleteDBCluster</a> </li> <li> <a>FailoverDBCluster</a> </li> <li> <a>ModifyDBCluster</a> </li> <li> <a>RestoreDBClusterFromSnapshot</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the following actions: \n\n \n\n  *  CreateDBCluster \n  *  DeleteDBCluster \n  *  FailoverDBCluster \n  *  ModifyDBCluster \n  *  RestoreDBClusterFromSnapshot \n \n This data type is used as a response element in the DescribeDBClusters action.",
             "members": [
                 {
                     "name": "AllocatedStorage",
@@ -1694,7 +1694,7 @@
         },
         "DBClusterAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>User already has a DB cluster with the given identifier. </p>",
+            "documentation": "User already has a DB cluster with the given identifier.",
             "members": []
         },
         "DBClusterList": {
@@ -1703,7 +1703,7 @@
         },
         "DBClusterMember": {
             "type": "structure",
-            "documentation": "<p>Contains information about an instance that is part of a DB cluster.</p>",
+            "documentation": "Contains information about an instance that is part of a DB cluster.",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -1728,7 +1728,7 @@
         },
         "DBClusterMessage": {
             "type": "structure",
-            "documentation": "<p>Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBClusters action.",
             "members": [
                 {
                     "name": "Marker",
@@ -1744,7 +1744,7 @@
         },
         "DBClusterNotFoundFault": {
             "type": "structure",
-            "documentation": "<p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster. </p>",
+            "documentation": "*DBClusterIdentifier* does not refer to an existing DB cluster.",
             "members": []
         },
         "DBClusterOptionGroupMemberships": {
@@ -1753,7 +1753,7 @@
         },
         "DBClusterOptionGroupStatus": {
             "type": "structure",
-            "documentation": "<p>Contains status information for a DB cluster option group.</p>",
+            "documentation": "Contains status information for a DB cluster option group.",
             "members": [
                 {
                     "name": "DBClusterOptionGroupName",
@@ -1769,7 +1769,7 @@
         },
         "DBClusterParameterGroup": {
             "type": "structure",
-            "documentation": "<p>Contains the result of a successful invocation of the <a>CreateDBClusterParameterGroup</a> action. </p> <p>This data type is used as a request parameter in the <a>DeleteDBClusterParameterGroup</a> action, and as a response element in the <a>DescribeDBClusterParameterGroups</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the CreateDBClusterParameterGroup action. \n\n This data type is used as a request parameter in the DeleteDBClusterParameterGroup action, and as a response element in the DescribeDBClusterParameterGroups action.",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -1790,7 +1790,7 @@
         },
         "DBClusterParameterGroupDetails": {
             "type": "structure",
-            "documentation": "<p>Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.</p>",
+            "documentation": "Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.",
             "members": [
                 {
                     "name": "Parameters",
@@ -1810,7 +1810,7 @@
         },
         "DBClusterParameterGroupNameMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -1821,12 +1821,12 @@
         },
         "DBClusterParameterGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group. </p>",
+            "documentation": "*DBClusterParameterGroupName* does not refer to an existing DB Cluster parameter group.",
             "members": []
         },
         "DBClusterParameterGroupsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "Marker",
@@ -1842,12 +1842,12 @@
         },
         "DBClusterQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota. </p>",
+            "documentation": "User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.",
             "members": []
         },
         "DBClusterSnapshot": {
             "type": "structure",
-            "documentation": "<p>Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBClusterSnapshot</a> </li> <li> <a>DeleteDBClusterSnapshot</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the following actions: \n\n \n\n  *  CreateDBClusterSnapshot \n  *  DeleteDBClusterSnapshot \n \n This data type is used as a response element in the DescribeDBClusterSnapshots action.",
             "members": [
                 {
                     "name": "AvailabilityZones",
@@ -1928,7 +1928,7 @@
         },
         "DBClusterSnapshotAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>User already has a DB cluster snapshot with the given identifier. </p>",
+            "documentation": "User already has a DB cluster snapshot with the given identifier.",
             "members": []
         },
         "DBClusterSnapshotList": {
@@ -1937,7 +1937,7 @@
         },
         "DBClusterSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p> Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a> action. </p>",
+            "documentation": "Provides a list of DB cluster snapshots for the user as the result of a call to the DescribeDBClusterSnapshots action.",
             "members": [
                 {
                     "name": "Marker",
@@ -1953,12 +1953,12 @@
         },
         "DBClusterSnapshotNotFoundFault": {
             "type": "structure",
-            "documentation": "<p><i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot. </p>",
+            "documentation": "*DBClusterSnapshotIdentifier* does not refer to an existing DB cluster snapshot.",
             "members": []
         },
         "DBEngineVersion": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. </p>",
+            "documentation": "This data type is used as a response element in the action DescribeDBEngineVersions.",
             "members": [
                 {
                     "name": "Engine",
@@ -2003,7 +2003,7 @@
         },
         "DBEngineVersionMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBEngineVersions action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2019,7 +2019,7 @@
         },
         "DBInstance": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the following actions: \n\n \n\n  *  CreateDBInstance \n  *  DeleteDBInstance \n  *  ModifyDBInstance \n \n This data type is used as a response element in the DescribeDBInstances action.",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -2230,7 +2230,7 @@
         },
         "DBInstanceAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> User already has a DB instance with the given identifier. </p>",
+            "documentation": "User already has a DB instance with the given identifier.",
             "members": []
         },
         "DBInstanceList": {
@@ -2239,7 +2239,7 @@
         },
         "DBInstanceMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBInstances</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBInstances action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2255,12 +2255,12 @@
         },
         "DBInstanceNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance. </p>",
+            "documentation": "*DBInstanceIdentifier* does not refer to an existing DB instance.",
             "members": []
         },
         "DBInstanceStatusInfo": {
             "type": "structure",
-            "documentation": "<p>Provides a list of status information for a DB instance.</p>",
+            "documentation": "Provides a list of status information for a DB instance.",
             "members": [
                 {
                     "name": "StatusType",
@@ -2290,12 +2290,12 @@
         },
         "DBLogFileNotFoundFault": {
             "type": "structure",
-            "documentation": "<p><i>LogFileName</i> does not refer to an existing DB log file.</p>",
+            "documentation": "*LogFileName* does not refer to an existing DB log file.",
             "members": []
         },
         "DBParameterGroup": {
             "type": "structure",
-            "documentation": "<p>Contains the result of a successful invocation of the <a>CreateDBParameterGroup</a> action. </p> <p>This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a> action, and as a response element in the <a>DescribeDBParameterGroups</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the CreateDBParameterGroup action. \n\n This data type is used as a request parameter in the DeleteDBParameterGroup action, and as a response element in the DescribeDBParameterGroups action.",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2316,12 +2316,12 @@
         },
         "DBParameterGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> A DB parameter group with the same name exists. </p>",
+            "documentation": "A DB parameter group with the same name exists.",
             "members": []
         },
         "DBParameterGroupDetails": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBParameters action.",
             "members": [
                 {
                     "name": "Parameters",
@@ -2341,7 +2341,7 @@
         },
         "DBParameterGroupNameMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the ModifyDBParameterGroup or ResetDBParameterGroup action.",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2352,17 +2352,17 @@
         },
         "DBParameterGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group. </p>",
+            "documentation": "*DBParameterGroupName* does not refer to an existing DB parameter group.",
             "members": []
         },
         "DBParameterGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed number of DB parameter groups. </p>",
+            "documentation": "Request would result in user exceeding the allowed number of DB parameter groups.",
             "members": []
         },
         "DBParameterGroupStatus": {
             "type": "structure",
-            "documentation": "<p> The status of the DB parameter group. </p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>CreateDBInstanceReadReplica</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a> </li> </ul>",
+            "documentation": "The status of the DB parameter group. \n\n This data type is used as a response element in the following actions:\n\n \n\n  *  CreateDBInstance \n  *  CreateDBInstanceReadReplica \n  *  DeleteDBInstance \n  *  ModifyDBInstance \n  *  RebootDBInstance \n  *  RestoreDBInstanceFromDBSnapshot",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2382,7 +2382,7 @@
         },
         "DBParameterGroupsMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBParameterGroups action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2398,7 +2398,7 @@
         },
         "DBSecurityGroup": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>DescribeDBSecurityGroups</a> </li> <li> <a>AuthorizeDBSecurityGroupIngress</a> </li> <li> <a>CreateDBSecurityGroup</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the following actions: \n\n \n\n  *  DescribeDBSecurityGroups \n  *  AuthorizeDBSecurityGroupIngress \n  *  CreateDBSecurityGroup \n  *  RevokeDBSecurityGroupIngress \n \n This data type is used as a response element in the DescribeDBSecurityGroups action.",
             "members": [
                 {
                     "name": "OwnerId",
@@ -2434,12 +2434,12 @@
         },
         "DBSecurityGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> A DB security group with the name specified in <i>DBSecurityGroupName</i> already exists. </p>",
+            "documentation": "A DB security group with the name specified in *DBSecurityGroupName* already exists.",
             "members": []
         },
         "DBSecurityGroupMembership": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the following actions: </p> <ul> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a> </li> <li> <a>RestoreDBInstanceToPointInTime</a> </li> </ul>",
+            "documentation": "This data type is used as a response element in the following actions: \n\n \n\n  *  ModifyDBInstance \n  *  RebootDBInstance \n  *  RestoreDBInstanceFromDBSnapshot \n  *  RestoreDBInstanceToPointInTime",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -2459,7 +2459,7 @@
         },
         "DBSecurityGroupMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBSecurityGroups action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2479,17 +2479,17 @@
         },
         "DBSecurityGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group. </p>",
+            "documentation": "*DBSecurityGroupName* does not refer to an existing DB security group.",
             "members": []
         },
         "DBSecurityGroupNotSupportedFault": {
             "type": "structure",
-            "documentation": "<p> A DB security group is not allowed for this action. </p>",
+            "documentation": "A DB security group is not allowed for this action.",
             "members": []
         },
         "DBSecurityGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed number of DB security groups. </p>",
+            "documentation": "Request would result in user exceeding the allowed number of DB security groups.",
             "members": []
         },
         "DBSecurityGroups": {
@@ -2498,7 +2498,7 @@
         },
         "DBSnapshot": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBSnapshot</a> </li> <li> <a>DeleteDBSnapshot</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the following actions: \n\n \n\n  *  CreateDBSnapshot \n  *  DeleteDBSnapshot \n \n This data type is used as a response element in the DescribeDBSnapshots action.",
             "members": [
                 {
                     "name": "DBSnapshotIdentifier",
@@ -2619,7 +2619,7 @@
         },
         "DBSnapshotAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBSnapshotIdentifier</i> is already used by an existing snapshot. </p>",
+            "documentation": "*DBSnapshotIdentifier* is already used by an existing snapshot.",
             "members": []
         },
         "DBSnapshotList": {
@@ -2628,7 +2628,7 @@
         },
         "DBSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBSnapshots</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBSnapshots action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2644,12 +2644,12 @@
         },
         "DBSnapshotNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot. </p>",
+            "documentation": "*DBSnapshotIdentifier* does not refer to an existing DB snapshot.",
             "members": []
         },
         "DBSubnetGroup": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the following actions: </p> <ul> <li> <a>CreateDBSubnetGroup</a> </li> <li> <a>ModifyDBSubnetGroup</a> </li> <li> <a>DescribeDBSubnetGroups</a> </li> <li> <a>DeleteDBSubnetGroup</a> </li> </ul> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>",
+            "documentation": "Contains the result of a successful invocation of the following actions: \n\n \n\n  *  CreateDBSubnetGroup \n  *  ModifyDBSubnetGroup \n  *  DescribeDBSubnetGroups \n  *  DeleteDBSubnetGroup \n \n This data type is used as a response element in the DescribeDBSubnetGroups action.",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -2680,17 +2680,17 @@
         },
         "DBSubnetGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group. </p>",
+            "documentation": "*DBSubnetGroupName* is already used by an existing DB subnet group.",
             "members": []
         },
         "DBSubnetGroupDoesNotCoverEnoughAZs": {
             "type": "structure",
-            "documentation": "<p> Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone. </p>",
+            "documentation": "Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.",
             "members": []
         },
         "DBSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeDBSubnetGroups action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2706,17 +2706,17 @@
         },
         "DBSubnetGroupNotAllowedFault": {
             "type": "structure",
-            "documentation": "<p> Indicates that the DBSubnetGroup should not be specified while creating read replicas that lie in the same region as the source instance. </p>",
+            "documentation": "Indicates that the DBSubnetGroup should not be specified while creating read replicas that lie in the same region as the source instance.",
             "members": []
         },
         "DBSubnetGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group. </p>",
+            "documentation": "*DBSubnetGroupName* does not refer to an existing DB subnet group.",
             "members": []
         },
         "DBSubnetGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed number of DB subnet groups. </p>",
+            "documentation": "Request would result in user exceeding the allowed number of DB subnet groups.",
             "members": []
         },
         "DBSubnetGroups": {
@@ -2725,17 +2725,17 @@
         },
         "DBSubnetQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed number of subnets in a DB subnet groups. </p>",
+            "documentation": "Request would result in user exceeding the allowed number of subnets in a DB subnet groups.",
             "members": []
         },
         "DBUpgradeDependencyFailureFault": {
             "type": "structure",
-            "documentation": "<p> The DB upgrade failed because a resource the DB depends on could not be modified. </p>",
+            "documentation": "The DB upgrade failed because a resource the DB depends on could not be modified.",
             "members": []
         },
         "DeleteDBClusterMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -2756,7 +2756,7 @@
         },
         "DeleteDBClusterParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -2767,7 +2767,7 @@
         },
         "DeleteDBClusterSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterSnapshotIdentifier",
@@ -2778,7 +2778,7 @@
         },
         "DeleteDBInstanceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -2799,7 +2799,7 @@
         },
         "DeleteDBParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -2810,7 +2810,7 @@
         },
         "DeleteDBSecurityGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -2821,7 +2821,7 @@
         },
         "DeleteDBSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSnapshotIdentifier",
@@ -2832,7 +2832,7 @@
         },
         "DeleteDBSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -2843,7 +2843,7 @@
         },
         "DeleteEventSubscriptionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -2854,7 +2854,7 @@
         },
         "DeleteOptionGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -2865,12 +2865,12 @@
         },
         "DescribeAccountAttributesMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": []
         },
         "DescribeCertificatesMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "CertificateIdentifier",
@@ -2896,7 +2896,7 @@
         },
         "DescribeDBClusterParameterGroupsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -2922,7 +2922,7 @@
         },
         "DescribeDBClusterParametersMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -2953,7 +2953,7 @@
         },
         "DescribeDBClusterSnapshotsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -2989,7 +2989,7 @@
         },
         "DescribeDBClustersMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -3060,7 +3060,7 @@
         },
         "DescribeDBInstancesMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3086,7 +3086,7 @@
         },
         "DescribeDBLogFilesDetails": {
             "type": "structure",
-            "documentation": "<p>This data type is used as a response element to <a>DescribeDBLogFiles</a>.</p>",
+            "documentation": "This data type is used as a response element to DescribeDBLogFiles.",
             "members": [
                 {
                     "name": "LogFileName",
@@ -3111,7 +3111,7 @@
         },
         "DescribeDBLogFilesMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3152,7 +3152,7 @@
         },
         "DescribeDBLogFilesResponse": {
             "type": "structure",
-            "documentation": "<p> The response from a call to <a>DescribeDBLogFiles</a>. </p>",
+            "documentation": "The response from a call to DescribeDBLogFiles.",
             "members": [
                 {
                     "name": "DescribeDBLogFiles",
@@ -3168,7 +3168,7 @@
         },
         "DescribeDBParameterGroupsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -3224,7 +3224,7 @@
         },
         "DescribeDBSecurityGroupsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -3250,7 +3250,7 @@
         },
         "DescribeDBSnapshotsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3286,7 +3286,7 @@
         },
         "DescribeDBSubnetGroupsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -3312,7 +3312,7 @@
         },
         "DescribeEngineDefaultClusterParametersMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupFamily",
@@ -3338,7 +3338,7 @@
         },
         "DescribeEngineDefaultParametersMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupFamily",
@@ -3364,7 +3364,7 @@
         },
         "DescribeEventCategoriesMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceType",
@@ -3380,7 +3380,7 @@
         },
         "DescribeEventSubscriptionsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -3406,7 +3406,7 @@
         },
         "DescribeEventsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceIdentifier",
@@ -3457,7 +3457,7 @@
         },
         "DescribeOptionGroupOptionsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "EngineName",
@@ -3488,7 +3488,7 @@
         },
         "DescribeOptionGroupsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -3524,7 +3524,7 @@
         },
         "DescribeOrderableDBInstanceOptionsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "Engine",
@@ -3570,7 +3570,7 @@
         },
         "DescribePendingMaintenanceActionsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ResourceIdentifier",
@@ -3596,7 +3596,7 @@
         },
         "DescribeReservedDBInstancesMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ReservedDBInstanceId",
@@ -3652,7 +3652,7 @@
         },
         "DescribeReservedDBInstancesOfferingsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ReservedDBInstancesOfferingId",
@@ -3703,7 +3703,7 @@
         },
         "DomainMembership": {
             "type": "structure",
-            "documentation": "<p> An Active Directory Domain membership record associated with the DB instance. </p>",
+            "documentation": "An Active Directory Domain membership record associated with the DB instance.",
             "members": [
                 {
                     "name": "Domain",
@@ -3724,12 +3724,12 @@
         },
         "DomainMembershipList": {
             "type": "list",
-            "documentation": "<p> List of Active Directory Domain membership records associated with a DB instance. </p>",
+            "documentation": "List of Active Directory Domain membership records associated with a DB instance.",
             "of": "DomainMembership"
         },
         "DomainNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> <i>Domain</i> does not refer to an existing Active Directory Domain. </p>",
+            "documentation": "*Domain* does not refer to an existing Active Directory Domain.",
             "members": []
         },
         "Double": {
@@ -3737,7 +3737,7 @@
         },
         "DownloadDBLogFilePortionDetails": {
             "type": "structure",
-            "documentation": "<p>This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.</p>",
+            "documentation": "This data type is used as a response element to DownloadDBLogFilePortion.",
             "members": [
                 {
                     "name": "LogFileData",
@@ -3758,7 +3758,7 @@
         },
         "DownloadDBLogFilePortionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -3784,7 +3784,7 @@
         },
         "EC2SecurityGroup": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the following actions: </p> <ul> <li> <a>AuthorizeDBSecurityGroupIngress</a> </li> <li> <a>DescribeDBSecurityGroups</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a> </li> </ul>",
+            "documentation": "This data type is used as a response element in the following actions: \n\n \n\n  *  AuthorizeDBSecurityGroupIngress \n  *  DescribeDBSecurityGroups \n  *  RevokeDBSecurityGroupIngress",
             "members": [
                 {
                     "name": "Status",
@@ -3814,7 +3814,7 @@
         },
         "Endpoint": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the following actions: </p> <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DescribeDBInstances</a> </li> <li> <a>DeleteDBInstance</a> </li> </ul>",
+            "documentation": "This data type is used as a response element in the following actions: \n\n \n\n  *  CreateDBInstance \n  *  DescribeDBInstances \n  *  DeleteDBInstance",
             "members": [
                 {
                     "name": "Address",
@@ -3830,7 +3830,7 @@
         },
         "EngineDefaults": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeEngineDefaultParameters action.",
             "members": [
                 {
                     "name": "DBParameterGroupFamily",
@@ -3851,7 +3851,7 @@
         },
         "Event": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>DescribeEvents</a> action. </p>",
+            "documentation": "This data type is used as a response element in the DescribeEvents action.",
             "members": [
                 {
                     "name": "SourceIdentifier",
@@ -3886,7 +3886,7 @@
         },
         "EventCategoriesMap": {
             "type": "structure",
-            "documentation": "<p>Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.</p>",
+            "documentation": "Contains the results of a successful invocation of the DescribeEventCategories action.",
             "members": [
                 {
                     "name": "SourceType",
@@ -3906,7 +3906,7 @@
         },
         "EventCategoriesMessage": {
             "type": "structure",
-            "documentation": "<p>Data returned from the <b>DescribeEventCategories</b> action.</p>",
+            "documentation": "Data returned from the **DescribeEventCategories** action.",
             "members": [
                 {
                     "name": "EventCategoriesMapList",
@@ -3921,7 +3921,7 @@
         },
         "EventSubscription": {
             "type": "structure",
-            "documentation": "<p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>",
+            "documentation": "Contains the results of a successful invocation of the DescribeEventSubscriptions action.",
             "members": [
                 {
                     "name": "CustomerAwsId",
@@ -3972,7 +3972,7 @@
         },
         "EventSubscriptionQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>You have reached the maximum number of event subscriptions.</p>",
+            "documentation": "You have reached the maximum number of event subscriptions.",
             "members": []
         },
         "EventSubscriptionsList": {
@@ -3981,7 +3981,7 @@
         },
         "EventSubscriptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Data returned by the <b>DescribeEventSubscriptions</b> action.</p>",
+            "documentation": "Data returned by the **DescribeEventSubscriptions** action.",
             "members": [
                 {
                     "name": "Marker",
@@ -3997,7 +3997,7 @@
         },
         "EventsMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeEvents</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeEvents action.",
             "members": [
                 {
                     "name": "Marker",
@@ -4013,7 +4013,7 @@
         },
         "FailoverDBClusterMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -4047,7 +4047,7 @@
         },
         "IPRange": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action. </p>",
+            "documentation": "This data type is used as a response element in the DescribeDBSecurityGroups action.",
             "members": [
                 {
                     "name": "Status",
@@ -4067,27 +4067,27 @@
         },
         "InstanceQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed number of DB instances. </p>",
+            "documentation": "Request would result in user exceeding the allowed number of DB instances.",
             "members": []
         },
         "InsufficientDBClusterCapacityFault": {
             "type": "structure",
-            "documentation": "<p>The DB cluster does not have enough capacity for the current operation. </p>",
+            "documentation": "The DB cluster does not have enough capacity for the current operation.",
             "members": []
         },
         "InsufficientDBInstanceCapacityFault": {
             "type": "structure",
-            "documentation": "<p> Specified DB instance class is not available in the specified Availability Zone. </p>",
+            "documentation": "Specified DB instance class is not available in the specified Availability Zone.",
             "members": []
         },
         "InsufficientDomainCapacityFault": {
             "type": "structure",
-            "documentation": "<p> Requested Active Directory Domain has reached maximum number of instances. </p>",
+            "documentation": "Requested Active Directory Domain has reached maximum number of instances.",
             "members": []
         },
         "InsufficientStorageClusterCapacityFault": {
             "type": "structure",
-            "documentation": "<p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>",
+            "documentation": "There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.",
             "members": []
         },
         "Integer": {
@@ -4098,77 +4098,77 @@
         },
         "InvalidDBClusterSnapshotStateFault": {
             "type": "structure",
-            "documentation": "<p>The supplied value is not a valid DB cluster snapshot state. </p>",
+            "documentation": "The supplied value is not a valid DB cluster snapshot state.",
             "members": []
         },
         "InvalidDBClusterStateFault": {
             "type": "structure",
-            "documentation": "<p>The supplied value is not a valid DB cluster state. </p>",
+            "documentation": "The supplied value is not a valid DB cluster state.",
             "members": []
         },
         "InvalidDBInstanceStateFault": {
             "type": "structure",
-            "documentation": "<p> The specified DB instance is not in the <i>available</i> state. </p>",
+            "documentation": "The specified DB instance is not in the *available* state.",
             "members": []
         },
         "InvalidDBParameterGroupStateFault": {
             "type": "structure",
-            "documentation": "<p> The DB parameter group cannot be deleted because it is in use. </p>",
+            "documentation": "The DB parameter group cannot be deleted because it is in use.",
             "members": []
         },
         "InvalidDBSecurityGroupStateFault": {
             "type": "structure",
-            "documentation": "<p> The state of the DB security group does not allow deletion. </p>",
+            "documentation": "The state of the DB security group does not allow deletion.",
             "members": []
         },
         "InvalidDBSnapshotStateFault": {
             "type": "structure",
-            "documentation": "<p> The state of the DB snapshot does not allow deletion. </p>",
+            "documentation": "The state of the DB snapshot does not allow deletion.",
             "members": []
         },
         "InvalidDBSubnetGroupFault": {
             "type": "structure",
-            "documentation": "<p> Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read replica of the same source instance. </p>",
+            "documentation": "Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read replica of the same source instance.",
             "members": []
         },
         "InvalidDBSubnetGroupStateFault": {
             "type": "structure",
-            "documentation": "<p> The DB subnet group cannot be deleted because it is in use. </p>",
+            "documentation": "The DB subnet group cannot be deleted because it is in use.",
             "members": []
         },
         "InvalidDBSubnetStateFault": {
             "type": "structure",
-            "documentation": "<p> The DB subnet is not in the <i>available</i> state. </p>",
+            "documentation": "The DB subnet is not in the *available* state.",
             "members": []
         },
         "InvalidEventSubscriptionStateFault": {
             "type": "structure",
-            "documentation": "<p>This error can occur if someone else is modifying a subscription. You should retry the action.</p>",
+            "documentation": "This error can occur if someone else is modifying a subscription. You should retry the action.",
             "members": []
         },
         "InvalidOptionGroupStateFault": {
             "type": "structure",
-            "documentation": "<p> The option group is not in the <i>available</i> state. </p>",
+            "documentation": "The option group is not in the *available* state.",
             "members": []
         },
         "InvalidRestoreFault": {
             "type": "structure",
-            "documentation": "<p> Cannot restore from vpc backup to non-vpc DB instance. </p>",
+            "documentation": "Cannot restore from vpc backup to non-vpc DB instance.",
             "members": []
         },
         "InvalidSubnet": {
             "type": "structure",
-            "documentation": "<p> The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC. </p>",
+            "documentation": "The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.",
             "members": []
         },
         "InvalidVPCNetworkStateFault": {
             "type": "structure",
-            "documentation": "<p> DB subnet group does not cover all Availability Zones after it is created because users' change. </p>",
+            "documentation": "DB subnet group does not cover all Availability Zones after it is created because users' change.",
             "members": []
         },
         "KMSKeyNotAccessibleFault": {
             "type": "structure",
-            "documentation": "<p> Error accessing KMS key. </p>",
+            "documentation": "Error accessing KMS key.",
             "members": []
         },
         "KeyList": {
@@ -4177,7 +4177,7 @@
         },
         "ListTagsForResourceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ResourceName",
@@ -4196,7 +4196,7 @@
         },
         "ModifyDBClusterMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -4257,7 +4257,7 @@
         },
         "ModifyDBClusterParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -4273,7 +4273,7 @@
         },
         "ModifyDBInstanceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -4399,7 +4399,7 @@
         },
         "ModifyDBParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -4415,7 +4415,7 @@
         },
         "ModifyDBSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSubnetGroupName",
@@ -4436,7 +4436,7 @@
         },
         "ModifyEventSubscriptionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -4467,7 +4467,7 @@
         },
         "ModifyOptionGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -4493,7 +4493,7 @@
         },
         "Option": {
             "type": "structure",
-            "documentation": "<p> Option details. </p>",
+            "documentation": "Option details.",
             "members": [
                 {
                     "name": "OptionName",
@@ -4539,7 +4539,7 @@
         },
         "OptionConfiguration": {
             "type": "structure",
-            "documentation": "<p> A list of all available options </p>",
+            "documentation": "A list of all available options",
             "members": [
                 {
                     "name": "OptionName",
@@ -4574,7 +4574,7 @@
         },
         "OptionGroup": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -4615,12 +4615,12 @@
         },
         "OptionGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> The option group you are trying to create already exists. </p>",
+            "documentation": "The option group you are trying to create already exists.",
             "members": []
         },
         "OptionGroupMembership": {
             "type": "structure",
-            "documentation": "<p> Provides information on the option groups the DB instance is a member of. </p>",
+            "documentation": "Provides information on the option groups the DB instance is a member of.",
             "members": [
                 {
                     "name": "OptionGroupName",
@@ -4640,12 +4640,12 @@
         },
         "OptionGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> The specified option group could not be found. </p>",
+            "documentation": "The specified option group could not be found.",
             "members": []
         },
         "OptionGroupOption": {
             "type": "structure",
-            "documentation": "<p> Available option. </p>",
+            "documentation": "Available option.",
             "members": [
                 {
                     "name": "Name",
@@ -4706,7 +4706,7 @@
         },
         "OptionGroupOptionSetting": {
             "type": "structure",
-            "documentation": "<p>Option group option settings are used to display settings available for each option with their default values and other information. These values are used with the DescribeOptionGroupOptions action. </p>",
+            "documentation": "Option group option settings are used to display settings available for each option with their default values and other information. These values are used with the DescribeOptionGroupOptions action.",
             "members": [
                 {
                     "name": "SettingName",
@@ -4746,12 +4746,12 @@
         },
         "OptionGroupOptionsList": {
             "type": "list",
-            "documentation": "<p> List of available option group options. </p>",
+            "documentation": "List of available option group options.",
             "of": "OptionGroupOption"
         },
         "OptionGroupOptionsMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "OptionGroupOptions",
@@ -4766,12 +4766,12 @@
         },
         "OptionGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> The quota of 20 option groups was exceeded for this AWS account. </p>",
+            "documentation": "The quota of 20 option groups was exceeded for this AWS account.",
             "members": []
         },
         "OptionGroups": {
             "type": "structure",
-            "documentation": "<p> List of option groups. </p>",
+            "documentation": "List of option groups.",
             "members": [
                 {
                     "name": "OptionGroupsList",
@@ -4795,7 +4795,7 @@
         },
         "OptionSetting": {
             "type": "structure",
-            "documentation": "<p> Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values. </p>",
+            "documentation": "Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values.",
             "members": [
                 {
                     "name": "Name",
@@ -4862,7 +4862,7 @@
         },
         "OrderableDBInstanceOption": {
             "type": "structure",
-            "documentation": "<p> Contains a list of available options for a DB instance </p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action. </p>",
+            "documentation": "Contains a list of available options for a DB instance \n\n  This data type is used as a response element in the DescribeOrderableDBInstanceOptions action.",
             "members": [
                 {
                     "name": "Engine",
@@ -4927,7 +4927,7 @@
         },
         "OrderableDBInstanceOptionsMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeOrderableDBInstanceOptions action.",
             "members": [
                 {
                     "name": "OrderableDBInstanceOptions",
@@ -4943,7 +4943,7 @@
         },
         "Parameter": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions. </p> <p>This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a> actions.</p>",
+            "documentation": "This data type is used as a request parameter in the ModifyDBParameterGroup and ResetDBParameterGroup actions. \n\n This data type is used as a response element in the DescribeEngineDefaultParameters and DescribeDBParameters actions.",
             "members": [
                 {
                     "name": "ParameterName",
@@ -5003,7 +5003,7 @@
         },
         "PendingMaintenanceAction": {
             "type": "structure",
-            "documentation": "<p>Provides information about a pending maintenance action for a resource.</p>",
+            "documentation": "Provides information about a pending maintenance action for a resource.",
             "members": [
                 {
                     "name": "Action",
@@ -5047,7 +5047,7 @@
         },
         "PendingMaintenanceActionsMessage": {
             "type": "structure",
-            "documentation": "<p>Data returned from the <b>DescribePendingMaintenanceActions</b> action.</p>",
+            "documentation": "Data returned from the **DescribePendingMaintenanceActions** action.",
             "members": [
                 {
                     "name": "PendingMaintenanceActions",
@@ -5063,7 +5063,7 @@
         },
         "PendingModifiedValues": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>ModifyDBInstance</a> action. </p>",
+            "documentation": "This data type is used as a response element in the ModifyDBInstance action.",
             "members": [
                 {
                     "name": "DBInstanceClass",
@@ -5124,12 +5124,12 @@
         },
         "PointInTimeRestoreNotEnabledFault": {
             "type": "structure",
-            "documentation": "<p> <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0. </p>",
+            "documentation": "*SourceDBInstanceIdentifier* refers to a DB instance with *BackupRetentionPeriod* equal to 0.",
             "members": []
         },
         "PromoteReadReplicaMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -5150,12 +5150,12 @@
         },
         "ProvisionedIopsNotAvailableInAZFault": {
             "type": "structure",
-            "documentation": "<p> Provisioned IOPS not available in the specified Availability Zone. </p>",
+            "documentation": "Provisioned IOPS not available in the specified Availability Zone.",
             "members": []
         },
         "PurchaseReservedDBInstancesOfferingMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ReservedDBInstancesOfferingId",
@@ -5184,7 +5184,7 @@
         },
         "RebootDBInstanceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -5200,7 +5200,7 @@
         },
         "RecurringCharge": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>DescribeReservedDBInstancesOfferings</a> actions. </p>",
+            "documentation": "This data type is used as a response element in the DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings actions.",
             "members": [
                 {
                     "name": "RecurringChargeAmount",
@@ -5220,7 +5220,7 @@
         },
         "RemoveSourceIdentifierFromSubscriptionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SubscriptionName",
@@ -5236,7 +5236,7 @@
         },
         "RemoveTagsFromResourceMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ResourceName",
@@ -5252,7 +5252,7 @@
         },
         "ReservedDBInstance": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>PurchaseReservedDBInstancesOffering</a> actions. </p>",
+            "documentation": "This data type is used as a response element in the DescribeReservedDBInstances and PurchaseReservedDBInstancesOffering actions.",
             "members": [
                 {
                     "name": "ReservedDBInstanceId",
@@ -5328,7 +5328,7 @@
         },
         "ReservedDBInstanceAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> User already has a reservation with the given identifier. </p>",
+            "documentation": "User already has a reservation with the given identifier.",
             "members": []
         },
         "ReservedDBInstanceList": {
@@ -5337,7 +5337,7 @@
         },
         "ReservedDBInstanceMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeReservedDBInstances</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeReservedDBInstances action.",
             "members": [
                 {
                     "name": "Marker",
@@ -5353,17 +5353,17 @@
         },
         "ReservedDBInstanceNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> The specified reserved DB Instance not found. </p>",
+            "documentation": "The specified reserved DB Instance not found.",
             "members": []
         },
         "ReservedDBInstanceQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would exceed the user's DB Instance quota. </p>",
+            "documentation": "Request would exceed the user's DB Instance quota.",
             "members": []
         },
         "ReservedDBInstancesOffering": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>DescribeReservedDBInstancesOfferings</a> action. </p>",
+            "documentation": "This data type is used as a response element in the DescribeReservedDBInstancesOfferings action.",
             "members": [
                 {
                     "name": "ReservedDBInstancesOfferingId",
@@ -5423,7 +5423,7 @@
         },
         "ReservedDBInstancesOfferingMessage": {
             "type": "structure",
-            "documentation": "<p> Contains the result of a successful invocation of the <a>DescribeReservedDBInstancesOfferings</a> action. </p>",
+            "documentation": "Contains the result of a successful invocation of the DescribeReservedDBInstancesOfferings action.",
             "members": [
                 {
                     "name": "Marker",
@@ -5439,12 +5439,12 @@
         },
         "ReservedDBInstancesOfferingNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> Specified offering does not exist. </p>",
+            "documentation": "Specified offering does not exist.",
             "members": []
         },
         "ResetDBClusterParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterParameterGroupName",
@@ -5465,7 +5465,7 @@
         },
         "ResetDBParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBParameterGroupName",
@@ -5486,12 +5486,12 @@
         },
         "ResourceNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The specified resource ID was not found. </p>",
+            "documentation": "The specified resource ID was not found.",
             "members": []
         },
         "ResourcePendingMaintenanceActions": {
             "type": "structure",
-            "documentation": "<p>Describes the pending maintenance actions for a resource.</p>",
+            "documentation": "Describes the pending maintenance actions for a resource.",
             "members": [
                 {
                     "name": "ResourceIdentifier",
@@ -5507,7 +5507,7 @@
         },
         "RestoreDBClusterFromSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "AvailabilityZones",
@@ -5568,7 +5568,7 @@
         },
         "RestoreDBClusterToPointInTimeMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBClusterIdentifier",
@@ -5618,7 +5618,7 @@
         },
         "RestoreDBInstanceFromDBSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBInstanceIdentifier",
@@ -5733,7 +5733,7 @@
         },
         "RestoreDBInstanceToPointInTimeMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "SourceDBInstanceIdentifier",
@@ -5858,7 +5858,7 @@
         },
         "RevokeDBSecurityGroupIngressMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "DBSecurityGroupName",
@@ -5889,22 +5889,22 @@
         },
         "SNSInvalidTopicFault": {
             "type": "structure",
-            "documentation": "<p>SNS has responded that there is a problem with the SND topic specified.</p>",
+            "documentation": "SNS has responded that there is a problem with the SND topic specified.",
             "members": []
         },
         "SNSNoAuthorizationFault": {
             "type": "structure",
-            "documentation": "<p>You do not have permission to publish to the SNS topic ARN.</p>",
+            "documentation": "You do not have permission to publish to the SNS topic ARN.",
             "members": []
         },
         "SNSTopicArnNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The SNS topic ARN does not exist.</p>",
+            "documentation": "The SNS topic ARN does not exist.",
             "members": []
         },
         "SnapshotQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed number of DB snapshots. </p>",
+            "documentation": "Request would result in user exceeding the allowed number of DB snapshots.",
             "members": []
         },
         "SourceIdsList": {
@@ -5913,7 +5913,7 @@
         },
         "SourceNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested source could not be found.</p>",
+            "documentation": "The requested source could not be found.",
             "members": []
         },
         "SourceType": {
@@ -5921,12 +5921,12 @@
         },
         "StorageQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p> Request would result in user exceeding the allowed amount of storage available across all DB instances. </p>",
+            "documentation": "Request would result in user exceeding the allowed amount of storage available across all DB instances.",
             "members": []
         },
         "StorageTypeNotSupportedFault": {
             "type": "structure",
-            "documentation": "<p> <i>StorageType</i> specified cannot be associated with the DB Instance. </p>",
+            "documentation": "*StorageType* specified cannot be associated with the DB Instance.",
             "members": []
         },
         "String": {
@@ -5934,7 +5934,7 @@
         },
         "Subnet": {
             "type": "structure",
-            "documentation": "<p> This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action. </p>",
+            "documentation": "This data type is used as a response element in the DescribeDBSubnetGroups action.",
             "members": [
                 {
                     "name": "SubnetIdentifier",
@@ -5954,7 +5954,7 @@
         },
         "SubnetAlreadyInUse": {
             "type": "structure",
-            "documentation": "<p> The DB subnet is already in use in the Availability Zone. </p>",
+            "documentation": "The DB subnet is already in use in the Availability Zone.",
             "members": []
         },
         "SubnetIdentifierList": {
@@ -5967,17 +5967,17 @@
         },
         "SubscriptionAlreadyExistFault": {
             "type": "structure",
-            "documentation": "<p>The supplied subscription name already exists.</p>",
+            "documentation": "The supplied subscription name already exists.",
             "members": []
         },
         "SubscriptionCategoryNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The supplied category does not exist.</p>",
+            "documentation": "The supplied category does not exist.",
             "members": []
         },
         "SubscriptionNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The subscription name does not exist.</p>",
+            "documentation": "The subscription name does not exist.",
             "members": []
         },
         "SupportedCharacterSetsList": {
@@ -5989,7 +5989,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</p>",
+            "documentation": "Metadata assigned to an Amazon RDS resource consisting of a key-value pair.",
             "members": [
                 {
                     "name": "Key",
@@ -6005,12 +6005,12 @@
         },
         "TagList": {
             "type": "list",
-            "documentation": "<p>A list of tags.</p>",
+            "documentation": "A list of tags.",
             "of": "Tag"
         },
         "TagListMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "TagList",
@@ -6025,7 +6025,7 @@
         },
         "VpcSecurityGroupMembership": {
             "type": "structure",
-            "documentation": "<p>This data type is used as a response element for queries on VPC security group membership.</p>",
+            "documentation": "This data type is used as a response element for queries on VPC security group membership.",
             "members": [
                 {
                     "name": "VpcSecurityGroupId",

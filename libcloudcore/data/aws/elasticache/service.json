@@ -35,7 +35,7 @@
     ],
     "operations": {
         "AddTagsToResource": {
-            "documentation": "<p>The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named resource. A <i>cost allocation tag</i> is a key-value pair where the key and value are case-sensitive. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p> When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html\">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>",
+            "documentation": "The *AddTagsToResource* action adds up to 10 cost allocation tags to the named resource. A *cost allocation tag* is a key-value pair where the key and value are case-sensitive. Cost allocation tags can be used to categorize and track your AWS costs.\n\n  When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see `Using Cost Allocation Tags in Amazon ElastiCache <http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html>`_.",
             "input": {
                 "shape": "AddTagsToResourceMessage"
             },
@@ -44,7 +44,7 @@
             }
         },
         "AuthorizeCacheSecurityGroupIngress": {
-            "documentation": "<p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region. </note>",
+            "documentation": "The *AuthorizeCacheSecurityGroupIngress* action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.\n\n You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region.",
             "input": {
                 "shape": "AuthorizeCacheSecurityGroupIngressMessage"
             },
@@ -53,7 +53,7 @@
             }
         },
         "CopySnapshot": {
-            "documentation": "<p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>",
+            "documentation": "The *CopySnapshot* action makes a copy of an existing snapshot.",
             "input": {
                 "shape": "CopySnapshotMessage"
             },
@@ -62,7 +62,7 @@
             }
         },
         "CreateCacheCluster": {
-            "documentation": "<p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>",
+            "documentation": "The *CreateCacheCluster* action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.",
             "input": {
                 "shape": "CreateCacheClusterMessage"
             },
@@ -71,7 +71,7 @@
             }
         },
         "CreateCacheParameterGroup": {
-            "documentation": "<p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.</p>",
+            "documentation": "The *CreateCacheParameterGroup* action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.",
             "input": {
                 "shape": "CreateCacheParameterGroupMessage"
             },
@@ -80,7 +80,7 @@
             }
         },
         "CreateCacheSecurityGroup": {
-            "documentation": "<p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.</p> <p>Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html\">CreateCacheSubnetGroup</a>.</p>",
+            "documentation": "The *CreateCacheSecurityGroup* action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.\n\n Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see `CreateCacheSubnetGroup <http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html>`_.",
             "input": {
                 "shape": "CreateCacheSecurityGroupMessage"
             },
@@ -89,7 +89,7 @@
             }
         },
         "CreateCacheSubnetGroup": {
-            "documentation": "<p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.</p> <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).</p>",
+            "documentation": "The *CreateCacheSubnetGroup* action creates a new cache subnet group.\n\n Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).",
             "input": {
                 "shape": "CreateCacheSubnetGroupMessage"
             },
@@ -98,7 +98,7 @@
             }
         },
         "CreateReplicationGroup": {
-            "documentation": "<p>The <i>CreateReplicationGroup</i> action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.</p> <p>When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>",
+            "documentation": "The *CreateReplicationGroup* action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.\n\n When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.\n\n **Note:** This action is valid only for Redis.",
             "input": {
                 "shape": "CreateReplicationGroupMessage"
             },
@@ -107,7 +107,7 @@
             }
         },
         "CreateSnapshot": {
-            "documentation": "<p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific moment in time.</p>",
+            "documentation": "The *CreateSnapshot* action creates a copy of an entire cache cluster at a specific moment in time.",
             "input": {
                 "shape": "CreateSnapshotMessage"
             },
@@ -116,7 +116,7 @@
             }
         },
         "DeleteCacheCluster": {
-            "documentation": "<p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.</p>",
+            "documentation": "The *DeleteCacheCluster* action deletes a previously provisioned cache cluster. *DeleteCacheCluster* deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.\n\n This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.",
             "input": {
                 "shape": "DeleteCacheClusterMessage"
             },
@@ -125,25 +125,25 @@
             }
         },
         "DeleteCacheParameterGroup": {
-            "documentation": "<p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>",
+            "documentation": "The *DeleteCacheParameterGroup* action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.",
             "input": {
                 "shape": "DeleteCacheParameterGroupMessage"
             }
         },
         "DeleteCacheSecurityGroup": {
-            "documentation": "<p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.</p> <note>You cannot delete a cache security group if it is associated with any cache clusters.</note>",
+            "documentation": "The *DeleteCacheSecurityGroup* action deletes a cache security group.\n\n You cannot delete a cache security group if it is associated with any cache clusters.",
             "input": {
                 "shape": "DeleteCacheSecurityGroupMessage"
             }
         },
         "DeleteCacheSubnetGroup": {
-            "documentation": "<p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p> <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>",
+            "documentation": "The *DeleteCacheSubnetGroup* action deletes a cache subnet group.\n\n You cannot delete a cache subnet group if it is associated with any cache clusters.",
             "input": {
                 "shape": "DeleteCacheSubnetGroupMessage"
             }
         },
         "DeleteReplicationGroup": {
-            "documentation": "<p>The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p> <p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>",
+            "documentation": "The *DeleteReplicationGroup* action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.\n\n When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.",
             "input": {
                 "shape": "DeleteReplicationGroupMessage"
             },
@@ -152,7 +152,7 @@
             }
         },
         "DeleteSnapshot": {
-            "documentation": "<p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.</p>",
+            "documentation": "The *DeleteSnapshot* action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.",
             "input": {
                 "shape": "DeleteSnapshotMessage"
             },
@@ -161,7 +161,7 @@
             }
         },
         "DescribeCacheClusters": {
-            "documentation": "<p>The <i>DescribeCacheClusters</i> action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</p>",
+            "documentation": "The *DescribeCacheClusters* action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.\n\n By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional *ShowDetails* flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.\n\n If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.\n\n If the cluster is in the DELETING state, only cluster level information will be displayed.\n\n If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is *available*, the cluster is ready for use.\n\n If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.",
             "input": {
                 "shape": "DescribeCacheClustersMessage"
             },
@@ -170,7 +170,7 @@
             }
         },
         "DescribeCacheEngineVersions": {
-            "documentation": "<p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache engines and their versions.</p>",
+            "documentation": "The *DescribeCacheEngineVersions* action returns a list of the available cache engines and their versions.",
             "input": {
                 "shape": "DescribeCacheEngineVersionsMessage"
             },
@@ -179,7 +179,7 @@
             }
         },
         "DescribeCacheParameterGroups": {
-            "documentation": "<p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.</p>",
+            "documentation": "The *DescribeCacheParameterGroups* action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.",
             "input": {
                 "shape": "DescribeCacheParameterGroupsMessage"
             },
@@ -188,7 +188,7 @@
             }
         },
         "DescribeCacheParameters": {
-            "documentation": "<p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list for a particular cache parameter group.</p>",
+            "documentation": "The *DescribeCacheParameters* action returns the detailed parameter list for a particular cache parameter group.",
             "input": {
                 "shape": "DescribeCacheParametersMessage"
             },
@@ -197,7 +197,7 @@
             }
         },
         "DescribeCacheSecurityGroups": {
-            "documentation": "<p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.</p>",
+            "documentation": "The *DescribeCacheSecurityGroups* action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.",
             "input": {
                 "shape": "DescribeCacheSecurityGroupsMessage"
             },
@@ -206,7 +206,7 @@
             }
         },
         "DescribeCacheSubnetGroups": {
-            "documentation": "<p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>",
+            "documentation": "The *DescribeCacheSubnetGroups* action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.",
             "input": {
                 "shape": "DescribeCacheSubnetGroupsMessage"
             },
@@ -215,7 +215,7 @@
             }
         },
         "DescribeEngineDefaultParameters": {
-            "documentation": "<p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system parameter information for the specified cache engine.</p>",
+            "documentation": "The *DescribeEngineDefaultParameters* action returns the default engine and system parameter information for the specified cache engine.",
             "input": {
                 "shape": "DescribeEngineDefaultParametersMessage"
             },
@@ -224,7 +224,7 @@
             }
         },
         "DescribeEvents": {
-            "documentation": "<p>The <i>DescribeEvents</i> action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
+            "documentation": "The *DescribeEvents* action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.\n\n By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.",
             "input": {
                 "shape": "DescribeEventsMessage"
             },
@@ -233,7 +233,7 @@
             }
         },
         "DescribeReplicationGroups": {
-            "documentation": "<p>The <i>DescribeReplicationGroups</i> action returns information about a particular replication group. If no identifier is specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</p>",
+            "documentation": "The *DescribeReplicationGroups* action returns information about a particular replication group. If no identifier is specified, *DescribeReplicationGroups* returns information about all replication groups.",
             "input": {
                 "shape": "DescribeReplicationGroupsMessage"
             },
@@ -242,7 +242,7 @@
             }
         },
         "DescribeReservedCacheNodes": {
-            "documentation": "<p>The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>",
+            "documentation": "The *DescribeReservedCacheNodes* action returns information about reserved cache nodes for this account, or about a specified reserved cache node.",
             "input": {
                 "shape": "DescribeReservedCacheNodesMessage"
             },
@@ -251,7 +251,7 @@
             }
         },
         "DescribeReservedCacheNodesOfferings": {
-            "documentation": "<p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache node offerings.</p>",
+            "documentation": "The *DescribeReservedCacheNodesOfferings* action lists available reserved cache node offerings.",
             "input": {
                 "shape": "DescribeReservedCacheNodesOfferingsMessage"
             },
@@ -260,7 +260,7 @@
             }
         },
         "DescribeSnapshots": {
-            "documentation": "<p>The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>",
+            "documentation": "The *DescribeSnapshots* action returns information about cache cluster snapshots. By default, *DescribeSnapshots* lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.",
             "input": {
                 "shape": "DescribeSnapshotsMessage"
             },
@@ -269,7 +269,7 @@
             }
         },
         "ListTagsForResource": {
-            "documentation": "<p>The <i>ListTagsForResource</i> action lists all cost allocation tags currently on the named resource. A <i>cost allocation tag</i> is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html\">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>",
+            "documentation": "The *ListTagsForResource* action lists all cost allocation tags currently on the named resource. A *cost allocation tag* is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.\n\n You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see `Using Cost Allocation Tags in Amazon ElastiCache <http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html>`_.",
             "input": {
                 "shape": "ListTagsForResourceMessage"
             },
@@ -278,7 +278,7 @@
             }
         },
         "ModifyCacheCluster": {
-            "documentation": "<p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>",
+            "documentation": "The *ModifyCacheCluster* action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.",
             "input": {
                 "shape": "ModifyCacheClusterMessage"
             },
@@ -287,7 +287,7 @@
             }
         },
         "ModifyCacheParameterGroup": {
-            "documentation": "<p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>",
+            "documentation": "The *ModifyCacheParameterGroup* action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.",
             "input": {
                 "shape": "ModifyCacheParameterGroupMessage"
             },
@@ -296,7 +296,7 @@
             }
         },
         "ModifyCacheSubnetGroup": {
-            "documentation": "<p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.</p>",
+            "documentation": "The *ModifyCacheSubnetGroup* action modifies an existing cache subnet group.",
             "input": {
                 "shape": "ModifyCacheSubnetGroupMessage"
             },
@@ -305,7 +305,7 @@
             }
         },
         "ModifyReplicationGroup": {
-            "documentation": "<p>The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.</p>",
+            "documentation": "The *ModifyReplicationGroup* action modifies the settings for a replication group.",
             "input": {
                 "shape": "ModifyReplicationGroupMessage"
             },
@@ -314,7 +314,7 @@
             }
         },
         "PurchaseReservedCacheNodesOffering": {
-            "documentation": "<p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved cache node offering.</p>",
+            "documentation": "The *PurchaseReservedCacheNodesOffering* action allows you to purchase a reserved cache node offering.",
             "input": {
                 "shape": "PurchaseReservedCacheNodesOfferingMessage"
             },
@@ -323,7 +323,7 @@
             }
         },
         "RebootCacheCluster": {
-            "documentation": "<p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache cluster event is created.</p>",
+            "documentation": "The *RebootCacheCluster* action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.\n\n The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.\n\n When the reboot is complete, a cache cluster event is created.",
             "input": {
                 "shape": "RebootCacheClusterMessage"
             },
@@ -332,7 +332,7 @@
             }
         },
         "RemoveTagsFromResource": {
-            "documentation": "<p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code> list from the named resource.</p>",
+            "documentation": "The *RemoveTagsFromResource* action removes the tags identified by the ``TagKeys`` list from the named resource.",
             "input": {
                 "shape": "RemoveTagsFromResourceMessage"
             },
@@ -341,7 +341,7 @@
             }
         },
         "ResetCacheParameterGroup": {
-            "documentation": "<p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</p>",
+            "documentation": "The *ResetCacheParameterGroup* action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the *ResetAllParameters* and *CacheParameterGroupName* parameters.",
             "input": {
                 "shape": "ResetCacheParameterGroupMessage"
             },
@@ -350,7 +350,7 @@
             }
         },
         "RevokeCacheSecurityGroupIngress": {
-            "documentation": "<p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.</p>",
+            "documentation": "The *RevokeCacheSecurityGroupIngress* action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.",
             "input": {
                 "shape": "RevokeCacheSecurityGroupIngressMessage"
             },
@@ -365,7 +365,7 @@
         },
         "AddTagsToResourceMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an <i>AddTagsToResource</i> action.</p>",
+            "documentation": "Represents the input of an *AddTagsToResource* action.",
             "members": [
                 {
                     "name": "ResourceName",
@@ -381,17 +381,17 @@
         },
         "AuthorizationAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>The specified Amazon EC2 security group is already authorized for the specified cache security group.</p>",
+            "documentation": "The specified Amazon EC2 security group is already authorized for the specified cache security group.",
             "members": []
         },
         "AuthorizationNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The specified Amazon EC2 security group is not authorized for the specified cache security group.</p>",
+            "documentation": "The specified Amazon EC2 security group is not authorized for the specified cache security group.",
             "members": []
         },
         "AuthorizeCacheSecurityGroupIngressMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an <i>AuthorizeCacheSecurityGroupIngress</i> action.</p>",
+            "documentation": "Represents the input of an *AuthorizeCacheSecurityGroupIngress* action.",
             "members": [
                 {
                     "name": "CacheSecurityGroupName",
@@ -415,7 +415,7 @@
         },
         "AvailabilityZone": {
             "type": "structure",
-            "documentation": "<p>Describes an Availability Zone in which the cache cluster is launched.</p>",
+            "documentation": "Describes an Availability Zone in which the cache cluster is launched.",
             "members": [
                 {
                     "name": "Name",
@@ -439,7 +439,7 @@
         },
         "CacheCluster": {
             "type": "structure",
-            "documentation": "<p>Contains all of the attributes of a specific cache cluster.</p>",
+            "documentation": "Contains all of the attributes of a specific cache cluster.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -551,7 +551,7 @@
         },
         "CacheClusterAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>You already have a cache cluster with the given identifier.</p>",
+            "documentation": "You already have a cache cluster with the given identifier.",
             "members": []
         },
         "CacheClusterList": {
@@ -560,7 +560,7 @@
         },
         "CacheClusterMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeCacheClusters</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeCacheClusters* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -576,12 +576,12 @@
         },
         "CacheClusterNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested cache cluster ID does not refer to an existing cache cluster.</p>",
+            "documentation": "The requested cache cluster ID does not refer to an existing cache cluster.",
             "members": []
         },
         "CacheEngineVersion": {
             "type": "structure",
-            "documentation": "<p>Provides all of the details about a particular cache engine version.</p>",
+            "documentation": "Provides all of the details about a particular cache engine version.",
             "members": [
                 {
                     "name": "Engine",
@@ -616,7 +616,7 @@
         },
         "CacheEngineVersionMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>DescribeCacheEngineVersions</a> action.</p>",
+            "documentation": "Represents the output of a DescribeCacheEngineVersions action.",
             "members": [
                 {
                     "name": "Marker",
@@ -632,7 +632,7 @@
         },
         "CacheNode": {
             "type": "structure",
-            "documentation": "<p>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p> <p>Valid node types are as follows:</p> <ul> <li>General purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li> <li>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul> <li>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li> <li>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b></p> <ul> <li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2 instances.</li> <li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li> </ul> <p>For a complete listing of cache node types and specifications, see <a href=\"http://aws.amazon.com/elasticache/details\">Amazon ElastiCache Product Features and Details</a> and <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific\">Cache Node Type-Specific Parameters for Memcached</a> or <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific\">Cache Node Type-Specific Parameters for Redis</a>. </p>",
+            "documentation": "Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.\n\n Valid node types are as follows:\n\n \n\n  * General purpose: \n\n  * Current generation: ``cache.t2.micro``, ``cache.t2.small``, ``cache.t2.medium``, ``cache.m3.medium``, ``cache.m3.large``, ``cache.m3.xlarge``, ``cache.m3.2xlarge``\n  * Previous generation: ``cache.t1.micro``, ``cache.m1.small``, ``cache.m1.medium``, ``cache.m1.large``, ``cache.m1.xlarge``\n \n\n  * Compute optimized: ``cache.c1.xlarge``\n  * Memory optimized \n\n  * Current generation: ``cache.r3.large``, ``cache.r3.xlarge``, ``cache.r3.2xlarge``, ``cache.r3.4xlarge``, ``cache.r3.8xlarge``\n  * Previous generation: ``cache.m2.xlarge``, ``cache.m2.2xlarge``, ``cache.m2.4xlarge``\n \n\n \n **Notes:**\n\n \n\n  * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).\n  * Redis backup/restore is not supported for t2 instances.\n  * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.\n \n For a complete listing of cache node types and specifications, see `Amazon ElastiCache Product Features and Details <http://aws.amazon.com/elasticache/details>`_ and `Cache Node Type-Specific Parameters for Memcached <http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific>`_ or `Cache Node Type-Specific Parameters for Redis <http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific>`_.",
             "members": [
                 {
                     "name": "CacheNodeId",
@@ -681,7 +681,7 @@
         },
         "CacheNodeTypeSpecificParameter": {
             "type": "structure",
-            "documentation": "<p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache node type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.</p>",
+            "documentation": "A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a *cache.m1.large* cache node type would have a larger *maxmemory* value than a *cache.m1.small* type.",
             "members": [
                 {
                     "name": "ParameterName",
@@ -731,7 +731,7 @@
         },
         "CacheNodeTypeSpecificValue": {
             "type": "structure",
-            "documentation": "<p>A value that applies only to a certain cache node type.</p>",
+            "documentation": "A value that applies only to a certain cache node type.",
             "members": [
                 {
                     "name": "CacheNodeType",
@@ -751,7 +751,7 @@
         },
         "CacheParameterGroup": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>CreateCacheParameterGroup</i> action.</p>",
+            "documentation": "Represents the output of a *CreateCacheParameterGroup* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -772,12 +772,12 @@
         },
         "CacheParameterGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>A cache parameter group with the requested name already exists.</p>",
+            "documentation": "A cache parameter group with the requested name already exists.",
             "members": []
         },
         "CacheParameterGroupDetails": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeCacheParameters</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeCacheParameters* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -802,7 +802,7 @@
         },
         "CacheParameterGroupNameMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of one of the following actions:</p> <ul> <li> <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i> </li> </ul>",
+            "documentation": "Represents the output of one of the following actions:\n\n \n\n  *  *ModifyCacheParameterGroup* \n  *  *ResetCacheParameterGroup*",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -813,17 +813,17 @@
         },
         "CacheParameterGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> The requested cache parameter group name does not refer to an existing cache parameter group.</p>",
+            "documentation": "The requested cache parameter group name does not refer to an existing cache parameter group.",
             "members": []
         },
         "CacheParameterGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the maximum number of cache security groups.</p>",
+            "documentation": "The request cannot be processed because it would exceed the maximum number of cache security groups.",
             "members": []
         },
         "CacheParameterGroupStatus": {
             "type": "structure",
-            "documentation": "<p>The status of the cache parameter group.</p>",
+            "documentation": "The status of the cache parameter group.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -844,7 +844,7 @@
         },
         "CacheParameterGroupsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeCacheParameterGroups</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeCacheParameterGroups* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -860,7 +860,7 @@
         },
         "CacheSecurityGroup": {
             "type": "structure",
-            "documentation": "<p>Represents the output of one of the following actions:</p> <ul> <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li> <li> <i>CreateCacheSecurityGroup</i> </li> <li> <i>RevokeCacheSecurityGroupIngress</i> </li> </ul>",
+            "documentation": "Represents the output of one of the following actions:\n\n \n\n  *  *AuthorizeCacheSecurityGroupIngress* \n  *  *CreateCacheSecurityGroup* \n  *  *RevokeCacheSecurityGroupIngress*",
             "members": [
                 {
                     "name": "OwnerId",
@@ -886,12 +886,12 @@
         },
         "CacheSecurityGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>A cache security group with the specified name already exists.</p>",
+            "documentation": "A cache security group with the specified name already exists.",
             "members": []
         },
         "CacheSecurityGroupMembership": {
             "type": "structure",
-            "documentation": "<p>Represents a cache cluster's status within a particular cache security group.</p>",
+            "documentation": "Represents a cache cluster's status within a particular cache security group.",
             "members": [
                 {
                     "name": "CacheSecurityGroupName",
@@ -911,7 +911,7 @@
         },
         "CacheSecurityGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeCacheSecurityGroups</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeCacheSecurityGroups* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -931,12 +931,12 @@
         },
         "CacheSecurityGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p> The requested cache security group name does not refer to an existing cache security group.</p>",
+            "documentation": "The requested cache security group name does not refer to an existing cache security group.",
             "members": []
         },
         "CacheSecurityGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the allowed number of cache security groups.</p>",
+            "documentation": "The request cannot be processed because it would exceed the allowed number of cache security groups.",
             "members": []
         },
         "CacheSecurityGroups": {
@@ -945,7 +945,7 @@
         },
         "CacheSubnetGroup": {
             "type": "structure",
-            "documentation": "<p>Represents the output of one of the following actions:</p> <ul> <li> <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i> </li> </ul>",
+            "documentation": "Represents the output of one of the following actions:\n\n \n\n  *  *CreateCacheSubnetGroup* \n  *  *ModifyCacheSubnetGroup*",
             "members": [
                 {
                     "name": "CacheSubnetGroupName",
@@ -971,17 +971,17 @@
         },
         "CacheSubnetGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p> The requested cache subnet group name is already in use by an existing cache subnet group.</p>",
+            "documentation": "The requested cache subnet group name is already in use by an existing cache subnet group.",
             "members": []
         },
         "CacheSubnetGroupInUse": {
             "type": "structure",
-            "documentation": "<p>The requested cache subnet group is currently in use.</p>",
+            "documentation": "The requested cache subnet group is currently in use.",
             "members": []
         },
         "CacheSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeCacheSubnetGroups</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeCacheSubnetGroups* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -997,12 +997,12 @@
         },
         "CacheSubnetGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>",
+            "documentation": "The requested cache subnet group name does not refer to an existing cache subnet group.",
             "members": []
         },
         "CacheSubnetGroupQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the allowed number of cache subnet groups.</p>",
+            "documentation": "The request cannot be processed because it would exceed the allowed number of cache subnet groups.",
             "members": []
         },
         "CacheSubnetGroups": {
@@ -1011,7 +1011,7 @@
         },
         "CacheSubnetQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the allowed number of subnets in a cache subnet group.</p>",
+            "documentation": "The request cannot be processed because it would exceed the allowed number of subnets in a cache subnet group.",
             "members": []
         },
         "ClusterIdList": {
@@ -1020,12 +1020,12 @@
         },
         "ClusterQuotaForCustomerExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the allowed number of cache clusters per customer.</p>",
+            "documentation": "The request cannot be processed because it would exceed the allowed number of cache clusters per customer.",
             "members": []
         },
         "CopySnapshotMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CopySnapshotMessage</i> action.</p>",
+            "documentation": "Represents the input of a *CopySnapshotMessage* action.",
             "members": [
                 {
                     "name": "SourceSnapshotName",
@@ -1041,7 +1041,7 @@
         },
         "CreateCacheClusterMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateCacheCluster</i> action.</p>",
+            "documentation": "Represents the input of a *CreateCacheCluster* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -1157,7 +1157,7 @@
         },
         "CreateCacheParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateCacheParameterGroup</i> action.</p>",
+            "documentation": "Represents the input of a *CreateCacheParameterGroup* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -1178,7 +1178,7 @@
         },
         "CreateCacheSecurityGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateCacheSecurityGroup</i> action.</p>",
+            "documentation": "Represents the input of a *CreateCacheSecurityGroup* action.",
             "members": [
                 {
                     "name": "CacheSecurityGroupName",
@@ -1194,7 +1194,7 @@
         },
         "CreateCacheSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateCacheSubnetGroup</i> action.</p>",
+            "documentation": "Represents the input of a *CreateCacheSubnetGroup* action.",
             "members": [
                 {
                     "name": "CacheSubnetGroupName",
@@ -1215,7 +1215,7 @@
         },
         "CreateReplicationGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateReplicationGroup</i> action.</p>",
+            "documentation": "Represents the input of a *CreateReplicationGroup* action.",
             "members": [
                 {
                     "name": "ReplicationGroupId",
@@ -1331,7 +1331,7 @@
         },
         "CreateSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>CreateSnapshot</i> action.</p>",
+            "documentation": "Represents the input of a *CreateSnapshot* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -1347,7 +1347,7 @@
         },
         "DeleteCacheClusterMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteCacheCluster</i> action.</p>",
+            "documentation": "Represents the input of a *DeleteCacheCluster* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -1363,7 +1363,7 @@
         },
         "DeleteCacheParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteCacheParameterGroup</i> action.</p>",
+            "documentation": "Represents the input of a *DeleteCacheParameterGroup* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -1374,7 +1374,7 @@
         },
         "DeleteCacheSecurityGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteCacheSecurityGroup</i> action.</p>",
+            "documentation": "Represents the input of a *DeleteCacheSecurityGroup* action.",
             "members": [
                 {
                     "name": "CacheSecurityGroupName",
@@ -1385,7 +1385,7 @@
         },
         "DeleteCacheSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteCacheSubnetGroup</i> action.</p>",
+            "documentation": "Represents the input of a *DeleteCacheSubnetGroup* action.",
             "members": [
                 {
                     "name": "CacheSubnetGroupName",
@@ -1396,7 +1396,7 @@
         },
         "DeleteReplicationGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteReplicationGroup</i> action.</p>",
+            "documentation": "Represents the input of a *DeleteReplicationGroup* action.",
             "members": [
                 {
                     "name": "ReplicationGroupId",
@@ -1417,7 +1417,7 @@
         },
         "DeleteSnapshotMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DeleteSnapshot</i> action.</p>",
+            "documentation": "Represents the input of a *DeleteSnapshot* action.",
             "members": [
                 {
                     "name": "SnapshotName",
@@ -1428,7 +1428,7 @@
         },
         "DescribeCacheClustersMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeCacheClusters</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeCacheClusters* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -1454,7 +1454,7 @@
         },
         "DescribeCacheEngineVersionsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeCacheEngineVersions</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeCacheEngineVersions* action.",
             "members": [
                 {
                     "name": "Engine",
@@ -1490,7 +1490,7 @@
         },
         "DescribeCacheParameterGroupsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeCacheParameterGroups</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeCacheParameterGroups* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -1511,7 +1511,7 @@
         },
         "DescribeCacheParametersMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeCacheParameters</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeCacheParameters* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -1537,7 +1537,7 @@
         },
         "DescribeCacheSecurityGroupsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeCacheSecurityGroups</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeCacheSecurityGroups* action.",
             "members": [
                 {
                     "name": "CacheSecurityGroupName",
@@ -1558,7 +1558,7 @@
         },
         "DescribeCacheSubnetGroupsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeCacheSubnetGroups</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeCacheSubnetGroups* action.",
             "members": [
                 {
                     "name": "CacheSubnetGroupName",
@@ -1579,7 +1579,7 @@
         },
         "DescribeEngineDefaultParametersMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeEngineDefaultParameters</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeEngineDefaultParameters* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupFamily",
@@ -1600,7 +1600,7 @@
         },
         "DescribeEventsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeEvents</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeEvents* action.",
             "members": [
                 {
                     "name": "SourceIdentifier",
@@ -1641,7 +1641,7 @@
         },
         "DescribeReplicationGroupsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeReplicationGroups</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeReplicationGroups* action.",
             "members": [
                 {
                     "name": "ReplicationGroupId",
@@ -1662,7 +1662,7 @@
         },
         "DescribeReservedCacheNodesMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeReservedCacheNodes</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeReservedCacheNodes* action.",
             "members": [
                 {
                     "name": "ReservedCacheNodeId",
@@ -1708,7 +1708,7 @@
         },
         "DescribeReservedCacheNodesOfferingsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeReservedCacheNodesOfferings</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeReservedCacheNodesOfferings* action.",
             "members": [
                 {
                     "name": "ReservedCacheNodesOfferingId",
@@ -1749,7 +1749,7 @@
         },
         "DescribeSnapshotsListMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeSnapshots</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeSnapshots* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -1765,7 +1765,7 @@
         },
         "DescribeSnapshotsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>DescribeSnapshotsMessage</i> action.</p>",
+            "documentation": "Represents the input of a *DescribeSnapshotsMessage* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -1799,7 +1799,7 @@
         },
         "EC2SecurityGroup": {
             "type": "structure",
-            "documentation": "<p>Provides ownership and status information for an Amazon EC2 security group.</p>",
+            "documentation": "Provides ownership and status information for an Amazon EC2 security group.",
             "members": [
                 {
                     "name": "Status",
@@ -1824,7 +1824,7 @@
         },
         "Endpoint": {
             "type": "structure",
-            "documentation": "<p>Represents the information required for client programs to connect to a cache node.</p>",
+            "documentation": "Represents the information required for client programs to connect to a cache node.",
             "members": [
                 {
                     "name": "Address",
@@ -1840,7 +1840,7 @@
         },
         "EngineDefaults": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeEngineDefaultParameters</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeEngineDefaultParameters* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupFamily",
@@ -1866,7 +1866,7 @@
         },
         "Event": {
             "type": "structure",
-            "documentation": "<p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cache cluster, adding or removing a cache node, or rebooting a node.</p>",
+            "documentation": "Represents a single occurrence of something interesting within the system. Some examples of events are creating a cache cluster, adding or removing a cache node, or rebooting a node.",
             "members": [
                 {
                     "name": "SourceIdentifier",
@@ -1896,7 +1896,7 @@
         },
         "EventsMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeEvents</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeEvents* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -1912,7 +1912,7 @@
         },
         "InsufficientCacheClusterCapacityFault": {
             "type": "structure",
-            "documentation": "<p>The requested cache node type is not available in the specified Availability Zone.</p>",
+            "documentation": "The requested cache node type is not available in the specified Availability Zone.",
             "members": []
         },
         "Integer": {
@@ -1923,27 +1923,27 @@
         },
         "InvalidARNFault": {
             "type": "structure",
-            "documentation": "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>",
+            "documentation": "The requested Amazon Resource Name (ARN) does not refer to an existing resource.",
             "members": []
         },
         "InvalidCacheClusterStateFault": {
             "type": "structure",
-            "documentation": "<p>The requested cache cluster is not in the <i>available</i> state.</p>",
+            "documentation": "The requested cache cluster is not in the *available* state.",
             "members": []
         },
         "InvalidCacheParameterGroupStateFault": {
             "type": "structure",
-            "documentation": "<p>The current state of the cache parameter group does not allow the requested action to occur. </p>",
+            "documentation": "The current state of the cache parameter group does not allow the requested action to occur.",
             "members": []
         },
         "InvalidCacheSecurityGroupStateFault": {
             "type": "structure",
-            "documentation": "<p>The current state of the cache security group does not allow deletion.</p>",
+            "documentation": "The current state of the cache security group does not allow deletion.",
             "members": []
         },
         "InvalidParameterCombinationException": {
             "type": "structure",
-            "documentation": "<p>Two or more incompatible parameters were specified.</p>",
+            "documentation": "Two or more incompatible parameters were specified.",
             "members": [
                 {
                     "name": "message",
@@ -1954,7 +1954,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
-            "documentation": "<p>The value for a parameter is invalid.</p>",
+            "documentation": "The value for a parameter is invalid.",
             "members": [
                 {
                     "name": "message",
@@ -1965,22 +1965,22 @@
         },
         "InvalidReplicationGroupStateFault": {
             "type": "structure",
-            "documentation": "<p>The requested replication group is not in the <i>available</i> state.</p>",
+            "documentation": "The requested replication group is not in the *available* state.",
             "members": []
         },
         "InvalidSnapshotStateFault": {
             "type": "structure",
-            "documentation": "<p>The current state of the snapshot does not allow the requested action to occur.</p>",
+            "documentation": "The current state of the snapshot does not allow the requested action to occur.",
             "members": []
         },
         "InvalidSubnet": {
             "type": "structure",
-            "documentation": "<p>An invalid subnet identifier was specified.</p>",
+            "documentation": "An invalid subnet identifier was specified.",
             "members": []
         },
         "InvalidVPCNetworkStateFault": {
             "type": "structure",
-            "documentation": "<p>The VPC network is in an invalid state.</p>",
+            "documentation": "The VPC network is in an invalid state.",
             "members": []
         },
         "KeyList": {
@@ -1989,7 +1989,7 @@
         },
         "ListTagsForResourceMessage": {
             "type": "structure",
-            "documentation": "<p>The input parameters for the <i>ListTagsForResource</i> action.</p>",
+            "documentation": "The input parameters for the *ListTagsForResource* action.",
             "members": [
                 {
                     "name": "ResourceName",
@@ -2000,7 +2000,7 @@
         },
         "ModifyCacheClusterMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>ModifyCacheCluster</i> action.</p>",
+            "documentation": "Represents the input of a *ModifyCacheCluster* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -2086,7 +2086,7 @@
         },
         "ModifyCacheParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>ModifyCacheParameterGroup</i> action.</p>",
+            "documentation": "Represents the input of a *ModifyCacheParameterGroup* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -2102,7 +2102,7 @@
         },
         "ModifyCacheSubnetGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>ModifyCacheSubnetGroup</i> action.</p>",
+            "documentation": "Represents the input of a *ModifyCacheSubnetGroup* action.",
             "members": [
                 {
                     "name": "CacheSubnetGroupName",
@@ -2123,7 +2123,7 @@
         },
         "ModifyReplicationGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>ModifyReplicationGroups</i> action.</p>",
+            "documentation": "Represents the input of a *ModifyReplicationGroups* action.",
             "members": [
                 {
                     "name": "ReplicationGroupId",
@@ -2209,7 +2209,7 @@
         },
         "NodeGroup": {
             "type": "structure",
-            "documentation": "<p>Represents a collection of cache nodes in a replication group.</p>",
+            "documentation": "Represents a collection of cache nodes in a replication group.",
             "members": [
                 {
                     "name": "NodeGroupId",
@@ -2238,7 +2238,7 @@
         },
         "NodeGroupMember": {
             "type": "structure",
-            "documentation": "<p>Represents a single node within a node group.</p>",
+            "documentation": "Represents a single node within a node group.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -2272,17 +2272,17 @@
         },
         "NodeQuotaForClusterExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the allowed number of cache nodes in a single cache cluster.</p>",
+            "documentation": "The request cannot be processed because it would exceed the allowed number of cache nodes in a single cache cluster.",
             "members": []
         },
         "NodeQuotaForCustomerExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer. </p>",
+            "documentation": "The request cannot be processed because it would exceed the allowed number of cache nodes per customer.",
             "members": []
         },
         "NodeSnapshot": {
             "type": "structure",
-            "documentation": "<p>Represents an individual cache node in a snapshot of a cache cluster.</p>",
+            "documentation": "Represents an individual cache node in a snapshot of a cache cluster.",
             "members": [
                 {
                     "name": "CacheNodeId",
@@ -2312,7 +2312,7 @@
         },
         "NotificationConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>",
+            "documentation": "Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).",
             "members": [
                 {
                     "name": "TopicArn",
@@ -2328,7 +2328,7 @@
         },
         "Parameter": {
             "type": "structure",
-            "documentation": "<p>Describes an individual setting that controls some aspect of ElastiCache behavior.</p>",
+            "documentation": "Describes an individual setting that controls some aspect of ElastiCache behavior.",
             "members": [
                 {
                     "name": "ParameterName",
@@ -2374,7 +2374,7 @@
         },
         "ParameterNameValue": {
             "type": "structure",
-            "documentation": "<p>Describes a name-value pair that is used to update the value of a parameter.</p>",
+            "documentation": "Describes a name-value pair that is used to update the value of a parameter.",
             "members": [
                 {
                     "name": "ParameterName",
@@ -2401,7 +2401,7 @@
         },
         "PendingModifiedValues": {
             "type": "structure",
-            "documentation": "<p>A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.</p>",
+            "documentation": "A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.",
             "members": [
                 {
                     "name": "NumCacheNodes",
@@ -2426,7 +2426,7 @@
         },
         "PurchaseReservedCacheNodesOfferingMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>PurchaseReservedCacheNodesOffering</i> action.</p>",
+            "documentation": "Represents the input of a *PurchaseReservedCacheNodesOffering* action.",
             "members": [
                 {
                     "name": "ReservedCacheNodesOfferingId",
@@ -2447,7 +2447,7 @@
         },
         "RebootCacheClusterMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>RebootCacheCluster</i> action.</p>",
+            "documentation": "Represents the input of a *RebootCacheCluster* action.",
             "members": [
                 {
                     "name": "CacheClusterId",
@@ -2463,7 +2463,7 @@
         },
         "RecurringCharge": {
             "type": "structure",
-            "documentation": "<p>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.</p>",
+            "documentation": "Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.",
             "members": [
                 {
                     "name": "RecurringChargeAmount",
@@ -2483,7 +2483,7 @@
         },
         "RemoveTagsFromResourceMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>RemoveTagsFromResource</i> action.</p>",
+            "documentation": "Represents the input of a *RemoveTagsFromResource* action.",
             "members": [
                 {
                     "name": "ResourceName",
@@ -2499,7 +2499,7 @@
         },
         "ReplicationGroup": {
             "type": "structure",
-            "documentation": "<p>Contains all of the attributes of a specific replication group.</p>",
+            "documentation": "Contains all of the attributes of a specific replication group.",
             "members": [
                 {
                     "name": "ReplicationGroupId",
@@ -2545,7 +2545,7 @@
         },
         "ReplicationGroupAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>The specified replication group already exists.</p>",
+            "documentation": "The specified replication group already exists.",
             "members": []
         },
         "ReplicationGroupList": {
@@ -2554,7 +2554,7 @@
         },
         "ReplicationGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeReplicationGroups</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeReplicationGroups* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2570,12 +2570,12 @@
         },
         "ReplicationGroupNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The specified replication group does not exist.</p>",
+            "documentation": "The specified replication group does not exist.",
             "members": []
         },
         "ReplicationGroupPendingModifiedValues": {
             "type": "structure",
-            "documentation": "<p>The settings to be applied to the replication group, either immediately or during the next maintenance window.</p>",
+            "documentation": "The settings to be applied to the replication group, either immediately or during the next maintenance window.",
             "members": [
                 {
                     "name": "PrimaryClusterId",
@@ -2591,7 +2591,7 @@
         },
         "ReservedCacheNode": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> action.</p>",
+            "documentation": "Represents the output of a *PurchaseReservedCacheNodesOffering* action.",
             "members": [
                 {
                     "name": "ReservedCacheNodeId",
@@ -2657,7 +2657,7 @@
         },
         "ReservedCacheNodeAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>You already have a reservation with the given identifier.</p>",
+            "documentation": "You already have a reservation with the given identifier.",
             "members": []
         },
         "ReservedCacheNodeList": {
@@ -2666,7 +2666,7 @@
         },
         "ReservedCacheNodeMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeReservedCacheNodes</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeReservedCacheNodes* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2682,17 +2682,17 @@
         },
         "ReservedCacheNodeNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested reserved cache node was not found.</p>",
+            "documentation": "The requested reserved cache node was not found.",
             "members": []
         },
         "ReservedCacheNodeQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the user's cache node quota.</p>",
+            "documentation": "The request cannot be processed because it would exceed the user's cache node quota.",
             "members": []
         },
         "ReservedCacheNodesOffering": {
             "type": "structure",
-            "documentation": "<p>Describes all of the attributes of a reserved cache node offering.</p>",
+            "documentation": "Describes all of the attributes of a reserved cache node offering.",
             "members": [
                 {
                     "name": "ReservedCacheNodesOfferingId",
@@ -2742,7 +2742,7 @@
         },
         "ReservedCacheNodesOfferingMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i> action.</p>",
+            "documentation": "Represents the output of a *DescribeReservedCacheNodesOfferings* action.",
             "members": [
                 {
                     "name": "Marker",
@@ -2758,12 +2758,12 @@
         },
         "ReservedCacheNodesOfferingNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested cache node offering does not exist.</p>",
+            "documentation": "The requested cache node offering does not exist.",
             "members": []
         },
         "ResetCacheParameterGroupMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>ResetCacheParameterGroup</i> action.</p>",
+            "documentation": "Represents the input of a *ResetCacheParameterGroup* action.",
             "members": [
                 {
                     "name": "CacheParameterGroupName",
@@ -2784,7 +2784,7 @@
         },
         "RevokeCacheSecurityGroupIngressMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a <i>RevokeCacheSecurityGroupIngress</i> action.</p>",
+            "documentation": "Represents the input of a *RevokeCacheSecurityGroupIngress* action.",
             "members": [
                 {
                     "name": "CacheSecurityGroupName",
@@ -2809,7 +2809,7 @@
         },
         "SecurityGroupMembership": {
             "type": "structure",
-            "documentation": "<p>Represents a single cache security group and its status.</p>",
+            "documentation": "Represents a single cache security group and its status.",
             "members": [
                 {
                     "name": "SecurityGroupId",
@@ -2829,7 +2829,7 @@
         },
         "Snapshot": {
             "type": "structure",
-            "documentation": "<p>Represents a copy of an entire cache cluster as of the time when the snapshot was taken.</p>",
+            "documentation": "Represents a copy of an entire cache cluster as of the time when the snapshot was taken.",
             "members": [
                 {
                     "name": "SnapshotName",
@@ -2935,7 +2935,7 @@
         },
         "SnapshotAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>You already have a snapshot with the given name.</p>",
+            "documentation": "You already have a snapshot with the given name.",
             "members": []
         },
         "SnapshotArnsList": {
@@ -2944,7 +2944,7 @@
         },
         "SnapshotFeatureNotSupportedFault": {
             "type": "structure",
-            "documentation": "<p>You attempted one of the following actions:</p> <ul> <li> <p>Creating a snapshot of a Redis cache cluster running on a <i>t1.micro</i> cache node.</p> </li> <li> <p>Creating a snapshot of a cache cluster that is running Memcached rather than Redis.</p> </li> </ul> <p>Neither of these are supported by ElastiCache.</p>",
+            "documentation": "You attempted one of the following actions:\n\n \n\n  *  Creating a snapshot of a Redis cache cluster running on a *t1.micro* cache node.\n\n \n  *  Creating a snapshot of a cache cluster that is running Memcached rather than Redis.\n\n \n \n Neither of these are supported by ElastiCache.",
             "members": []
         },
         "SnapshotList": {
@@ -2953,12 +2953,12 @@
         },
         "SnapshotNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested snapshot name does not refer to an existing snapshot.</p>",
+            "documentation": "The requested snapshot name does not refer to an existing snapshot.",
             "members": []
         },
         "SnapshotQuotaExceededFault": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would exceed the maximum number of snapshots.</p>",
+            "documentation": "The request cannot be processed because it would exceed the maximum number of snapshots.",
             "members": []
         },
         "SourceType": {
@@ -2969,7 +2969,7 @@
         },
         "Subnet": {
             "type": "structure",
-            "documentation": "<p>Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>",
+            "documentation": "Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.",
             "members": [
                 {
                     "name": "SubnetIdentifier",
@@ -2989,7 +2989,7 @@
         },
         "SubnetInUse": {
             "type": "structure",
-            "documentation": "<p>The requested subnet is being used by another cache subnet group.</p>",
+            "documentation": "The requested subnet is being used by another cache subnet group.",
             "members": []
         },
         "SubnetList": {
@@ -3001,7 +3001,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.</p>",
+            "documentation": "A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.",
             "members": [
                 {
                     "name": "Key",
@@ -3021,7 +3021,7 @@
         },
         "TagListMessage": {
             "type": "structure",
-            "documentation": "<p>Represents the output from the <i>AddTagsToResource</i>, <i>ListTagsOnResource</i>, and <i>RemoveTagsFromResource</i> actions.</p>",
+            "documentation": "Represents the output from the *AddTagsToResource*, *ListTagsOnResource*, and *RemoveTagsFromResource* actions.",
             "members": [
                 {
                     "name": "TagList",
@@ -3032,12 +3032,12 @@
         },
         "TagNotFoundFault": {
             "type": "structure",
-            "documentation": "<p>The requested tag was not found on this resource.</p>",
+            "documentation": "The requested tag was not found on this resource.",
             "members": []
         },
         "TagQuotaPerResourceExceeded": {
             "type": "structure",
-            "documentation": "<p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 10.</p>",
+            "documentation": "The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 10.",
             "members": []
         },
         "AuthorizeCacheSecurityGroupIngressResult": {

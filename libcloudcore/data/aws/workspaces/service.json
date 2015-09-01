@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateWorkspaces": {
-            "documentation": "<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>",
+            "documentation": "Creates one or more WorkSpaces.\n\n  This operation is asynchronous and returns before the WorkSpaces are created.",
             "input": {
                 "shape": "CreateWorkspacesRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "DescribeWorkspaceBundles": {
-            "documentation": "<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>",
+            "documentation": "Obtains information about the WorkSpace bundles that are available to your account in the specified region.\n\n You can filter the results with either the ``BundleIds`` parameter, or the ``Owner`` parameter, but not both.\n\n This operation supports pagination with the use of the ``NextToken`` request and response parameters. If more results are available, the ``NextToken`` response member contains a token that you pass in the next call to this operation to retrieve the next set of items.",
             "input": {
                 "shape": "DescribeWorkspaceBundlesRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "DescribeWorkspaceDirectories": {
-            "documentation": "<p>Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>",
+            "documentation": "Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.\n\n This operation supports pagination with the use of the ``NextToken`` request and response parameters. If more results are available, the ``NextToken`` response member contains a token that you pass in the next call to this operation to retrieve the next set of items.",
             "input": {
                 "shape": "DescribeWorkspaceDirectoriesRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DescribeWorkspaces": {
-            "documentation": "<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>",
+            "documentation": "Obtains information about the specified WorkSpaces. \n\n Only one of the filter parameters, such as ``BundleId``, ``DirectoryId``, or ``WorkspaceIds``, can be specified at a time.\n\n This operation supports pagination with the use of the ``NextToken`` request and response parameters. If more results are available, the ``NextToken`` response member contains a token that you pass in the next call to this operation to retrieve the next set of items.",
             "input": {
                 "shape": "DescribeWorkspacesRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "RebootWorkspaces": {
-            "documentation": "<p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>, <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>",
+            "documentation": "Reboots the specified WorkSpaces.\n\n To be able to reboot a WorkSpace, the WorkSpace must have a **State** of ``AVAILABLE``, ``IMPAIRED``, or ``INOPERABLE``.\n\n  This operation is asynchronous and will return before the WorkSpaces have rebooted.",
             "input": {
                 "shape": "RebootWorkspacesRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "RebuildWorkspaces": {
-            "documentation": "<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>",
+            "documentation": "Rebuilds the specified WorkSpaces.\n\n Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:\n\n \n\n  * The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.\n  * The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.\n \n To be able to rebuild a WorkSpace, the WorkSpace must have a **State** of ``AVAILABLE`` or ``ERROR``.\n\n  This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.",
             "input": {
                 "shape": "RebuildWorkspacesRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "TerminateWorkspaces": {
-            "documentation": "<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely terminated.</p> </note>",
+            "documentation": "Terminates the specified WorkSpaces.\n\n Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.\n\n You can terminate a WorkSpace that is in any state except ``SUSPENDED``.\n\n  This operation is asynchronous and will return before the WorkSpaces have been completely terminated.",
             "input": {
                 "shape": "TerminateWorkspacesRequest"
             },
@@ -124,7 +124,7 @@
         },
         "ComputeType": {
             "type": "structure",
-            "documentation": "<p>Contains information about the compute type of a WorkSpace bundle.</p>",
+            "documentation": "Contains information about the compute type of a WorkSpace bundle.",
             "members": [
                 {
                     "name": "Name",
@@ -135,7 +135,7 @@
         },
         "CreateWorkspacesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>CreateWorkspaces</a> operation.</p>",
+            "documentation": "Contains the inputs for the CreateWorkspaces operation.",
             "members": [
                 {
                     "name": "Workspaces",
@@ -146,7 +146,7 @@
         },
         "CreateWorkspacesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the result of the <a>CreateWorkspaces</a> operation.</p>",
+            "documentation": "Contains the result of the CreateWorkspaces operation.",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -165,7 +165,7 @@
         },
         "DefaultWorkspaceCreationProperties": {
             "type": "structure",
-            "documentation": "<p>Contains default WorkSpace creation information.</p>",
+            "documentation": "Contains default WorkSpace creation information.",
             "members": [
                 {
                     "name": "EnableWorkDocs",
@@ -196,7 +196,7 @@
         },
         "DescribeWorkspaceBundlesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.</p>",
+            "documentation": "Contains the inputs for the DescribeWorkspaceBundles operation.",
             "members": [
                 {
                     "name": "BundleIds",
@@ -217,7 +217,7 @@
         },
         "DescribeWorkspaceBundlesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the results of the <a>DescribeWorkspaceBundles</a> operation.</p>",
+            "documentation": "Contains the results of the DescribeWorkspaceBundles operation.",
             "members": [
                 {
                     "name": "Bundles",
@@ -233,7 +233,7 @@
         },
         "DescribeWorkspaceDirectoriesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.</p>",
+            "documentation": "Contains the inputs for the DescribeWorkspaceDirectories operation.",
             "members": [
                 {
                     "name": "DirectoryIds",
@@ -249,7 +249,7 @@
         },
         "DescribeWorkspaceDirectoriesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.</p>",
+            "documentation": "Contains the results of the DescribeWorkspaceDirectories operation.",
             "members": [
                 {
                     "name": "Directories",
@@ -265,7 +265,7 @@
         },
         "DescribeWorkspacesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DescribeWorkspaces</a> operation.</p>",
+            "documentation": "Contains the inputs for the DescribeWorkspaces operation.",
             "members": [
                 {
                     "name": "WorkspaceIds",
@@ -301,7 +301,7 @@
         },
         "DescribeWorkspacesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the results for the <a>DescribeWorkspaces</a> operation.</p>",
+            "documentation": "Contains the results for the DescribeWorkspaces operation.",
             "members": [
                 {
                     "name": "Workspaces",
@@ -344,7 +344,7 @@
         },
         "FailedCreateWorkspaceRequest": {
             "type": "structure",
-            "documentation": "<p>Contains information about a WorkSpace that could not be created.</p>",
+            "documentation": "Contains information about a WorkSpace that could not be created.",
             "members": [
                 {
                     "name": "WorkspaceRequest",
@@ -381,7 +381,7 @@
         },
         "FailedWorkspaceChangeRequest": {
             "type": "structure",
-            "documentation": "<p>Contains information about a WorkSpace that could not be rebooted (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), or terminated (<a>TerminateWorkspaces</a>).</p>",
+            "documentation": "Contains information about a WorkSpace that could not be rebooted (RebootWorkspaces), rebuilt (RebuildWorkspaces), or terminated (TerminateWorkspaces).",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -402,7 +402,7 @@
         },
         "InvalidParameterValuesException": {
             "type": "structure",
-            "documentation": "<p>One or more parameter values are not valid.</p>",
+            "documentation": "One or more parameter values are not valid.",
             "members": [
                 {
                     "name": "message",
@@ -425,7 +425,7 @@
         },
         "RebootRequest": {
             "type": "structure",
-            "documentation": "<p>Contains information used with the <a>RebootWorkspaces</a> operation to reboot a WorkSpace.</p>",
+            "documentation": "Contains information used with the RebootWorkspaces operation to reboot a WorkSpace.",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -440,7 +440,7 @@
         },
         "RebootWorkspacesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>RebootWorkspaces</a> operation.</p>",
+            "documentation": "Contains the inputs for the RebootWorkspaces operation.",
             "members": [
                 {
                     "name": "RebootWorkspaceRequests",
@@ -451,7 +451,7 @@
         },
         "RebootWorkspacesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the results of the <a>RebootWorkspaces</a> operation.</p>",
+            "documentation": "Contains the results of the RebootWorkspaces operation.",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -462,7 +462,7 @@
         },
         "RebuildRequest": {
             "type": "structure",
-            "documentation": "<p>Contains information used with the <a>RebuildWorkspaces</a> operation to rebuild a WorkSpace.</p>",
+            "documentation": "Contains information used with the RebuildWorkspaces operation to rebuild a WorkSpace.",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -477,7 +477,7 @@
         },
         "RebuildWorkspacesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>RebuildWorkspaces</a> operation.</p>",
+            "documentation": "Contains the inputs for the RebuildWorkspaces operation.",
             "members": [
                 {
                     "name": "RebuildWorkspaceRequests",
@@ -488,7 +488,7 @@
         },
         "RebuildWorkspacesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the results of the <a>RebuildWorkspaces</a> operation.</p>",
+            "documentation": "Contains the results of the RebuildWorkspaces operation.",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -502,7 +502,7 @@
         },
         "ResourceLimitExceededException": {
             "type": "structure",
-            "documentation": "<p>Your resource limits have been exceeded.</p>",
+            "documentation": "Your resource limits have been exceeded.",
             "members": [
                 {
                     "name": "message",
@@ -513,7 +513,7 @@
         },
         "ResourceUnavailableException": {
             "type": "structure",
-            "documentation": "<p>The specified resource is not available.</p>",
+            "documentation": "The specified resource is not available.",
             "members": [
                 {
                     "name": "message",
@@ -539,7 +539,7 @@
         },
         "TerminateRequest": {
             "type": "structure",
-            "documentation": "<p>Contains information used with the <a>TerminateWorkspaces</a> operation to terminate a WorkSpace.</p>",
+            "documentation": "Contains information used with the TerminateWorkspaces operation to terminate a WorkSpace.",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -554,7 +554,7 @@
         },
         "TerminateWorkspacesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>TerminateWorkspaces</a> operation.</p>",
+            "documentation": "Contains the inputs for the TerminateWorkspaces operation.",
             "members": [
                 {
                     "name": "TerminateWorkspaceRequests",
@@ -565,7 +565,7 @@
         },
         "TerminateWorkspacesResult": {
             "type": "structure",
-            "documentation": "<p>Contains the results of the <a>TerminateWorkspaces</a> operation.</p>",
+            "documentation": "Contains the results of the TerminateWorkspaces operation.",
             "members": [
                 {
                     "name": "FailedRequests",
@@ -579,7 +579,7 @@
         },
         "UserStorage": {
             "type": "structure",
-            "documentation": "<p>Contains information about the user storage for a WorkSpace bundle.</p>",
+            "documentation": "Contains information about the user storage for a WorkSpace bundle.",
             "members": [
                 {
                     "name": "Capacity",
@@ -590,7 +590,7 @@
         },
         "Workspace": {
             "type": "structure",
-            "documentation": "<p>Contains information about a WorkSpace.</p>",
+            "documentation": "Contains information about a WorkSpace.",
             "members": [
                 {
                     "name": "WorkspaceId",
@@ -641,7 +641,7 @@
         },
         "WorkspaceBundle": {
             "type": "structure",
-            "documentation": "<p>Contains information about a WorkSpace bundle.</p>",
+            "documentation": "Contains information about a WorkSpace bundle.",
             "members": [
                 {
                     "name": "BundleId",
@@ -677,7 +677,7 @@
         },
         "WorkspaceDirectory": {
             "type": "structure",
-            "documentation": "<p>Contains information about an AWS Directory Service directory for use with Amazon WorkSpaces.</p>",
+            "documentation": "Contains information about an AWS Directory Service directory for use with Amazon WorkSpaces.",
             "members": [
                 {
                     "name": "DirectoryId",
@@ -763,7 +763,7 @@
         },
         "WorkspaceRequest": {
             "type": "structure",
-            "documentation": "<p>Contains information about a WorkSpace creation request.</p>",
+            "documentation": "Contains information about a WorkSpace creation request.",
             "members": [
                 {
                     "name": "DirectoryId",

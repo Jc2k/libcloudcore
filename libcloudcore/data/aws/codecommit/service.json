@@ -32,7 +32,7 @@
     ],
     "operations": {
         "BatchGetRepositories": {
-            "documentation": "<p>Gets information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+            "documentation": "Gets information about one or more repositories.\n\n The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.",
             "input": {
                 "shape": "BatchGetRepositoriesInput"
             },
@@ -41,13 +41,13 @@
             }
         },
         "CreateBranch": {
-            "documentation": "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</note>",
+            "documentation": "Creates a new branch in a repository and points the branch to a commit.\n\n Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.",
             "input": {
                 "shape": "CreateBranchInput"
             }
         },
         "CreateRepository": {
-            "documentation": "<p>Creates a new, empty repository.</p>",
+            "documentation": "Creates a new, empty repository.",
             "input": {
                 "shape": "CreateRepositoryInput"
             },
@@ -56,7 +56,7 @@
             }
         },
         "DeleteRepository": {
-            "documentation": "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>",
+            "documentation": "Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.\n\n Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.",
             "input": {
                 "shape": "DeleteRepositoryInput"
             },
@@ -65,7 +65,7 @@
             }
         },
         "GetBranch": {
-            "documentation": "<p>Retrieves information about a repository branch, including its name and the last commit ID.</p>",
+            "documentation": "Retrieves information about a repository branch, including its name and the last commit ID.",
             "input": {
                 "shape": "GetBranchInput"
             },
@@ -74,7 +74,7 @@
             }
         },
         "GetRepository": {
-            "documentation": "<p>Gets information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+            "documentation": "Gets information about a repository.\n\n The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.",
             "input": {
                 "shape": "GetRepositoryInput"
             },
@@ -83,7 +83,7 @@
             }
         },
         "ListBranches": {
-            "documentation": "<p>Gets information about one or more branches in a repository.</p>",
+            "documentation": "Gets information about one or more branches in a repository.",
             "input": {
                 "shape": "ListBranchesInput"
             },
@@ -92,7 +92,7 @@
             }
         },
         "ListRepositories": {
-            "documentation": "<p>Gets information about one or more repositories.</p>",
+            "documentation": "Gets information about one or more repositories.",
             "input": {
                 "shape": "ListRepositoriesInput"
             },
@@ -101,19 +101,19 @@
             }
         },
         "UpdateDefaultBranch": {
-            "documentation": "<p>Sets or changes the default branch name for the specified repository.</p> <note>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</note>",
+            "documentation": "Sets or changes the default branch name for the specified repository.\n\n If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.",
             "input": {
                 "shape": "UpdateDefaultBranchInput"
             }
         },
         "UpdateRepositoryDescription": {
-            "documentation": "<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+            "documentation": "Sets or changes the comment or description for a repository.\n\n The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.",
             "input": {
                 "shape": "UpdateRepositoryDescriptionInput"
             }
         },
         "UpdateRepositoryName": {
-            "documentation": "<p>Renames a repository.</p>",
+            "documentation": "Renames a repository.",
             "input": {
                 "shape": "UpdateRepositoryNameInput"
             }
@@ -128,7 +128,7 @@
         },
         "BatchGetRepositoriesInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a batch get repositories operation.</p>",
+            "documentation": "Represents the input of a batch get repositories operation.",
             "members": [
                 {
                     "name": "repositoryNames",
@@ -139,7 +139,7 @@
         },
         "BatchGetRepositoriesOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a batch get repositories operation.</p>",
+            "documentation": "Represents the output of a batch get repositories operation.",
             "members": [
                 {
                     "name": "repositories",
@@ -155,12 +155,12 @@
         },
         "BranchDoesNotExistException": {
             "type": "structure",
-            "documentation": "<p>The specified branch does not exist.</p>",
+            "documentation": "The specified branch does not exist.",
             "members": []
         },
         "BranchInfo": {
             "type": "structure",
-            "documentation": "<p>Returns information about a branch.</p>",
+            "documentation": "Returns information about a branch.",
             "members": [
                 {
                     "name": "branchName",
@@ -179,7 +179,7 @@
         },
         "BranchNameExistsException": {
             "type": "structure",
-            "documentation": "<p>The specified branch name already exists.</p>",
+            "documentation": "The specified branch name already exists.",
             "members": []
         },
         "BranchNameList": {
@@ -188,7 +188,7 @@
         },
         "BranchNameRequiredException": {
             "type": "structure",
-            "documentation": "<p>A branch name is required but was not specified.</p>",
+            "documentation": "A branch name is required but was not specified.",
             "members": []
         },
         "CloneUrlHttp": {
@@ -199,7 +199,7 @@
         },
         "CommitDoesNotExistException": {
             "type": "structure",
-            "documentation": "<p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>",
+            "documentation": "The specified commit does not exist or no commit was specified, and the specified repository has no default branch.",
             "members": []
         },
         "CommitId": {
@@ -207,12 +207,12 @@
         },
         "CommitIdRequiredException": {
             "type": "structure",
-            "documentation": "<p>A commit ID was not specified.</p>",
+            "documentation": "A commit ID was not specified.",
             "members": []
         },
         "CreateBranchInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a create branch operation.</p>",
+            "documentation": "Represents the input of a create branch operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -233,7 +233,7 @@
         },
         "CreateRepositoryInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a create repository operation.</p>",
+            "documentation": "Represents the input of a create repository operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -249,7 +249,7 @@
         },
         "CreateRepositoryOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a create repository operation.</p>",
+            "documentation": "Represents the output of a create repository operation.",
             "members": [
                 {
                     "name": "repositoryMetadata",
@@ -263,7 +263,7 @@
         },
         "DeleteRepositoryInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a delete repository operation.</p>",
+            "documentation": "Represents the input of a delete repository operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -274,7 +274,7 @@
         },
         "DeleteRepositoryOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a delete repository operation.</p>",
+            "documentation": "Represents the output of a delete repository operation.",
             "members": [
                 {
                     "name": "repositoryId",
@@ -285,32 +285,32 @@
         },
         "EncryptionIntegrityChecksFailedException": {
             "type": "structure",
-            "documentation": "<p>An encryption integrity check failed.</p>",
+            "documentation": "An encryption integrity check failed.",
             "members": []
         },
         "EncryptionKeyAccessDeniedException": {
             "type": "structure",
-            "documentation": "<p>An encryption key could not be accessed.</p>",
+            "documentation": "An encryption key could not be accessed.",
             "members": []
         },
         "EncryptionKeyDisabledException": {
             "type": "structure",
-            "documentation": "<p>The encryption key is disabled.</p>",
+            "documentation": "The encryption key is disabled.",
             "members": []
         },
         "EncryptionKeyNotFoundException": {
             "type": "structure",
-            "documentation": "<p>No encryption key was found.</p>",
+            "documentation": "No encryption key was found.",
             "members": []
         },
         "EncryptionKeyUnavailableException": {
             "type": "structure",
-            "documentation": "<p>The encryption key is not available.</p>",
+            "documentation": "The encryption key is not available.",
             "members": []
         },
         "GetBranchInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a get branch operation.</p>",
+            "documentation": "Represents the input of a get branch operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -325,7 +325,7 @@
         },
         "GetBranchOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a get branch operation.</p>",
+            "documentation": "Represents the output of a get branch operation.",
             "members": [
                 {
                     "name": "branch",
@@ -336,7 +336,7 @@
         },
         "GetRepositoryInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a get repository operation.</p>",
+            "documentation": "Represents the input of a get repository operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -347,7 +347,7 @@
         },
         "GetRepositoryOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a get repository operation.</p>",
+            "documentation": "Represents the output of a get repository operation.",
             "members": [
                 {
                     "name": "repositoryMetadata",
@@ -358,37 +358,37 @@
         },
         "InvalidBranchNameException": {
             "type": "structure",
-            "documentation": "<p>The specified branch name is not valid.</p>",
+            "documentation": "The specified branch name is not valid.",
             "members": []
         },
         "InvalidCommitIdException": {
             "type": "structure",
-            "documentation": "<p>The specified commit ID is not valid.</p>",
+            "documentation": "The specified commit ID is not valid.",
             "members": []
         },
         "InvalidContinuationTokenException": {
             "type": "structure",
-            "documentation": "<p>The specified continuation token is not valid.</p>",
+            "documentation": "The specified continuation token is not valid.",
             "members": []
         },
         "InvalidOrderException": {
             "type": "structure",
-            "documentation": "<p>The specified sort order is not valid.</p>",
+            "documentation": "The specified sort order is not valid.",
             "members": []
         },
         "InvalidRepositoryDescriptionException": {
             "type": "structure",
-            "documentation": "<p>The specified repository description is not valid.</p>",
+            "documentation": "The specified repository description is not valid.",
             "members": []
         },
         "InvalidRepositoryNameException": {
             "type": "structure",
-            "documentation": "<p>At least one specified repository name is not valid.</p> <note>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</note>",
+            "documentation": "At least one specified repository name is not valid.\n\n This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.",
             "members": []
         },
         "InvalidSortByException": {
             "type": "structure",
-            "documentation": "<p>The specified sort by value is not valid.</p>",
+            "documentation": "The specified sort by value is not valid.",
             "members": []
         },
         "LastModifiedDate": {
@@ -396,7 +396,7 @@
         },
         "ListBranchesInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a list branches operation.</p>",
+            "documentation": "Represents the input of a list branches operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -412,7 +412,7 @@
         },
         "ListBranchesOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a list branches operation.</p>",
+            "documentation": "Represents the output of a list branches operation.",
             "members": [
                 {
                     "name": "branches",
@@ -428,7 +428,7 @@
         },
         "ListRepositoriesInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of a list repositories operation.</p>",
+            "documentation": "Represents the input of a list repositories operation.",
             "members": [
                 {
                     "name": "nextToken",
@@ -449,7 +449,7 @@
         },
         "ListRepositoriesOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a list repositories operation.</p>",
+            "documentation": "Represents the output of a list repositories operation.",
             "members": [
                 {
                     "name": "repositories",
@@ -465,7 +465,7 @@
         },
         "MaximumRepositoryNamesExceededException": {
             "type": "structure",
-            "documentation": "<p>The maximum number of allowed repository names was exceeded. Currently, this number is 25.</p>",
+            "documentation": "The maximum number of allowed repository names was exceeded. Currently, this number is 25.",
             "members": []
         },
         "NextToken": {
@@ -479,7 +479,7 @@
         },
         "RepositoryDoesNotExistException": {
             "type": "structure",
-            "documentation": "<p>The specified repository does not exist.</p>",
+            "documentation": "The specified repository does not exist.",
             "members": []
         },
         "RepositoryId": {
@@ -487,12 +487,12 @@
         },
         "RepositoryLimitExceededException": {
             "type": "structure",
-            "documentation": "<p>A repository resource limit was exceeded.</p>",
+            "documentation": "A repository resource limit was exceeded.",
             "members": []
         },
         "RepositoryMetadata": {
             "type": "structure",
-            "documentation": "<p>Information about a repository.</p>",
+            "documentation": "Information about a repository.",
             "members": [
                 {
                     "name": "accountId",
@@ -556,12 +556,12 @@
         },
         "RepositoryNameExistsException": {
             "type": "structure",
-            "documentation": "<p>The specified repository name already exists.</p>",
+            "documentation": "The specified repository name already exists.",
             "members": []
         },
         "RepositoryNameIdPair": {
             "type": "structure",
-            "documentation": "<p>Information about a repository name and ID.</p>",
+            "documentation": "Information about a repository name and ID.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -584,12 +584,12 @@
         },
         "RepositoryNameRequiredException": {
             "type": "structure",
-            "documentation": "<p>A repository name is required but was not specified.</p>",
+            "documentation": "A repository name is required but was not specified.",
             "members": []
         },
         "RepositoryNamesRequiredException": {
             "type": "structure",
-            "documentation": "<p>A repository names object is required but was not specified.</p>",
+            "documentation": "A repository names object is required but was not specified.",
             "members": []
         },
         "RepositoryNotFoundList": {
@@ -601,7 +601,7 @@
         },
         "UpdateDefaultBranchInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an update default branch operation.</p>",
+            "documentation": "Represents the input of an update default branch operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -617,7 +617,7 @@
         },
         "UpdateRepositoryDescriptionInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an update repository description operation.</p>",
+            "documentation": "Represents the input of an update repository description operation.",
             "members": [
                 {
                     "name": "repositoryName",
@@ -633,7 +633,7 @@
         },
         "UpdateRepositoryNameInput": {
             "type": "structure",
-            "documentation": "<p>Represents the input of an update repository description operation.</p>",
+            "documentation": "Represents the input of an update repository description operation.",
             "members": [
                 {
                     "name": "oldName",

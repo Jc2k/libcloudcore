@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateHapg": {
-            "documentation": "<p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",
+            "documentation": "Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.",
             "input": {
                 "shape": "CreateHapgRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateHsm": {
-            "documentation": "<p>Creates an uninitialized HSM instance. Running this command provisions an HSM appliance and will result in charges to your AWS account for the HSM.</p>",
+            "documentation": "Creates an uninitialized HSM instance. Running this command provisions an HSM appliance and will result in charges to your AWS account for the HSM.",
             "input": {
                 "shape": "CreateHsmRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CreateLunaClient": {
-            "documentation": "<p>Creates an HSM client.</p>",
+            "documentation": "Creates an HSM client.",
             "input": {
                 "shape": "CreateLunaClientRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DeleteHapg": {
-            "documentation": "<p>Deletes a high-availability partition group.</p>",
+            "documentation": "Deletes a high-availability partition group.",
             "input": {
                 "shape": "DeleteHapgRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "DeleteHsm": {
-            "documentation": "<p>Deletes an HSM. Once complete, this operation cannot be undone and your key material cannot be recovered.</p>",
+            "documentation": "Deletes an HSM. Once complete, this operation cannot be undone and your key material cannot be recovered.",
             "input": {
                 "shape": "DeleteHsmRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "DeleteLunaClient": {
-            "documentation": "<p>Deletes a client.</p>",
+            "documentation": "Deletes a client.",
             "input": {
                 "shape": "DeleteLunaClientRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "DescribeHapg": {
-            "documentation": "<p>Retrieves information about a high-availability partition group.</p>",
+            "documentation": "Retrieves information about a high-availability partition group.",
             "input": {
                 "shape": "DescribeHapgRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "DescribeHsm": {
-            "documentation": "<p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>",
+            "documentation": "Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.",
             "input": {
                 "shape": "DescribeHsmRequest"
             },
@@ -104,7 +104,7 @@
             }
         },
         "DescribeLunaClient": {
-            "documentation": "<p>Retrieves information about an HSM client.</p>",
+            "documentation": "Retrieves information about an HSM client.",
             "input": {
                 "shape": "DescribeLunaClientRequest"
             },
@@ -113,7 +113,7 @@
             }
         },
         "GetConfig": {
-            "documentation": "<p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>",
+            "documentation": "Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.",
             "input": {
                 "shape": "GetConfigRequest"
             },
@@ -122,7 +122,7 @@
             }
         },
         "ListAvailableZones": {
-            "documentation": "<p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>",
+            "documentation": "Lists the Availability Zones that have available AWS CloudHSM capacity.",
             "input": {
                 "shape": "ListAvailableZonesRequest"
             },
@@ -131,7 +131,7 @@
             }
         },
         "ListHapgs": {
-            "documentation": "<p>Lists the high-availability partition groups for the account.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next set of items.</p>",
+            "documentation": "Lists the high-availability partition groups for the account.\n\n This operation supports pagination with the use of the *NextToken* member. If more results are available, the *NextToken* member of the response contains a token that you pass in the next call to ListHapgs to retrieve the next set of items.",
             "input": {
                 "shape": "ListHapgsRequest"
             },
@@ -140,7 +140,7 @@
             }
         },
         "ListHsms": {
-            "documentation": "<p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of items.</p>",
+            "documentation": "Retrieves the identifiers of all of the HSMs provisioned for the current customer.\n\n This operation supports pagination with the use of the *NextToken* member. If more results are available, the *NextToken* member of the response contains a token that you pass in the next call to ListHsms to retrieve the next set of items.",
             "input": {
                 "shape": "ListHsmsRequest"
             },
@@ -149,7 +149,7 @@
             }
         },
         "ListLunaClients": {
-            "documentation": "<p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>",
+            "documentation": "Lists all of the clients.\n\n This operation supports pagination with the use of the *NextToken* member. If more results are available, the *NextToken* member of the response contains a token that you pass in the next call to ListLunaClients to retrieve the next set of items.",
             "input": {
                 "shape": "ListLunaClientsRequest"
             },
@@ -158,7 +158,7 @@
             }
         },
         "ModifyHapg": {
-            "documentation": "<p>Modifies an existing high-availability partition group.</p>",
+            "documentation": "Modifies an existing high-availability partition group.",
             "input": {
                 "shape": "ModifyHapgRequest"
             },
@@ -167,7 +167,7 @@
             }
         },
         "ModifyHsm": {
-            "documentation": "<p>Modifies an HSM.</p>",
+            "documentation": "Modifies an HSM.",
             "input": {
                 "shape": "ModifyHsmRequest"
             },
@@ -176,7 +176,7 @@
             }
         },
         "ModifyLunaClient": {
-            "documentation": "<p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>",
+            "documentation": "Modifies the certificate used by the client.\n\n This action can potentially start a workflow to install the new certificate on the client's HSMs.",
             "input": {
                 "shape": "ModifyLunaClientRequest"
             },
@@ -220,7 +220,7 @@
         },
         "CloudHsmInternalException": {
             "type": "structure",
-            "documentation": "<p>Indicates that an internal error occurred.</p>",
+            "documentation": "Indicates that an internal error occurred.",
             "members": []
         },
         "CloudHsmObjectState": {
@@ -228,7 +228,7 @@
         },
         "CloudHsmServiceException": {
             "type": "structure",
-            "documentation": "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>",
+            "documentation": "Indicates that an exception occurred in the AWS CloudHSM service.",
             "members": [
                 {
                     "name": "message",
@@ -244,7 +244,7 @@
         },
         "CreateHapgRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>CreateHapgRequest</a> action.</p>",
+            "documentation": "Contains the inputs for the CreateHapgRequest action.",
             "members": [
                 {
                     "name": "Label",
@@ -255,7 +255,7 @@
         },
         "CreateHapgResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>",
+            "documentation": "Contains the output of the CreateHAPartitionGroup action.",
             "members": [
                 {
                     "name": "HapgArn",
@@ -266,7 +266,7 @@
         },
         "CreateHsmRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>CreateHsm</a> action. </p>",
+            "documentation": "Contains the inputs for the CreateHsm action.",
             "members": [
                 {
                     "name": "SubnetId",
@@ -320,7 +320,7 @@
         },
         "CreateHsmResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>CreateHsm</a> action.</p>",
+            "documentation": "Contains the output of the CreateHsm action.",
             "members": [
                 {
                     "name": "HsmArn",
@@ -331,7 +331,7 @@
         },
         "CreateLunaClientRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>",
+            "documentation": "Contains the inputs for the CreateLunaClient action.",
             "members": [
                 {
                     "name": "Label",
@@ -347,7 +347,7 @@
         },
         "CreateLunaClientResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>CreateLunaClient</a> action.</p>",
+            "documentation": "Contains the output of the CreateLunaClient action.",
             "members": [
                 {
                     "name": "ClientArn",
@@ -358,7 +358,7 @@
         },
         "DeleteHapgRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DeleteHapg</a> action.</p>",
+            "documentation": "Contains the inputs for the DeleteHapg action.",
             "members": [
                 {
                     "name": "HapgArn",
@@ -369,7 +369,7 @@
         },
         "DeleteHapgResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>DeleteHapg</a> action.</p>",
+            "documentation": "Contains the output of the DeleteHapg action.",
             "members": [
                 {
                     "name": "Status",
@@ -380,7 +380,7 @@
         },
         "DeleteHsmRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DeleteHsm</a> action. </p>",
+            "documentation": "Contains the inputs for the DeleteHsm action.",
             "members": [
                 {
                     "name": "HsmArn",
@@ -392,7 +392,7 @@
         },
         "DeleteHsmResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>DeleteHsm</a> action.</p>",
+            "documentation": "Contains the output of the DeleteHsm action.",
             "members": [
                 {
                     "name": "Status",
@@ -423,7 +423,7 @@
         },
         "DescribeHapgRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DescribeHapg</a> action.</p>",
+            "documentation": "Contains the inputs for the DescribeHapg action.",
             "members": [
                 {
                     "name": "HapgArn",
@@ -434,7 +434,7 @@
         },
         "DescribeHapgResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>DescribeHapg</a> action.</p>",
+            "documentation": "Contains the output of the DescribeHapg action.",
             "members": [
                 {
                     "name": "HapgArn",
@@ -482,7 +482,7 @@
         },
         "DescribeHsmRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>DescribeHsm</a> action. </p>",
+            "documentation": "Contains the inputs for the DescribeHsm action.",
             "members": [
                 {
                     "name": "HsmArn",
@@ -498,7 +498,7 @@
         },
         "DescribeHsmResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>DescribeHsm</a> action.</p>",
+            "documentation": "Contains the output of the DescribeHsm action.",
             "members": [
                 {
                     "name": "HsmArn",
@@ -707,11 +707,11 @@
         },
         "HsmArn": {
             "type": "string",
-            "documentation": "<p>An ARN that identifies an HSM.</p>"
+            "documentation": "An ARN that identifies an HSM."
         },
         "HsmList": {
             "type": "list",
-            "documentation": "<p>Contains a list of ARNs that identify the HSMs.</p>",
+            "documentation": "Contains a list of ARNs that identify the HSMs.",
             "of": "HsmArn"
         },
         "HsmSerialNumber": {
@@ -725,7 +725,7 @@
         },
         "InvalidRequestException": {
             "type": "structure",
-            "documentation": "<p>Indicates that one or more of the request parameters are not valid.</p>",
+            "documentation": "Indicates that one or more of the request parameters are not valid.",
             "members": []
         },
         "IpAddress": {
@@ -736,7 +736,7 @@
         },
         "ListAvailableZonesRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>",
+            "documentation": "Contains the inputs for the ListAvailableZones action.",
             "members": []
         },
         "ListAvailableZonesResponse": {
@@ -786,7 +786,7 @@
         },
         "ListHsmsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>ListHsms</a> action.</p>",
+            "documentation": "Contains the output of the ListHsms action.",
             "members": [
                 {
                     "name": "HsmList",
@@ -857,7 +857,7 @@
         },
         "ModifyHsmRequest": {
             "type": "structure",
-            "documentation": "<p>Contains the inputs for the <a>ModifyHsm</a> action. </p>",
+            "documentation": "Contains the inputs for the ModifyHsm action.",
             "members": [
                 {
                     "name": "HsmArn",
@@ -899,7 +899,7 @@
         },
         "ModifyHsmResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the output of the <a>ModifyHsm</a> action.</p>",
+            "documentation": "Contains the output of the ModifyHsm action.",
             "members": [
                 {
                     "name": "HsmArn",

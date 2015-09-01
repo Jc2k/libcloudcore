@@ -40,49 +40,49 @@
     ],
     "operations": {
         "AddClientIDToOpenIDConnectProvider": {
-            "documentation": "<p>Adds a new client ID (also known as audience) to the list of client IDs already registered for the specified IAM OpenID Connect provider.</p> <p>This action is idempotent; it does not fail or return an error if you add an existing client ID to the provider.</p>",
+            "documentation": "Adds a new client ID (also known as audience) to the list of client IDs already registered for the specified IAM OpenID Connect provider.\n\n This action is idempotent; it does not fail or return an error if you add an existing client ID to the provider.",
             "input": {
                 "shape": "AddClientIDToOpenIDConnectProviderRequest"
             }
         },
         "AddRoleToInstanceProfile": {
-            "documentation": "<p>Adds the specified role to the specified instance profile. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>. For more information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. </p>",
+            "documentation": "Adds the specified role to the specified instance profile. For more information about roles, go to `Working with Roles <http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html>`_. For more information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_.",
             "input": {
                 "shape": "AddRoleToInstanceProfileRequest"
             }
         },
         "AddUserToGroup": {
-            "documentation": "<p>Adds the specified user to the specified group.</p>",
+            "documentation": "Adds the specified user to the specified group.",
             "input": {
                 "shape": "AddUserToGroupRequest"
             }
         },
         "AttachGroupPolicy": {
-            "documentation": "<p>Attaches the specified managed policy to the specified group.</p> <p>You use this API to attach a managed policy to a group. To embed an inline policy in a group, use <a>PutGroupPolicy</a>. </p> <p>For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Attaches the specified managed policy to the specified group.\n\n You use this API to attach a managed policy to a group. To embed an inline policy in a group, use PutGroupPolicy. \n\n For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "AttachGroupPolicyRequest"
             }
         },
         "AttachRolePolicy": {
-            "documentation": "<p>Attaches the specified managed policy to the specified role.</p> <p>When you attach a managed policy to a role, the managed policy is used as the role's access (permissions) policy. You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. </p> <p>Use this API to attach a managed policy to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.</p>",
+            "documentation": "Attaches the specified managed policy to the specified role.\n\n When you attach a managed policy to a role, the managed policy is used as the role's access (permissions) policy. You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the same time as the role, using CreateRole. You can update a role's trust policy using UpdateAssumeRolePolicy. \n\n Use this API to attach a managed policy to a role. To embed an inline policy in a role, use PutRolePolicy. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "AttachRolePolicyRequest"
             }
         },
         "AttachUserPolicy": {
-            "documentation": "<p>Attaches the specified managed policy to the specified user.</p> <p>You use this API to attach a managed policy to a user. To embed an inline policy in a user, use <a>PutUserPolicy</a>. </p> <p>For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Attaches the specified managed policy to the specified user.\n\n You use this API to attach a managed policy to a user. To embed an inline policy in a user, use PutUserPolicy. \n\n For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "AttachUserPolicyRequest"
             }
         },
         "ChangePassword": {
-            "documentation": "<p>Changes the password of the IAM user who is calling this action. The root account password is not affected by this action. </p> <p>To change the password for a different user, see <a>UpdateLoginProfile</a>. For more information about modifying passwords, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html\">Managing Passwords</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Changes the password of the IAM user who is calling this action. The root account password is not affected by this action. \n\n To change the password for a different user, see UpdateLoginProfile. For more information about modifying passwords, see `Managing Passwords <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "ChangePasswordRequest"
             }
         },
         "CreateAccessKey": {
-            "documentation": "<p> Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default status for new keys is <code>Active</code>. </p> <p> If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <p> For information about limits on the number of keys you can create, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <important> To ensure the security of your AWS account, the secret access key is accessible only during key and user creation. You must save the key (for example, in a text file) if you want to be able to access it again. If a secret key is lost, you can delete the access keys for the associated user and then create new keys. </important>",
+            "documentation": "Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default status for new keys is ``Active``. \n\n  If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. \n\n  For information about limits on the number of keys you can create, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n  To ensure the security of your AWS account, the secret access key is accessible only during key and user creation. You must save the key (for example, in a text file) if you want to be able to access it again. If a secret key is lost, you can delete the access keys for the associated user and then create new keys.",
             "input": {
                 "shape": "CreateAccessKeyRequest"
             },
@@ -91,13 +91,13 @@
             }
         },
         "CreateAccountAlias": {
-            "documentation": "<p>Creates an alias for your AWS account. For information about using an AWS account alias, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html\">Using an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates an alias for your AWS account. For information about using an AWS account alias, see `Using an Alias for Your AWS Account ID <http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreateAccountAliasRequest"
             }
         },
         "CreateGroup": {
-            "documentation": "<p>Creates a new group.</p> <p> For information about the number of groups you can create, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates a new group.\n\n  For information about the number of groups you can create, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreateGroupRequest"
             },
@@ -106,7 +106,7 @@
             }
         },
         "CreateInstanceProfile": {
-            "documentation": "<p> Creates a new instance profile. For information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. </p> <p> For information about the number of instance profiles you can create, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates a new instance profile. For information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_. \n\n  For information about the number of instance profiles you can create, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreateInstanceProfileRequest"
             },
@@ -115,7 +115,7 @@
             }
         },
         "CreateLoginProfile": {
-            "documentation": "<p> Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For more information about managing passwords, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html\">Managing Passwords</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For more information about managing passwords, see `Managing Passwords <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreateLoginProfileRequest"
             },
@@ -124,7 +124,7 @@
             }
         },
         "CreateOpenIDConnectProvider": {
-            "documentation": "<p>Creates an IAM entity to describe an identity provider (IdP) that supports <a href=\"http://openid.net/connect/\">OpenID Connect (OIDC)</a>. </p> <p>The OIDC provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between AWS and the OIDC provider. </p> <p>When you create the IAM OIDC provider, you specify the URL of the OIDC identity provider (IdP) to trust, a list of client IDs (also known as audiences) that identify the application or applications that are allowed to authenticate using the OIDC provider, and a list of thumbprints of the server certificate(s) that the IdP uses. You get all of this information from the OIDC IdP that you want to use for access to AWS. </p> <note>Because trust for the OIDC provider is ultimately derived from the IAM provider that this action creates, it is a best practice to limit access to the <a>CreateOpenIDConnectProvider</a> action to highly-privileged users. </note>",
+            "documentation": "Creates an IAM entity to describe an identity provider (IdP) that supports `OpenID Connect (OIDC) <http://openid.net/connect/>`_. \n\n The OIDC provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between AWS and the OIDC provider. \n\n When you create the IAM OIDC provider, you specify the URL of the OIDC identity provider (IdP) to trust, a list of client IDs (also known as audiences) that identify the application or applications that are allowed to authenticate using the OIDC provider, and a list of thumbprints of the server certificate(s) that the IdP uses. You get all of this information from the OIDC IdP that you want to use for access to AWS. \n\n Because trust for the OIDC provider is ultimately derived from the IAM provider that this action creates, it is a best practice to limit access to the CreateOpenIDConnectProvider action to highly-privileged users.",
             "input": {
                 "shape": "CreateOpenIDConnectProviderRequest"
             },
@@ -133,7 +133,7 @@
             }
         },
         "CreatePolicy": {
-            "documentation": "<p>Creates a new managed policy for your AWS account. </p> <p>This operation creates a policy version with a version identifier of <code>v1</code> and sets v1 as the policy's default version. For more information about policy versions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html\">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p> <p>For more information about managed policies in general, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates a new managed policy for your AWS account. \n\n This operation creates a policy version with a version identifier of ``v1`` and sets v1 as the policy's default version. For more information about policy versions, see `Versioning for Managed Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html>`_ in the *Using IAM* guide. \n\n For more information about managed policies in general, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreatePolicyRequest"
             },
@@ -142,7 +142,7 @@
             }
         },
         "CreatePolicyVersion": {
-            "documentation": "<p>Creates a new version of the specified managed policy. To update a managed policy, you create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a> before you create a new version. </p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to. </p> <p>For more information about managed policy versions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html\">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates a new version of the specified managed policy. To update a managed policy, you create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must delete an existing version using DeletePolicyVersion before you create a new version. \n\n Optionally, you can set the new version as the policy's default version. The default version is the operative version; that is, the version that is in effect for the IAM users, groups, and roles that the policy is attached to. \n\n For more information about managed policy versions, see `Versioning for Managed Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreatePolicyVersionRequest"
             },
@@ -151,7 +151,7 @@
             }
         },
         "CreateRole": {
-            "documentation": "<p>Creates a new role for your AWS account. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>. For information about limitations on role names and the number of roles you can create, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <p>The policy in the following example grants permission to an EC2 instance to assume the role.</p>",
+            "documentation": "Creates a new role for your AWS account. For more information about roles, go to `Working with Roles <http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html>`_. For information about limitations on role names and the number of roles you can create, go to `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n The policy in the following example grants permission to an EC2 instance to assume the role.",
             "input": {
                 "shape": "CreateRoleRequest"
             },
@@ -160,7 +160,7 @@
             }
         },
         "CreateSAMLProvider": {
-            "documentation": "<p>Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.</p> <p> The SAML provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between AWS and a SAML identity provider. You can create an IAM role that supports Web-based single sign-on (SSO) to the AWS Management Console or one that supports API access to AWS. </p> <p> When you create the SAML provider, you upload an a SAML metadata document that you get from your IdP and that includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response (assertions) that are received from the IdP. You must generate the metadata document using the identity management software that is used as your organization's IdP. </p> <note> This operation requires <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. </note> <p> For more information, see <a href=\"http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html\">Giving Console Access Using SAML</a> and <a href=\"http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html\">Creating Temporary Security Credentials for SAML Federation</a> in the <i>Using Temporary Credentials</i> guide. </p>",
+            "documentation": "Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.\n\n  The SAML provider that you create with this operation can be used as a principal in a role's trust policy to establish a trust relationship between AWS and a SAML identity provider. You can create an IAM role that supports Web-based single sign-on (SSO) to the AWS Management Console or one that supports API access to AWS. \n\n  When you create the SAML provider, you upload an a SAML metadata document that you get from your IdP and that includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response (assertions) that are received from the IdP. You must generate the metadata document using the identity management software that is used as your organization's IdP. \n\n  This operation requires `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_.   For more information, see `Giving Console Access Using SAML <http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html>`_ and `Creating Temporary Security Credentials for SAML Federation <http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html>`_ in the *Using Temporary Credentials* guide.",
             "input": {
                 "shape": "CreateSAMLProviderRequest"
             },
@@ -169,7 +169,7 @@
             }
         },
         "CreateUser": {
-            "documentation": "<p>Creates a new user for your AWS account.</p> <p> For information about limitations on the number of users you can create, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Creates a new user for your AWS account.\n\n  For information about limitations on the number of users you can create, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "CreateUserRequest"
             },
@@ -178,7 +178,7 @@
             }
         },
         "CreateVirtualMFADevice": {
-            "documentation": "<p>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html\">Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of MFA devices you can create, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on Entities</a> in the <i>Using IAM</i> guide. </p> <important>The seed information contained in the QR code and the Base32 string should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual device, you should ensure that the information is destroyed following secure procedures. </important>",
+            "documentation": "Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use EnableMFADevice to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to `Using a Virtual MFA Device <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html>`_ in the *Using IAM* guide. \n\n For information about limits on the number of MFA devices you can create, see `Limitations on Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n The seed information contained in the QR code and the Base32 string should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual device, you should ensure that the information is destroyed following secure procedures.",
             "input": {
                 "shape": "CreateVirtualMFADeviceRequest"
             },
@@ -187,154 +187,154 @@
             }
         },
         "DeactivateMFADevice": {
-            "documentation": "<p>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled. </p> <p>For more information about creating and working with virtual MFA devices, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html\">Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled. \n\n For more information about creating and working with virtual MFA devices, go to `Using a Virtual MFA Device <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeactivateMFADeviceRequest"
             }
         },
         "DeleteAccessKey": {
-            "documentation": "<p>Deletes the access key associated with the specified user.</p> <p> If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>",
+            "documentation": "Deletes the access key associated with the specified user.\n\n  If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users.",
             "input": {
                 "shape": "DeleteAccessKeyRequest"
             }
         },
         "DeleteAccountAlias": {
-            "documentation": "<p> Deletes the specified AWS account alias. For information about using an AWS account alias, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html\">Using an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deletes the specified AWS account alias. For information about using an AWS account alias, see `Using an Alias for Your AWS Account ID <http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeleteAccountAliasRequest"
             }
         },
         "DeleteAccountPasswordPolicy": {
-            "documentation": "<p>Deletes the password policy for the AWS account.</p>"
+            "documentation": "Deletes the password policy for the AWS account."
         },
         "DeleteGroup": {
-            "documentation": "<p> Deletes the specified group. The group must not contain any users or have any attached policies. </p>",
+            "documentation": "Deletes the specified group. The group must not contain any users or have any attached policies.",
             "input": {
                 "shape": "DeleteGroupRequest"
             }
         },
         "DeleteGroupPolicy": {
-            "documentation": "<p>Deletes the specified inline policy that is embedded in the specified group.</p> <p>A group can also have managed policies attached to it. To detach a managed policy from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deletes the specified inline policy that is embedded in the specified group.\n\n A group can also have managed policies attached to it. To detach a managed policy from a group, use DetachGroupPolicy. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeleteGroupPolicyRequest"
             }
         },
         "DeleteInstanceProfile": {
-            "documentation": "<p>Deletes the specified instance profile. The instance profile must not have an associated role. </p> <important> Make sure you do not have any Amazon EC2 instances running with the instance profile you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance. </important> <p>For more information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. </p>",
+            "documentation": "Deletes the specified instance profile. The instance profile must not have an associated role. \n\n  Make sure you do not have any Amazon EC2 instances running with the instance profile you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance.  For more information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_.",
             "input": {
                 "shape": "DeleteInstanceProfileRequest"
             }
         },
         "DeleteLoginProfile": {
-            "documentation": "<p> Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management Console. </p> <important> Deleting a user's password does not prevent a user from accessing IAM through the command line interface or the API. To prevent all user access you must also either make the access key inactive or delete it. For more information about making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </important>",
+            "documentation": "Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management Console. \n\n  Deleting a user's password does not prevent a user from accessing IAM through the command line interface or the API. To prevent all user access you must also either make the access key inactive or delete it. For more information about making keys inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.",
             "input": {
                 "shape": "DeleteLoginProfileRequest"
             }
         },
         "DeleteOpenIDConnectProvider": {
-            "documentation": "<p>Deletes an IAM OpenID Connect identity provider.</p> <p>Deleting an OIDC provider does not update any roles that reference the provider as a principal in their trust policies. Any attempt to assume a role that references a provider that has been deleted will fail. </p> <p>This action is idempotent; it does not fail or return an error if you call the action for a provider that was already deleted.</p>",
+            "documentation": "Deletes an IAM OpenID Connect identity provider.\n\n Deleting an OIDC provider does not update any roles that reference the provider as a principal in their trust policies. Any attempt to assume a role that references a provider that has been deleted will fail. \n\n This action is idempotent; it does not fail or return an error if you call the action for a provider that was already deleted.",
             "input": {
                 "shape": "DeleteOpenIDConnectProviderRequest"
             }
         },
         "DeletePolicy": {
-            "documentation": "<p>Deletes the specified managed policy.</p> <p>Before you can delete a managed policy, you must detach the policy from all users, groups, and roles that it is attached to, and you must delete all of the policy's versions. The following steps describe the process for deleting a managed policy: <ol> <li>Detach the policy from all users, groups, and roles that the policy is attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>. </li> <li>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's versions, use <a>ListPolicyVersions</a>. You cannot use <a>DeletePolicyVersion</a> to delete the version that is marked as the default version. You delete the policy's default version in the next step of the process. </li> <li>Delete the policy (this automatically deletes the policy's default version) using this API. </li> </ol> </p> <p>For information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deletes the specified managed policy.\n\n Before you can delete a managed policy, you must detach the policy from all users, groups, and roles that it is attached to, and you must delete all of the policy's versions. The following steps describe the process for deleting a managed policy: \n\n  * Detach the policy from all users, groups, and roles that the policy is attached to, using the DetachUserPolicy, DetachGroupPolicy, or DetachRolePolicy APIs. To list all the users, groups, and roles that a policy is attached to, use ListEntitiesForPolicy. \n  * Delete all versions of the policy using DeletePolicyVersion. To list the policy's versions, use ListPolicyVersions. You cannot use DeletePolicyVersion to delete the version that is marked as the default version. You delete the policy's default version in the next step of the process. \n  * Delete the policy (this automatically deletes the policy's default version) using this API. \n \n \n\n For information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeletePolicyRequest"
             }
         },
         "DeletePolicyVersion": {
-            "documentation": "<p>Deletes the specified version of the specified managed policy.</p> <p>You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use <a>ListPolicyVersions</a>. </p> <p>For information about versions for managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html\">Versioning for Managed Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deletes the specified version of the specified managed policy.\n\n You cannot delete the default version of a policy using this API. To delete the default version of a policy, use DeletePolicy. To find out which version of a policy is marked as the default version, use ListPolicyVersions. \n\n For information about versions for managed policies, refer to `Versioning for Managed Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeletePolicyVersionRequest"
             }
         },
         "DeleteRole": {
-            "documentation": "<p>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>. </p> <important>Make sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance. </important>",
+            "documentation": "Deletes the specified role. The role must not have any policies attached. For more information about roles, go to `Working with Roles <http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html>`_. \n\n Make sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance.",
             "input": {
                 "shape": "DeleteRoleRequest"
             }
         },
         "DeleteRolePolicy": {
-            "documentation": "<p>Deletes the specified inline policy that is embedded in the specified role.</p> <p>A role can also have managed policies attached to it. To detach a managed policy from a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deletes the specified inline policy that is embedded in the specified role.\n\n A role can also have managed policies attached to it. To detach a managed policy from a role, use DetachRolePolicy. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeleteRolePolicyRequest"
             }
         },
         "DeleteSAMLProvider": {
-            "documentation": "<p>Deletes a SAML provider.</p> <p> Deleting the provider does not update any roles that reference the SAML provider as a principal in their trust policies. Any attempt to assume a role that references a SAML provider that has been deleted will fail. </p> <note> This operation requires <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. </note>",
+            "documentation": "Deletes a SAML provider.\n\n  Deleting the provider does not update any roles that reference the SAML provider as a principal in their trust policies. Any attempt to assume a role that references a SAML provider that has been deleted will fail. \n\n  This operation requires `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_.",
             "input": {
                 "shape": "DeleteSAMLProviderRequest"
             }
         },
         "DeleteSSHPublicKey": {
-            "documentation": "<p>Deletes the specified SSH public key.</p> <p>The SSH public key deleted by this action is used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html\">Set up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.</p>",
+            "documentation": "Deletes the specified SSH public key.\n\n The SSH public key deleted by this action is used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see `Set up AWS CodeCommit for SSH Connections <http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html>`_ in the *AWS CodeCommit User Guide*.",
             "input": {
                 "shape": "DeleteSSHPublicKeyRequest"
             }
         },
         "DeleteServerCertificate": {
-            "documentation": "<p>Deletes the specified server certificate.</p> <important> If you are using a server certificate with Elastic Load Balancing, deleting the certificate could have implications for your application. If Elastic Load Balancing doesn't detect the deletion of bound certificates, it may continue to use the certificates. This could cause Elastic Load Balancing to stop accepting traffic. We recommend that you remove the reference to the certificate from Elastic Load Balancing before using this command to delete the certificate. For more information, go to <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html\">DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API Reference</i>. </important>",
+            "documentation": "Deletes the specified server certificate.\n\n  If you are using a server certificate with Elastic Load Balancing, deleting the certificate could have implications for your application. If Elastic Load Balancing doesn't detect the deletion of bound certificates, it may continue to use the certificates. This could cause Elastic Load Balancing to stop accepting traffic. We recommend that you remove the reference to the certificate from Elastic Load Balancing before using this command to delete the certificate. For more information, go to `DeleteLoadBalancerListeners <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html>`_ in the *Elastic Load Balancing API Reference*.",
             "input": {
                 "shape": "DeleteServerCertificateRequest"
             }
         },
         "DeleteSigningCertificate": {
-            "documentation": "<p>Deletes the specified signing certificate associated with the specified user.</p> <p>If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>",
+            "documentation": "Deletes the specified signing certificate associated with the specified user.\n\n If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users.",
             "input": {
                 "shape": "DeleteSigningCertificateRequest"
             }
         },
         "DeleteUser": {
-            "documentation": "<p> Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached policies. </p>",
+            "documentation": "Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached policies.",
             "input": {
                 "shape": "DeleteUserRequest"
             }
         },
         "DeleteUserPolicy": {
-            "documentation": "<p>Deletes the specified inline policy that is embedded in the specified user.</p> <p>A user can also have managed policies attached to it. To detach a managed policy from a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Deletes the specified inline policy that is embedded in the specified user.\n\n A user can also have managed policies attached to it. To detach a managed policy from a user, use DetachUserPolicy. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DeleteUserPolicyRequest"
             }
         },
         "DeleteVirtualMFADevice": {
-            "documentation": "<p>Deletes a virtual MFA device.</p> <note> You must deactivate a user's virtual MFA device before you can delete it. For information about deactivating MFA devices, see <a>DeactivateMFADevice</a>. </note>",
+            "documentation": "Deletes a virtual MFA device.\n\n  You must deactivate a user's virtual MFA device before you can delete it. For information about deactivating MFA devices, see DeactivateMFADevice.",
             "input": {
                 "shape": "DeleteVirtualMFADeviceRequest"
             }
         },
         "DetachGroupPolicy": {
-            "documentation": "<p>Removes the specified managed policy from the specified group. </p> <p>A group can also have inline policies embedded with it. To delete an inline policy, use the <a>DeleteGroupPolicy</a> API. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Removes the specified managed policy from the specified group. \n\n A group can also have inline policies embedded with it. To delete an inline policy, use the DeleteGroupPolicy API. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DetachGroupPolicyRequest"
             }
         },
         "DetachRolePolicy": {
-            "documentation": "<p>Removes the specified managed policy from the specified role. </p> <p>A role can also have inline policies embedded with it. To delete an inline policy, use the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Removes the specified managed policy from the specified role. \n\n A role can also have inline policies embedded with it. To delete an inline policy, use the DeleteRolePolicy API. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DetachRolePolicyRequest"
             }
         },
         "DetachUserPolicy": {
-            "documentation": "<p>Removes the specified managed policy from the specified user. </p> <p>A user can also have inline policies embedded with it. To delete an inline policy, use the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Removes the specified managed policy from the specified user. \n\n A user can also have inline policies embedded with it. To delete an inline policy, use the DeleteUserPolicy API. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "DetachUserPolicyRequest"
             }
         },
         "EnableMFADevice": {
-            "documentation": "<p> Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every subsequent login by the user name associated with the device. </p>",
+            "documentation": "Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every subsequent login by the user name associated with the device.",
             "input": {
                 "shape": "EnableMFADeviceRequest"
             }
         },
         "GenerateCredentialReport": {
-            "documentation": "<p> Generates a credential report for the AWS account. For more information about the credential report, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html\">Getting Credential Reports</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Generates a credential report for the AWS account. For more information about the credential report, see `Getting Credential Reports <http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html>`_ in the *Using IAM* guide.",
             "output": {
                 "shape": "GenerateCredentialReportResponse"
             }
         },
         "GetAccessKeyLastUsed": {
-            "documentation": "<p>Retrieves information about when the specified access key was last used. The information includes the date and time of last use, along with the AWS service and region that were specified in the last request made with that key.</p>",
+            "documentation": "Retrieves information about when the specified access key was last used. The information includes the date and time of last use, along with the AWS service and region that were specified in the last request made with that key.",
             "input": {
                 "shape": "GetAccessKeyLastUsedRequest"
             },
@@ -343,7 +343,7 @@
             }
         },
         "GetAccountAuthorizationDetails": {
-            "documentation": "<p>Retrieves information about all IAM users, groups, roles, and policies in your account, including their relationships to one another. Use this API to obtain a snapshot of the configuration of IAM permissions (users, groups, roles, and policies) in your account.</p> <p>You can optionally filter the results using the <code>Filter</code> parameter. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>",
+            "documentation": "Retrieves information about all IAM users, groups, roles, and policies in your account, including their relationships to one another. Use this API to obtain a snapshot of the configuration of IAM permissions (users, groups, roles, and policies) in your account.\n\n You can optionally filter the results using the ``Filter`` parameter. You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "GetAccountAuthorizationDetailsRequest"
             },
@@ -352,25 +352,25 @@
             }
         },
         "GetAccountPasswordPolicy": {
-            "documentation": "<p>Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html\">Managing an IAM Password Policy</a>. </p>",
+            "documentation": "Retrieves the password policy for the AWS account. For more information about using a password policy, go to `Managing an IAM Password Policy <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html>`_.",
             "output": {
                 "shape": "GetAccountPasswordPolicyResponse"
             }
         },
         "GetAccountSummary": {
-            "documentation": "<p>Retrieves information about IAM entity usage and IAM quotas in the AWS account.</p> <p> For information about limitations on IAM entities, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Retrieves information about IAM entity usage and IAM quotas in the AWS account.\n\n  For information about limitations on IAM entities, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide.",
             "output": {
                 "shape": "GetAccountSummaryResponse"
             }
         },
         "GetCredentialReport": {
-            "documentation": "<p> Retrieves a credential report for the AWS account. For more information about the credential report, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html\">Getting Credential Reports</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Retrieves a credential report for the AWS account. For more information about the credential report, see `Getting Credential Reports <http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html>`_ in the *Using IAM* guide.",
             "output": {
                 "shape": "GetCredentialReportResponse"
             }
         },
         "GetGroup": {
-            "documentation": "<p> Returns a list of users that are in the specified group. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Returns a list of users that are in the specified group. You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "GetGroupRequest"
             },
@@ -379,7 +379,7 @@
             }
         },
         "GetGroupPolicy": {
-            "documentation": "<p>Retrieves the specified inline policy document that is embedded in the specified group. </p> <p>A group can also have managed policies attached to it. To retrieve a managed policy document that is attached to a group, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Retrieves the specified inline policy document that is embedded in the specified group. \n\n A group can also have managed policies attached to it. To retrieve a managed policy document that is attached to a group, use GetPolicy to determine the policy's default version, then use GetPolicyVersion to retrieve the policy document. \n\n For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "GetGroupPolicyRequest"
             },
@@ -388,7 +388,7 @@
             }
         },
         "GetInstanceProfile": {
-            "documentation": "<p> Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. For more information about ARNs, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs\">ARNs</a>. </p>",
+            "documentation": "Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_. For more information about ARNs, go to `ARNs <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs>`_.",
             "input": {
                 "shape": "GetInstanceProfileRequest"
             },
@@ -397,7 +397,7 @@
             }
         },
         "GetLoginProfile": {
-            "documentation": "<p>Retrieves the user name and password-creation date for the specified user. If the user has not been assigned a password, the action returns a 404 (<code>NoSuchEntity</code>) error. </p>",
+            "documentation": "Retrieves the user name and password-creation date for the specified user. If the user has not been assigned a password, the action returns a 404 (``NoSuchEntity``) error.",
             "input": {
                 "shape": "GetLoginProfileRequest"
             },
@@ -406,7 +406,7 @@
             }
         },
         "GetOpenIDConnectProvider": {
-            "documentation": "<p>Returns information about the specified OpenID Connect provider.</p>",
+            "documentation": "Returns information about the specified OpenID Connect provider.",
             "input": {
                 "shape": "GetOpenIDConnectProviderRequest"
             },
@@ -415,7 +415,7 @@
             }
         },
         "GetPolicy": {
-            "documentation": "<p>Retrieves information about the specified managed policy, including the policy's default version and the total number of users, groups, and roles that the policy is attached to. For a list of the specific users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata about the policy. To retrieve the policy document for a specific version of the policy, use <a>GetPolicyVersion</a>. </p> <p>This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded with a user, group, or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Retrieves information about the specified managed policy, including the policy's default version and the total number of users, groups, and roles that the policy is attached to. For a list of the specific users, groups, and roles that the policy is attached to, use the ListEntitiesForPolicy API. This API returns metadata about the policy. To retrieve the policy document for a specific version of the policy, use GetPolicyVersion. \n\n This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded with a user, group, or role, use the GetUserPolicy, GetGroupPolicy, or GetRolePolicy API. \n\n For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "GetPolicyRequest"
             },
@@ -424,7 +424,7 @@
             }
         },
         "GetPolicyVersion": {
-            "documentation": "<p>Retrieves information about the specified version of the specified managed policy, including the policy document. </p> <p>To list the available versions for a policy, use <a>ListPolicyVersions</a>. </p> <p>This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information about the types of policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Retrieves information about the specified version of the specified managed policy, including the policy document. \n\n To list the available versions for a policy, use ListPolicyVersions. \n\n This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded in a user, group, or role, use the GetUserPolicy, GetGroupPolicy, or GetRolePolicy API. \n\n For more information about the types of policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "GetPolicyVersionRequest"
             },
@@ -433,7 +433,7 @@
             }
         },
         "GetRole": {
-            "documentation": "<p>Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to assume the role. For more information about ARNs, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs\">ARNs</a>. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>. </p>",
+            "documentation": "Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to assume the role. For more information about ARNs, go to `ARNs <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs>`_. For more information about roles, go to `Working with Roles <http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html>`_.",
             "input": {
                 "shape": "GetRoleRequest"
             },
@@ -442,7 +442,7 @@
             }
         },
         "GetRolePolicy": {
-            "documentation": "<p>Retrieves the specified inline policy document that is embedded with the specified role. </p> <p>A role can also have managed policies attached to it. To retrieve a managed policy document that is attached to a role, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html\">Using Roles to Delegate Permissions and Federate Identities</a>. </p>",
+            "documentation": "Retrieves the specified inline policy document that is embedded with the specified role. \n\n A role can also have managed policies attached to it. To retrieve a managed policy document that is attached to a role, use GetPolicy to determine the policy's default version, then use GetPolicyVersion to retrieve the policy document. \n\n For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n For more information about roles, go to `Using Roles to Delegate Permissions and Federate Identities <http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html>`_.",
             "input": {
                 "shape": "GetRolePolicyRequest"
             },
@@ -451,7 +451,7 @@
             }
         },
         "GetSAMLProvider": {
-            "documentation": "<p>Returns the SAML provider metadocument that was uploaded when the provider was created or updated. </p> <note>This operation requires <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. </note>",
+            "documentation": "Returns the SAML provider metadocument that was uploaded when the provider was created or updated. \n\n This operation requires `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_.",
             "input": {
                 "shape": "GetSAMLProviderRequest"
             },
@@ -460,7 +460,7 @@
             }
         },
         "GetSSHPublicKey": {
-            "documentation": "<p>Retrieves the specified SSH public key, including metadata about the key.</p> <p>The SSH public key retrieved by this action is used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html\">Set up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.</p>",
+            "documentation": "Retrieves the specified SSH public key, including metadata about the key.\n\n The SSH public key retrieved by this action is used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see `Set up AWS CodeCommit for SSH Connections <http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html>`_ in the *AWS CodeCommit User Guide*.",
             "input": {
                 "shape": "GetSSHPublicKeyRequest"
             },
@@ -469,7 +469,7 @@
             }
         },
         "GetServerCertificate": {
-            "documentation": "<p>Retrieves information about the specified server certificate.</p>",
+            "documentation": "Retrieves information about the specified server certificate.",
             "input": {
                 "shape": "GetServerCertificateRequest"
             },
@@ -478,7 +478,7 @@
             }
         },
         "GetUser": {
-            "documentation": "<p>Retrieves information about the specified user, including the user's creation date, path, unique ID, and ARN. </p> <p>If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID used to sign the request. </p>",
+            "documentation": "Retrieves information about the specified user, including the user's creation date, path, unique ID, and ARN. \n\n If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID used to sign the request.",
             "input": {
                 "shape": "GetUserRequest"
             },
@@ -487,7 +487,7 @@
             }
         },
         "GetUserPolicy": {
-            "documentation": "<p>Retrieves the specified inline policy document that is embedded in the specified user. </p> <p>A user can also have managed policies attached to it. To retrieve a managed policy document that is attached to a user, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Retrieves the specified inline policy document that is embedded in the specified user. \n\n A user can also have managed policies attached to it. To retrieve a managed policy document that is attached to a user, use GetPolicy to determine the policy's default version, then use GetPolicyVersion to retrieve the policy document. \n\n For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "GetUserPolicyRequest"
             },
@@ -496,7 +496,7 @@
             }
         },
         "ListAccessKeys": {
-            "documentation": "<p>Returns information about the access key IDs associated with the specified user. If there are none, the action returns an empty list. </p> <p>Although each user is limited to a small number of keys, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <note>To ensure the security of your AWS account, the secret access key is accessible only during key and user creation. </note>",
+            "documentation": "Returns information about the access key IDs associated with the specified user. If there are none, the action returns an empty list. \n\n Although each user is limited to a small number of keys, you can still paginate the results using the ``MaxItems`` and ``Marker`` parameters. \n\n If the ``UserName`` field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. \n\n To ensure the security of your AWS account, the secret access key is accessible only during key and user creation.",
             "input": {
                 "shape": "ListAccessKeysRequest"
             },
@@ -505,7 +505,7 @@
             }
         },
         "ListAccountAliases": {
-            "documentation": "<p> Lists the account aliases associated with the account. For information about using an AWS account alias, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html\">Using an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. </p> <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the account aliases associated with the account. For information about using an AWS account alias, see `Using an Alias for Your AWS Account ID <http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html>`_ in the *Using IAM* guide. \n\n  You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListAccountAliasesRequest"
             },
@@ -514,7 +514,7 @@
             }
         },
         "ListAttachedGroupPolicies": {
-            "documentation": "<p>Lists all managed policies that are attached to the specified group.</p> <p>A group can also have inline policies embedded with it. To list the inline policies for a group, use the <a>ListGroupPolicies</a> API. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the action returns an empty list. </p>",
+            "documentation": "Lists all managed policies that are attached to the specified group.\n\n A group can also have inline policies embedded with it. To list the inline policies for a group, use the ListGroupPolicies API. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. You can use the ``PathPrefix`` parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the action returns an empty list.",
             "input": {
                 "shape": "ListAttachedGroupPoliciesRequest"
             },
@@ -523,7 +523,7 @@
             }
         },
         "ListAttachedRolePolicies": {
-            "documentation": "<p>Lists all managed policies that are attached to the specified role. </p> <p>A role can also have inline policies embedded with it. To list the inline policies for a role, use the <a>ListRolePolicies</a> API. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified role (or none that match the specified path prefix), the action returns an empty list. </p>",
+            "documentation": "Lists all managed policies that are attached to the specified role. \n\n A role can also have inline policies embedded with it. To list the inline policies for a role, use the ListRolePolicies API. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. You can use the ``PathPrefix`` parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified role (or none that match the specified path prefix), the action returns an empty list.",
             "input": {
                 "shape": "ListAttachedRolePoliciesRequest"
             },
@@ -532,7 +532,7 @@
             }
         },
         "ListAttachedUserPolicies": {
-            "documentation": "<p>Lists all managed policies that are attached to the specified user. </p> <p>A user can also have inline policies embedded with it. To list the inline policies for a user, use the <a>ListUserPolicies</a> API. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the action returns an empty list. </p>",
+            "documentation": "Lists all managed policies that are attached to the specified user. \n\n A user can also have inline policies embedded with it. To list the inline policies for a user, use the ListUserPolicies API. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. You can use the ``PathPrefix`` parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the action returns an empty list.",
             "input": {
                 "shape": "ListAttachedUserPoliciesRequest"
             },
@@ -541,7 +541,7 @@
             }
         },
         "ListEntitiesForPolicy": {
-            "documentation": "<p>Lists all users, groups, and roles that the specified managed policy is attached to. </p> <p>You can use the optional <code>EntityFilter</code> parameter to limit the results to a particular type of entity (users, groups, or roles). For example, to list only the roles that are attached to the specified policy, set <code>EntityFilter</code> to <code>Role</code>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists all users, groups, and roles that the specified managed policy is attached to. \n\n You can use the optional ``EntityFilter`` parameter to limit the results to a particular type of entity (users, groups, or roles). For example, to list only the roles that are attached to the specified policy, set ``EntityFilter`` to ``Role``. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListEntitiesForPolicyRequest"
             },
@@ -550,7 +550,7 @@
             }
         },
         "ListGroupPolicies": {
-            "documentation": "<p>Lists the names of the inline policies that are embedded in the specified group. </p> <p>A group can also have managed policies attached to it. To list the managed policies that are attached to a group, use <a>ListAttachedGroupPolicies</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified group, the action returns an empty list. </p>",
+            "documentation": "Lists the names of the inline policies that are embedded in the specified group. \n\n A group can also have managed policies attached to it. To list the managed policies that are attached to a group, use ListAttachedGroupPolicies. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. If there are no inline policies embedded with the specified group, the action returns an empty list.",
             "input": {
                 "shape": "ListGroupPoliciesRequest"
             },
@@ -559,7 +559,7 @@
             }
         },
         "ListGroups": {
-            "documentation": "<p>Lists the groups that have the specified path prefix.</p> <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the groups that have the specified path prefix.\n\n  You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListGroupsRequest"
             },
@@ -568,7 +568,7 @@
             }
         },
         "ListGroupsForUser": {
-            "documentation": "<p>Lists the groups the specified user belongs to.</p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the groups the specified user belongs to.\n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListGroupsForUserRequest"
             },
@@ -577,7 +577,7 @@
             }
         },
         "ListInstanceProfiles": {
-            "documentation": "<p>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListInstanceProfilesRequest"
             },
@@ -586,7 +586,7 @@
             }
         },
         "ListInstanceProfilesForRole": {
-            "documentation": "<p>Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListInstanceProfilesForRoleRequest"
             },
@@ -595,7 +595,7 @@
             }
         },
         "ListMFADevices": {
-            "documentation": "<p>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListMFADevicesRequest"
             },
@@ -604,7 +604,7 @@
             }
         },
         "ListOpenIDConnectProviders": {
-            "documentation": "<p>Lists information about the OpenID Connect providers in the AWS account. </p>",
+            "documentation": "Lists information about the OpenID Connect providers in the AWS account.",
             "input": {
                 "shape": "ListOpenIDConnectProvidersRequest"
             },
@@ -613,7 +613,7 @@
             }
         },
         "ListPolicies": {
-            "documentation": "<p>Lists all the managed policies that are available to your account, including your own customer managed policies and all AWS managed policies. </p> <p>You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>. To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Lists all the managed policies that are available to your account, including your own customer managed policies and all AWS managed policies. \n\n You can filter the list of policies that is returned using the optional ``OnlyAttached``, ``Scope``, and ``PathPrefix`` parameters. For example, to list only the customer managed policies in your AWS account, set ``Scope`` to ``Local``. To list only AWS managed policies, set ``Scope`` to ``AWS``. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "ListPoliciesRequest"
             },
@@ -622,7 +622,7 @@
             }
         },
         "ListPolicyVersions": {
-            "documentation": "<p>Lists information about the versions of the specified managed policy, including the version that is set as the policy's default version. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Lists information about the versions of the specified managed policy, including the version that is set as the policy's default version. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "ListPolicyVersionsRequest"
             },
@@ -631,7 +631,7 @@
             }
         },
         "ListRolePolicies": {
-            "documentation": "<p>Lists the names of the inline policies that are embedded in the specified role. </p> <p>A role can also have managed policies attached to it. To list the managed policies that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified role, the action returns an empty list. </p>",
+            "documentation": "Lists the names of the inline policies that are embedded in the specified role. \n\n A role can also have managed policies attached to it. To list the managed policies that are attached to a role, use ListAttachedRolePolicies. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. If there are no inline policies embedded with the specified role, the action returns an empty list.",
             "input": {
                 "shape": "ListRolePoliciesRequest"
             },
@@ -640,7 +640,7 @@
             }
         },
         "ListRoles": {
-            "documentation": "<p>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about roles, go to `Working with Roles <http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html>`_. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListRolesRequest"
             },
@@ -649,7 +649,7 @@
             }
         },
         "ListSAMLProviders": {
-            "documentation": "<p>Lists the SAML providers in the account.</p> <note> This operation requires <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. </note>",
+            "documentation": "Lists the SAML providers in the account.\n\n  This operation requires `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_.",
             "input": {
                 "shape": "ListSAMLProvidersRequest"
             },
@@ -658,7 +658,7 @@
             }
         },
         "ListSSHPublicKeys": {
-            "documentation": "<p>Returns information about the SSH public keys associated with the specified IAM user. If there are none, the action returns an empty list.</p> <p>The SSH public keys returned by this action are used only for authenticating the IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html\">Set up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.</p> <p>Although each user is limited to a small number of keys, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>",
+            "documentation": "Returns information about the SSH public keys associated with the specified IAM user. If there are none, the action returns an empty list.\n\n The SSH public keys returned by this action are used only for authenticating the IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see `Set up AWS CodeCommit for SSH Connections <http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html>`_ in the *AWS CodeCommit User Guide*.\n\n Although each user is limited to a small number of keys, you can still paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListSSHPublicKeysRequest"
             },
@@ -667,7 +667,7 @@
             }
         },
         "ListServerCertificates": {
-            "documentation": "<p> Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list. </p> <p> You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list. \n\n  You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListServerCertificatesRequest"
             },
@@ -676,7 +676,7 @@
             }
         },
         "ListSigningCertificates": {
-            "documentation": "<p>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty list. </p> <p>Although each user is limited to a small number of signing certificates, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>",
+            "documentation": "Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty list. \n\n Although each user is limited to a small number of signing certificates, you can still paginate the results using the ``MaxItems`` and ``Marker`` parameters. \n\n If the ``UserName`` field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users.",
             "input": {
                 "shape": "ListSigningCertificatesRequest"
             },
@@ -685,7 +685,7 @@
             }
         },
         "ListUserPolicies": {
-            "documentation": "<p>Lists the names of the inline policies embedded in the specified user. </p> <p>A user can also have managed policies attached to it. To list the managed policies that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified user, the action returns an empty list. </p>",
+            "documentation": "Lists the names of the inline policies embedded in the specified user. \n\n A user can also have managed policies attached to it. To list the managed policies that are attached to a user, use ListAttachedUserPolicies. For more information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters. If there are no inline policies embedded with the specified user, the action returns an empty list.",
             "input": {
                 "shape": "ListUserPoliciesRequest"
             },
@@ -694,7 +694,7 @@
             }
         },
         "ListUsers": {
-            "documentation": "<p>Lists the IAM users that have the specified path prefix. If no path prefix is specified, the action returns all users in the AWS account. If there are none, the action returns an empty list. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the IAM users that have the specified path prefix. If no path prefix is specified, the action returns all users in the AWS account. If there are none, the action returns an empty list. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListUsersRequest"
             },
@@ -703,7 +703,7 @@
             }
         },
         "ListVirtualMFADevices": {
-            "documentation": "<p>Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action returns a list of all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>. </p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>",
+            "documentation": "Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action returns a list of all virtual MFA devices. Assignment status can be ``Assigned``, ``Unassigned``, or ``Any``. \n\n You can paginate the results using the ``MaxItems`` and ``Marker`` parameters.",
             "input": {
                 "shape": "ListVirtualMFADevicesRequest"
             },
@@ -712,91 +712,91 @@
             }
         },
         "PutGroupPolicy": {
-            "documentation": "<p>Adds (or updates) an inline policy document that is embedded in the specified group. </p> <p>A user can also have managed policies attached to it. To attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of inline policies that you can embed in a group, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because policy documents can be large, you should use POST rather than GET when calling <code>PutGroupPolicy</code>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>",
+            "documentation": "Adds (or updates) an inline policy document that is embedded in the specified group. \n\n A user can also have managed policies attached to it. To attach a managed policy to a group, use AttachGroupPolicy. To create a new managed policy, use CreatePolicy. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n For information about limits on the number of inline policies that you can embed in a group, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n Because policy documents can be large, you should use POST rather than GET when calling ``PutGroupPolicy``. For general information about using the Query API with IAM, go to `Making Query Requests <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "PutGroupPolicyRequest"
             }
         },
         "PutRolePolicy": {
-            "documentation": "<p>Adds (or updates) an inline policy document that is embedded in the specified role. </p> <p>When you embed an inline policy in a role, the inline policy is used as the role's access (permissions) policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html\">Using Roles to Delegate Permissions and Federate Identities</a>. </p> <p>A role can also have a managed policy attached to it. To attach a managed policy to a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of inline policies that you can embed with a role, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because policy documents can be large, you should use POST rather than GET when calling <code>PutRolePolicy</code>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>",
+            "documentation": "Adds (or updates) an inline policy document that is embedded in the specified role. \n\n When you embed an inline policy in a role, the inline policy is used as the role's access (permissions) policy. The role's trust policy is created at the same time as the role, using CreateRole. You can update a role's trust policy using UpdateAssumeRolePolicy. For more information about roles, go to `Using Roles to Delegate Permissions and Federate Identities <http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html>`_. \n\n A role can also have a managed policy attached to it. To attach a managed policy to a role, use AttachRolePolicy. To create a new managed policy, use CreatePolicy. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n For information about limits on the number of inline policies that you can embed with a role, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n Because policy documents can be large, you should use POST rather than GET when calling ``PutRolePolicy``. For general information about using the Query API with IAM, go to `Making Query Requests <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "PutRolePolicyRequest"
             }
         },
         "PutUserPolicy": {
-            "documentation": "<p>Adds (or updates) an inline policy document that is embedded in the specified user. </p> <p>A user can also have a managed policy attached to it. To attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p> <p>For information about limits on the number of inline policies that you can embed in a user, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because policy documents can be large, you should use POST rather than GET when calling <code>PutUserPolicy</code>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>",
+            "documentation": "Adds (or updates) an inline policy document that is embedded in the specified user. \n\n A user can also have a managed policy attached to it. To attach a managed policy to a user, use AttachUserPolicy. To create a new managed policy, use CreatePolicy. For information about policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide. \n\n For information about limits on the number of inline policies that you can embed in a user, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n Because policy documents can be large, you should use POST rather than GET when calling ``PutUserPolicy``. For general information about using the Query API with IAM, go to `Making Query Requests <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "PutUserPolicyRequest"
             }
         },
         "RemoveClientIDFromOpenIDConnectProvider": {
-            "documentation": "<p>Removes the specified client ID (also known as audience) from the list of client IDs registered for the specified IAM OpenID Connect provider.</p> <p>This action is idempotent; it does not fail or return an error if you try to remove a client ID that was removed previously.</p>",
+            "documentation": "Removes the specified client ID (also known as audience) from the list of client IDs registered for the specified IAM OpenID Connect provider.\n\n This action is idempotent; it does not fail or return an error if you try to remove a client ID that was removed previously.",
             "input": {
                 "shape": "RemoveClientIDFromOpenIDConnectProviderRequest"
             }
         },
         "RemoveRoleFromInstanceProfile": {
-            "documentation": "<p>Removes the specified role from the specified instance profile.</p> <important> Make sure you do not have any Amazon EC2 instances running with the role you are about to remove from the instance profile. Removing a role from an instance profile that is associated with a running instance will break any applications running on the instance. </important> <p> For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>. For more information about instance profiles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html\">About Instance Profiles</a>. </p>",
+            "documentation": "Removes the specified role from the specified instance profile.\n\n  Make sure you do not have any Amazon EC2 instances running with the role you are about to remove from the instance profile. Removing a role from an instance profile that is associated with a running instance will break any applications running on the instance.   For more information about roles, go to `Working with Roles <http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html>`_. For more information about instance profiles, go to `About Instance Profiles <http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html>`_.",
             "input": {
                 "shape": "RemoveRoleFromInstanceProfileRequest"
             }
         },
         "RemoveUserFromGroup": {
-            "documentation": "<p>Removes the specified user from the specified group.</p>",
+            "documentation": "Removes the specified user from the specified group.",
             "input": {
                 "shape": "RemoveUserFromGroupRequest"
             }
         },
         "ResyncMFADevice": {
-            "documentation": "<p>Synchronizes the specified MFA device with AWS servers.</p> <p>For more information about creating and working with virtual MFA devices, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html\">Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Synchronizes the specified MFA device with AWS servers.\n\n For more information about creating and working with virtual MFA devices, go to `Using a Virtual MFA Device <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "ResyncMFADeviceRequest"
             }
         },
         "SetDefaultPolicyVersion": {
-            "documentation": "<p>Sets the specified version of the specified policy as the policy's default (operative) version. </p> <p>This action affects all users, groups, and roles that the policy is attached to. To list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. </p> <p>For information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Sets the specified version of the specified policy as the policy's default (operative) version. \n\n This action affects all users, groups, and roles that the policy is attached to. To list the users, groups, and roles that the policy is attached to, use the ListEntitiesForPolicy API. \n\n For information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "SetDefaultPolicyVersionRequest"
             }
         },
         "UpdateAccessKey": {
-            "documentation": "<p>Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to disable a user's key as part of a key rotation work flow. </p> <p>If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <p>For information about rotating keys, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html\">Managing Keys and Certificates</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to disable a user's key as part of a key rotation work flow. \n\n If the ``UserName`` field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. \n\n For information about rotating keys, see `Managing Keys and Certificates <http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "UpdateAccessKeyRequest"
             }
         },
         "UpdateAccountPasswordPolicy": {
-            "documentation": "<p>Updates the password policy settings for the AWS account.</p> <note> <p>This action does not support partial updates. No parameters are required, but if you do not specify a parameter, that parameter's value reverts to its default value. See the <b>Request Parameters</b> section for each parameter's default value. </p> </note> <p> For more information about using a password policy, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html\">Managing an IAM Password Policy</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Updates the password policy settings for the AWS account.\n\n  This action does not support partial updates. No parameters are required, but if you do not specify a parameter, that parameter's value reverts to its default value. See the **Request Parameters** section for each parameter's default value. \n\n   For more information about using a password policy, see `Managing an IAM Password Policy <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "UpdateAccountPasswordPolicyRequest"
             }
         },
         "UpdateAssumeRolePolicy": {
-            "documentation": "<p> Updates the policy that grants an entity permission to assume a role. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html\">Using Roles to Delegate Permissions and Federate Identities</a>. </p>",
+            "documentation": "Updates the policy that grants an entity permission to assume a role. For more information about roles, go to `Using Roles to Delegate Permissions and Federate Identities <http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html>`_.",
             "input": {
                 "shape": "UpdateAssumeRolePolicyRequest"
             }
         },
         "UpdateGroup": {
-            "documentation": "<p>Updates the name and/or the path of the specified group.</p> <important> You should understand the implications of changing a group's path or name. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html\">Renaming Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note>To change a group name the requester must have appropriate permissions on both the source object and the target object. For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on all (*). For more information about permissions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html\" target=\"blank\">Permissions and Policies</a>. </note>",
+            "documentation": "Updates the name and/or the path of the specified group.\n\n  You should understand the implications of changing a group's path or name. For more information, see `Renaming Users and Groups <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html>`_ in the *Using IAM* guide.  To change a group name the requester must have appropriate permissions on both the source object and the target object. For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on all (*). For more information about permissions, see `Permissions and Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html>`_.",
             "input": {
                 "shape": "UpdateGroupRequest"
             }
         },
         "UpdateLoginProfile": {
-            "documentation": "<p>Changes the password for the specified user.</p> <p>Users can change their own passwords by calling <a>ChangePassword</a>. For more information about modifying passwords, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html\">Managing Passwords</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Changes the password for the specified user.\n\n Users can change their own passwords by calling ChangePassword. For more information about modifying passwords, see `Managing Passwords <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "UpdateLoginProfileRequest"
             }
         },
         "UpdateOpenIDConnectProviderThumbprint": {
-            "documentation": "<p>Replaces the existing list of server certificate thumbprints with a new list. </p> <p>The list that you pass with this action completely replaces the existing list of thumbprints. (The lists are not merged.)</p> <p>Typically, you need to update a thumbprint only when the identity provider's certificate changes, which occurs rarely. However, if the provider's certificate <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC provider as a principal will fail until the certificate thumbprint is updated.</p> <note>Because trust for the OpenID Connect provider is ultimately derived from the provider's certificate and is validated by the thumbprint, it is a best practice to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to highly-privileged users. </note>",
+            "documentation": "Replaces the existing list of server certificate thumbprints with a new list. \n\n The list that you pass with this action completely replaces the existing list of thumbprints. (The lists are not merged.)\n\n Typically, you need to update a thumbprint only when the identity provider's certificate changes, which occurs rarely. However, if the provider's certificate *does* change, any attempt to assume an IAM role that specifies the OIDC provider as a principal will fail until the certificate thumbprint is updated.\n\n Because trust for the OpenID Connect provider is ultimately derived from the provider's certificate and is validated by the thumbprint, it is a best practice to limit access to the ``UpdateOpenIDConnectProviderThumbprint`` action to highly-privileged users.",
             "input": {
                 "shape": "UpdateOpenIDConnectProviderThumbprintRequest"
             }
         },
         "UpdateSAMLProvider": {
-            "documentation": "<p>Updates the metadata document for an existing SAML provider.</p> <note>This operation requires <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. </note>",
+            "documentation": "Updates the metadata document for an existing SAML provider.\n\n This operation requires `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_.",
             "input": {
                 "shape": "UpdateSAMLProviderRequest"
             },
@@ -805,31 +805,31 @@
             }
         },
         "UpdateSSHPublicKey": {
-            "documentation": "<p>Sets the status of the specified SSH public key to active or inactive. SSH public keys that are inactive cannot be used for authentication. This action can be used to disable a user's SSH public key as part of a key rotation work flow. </p> <p>The SSH public key affected by this action is used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html\">Set up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.</p>",
+            "documentation": "Sets the status of the specified SSH public key to active or inactive. SSH public keys that are inactive cannot be used for authentication. This action can be used to disable a user's SSH public key as part of a key rotation work flow. \n\n The SSH public key affected by this action is used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see `Set up AWS CodeCommit for SSH Connections <http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html>`_ in the *AWS CodeCommit User Guide*.",
             "input": {
                 "shape": "UpdateSSHPublicKeyRequest"
             }
         },
         "UpdateServerCertificate": {
-            "documentation": "<p>Updates the name and/or the path of the specified server certificate.</p> <important> You should understand the implications of changing a server certificate's path or name. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html\">Managing Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note>To change a server certificate name the requester must have appropriate permissions on both the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request must have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html\" target=\"blank\">Permissions and Policies</a>. </note>",
+            "documentation": "Updates the name and/or the path of the specified server certificate.\n\n  You should understand the implications of changing a server certificate's path or name. For more information, see `Managing Server Certificates <http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html>`_ in the *Using IAM* guide.  To change a server certificate name the requester must have appropriate permissions on both the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request must have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see `Permissions and Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html>`_.",
             "input": {
                 "shape": "UpdateServerCertificateRequest"
             }
         },
         "UpdateSigningCertificate": {
-            "documentation": "<p>Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a user's signing certificate as part of a certificate rotation work flow. </p> <p>If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p>",
+            "documentation": "Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a user's signing certificate as part of a certificate rotation work flow. \n\n If the ``UserName`` field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users.",
             "input": {
                 "shape": "UpdateSigningCertificateRequest"
             }
         },
         "UpdateUser": {
-            "documentation": "<p>Updates the name and/or the path of the specified user.</p> <important> You should understand the implications of changing a user's path or name. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html\">Renaming Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change a user name the requester must have appropriate permissions on both the source object and the target object. For example, to change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all (*). For more information about permissions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html\" target=\"blank\">Permissions and Policies</a>. </note>",
+            "documentation": "Updates the name and/or the path of the specified user.\n\n  You should understand the implications of changing a user's path or name. For more information, see `Renaming Users and Groups <http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html>`_ in the *Using IAM* guide.   To change a user name the requester must have appropriate permissions on both the source object and the target object. For example, to change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all (*). For more information about permissions, see `Permissions and Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html>`_.",
             "input": {
                 "shape": "UpdateUserRequest"
             }
         },
         "UploadSSHPublicKey": {
-            "documentation": "<p>Uploads an SSH public key and associates it with the specified IAM user.</p> <p>The SSH public key uploaded by this action can be used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html\">Set up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.</p>",
+            "documentation": "Uploads an SSH public key and associates it with the specified IAM user.\n\n The SSH public key uploaded by this action can be used only for authenticating the associated IAM user to an AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see `Set up AWS CodeCommit for SSH Connections <http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html>`_ in the *AWS CodeCommit User Guide*.",
             "input": {
                 "shape": "UploadSSHPublicKeyRequest"
             },
@@ -838,7 +838,7 @@
             }
         },
         "UploadServerCertificate": {
-            "documentation": "<p>Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an optional certificate chain, which should all be PEM-encoded. </p> <p>For information about the number of server certificates you can upload, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p> <note>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>. For information about setting up signatures and authorization through the API, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html\">Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>Using IAM</i> guide. </note>",
+            "documentation": "Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an optional certificate chain, which should all be PEM-encoded. \n\n For information about the number of server certificates you can upload, see `Limitations on IAM Entities <http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html>`_ in the *Using IAM* guide. \n\n Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET when calling ``UploadServerCertificate``. For information about setting up signatures and authorization through the API, go to `Signing AWS API Requests <http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html>`_ in the *AWS General Reference*. For general information about using the Query API with IAM, go to `Making Query Requests <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html>`_ in the *Using IAM* guide.",
             "input": {
                 "shape": "UploadServerCertificateRequest"
             },
@@ -847,7 +847,7 @@
             }
         },
         "UploadSigningCertificate": {
-            "documentation": "<p>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <code>Active</code>. </p> <p>If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. </p> <note>Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling <code>UploadSigningCertificate</code>. For information about setting up signatures and authorization through the API, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html\">Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>Using IAM</i>guide. </note>",
+            "documentation": "Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is ``Active``. \n\n If the ``UserName`` field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users. \n\n Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling ``UploadSigningCertificate``. For information about setting up signatures and authorization through the API, go to `Signing AWS API Requests <http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html>`_ in the *AWS General Reference*. For general information about using the Query API with IAM, go to `Making Query Requests <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html>`_ in the *Using IAM*guide.",
             "input": {
                 "shape": "UploadSigningCertificateRequest"
             },
@@ -859,7 +859,7 @@
     "shapes": {
         "AccessKey": {
             "type": "structure",
-            "documentation": "<p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> actions. </p> <note>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key. </note>",
+            "documentation": "Contains information about an AWS access key.\n\n  This data type is used as a response element in the CreateAccessKey and ListAccessKeys actions. \n\n The ``SecretAccessKey`` value is returned only in response to CreateAccessKey. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.",
             "members": [
                 {
                     "name": "UserName",
@@ -890,7 +890,7 @@
         },
         "AccessKeyLastUsed": {
             "type": "structure",
-            "documentation": "<p>Contains information about the last time an AWS access key was used.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> action.</p>",
+            "documentation": "Contains information about the last time an AWS access key was used.\n\n This data type is used as a response element in the GetAccessKeyLastUsed action.",
             "members": [
                 {
                     "name": "LastUsedDate",
@@ -911,7 +911,7 @@
         },
         "AccessKeyMetadata": {
             "type": "structure",
-            "documentation": "<p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> action.</p>",
+            "documentation": "Contains information about an AWS access key, without its secret key.\n\n This data type is used as a response element in the ListAccessKeys action.",
             "members": [
                 {
                     "name": "UserName",
@@ -1024,7 +1024,7 @@
         },
         "AttachedPolicy": {
             "type": "structure",
-            "documentation": "<p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about an attached policy.\n\n An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the ListAttachedGroupPolicies, ListAttachedRolePolicies, ListAttachedUserPolicies, and GetAccountAuthorizationDetails actions. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -1067,7 +1067,7 @@
         },
         "CreateAccessKeyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateAccessKey</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateAccessKey request.",
             "members": [
                 {
                     "name": "AccessKey",
@@ -1103,7 +1103,7 @@
         },
         "CreateGroupResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateGroup</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateGroup request.",
             "members": [
                 {
                     "name": "Group",
@@ -1129,7 +1129,7 @@
         },
         "CreateInstanceProfileResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateInstanceProfile</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateInstanceProfile request.",
             "members": [
                 {
                     "name": "InstanceProfile",
@@ -1160,7 +1160,7 @@
         },
         "CreateLoginProfileResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateLoginProfile</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateLoginProfile request.",
             "members": [
                 {
                     "name": "LoginProfile",
@@ -1191,7 +1191,7 @@
         },
         "CreateOpenIDConnectProviderResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateOpenIDConnectProvider</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateOpenIDConnectProvider request.",
             "members": [
                 {
                     "name": "OpenIDConnectProviderArn",
@@ -1227,7 +1227,7 @@
         },
         "CreatePolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreatePolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful CreatePolicy request.",
             "members": [
                 {
                     "name": "Policy",
@@ -1257,7 +1257,7 @@
         },
         "CreatePolicyVersionResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreatePolicyVersion</a> request. </p>",
+            "documentation": "Contains the response to a successful CreatePolicyVersion request.",
             "members": [
                 {
                     "name": "PolicyVersion",
@@ -1288,7 +1288,7 @@
         },
         "CreateRoleResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateRole</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateRole request.",
             "members": [
                 {
                     "name": "Role",
@@ -1314,7 +1314,7 @@
         },
         "CreateSAMLProviderResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateSAMLProvider</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateSAMLProvider request.",
             "members": [
                 {
                     "name": "SAMLProviderArn",
@@ -1340,7 +1340,7 @@
         },
         "CreateUserResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateUser</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateUser request.",
             "members": [
                 {
                     "name": "User",
@@ -1366,7 +1366,7 @@
         },
         "CreateVirtualMFADeviceResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>CreateVirtualMFADevice</a> request. </p>",
+            "documentation": "Contains the response to a successful CreateVirtualMFADevice request.",
             "members": [
                 {
                     "name": "VirtualMFADevice",
@@ -1377,7 +1377,7 @@
         },
         "CredentialReportExpiredException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <a>GenerateCredentialReport</a>. For more information about credential report expiration, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html\">Getting Credential Reports</a> in the <i>Using IAM</i> guide.</p>",
+            "documentation": "The request was rejected because the most recent credential report has expired. To generate a new credential report, use GenerateCredentialReport. For more information about credential report expiration, see `Getting Credential Reports <http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "message",
@@ -1387,7 +1387,7 @@
         },
         "CredentialReportNotPresentException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the credential report does not exist. To generate a credential report, use <a>GenerateCredentialReport</a>.</p>",
+            "documentation": "The request was rejected because the credential report does not exist. To generate a credential report, use GenerateCredentialReport.",
             "members": [
                 {
                     "name": "message",
@@ -1397,7 +1397,7 @@
         },
         "CredentialReportNotReadyException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the credential report is still being generated.</p>",
+            "documentation": "The request was rejected because the credential report is still being generated.",
             "members": [
                 {
                     "name": "message",
@@ -1447,7 +1447,7 @@
         },
         "DeleteConflictException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities. </p>",
+            "documentation": "The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.",
             "members": [
                 {
                     "name": "message",
@@ -1687,7 +1687,7 @@
         },
         "DuplicateCertificateException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the same certificate is associated with an IAM user in the account. </p>",
+            "documentation": "The request was rejected because the same certificate is associated with an IAM user in the account.",
             "members": [
                 {
                     "name": "message",
@@ -1697,7 +1697,7 @@
         },
         "DuplicateSSHPublicKeyException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the SSH public key is already associated with the specified IAM user.</p>",
+            "documentation": "The request was rejected because the SSH public key is already associated with the specified IAM user.",
             "members": [
                 {
                     "name": "message",
@@ -1732,7 +1732,7 @@
         },
         "EntityAlreadyExistsException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it attempted to create a resource that already exists.</p>",
+            "documentation": "The request was rejected because it attempted to create a resource that already exists.",
             "members": [
                 {
                     "name": "message",
@@ -1742,7 +1742,7 @@
         },
         "EntityTemporarilyUnmodifiableException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity. </p>",
+            "documentation": "The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.",
             "members": [
                 {
                     "name": "message",
@@ -1755,7 +1755,7 @@
         },
         "GenerateCredentialReportResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GenerateCredentialReport</a> request. </p>",
+            "documentation": "Contains the response to a successful GenerateCredentialReport request.",
             "members": [
                 {
                     "name": "State",
@@ -1781,7 +1781,7 @@
         },
         "GetAccessKeyLastUsedResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action.</p>",
+            "documentation": "Contains the response to a successful GetAccessKeyLastUsed request. It is also returned as a member of the AccessKeyMetaData structure returned by the ListAccessKeys action.",
             "members": [
                 {
                     "name": "UserName",
@@ -1817,7 +1817,7 @@
         },
         "GetAccountAuthorizationDetailsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request. </p>",
+            "documentation": "Contains the response to a successful GetAccountAuthorizationDetails request.",
             "members": [
                 {
                     "name": "UserDetailList",
@@ -1853,7 +1853,7 @@
         },
         "GetAccountPasswordPolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetAccountPasswordPolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful GetAccountPasswordPolicy request.",
             "members": [
                 {
                     "name": "PasswordPolicy",
@@ -1863,7 +1863,7 @@
         },
         "GetAccountSummaryResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetAccountSummary</a> request. </p>",
+            "documentation": "Contains the response to a successful GetAccountSummary request.",
             "members": [
                 {
                     "name": "SummaryMap",
@@ -1874,7 +1874,7 @@
         },
         "GetCredentialReportResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetCredentialReport</a> request. </p>",
+            "documentation": "Contains the response to a successful GetCredentialReport request.",
             "members": [
                 {
                     "name": "Content",
@@ -1910,7 +1910,7 @@
         },
         "GetGroupPolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetGroupPolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful GetGroupPolicy request.",
             "members": [
                 {
                     "name": "GroupName",
@@ -1951,7 +1951,7 @@
         },
         "GetGroupResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetGroup</a> request. </p>",
+            "documentation": "Contains the response to a successful GetGroup request.",
             "members": [
                 {
                     "name": "Group",
@@ -1987,7 +1987,7 @@
         },
         "GetInstanceProfileResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetInstanceProfile</a> request. </p>",
+            "documentation": "Contains the response to a successful GetInstanceProfile request.",
             "members": [
                 {
                     "name": "InstanceProfile",
@@ -2008,7 +2008,7 @@
         },
         "GetLoginProfileResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetLoginProfile</a> request. </p>",
+            "documentation": "Contains the response to a successful GetLoginProfile request.",
             "members": [
                 {
                     "name": "LoginProfile",
@@ -2029,7 +2029,7 @@
         },
         "GetOpenIDConnectProviderResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetOpenIDConnectProvider</a> request. </p>",
+            "documentation": "Contains the response to a successful GetOpenIDConnectProvider request.",
             "members": [
                 {
                     "name": "Url",
@@ -2064,7 +2064,7 @@
         },
         "GetPolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetPolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful GetPolicy request.",
             "members": [
                 {
                     "name": "Policy",
@@ -2089,7 +2089,7 @@
         },
         "GetPolicyVersionResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetPolicyVersion</a> request. </p>",
+            "documentation": "Contains the response to a successful GetPolicyVersion request.",
             "members": [
                 {
                     "name": "PolicyVersion",
@@ -2115,7 +2115,7 @@
         },
         "GetRolePolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetRolePolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful GetRolePolicy request.",
             "members": [
                 {
                     "name": "RoleName",
@@ -2146,7 +2146,7 @@
         },
         "GetRoleResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetRole</a> request. </p>",
+            "documentation": "Contains the response to a successful GetRole request.",
             "members": [
                 {
                     "name": "Role",
@@ -2167,7 +2167,7 @@
         },
         "GetSAMLProviderResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetSAMLProvider</a> request. </p>",
+            "documentation": "Contains the response to a successful GetSAMLProvider request.",
             "members": [
                 {
                     "name": "SAMLMetadataDocument",
@@ -2208,7 +2208,7 @@
         },
         "GetSSHPublicKeyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetSSHPublicKey</a> request.</p>",
+            "documentation": "Contains the response to a successful GetSSHPublicKey request.",
             "members": [
                 {
                     "name": "SSHPublicKey",
@@ -2229,7 +2229,7 @@
         },
         "GetServerCertificateResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetServerCertificate</a> request. </p>",
+            "documentation": "Contains the response to a successful GetServerCertificate request.",
             "members": [
                 {
                     "name": "ServerCertificate",
@@ -2255,7 +2255,7 @@
         },
         "GetUserPolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetUserPolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful GetUserPolicy request.",
             "members": [
                 {
                     "name": "UserName",
@@ -2286,7 +2286,7 @@
         },
         "GetUserResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>GetUser</a> request. </p>",
+            "documentation": "Contains the response to a successful GetUser request.",
             "members": [
                 {
                     "name": "User",
@@ -2297,7 +2297,7 @@
         },
         "Group": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM group entity.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <a>CreateGroup</a> </li> <li> <a>GetGroup</a> </li> <li> <a>ListGroups</a> </li> </ul>",
+            "documentation": "Contains information about an IAM group entity.\n\n  This data type is used as a response element in the following actions:\n\n \n\n  *  CreateGroup \n  *  GetGroup \n  *  ListGroups",
             "members": [
                 {
                     "name": "Path",
@@ -2328,7 +2328,7 @@
         },
         "GroupDetail": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM group, including all of the group's policies. </p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
+            "documentation": "Contains information about an IAM group, including all of the group's policies. \n\n This data type is used as a response element in the GetAccountAuthorizationDetails action.",
             "members": [
                 {
                     "name": "Path",
@@ -2368,7 +2368,7 @@
         },
         "InstanceProfile": {
             "type": "structure",
-            "documentation": "<p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul>",
+            "documentation": "Contains information about an instance profile.\n\n This data type is used as a response element in the following actions:\n\n \n\n  *   CreateInstanceProfile \n\n \n  *   GetInstanceProfile \n\n \n  *   ListInstanceProfiles \n\n \n  *   ListInstanceProfilesForRole",
             "members": [
                 {
                     "name": "Path",
@@ -2404,7 +2404,7 @@
         },
         "InvalidAuthenticationCodeException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the authentication code was not recognized. The error message describes the specific error. </p>",
+            "documentation": "The request was rejected because the authentication code was not recognized. The error message describes the specific error.",
             "members": [
                 {
                     "name": "message",
@@ -2414,7 +2414,7 @@
         },
         "InvalidCertificateException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the certificate is invalid.</p>",
+            "documentation": "The request was rejected because the certificate is invalid.",
             "members": [
                 {
                     "name": "message",
@@ -2424,7 +2424,7 @@
         },
         "InvalidInputException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
+            "documentation": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter.",
             "members": [
                 {
                     "name": "message",
@@ -2434,7 +2434,7 @@
         },
         "InvalidPublicKeyException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the public key is malformed or otherwise invalid.</p>",
+            "documentation": "The request was rejected because the public key is malformed or otherwise invalid.",
             "members": [
                 {
                     "name": "message",
@@ -2444,7 +2444,7 @@
         },
         "InvalidUserTypeException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the type of user for the transaction was incorrect.</p>",
+            "documentation": "The request was rejected because the type of user for the transaction was incorrect.",
             "members": [
                 {
                     "name": "message",
@@ -2454,7 +2454,7 @@
         },
         "KeyPairMismatchException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the public key certificate and the private key do not match.</p>",
+            "documentation": "The request was rejected because the public key certificate and the private key do not match.",
             "members": [
                 {
                     "name": "message",
@@ -2464,7 +2464,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error message describes the limit exceeded. </p>",
+            "documentation": "The request was rejected because it attempted to create resources beyond the current AWS account limits. The error message describes the limit exceeded.",
             "members": [
                 {
                     "name": "message",
@@ -2494,7 +2494,7 @@
         },
         "ListAccessKeysResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListAccessKeys</a> request. </p>",
+            "documentation": "Contains the response to a successful ListAccessKeys request.",
             "members": [
                 {
                     "name": "AccessKeyMetadata",
@@ -2530,7 +2530,7 @@
         },
         "ListAccountAliasesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListAccountAliases</a> request. </p>",
+            "documentation": "Contains the response to a successful ListAccountAliases request.",
             "members": [
                 {
                     "name": "AccountAliases",
@@ -2576,7 +2576,7 @@
         },
         "ListAttachedGroupPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListAttachedGroupPolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListAttachedGroupPolicies request.",
             "members": [
                 {
                     "name": "AttachedPolicies",
@@ -2622,7 +2622,7 @@
         },
         "ListAttachedRolePoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListAttachedRolePolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListAttachedRolePolicies request.",
             "members": [
                 {
                     "name": "AttachedPolicies",
@@ -2668,7 +2668,7 @@
         },
         "ListAttachedUserPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListAttachedUserPolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListAttachedUserPolicies request.",
             "members": [
                 {
                     "name": "AttachedPolicies",
@@ -2718,7 +2718,7 @@
         },
         "ListEntitiesForPolicyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListEntitiesForPolicy</a> request. </p>",
+            "documentation": "Contains the response to a successful ListEntitiesForPolicy request.",
             "members": [
                 {
                     "name": "PolicyGroups",
@@ -2769,7 +2769,7 @@
         },
         "ListGroupPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListGroupPolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListGroupPolicies request.",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -2810,7 +2810,7 @@
         },
         "ListGroupsForUserResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListGroupsForUser</a> request. </p>",
+            "documentation": "Contains the response to a successful ListGroupsForUser request.",
             "members": [
                 {
                     "name": "Groups",
@@ -2851,7 +2851,7 @@
         },
         "ListGroupsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListGroups</a> request. </p>",
+            "documentation": "Contains the response to a successful ListGroups request.",
             "members": [
                 {
                     "name": "Groups",
@@ -2892,7 +2892,7 @@
         },
         "ListInstanceProfilesForRoleResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListInstanceProfilesForRole</a> request. </p>",
+            "documentation": "Contains the response to a successful ListInstanceProfilesForRole request.",
             "members": [
                 {
                     "name": "InstanceProfiles",
@@ -2933,7 +2933,7 @@
         },
         "ListInstanceProfilesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListInstanceProfiles</a> request. </p>",
+            "documentation": "Contains the response to a successful ListInstanceProfiles request.",
             "members": [
                 {
                     "name": "InstanceProfiles",
@@ -2974,7 +2974,7 @@
         },
         "ListMFADevicesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListMFADevices</a> request. </p>",
+            "documentation": "Contains the response to a successful ListMFADevices request.",
             "members": [
                 {
                     "name": "MFADevices",
@@ -2999,7 +2999,7 @@
         },
         "ListOpenIDConnectProvidersResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListOpenIDConnectProviders</a> request. </p>",
+            "documentation": "Contains the response to a successful ListOpenIDConnectProviders request.",
             "members": [
                 {
                     "name": "OpenIDConnectProviderList",
@@ -3040,7 +3040,7 @@
         },
         "ListPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListPolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListPolicies request.",
             "members": [
                 {
                     "name": "Policies",
@@ -3080,7 +3080,7 @@
         },
         "ListPolicyVersionsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListPolicyVersions</a> request. </p>",
+            "documentation": "Contains the response to a successful ListPolicyVersions request.",
             "members": [
                 {
                     "name": "Versions",
@@ -3121,7 +3121,7 @@
         },
         "ListRolePoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListRolePolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListRolePolicies request.",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -3162,7 +3162,7 @@
         },
         "ListRolesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListRoles</a> request. </p>",
+            "documentation": "Contains the response to a successful ListRoles request.",
             "members": [
                 {
                     "name": "Roles",
@@ -3187,7 +3187,7 @@
         },
         "ListSAMLProvidersResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListSAMLProviders</a> request. </p>",
+            "documentation": "Contains the response to a successful ListSAMLProviders request.",
             "members": [
                 {
                     "name": "SAMLProviderList",
@@ -3218,7 +3218,7 @@
         },
         "ListSSHPublicKeysResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListSSHPublicKeys</a> request.</p>",
+            "documentation": "Contains the response to a successful ListSSHPublicKeys request.",
             "members": [
                 {
                     "name": "SSHPublicKeys",
@@ -3259,7 +3259,7 @@
         },
         "ListServerCertificatesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListServerCertificates</a> request. </p>",
+            "documentation": "Contains the response to a successful ListServerCertificates request.",
             "members": [
                 {
                     "name": "ServerCertificateMetadataList",
@@ -3300,7 +3300,7 @@
         },
         "ListSigningCertificatesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListSigningCertificates</a> request. </p>",
+            "documentation": "Contains the response to a successful ListSigningCertificates request.",
             "members": [
                 {
                     "name": "Certificates",
@@ -3341,7 +3341,7 @@
         },
         "ListUserPoliciesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListUserPolicies</a> request. </p>",
+            "documentation": "Contains the response to a successful ListUserPolicies request.",
             "members": [
                 {
                     "name": "PolicyNames",
@@ -3382,7 +3382,7 @@
         },
         "ListUsersResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListUsers</a> request. </p>",
+            "documentation": "Contains the response to a successful ListUsers request.",
             "members": [
                 {
                     "name": "Users",
@@ -3423,7 +3423,7 @@
         },
         "ListVirtualMFADevicesResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>ListVirtualMFADevices</a> request. </p>",
+            "documentation": "Contains the response to a successful ListVirtualMFADevices request.",
             "members": [
                 {
                     "name": "VirtualMFADevices",
@@ -3444,7 +3444,7 @@
         },
         "LoginProfile": {
             "type": "structure",
-            "documentation": "<p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> actions. </p>",
+            "documentation": "Contains the user name and password create date for a user.\n\n  This data type is used as a response element in the CreateLoginProfile and GetLoginProfile actions.",
             "members": [
                 {
                     "name": "UserName",
@@ -3465,7 +3465,7 @@
         },
         "MFADevice": {
             "type": "structure",
-            "documentation": "<p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> action.</p>",
+            "documentation": "Contains information about an MFA device.\n\n This data type is used as a response element in the ListMFADevices action.",
             "members": [
                 {
                     "name": "UserName",
@@ -3486,7 +3486,7 @@
         },
         "MalformedCertificateException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error. </p>",
+            "documentation": "The request was rejected because the certificate was malformed or expired. The error message describes the specific error.",
             "members": [
                 {
                     "name": "message",
@@ -3496,7 +3496,7 @@
         },
         "MalformedPolicyDocumentException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the policy document was malformed. The error message describes the specific error. </p>",
+            "documentation": "The request was rejected because the policy document was malformed. The error message describes the specific error.",
             "members": [
                 {
                     "name": "message",
@@ -3506,7 +3506,7 @@
         },
         "ManagedPolicyDetail": {
             "type": "structure",
-            "documentation": "<p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p> <p>For more information about managed policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.\n\n This data type is used as a response element in the GetAccountAuthorizationDetails action.\n\n For more information about managed policies, see `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -3570,7 +3570,7 @@
         },
         "NoSuchEntityException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because it referenced an entity that does not exist. The error message describes the entity. </p>",
+            "documentation": "The request was rejected because it referenced an entity that does not exist. The error message describes the entity.",
             "members": [
                 {
                     "name": "message",
@@ -3580,7 +3580,7 @@
         },
         "OpenIDConnectProviderListEntry": {
             "type": "structure",
-            "documentation": "<p>Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider.</p>",
+            "documentation": "Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider.",
             "members": [
                 {
                     "name": "Arn",
@@ -3590,16 +3590,16 @@
         },
         "OpenIDConnectProviderListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of IAM OpenID Connect providers.</p>",
+            "documentation": "Contains a list of IAM OpenID Connect providers.",
             "of": "OpenIDConnectProviderListEntry"
         },
         "OpenIDConnectProviderUrlType": {
             "type": "string",
-            "documentation": "<p>Contains a URL that specifies the endpoint for an OpenID Connect provider.</p>"
+            "documentation": "Contains a URL that specifies the endpoint for an OpenID Connect provider."
         },
         "PasswordPolicy": {
             "type": "structure",
-            "documentation": "<p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> action. </p>",
+            "documentation": "Contains information about the account password policy.\n\n  This data type is used as a response element in the GetAccountPasswordPolicy action.",
             "members": [
                 {
                     "name": "MinimumPasswordLength",
@@ -3655,7 +3655,7 @@
         },
         "PasswordPolicyViolationException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy. </p>",
+            "documentation": "The request was rejected because the provided password did not meet the requirements imposed by the account password policy.",
             "members": [
                 {
                     "name": "message",
@@ -3665,7 +3665,7 @@
         },
         "Policy": {
             "type": "structure",
-            "documentation": "<p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about a managed policy.\n\n This data type is used as a response element in the CreatePolicy, GetPolicy, and ListPolicies actions. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -3720,7 +3720,7 @@
         },
         "PolicyDetail": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
+            "documentation": "Contains information about an IAM policy, including the policy document.\n\n This data type is used as a response element in the GetAccountAuthorizationDetails action.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -3736,7 +3736,7 @@
         },
         "PolicyGroup": {
             "type": "structure",
-            "documentation": "<p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about a group that a managed policy is attached to.\n\n This data type is used as a response element in the ListEntitiesForPolicy action. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "GroupName",
@@ -3751,7 +3751,7 @@
         },
         "PolicyRole": {
             "type": "structure",
-            "documentation": "<p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about a role that a managed policy is attached to.\n\n This data type is used as a response element in the ListEntitiesForPolicy action. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "RoleName",
@@ -3766,7 +3766,7 @@
         },
         "PolicyUser": {
             "type": "structure",
-            "documentation": "<p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about a user that a managed policy is attached to.\n\n This data type is used as a response element in the ListEntitiesForPolicy action. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "UserName",
@@ -3781,7 +3781,7 @@
         },
         "PolicyVersion": {
             "type": "structure",
-            "documentation": "<p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>",
+            "documentation": "Contains information about a version of a managed policy.\n\n This data type is used as a response element in the CreatePolicyVersion, GetPolicyVersion, ListPolicyVersions, and GetAccountAuthorizationDetails actions. \n\n For more information about managed policies, refer to `Managed Policies and Inline Policies <http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html>`_ in the *Using IAM* guide.",
             "members": [
                 {
                     "name": "Document",
@@ -3949,7 +3949,7 @@
         },
         "Role": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM role.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a> </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p> </li> </ul>",
+            "documentation": "Contains information about an IAM role.\n\n  This data type is used as a response element in the following actions:\n\n \n\n  *   CreateRole \n\n \n  *   GetRole \n\n \n  *   ListRoles",
             "members": [
                 {
                     "name": "Path",
@@ -3985,7 +3985,7 @@
         },
         "RoleDetail": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
+            "documentation": "Contains information about an IAM role, including all of the role's policies.\n\n This data type is used as a response element in the GetAccountAuthorizationDetails action.",
             "members": [
                 {
                     "name": "Path",
@@ -4037,7 +4037,7 @@
         },
         "SAMLProviderListEntry": {
             "type": "structure",
-            "documentation": "<p>Contains the list of SAML providers for this account.</p>",
+            "documentation": "Contains the list of SAML providers for this account.",
             "members": [
                 {
                     "name": "Arn",
@@ -4065,7 +4065,7 @@
         },
         "SSHPublicKey": {
             "type": "structure",
-            "documentation": "<p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> actions. </p>",
+            "documentation": "Contains information about an SSH public key.\n\n This data type is used as a response element in the GetSSHPublicKey and UploadSSHPublicKey actions.",
             "members": [
                 {
                     "name": "UserName",
@@ -4105,7 +4105,7 @@
         },
         "SSHPublicKeyMetadata": {
             "type": "structure",
-            "documentation": "<p>Contains information about an SSH public key, without the key's body or fingerprint.</p> <p>This data type is used as a response element in the <a>ListSSHPublicKeys</a> action.</p>",
+            "documentation": "Contains information about an SSH public key, without the key's body or fingerprint.\n\n This data type is used as a response element in the ListSSHPublicKeys action.",
             "members": [
                 {
                     "name": "UserName",
@@ -4131,7 +4131,7 @@
         },
         "ServerCertificate": {
             "type": "structure",
-            "documentation": "<p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> action. </p>",
+            "documentation": "Contains information about a server certificate.\n\n  This data type is used as a response element in the GetServerCertificate action.",
             "members": [
                 {
                     "name": "ServerCertificateMetadata",
@@ -4152,7 +4152,7 @@
         },
         "ServerCertificateMetadata": {
             "type": "structure",
-            "documentation": "<p>Contains information about a server certificate without its certificate body, certificate chain, and private key. </p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> actions. </p>",
+            "documentation": "Contains information about a server certificate without its certificate body, certificate chain, and private key. \n\n  This data type is used as a response element in the UploadServerCertificate and ListServerCertificates actions.",
             "members": [
                 {
                     "name": "Path",
@@ -4188,7 +4188,7 @@
         },
         "ServiceFailureException": {
             "type": "structure",
-            "documentation": "<p>The request processing has failed because of an unknown error, exception or failure. </p>",
+            "documentation": "The request processing has failed because of an unknown error, exception or failure.",
             "members": [
                 {
                     "name": "message",
@@ -4212,7 +4212,7 @@
         },
         "SigningCertificate": {
             "type": "structure",
-            "documentation": "<p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> actions. </p>",
+            "documentation": "Contains information about an X.509 signing certificate.\n\n This data type is used as a response element in the UploadSigningCertificate and ListSigningCertificates actions.",
             "members": [
                 {
                     "name": "UserName",
@@ -4243,7 +4243,7 @@
         },
         "UnrecognizedPublicKeyEncodingException": {
             "type": "structure",
-            "documentation": "<p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>",
+            "documentation": "The request was rejected because the public key encoding format is unsupported or unrecognized.",
             "members": [
                 {
                     "name": "message",
@@ -4408,7 +4408,7 @@
         },
         "UpdateSAMLProviderResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>UpdateSAMLProvider</a> request. </p>",
+            "documentation": "Contains the response to a successful UpdateSAMLProvider request.",
             "members": [
                 {
                     "name": "SAMLProviderArn",
@@ -4514,7 +4514,7 @@
         },
         "UploadSSHPublicKeyResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>UploadSSHPublicKey</a> request.</p>",
+            "documentation": "Contains the response to a successful UploadSSHPublicKey request.",
             "members": [
                 {
                     "name": "SSHPublicKey",
@@ -4555,7 +4555,7 @@
         },
         "UploadServerCertificateResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>UploadServerCertificate</a> request. </p>",
+            "documentation": "Contains the response to a successful UploadServerCertificate request.",
             "members": [
                 {
                     "name": "ServerCertificateMetadata",
@@ -4581,7 +4581,7 @@
         },
         "UploadSigningCertificateResponse": {
             "type": "structure",
-            "documentation": "<p>Contains the response to a successful <a>UploadSigningCertificate</a> request. </p>",
+            "documentation": "Contains the response to a successful UploadSigningCertificate request.",
             "members": [
                 {
                     "name": "Certificate",
@@ -4592,7 +4592,7 @@
         },
         "User": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM user entity.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul>",
+            "documentation": "Contains information about an IAM user entity.\n\n  This data type is used as a response element in the following actions:\n\n \n\n  *   CreateUser \n\n \n  *   GetUser \n\n \n  *   ListUsers",
             "members": [
                 {
                     "name": "Path",
@@ -4628,7 +4628,7 @@
         },
         "UserDetail": {
             "type": "structure",
-            "documentation": "<p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>",
+            "documentation": "Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.\n\n This data type is used as a response element in the GetAccountAuthorizationDetails action.",
             "members": [
                 {
                     "name": "Path",
@@ -4673,7 +4673,7 @@
         },
         "VirtualMFADevice": {
             "type": "structure",
-            "documentation": "<p>Contains information about a virtual MFA device.</p>",
+            "documentation": "Contains information about a virtual MFA device.",
             "members": [
                 {
                     "name": "SerialNumber",
@@ -4706,7 +4706,7 @@
         },
         "accessKeyMetadataListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of access key metadata.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> action.</p>",
+            "documentation": "Contains a list of access key metadata.\n\n This data type is used as a response element in the ListAccessKeys action.",
             "of": "AccessKeyMetadata"
         },
         "accessKeySecretType": {
@@ -4721,7 +4721,7 @@
         },
         "arnType": {
             "type": "string",
-            "documentation": "<p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources. </p> <p>For more information about ARNs, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>"
+            "documentation": "The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources. \n\n For more information about ARNs, go to `Amazon Resource Names (ARNs) and AWS Service Namespaces <http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html>`_ in the *AWS General Reference*."
         },
         "assignmentStatusType": {
             "type": "string"
@@ -4753,7 +4753,7 @@
         },
         "certificateListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of signing certificates.</p> <p>This data type is used as a response element in the <a>ListSigningCertificates</a> action.</p>",
+            "documentation": "Contains a list of signing certificates.\n\n This data type is used as a response element in the ListSigningCertificates action.",
             "of": "SigningCertificate"
         },
         "clientIDListType": {
@@ -4806,7 +4806,7 @@
         },
         "groupListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a>ListGroups</a> action.</p>",
+            "documentation": "Contains a list of IAM groups.\n\n This data type is used as a response element in the ListGroups action.",
             "of": "Group"
         },
         "groupNameListType": {
@@ -4821,7 +4821,7 @@
         },
         "instanceProfileListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of instance profiles.</p>",
+            "documentation": "Contains a list of instance profiles.",
             "of": "InstanceProfile"
         },
         "instanceProfileNameType": {
@@ -4865,7 +4865,7 @@
         },
         "mfaDeviceListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of MFA devices.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> and <a>ListVirtualMFADevices</a> actions. </p>",
+            "documentation": "Contains a list of MFA devices.\n\n This data type is used as a response element in the ListMFADevices and ListVirtualMFADevices actions.",
             "of": "MFADevice"
         },
         "minimumPasswordLengthType": {
@@ -4909,7 +4909,7 @@
         },
         "policyNameListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> action.</p>",
+            "documentation": "Contains a list of policy names.\n\n This data type is used as a response element in the ListPolicies action.",
             "of": "policyNameType"
         },
         "policyNameType": {
@@ -4942,7 +4942,7 @@
         },
         "roleListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a>ListRoles</a> action.</p>",
+            "documentation": "Contains a list of IAM roles.\n\n This data type is used as a response element in the ListRoles action.",
             "of": "Role"
         },
         "roleNameType": {
@@ -4980,12 +4980,12 @@
         },
         "thumbprintListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of thumbprints of identity provider server certificates.</p>",
+            "documentation": "Contains a list of thumbprints of identity provider server certificates.",
             "of": "thumbprintType"
         },
         "thumbprintType": {
             "type": "string",
-            "documentation": "<p>Contains a thumbprint for an identity provider's server certificate.</p> <p>The identity provider's server certificate thumbprint is the hex-encoded SHA-1 hash value of the self-signed X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string. </p>"
+            "documentation": "Contains a thumbprint for an identity provider's server certificate.\n\n The identity provider's server certificate thumbprint is the hex-encoded SHA-1 hash value of the self-signed X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string."
         },
         "unrecognizedPublicKeyEncodingMessage": {
             "type": "string"
@@ -4996,7 +4996,7 @@
         },
         "userListType": {
             "type": "list",
-            "documentation": "<p>Contains a list of users.</p> <p>This data type is used as a response element in the <a>GetGroup</a> and <a>ListUsers</a> actions. </p>",
+            "documentation": "Contains a list of users.\n\n This data type is used as a response element in the GetGroup and ListUsers actions.",
             "of": "User"
         },
         "userNameType": {

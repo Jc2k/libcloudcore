@@ -35,7 +35,7 @@
     ],
     "operations": {
         "AddTags": {
-            "documentation": "<p>Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the load balancer, <code>AddTags</code> updates its value.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/add-remove-tags.html\">Tag Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.\n\n Each tag consists of a key and an optional value. If a tag with the same key is already associated with the load balancer, ``AddTags`` updates its value.\n\n For more information, see `Tag Your Load Balancer <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/add-remove-tags.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "AddTagsInput"
             },
@@ -44,7 +44,7 @@
             }
         },
         "ApplySecurityGroupsToLoadBalancer": {
-            "documentation": "<p>Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-groups.html#elb-vpc-security-groups\">Security Groups for Load Balancers in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.\n\n For more information, see `Security Groups for Load Balancers in a VPC <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-groups.html#elb-vpc-security-groups>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "ApplySecurityGroupsToLoadBalancerInput"
             },
@@ -53,7 +53,7 @@
             }
         },
         "AttachLoadBalancerToSubnets": {
-            "documentation": "<p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p> <p>The load balancer evenly distributes requests across all registered subnets. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html\">Add or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Adds one or more subnets to the set of configured subnets for the specified load balancer.\n\n The load balancer evenly distributes requests across all registered subnets. For more information, see `Add or Remove Subnets for Your Load Balancer in a VPC <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "AttachLoadBalancerToSubnetsInput"
             },
@@ -62,7 +62,7 @@
             }
         },
         "ConfigureHealthCheck": {
-            "documentation": "<p>Specifies the health check settings to use when evaluating the health state of your back-end instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html\">Configure Health Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Specifies the health check settings to use when evaluating the health state of your back-end instances.\n\n For more information, see `Configure Health Checks <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "ConfigureHealthCheckInput"
             },
@@ -71,7 +71,7 @@
             }
         },
         "CreateAppCookieStickinessPolicy": {
-            "documentation": "<p>Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>, except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>, follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application cookie.</p> <p>If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-application\">Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.\n\n This policy is similar to the policy created by CreateLBCookieStickinessPolicy, except that the lifetime of the special Elastic Load Balancing cookie, ``AWSELB``, follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application cookie.\n\n If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.\n\n For more information, see `Application-Controlled Session Stickiness <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-application>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "CreateAppCookieStickinessPolicyInput"
             },
@@ -80,7 +80,7 @@
             }
         },
         "CreateLBCookieStickinessPolicy": {
-            "documentation": "<p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the back-end server instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p> <p>A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration\">Duration-Based Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.\n\n When a load balancer implements this policy, the load balancer uses a special cookie to track the back-end server instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.\n\n A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.\n\n For more information, see `Duration-Based Session Stickiness <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "CreateLBCookieStickinessPolicyInput"
             },
@@ -89,7 +89,7 @@
             }
         },
         "CreateLoadBalancer": {
-            "documentation": "<p>Creates a load balancer.</p> <p>If the call completes successfully, a new load balancer is created with a unique Domain Name Service (DNS) name. The load balancer receives incoming traffic and routes it to the registered instances. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html\">How Elastic Load Balancing Works</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html\">Elastic Load Balancing Limits</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Creates a load balancer.\n\n If the call completes successfully, a new load balancer is created with a unique Domain Name Service (DNS) name. The load balancer receives incoming traffic and routes it to the registered instances. For more information, see `How Elastic Load Balancing Works <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html>`_ in the *Elastic Load Balancing Developer Guide*.\n\n You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see `Elastic Load Balancing Limits <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "CreateAccessPointInput"
             },
@@ -98,7 +98,7 @@
             }
         },
         "CreateLoadBalancerListeners": {
-            "documentation": "<p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html\">Add a Listener to Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.\n\n For more information, see `Add a Listener to Your Load Balancer <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "CreateLoadBalancerListenerInput"
             },
@@ -107,7 +107,7 @@
             }
         },
         "CreateLoadBalancerPolicy": {
-            "documentation": "<p>Creates a policy with the specified attributes for the specified load balancer.</p> <p>Policies are settings that are saved for your load balancer and that can be applied to the front-end listener or the back-end application server, depending on the policy type.</p>",
+            "documentation": "Creates a policy with the specified attributes for the specified load balancer.\n\n Policies are settings that are saved for your load balancer and that can be applied to the front-end listener or the back-end application server, depending on the policy type.",
             "input": {
                 "shape": "CreateLoadBalancerPolicyInput"
             },
@@ -116,7 +116,7 @@
             }
         },
         "DeleteLoadBalancer": {
-            "documentation": "<p>Deletes the specified load balancer.</p> <p>If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to back-end instances.</p> <p>If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code> still succeeds.</p>",
+            "documentation": "Deletes the specified load balancer.\n\n If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to back-end instances.\n\n If the load balancer does not exist or has already been deleted, the call to ``DeleteLoadBalancer`` still succeeds.",
             "input": {
                 "shape": "DeleteAccessPointInput"
             },
@@ -125,7 +125,7 @@
             }
         },
         "DeleteLoadBalancerListeners": {
-            "documentation": "<p>Deletes the specified listeners from the specified load balancer.</p>",
+            "documentation": "Deletes the specified listeners from the specified load balancer.",
             "input": {
                 "shape": "DeleteLoadBalancerListenerInput"
             },
@@ -134,7 +134,7 @@
             }
         },
         "DeleteLoadBalancerPolicy": {
-            "documentation": "<p>Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.</p>",
+            "documentation": "Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.",
             "input": {
                 "shape": "DeleteLoadBalancerPolicyInput"
             },
@@ -143,7 +143,7 @@
             }
         },
         "DeregisterInstancesFromLoadBalancer": {
-            "documentation": "<p>Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.</p> <p>You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered from the load balancer.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html\">Deregister and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.\n\n You can use DescribeLoadBalancers to verify that the instance is deregistered from the load balancer.\n\n For more information, see `Deregister and Register Amazon EC2 Instances <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "DeregisterEndPointsInput"
             },
@@ -152,7 +152,7 @@
             }
         },
         "DescribeInstanceHealth": {
-            "documentation": "<p>Describes the state of the specified instances registered with the specified load balancer. If no instances are specified, the call describes the state of all instances registered with the load balancer, not including any terminated instances.</p>",
+            "documentation": "Describes the state of the specified instances registered with the specified load balancer. If no instances are specified, the call describes the state of all instances registered with the load balancer, not including any terminated instances.",
             "input": {
                 "shape": "DescribeEndPointStateInput"
             },
@@ -161,7 +161,7 @@
             }
         },
         "DescribeLoadBalancerAttributes": {
-            "documentation": "<p>Describes the attributes for the specified load balancer.</p>",
+            "documentation": "Describes the attributes for the specified load balancer.",
             "input": {
                 "shape": "DescribeLoadBalancerAttributesInput"
             },
@@ -170,7 +170,7 @@
             }
         },
         "DescribeLoadBalancerPolicies": {
-            "documentation": "<p>Describes the specified policies.</p> <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the <code>ELBSample-</code> prefix.</p>",
+            "documentation": "Describes the specified policies.\n\n If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the ``ELBSample-`` prefix.",
             "input": {
                 "shape": "DescribeLoadBalancerPoliciesInput"
             },
@@ -179,7 +179,7 @@
             }
         },
         "DescribeLoadBalancerPolicyTypes": {
-            "documentation": "<p>Describes the specified load balancer policy types.</p> <p>You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy configurations for a load balancer.</p>",
+            "documentation": "Describes the specified load balancer policy types.\n\n You can use these policy types with CreateLoadBalancerPolicy to create policy configurations for a load balancer.",
             "input": {
                 "shape": "DescribeLoadBalancerPolicyTypesInput"
             },
@@ -188,7 +188,7 @@
             }
         },
         "DescribeLoadBalancers": {
-            "documentation": "<p>Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.</p>",
+            "documentation": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.",
             "input": {
                 "shape": "DescribeAccessPointsInput"
             },
@@ -197,7 +197,7 @@
             }
         },
         "DescribeTags": {
-            "documentation": "<p>Describes the tags associated with the specified load balancers.</p>",
+            "documentation": "Describes the tags associated with the specified load balancers.",
             "input": {
                 "shape": "DescribeTagsInput"
             },
@@ -206,7 +206,7 @@
             }
         },
         "DetachLoadBalancerFromSubnets": {
-            "documentation": "<p>Removes the specified subnets from the set of configured subnets for the load balancer.</p> <p>After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer balances the traffic among the remaining routable subnets.</p>",
+            "documentation": "Removes the specified subnets from the set of configured subnets for the load balancer.\n\n After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the ``OutOfService`` state. Then, the load balancer balances the traffic among the remaining routable subnets.",
             "input": {
                 "shape": "DetachLoadBalancerFromSubnetsInput"
             },
@@ -215,7 +215,7 @@
             }
         },
         "DisableAvailabilityZonesForLoadBalancer": {
-            "documentation": "<p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.</p> <p>There must be at least one Availability Zone registered with a load balancer at all times. After an Availability Zone is removed, all instances registered with the load balancer that are in the removed Availability Zone go into the <code>OutOfService</code> state. Then, the load balancer attempts to equally balance the traffic among its remaining Availability Zones.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html\">Disable an Availability Zone from a Load-Balanced Application</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.\n\n There must be at least one Availability Zone registered with a load balancer at all times. After an Availability Zone is removed, all instances registered with the load balancer that are in the removed Availability Zone go into the ``OutOfService`` state. Then, the load balancer attempts to equally balance the traffic among its remaining Availability Zones.\n\n For more information, see `Disable an Availability Zone from a Load-Balanced Application <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "RemoveAvailabilityZonesInput"
             },
@@ -224,7 +224,7 @@
             }
         },
         "EnableAvailabilityZonesForLoadBalancer": {
-            "documentation": "<p>Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.</p> <p>The load balancer evenly distributes requests across all its registered Availability Zones that contain instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html\">Add Availability Zone</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.\n\n The load balancer evenly distributes requests across all its registered Availability Zones that contain instances.\n\n For more information, see `Add Availability Zone <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "AddAvailabilityZonesInput"
             },
@@ -233,7 +233,7 @@
             }
         },
         "ModifyLoadBalancerAttributes": {
-            "documentation": "<p>Modifies the attributes of the specified load balancer.</p> <p>You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>, and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or, you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying an idle connection timeout value for your load balancer.</p> <p>For more information, see the following in the <i>Elastic Load Balancing Developer Guide</i>:</p> <ul> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing\">Cross-Zone Load Balancing</a></li> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain\">Connection Draining</a></li> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html\">Access Logs</a></li> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout\">Idle Connection Timeout</a></li> </ul>",
+            "documentation": "Modifies the attributes of the specified load balancer.\n\n You can modify the load balancer attributes, such as ``AccessLogs``, ``ConnectionDraining``, and ``CrossZoneLoadBalancing`` by either enabling or disabling them. Or, you can modify the load balancer attribute ``ConnectionSettings`` by specifying an idle connection timeout value for your load balancer.\n\n For more information, see the following in the *Elastic Load Balancing Developer Guide*:\n\n \n\n  * `Cross-Zone Load Balancing <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing>`_\n  * `Connection Draining <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain>`_\n  * `Access Logs <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html>`_\n  * `Idle Connection Timeout <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout>`_",
             "input": {
                 "shape": "ModifyLoadBalancerAttributesInput"
             },
@@ -242,7 +242,7 @@
             }
         },
         "RegisterInstancesWithLoadBalancer": {
-            "documentation": "<p>Adds the specified instances to the specified load balancer.</p> <p>The instance must be a running instance in the same network as the load balancer (EC2-Classic or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register the linked EC2-Classic instances with the load balancer in the VPC.</p> <p>Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request has been registered. Instance registration happens shortly afterwards. To check the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in one of the Availability Zones registered for the load balancer is moved to the <code>OutOfService</code> state. If an Availability Zone is added to the load balancer later, any instances registered with the load balancer move to the <code>InService</code> state.</p> <p>If you stop an instance registered with a load balancer and then start it, the IP addresses associated with the instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you use the following sequence: stop the instance, deregister the instance, start the instance, and then register the instance. To deregister instances from a load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html\">Deregister and Register EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Adds the specified instances to the specified load balancer.\n\n The instance must be a running instance in the same network as the load balancer (EC2-Classic or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register the linked EC2-Classic instances with the load balancer in the VPC.\n\n Note that ``RegisterInstanceWithLoadBalancer`` completes when the request has been registered. Instance registration happens shortly afterwards. To check the state of the registered instances, use DescribeLoadBalancers or DescribeInstanceHealth.\n\n After the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in one of the Availability Zones registered for the load balancer is moved to the ``OutOfService`` state. If an Availability Zone is added to the load balancer later, any instances registered with the load balancer move to the ``InService`` state.\n\n If you stop an instance registered with a load balancer and then start it, the IP addresses associated with the instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you use the following sequence: stop the instance, deregister the instance, start the instance, and then register the instance. To deregister instances from a load balancer, use DeregisterInstancesFromLoadBalancer.\n\n For more information, see `Deregister and Register EC2 Instances <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "RegisterEndPointsInput"
             },
@@ -251,7 +251,7 @@
             }
         },
         "RemoveTags": {
-            "documentation": "<p>Removes one or more tags from the specified load balancer.</p>",
+            "documentation": "Removes one or more tags from the specified load balancer.",
             "input": {
                 "shape": "RemoveTagsInput"
             },
@@ -260,7 +260,7 @@
             }
         },
         "SetLoadBalancerListenerSSLCertificate": {
-            "documentation": "<p>Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.</p> <p>For more information about updating your SSL certificate, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html\">Updating an SSL Certificate for a Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.\n\n For more information about updating your SSL certificate, see `Updating an SSL Certificate for a Load Balancer <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "input": {
                 "shape": "SetLoadBalancerListenerSSLCertificateInput"
             },
@@ -269,7 +269,7 @@
             }
         },
         "SetLoadBalancerPoliciesForBackendServer": {
-            "documentation": "<p>Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the back-end ports; this policy type is composed of multiple public key policies.</p> <p>Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the policies, use the <code>PolicyNames</code> parameter to list the policies that you want to enable.</p> <p>You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to verify that the policy is associated with the back-end server.</p>",
+            "documentation": "Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the back-end ports; this policy type is composed of multiple public key policies.\n\n Each time you use ``SetLoadBalancerPoliciesForBackendServer`` to enable the policies, use the ``PolicyNames`` parameter to list the policies that you want to enable.\n\n You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies to verify that the policy is associated with the back-end server.",
             "input": {
                 "shape": "SetLoadBalancerPoliciesForBackendServerInput"
             },
@@ -278,7 +278,7 @@
             }
         },
         "SetLoadBalancerPoliciesOfListener": {
-            "documentation": "<p>Associates, updates, or disables a policy with a listener for the specified load balancer. You can associate multiple policies with a listener.</p>",
+            "documentation": "Associates, updates, or disables a policy with a listener for the specified load balancer. You can associate multiple policies with a listener.",
             "input": {
                 "shape": "SetLoadBalancerPoliciesOfListenerInput"
             },
@@ -290,7 +290,7 @@
     "shapes": {
         "AccessLog": {
             "type": "structure",
-            "documentation": "<p>Information about the <code>AccessLog</code> attribute.</p>",
+            "documentation": "Information about the ``AccessLog`` attribute.",
             "members": [
                 {
                     "name": "Enabled",
@@ -328,7 +328,7 @@
         },
         "AccessPointNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The specified load balancer does not exist.</p>",
+            "documentation": "The specified load balancer does not exist.",
             "members": []
         },
         "AccessPointPort": {
@@ -380,7 +380,7 @@
         },
         "AdditionalAttribute": {
             "type": "structure",
-            "documentation": "<p>This data type is reserved.</p>",
+            "documentation": "This data type is reserved.",
             "members": [
                 {
                     "name": "Key",
@@ -404,7 +404,7 @@
         },
         "AppCookieStickinessPolicy": {
             "type": "structure",
-            "documentation": "<p>Information about a policy for application-controlled session stickiness.</p>",
+            "documentation": "Information about a policy for application-controlled session stickiness.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -486,7 +486,7 @@
         },
         "BackendServerDescription": {
             "type": "structure",
-            "documentation": "<p>Information about the configuration of a back-end server.</p>",
+            "documentation": "Information about the configuration of a back-end server.",
             "members": [
                 {
                     "name": "InstancePort",
@@ -509,7 +509,7 @@
         },
         "CertificateNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The specified SSL ID does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM).</p>",
+            "documentation": "The specified SSL ID does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM).",
             "members": []
         },
         "ConfigureHealthCheckInput": {
@@ -539,7 +539,7 @@
         },
         "ConnectionDraining": {
             "type": "structure",
-            "documentation": "<p>Information about the <code>ConnectionDraining</code> attribute.</p>",
+            "documentation": "Information about the ``ConnectionDraining`` attribute.",
             "members": [
                 {
                     "name": "Enabled",
@@ -561,7 +561,7 @@
         },
         "ConnectionSettings": {
             "type": "structure",
-            "documentation": "<p>Information about the <code>ConnectionSettings</code> attribute.</p>",
+            "documentation": "Information about the ``ConnectionSettings`` attribute.",
             "members": [
                 {
                     "name": "IdleTimeout",
@@ -727,7 +727,7 @@
         },
         "CrossZoneLoadBalancing": {
             "type": "structure",
-            "documentation": "<p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>",
+            "documentation": "Information about the ``CrossZoneLoadBalancing`` attribute.",
             "members": [
                 {
                     "name": "Enabled",
@@ -998,22 +998,22 @@
         },
         "DuplicateAccessPointNameException": {
             "type": "structure",
-            "documentation": "<p>The specified load balancer name already exists for this account.</p>",
+            "documentation": "The specified load balancer name already exists for this account.",
             "members": []
         },
         "DuplicateListenerException": {
             "type": "structure",
-            "documentation": "<p>A listener already exists for the specified <code>LoadBalancerName</code> and <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>, <code>Protocol</code>, or <code>SSLCertificateId</code>.</p>",
+            "documentation": "A listener already exists for the specified ``LoadBalancerName`` and ``LoadBalancerPort``, but with a different ``InstancePort``, ``Protocol``, or ``SSLCertificateId``.",
             "members": []
         },
         "DuplicatePolicyNameException": {
             "type": "structure",
-            "documentation": "<p>A policy with the specified name already exists for this load balancer.</p>",
+            "documentation": "A policy with the specified name already exists for this load balancer.",
             "members": []
         },
         "DuplicateTagKeysException": {
             "type": "structure",
-            "documentation": "<p>A tag key was specified more than once.</p>",
+            "documentation": "A tag key was specified more than once.",
             "members": []
         },
         "EndPointPort": {
@@ -1021,7 +1021,7 @@
         },
         "HealthCheck": {
             "type": "structure",
-            "documentation": "<p>Information about a health check.</p>",
+            "documentation": "Information about a health check.",
             "members": [
                 {
                     "name": "Target",
@@ -1067,7 +1067,7 @@
         },
         "Instance": {
             "type": "structure",
-            "documentation": "<p>The ID of a back-end instance.</p>",
+            "documentation": "The ID of a back-end instance.",
             "members": [
                 {
                     "name": "InstanceId",
@@ -1084,7 +1084,7 @@
         },
         "InstanceState": {
             "type": "structure",
-            "documentation": "<p>Information about the state of a back-end instance.</p>",
+            "documentation": "Information about the state of a back-end instance.",
             "members": [
                 {
                     "name": "InstanceId",
@@ -1118,27 +1118,27 @@
         },
         "InvalidConfigurationRequestException": {
             "type": "structure",
-            "documentation": "<p>The requested configuration change is not valid.</p>",
+            "documentation": "The requested configuration change is not valid.",
             "members": []
         },
         "InvalidEndPointException": {
             "type": "structure",
-            "documentation": "<p>The specified endpoint is not valid.</p>",
+            "documentation": "The specified endpoint is not valid.",
             "members": []
         },
         "InvalidSchemeException": {
             "type": "structure",
-            "documentation": "<p>The specified value for the schema is not valid. You can only specify a scheme for load balancers in a VPC.</p>",
+            "documentation": "The specified value for the schema is not valid. You can only specify a scheme for load balancers in a VPC.",
             "members": []
         },
         "InvalidSecurityGroupException": {
             "type": "structure",
-            "documentation": "<p>One or more of the specified security groups do not exist.</p>",
+            "documentation": "One or more of the specified security groups do not exist.",
             "members": []
         },
         "InvalidSubnetException": {
             "type": "structure",
-            "documentation": "<p>The specified VPC has no associated Internet gateway.</p>",
+            "documentation": "The specified VPC has no associated Internet gateway.",
             "members": []
         },
         "LBCookieStickinessPolicies": {
@@ -1147,7 +1147,7 @@
         },
         "LBCookieStickinessPolicy": {
             "type": "structure",
-            "documentation": "<p>Information about a policy for duration-based session stickiness.</p>",
+            "documentation": "Information about a policy for duration-based session stickiness.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -1163,7 +1163,7 @@
         },
         "Listener": {
             "type": "structure",
-            "documentation": "<p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html\">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
+            "documentation": "Information about a listener.\n\n For information about the protocols and the ports supported by Elastic Load Balancing, see `Listener Configurations for Elastic Load Balancing <http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html>`_ in the *Elastic Load Balancing Developer Guide*.",
             "members": [
                 {
                     "name": "Protocol",
@@ -1194,7 +1194,7 @@
         },
         "ListenerDescription": {
             "type": "structure",
-            "documentation": "<p>The policies enabled for a listener.</p>",
+            "documentation": "The policies enabled for a listener.",
             "members": [
                 {
                     "name": "Listener",
@@ -1213,7 +1213,7 @@
         },
         "ListenerNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The load balancer does not have a listener configured at the specified port.</p>",
+            "documentation": "The load balancer does not have a listener configured at the specified port.",
             "members": []
         },
         "Listeners": {
@@ -1222,12 +1222,12 @@
         },
         "LoadBalancerAttributeNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The specified load balancer attribute does not exist.</p>",
+            "documentation": "The specified load balancer attribute does not exist.",
             "members": []
         },
         "LoadBalancerAttributes": {
             "type": "structure",
-            "documentation": "<p>The attributes for a load balancer.</p>",
+            "documentation": "The attributes for a load balancer.",
             "members": [
                 {
                     "name": "CrossZoneLoadBalancing",
@@ -1258,7 +1258,7 @@
         },
         "LoadBalancerDescription": {
             "type": "structure",
-            "documentation": "<p>Information about a load balancer.</p>",
+            "documentation": "Information about a load balancer.",
             "members": [
                 {
                     "name": "LoadBalancerName",
@@ -1394,7 +1394,7 @@
         },
         "Policies": {
             "type": "structure",
-            "documentation": "<p>The policies for a load balancer.</p>",
+            "documentation": "The policies for a load balancer.",
             "members": [
                 {
                     "name": "AppCookieStickinessPolicies",
@@ -1415,7 +1415,7 @@
         },
         "PolicyAttribute": {
             "type": "structure",
-            "documentation": "<p>Information about a policy attribute.</p>",
+            "documentation": "Information about a policy attribute.",
             "members": [
                 {
                     "name": "AttributeName",
@@ -1431,7 +1431,7 @@
         },
         "PolicyAttributeDescription": {
             "type": "structure",
-            "documentation": "<p>Information about a policy attribute.</p>",
+            "documentation": "Information about a policy attribute.",
             "members": [
                 {
                     "name": "AttributeName",
@@ -1451,7 +1451,7 @@
         },
         "PolicyAttributeTypeDescription": {
             "type": "structure",
-            "documentation": "<p>Information about a policy attribute type.</p>",
+            "documentation": "Information about a policy attribute type.",
             "members": [
                 {
                     "name": "AttributeName",
@@ -1490,7 +1490,7 @@
         },
         "PolicyDescription": {
             "type": "structure",
-            "documentation": "<p>Information about a policy.</p>",
+            "documentation": "Information about a policy.",
             "members": [
                 {
                     "name": "PolicyName",
@@ -1522,12 +1522,12 @@
         },
         "PolicyNotFoundException": {
             "type": "structure",
-            "documentation": "<p>One or more of the specified policies do not exist.</p>",
+            "documentation": "One or more of the specified policies do not exist.",
             "members": []
         },
         "PolicyTypeDescription": {
             "type": "structure",
-            "documentation": "<p>Information about a policy type.</p>",
+            "documentation": "Information about a policy type.",
             "members": [
                 {
                     "name": "PolicyTypeName",
@@ -1559,7 +1559,7 @@
         },
         "PolicyTypeNotFoundException": {
             "type": "structure",
-            "documentation": "<p>One or more of the specified policy types do not exist.</p>",
+            "documentation": "One or more of the specified policy types do not exist.",
             "members": []
         },
         "Ports": {
@@ -1734,7 +1734,7 @@
         },
         "SourceSecurityGroup": {
             "type": "structure",
-            "documentation": "<p>Information about a source security group.</p>",
+            "documentation": "Information about a source security group.",
             "members": [
                 {
                     "name": "OwnerAlias",
@@ -1759,7 +1759,7 @@
         },
         "SubnetNotFoundException": {
             "type": "structure",
-            "documentation": "<p>One or more of the specified subnets do not exist.</p>",
+            "documentation": "One or more of the specified subnets do not exist.",
             "members": []
         },
         "Subnets": {
@@ -1768,7 +1768,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>Information about a tag.</p>",
+            "documentation": "Information about a tag.",
             "members": [
                 {
                     "name": "Key",
@@ -1784,7 +1784,7 @@
         },
         "TagDescription": {
             "type": "structure",
-            "documentation": "<p>The tags associated with a load balancer.</p>",
+            "documentation": "The tags associated with a load balancer.",
             "members": [
                 {
                     "name": "LoadBalancerName",
@@ -1811,7 +1811,7 @@
         },
         "TagKeyOnly": {
             "type": "structure",
-            "documentation": "<p>The key of a tag.</p>",
+            "documentation": "The key of a tag.",
             "members": [
                 {
                     "name": "Key",
@@ -1829,17 +1829,17 @@
         },
         "TooManyAccessPointsException": {
             "type": "structure",
-            "documentation": "<p>The quota for the number of load balancers has been reached.</p>",
+            "documentation": "The quota for the number of load balancers has been reached.",
             "members": []
         },
         "TooManyPoliciesException": {
             "type": "structure",
-            "documentation": "<p>The quota for the number of policies for this load balancer has been reached.</p>",
+            "documentation": "The quota for the number of policies for this load balancer has been reached.",
             "members": []
         },
         "TooManyTagsException": {
             "type": "structure",
-            "documentation": "<p>The quota for the number of tags that can be assigned to a load balancer has been reached.</p>",
+            "documentation": "The quota for the number of tags that can be assigned to a load balancer has been reached.",
             "members": []
         },
         "UnhealthyThreshold": {

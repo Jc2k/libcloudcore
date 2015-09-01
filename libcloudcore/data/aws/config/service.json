@@ -32,13 +32,13 @@
     ],
     "operations": {
         "DeleteDeliveryChannel": {
-            "documentation": "<p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be deleted if it is the only delivery channel and the configuration recorder is still running. To delete the delivery channel, stop the running configuration recorder using the <a>StopConfigurationRecorder</a> action.</p>",
+            "documentation": "Deletes the specified delivery channel.\n\n The delivery channel cannot be deleted if it is the only delivery channel and the configuration recorder is still running. To delete the delivery channel, stop the running configuration recorder using the StopConfigurationRecorder action.",
             "input": {
                 "shape": "DeleteDeliveryChannelRequest"
             }
         },
         "DeliverConfigSnapshot": {
-            "documentation": "<p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, AWS Config sends following notifications using an Amazon SNS topic that you have specified.</p> <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery completed, if the delivery was successfully completed.</li> <li>Notification of delivery failure, if the delivery failed to complete.</li> </ul>",
+            "documentation": "Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, AWS Config sends following notifications using an Amazon SNS topic that you have specified.\n\n \n\n  * Notification of starting the delivery.\n  * Notification of delivery completed, if the delivery was successfully completed.\n  * Notification of delivery failure, if the delivery failed to complete.",
             "input": {
                 "shape": "DeliverConfigSnapshotRequest"
             },
@@ -47,7 +47,7 @@
             }
         },
         "DescribeConfigurationRecorderStatus": {
-            "documentation": "<p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.</p> <note>Currently, you can specify only one configuration recorder per account.</note>",
+            "documentation": "Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.\n\n Currently, you can specify only one configuration recorder per account.",
             "input": {
                 "shape": "DescribeConfigurationRecorderStatusRequest"
             },
@@ -56,7 +56,7 @@
             }
         },
         "DescribeConfigurationRecorders": {
-            "documentation": "<p>Returns the name of one or more specified configuration recorders. If the recorder name is not specified, this action returns the names of all the configuration recorders associated with the account. </p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> </note>",
+            "documentation": "Returns the name of one or more specified configuration recorders. If the recorder name is not specified, this action returns the names of all the configuration recorders associated with the account. \n\n  Currently, you can specify only one configuration recorder per account.",
             "input": {
                 "shape": "DescribeConfigurationRecordersRequest"
             },
@@ -65,7 +65,7 @@
             }
         },
         "DescribeDeliveryChannelStatus": {
-            "documentation": "<p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. </p> <note>Currently, you can specify only one delivery channel per account.</note>",
+            "documentation": "Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. \n\n Currently, you can specify only one delivery channel per account.",
             "input": {
                 "shape": "DescribeDeliveryChannelStatusRequest"
             },
@@ -74,7 +74,7 @@
             }
         },
         "DescribeDeliveryChannels": {
-            "documentation": "<p>Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p></note>",
+            "documentation": "Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account. \n\n  Currently, you can specify only one delivery channel per account.",
             "input": {
                 "shape": "DescribeDeliveryChannelsRequest"
             },
@@ -83,7 +83,7 @@
             }
         },
         "GetResourceConfigHistory": {
-            "documentation": "<p>Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval. You can specify a <code>limit</code> on the number of results returned on the page. If a limit is specified, a <code>nextToken</code> is returned as part of the result that you can use to continue this request. </p> <note> <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code> .</p> </note>",
+            "documentation": "Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval. You can specify a ``limit`` on the number of results returned on the page. If a limit is specified, a ``nextToken`` is returned as part of the result that you can use to continue this request. \n\n  Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified ``limit``. In such cases, you can make another call, using the ``nextToken`` .",
             "input": {
                 "shape": "GetResourceConfigHistoryRequest"
             },
@@ -92,25 +92,25 @@
             }
         },
         "PutConfigurationRecorder": {
-            "documentation": "<p>Creates a new configuration recorder to record the selected resource configurations. </p> <p>You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is to record all supported resource types.</p> </note>",
+            "documentation": "Creates a new configuration recorder to record the selected resource configurations. \n\n You can use this action to change the role ``roleARN`` and/or the ``recordingGroup`` of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.\n\n  Currently, you can specify only one configuration recorder per account.\n\n If ``ConfigurationRecorder`` does not have the **recordingGroup** parameter specified, the default is to record all supported resource types.",
             "input": {
                 "shape": "PutConfigurationRecorderRequest"
             }
         },
         "PutDeliveryChannel": {
-            "documentation": "<p>Creates a new delivery channel object to deliver the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>",
+            "documentation": "Creates a new delivery channel object to deliver the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic. \n\n You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed. \n\n  Currently, you can specify only one delivery channel per account.",
             "input": {
                 "shape": "PutDeliveryChannelRequest"
             }
         },
         "StartConfigurationRecorder": {
-            "documentation": "<p>Starts recording configurations of the AWS resources you have selected to record in your AWS account.</p> <p>You must have created at least one delivery channel to successfully start the configuration recorder.</p>",
+            "documentation": "Starts recording configurations of the AWS resources you have selected to record in your AWS account.\n\n You must have created at least one delivery channel to successfully start the configuration recorder.",
             "input": {
                 "shape": "StartConfigurationRecorderRequest"
             }
         },
         "StopConfigurationRecorder": {
-            "documentation": "<p>Stops recording configurations of the AWS resources you have selected to record in your AWS account.</p>",
+            "documentation": "Stops recording configurations of the AWS resources you have selected to record in your AWS account.",
             "input": {
                 "shape": "StopConfigurationRecorderRequest"
             }
@@ -140,7 +140,7 @@
         },
         "ConfigExportDeliveryInfo": {
             "type": "structure",
-            "documentation": "<p>A list that contains the status of the delivery of either the snapshot or the configuration history to the specified Amazon S3 bucket.</p>",
+            "documentation": "A list that contains the status of the delivery of either the snapshot or the configuration history to the specified Amazon S3 bucket.",
             "members": [
                 {
                     "name": "lastStatus",
@@ -171,7 +171,7 @@
         },
         "ConfigStreamDeliveryInfo": {
             "type": "structure",
-            "documentation": "<p>A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic. </p>",
+            "documentation": "A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.",
             "members": [
                 {
                     "name": "lastStatus",
@@ -200,7 +200,7 @@
         },
         "ConfigurationItem": {
             "type": "structure",
-            "documentation": "<p>A list that contains detailed configurations of a specified resource.</p> <note> <p>Currently, the list does not contain information about non-AWS components (for example, applications on your Amazon EC2 instances). </p> </note>",
+            "documentation": "A list that contains detailed configurations of a specified resource.\n\n  Currently, the list does not contain information about non-AWS components (for example, applications on your Amazon EC2 instances).",
             "members": [
                 {
                     "name": "version",
@@ -294,7 +294,7 @@
         },
         "ConfigurationRecorder": {
             "type": "structure",
-            "documentation": "<p>An object that represents the recording of configuration changes of an AWS resource.</p>",
+            "documentation": "An object that represents the recording of configuration changes of an AWS resource.",
             "members": [
                 {
                     "name": "name",
@@ -323,7 +323,7 @@
         },
         "ConfigurationRecorderStatus": {
             "type": "structure",
-            "documentation": "<p>The current status of the configuration recorder.</p>",
+            "documentation": "The current status of the configuration recorder.",
             "members": [
                 {
                     "name": "name",
@@ -379,7 +379,7 @@
         },
         "DeleteDeliveryChannelRequest": {
             "type": "structure",
-            "documentation": "<p> The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data in JSON format. </p>",
+            "documentation": "The input for the DeleteDeliveryChannel action. The action accepts the following data in JSON format.",
             "members": [
                 {
                     "name": "DeliveryChannelName",
@@ -390,7 +390,7 @@
         },
         "DeliverConfigSnapshotRequest": {
             "type": "structure",
-            "documentation": "<p> The input for the <a>DeliverConfigSnapshot</a> action. </p>",
+            "documentation": "The input for the DeliverConfigSnapshot action.",
             "members": [
                 {
                     "name": "deliveryChannelName",
@@ -401,7 +401,7 @@
         },
         "DeliverConfigSnapshotResponse": {
             "type": "structure",
-            "documentation": "<p> The output for the <a>DeliverConfigSnapshot</a> action in JSON format. </p>",
+            "documentation": "The output for the DeliverConfigSnapshot action in JSON format.",
             "members": [
                 {
                     "name": "configSnapshotId",
@@ -412,7 +412,7 @@
         },
         "DeliveryChannel": {
             "type": "structure",
-            "documentation": "<p>A logical container used for storing the configuration changes of an AWS resource.</p>",
+            "documentation": "A logical container used for storing the configuration changes of an AWS resource.",
             "members": [
                 {
                     "name": "name",
@@ -446,7 +446,7 @@
         },
         "DeliveryChannelStatus": {
             "type": "structure",
-            "documentation": "<p>The status of a specified delivery channel.</p> <p>Valid values: <code>Success</code> | <code>Failure</code></p>",
+            "documentation": "The status of a specified delivery channel.\n\n Valid values: ``Success`` | ``Failure``",
             "members": [
                 {
                     "name": "name",
@@ -479,7 +479,7 @@
         },
         "DescribeConfigurationRecorderStatusRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>DescribeConfigurationRecorderStatus</a> action.</p>",
+            "documentation": "The input for the DescribeConfigurationRecorderStatus action.",
             "members": [
                 {
                     "name": "ConfigurationRecorderNames",
@@ -490,7 +490,7 @@
         },
         "DescribeConfigurationRecorderStatusResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>DescribeConfigurationRecorderStatus</a> action in JSON format.</p>",
+            "documentation": "The output for the DescribeConfigurationRecorderStatus action in JSON format.",
             "members": [
                 {
                     "name": "ConfigurationRecordersStatus",
@@ -501,7 +501,7 @@
         },
         "DescribeConfigurationRecordersRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>DescribeConfigurationRecorders</a> action.</p>",
+            "documentation": "The input for the DescribeConfigurationRecorders action.",
             "members": [
                 {
                     "name": "ConfigurationRecorderNames",
@@ -512,7 +512,7 @@
         },
         "DescribeConfigurationRecordersResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>DescribeConfigurationRecorders</a> action.</p>",
+            "documentation": "The output for the DescribeConfigurationRecorders action.",
             "members": [
                 {
                     "name": "ConfigurationRecorders",
@@ -523,7 +523,7 @@
         },
         "DescribeDeliveryChannelStatusRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>DeliveryChannelStatus</a> action.</p>",
+            "documentation": "The input for the DeliveryChannelStatus action.",
             "members": [
                 {
                     "name": "DeliveryChannelNames",
@@ -534,7 +534,7 @@
         },
         "DescribeDeliveryChannelStatusResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>DescribeDeliveryChannelStatus</a> action.</p>",
+            "documentation": "The output for the DescribeDeliveryChannelStatus action.",
             "members": [
                 {
                     "name": "DeliveryChannelsStatus",
@@ -545,7 +545,7 @@
         },
         "DescribeDeliveryChannelsRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>DescribeDeliveryChannels</a> action.</p>",
+            "documentation": "The input for the DescribeDeliveryChannels action.",
             "members": [
                 {
                     "name": "DeliveryChannelNames",
@@ -556,7 +556,7 @@
         },
         "DescribeDeliveryChannelsResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>DescribeDeliveryChannels</a> action.</p>",
+            "documentation": "The output for the DescribeDeliveryChannels action.",
             "members": [
                 {
                     "name": "DeliveryChannels",
@@ -570,7 +570,7 @@
         },
         "GetResourceConfigHistoryRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>GetResourceConfigHistory</a> action.</p>",
+            "documentation": "The input for the GetResourceConfigHistory action.",
             "members": [
                 {
                     "name": "resourceType",
@@ -611,7 +611,7 @@
         },
         "GetResourceConfigHistoryResponse": {
             "type": "structure",
-            "documentation": "<p>The output for the <a>GetResourceConfigHistory</a> action.</p>",
+            "documentation": "The output for the GetResourceConfigHistory action.",
             "members": [
                 {
                     "name": "configurationItems",
@@ -627,57 +627,57 @@
         },
         "InsufficientDeliveryPolicyException": {
             "type": "structure",
-            "documentation": "<p>Your Amazon S3 bucket policy does not permit AWS Config to write to it.</p>",
+            "documentation": "Your Amazon S3 bucket policy does not permit AWS Config to write to it.",
             "members": []
         },
         "InvalidConfigurationRecorderNameException": {
             "type": "structure",
-            "documentation": "<p>You have provided a configuration recorder name that is not valid.</p>",
+            "documentation": "You have provided a configuration recorder name that is not valid.",
             "members": []
         },
         "InvalidDeliveryChannelNameException": {
             "type": "structure",
-            "documentation": "<p>The specified delivery channel name is not valid.</p>",
+            "documentation": "The specified delivery channel name is not valid.",
             "members": []
         },
         "InvalidLimitException": {
             "type": "structure",
-            "documentation": "<p>You have reached the limit on the pagination.</p>",
+            "documentation": "You have reached the limit on the pagination.",
             "members": []
         },
         "InvalidNextTokenException": {
             "type": "structure",
-            "documentation": "<p>The specified nextToken for pagination is not valid.</p>",
+            "documentation": "The specified nextToken for pagination is not valid.",
             "members": []
         },
         "InvalidRecordingGroupException": {
             "type": "structure",
-            "documentation": "<p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.</p>",
+            "documentation": "AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.",
             "members": []
         },
         "InvalidRoleException": {
             "type": "structure",
-            "documentation": "<p>You have provided a null or empty role ARN.</p>",
+            "documentation": "You have provided a null or empty role ARN.",
             "members": []
         },
         "InvalidS3KeyPrefixException": {
             "type": "structure",
-            "documentation": "<p>The specified Amazon S3 key prefix is not valid.</p>",
+            "documentation": "The specified Amazon S3 key prefix is not valid.",
             "members": []
         },
         "InvalidSNSTopicARNException": {
             "type": "structure",
-            "documentation": "<p>The specified Amazon SNS topic does not exist.</p>",
+            "documentation": "The specified Amazon SNS topic does not exist.",
             "members": []
         },
         "InvalidTimeRangeException": {
             "type": "structure",
-            "documentation": "<p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>",
+            "documentation": "The specified time range is not valid. The earlier time is not chronologically before the later time.",
             "members": []
         },
         "LastDeliveryChannelDeleteFailedException": {
             "type": "structure",
-            "documentation": "<p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>",
+            "documentation": "You cannot delete the delivery channel you specified because the configuration recorder is running.",
             "members": []
         },
         "LaterTime": {
@@ -688,12 +688,12 @@
         },
         "MaxNumberOfConfigurationRecordersExceededException": {
             "type": "structure",
-            "documentation": "<p>You have reached the limit on the number of recorders you can create.</p>",
+            "documentation": "You have reached the limit on the number of recorders you can create.",
             "members": []
         },
         "MaxNumberOfDeliveryChannelsExceededException": {
             "type": "structure",
-            "documentation": "<p>You have reached the limit on the number of delivery channels you can create.</p>",
+            "documentation": "You have reached the limit on the number of delivery channels you can create.",
             "members": []
         },
         "Name": {
@@ -704,37 +704,37 @@
         },
         "NoAvailableConfigurationRecorderException": {
             "type": "structure",
-            "documentation": "<p>There are no configuration recorders available to provide the role needed to describe your resources.</p>",
+            "documentation": "There are no configuration recorders available to provide the role needed to describe your resources.",
             "members": []
         },
         "NoAvailableDeliveryChannelException": {
             "type": "structure",
-            "documentation": "<p>There is no delivery channel available to record configurations.</p>",
+            "documentation": "There is no delivery channel available to record configurations.",
             "members": []
         },
         "NoRunningConfigurationRecorderException": {
             "type": "structure",
-            "documentation": "<p>There is no configuration recorder running.</p>",
+            "documentation": "There is no configuration recorder running.",
             "members": []
         },
         "NoSuchBucketException": {
             "type": "structure",
-            "documentation": "<p>The specified Amazon S3 bucket does not exist.</p>",
+            "documentation": "The specified Amazon S3 bucket does not exist.",
             "members": []
         },
         "NoSuchConfigurationRecorderException": {
             "type": "structure",
-            "documentation": "<p>You have specified a configuration recorder that does not exist.</p>",
+            "documentation": "You have specified a configuration recorder that does not exist.",
             "members": []
         },
         "NoSuchDeliveryChannelException": {
             "type": "structure",
-            "documentation": "<p>You have specified a delivery channel that does not exist.</p>",
+            "documentation": "You have specified a delivery channel that does not exist.",
             "members": []
         },
         "PutConfigurationRecorderRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>PutConfigurationRecorder</a> action.</p>",
+            "documentation": "The input for the PutConfigurationRecorder action.",
             "members": [
                 {
                     "name": "ConfigurationRecorder",
@@ -745,7 +745,7 @@
         },
         "PutDeliveryChannelRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>PutDeliveryChannel</a> action.</p>",
+            "documentation": "The input for the PutDeliveryChannel action.",
             "members": [
                 {
                     "name": "DeliveryChannel",
@@ -762,7 +762,7 @@
         },
         "RecordingGroup": {
             "type": "structure",
-            "documentation": "<p>The group of AWS resource types that AWS Config records when starting the configuration recorder.</p> <p><b>recordingGroup</b> can have one and only one parameter. Choose either <b>allSupported</b> or <b>resourceTypes</b>.</p>",
+            "documentation": "The group of AWS resource types that AWS Config records when starting the configuration recorder.\n\n **recordingGroup** can have one and only one parameter. Choose either **allSupported** or **resourceTypes**.",
             "members": [
                 {
                     "name": "allSupported",
@@ -785,7 +785,7 @@
         },
         "Relationship": {
             "type": "structure",
-            "documentation": "<p>The relationship of the related resource to the main resource.</p>",
+            "documentation": "The relationship of the related resource to the main resource.",
             "members": [
                 {
                     "name": "resourceType",
@@ -819,7 +819,7 @@
         },
         "ResourceNotDiscoveredException": {
             "type": "structure",
-            "documentation": "<p>You have specified a resource that is either unknown or has not been discovered.</p>",
+            "documentation": "You have specified a resource that is either unknown or has not been discovered.",
             "members": []
         },
         "ResourceType": {
@@ -831,7 +831,7 @@
         },
         "StartConfigurationRecorderRequest": {
             "type": "structure",
-            "documentation": "<p>The input for the <a>StartConfigurationRecorder</a> action.</p>",
+            "documentation": "The input for the StartConfigurationRecorder action.",
             "members": [
                 {
                     "name": "ConfigurationRecorderName",
@@ -842,7 +842,7 @@
         },
         "StopConfigurationRecorderRequest": {
             "type": "structure",
-            "documentation": "<p><p>The input for the <a>StopConfigurationRecorder</a> action.</p></p>",
+            "documentation": "The input for the StopConfigurationRecorder action.",
             "members": [
                 {
                     "name": "ConfigurationRecorderName",
@@ -861,7 +861,7 @@
         },
         "ValidationException": {
             "type": "structure",
-            "documentation": "<p>The requested action is not valid.</p>",
+            "documentation": "The requested action is not valid.",
             "members": []
         },
         "Value": {

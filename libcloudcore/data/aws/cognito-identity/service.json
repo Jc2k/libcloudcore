@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateIdentityPool": {
-            "documentation": "<p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "CreateIdentityPoolInput"
             },
@@ -41,7 +41,7 @@
             }
         },
         "DeleteIdentities": {
-            "documentation": "<p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "DeleteIdentitiesInput"
             },
@@ -50,13 +50,13 @@
             }
         },
         "DeleteIdentityPool": {
-            "documentation": "<p>Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "DeleteIdentityPoolInput"
             }
         },
         "DescribeIdentity": {
-            "documentation": "<p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Returns metadata related to the given identity, including when the identity was created and any associated linked logins.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "DescribeIdentityInput"
             },
@@ -65,7 +65,7 @@
             }
         },
         "DescribeIdentityPool": {
-            "documentation": "<p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "DescribeIdentityPoolInput"
             },
@@ -74,7 +74,7 @@
             }
         },
         "GetCredentialsForIdentity": {
-            "documentation": "<p>Returns credentials for the the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "documentation": "Returns credentials for the the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.\n\n This is a public API. You do not need any credentials to call this API.",
             "input": {
                 "shape": "GetCredentialsForIdentityInput"
             },
@@ -83,7 +83,7 @@
             }
         },
         "GetId": {
-            "documentation": "<p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p> <p>token+\";\"+tokenSecret.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "documentation": "Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.\n\n token+\";\"+tokenSecret.\n\n This is a public API. You do not need any credentials to call this API.",
             "input": {
                 "shape": "GetIdInput"
             },
@@ -92,7 +92,7 @@
             }
         },
         "GetIdentityPoolRoles": {
-            "documentation": "<p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Gets the roles for an identity pool.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "GetIdentityPoolRolesInput"
             },
@@ -101,7 +101,7 @@
             }
         },
         "GetOpenIdToken": {
-            "documentation": "<p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 15 minutes.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "documentation": "Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by GetId. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.\n\n The OpenId token is valid for 15 minutes.\n\n This is a public API. You do not need any credentials to call this API.",
             "input": {
                 "shape": "GetOpenIdTokenInput"
             },
@@ -110,7 +110,7 @@
             }
         },
         "GetOpenIdTokenForDeveloperIdentity": {
-            "documentation": "<p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the \"domain\" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Registers (or retrieves) a Cognito ``IdentityId`` and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the ``Logins`` map, which is linked to the identity pool. The developer provider is the \"domain\" by which Cognito will refer to your users.\n\n You can use ``GetOpenIdTokenForDeveloperIdentity`` to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the ``IdentityId`` should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing ``IdentityId``. This API will create the identity in the specified ``IdentityPoolId``.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "GetOpenIdTokenForDeveloperIdentityInput"
             },
@@ -119,7 +119,7 @@
             }
         },
         "ListIdentities": {
-            "documentation": "<p>Lists the identities in a pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Lists the identities in a pool.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "ListIdentitiesInput"
             },
@@ -128,7 +128,7 @@
             }
         },
         "ListIdentityPools": {
-            "documentation": "<p>Lists all of the Cognito identity pools registered for your account.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "documentation": "Lists all of the Cognito identity pools registered for your account.\n\n This is a public API. You do not need any credentials to call this API.",
             "input": {
                 "shape": "ListIdentityPoolsInput"
             },
@@ -137,7 +137,7 @@
             }
         },
         "LookupDeveloperIdentity": {
-            "documentation": "<p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Retrieves the ``IdentityID`` associated with a ``DeveloperUserIdentifier`` or the list of ``DeveloperUserIdentifier``s associated with an ``IdentityId`` for an existing identity. Either ``IdentityID`` or ``DeveloperUserIdentifier`` must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, ``DeveloperUserIdentifier`` will be matched against ``IdentityID``. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a ``ResourceConflictException`` is thrown.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "LookupDeveloperIdentityInput"
             },
@@ -146,7 +146,7 @@
             }
         },
         "MergeDeveloperIdentities": {
-            "documentation": "<p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Merges two users having different ``IdentityId``s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (``SourceUserIdentifier``) with the ``IdentityId`` of the ``DestinationUserIdentifier``. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "MergeDeveloperIdentitiesInput"
             },
@@ -155,25 +155,25 @@
             }
         },
         "SetIdentityPoolRoles": {
-            "documentation": "<p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Sets the roles for an identity pool. These roles are used when making calls to ``GetCredentialsForIdentity`` action.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "SetIdentityPoolRolesInput"
             }
         },
         "UnlinkDeveloperIdentity": {
-            "documentation": "<p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "documentation": "Unlinks a ``DeveloperUserIdentifier`` from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.\n\n This is a public API. You do not need any credentials to call this API.",
             "input": {
                 "shape": "UnlinkDeveloperIdentityInput"
             }
         },
         "UnlinkIdentity": {
-            "documentation": "<p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
+            "documentation": "Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.\n\n This is a public API. You do not need any credentials to call this API.",
             "input": {
                 "shape": "UnlinkIdentityInput"
             }
         },
         "UpdateIdentityPool": {
-            "documentation": "<p>Updates a user pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
+            "documentation": "Updates a user pool.\n\n You must use AWS Developer credentials to call this API.",
             "input": {
                 "shape": "IdentityPool"
             },
@@ -194,7 +194,7 @@
         },
         "ConcurrentModificationException": {
             "type": "structure",
-            "documentation": "<p>Thrown if there are parallel requests to modify a resource.</p>",
+            "documentation": "Thrown if there are parallel requests to modify a resource.",
             "members": [
                 {
                     "name": "message",
@@ -205,7 +205,7 @@
         },
         "CreateIdentityPoolInput": {
             "type": "structure",
-            "documentation": "<p>Input to the CreateIdentityPool action.</p>",
+            "documentation": "Input to the CreateIdentityPool action.",
             "members": [
                 {
                     "name": "IdentityPoolName",
@@ -236,7 +236,7 @@
         },
         "Credentials": {
             "type": "structure",
-            "documentation": "<p>Credentials for the the provided identity ID.</p>",
+            "documentation": "Credentials for the the provided identity ID.",
             "members": [
                 {
                     "name": "AccessKeyId",
@@ -265,7 +265,7 @@
         },
         "DeleteIdentitiesInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>DeleteIdentities</code> action.</p>",
+            "documentation": "Input to the ``DeleteIdentities`` action.",
             "members": [
                 {
                     "name": "IdentityIdsToDelete",
@@ -276,7 +276,7 @@
         },
         "DeleteIdentitiesResponse": {
             "type": "structure",
-            "documentation": "<p>Returned in response to a successful <code>DeleteIdentities</code> operation.</p>",
+            "documentation": "Returned in response to a successful ``DeleteIdentities`` operation.",
             "members": [
                 {
                     "name": "UnprocessedIdentityIds",
@@ -287,7 +287,7 @@
         },
         "DeleteIdentityPoolInput": {
             "type": "structure",
-            "documentation": "<p>Input to the DeleteIdentityPool action.</p>",
+            "documentation": "Input to the DeleteIdentityPool action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -298,7 +298,7 @@
         },
         "DescribeIdentityInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>DescribeIdentity</code> action.</p>",
+            "documentation": "Input to the ``DescribeIdentity`` action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -323,7 +323,7 @@
         },
         "DeveloperUserAlreadyRegisteredException": {
             "type": "structure",
-            "documentation": "<p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>",
+            "documentation": "The provided developer user identifier is already registered with Cognito under a different identity ID.",
             "members": [
                 {
                     "name": "message",
@@ -344,7 +344,7 @@
         },
         "ExternalServiceException": {
             "type": "structure",
-            "documentation": "<p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>",
+            "documentation": "An exception thrown when a dependent service such as Facebook or Twitter is not responding",
             "members": [
                 {
                     "name": "message",
@@ -355,7 +355,7 @@
         },
         "GetCredentialsForIdentityInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>GetCredentialsForIdentity</code> action.</p>",
+            "documentation": "Input to the ``GetCredentialsForIdentity`` action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -371,7 +371,7 @@
         },
         "GetCredentialsForIdentityResponse": {
             "type": "structure",
-            "documentation": "<p>Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.</p>",
+            "documentation": "Returned in response to a successful ``GetCredentialsForIdentity`` operation.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -419,7 +419,7 @@
         },
         "GetIdentityPoolRolesInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>GetIdentityPoolRoles</code> action.</p>",
+            "documentation": "Input to the ``GetIdentityPoolRoles`` action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -430,7 +430,7 @@
         },
         "GetIdentityPoolRolesResponse": {
             "type": "structure",
-            "documentation": "<p>Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.</p>",
+            "documentation": "Returned in response to a successful ``GetIdentityPoolRoles`` operation.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -446,7 +446,7 @@
         },
         "GetOpenIdTokenForDeveloperIdentityInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.</p>",
+            "documentation": "Input to the ``GetOpenIdTokenForDeveloperIdentity`` action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -472,7 +472,7 @@
         },
         "GetOpenIdTokenForDeveloperIdentityResponse": {
             "type": "structure",
-            "documentation": "<p>Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p>",
+            "documentation": "Returned in response to a successful ``GetOpenIdTokenForDeveloperIdentity`` request.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -650,7 +650,7 @@
         },
         "InvalidIdentityPoolConfigurationException": {
             "type": "structure",
-            "documentation": "<p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>",
+            "documentation": "Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.",
             "members": [
                 {
                     "name": "message",
@@ -771,7 +771,7 @@
         },
         "LookupDeveloperIdentityInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>",
+            "documentation": "Input to the ``LookupDeveloperIdentityInput`` action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -802,7 +802,7 @@
         },
         "LookupDeveloperIdentityResponse": {
             "type": "structure",
-            "documentation": "<p>Returned in response to a successful <code>LookupDeveloperIdentity</code> action.</p>",
+            "documentation": "Returned in response to a successful ``LookupDeveloperIdentity`` action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -823,7 +823,7 @@
         },
         "MergeDeveloperIdentitiesInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>MergeDeveloperIdentities</code> action.</p>",
+            "documentation": "Input to the ``MergeDeveloperIdentities`` action.",
             "members": [
                 {
                     "name": "SourceUserIdentifier",
@@ -849,7 +849,7 @@
         },
         "MergeDeveloperIdentitiesResponse": {
             "type": "structure",
-            "documentation": "<p>Returned in response to a successful <code>MergeDeveloperIdentities</code> action.</p>",
+            "documentation": "Returned in response to a successful ``MergeDeveloperIdentities`` action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -920,7 +920,7 @@
         },
         "SetIdentityPoolRolesInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>SetIdentityPoolRoles</code> action.</p>",
+            "documentation": "Input to the ``SetIdentityPoolRoles`` action.",
             "members": [
                 {
                     "name": "IdentityPoolId",
@@ -953,7 +953,7 @@
         },
         "UnlinkDeveloperIdentityInput": {
             "type": "structure",
-            "documentation": "<p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>",
+            "documentation": "Input to the ``UnlinkDeveloperIdentity`` action.",
             "members": [
                 {
                     "name": "IdentityId",
@@ -1000,7 +1000,7 @@
         },
         "UnprocessedIdentityId": {
             "type": "structure",
-            "documentation": "<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>",
+            "documentation": "An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.",
             "members": [
                 {
                     "name": "IdentityId",

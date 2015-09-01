@@ -32,7 +32,7 @@
     ],
     "operations": {
         "AddPermission": {
-            "documentation": "<p>Adds a permission to the access policy associated with the specified AWS Lambda function. In a \"push event\" model, the access policy attached to the Lambda function grants Amazon S3 or a user application permission for the Lambda <code>lambda:Invoke</code> action. For information about the push model, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html\">AWS Lambda: How it Works</a>. Each Lambda function has one access policy associated with it. You can use the <code>AddPermission</code> API to add a permission to the policy. You have one access policy but it can have multiple permission statements.</p> <p>This operation requires permission for the <code>lambda:AddPermission</code> action.</p>",
+            "documentation": "Adds a permission to the access policy associated with the specified AWS Lambda function. In a \"push event\" model, the access policy attached to the Lambda function grants Amazon S3 or a user application permission for the Lambda ``lambda:Invoke`` action. For information about the push model, see `AWS Lambda: How it Works <http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html>`_. Each Lambda function has one access policy associated with it. You can use the ``AddPermission`` API to add a permission to the policy. You have one access policy but it can have multiple permission statements.\n\n This operation requires permission for the ``lambda:AddPermission`` action.",
             "input": {
                 "shape": "AddPermissionRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateEventSourceMapping": {
-            "documentation": "<p>Identifies a stream as an event source for a Lambda function. It can be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes the specified function when records are posted to the stream.</p> <p>This is the pull model, where AWS Lambda invokes the function. For more information, go to <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html\">AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p> <p>This association between an Amazon Kinesis stream and a Lambda function is called the event source mapping. You provide the configuration information (for example, which stream to read from and which Lambda function to invoke) for the event source mapping in the request body.</p> <p> Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with multiple AWS Lambda function. A given Lambda function can be associated with multiple AWS event sources. </p> <p>This operation requires permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>",
+            "documentation": "Identifies a stream as an event source for a Lambda function. It can be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes the specified function when records are posted to the stream.\n\n This is the pull model, where AWS Lambda invokes the function. For more information, go to `AWS Lambda: How it Works <http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html>`_ in the *AWS Lambda Developer Guide*.\n\n This association between an Amazon Kinesis stream and a Lambda function is called the event source mapping. You provide the configuration information (for example, which stream to read from and which Lambda function to invoke) for the event source mapping in the request body.\n\n  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with multiple AWS Lambda function. A given Lambda function can be associated with multiple AWS event sources. \n\n This operation requires permission for the ``lambda:CreateEventSourceMapping`` action.",
             "input": {
                 "shape": "CreateEventSourceMappingRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CreateFunction": {
-            "documentation": "<p>Creates a new Lambda function. The function metadata is created from the request parameters, and the code for the function is provided by a .zip file in the request body. If the function name already exists, the operation will fail. Note that the function name is case-sensitive. </p> <p>This operation requires permission for the <code>lambda:CreateFunction</code> action.</p>",
+            "documentation": "Creates a new Lambda function. The function metadata is created from the request parameters, and the code for the function is provided by a .zip file in the request body. If the function name already exists, the operation will fail. Note that the function name is case-sensitive. \n\n This operation requires permission for the ``lambda:CreateFunction`` action.",
             "input": {
                 "shape": "CreateFunctionRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DeleteEventSourceMapping": {
-            "documentation": "<p>Removes an event source mapping. This means AWS Lambda will no longer invoke the function for events in the associated source.</p> <p>This operation requires permission for the <code>lambda:DeleteEventSourceMapping</code> action.</p>",
+            "documentation": "Removes an event source mapping. This means AWS Lambda will no longer invoke the function for events in the associated source.\n\n This operation requires permission for the ``lambda:DeleteEventSourceMapping`` action.",
             "input": {
                 "shape": "DeleteEventSourceMappingRequest"
             },
@@ -68,13 +68,13 @@
             }
         },
         "DeleteFunction": {
-            "documentation": "<p>Deletes the specified Lambda function code and configuration.</p> <p>When you delete a function the associated access policy is also deleted. You will need to delete the event source mappings explicitly.</p> <p>This operation requires permission for the <code>lambda:DeleteFunction</code> action.</p>",
+            "documentation": "Deletes the specified Lambda function code and configuration.\n\n When you delete a function the associated access policy is also deleted. You will need to delete the event source mappings explicitly.\n\n This operation requires permission for the ``lambda:DeleteFunction`` action.",
             "input": {
                 "shape": "DeleteFunctionRequest"
             }
         },
         "GetEventSourceMapping": {
-            "documentation": "<p>Returns configuration information for the specified event source mapping (see <a>CreateEventSourceMapping</a>).</p> <p>This operation requires permission for the <code>lambda:GetEventSourceMapping</code> action.</p>",
+            "documentation": "Returns configuration information for the specified event source mapping (see CreateEventSourceMapping).\n\n This operation requires permission for the ``lambda:GetEventSourceMapping`` action.",
             "input": {
                 "shape": "GetEventSourceMappingRequest"
             },
@@ -83,7 +83,7 @@
             }
         },
         "GetFunction": {
-            "documentation": "<p>Returns the configuration information of the Lambda function and a presigned URL link to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip file. Note that the URL is valid for up to 10 minutes. The configuration information is the same information you provided as parameters when uploading the function.</p> <p>This operation requires permission for the <code>lambda:GetFunction</code> action.</p>",
+            "documentation": "Returns the configuration information of the Lambda function and a presigned URL link to the .zip file you uploaded with CreateFunction so you can download the .zip file. Note that the URL is valid for up to 10 minutes. The configuration information is the same information you provided as parameters when uploading the function.\n\n This operation requires permission for the ``lambda:GetFunction`` action.",
             "input": {
                 "shape": "GetFunctionRequest"
             },
@@ -92,7 +92,7 @@
             }
         },
         "GetFunctionConfiguration": {
-            "documentation": "<p>Returns the configuration information of the Lambda function. This the same information you provided as parameters when uploading the function by using <a>CreateFunction</a>.</p> <p>This operation requires permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>",
+            "documentation": "Returns the configuration information of the Lambda function. This the same information you provided as parameters when uploading the function by using CreateFunction.\n\n This operation requires permission for the ``lambda:GetFunctionConfiguration`` operation.",
             "input": {
                 "shape": "GetFunctionConfigurationRequest"
             },
@@ -101,7 +101,7 @@
             }
         },
         "GetPolicy": {
-            "documentation": "<p>Returns the access policy, containing a list of permissions granted via the <code>AddPermission</code> API, associated with the specified bucket.</p> <p>You need permission for the <code>lambda:GetPolicy action.</code></p>",
+            "documentation": "Returns the access policy, containing a list of permissions granted via the ``AddPermission`` API, associated with the specified bucket.\n\n You need permission for the ``lambda:GetPolicy action.``",
             "input": {
                 "shape": "GetPolicyRequest"
             },
@@ -110,7 +110,7 @@
             }
         },
         "Invoke": {
-            "documentation": "<p> Invokes a specified Lambda function. </p> <p>This operation requires permission for the <code>lambda:InvokeFunction</code> action.</p>",
+            "documentation": "Invokes a specified Lambda function. \n\n This operation requires permission for the ``lambda:InvokeFunction`` action.",
             "input": {
                 "shape": "InvocationRequest"
             },
@@ -119,7 +119,7 @@
             }
         },
         "InvokeAsync": {
-            "documentation": "<important>This API is deprecated. We recommend you use <code>Invoke</code> API (see <a>Invoke</a>).</important> <p>Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes the specified function asynchronously. To see the logs generated by the Lambda function execution, see the CloudWatch logs console.</p> <p>This operation requires permission for the <code>lambda:InvokeFunction</code> action.</p>",
+            "documentation": "This API is deprecated. We recommend you use ``Invoke`` API (see Invoke). Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes the specified function asynchronously. To see the logs generated by the Lambda function execution, see the CloudWatch logs console.\n\n This operation requires permission for the ``lambda:InvokeFunction`` action.",
             "input": {
                 "shape": "InvokeAsyncRequest"
             },
@@ -128,7 +128,7 @@
             }
         },
         "ListEventSourceMappings": {
-            "documentation": "<p>Returns a list of event source mappings you created using the <code>CreateEventSourceMapping</code> (see <a>CreateEventSourceMapping</a>), where you identify a stream as an event source. This list does not include Amazon S3 event sources. </p> <p>For each mapping, the API returns configuration information. You can optionally specify filters to retrieve specific event source mappings.</p> <p>This operation requires permission for the <code>lambda:ListEventSourceMappings</code> action.</p>",
+            "documentation": "Returns a list of event source mappings you created using the ``CreateEventSourceMapping`` (see CreateEventSourceMapping), where you identify a stream as an event source. This list does not include Amazon S3 event sources. \n\n For each mapping, the API returns configuration information. You can optionally specify filters to retrieve specific event source mappings.\n\n This operation requires permission for the ``lambda:ListEventSourceMappings`` action.",
             "input": {
                 "shape": "ListEventSourceMappingsRequest"
             },
@@ -137,7 +137,7 @@
             }
         },
         "ListFunctions": {
-            "documentation": "<p>Returns a list of your Lambda functions. For each function, the response includes the function configuration information. You must use <a>GetFunction</a> to retrieve the code for your function.</p> <p>This operation requires permission for the <code>lambda:ListFunctions</code> action.</p>",
+            "documentation": "Returns a list of your Lambda functions. For each function, the response includes the function configuration information. You must use GetFunction to retrieve the code for your function.\n\n This operation requires permission for the ``lambda:ListFunctions`` action.",
             "input": {
                 "shape": "ListFunctionsRequest"
             },
@@ -146,13 +146,13 @@
             }
         },
         "RemovePermission": {
-            "documentation": "<p>You can remove individual permissions from an access policy associated with a Lambda function by providing a Statement ID. </p> <p>Note that removal of a permission will cause an active event source to lose permission to the function. </p> <p>You need permission for the <code>lambda:RemovePermission</code> action.</p>",
+            "documentation": "You can remove individual permissions from an access policy associated with a Lambda function by providing a Statement ID. \n\n Note that removal of a permission will cause an active event source to lose permission to the function. \n\n You need permission for the ``lambda:RemovePermission`` action.",
             "input": {
                 "shape": "RemovePermissionRequest"
             }
         },
         "UpdateEventSourceMapping": {
-            "documentation": "<p>You can update an event source mapping. This is useful if you want to change the parameters of the existing mapping without losing your position in the stream. You can change which function will receive the stream records, but to change the stream itself, you must create a new mapping. </p> <p>This operation requires permission for the <code>lambda:UpdateEventSourceMapping</code> action.</p>",
+            "documentation": "You can update an event source mapping. This is useful if you want to change the parameters of the existing mapping without losing your position in the stream. You can change which function will receive the stream records, but to change the stream itself, you must create a new mapping. \n\n This operation requires permission for the ``lambda:UpdateEventSourceMapping`` action.",
             "input": {
                 "shape": "UpdateEventSourceMappingRequest"
             },
@@ -161,7 +161,7 @@
             }
         },
         "UpdateFunctionCode": {
-            "documentation": "<p> Updates the code for the specified Lambda function. This operation must only be used on an existing Lambda function and cannot be used to update the function configuration. </p> <p>This operation requires permission for the <code>lambda:UpdateFunctionCode</code> action.</p>",
+            "documentation": "Updates the code for the specified Lambda function. This operation must only be used on an existing Lambda function and cannot be used to update the function configuration. \n\n This operation requires permission for the ``lambda:UpdateFunctionCode`` action.",
             "input": {
                 "shape": "UpdateFunctionCodeRequest"
             },
@@ -170,7 +170,7 @@
             }
         },
         "UpdateFunctionConfiguration": {
-            "documentation": "<p>Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code. </p> <p>This operation requires permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>",
+            "documentation": "Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code. \n\n This operation requires permission for the ``lambda:UpdateFunctionConfiguration`` action.",
             "input": {
                 "shape": "UpdateFunctionConfigurationRequest"
             },
@@ -365,7 +365,7 @@
         },
         "EventSourceMappingConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes mapping between an Amazon Kinesis stream and a Lambda function.</p>",
+            "documentation": "Describes mapping between an Amazon Kinesis stream and a Lambda function.",
             "members": [
                 {
                     "name": "UUID",
@@ -421,7 +421,7 @@
         },
         "FunctionCode": {
             "type": "structure",
-            "documentation": "<p>The code for the Lambda function.</p>",
+            "documentation": "The code for the Lambda function.",
             "members": [
                 {
                     "name": "ZipFile",
@@ -447,7 +447,7 @@
         },
         "FunctionCodeLocation": {
             "type": "structure",
-            "documentation": "<p>The object for the Lambda function location.</p>",
+            "documentation": "The object for the Lambda function location.",
             "members": [
                 {
                     "name": "RepositoryType",
@@ -463,7 +463,7 @@
         },
         "FunctionConfiguration": {
             "type": "structure",
-            "documentation": "<p>A complex type that describes function metadata.</p>",
+            "documentation": "A complex type that describes function metadata.",
             "members": [
                 {
                     "name": "FunctionName",
@@ -562,7 +562,7 @@
         },
         "GetFunctionResponse": {
             "type": "structure",
-            "documentation": "<p>This response contains the object for the Lambda function location (see <a>API_FunctionCodeLocation</a></p>",
+            "documentation": "This response contains the object for the Lambda function location (see API_FunctionCodeLocation",
             "members": [
                 {
                     "name": "Configuration",
@@ -607,7 +607,7 @@
         },
         "InvalidParameterValueException": {
             "type": "structure",
-            "documentation": "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>",
+            "documentation": "One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the ``CreateFunction`` or the ``UpdateFunctionConfiguration`` API, that AWS Lambda is unable to assume you will get this exception.",
             "members": [
                 {
                     "name": "Type",
@@ -621,7 +621,7 @@
         },
         "InvalidRequestContentException": {
             "type": "structure",
-            "documentation": "<p>The request body could not be parsed as JSON.</p>",
+            "documentation": "The request body could not be parsed as JSON.",
             "members": [
                 {
                     "name": "Type",
@@ -673,7 +673,7 @@
         },
         "InvocationResponse": {
             "type": "structure",
-            "documentation": "<p>Upon success, returns an empty response. Otherwise, throws an exception.</p>",
+            "documentation": "Upon success, returns an empty response. Otherwise, throws an exception.",
             "members": [
                 {
                     "name": "StatusCode",
@@ -724,7 +724,7 @@
         },
         "InvokeAsyncResponse": {
             "type": "structure",
-            "documentation": "<p>Upon success, it returns empty response. Otherwise, throws an exception.</p>",
+            "documentation": "Upon success, it returns empty response. Otherwise, throws an exception.",
             "members": [
                 {
                     "name": "Status",
@@ -769,7 +769,7 @@
         },
         "ListEventSourceMappingsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains a list of event sources (see <a>API_EventSourceMappingConfiguration</a>)</p>",
+            "documentation": "Contains a list of event sources (see API_EventSourceMappingConfiguration)",
             "members": [
                 {
                     "name": "NextMarker",
@@ -804,7 +804,7 @@
         },
         "ListFunctionsResponse": {
             "type": "structure",
-            "documentation": "<p>Contains a list of AWS Lambda function configurations (see <a>FunctionConfiguration</a>.</p>",
+            "documentation": "Contains a list of AWS Lambda function configurations (see FunctionConfiguration.",
             "members": [
                 {
                     "name": "NextMarker",
@@ -832,7 +832,7 @@
         },
         "PolicyLengthExceededException": {
             "type": "structure",
-            "documentation": "<p>Lambda function access policy is limited to 20 KB.</p>",
+            "documentation": "Lambda function access policy is limited to 20 KB.",
             "members": [
                 {
                     "name": "Type",
@@ -881,7 +881,7 @@
         },
         "ResourceConflictException": {
             "type": "structure",
-            "documentation": "<p>The resource already exists.</p>",
+            "documentation": "The resource already exists.",
             "members": [
                 {
                     "name": "Type",
@@ -895,7 +895,7 @@
         },
         "ResourceNotFoundException": {
             "type": "structure",
-            "documentation": "<p>The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.</p>",
+            "documentation": "The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.",
             "members": [
                 {
                     "name": "Type",
@@ -924,7 +924,7 @@
         },
         "ServiceException": {
             "type": "structure",
-            "documentation": "<p>The AWS Lambda service encountered an internal error.</p>",
+            "documentation": "The AWS Lambda service encountered an internal error.",
             "members": [
                 {
                     "name": "Type",

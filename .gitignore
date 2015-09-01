@@ -3,7 +3,7 @@
 *.egg-info
 
 docs/build
-docs/source/ref/_autosummary
+docs/source/ref
 
 bin
 include

@@ -35,13 +35,13 @@
     ],
     "operations": {
         "AbortEnvironmentUpdate": {
-            "documentation": "<p>Cancels in-progress environment configuration update or application version deployment.</p>",
+            "documentation": "Cancels in-progress environment configuration update or application version deployment.",
             "input": {
                 "shape": "AbortEnvironmentUpdateMessage"
             }
         },
         "CheckDNSAvailability": {
-            "documentation": "<p> Checks if the specified CNAME is available. </p>",
+            "documentation": "Checks if the specified CNAME is available.",
             "input": {
                 "shape": "CheckDNSAvailabilityMessage"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CreateApplication": {
-            "documentation": "<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>",
+            "documentation": "Creates an application that has one configuration template named ``default`` and no application versions.",
             "input": {
                 "shape": "CreateApplicationMessage"
             },
@@ -59,7 +59,7 @@
             }
         },
         "CreateApplicationVersion": {
-            "documentation": "<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>",
+            "documentation": "Creates an application version for the specified application.\n\n Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version.",
             "input": {
                 "shape": "CreateApplicationVersionMessage"
             },
@@ -68,7 +68,7 @@
             }
         },
         "CreateConfigurationTemplate": {
-            "documentation": "<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>",
+            "documentation": "Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.\n\n Related Topics\n\n \n\n  *  DescribeConfigurationOptions \n  *  DescribeConfigurationSettings \n  *  ListAvailableSolutionStacks",
             "input": {
                 "shape": "CreateConfigurationTemplateMessage"
             },
@@ -77,7 +77,7 @@
             }
         },
         "CreateEnvironment": {
-            "documentation": "<p> Launches an environment for the specified application using the specified configuration. </p>",
+            "documentation": "Launches an environment for the specified application using the specified configuration.",
             "input": {
                 "shape": "CreateEnvironmentMessage"
             },
@@ -86,37 +86,37 @@
             }
         },
         "CreateStorageLocation": {
-            "documentation": "<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>",
+            "documentation": "Creates the Amazon S3 storage location for the account. \n\n  This location is used to store user log files.",
             "output": {
                 "shape": "CreateStorageLocationResultMessage"
             }
         },
         "DeleteApplication": {
-            "documentation": "<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>",
+            "documentation": "Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. \n\n You cannot delete an application that has a running environment.",
             "input": {
                 "shape": "DeleteApplicationMessage"
             }
         },
         "DeleteApplicationVersion": {
-            "documentation": "<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>",
+            "documentation": "Deletes the specified version from the specified application. \n\n You cannot delete an application version that is associated with a running environment.",
             "input": {
                 "shape": "DeleteApplicationVersionMessage"
             }
         },
         "DeleteConfigurationTemplate": {
-            "documentation": "<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>",
+            "documentation": "Deletes the specified configuration template.\n\n When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.",
             "input": {
                 "shape": "DeleteConfigurationTemplateMessage"
             }
         },
         "DeleteEnvironmentConfiguration": {
-            "documentation": "<p> Deletes the draft configuration associated with the running environment. </p> <p> Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action. </p>",
+            "documentation": "Deletes the draft configuration associated with the running environment. \n\n  Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using DescribeConfigurationSettings while the update is in progress or if the update fails. The ``DeploymentStatus`` for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action.",
             "input": {
                 "shape": "DeleteEnvironmentConfigurationMessage"
             }
         },
         "DescribeApplicationVersions": {
-            "documentation": "<p>Returns descriptions for existing application versions.</p>",
+            "documentation": "Returns descriptions for existing application versions.",
             "input": {
                 "shape": "DescribeApplicationVersionsMessage"
             },
@@ -125,7 +125,7 @@
             }
         },
         "DescribeApplications": {
-            "documentation": "<p>Returns the descriptions of existing applications.</p>",
+            "documentation": "Returns the descriptions of existing applications.",
             "input": {
                 "shape": "DescribeApplicationsMessage"
             },
@@ -134,7 +134,7 @@
             }
         },
         "DescribeConfigurationOptions": {
-            "documentation": "<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>",
+            "documentation": "Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed.",
             "input": {
                 "shape": "DescribeConfigurationOptionsMessage"
             },
@@ -143,7 +143,7 @@
             }
         },
         "DescribeConfigurationSettings": {
-            "documentation": "<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>",
+            "documentation": "Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. \n\n  When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. \n\n Related Topics\n\n \n\n  *  DeleteEnvironmentConfiguration",
             "input": {
                 "shape": "DescribeConfigurationSettingsMessage"
             },
@@ -152,7 +152,7 @@
             }
         },
         "DescribeEnvironmentResources": {
-            "documentation": "<p>Returns AWS resources for this environment.</p>",
+            "documentation": "Returns AWS resources for this environment.",
             "input": {
                 "shape": "DescribeEnvironmentResourcesMessage"
             },
@@ -161,7 +161,7 @@
             }
         },
         "DescribeEnvironments": {
-            "documentation": "<p>Returns descriptions for existing environments.</p>",
+            "documentation": "Returns descriptions for existing environments.",
             "input": {
                 "shape": "DescribeEnvironmentsMessage"
             },
@@ -170,7 +170,7 @@
             }
         },
         "DescribeEvents": {
-            "documentation": "<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>. </note>",
+            "documentation": "Returns list of event descriptions matching criteria up to the last 6 weeks.\n\n  This action returns the most recent 1,000 events from the specified ``NextToken``.",
             "input": {
                 "shape": "DescribeEventsMessage"
             },
@@ -179,31 +179,31 @@
             }
         },
         "ListAvailableSolutionStacks": {
-            "documentation": "<p> Returns a list of the available solution stack names. </p>",
+            "documentation": "Returns a list of the available solution stack names.",
             "output": {
                 "shape": "ListAvailableSolutionStacksResultMessage"
             }
         },
         "RebuildEnvironment": {
-            "documentation": "<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>",
+            "documentation": "Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart.",
             "input": {
                 "shape": "RebuildEnvironmentMessage"
             }
         },
         "RequestEnvironmentInfo": {
-            "documentation": "<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>",
+            "documentation": "Initiates a request to compile the specified type of information of the deployed environment. \n\n  Setting the ``InfoType`` to ``tail`` compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. \n\n  Setting the ``InfoType`` to ``bundle`` compresses the application server log files for every Amazon EC2 instance into a ``.zip`` file. Legacy and .NET containers do not support bundle logs. \n\n  Use RetrieveEnvironmentInfo to obtain the set of logs. \n\n Related Topics\n\n \n\n  *  RetrieveEnvironmentInfo",
             "input": {
                 "shape": "RequestEnvironmentInfoMessage"
             }
         },
         "RestartAppServer": {
-            "documentation": "<p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>",
+            "documentation": "Causes the environment to restart the application container server running on each Amazon EC2 instance.",
             "input": {
                 "shape": "RestartAppServerMessage"
             }
         },
         "RetrieveEnvironmentInfo": {
-            "documentation": "<p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>",
+            "documentation": "Retrieves the compiled information from a RequestEnvironmentInfo request. \n\n Related Topics\n\n \n\n  *  RequestEnvironmentInfo",
             "input": {
                 "shape": "RetrieveEnvironmentInfoMessage"
             },
@@ -212,13 +212,13 @@
             }
         },
         "SwapEnvironmentCNAMEs": {
-            "documentation": "<p> Swaps the CNAMEs of two environments. </p>",
+            "documentation": "Swaps the CNAMEs of two environments.",
             "input": {
                 "shape": "SwapEnvironmentCNAMEsMessage"
             }
         },
         "TerminateEnvironment": {
-            "documentation": "<p> Terminates the specified environment. </p>",
+            "documentation": "Terminates the specified environment.",
             "input": {
                 "shape": "TerminateEnvironmentMessage"
             },
@@ -227,7 +227,7 @@
             }
         },
         "UpdateApplication": {
-            "documentation": "<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>",
+            "documentation": "Updates the specified application to have the specified properties. \n\n  If a property (for example, ``description``) is not provided, the value remains unchanged. To clear these properties, specify an empty string.",
             "input": {
                 "shape": "UpdateApplicationMessage"
             },
@@ -236,7 +236,7 @@
             }
         },
         "UpdateApplicationVersion": {
-            "documentation": "<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>",
+            "documentation": "Updates the specified application version to have the specified properties. \n\n  If a property (for example, ``description``) is not provided, the value remains unchanged. To clear properties, specify an empty string.",
             "input": {
                 "shape": "UpdateApplicationVersionMessage"
             },
@@ -245,7 +245,7 @@
             }
         },
         "UpdateConfigurationTemplate": {
-            "documentation": "<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>",
+            "documentation": "Updates the specified configuration template to have the specified properties or configuration option values. \n\n  If a property (for example, ``ApplicationName``) is not provided, its value remains unchanged. To clear such properties, specify an empty string.  Related Topics\n\n \n\n  *  DescribeConfigurationOptions",
             "input": {
                 "shape": "UpdateConfigurationTemplateMessage"
             },
@@ -254,7 +254,7 @@
             }
         },
         "UpdateEnvironment": {
-            "documentation": "<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>",
+            "documentation": "Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. \n\n  Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an ``InvalidParameterCombination`` error. \n\n  When updating the configuration settings to a new template or individual settings, a draft configuration is created and DescribeConfigurationSettings for this environment returns two setting descriptions with different ``DeploymentStatus`` values.",
             "input": {
                 "shape": "UpdateEnvironmentMessage"
             },
@@ -263,7 +263,7 @@
             }
         },
         "ValidateConfigurationSettings": {
-            "documentation": "<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>",
+            "documentation": "Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. \n\n  This action returns a list of messages indicating any errors or warnings associated with the selection of option values.",
             "input": {
                 "shape": "ValidateConfigurationSettingsMessage"
             },
@@ -275,7 +275,7 @@
     "shapes": {
         "AbortEnvironmentUpdateMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -294,7 +294,7 @@
         },
         "ApplicationDescription": {
             "type": "structure",
-            "documentation": "<p>Describes the properties of an application.</p>",
+            "documentation": "Describes the properties of an application.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -334,7 +334,7 @@
         },
         "ApplicationDescriptionMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing a single description of an application.</p>",
+            "documentation": "Result message containing a single description of an application.",
             "members": [
                 {
                     "name": "Application",
@@ -345,7 +345,7 @@
         },
         "ApplicationDescriptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing a list of application descriptions.</p>",
+            "documentation": "Result message containing a list of application descriptions.",
             "members": [
                 {
                     "name": "Applications",
@@ -363,7 +363,7 @@
         },
         "ApplicationVersionDescription": {
             "type": "structure",
-            "documentation": "<p> Describes the properties of an application version. </p>",
+            "documentation": "Describes the properties of an application version.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -403,7 +403,7 @@
         },
         "ApplicationVersionDescriptionMessage": {
             "type": "structure",
-            "documentation": "<p> Result message wrapping a single description of an application version. </p>",
+            "documentation": "Result message wrapping a single description of an application version.",
             "members": [
                 {
                     "name": "ApplicationVersion",
@@ -414,7 +414,7 @@
         },
         "ApplicationVersionDescriptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message wrapping a list of application version descriptions.</p>",
+            "documentation": "Result message wrapping a list of application version descriptions.",
             "members": [
                 {
                     "name": "ApplicationVersions",
@@ -428,7 +428,7 @@
         },
         "AutoScalingGroup": {
             "type": "structure",
-            "documentation": "<p> Describes an Auto Scaling launch configuration. </p>",
+            "documentation": "Describes an Auto Scaling launch configuration.",
             "members": [
                 {
                     "name": "Name",
@@ -451,7 +451,7 @@
         },
         "CheckDNSAvailabilityMessage": {
             "type": "structure",
-            "documentation": "<p>Results message indicating whether a CNAME is available.</p>",
+            "documentation": "Results message indicating whether a CNAME is available.",
             "members": [
                 {
                     "name": "CNAMEPrefix",
@@ -462,7 +462,7 @@
         },
         "CheckDNSAvailabilityResultMessage": {
             "type": "structure",
-            "documentation": "<p>Indicates if the specified CNAME is available.</p>",
+            "documentation": "Indicates if the specified CNAME is available.",
             "members": [
                 {
                     "name": "Available",
@@ -487,7 +487,7 @@
         },
         "ConfigurationOptionDescription": {
             "type": "structure",
-            "documentation": "<p> Describes the possible values for a configuration option. </p>",
+            "documentation": "Describes the possible values for a configuration option.",
             "members": [
                 {
                     "name": "Namespace",
@@ -562,7 +562,7 @@
         },
         "ConfigurationOptionSetting": {
             "type": "structure",
-            "documentation": "<p> A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html\">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>",
+            "documentation": "A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to `Option Values <http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html>`_ in the *AWS Elastic Beanstalk Developer Guide*.",
             "members": [
                 {
                     "name": "ResourceName",
@@ -601,7 +601,7 @@
         },
         "ConfigurationOptionsDescription": {
             "type": "structure",
-            "documentation": "<p>Describes the settings for a specified configuration set.</p>",
+            "documentation": "Describes the settings for a specified configuration set.",
             "members": [
                 {
                     "name": "SolutionStackName",
@@ -617,7 +617,7 @@
         },
         "ConfigurationSettingsDescription": {
             "type": "structure",
-            "documentation": "<p> Describes the settings for a configuration set. </p>",
+            "documentation": "Describes the settings for a configuration set.",
             "members": [
                 {
                     "name": "SolutionStackName",
@@ -672,7 +672,7 @@
         },
         "ConfigurationSettingsDescriptions": {
             "type": "structure",
-            "documentation": "<p>The results from a request to change the configuration settings of an environment.</p>",
+            "documentation": "The results from a request to change the configuration settings of an environment.",
             "members": [
                 {
                     "name": "ConfigurationSettings",
@@ -683,7 +683,7 @@
         },
         "ConfigurationSettingsValidationMessages": {
             "type": "structure",
-            "documentation": "<p>Provides a list of validation messages.</p>",
+            "documentation": "Provides a list of validation messages.",
             "members": [
                 {
                     "name": "Messages",
@@ -701,7 +701,7 @@
         },
         "CreateApplicationMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -717,7 +717,7 @@
         },
         "CreateApplicationVersionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -748,7 +748,7 @@
         },
         "CreateConfigurationTemplateMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -789,7 +789,7 @@
         },
         "CreateEnvironmentMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -850,7 +850,7 @@
         },
         "CreateStorageLocationResultMessage": {
             "type": "structure",
-            "documentation": "<p>Results of a <a>CreateStorageLocationResult</a> call.</p>",
+            "documentation": "Results of a CreateStorageLocationResult call.",
             "members": [
                 {
                     "name": "S3Bucket",
@@ -870,7 +870,7 @@
         },
         "DeleteApplicationMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -886,7 +886,7 @@
         },
         "DeleteApplicationVersionMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -907,7 +907,7 @@
         },
         "DeleteConfigurationTemplateMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -923,7 +923,7 @@
         },
         "DeleteEnvironmentConfigurationMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -942,7 +942,7 @@
         },
         "DescribeApplicationVersionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing a list of configuration descriptions.</p>",
+            "documentation": "Result message containing a list of configuration descriptions.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -958,7 +958,7 @@
         },
         "DescribeApplicationsMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationNames",
@@ -969,7 +969,7 @@
         },
         "DescribeConfigurationOptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containig a list of application version descriptions. </p>",
+            "documentation": "Result message containig a list of application version descriptions.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -1000,7 +1000,7 @@
         },
         "DescribeConfigurationSettingsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing all of the configuration settings for a specified solution stack or configuration template.</p>",
+            "documentation": "Result message containing all of the configuration settings for a specified solution stack or configuration template.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -1021,7 +1021,7 @@
         },
         "DescribeEnvironmentResourcesMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -1037,7 +1037,7 @@
         },
         "DescribeEnvironmentsMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -1073,7 +1073,7 @@
         },
         "DescribeEventsMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -1143,7 +1143,7 @@
         },
         "EnvironmentDescription": {
             "type": "structure",
-            "documentation": "<p>Describes the properties of an environment.</p>",
+            "documentation": "Describes the properties of an environment.",
             "members": [
                 {
                     "name": "EnvironmentName",
@@ -1233,7 +1233,7 @@
         },
         "EnvironmentDescriptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing a list of environment descriptions.</p>",
+            "documentation": "Result message containing a list of environment descriptions.",
             "members": [
                 {
                     "name": "Environments",
@@ -1254,7 +1254,7 @@
         },
         "EnvironmentInfoDescription": {
             "type": "structure",
-            "documentation": "<p>The information retrieved from the Amazon EC2 instances.</p>",
+            "documentation": "The information retrieved from the Amazon EC2 instances.",
             "members": [
                 {
                     "name": "InfoType",
@@ -1294,7 +1294,7 @@
         },
         "EnvironmentResourceDescription": {
             "type": "structure",
-            "documentation": "<p>Describes the AWS resources in use by this environment. This data is live.</p>",
+            "documentation": "Describes the AWS resources in use by this environment. This data is live.",
             "members": [
                 {
                     "name": "EnvironmentName",
@@ -1335,7 +1335,7 @@
         },
         "EnvironmentResourceDescriptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing a list of environment resource descriptions. </p>",
+            "documentation": "Result message containing a list of environment resource descriptions.",
             "members": [
                 {
                     "name": "EnvironmentResources",
@@ -1346,7 +1346,7 @@
         },
         "EnvironmentResourcesDescription": {
             "type": "structure",
-            "documentation": "<p>Describes the AWS resources in use by this environment. This data is not live data.</p>",
+            "documentation": "Describes the AWS resources in use by this environment. This data is not live data.",
             "members": [
                 {
                     "name": "LoadBalancer",
@@ -1360,7 +1360,7 @@
         },
         "EnvironmentTier": {
             "type": "structure",
-            "documentation": "<p> Describes the properties of an environment tier </p>",
+            "documentation": "Describes the properties of an environment tier",
             "members": [
                 {
                     "name": "Name",
@@ -1384,7 +1384,7 @@
         },
         "EventDescription": {
             "type": "structure",
-            "documentation": "<p>Describes an event.</p>",
+            "documentation": "Describes an event.",
             "members": [
                 {
                     "name": "EventDate",
@@ -1434,7 +1434,7 @@
         },
         "EventDescriptionsMessage": {
             "type": "structure",
-            "documentation": "<p>Result message wrapping a list of event descriptions.</p>",
+            "documentation": "Result message wrapping a list of event descriptions.",
             "members": [
                 {
                     "name": "Events",
@@ -1465,7 +1465,7 @@
         },
         "Instance": {
             "type": "structure",
-            "documentation": "<p>The description of an Amazon EC2 instance.</p>",
+            "documentation": "The description of an Amazon EC2 instance.",
             "members": [
                 {
                     "name": "Id",
@@ -1480,7 +1480,7 @@
         },
         "InsufficientPrivilegesException": {
             "type": "structure",
-            "documentation": "<p>Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services</p>",
+            "documentation": "Unable to perform the specified operation because the user does not have enough privileges for one of more downstream aws services",
             "members": []
         },
         "Integer": {
@@ -1488,7 +1488,7 @@
         },
         "LaunchConfiguration": {
             "type": "structure",
-            "documentation": "<p>Describes an Auto Scaling launch configuration.</p>",
+            "documentation": "Describes an Auto Scaling launch configuration.",
             "members": [
                 {
                     "name": "Name",
@@ -1503,7 +1503,7 @@
         },
         "ListAvailableSolutionStacksResultMessage": {
             "type": "structure",
-            "documentation": "<p>A list of available AWS Elastic Beanstalk solution stacks. </p>",
+            "documentation": "A list of available AWS Elastic Beanstalk solution stacks.",
             "members": [
                 {
                     "name": "SolutionStacks",
@@ -1519,7 +1519,7 @@
         },
         "Listener": {
             "type": "structure",
-            "documentation": "<p>Describes the properties of a Listener for the LoadBalancer.</p>",
+            "documentation": "Describes the properties of a Listener for the LoadBalancer.",
             "members": [
                 {
                     "name": "Protocol",
@@ -1535,7 +1535,7 @@
         },
         "LoadBalancer": {
             "type": "structure",
-            "documentation": "<p>Describes a LoadBalancer.</p>",
+            "documentation": "Describes a LoadBalancer.",
             "members": [
                 {
                     "name": "Name",
@@ -1546,7 +1546,7 @@
         },
         "LoadBalancerDescription": {
             "type": "structure",
-            "documentation": "<p>Describes the details of a LoadBalancer.</p>",
+            "documentation": "Describes the details of a LoadBalancer.",
             "members": [
                 {
                     "name": "LoadBalancerName",
@@ -1581,7 +1581,7 @@
         },
         "OperationInProgressException": {
             "type": "structure",
-            "documentation": "<p>Unable to perform the specified operation because another operation is already in progress affecting an an element in this activity.</p>",
+            "documentation": "Unable to perform the specified operation because another operation is already in progress affecting an an element in this activity.",
             "members": []
         },
         "OptionNamespace": {
@@ -1598,7 +1598,7 @@
         },
         "OptionRestrictionRegex": {
             "type": "structure",
-            "documentation": "<p> A regular expression representing a restriction on a string configuration option value. </p>",
+            "documentation": "A regular expression representing a restriction on a string configuration option value.",
             "members": [
                 {
                     "name": "Pattern",
@@ -1614,7 +1614,7 @@
         },
         "OptionSpecification": {
             "type": "structure",
-            "documentation": "<p> A specification identifying an individual configuration option. </p>",
+            "documentation": "A specification identifying an individual configuration option.",
             "members": [
                 {
                     "name": "ResourceName",
@@ -1639,7 +1639,7 @@
         },
         "Queue": {
             "type": "structure",
-            "documentation": "<p>Describes a queue.</p>",
+            "documentation": "Describes a queue.",
             "members": [
                 {
                     "name": "Name",
@@ -1659,7 +1659,7 @@
         },
         "RebuildEnvironmentMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -1681,7 +1681,7 @@
         },
         "RequestEnvironmentInfoMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -1711,7 +1711,7 @@
         },
         "RestartAppServerMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -1727,7 +1727,7 @@
         },
         "RetrieveEnvironmentInfoMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -1748,7 +1748,7 @@
         },
         "RetrieveEnvironmentInfoResultMessage": {
             "type": "structure",
-            "documentation": "<p>Result message containing a description of the requested environment info.</p>",
+            "documentation": "Result message containing a description of the requested environment info.",
             "members": [
                 {
                     "name": "EnvironmentInfo",
@@ -1765,7 +1765,7 @@
         },
         "S3Location": {
             "type": "structure",
-            "documentation": "<p>A specification of a location in Amazon S3.</p>",
+            "documentation": "A specification of a location in Amazon S3.",
             "members": [
                 {
                     "name": "S3Bucket",
@@ -1781,12 +1781,12 @@
         },
         "S3LocationNotInServiceRegionException": {
             "type": "structure",
-            "documentation": "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>",
+            "documentation": "The specified S3 bucket does not belong to the S3 region in which the service is running.",
             "members": []
         },
         "S3SubscriptionRequiredException": {
             "type": "structure",
-            "documentation": "<p>The caller does not have a subscription to Amazon S3.</p>",
+            "documentation": "The caller does not have a subscription to Amazon S3.",
             "members": []
         },
         "SampleTimestamp": {
@@ -1794,7 +1794,7 @@
         },
         "SolutionStackDescription": {
             "type": "structure",
-            "documentation": "<p> Describes the solution stack. </p>",
+            "documentation": "Describes the solution stack.",
             "members": [
                 {
                     "name": "SolutionStackName",
@@ -1817,12 +1817,12 @@
         },
         "SourceBundleDeletionException": {
             "type": "structure",
-            "documentation": "<p>Unable to delete the Amazon S3 source bundle associated with the application version, although the application version deleted successfully.</p>",
+            "documentation": "Unable to delete the Amazon S3 source bundle associated with the application version, although the application version deleted successfully.",
             "members": []
         },
         "SourceConfiguration": {
             "type": "structure",
-            "documentation": "<p>A specification for an environment configuration</p>",
+            "documentation": "A specification for an environment configuration",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -1841,7 +1841,7 @@
         },
         "SwapEnvironmentCNAMEsMessage": {
             "type": "structure",
-            "documentation": "<p>Swaps the CNAMEs of two environments.</p>",
+            "documentation": "Swaps the CNAMEs of two environments.",
             "members": [
                 {
                     "name": "SourceEnvironmentId",
@@ -1867,7 +1867,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>Describes a tag applied to a resource in an environment.</p>",
+            "documentation": "Describes a tag applied to a resource in an environment.",
             "members": [
                 {
                     "name": "Key",
@@ -1896,7 +1896,7 @@
         },
         "TerminateEnvironmentMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -1929,32 +1929,32 @@
         },
         "TooManyApplicationVersionsException": {
             "type": "structure",
-            "documentation": "<p>The caller has exceeded the limit on the number of application versions associated with their account.</p>",
+            "documentation": "The caller has exceeded the limit on the number of application versions associated with their account.",
             "members": []
         },
         "TooManyApplicationsException": {
             "type": "structure",
-            "documentation": "<p>The caller has exceeded the limit on the number of applications associated with their account.</p>",
+            "documentation": "The caller has exceeded the limit on the number of applications associated with their account.",
             "members": []
         },
         "TooManyBucketsException": {
             "type": "structure",
-            "documentation": "<p>The web service attempted to create a bucket in an Amazon S3 account that already has 100 buckets.</p>",
+            "documentation": "The web service attempted to create a bucket in an Amazon S3 account that already has 100 buckets.",
             "members": []
         },
         "TooManyConfigurationTemplatesException": {
             "type": "structure",
-            "documentation": "<p>The caller has exceeded the limit on the number of configuration templates associated with their account.</p>",
+            "documentation": "The caller has exceeded the limit on the number of configuration templates associated with their account.",
             "members": []
         },
         "TooManyEnvironmentsException": {
             "type": "structure",
-            "documentation": "<p>The caller has exceeded the limit of allowed environments associated with the account.</p>",
+            "documentation": "The caller has exceeded the limit of allowed environments associated with the account.",
             "members": []
         },
         "Trigger": {
             "type": "structure",
-            "documentation": "<p>Describes a trigger.</p>",
+            "documentation": "Describes a trigger.",
             "members": [
                 {
                     "name": "Name",
@@ -1969,7 +1969,7 @@
         },
         "UpdateApplicationMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -1985,7 +1985,7 @@
         },
         "UpdateApplicationVersionMessage": {
             "type": "structure",
-            "documentation": "<p></p>",
+            "documentation": "",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -2006,7 +2006,7 @@
         },
         "UpdateConfigurationTemplateMessage": {
             "type": "structure",
-            "documentation": "<p>The result message containing the options for the specified solution stack.</p>",
+            "documentation": "The result message containing the options for the specified solution stack.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -2040,7 +2040,7 @@
         },
         "UpdateEnvironmentMessage": {
             "type": "structure",
-            "documentation": "<p>This documentation target is not reported in the API reference.</p>",
+            "documentation": "This documentation target is not reported in the API reference.",
             "members": [
                 {
                     "name": "EnvironmentId",
@@ -2094,7 +2094,7 @@
         },
         "ValidateConfigurationSettingsMessage": {
             "type": "structure",
-            "documentation": "<p>A list of validation messages for a specified configuration template. </p>",
+            "documentation": "A list of validation messages for a specified configuration template.",
             "members": [
                 {
                     "name": "ApplicationName",
@@ -2120,7 +2120,7 @@
         },
         "ValidationMessage": {
             "type": "structure",
-            "documentation": "<p> An error or warning for a desired configuration option value. </p>",
+            "documentation": "An error or warning for a desired configuration option value.",
             "members": [
                 {
                     "name": "Message",

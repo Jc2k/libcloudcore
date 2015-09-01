@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CancelJob": {
-            "documentation": "<p>The CancelJob operation cancels an unfinished job.</p> <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>",
+            "documentation": "The CancelJob operation cancels an unfinished job.\n\n You can only cancel a job that has a status of ``Submitted``. To prevent a pipeline from starting to process a job while you're getting the job identifier, use UpdatePipelineStatus to temporarily pause the pipeline.",
             "input": {
                 "shape": "CancelJobRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateJob": {
-            "documentation": "<p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>",
+            "documentation": "When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. \n\n If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).",
             "input": {
                 "shape": "CreateJobRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CreatePipeline": {
-            "documentation": "<p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>",
+            "documentation": "The CreatePipeline operation creates a pipeline with settings that you specify.",
             "input": {
                 "shape": "CreatePipelineRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "CreatePreset": {
-            "documentation": "<p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>",
+            "documentation": "The CreatePreset operation creates a preset with settings that you specify.\n\n Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (``ValidationException``) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces. Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication *Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services*.",
             "input": {
                 "shape": "CreatePresetRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "DeletePipeline": {
-            "documentation": "<p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>",
+            "documentation": "The DeletePipeline operation removes a pipeline.\n\n  You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, ``DeletePipeline`` returns an error.",
             "input": {
                 "shape": "DeletePipelineRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "DeletePreset": {
-            "documentation": "<p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>",
+            "documentation": "The DeletePreset operation removes a preset that you've added in an AWS region.\n\n  You can't delete the default presets that are included with Elastic Transcoder.",
             "input": {
                 "shape": "DeletePresetRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "ListJobsByPipeline": {
-            "documentation": "<p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>",
+            "documentation": "The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.\n\n Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.",
             "input": {
                 "shape": "ListJobsByPipelineRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "ListJobsByStatus": {
-            "documentation": "<p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>",
+            "documentation": "The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.",
             "input": {
                 "shape": "ListJobsByStatusRequest"
             },
@@ -104,7 +104,7 @@
             }
         },
         "ListPipelines": {
-            "documentation": "<p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>",
+            "documentation": "The ListPipelines operation gets a list of the pipelines associated with the current AWS account.",
             "input": {
                 "shape": "ListPipelinesRequest"
             },
@@ -113,7 +113,7 @@
             }
         },
         "ListPresets": {
-            "documentation": "<p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>",
+            "documentation": "The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.",
             "input": {
                 "shape": "ListPresetsRequest"
             },
@@ -122,7 +122,7 @@
             }
         },
         "ReadJob": {
-            "documentation": "<p>The ReadJob operation returns detailed information about a job.</p>",
+            "documentation": "The ReadJob operation returns detailed information about a job.",
             "input": {
                 "shape": "ReadJobRequest"
             },
@@ -131,7 +131,7 @@
             }
         },
         "ReadPipeline": {
-            "documentation": "<p>The ReadPipeline operation gets detailed information about a pipeline.</p>",
+            "documentation": "The ReadPipeline operation gets detailed information about a pipeline.",
             "input": {
                 "shape": "ReadPipelineRequest"
             },
@@ -140,7 +140,7 @@
             }
         },
         "ReadPreset": {
-            "documentation": "<p>The ReadPreset operation gets detailed information about a preset.</p>",
+            "documentation": "The ReadPreset operation gets detailed information about a preset.",
             "input": {
                 "shape": "ReadPresetRequest"
             },
@@ -149,7 +149,7 @@
             }
         },
         "TestRole": {
-            "documentation": "<p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>",
+            "documentation": "The TestRole operation tests the IAM role used to create the pipeline.\n\n The ``TestRole`` action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.",
             "input": {
                 "shape": "TestRoleRequest"
             },
@@ -158,7 +158,7 @@
             }
         },
         "UpdatePipeline": {
-            "documentation": "<p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>",
+            "documentation": "Use the ``UpdatePipeline`` operation to update settings for a pipeline. When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings.",
             "input": {
                 "shape": "UpdatePipelineRequest"
             },
@@ -167,7 +167,7 @@
             }
         },
         "UpdatePipelineNotifications": {
-            "documentation": "<p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>",
+            "documentation": "With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.\n\n When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.",
             "input": {
                 "shape": "UpdatePipelineNotificationsRequest"
             },
@@ -176,7 +176,7 @@
             }
         },
         "UpdatePipelineStatus": {
-            "documentation": "<p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>",
+            "documentation": "The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.\n\n Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a CancelJob request.",
             "input": {
                 "shape": "UpdatePipelineStatusRequest"
             },
@@ -195,12 +195,12 @@
         },
         "AccessDeniedException": {
             "type": "structure",
-            "documentation": "<p> General authentication failure. The request was not signed correctly. </p>",
+            "documentation": "General authentication failure. The request was not signed correctly.",
             "members": []
         },
         "Artwork": {
             "type": "structure",
-            "documentation": "<p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.</p> <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to \"Replace\" and use an empty <code>Artwork</code> array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to \"Prepend\", \"Append\", or \"Fallback\", and use an empty <code>Artwork</code> array.</p>",
+            "documentation": "The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.\n\n To remove artwork or leave the artwork empty, you can either set ``Artwork`` to null, or set the ``Merge Policy`` to \"Replace\" and use an empty ``Artwork`` array.\n\n To pass through existing artwork unchanged, set the ``Merge Policy`` to \"Prepend\", \"Append\", or \"Fallback\", and use an empty ``Artwork`` array.",
             "members": [
                 {
                     "name": "InputKey",
@@ -266,7 +266,7 @@
         },
         "AudioCodecOptions": {
             "type": "structure",
-            "documentation": "<p>Options associated with your audio codec.</p>",
+            "documentation": "Options associated with your audio codec.",
             "members": [
                 {
                     "name": "Profile",
@@ -298,7 +298,7 @@
         },
         "AudioParameters": {
             "type": "structure",
-            "documentation": "<p>Parameters required for transcoding audio.</p>",
+            "documentation": "Parameters required for transcoding audio.",
             "members": [
                 {
                     "name": "Codec",
@@ -346,7 +346,7 @@
         },
         "CancelJobRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>CancelJobRequest</code> structure.</p>",
+            "documentation": "The ``CancelJobRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -359,12 +359,12 @@
         },
         "CancelJobResponse": {
             "type": "structure",
-            "documentation": "<p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>",
+            "documentation": "The response body contains a JSON object. If the job is successfully canceled, the value of ``Success`` is ``true``.",
             "members": []
         },
         "CaptionFormat": {
             "type": "structure",
-            "documentation": "<p>The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>",
+            "documentation": "The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.",
             "members": [
                 {
                     "name": "Format",
@@ -398,7 +398,7 @@
         },
         "CaptionSource": {
             "type": "structure",
-            "documentation": "<p>A source file for the input sidecar captions used during the transcoding process.</p>",
+            "documentation": "A source file for the input sidecar captions used during the transcoding process.",
             "members": [
                 {
                     "name": "Key",
@@ -433,7 +433,7 @@
         },
         "Captions": {
             "type": "structure",
-            "documentation": "<p>The captions to be created, if any.</p>",
+            "documentation": "The captions to be created, if any.",
             "members": [
                 {
                     "name": "MergePolicy",
@@ -454,7 +454,7 @@
         },
         "Clip": {
             "type": "structure",
-            "documentation": "<p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>",
+            "documentation": "Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.",
             "members": [
                 {
                     "name": "TimeSpan",
@@ -477,7 +477,7 @@
         },
         "CreateJobOutput": {
             "type": "structure",
-            "documentation": "<p>The <code>CreateJobOutput</code> structure.</p>",
+            "documentation": "The ``CreateJobOutput`` structure.",
             "members": [
                 {
                     "name": "Key",
@@ -542,7 +542,7 @@
         },
         "CreateJobPlaylist": {
             "type": "structure",
-            "documentation": "<p>Information about the master playlist.</p>",
+            "documentation": "Information about the master playlist.",
             "members": [
                 {
                     "name": "Name",
@@ -577,7 +577,7 @@
         },
         "CreateJobRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>CreateJobRequest</code> structure.</p>",
+            "documentation": "The ``CreateJobRequest`` structure.",
             "members": [
                 {
                     "name": "PipelineId",
@@ -617,7 +617,7 @@
         },
         "CreateJobResponse": {
             "type": "structure",
-            "documentation": "<p>The CreateJobResponse structure.</p>",
+            "documentation": "The CreateJobResponse structure.",
             "members": [
                 {
                     "name": "Job",
@@ -628,7 +628,7 @@
         },
         "CreatePipelineRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>CreatePipelineRequest</code> structure.</p>",
+            "documentation": "The ``CreatePipelineRequest`` structure.",
             "members": [
                 {
                     "name": "Name",
@@ -674,7 +674,7 @@
         },
         "CreatePipelineResponse": {
             "type": "structure",
-            "documentation": "<p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>",
+            "documentation": "When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.",
             "members": [
                 {
                     "name": "Pipeline",
@@ -690,7 +690,7 @@
         },
         "CreatePresetRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>CreatePresetRequest</code> structure.</p>",
+            "documentation": "The ``CreatePresetRequest`` structure.",
             "members": [
                 {
                     "name": "Name",
@@ -726,7 +726,7 @@
         },
         "CreatePresetResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>CreatePresetResponse</code> structure.</p>",
+            "documentation": "The ``CreatePresetResponse`` structure.",
             "members": [
                 {
                     "name": "Preset",
@@ -742,7 +742,7 @@
         },
         "DeletePipelineRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>DeletePipelineRequest</code> structure.</p>",
+            "documentation": "The ``DeletePipelineRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -755,12 +755,12 @@
         },
         "DeletePipelineResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>DeletePipelineResponse</code> structure.</p>",
+            "documentation": "The ``DeletePipelineResponse`` structure.",
             "members": []
         },
         "DeletePresetRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>DeletePresetRequest</code> structure.</p>",
+            "documentation": "The ``DeletePresetRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -773,7 +773,7 @@
         },
         "DeletePresetResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>DeletePresetResponse</code> structure.</p>",
+            "documentation": "The ``DeletePresetResponse`` structure.",
             "members": []
         },
         "Description": {
@@ -781,7 +781,7 @@
         },
         "DetectedProperties": {
             "type": "structure",
-            "documentation": "<p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>",
+            "documentation": "The detected properties of the input file. Elastic Transcoder identifies these values from the input file.",
             "members": [
                 {
                     "name": "Width",
@@ -818,7 +818,7 @@
         },
         "Encryption": {
             "type": "structure",
-            "documentation": "<p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>",
+            "documentation": "The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.",
             "members": [
                 {
                     "name": "Mode",
@@ -869,7 +869,7 @@
         },
         "HlsContentProtection": {
             "type": "structure",
-            "documentation": "<p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.</p>",
+            "documentation": "The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.",
             "members": [
                 {
                     "name": "Method",
@@ -921,12 +921,12 @@
         },
         "InternalServiceException": {
             "type": "structure",
-            "documentation": "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>",
+            "documentation": "Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.",
             "members": []
         },
         "Job": {
             "type": "structure",
-            "documentation": "<p>A section of the response body that provides information about the job that is created.</p>",
+            "documentation": "A section of the response body that provides information about the job that is created.",
             "members": [
                 {
                     "name": "Id",
@@ -987,7 +987,7 @@
         },
         "JobAlbumArt": {
             "type": "structure",
-            "documentation": "<p>The .jpg or .png file associated with an audio file.</p>",
+            "documentation": "The .jpg or .png file associated with an audio file.",
             "members": [
                 {
                     "name": "MergePolicy",
@@ -1006,7 +1006,7 @@
         },
         "JobInput": {
             "type": "structure",
-            "documentation": "<p>Information about the file that you're transcoding.</p>",
+            "documentation": "Information about the file that you're transcoding.",
             "members": [
                 {
                     "name": "Key",
@@ -1052,7 +1052,7 @@
         },
         "JobOutput": {
             "type": "structure",
-            "documentation": "<p><important>Outputs recommended instead.</important>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>",
+            "documentation": "Outputs recommended instead.If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the ``Output`` object lists information about the first output. This duplicates the information that is listed for the first output in the ``Outputs`` object.",
             "members": [
                 {
                     "name": "Id",
@@ -1170,7 +1170,7 @@
         },
         "JobWatermark": {
             "type": "structure",
-            "documentation": "<p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>",
+            "documentation": "Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.",
             "members": [
                 {
                     "name": "PresetWatermarkId",
@@ -1217,12 +1217,12 @@
         },
         "LimitExceededException": {
             "type": "structure",
-            "documentation": "<p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>",
+            "documentation": "Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.",
             "members": []
         },
         "ListJobsByPipelineRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ListJobsByPipelineRequest</code> structure.</p>",
+            "documentation": "The ``ListJobsByPipelineRequest`` structure.",
             "members": [
                 {
                     "name": "PipelineId",
@@ -1249,7 +1249,7 @@
         },
         "ListJobsByPipelineResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>ListJobsByPipelineResponse</code> structure.</p>",
+            "documentation": "The ``ListJobsByPipelineResponse`` structure.",
             "members": [
                 {
                     "name": "Jobs",
@@ -1265,7 +1265,7 @@
         },
         "ListJobsByStatusRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ListJobsByStatusRequest</code> structure.</p>",
+            "documentation": "The ``ListJobsByStatusRequest`` structure.",
             "members": [
                 {
                     "name": "Status",
@@ -1292,7 +1292,7 @@
         },
         "ListJobsByStatusResponse": {
             "type": "structure",
-            "documentation": "<p> The <code>ListJobsByStatusResponse</code> structure. </p>",
+            "documentation": "The ``ListJobsByStatusResponse`` structure.",
             "members": [
                 {
                     "name": "Jobs",
@@ -1308,7 +1308,7 @@
         },
         "ListPipelinesRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ListPipelineRequest</code> structure.</p>",
+            "documentation": "The ``ListPipelineRequest`` structure.",
             "members": [
                 {
                     "name": "Ascending",
@@ -1328,7 +1328,7 @@
         },
         "ListPipelinesResponse": {
             "type": "structure",
-            "documentation": "<p>A list of the pipelines associated with the current AWS account.</p>",
+            "documentation": "A list of the pipelines associated with the current AWS account.",
             "members": [
                 {
                     "name": "Pipelines",
@@ -1344,7 +1344,7 @@
         },
         "ListPresetsRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ListPresetsRequest</code> structure.</p>",
+            "documentation": "The ``ListPresetsRequest`` structure.",
             "members": [
                 {
                     "name": "Ascending",
@@ -1364,7 +1364,7 @@
         },
         "ListPresetsResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>ListPresetsResponse</code> structure.</p>",
+            "documentation": "The ``ListPresetsResponse`` structure.",
             "members": [
                 {
                     "name": "Presets",
@@ -1392,7 +1392,7 @@
         },
         "Notifications": {
             "type": "structure",
-            "documentation": "<p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</important>",
+            "documentation": "The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.\n\n To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.",
             "members": [
                 {
                     "name": "Progressing",
@@ -1437,7 +1437,7 @@
         },
         "Permission": {
             "type": "structure",
-            "documentation": "<p>The <code>Permission</code> structure.</p>",
+            "documentation": "The ``Permission`` structure.",
             "members": [
                 {
                     "name": "GranteeType",
@@ -1462,7 +1462,7 @@
         },
         "Pipeline": {
             "type": "structure",
-            "documentation": "<p>The pipeline (queue) that is used to manage jobs.</p>",
+            "documentation": "The pipeline (queue) that is used to manage jobs.",
             "members": [
                 {
                     "name": "Id",
@@ -1523,7 +1523,7 @@
         },
         "PipelineOutputConfig": {
             "type": "structure",
-            "documentation": "<p>The <code>PipelineOutputConfig</code> structure.</p>",
+            "documentation": "The ``PipelineOutputConfig`` structure.",
             "members": [
                 {
                     "name": "Bucket",
@@ -1554,7 +1554,7 @@
         },
         "PlayReadyDrm": {
             "type": "structure",
-            "documentation": "<p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>AES-CTR</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p>",
+            "documentation": "The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.\n\n PlayReady DRM encrypts your media files using ``AES-CTR`` encryption.\n\n If you use DRM for an ``HLSv3`` playlist, your outputs must have a master playlist.",
             "members": [
                 {
                     "name": "Format",
@@ -1593,7 +1593,7 @@
         },
         "Playlist": {
             "type": "structure",
-            "documentation": "<p> Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30. </p>",
+            "documentation": "Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is ``fmp4`` (Fragmented MP4) or ``ts`` (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30.",
             "members": [
                 {
                     "name": "Name",
@@ -1641,7 +1641,7 @@
         },
         "Preset": {
             "type": "structure",
-            "documentation": "<p>Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.</p>",
+            "documentation": "Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.",
             "members": [
                 {
                     "name": "Id",
@@ -1698,7 +1698,7 @@
         },
         "PresetWatermark": {
             "type": "structure",
-            "documentation": "<p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p> <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p> <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>",
+            "documentation": "Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.\n\n Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.\n\n When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.",
             "members": [
                 {
                     "name": "Id",
@@ -1765,7 +1765,7 @@
         },
         "ReadJobRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ReadJobRequest</code> structure.</p>",
+            "documentation": "The ``ReadJobRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -1778,7 +1778,7 @@
         },
         "ReadJobResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>ReadJobResponse</code> structure.</p>",
+            "documentation": "The ``ReadJobResponse`` structure.",
             "members": [
                 {
                     "name": "Job",
@@ -1789,7 +1789,7 @@
         },
         "ReadPipelineRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ReadPipelineRequest</code> structure.</p>",
+            "documentation": "The ``ReadPipelineRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -1802,7 +1802,7 @@
         },
         "ReadPipelineResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>ReadPipelineResponse</code> structure.</p>",
+            "documentation": "The ``ReadPipelineResponse`` structure.",
             "members": [
                 {
                     "name": "Pipeline",
@@ -1818,7 +1818,7 @@
         },
         "ReadPresetRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>ReadPresetRequest</code> structure.</p>",
+            "documentation": "The ``ReadPresetRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -1831,7 +1831,7 @@
         },
         "ReadPresetResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>ReadPresetResponse</code> structure.</p>",
+            "documentation": "The ``ReadPresetResponse`` structure.",
             "members": [
                 {
                     "name": "Preset",
@@ -1845,12 +1845,12 @@
         },
         "ResourceInUseException": {
             "type": "structure",
-            "documentation": "<p> The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use. </p>",
+            "documentation": "The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.",
             "members": []
         },
         "ResourceNotFoundException": {
             "type": "structure",
-            "documentation": "<p> The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created. </p>",
+            "documentation": "The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.",
             "members": []
         },
         "Role": {
@@ -1883,7 +1883,7 @@
         },
         "TestRoleRequest": {
             "type": "structure",
-            "documentation": "<p> The <code>TestRoleRequest</code> structure. </p>",
+            "documentation": "The ``TestRoleRequest`` structure.",
             "members": [
                 {
                     "name": "Role",
@@ -1909,7 +1909,7 @@
         },
         "TestRoleResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>TestRoleResponse</code> structure.</p>",
+            "documentation": "The ``TestRoleResponse`` structure.",
             "members": [
                 {
                     "name": "Success",
@@ -1931,7 +1931,7 @@
         },
         "Thumbnails": {
             "type": "structure",
-            "documentation": "<p>Thumbnails for videos.</p>",
+            "documentation": "Thumbnails for videos.",
             "members": [
                 {
                     "name": "Format",
@@ -1983,7 +1983,7 @@
         },
         "TimeSpan": {
             "type": "structure",
-            "documentation": "<p>Settings that determine when a clip begins and how long it lasts.</p>",
+            "documentation": "Settings that determine when a clip begins and how long it lasts.",
             "members": [
                 {
                     "name": "StartTime",
@@ -1999,7 +1999,7 @@
         },
         "Timing": {
             "type": "structure",
-            "documentation": "<p>Details about the timing of a job.</p>",
+            "documentation": "Details about the timing of a job.",
             "members": [
                 {
                     "name": "SubmitTimeMillis",
@@ -2020,7 +2020,7 @@
         },
         "UpdatePipelineNotificationsRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>UpdatePipelineNotificationsRequest</code> structure.</p>",
+            "documentation": "The ``UpdatePipelineNotificationsRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -2038,7 +2038,7 @@
         },
         "UpdatePipelineNotificationsResponse": {
             "type": "structure",
-            "documentation": "<p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>",
+            "documentation": "The ``UpdatePipelineNotificationsResponse`` structure.",
             "members": [
                 {
                     "name": "Pipeline",
@@ -2049,7 +2049,7 @@
         },
         "UpdatePipelineRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>UpdatePipelineRequest</code> structure.</p>",
+            "documentation": "The ``UpdatePipelineRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -2096,7 +2096,7 @@
         },
         "UpdatePipelineResponse": {
             "type": "structure",
-            "documentation": "<p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request. </p>",
+            "documentation": "When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.",
             "members": [
                 {
                     "name": "Pipeline",
@@ -2111,7 +2111,7 @@
         },
         "UpdatePipelineStatusRequest": {
             "type": "structure",
-            "documentation": "<p>The <code>UpdatePipelineStatusRequest</code> structure.</p>",
+            "documentation": "The ``UpdatePipelineStatusRequest`` structure.",
             "members": [
                 {
                     "name": "Id",
@@ -2145,7 +2145,7 @@
         },
         "ValidationException": {
             "type": "structure",
-            "documentation": "<p>One or more required parameter values were not provided in the request.</p>",
+            "documentation": "One or more required parameter values were not provided in the request.",
             "members": []
         },
         "VerticalAlign": {
@@ -2159,7 +2159,7 @@
         },
         "VideoParameters": {
             "type": "structure",
-            "documentation": "<p>The <code>VideoParameters</code> structure.</p>",
+            "documentation": "The ``VideoParameters`` structure.",
             "members": [
                 {
                     "name": "Codec",
@@ -2240,7 +2240,7 @@
         },
         "Warning": {
             "type": "structure",
-            "documentation": "<p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>",
+            "documentation": "Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.\n\n Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.",
             "members": [
                 {
                     "name": "Code",

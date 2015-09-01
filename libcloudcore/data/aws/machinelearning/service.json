@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateBatchPrediction": {
-            "documentation": "<p>Generates predictions for a group of observations. The observations to process exist in one or more data files referenced by a <code>DataSource</code>. This operation creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the data files referenced by the <code>DataSource</code> as information sources. </p> <p><code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code> status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can poll for status updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code> status appears, the results are available in the location specified by the <code>OutputUri</code> parameter.</p>",
+            "documentation": "Generates predictions for a group of observations. The observations to process exist in one or more data files referenced by a ``DataSource``. This operation creates a new ``BatchPrediction``, and uses an ``MLModel`` and the data files referenced by the ``DataSource`` as information sources. \n\n ``CreateBatchPrediction`` is an asynchronous operation. In response to ``CreateBatchPrediction``, Amazon Machine Learning (Amazon ML) immediately returns and sets the ``BatchPrediction`` status to ``PENDING``. After the ``BatchPrediction`` completes, Amazon ML sets the status to ``COMPLETED``. \n\n You can poll for status updates by using the GetBatchPrediction operation and checking the ``Status`` parameter of the result. After the ``COMPLETED`` status appears, the results are available in the location specified by the ``OutputUri`` parameter.",
             "input": {
                 "shape": "CreateBatchPredictionInput"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateDataSourceFromRDS": {
-            "documentation": "<p>Creates a <code>DataSource</code> object from an <a href=\"http://aws.amazon.com/rds/\"> Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references data that can be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.</p> <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <a>GetDataSource</a> operation response. </p>",
+            "documentation": "Creates a ``DataSource`` object from an ` Amazon Relational Database Service <http://aws.amazon.com/rds/>`_ (Amazon RDS). A ``DataSource`` references data that can be used to perform CreateMLModel, CreateEvaluation, or CreateBatchPrediction operations.\n\n ``CreateDataSourceFromRDS`` is an asynchronous operation. In response to ``CreateDataSourceFromRDS``, Amazon Machine Learning (Amazon ML) immediately returns and sets the ``DataSource`` status to ``PENDING``. After the ``DataSource`` is created and ready for use, Amazon ML sets the ``Status`` parameter to ``COMPLETED``. ``DataSource`` in ``COMPLETED`` or ``PENDING`` status can only be used to perform CreateMLModel, CreateEvaluation, or CreateBatchPrediction operations. \n\n  If Amazon ML cannot accept the input source, it sets the ``Status`` parameter to ``FAILED`` and includes an error message in the ``Message`` attribute of the GetDataSource operation response.",
             "input": {
                 "shape": "CreateDataSourceFromRDSInput"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CreateDataSourceFromRedshift": {
-            "documentation": "<p>Creates a <code>DataSource</code> from <a href=\"http://aws.amazon.com/redshift/\">Amazon Redshift</a>. A <code>DataSource</code> references data that can be used to perform either <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a> operations.</p> <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <a>GetDataSource</a> operation response. </p> <p>The observations should exist in the database hosted on an Amazon Redshift cluster and should be specified by a <code>SelectSqlQuery</code>. Amazon ML executes <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html\"> Unload</a> command in Amazon Redshift to transfer the result set of <code>SelectSqlQuery</code> to <code>S3StagingLocation.</code> </p> <p>After the <code>DataSource</code> is created, it's ready for use in evaluations and batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>, the <code>DataSource</code> requires another item -- a recipe. A recipe describes the observation variables that participate in training an <code>MLModel</code>. A recipe describes how each input variable will be used in training. Will the variable be included or excluded from training? Will the variable be manipulated, for example, combined with another variable or split apart into word combinations? The recipe provides answers to these questions. For more information, see the Amazon Machine Learning Developer Guide.</p>",
+            "documentation": "Creates a ``DataSource`` from `Amazon Redshift <http://aws.amazon.com/redshift/>`_. A ``DataSource`` references data that can be used to perform either CreateMLModel, CreateEvaluation or CreateBatchPrediction operations.\n\n ``CreateDataSourceFromRedshift`` is an asynchronous operation. In response to ``CreateDataSourceFromRedshift``, Amazon Machine Learning (Amazon ML) immediately returns and sets the ``DataSource`` status to ``PENDING``. After the ``DataSource`` is created and ready for use, Amazon ML sets the ``Status`` parameter to ``COMPLETED``. ``DataSource`` in ``COMPLETED`` or ``PENDING`` status can only be used to perform CreateMLModel, CreateEvaluation, or CreateBatchPrediction operations. \n\n  If Amazon ML cannot accept the input source, it sets the ``Status`` parameter to ``FAILED`` and includes an error message in the ``Message`` attribute of the GetDataSource operation response. \n\n The observations should exist in the database hosted on an Amazon Redshift cluster and should be specified by a ``SelectSqlQuery``. Amazon ML executes ` Unload <http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html>`_ command in Amazon Redshift to transfer the result set of ``SelectSqlQuery`` to ``S3StagingLocation.`` \n\n After the ``DataSource`` is created, it's ready for use in evaluations and batch predictions. If you plan to use the ``DataSource`` to train an ``MLModel``, the ``DataSource`` requires another item -- a recipe. A recipe describes the observation variables that participate in training an ``MLModel``. A recipe describes how each input variable will be used in training. Will the variable be included or excluded from training? Will the variable be manipulated, for example, combined with another variable or split apart into word combinations? The recipe provides answers to these questions. For more information, see the Amazon Machine Learning Developer Guide.",
             "input": {
                 "shape": "CreateDataSourceFromRedshiftInput"
             },
@@ -59,7 +59,7 @@
             }
         },
         "CreateDataSourceFromS3": {
-            "documentation": "<p>Creates a <code>DataSource</code> object. A <code>DataSource</code> references data that can be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <a>GetDataSource</a> operation response. </p> <p>The observation data used in a <code>DataSource</code> should be ready to use; that is, it should have a consistent structure, and missing data values should be kept to a minimum. The observation data must reside in one or more CSV files in an Amazon Simple Storage Service (Amazon S3) bucket, along with a schema that describes the data items by name and type. The same schema must be used for all of the data files referenced by the <code>DataSource</code>. </p> <p>After the <code>DataSource</code> has been created, it's ready to use in evaluations and batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>, the <code>DataSource</code> requires another item: a recipe. A recipe describes the observation variables that participate in training an <code>MLModel</code>. A recipe describes how each input variable will be used in training. Will the variable be included or excluded from training? Will the variable be manipulated, for example, combined with another variable, or split apart into word combinations? The recipe provides answers to these questions. For more information, see the <a href=\"http://docs.aws.amazon.com/machine-learning/latest/dg\">Amazon Machine Learning Developer Guide</a>.</p>",
+            "documentation": "Creates a ``DataSource`` object. A ``DataSource`` references data that can be used to perform CreateMLModel, CreateEvaluation, or CreateBatchPrediction operations.\n\n ``CreateDataSourceFromS3`` is an asynchronous operation. In response to ``CreateDataSourceFromS3``, Amazon Machine Learning (Amazon ML) immediately returns and sets the ``DataSource`` status to ``PENDING``. After the ``DataSource`` is created and ready for use, Amazon ML sets the ``Status`` parameter to ``COMPLETED``. ``DataSource`` in ``COMPLETED`` or ``PENDING`` status can only be used to perform CreateMLModel, CreateEvaluation or CreateBatchPrediction operations. \n\n  If Amazon ML cannot accept the input source, it sets the ``Status`` parameter to ``FAILED`` and includes an error message in the ``Message`` attribute of the GetDataSource operation response. \n\n The observation data used in a ``DataSource`` should be ready to use; that is, it should have a consistent structure, and missing data values should be kept to a minimum. The observation data must reside in one or more CSV files in an Amazon Simple Storage Service (Amazon S3) bucket, along with a schema that describes the data items by name and type. The same schema must be used for all of the data files referenced by the ``DataSource``. \n\n After the ``DataSource`` has been created, it's ready to use in evaluations and batch predictions. If you plan to use the ``DataSource`` to train an ``MLModel``, the ``DataSource`` requires another item: a recipe. A recipe describes the observation variables that participate in training an ``MLModel``. A recipe describes how each input variable will be used in training. Will the variable be included or excluded from training? Will the variable be manipulated, for example, combined with another variable, or split apart into word combinations? The recipe provides answers to these questions. For more information, see the `Amazon Machine Learning Developer Guide <http://docs.aws.amazon.com/machine-learning/latest/dg>`_.",
             "input": {
                 "shape": "CreateDataSourceFromS3Input"
             },
@@ -68,7 +68,7 @@
             }
         },
         "CreateEvaluation": {
-            "documentation": "<p>Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code> is evaluated on a set of observations associated to a <code>DataSource</code>. Like a <code>DataSource</code> for an <code>MLModel</code>, the <code>DataSource</code> for an <code>Evaluation</code> contains values for the Target Variable. The <code>Evaluation</code> compares the predicted result for each observation to the actual outcome and provides a summary so that you know how effective the <code>MLModel</code> functions on the test data. Evaluation generates a relevant performance metric such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>: <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>. </p> <p><code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can use the <a>GetEvaluation</a> operation to check progress of the evaluation during the creation operation.</p>",
+            "documentation": "Creates a new ``Evaluation`` of an ``MLModel``. An ``MLModel`` is evaluated on a set of observations associated to a ``DataSource``. Like a ``DataSource`` for an ``MLModel``, the ``DataSource`` for an ``Evaluation`` contains values for the Target Variable. The ``Evaluation`` compares the predicted result for each observation to the actual outcome and provides a summary so that you know how effective the ``MLModel`` functions on the test data. Evaluation generates a relevant performance metric such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding ``MLModelType``: ``BINARY``, ``REGRESSION`` or ``MULTICLASS``. \n\n ``CreateEvaluation`` is an asynchronous operation. In response to ``CreateEvaluation``, Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status to ``PENDING``. After the ``Evaluation`` is created and ready for use, Amazon ML sets the status to ``COMPLETED``. \n\n You can use the GetEvaluation operation to check progress of the evaluation during the creation operation.",
             "input": {
                 "shape": "CreateEvaluationInput"
             },
@@ -77,7 +77,7 @@
             }
         },
         "CreateMLModel": {
-            "documentation": "<p>Creates a new <code>MLModel</code> using the data files and the recipe as information sources. </p> <p>An <code>MLModel</code> is nearly immutable. Users can only update the <code>MLModelName</code> and the <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code> status to <code>PENDING</code>. After the <code>MLModel</code> is created and ready for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can use the <a>GetMLModel</a> operation to check progress of the <code>MLModel</code> during the creation operation.</p> <p> <a>CreateMLModel</a> requires a <code>DataSource</code> with computed statistics, which can be created by setting <code>ComputeStatistics</code> to <code>true</code> in <a>CreateDataSourceFromRDS</a>, <a>CreateDataSourceFromS3</a>, or <a>CreateDataSourceFromRedshift</a> operations. </p>",
+            "documentation": "Creates a new ``MLModel`` using the data files and the recipe as information sources. \n\n An ``MLModel`` is nearly immutable. Users can only update the ``MLModelName`` and the ``ScoreThreshold`` in an ``MLModel`` without creating a new ``MLModel``. \n\n ``CreateMLModel`` is an asynchronous operation. In response to ``CreateMLModel``, Amazon Machine Learning (Amazon ML) immediately returns and sets the ``MLModel`` status to ``PENDING``. After the ``MLModel`` is created and ready for use, Amazon ML sets the status to ``COMPLETED``. \n\n You can use the GetMLModel operation to check progress of the ``MLModel`` during the creation operation.\n\n  CreateMLModel requires a ``DataSource`` with computed statistics, which can be created by setting ``ComputeStatistics`` to ``true`` in CreateDataSourceFromRDS, CreateDataSourceFromS3, or CreateDataSourceFromRedshift operations.",
             "input": {
                 "shape": "CreateMLModelInput"
             },
@@ -86,7 +86,7 @@
             }
         },
         "CreateRealtimeEndpoint": {
-            "documentation": "<p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the URI of the <code>MLModel</code>; that is, the location to send real-time prediction requests for the specified <code>MLModel</code>.</p>",
+            "documentation": "Creates a real-time endpoint for the ``MLModel``. The endpoint contains the URI of the ``MLModel``; that is, the location to send real-time prediction requests for the specified ``MLModel``.",
             "input": {
                 "shape": "CreateRealtimeEndpointInput"
             },
@@ -95,7 +95,7 @@
             }
         },
         "DeleteBatchPrediction": {
-            "documentation": "<p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation, you can use the <a>GetBatchPrediction</a> operation to verify that the status of the <code>BatchPrediction</code> changed to DELETED.</p> <caution><title>Caution</title> <p>The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p></caution>",
+            "documentation": "Assigns the DELETED status to a ``BatchPrediction``, rendering it unusable.\n\n After using the ``DeleteBatchPrediction`` operation, you can use the GetBatchPrediction operation to verify that the status of the ``BatchPrediction`` changed to DELETED.\n\n Caution The result of the ``DeleteBatchPrediction`` operation is irreversible.",
             "input": {
                 "shape": "DeleteBatchPredictionInput"
             },
@@ -104,7 +104,7 @@
             }
         },
         "DeleteDataSource": {
-            "documentation": "<p>Assigns the DELETED status to a <code>DataSource</code>, rendering it unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a> operation to verify that the status of the <code>DataSource</code> changed to DELETED.</p> <caution><title>Caution</title> <p>The results of the <code>DeleteDataSource</code> operation are irreversible.</p></caution>",
+            "documentation": "Assigns the DELETED status to a ``DataSource``, rendering it unusable.\n\n After using the ``DeleteDataSource`` operation, you can use the GetDataSource operation to verify that the status of the ``DataSource`` changed to DELETED.\n\n Caution The results of the ``DeleteDataSource`` operation are irreversible.",
             "input": {
                 "shape": "DeleteDataSourceInput"
             },
@@ -113,7 +113,7 @@
             }
         },
         "DeleteEvaluation": {
-            "documentation": "<p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a> operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p> <caution><title>Caution</title> <p>The results of the <code>DeleteEvaluation</code> operation are irreversible.</p></caution>",
+            "documentation": "Assigns the ``DELETED`` status to an ``Evaluation``, rendering it unusable.\n\n After invoking the ``DeleteEvaluation`` operation, you can use the GetEvaluation operation to verify that the status of the ``Evaluation`` changed to ``DELETED``.\n\n Caution The results of the ``DeleteEvaluation`` operation are irreversible.",
             "input": {
                 "shape": "DeleteEvaluationInput"
             },
@@ -122,7 +122,7 @@
             }
         },
         "DeleteMLModel": {
-            "documentation": "<p>Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a> operation to verify that the status of the <code>MLModel</code> changed to DELETED.</p> <caution><title>Caution</title> <p>The result of the <code>DeleteMLModel</code> operation is irreversible.</p></caution>",
+            "documentation": "Assigns the DELETED status to an ``MLModel``, rendering it unusable.\n\n After using the ``DeleteMLModel`` operation, you can use the GetMLModel operation to verify that the status of the ``MLModel`` changed to DELETED.\n\n Caution The result of the ``DeleteMLModel`` operation is irreversible.",
             "input": {
                 "shape": "DeleteMLModelInput"
             },
@@ -131,7 +131,7 @@
             }
         },
         "DeleteRealtimeEndpoint": {
-            "documentation": "<p>Deletes a real time endpoint of an <code>MLModel</code>.</p>",
+            "documentation": "Deletes a real time endpoint of an ``MLModel``.",
             "input": {
                 "shape": "DeleteRealtimeEndpointInput"
             },
@@ -140,7 +140,7 @@
             }
         },
         "DescribeBatchPredictions": {
-            "documentation": "<p>Returns a list of <code>BatchPrediction</code> operations that match the search criteria in the request.</p>",
+            "documentation": "Returns a list of ``BatchPrediction`` operations that match the search criteria in the request.",
             "input": {
                 "shape": "DescribeBatchPredictionsInput"
             },
@@ -149,7 +149,7 @@
             }
         },
         "DescribeDataSources": {
-            "documentation": "<p>Returns a list of <code>DataSource</code> that match the search criteria in the request.</p>",
+            "documentation": "Returns a list of ``DataSource`` that match the search criteria in the request.",
             "input": {
                 "shape": "DescribeDataSourcesInput"
             },
@@ -158,7 +158,7 @@
             }
         },
         "DescribeEvaluations": {
-            "documentation": "<p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>",
+            "documentation": "Returns a list of ``DescribeEvaluations`` that match the search criteria in the request.",
             "input": {
                 "shape": "DescribeEvaluationsInput"
             },
@@ -167,7 +167,7 @@
             }
         },
         "DescribeMLModels": {
-            "documentation": "<p>Returns a list of <code>MLModel</code> that match the search criteria in the request.</p>",
+            "documentation": "Returns a list of ``MLModel`` that match the search criteria in the request.",
             "input": {
                 "shape": "DescribeMLModelsInput"
             },
@@ -176,7 +176,7 @@
             }
         },
         "GetBatchPrediction": {
-            "documentation": "<p>Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and data file information for a <code>Batch Prediction</code> request.</p>",
+            "documentation": "Returns a ``BatchPrediction`` that includes detailed metadata, status, and data file information for a ``Batch Prediction`` request.",
             "input": {
                 "shape": "GetBatchPredictionInput"
             },
@@ -185,7 +185,7 @@
             }
         },
         "GetDataSource": {
-            "documentation": "<p>Returns a <code>DataSource</code> that includes metadata and data file information, as well as the current status of the <code>DataSource</code>.</p> <p><code>GetDataSource</code> provides results in normal or verbose format. The verbose format adds the schema description and the list of files pointed to by the DataSource to the normal format.</p>",
+            "documentation": "Returns a ``DataSource`` that includes metadata and data file information, as well as the current status of the ``DataSource``.\n\n ``GetDataSource`` provides results in normal or verbose format. The verbose format adds the schema description and the list of files pointed to by the DataSource to the normal format.",
             "input": {
                 "shape": "GetDataSourceInput"
             },
@@ -194,7 +194,7 @@
             }
         },
         "GetEvaluation": {
-            "documentation": "<p>Returns an <code>Evaluation</code> that includes metadata as well as the current status of the <code>Evaluation</code>.</p>",
+            "documentation": "Returns an ``Evaluation`` that includes metadata as well as the current status of the ``Evaluation``.",
             "input": {
                 "shape": "GetEvaluationInput"
             },
@@ -203,7 +203,7 @@
             }
         },
         "GetMLModel": {
-            "documentation": "<p>Returns an <code>MLModel</code> that includes detailed metadata, and data source information as well as the current status of the <code>MLModel</code>.</p> <p><code>GetMLModel</code> provides results in normal or verbose format. </p>",
+            "documentation": "Returns an ``MLModel`` that includes detailed metadata, and data source information as well as the current status of the ``MLModel``.\n\n ``GetMLModel`` provides results in normal or verbose format.",
             "input": {
                 "shape": "GetMLModelInput"
             },
@@ -212,7 +212,7 @@
             }
         },
         "Predict": {
-            "documentation": "<p>Generates a prediction for the observation using the specified <code>MLModel</code>.</p> <note><title>Note</title> <p>Not all response parameters will be populated because this is dependent on the type of requested model.</p></note>",
+            "documentation": "Generates a prediction for the observation using the specified ``MLModel``.\n\n Note Not all response parameters will be populated because this is dependent on the type of requested model.",
             "input": {
                 "shape": "PredictInput"
             },
@@ -221,7 +221,7 @@
             }
         },
         "UpdateBatchPrediction": {
-            "documentation": "<p>Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.</p> <p>You can use the <a>GetBatchPrediction</a> operation to view the contents of the updated data element.</p>",
+            "documentation": "Updates the ``BatchPredictionName`` of a ``BatchPrediction``.\n\n You can use the GetBatchPrediction operation to view the contents of the updated data element.",
             "input": {
                 "shape": "UpdateBatchPredictionInput"
             },
@@ -230,7 +230,7 @@
             }
         },
         "UpdateDataSource": {
-            "documentation": "<p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p> <p>You can use the <a>GetDataSource</a> operation to view the contents of the updated data element.</p>",
+            "documentation": "Updates the ``DataSourceName`` of a ``DataSource``.\n\n You can use the GetDataSource operation to view the contents of the updated data element.",
             "input": {
                 "shape": "UpdateDataSourceInput"
             },
@@ -239,7 +239,7 @@
             }
         },
         "UpdateEvaluation": {
-            "documentation": "<p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p> <p>You can use the <a>GetEvaluation</a> operation to view the contents of the updated data element.</p>",
+            "documentation": "Updates the ``EvaluationName`` of an ``Evaluation``.\n\n You can use the GetEvaluation operation to view the contents of the updated data element.",
             "input": {
                 "shape": "UpdateEvaluationInput"
             },
@@ -248,7 +248,7 @@
             }
         },
         "UpdateMLModel": {
-            "documentation": "<p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.</p> <p>You can use the <a>GetMLModel</a> operation to view the contents of the updated data element.</p>",
+            "documentation": "Updates the ``MLModelName`` and the ``ScoreThreshold`` of an ``MLModel``.\n\n You can use the GetMLModel operation to view the contents of the updated data element.",
             "input": {
                 "shape": "UpdateMLModelInput"
             },
@@ -260,15 +260,15 @@
     "shapes": {
         "Algorithm": {
             "type": "string",
-            "documentation": "<p>The function used to train a <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li>SGD - Stochastic Gradient Descent.</li> <li>RandomForest - Random forest of decision trees.</li> </ul>"
+            "documentation": "The function used to train a ``MLModel``. Training choices supported by Amazon ML include the following:\n\n \n\n  * SGD - Stochastic Gradient Descent.\n  * RandomForest - Random forest of decision trees."
         },
         "AwsUserArn": {
             "type": "string",
-            "documentation": "<p>An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.</p>"
+            "documentation": "An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user."
         },
         "BatchPrediction": {
             "type": "structure",
-            "documentation": "<p> Represents the output of <a>GetBatchPrediction</a> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <i>Batch Prediction</i>.</p>",
+            "documentation": "Represents the output of GetBatchPrediction operation.\n\n  The content consists of the detailed metadata, the status, and the data file information of a *Batch Prediction*.",
             "members": [
                 {
                     "name": "BatchPredictionId",
@@ -329,7 +329,7 @@
         },
         "BatchPredictionFilterVariable": {
             "type": "string",
-            "documentation": "<p>A list of the variables to use in searching or filtering <code>BatchPrediction</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code><b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul>"
+            "documentation": "A list of the variables to use in searching or filtering ``BatchPrediction``.\n\n \n\n  *  ``CreatedAt`` - Sets the search criteria to ``BatchPrediction`` creation date.\n  *  ``Status`` - Sets the search criteria to ``BatchPrediction`` status.\n  *  ``Name`` - Sets the search criteria to the contents of ``BatchPrediction``** ** ``Name``.\n  *  ``IAMUser`` - Sets the search criteria to the user account that invoked the ``BatchPrediction`` creation.\n  *  ``MLModelId`` - Sets the search criteria to the ``MLModel`` used in the ``BatchPrediction``.\n  *  ``DataSourceId`` - Sets the search criteria to the ``DataSource`` used in the ``BatchPrediction``.\n  *  ``DataURI`` - Sets the search criteria to the data file(s) used in the ``BatchPrediction``. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory."
         },
         "BatchPredictions": {
             "type": "list",
@@ -337,7 +337,7 @@
         },
         "ComparatorValue": {
             "type": "string",
-            "documentation": "<p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>"
+            "documentation": "The value specified in a filtering condition. The ``ComparatorValue`` becomes the reference value when matching or evaluating data values in filtering and searching functions."
         },
         "ComputeStatistics": {
             "type": "boolean"
@@ -374,7 +374,7 @@
         },
         "CreateBatchPredictionOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>CreateBatchPrediction</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateBatchPrediction</a> operation is asynchronous. You can poll for status updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter of the result. </p>",
+            "documentation": "Represents the output of a CreateBatchPrediction operation, and is an acknowledgement that Amazon ML received the request.\n\n The CreateBatchPrediction operation is asynchronous. You can poll for status updates by using the GetBatchPrediction operation and checking the ``Status`` parameter of the result.",
             "members": [
                 {
                     "name": "BatchPredictionId",
@@ -415,7 +415,7 @@
         },
         "CreateDataSourceFromRDSOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>CreateDataSourceFromRDS</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateDataSourceFromRDS</a> operation is asynchronous. You can poll for updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the pipelineId from the describe call.</p>",
+            "documentation": "Represents the output of a CreateDataSourceFromRDS operation, and is an acknowledgement that Amazon ML received the request.\n\n The CreateDataSourceFromRDS operation is asynchronous. You can poll for updates by using the GetBatchPrediction operation and checking the ``Status`` parameter. You can inspect the ``Message`` when ``Status`` shows up as ``FAILED``. You can also check the progress of the copy operation by going to the ``DataPipeline`` console and looking up the pipeline using the pipelineId from the describe call.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -456,7 +456,7 @@
         },
         "CreateDataSourceFromRedshiftOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>CreateDataSourceFromRedshift</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateDataSourceFromRedshift</a> operation is asynchronous. You can poll for updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter. </p>",
+            "documentation": "Represents the output of a CreateDataSourceFromRedshift operation, and is an acknowledgement that Amazon ML received the request.\n\n The CreateDataSourceFromRedshift operation is asynchronous. You can poll for updates by using the GetBatchPrediction operation and checking the ``Status`` parameter.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -492,7 +492,7 @@
         },
         "CreateDataSourceFromS3Output": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>CreateDataSourceFromS3</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateDataSourceFromS3</a> operation is asynchronous. You can poll for updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter. </p>",
+            "documentation": "Represents the output of a CreateDataSourceFromS3 operation, and is an acknowledgement that Amazon ML received the request.\n\n The CreateDataSourceFromS3 operation is asynchronous. You can poll for updates by using the GetBatchPrediction operation and checking the ``Status`` parameter.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -528,7 +528,7 @@
         },
         "CreateEvaluationOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>CreateEvaluation</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><a>CreateEvaluation</a> operation is asynchronous. You can poll for status updates by using the <a>GetEvaluation</a> operation and checking the <code>Status</code> parameter. </p>",
+            "documentation": "Represents the output of a CreateEvaluation operation, and is an acknowledgement that Amazon ML received the request.\n\n CreateEvaluation operation is asynchronous. You can poll for status updates by using the GetEvaluation operation and checking the ``Status`` parameter.",
             "members": [
                 {
                     "name": "EvaluationId",
@@ -579,7 +579,7 @@
         },
         "CreateMLModelOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>CreateMLModel</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateMLModel</a> operation is asynchronous. You can poll for status updates by using the <a>GetMLModel</a> operation and checking the <code>Status</code> parameter. </p>",
+            "documentation": "Represents the output of a CreateMLModel operation, and is an acknowledgement that Amazon ML received the request.\n\n The CreateMLModel operation is asynchronous. You can poll for status updates by using the GetMLModel operation and checking the ``Status`` parameter.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -600,7 +600,7 @@
         },
         "CreateRealtimeEndpointOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <a>CreateRealtimeEndpoint</a> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note>",
+            "documentation": "Represents the output of an CreateRealtimeEndpoint operation.\n\n The result contains the ``MLModelId`` and the endpoint information for the ``MLModel``.\n\n  The endpoint information includes the URI of the ``MLModel``; that is, the location to send online prediction requests for the specified ``MLModel``.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -619,11 +619,11 @@
         },
         "DataSchema": {
             "type": "string",
-            "documentation": "<p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> { \"version\": \"1.0\", \"recordAnnotationFieldName\": \"F1\", \"recordWeightFieldName\": \"F2\", \"targetFieldName\": \"F3\", \"dataFormat\": \"CSV\", \"dataFileContainsHeader\": true, \"variables\": [ { \"fieldName\": \"F1\", \"fieldType\": \"TEXT\" }, { \"fieldName\": \"F2\", \"fieldType\": \"NUMERIC\" }, { \"fieldName\": \"F3\", \"fieldType\": \"CATEGORICAL\" }, { \"fieldName\": \"F4\", \"fieldType\": \"NUMERIC\" }, { \"fieldName\": \"F5\", \"fieldType\": \"CATEGORICAL\" }, { \"fieldName\": \"F6\", \"fieldType\": \"TEXT\" }, { \"fieldName\": \"F7\", \"fieldType\": \"WEIGHTED_INT_SEQUENCE\" }, { \"fieldName\": \"F8\", \"fieldType\": \"WEIGHTED_STRING_SEQUENCE\" } ], \"excludedVariableNames\": [ \"F6\" ] }"
+            "documentation": "The schema of a ``DataSource``. The ``DataSchema`` defines the structure of the observation data in the data file(s) referenced in the ``DataSource``. The DataSource schema is expressed in JSON format.\n\n { \"version\": \"1.0\", \"recordAnnotationFieldName\": \"F1\", \"recordWeightFieldName\": \"F2\", \"targetFieldName\": \"F3\", \"dataFormat\": \"CSV\", \"dataFileContainsHeader\": true, \"variables\": [ { \"fieldName\": \"F1\", \"fieldType\": \"TEXT\" }, { \"fieldName\": \"F2\", \"fieldType\": \"NUMERIC\" }, { \"fieldName\": \"F3\", \"fieldType\": \"CATEGORICAL\" }, { \"fieldName\": \"F4\", \"fieldType\": \"NUMERIC\" }, { \"fieldName\": \"F5\", \"fieldType\": \"CATEGORICAL\" }, { \"fieldName\": \"F6\", \"fieldType\": \"TEXT\" }, { \"fieldName\": \"F7\", \"fieldType\": \"WEIGHTED_INT_SEQUENCE\" }, { \"fieldName\": \"F8\", \"fieldType\": \"WEIGHTED_STRING_SEQUENCE\" } ], \"excludedVariableNames\": [ \"F6\" ] }"
         },
         "DataSource": {
             "type": "structure",
-            "documentation": "<p> Represents the output of the <a>GetDataSource</a> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p>",
+            "documentation": "Represents the output of the GetDataSource operation. \n\n  The content consists of the detailed metadata and data file information and the current status of the ``DataSource``.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -701,7 +701,7 @@
         },
         "DataSourceFilterVariable": {
             "type": "string",
-            "documentation": "<p>A list of the variables to use in searching or filtering <code>DataSource</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</li> </ul> <note><title>Note</title> <p>The variable names should match the variable names in the <code>DataSource</code>.</p> </note>"
+            "documentation": "A list of the variables to use in searching or filtering ``DataSource``.\n\n \n\n  *  ``CreatedAt`` - Sets the search criteria to ``DataSource`` creation date.\n  *  ``Status`` - Sets the search criteria to ``DataSource`` status.\n  *  ``Name`` - Sets the search criteria to the contents of ``DataSource`` ** ** ``Name``.\n  *  ``DataUri`` - Sets the search criteria to the URI of data files used to create the ``DataSource``. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.\n  *  ``IAMUser`` - Sets the search criteria to the user account that invoked the ``DataSource`` creation.\n \n Note The variable names should match the variable names in the ``DataSource``."
         },
         "DataSources": {
             "type": "list",
@@ -719,7 +719,7 @@
         },
         "DeleteBatchPredictionOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>DeleteBatchPrediction</a> operation.</p> <p>You can use the <a>GetBatchPrediction</a> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>",
+            "documentation": "Represents the output of a DeleteBatchPrediction operation.\n\n You can use the GetBatchPrediction operation and check the value of the ``Status`` parameter to see whether a ``BatchPrediction`` is marked as ``DELETED``.",
             "members": [
                 {
                     "name": "BatchPredictionId",
@@ -740,7 +740,7 @@
         },
         "DeleteDataSourceOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>DeleteDataSource</a> operation.</p>",
+            "documentation": "Represents the output of a DeleteDataSource operation.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -761,7 +761,7 @@
         },
         "DeleteEvaluationOutput": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>DeleteEvaluation</a> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <a>GetEvaluation</a> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>",
+            "documentation": "Represents the output of a DeleteEvaluation operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.\n\n You can use the GetEvaluation operation and check the value of the ``Status`` parameter to see whether an ``Evaluation`` is marked as ``DELETED``.",
             "members": [
                 {
                     "name": "EvaluationId",
@@ -782,7 +782,7 @@
         },
         "DeleteMLModelOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>DeleteMLModel</a> operation.</p> <p>You can use the <a>GetMLModel</a> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>",
+            "documentation": "Represents the output of a DeleteMLModel operation.\n\n You can use the GetMLModel operation and check the value of the ``Status`` parameter to see whether an ``MLModel`` is marked as ``DELETED``.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -803,7 +803,7 @@
         },
         "DeleteRealtimeEndpointOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <a>DeleteRealtimeEndpoint</a> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p>",
+            "documentation": "Represents the output of an DeleteRealtimeEndpoint operation.\n\n The result contains the ``MLModelId`` and the endpoint information for the ``MLModel``.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -879,7 +879,7 @@
         },
         "DescribeBatchPredictionsOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>DescribeBatchPredictions</a> operation. The content is essentially a list of <code>BatchPrediction</code>s.</p>",
+            "documentation": "Represents the output of a DescribeBatchPredictions operation. The content is essentially a list of ``BatchPrediction``s.",
             "members": [
                 {
                     "name": "Results",
@@ -955,7 +955,7 @@
         },
         "DescribeDataSourcesOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.</p>",
+            "documentation": "Represents the query results from a DescribeDataSources operation. The content is essentially a list of ``DataSource``.",
             "members": [
                 {
                     "name": "Results",
@@ -1031,7 +1031,7 @@
         },
         "DescribeEvaluationsOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the query results from a <a>DescribeEvaluations</a> operation. The content is essentially a list of <code>Evaluation</code>.</p>",
+            "documentation": "Represents the query results from a DescribeEvaluations operation. The content is essentially a list of ``Evaluation``.",
             "members": [
                 {
                     "name": "Results",
@@ -1107,7 +1107,7 @@
         },
         "DescribeMLModelsOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>DescribeMLModels</a> operation. The content is essentially a list of <code>MLModel</code>.</p>",
+            "documentation": "Represents the output of a DescribeMLModels operation. The content is essentially a list of ``MLModel``.",
             "members": [
                 {
                     "name": "Results",
@@ -1123,7 +1123,7 @@
         },
         "DetailsAttributes": {
             "type": "string",
-            "documentation": "Contains the key values of <code>DetailsMap</code>: PredictiveModelType - Indicates the type of the <code>MLModel</code>. Algorithm - Indicates the algorithm was used for the <code>MLModel</code>."
+            "documentation": "Contains the key values of ``DetailsMap``: PredictiveModelType - Indicates the type of the ``MLModel``. Algorithm - Indicates the algorithm was used for the ``MLModel``."
         },
         "DetailsMap": {
             "type": "map",
@@ -1158,15 +1158,15 @@
         },
         "EntityName": {
             "type": "string",
-            "documentation": "<p>A user-supplied name or description of the Amazon ML resource.</p>"
+            "documentation": "A user-supplied name or description of the Amazon ML resource."
         },
         "EntityStatus": {
             "type": "string",
-            "documentation": "<p>Entity status with the following possible values:</p> <ul> <li>PENDING</li> <li>INPROGRESS</li> <li>FAILED</li> <li>COMPLETED</li> <li>DELETED</li> </ul>"
+            "documentation": "Entity status with the following possible values:\n\n \n\n  * PENDING\n  * INPROGRESS\n  * FAILED\n  * COMPLETED\n  * DELETED"
         },
         "EpochTime": {
             "type": "timestamp",
-            "documentation": "<p>A timestamp represented in epoch time.</p>"
+            "documentation": "A timestamp represented in epoch time."
         },
         "ErrorCode": {
             "type": "integer"
@@ -1176,7 +1176,7 @@
         },
         "Evaluation": {
             "type": "structure",
-            "documentation": "<p> Represents the output of <a>GetEvaluation</a> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p>",
+            "documentation": "Represents the output of GetEvaluation operation. \n\n The content consists of the detailed metadata and data file information and the current status of the ``Evaluation``.",
             "members": [
                 {
                     "name": "EvaluationId",
@@ -1237,7 +1237,7 @@
         },
         "EvaluationFilterVariable": {
             "type": "string",
-            "documentation": "<p>A list of the variables to use in searching or filtering <code>Evaluation</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.</li> <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul>"
+            "documentation": "A list of the variables to use in searching or filtering ``Evaluation``.\n\n \n\n  *  ``CreatedAt`` - Sets the search criteria to ``Evaluation`` creation date.\n  *  ``Status`` - Sets the search criteria to ``Evaluation`` status.\n  *  ``Name`` - Sets the search criteria to the contents of ``Evaluation`` ** ** ``Name``.\n  *  ``IAMUser`` - Sets the search criteria to the user account that invoked an evaluation.\n  *  ``MLModelId`` - Sets the search criteria to the ``Predictor`` that was evaluated.\n  *  ``DataSourceId`` - Sets the search criteria to the ``DataSource`` used in evaluation.\n  *  ``DataUri`` - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory."
         },
         "Evaluations": {
             "type": "list",
@@ -1255,7 +1255,7 @@
         },
         "GetBatchPredictionOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>GetBatchPrediction</a> operation and describes a <code>BatchPrediction</code>.</p>",
+            "documentation": "Represents the output of a GetBatchPrediction operation and describes a ``BatchPrediction``.",
             "members": [
                 {
                     "name": "BatchPredictionId",
@@ -1336,7 +1336,7 @@
         },
         "GetDataSourceOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>GetDataSource</a> operation and describes a <code>DataSource</code>.</p>",
+            "documentation": "Represents the output of a GetDataSource operation and describes a ``DataSource``.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -1434,7 +1434,7 @@
         },
         "GetEvaluationOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>GetEvaluation</a> operation and describes an <code>Evaluation</code>.</p>",
+            "documentation": "Represents the output of a GetEvaluation operation and describes an ``Evaluation``.",
             "members": [
                 {
                     "name": "EvaluationId",
@@ -1515,7 +1515,7 @@
         },
         "GetMLModelOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of a <a>GetMLModel</a> operation, and provides detailed information about a <code>MLModel</code>.</p>",
+            "documentation": "Represents the output of a GetMLModel operation, and provides detailed information about a ``MLModel``.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -1610,7 +1610,7 @@
         },
         "IdempotentParameterMismatchException": {
             "type": "structure",
-            "documentation": "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>",
+            "documentation": "A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.",
             "members": [
                 {
                     "name": "message",
@@ -1624,11 +1624,11 @@
         },
         "IntegerType": {
             "type": "integer",
-            "documentation": "<p>Integer type that is a 32-bit signed number.</p>"
+            "documentation": "Integer type that is a 32-bit signed number."
         },
         "InternalServerException": {
             "type": "structure",
-            "documentation": "<p>An error on the server occurred when trying to process a request.</p>",
+            "documentation": "An error on the server occurred when trying to process a request.",
             "members": [
                 {
                     "name": "message",
@@ -1642,7 +1642,7 @@
         },
         "InvalidInputException": {
             "type": "structure",
-            "documentation": "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>",
+            "documentation": "An error on the client occurred. Typically, the cause is an invalid input value.",
             "members": [
                 {
                     "name": "message",
@@ -1659,7 +1659,7 @@
         },
         "LimitExceededException": {
             "type": "structure",
-            "documentation": "<p>The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>.</p>",
+            "documentation": "The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as ``DataSource``.",
             "members": [
                 {
                     "name": "message",
@@ -1673,11 +1673,11 @@
         },
         "LongType": {
             "type": "long",
-            "documentation": "<p>Long integer type that is a 64-bit signed number.</p>"
+            "documentation": "Long integer type that is a 64-bit signed number."
         },
         "MLModel": {
             "type": "structure",
-            "documentation": "<p> Represents the output of a <a>GetMLModel</a> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>",
+            "documentation": "Represents the output of a GetMLModel operation. \n\n The content consists of the detailed metadata and the current status of the ``MLModel``.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -1774,14 +1774,14 @@
         },
         "Message": {
             "type": "string",
-            "documentation": "<p> Description of the most recent details about an entity.</p>"
+            "documentation": "Description of the most recent details about an entity."
         },
         "PageLimit": {
             "type": "integer"
         },
         "PerformanceMetrics": {
             "type": "structure",
-            "documentation": "<p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href=\"http://docs.aws.amazon.com/machine-learning/latest/dg\">Amazon Machine Learning Developer Guide</a>. </p>",
+            "documentation": "Measurements of how well the ``MLModel`` performed on known observations. One of the following metrics is returned, based on the type of the ``MLModel``: \n\n \n\n  *  BinaryAUC: The binary ``MLModel`` uses the Area Under the Curve (AUC) technique to measure performance. \n\n \n  *  RegressionRMSE: The regression ``MLModel`` uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.\n\n \n  *  MulticlassAvgFScore: The multiclass ``MLModel`` uses the F1 score technique to measure performance. \n\n \n \n  For more information about performance metrics, please see the `Amazon Machine Learning Developer Guide <http://docs.aws.amazon.com/machine-learning/latest/dg>`_.",
             "members": [
                 {
                     "name": "Properties",
@@ -1829,7 +1829,7 @@
         },
         "Prediction": {
             "type": "structure",
-            "documentation": "<p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS DetailsAttributes.ALGORITHM - SGD </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a BINARY or MULTICLASS <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a REGRESSION <code>MLModel</code> request. </p> </li> </ul>",
+            "documentation": "The output from a ``Predict`` operation: \n\n \n\n  *   ``Details`` - Contains the following attributes: DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS DetailsAttributes.ALGORITHM - SGD \n\n \n  *   ``PredictedLabel`` - Present for either a BINARY or MULTICLASS ``MLModel`` request. \n\n \n  *   ``PredictedScores`` - Contains the raw classification score corresponding to each label. \n\n \n  *   ``PredictedValue`` - Present for a REGRESSION ``MLModel`` request.",
             "members": [
                 {
                     "name": "predictedLabel",
@@ -1853,7 +1853,7 @@
         },
         "PredictorNotMountedException": {
             "type": "structure",
-            "documentation": "<p>The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.</p>",
+            "documentation": "The exception is thrown when a predict request is made to an unmounted ``MLModel``.",
             "members": [
                 {
                     "name": "message",
@@ -1866,7 +1866,7 @@
         },
         "RDSDataSpec": {
             "type": "structure",
-            "documentation": "<p>The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.</p>",
+            "documentation": "The data specification of an Amazon Relational Database Service (Amazon RDS) ``DataSource``.",
             "members": [
                 {
                     "name": "DatabaseInformation",
@@ -1927,7 +1927,7 @@
         },
         "RDSDatabase": {
             "type": "structure",
-            "documentation": "<p>The database details of an Amazon RDS database.</p>",
+            "documentation": "The database details of an Amazon RDS database.",
             "members": [
                 {
                     "name": "InstanceIdentifier",
@@ -1942,7 +1942,7 @@
         },
         "RDSDatabaseCredentials": {
             "type": "structure",
-            "documentation": "<p>The database credentials to connect to a database on an RDS DB instance.</p>",
+            "documentation": "The database credentials to connect to a database on an RDS DB instance.",
             "members": [
                 {
                     "name": "Username",
@@ -1956,15 +1956,15 @@
         },
         "RDSDatabaseName": {
             "type": "string",
-            "documentation": "<p>The name of a database hosted on an RDS DB instance.</p>"
+            "documentation": "The name of a database hosted on an RDS DB instance."
         },
         "RDSDatabasePassword": {
             "type": "string",
-            "documentation": "<p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>"
+            "documentation": "The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the ``RDSSelectQuery`` query."
         },
         "RDSDatabaseUsername": {
             "type": "string",
-            "documentation": "<p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>"
+            "documentation": "The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an ``RDSSelectSqlQuery`` query."
         },
         "RDSInstanceIdentifier": {
             "type": "string",
@@ -1972,7 +1972,7 @@
         },
         "RDSMetadata": {
             "type": "structure",
-            "documentation": "<p>The datasource details that are specific to Amazon RDS.</p>",
+            "documentation": "The datasource details that are specific to Amazon RDS.",
             "members": [
                 {
                     "name": "Database",
@@ -2007,11 +2007,11 @@
         },
         "RDSSelectSqlQuery": {
             "type": "string",
-            "documentation": "<p>The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used. </p>"
+            "documentation": "The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used."
         },
         "RealtimeEndpointInfo": {
             "type": "structure",
-            "documentation": "<p> Describes the real-time endpoint information for an <code>MLModel</code>.</p>",
+            "documentation": "Describes the real-time endpoint information for an ``MLModel``.",
             "members": [
                 {
                     "name": "PeakRequestsPerSecond",
@@ -2043,17 +2043,17 @@
         },
         "Record": {
             "type": "map",
-            "documentation": "<p>A map of variable name-value pairs that represent an observation.</p>",
+            "documentation": "A map of variable name-value pairs that represent an observation.",
             "key": "VariableName",
             "value": "VariableValue"
         },
         "RedshiftClusterIdentifier": {
             "type": "string",
-            "documentation": "<p>The ID of an Amazon Redshift cluster.</p>"
+            "documentation": "The ID of an Amazon Redshift cluster."
         },
         "RedshiftDataSpec": {
             "type": "structure",
-            "documentation": "<p>Describes the data specification of an Amazon Redshift <code>DataSource</code>.</p>",
+            "documentation": "Describes the data specification of an Amazon Redshift ``DataSource``.",
             "members": [
                 {
                     "name": "DatabaseInformation",
@@ -2094,7 +2094,7 @@
         },
         "RedshiftDatabase": {
             "type": "structure",
-            "documentation": "<p>Describes the database details required to connect to an Amazon Redshift database.</p>",
+            "documentation": "Describes the database details required to connect to an Amazon Redshift database.",
             "members": [
                 {
                     "name": "DatabaseName",
@@ -2108,7 +2108,7 @@
         },
         "RedshiftDatabaseCredentials": {
             "type": "structure",
-            "documentation": "<p> Describes the database credentials for connecting to a database on an Amazon Redshift cluster.</p>",
+            "documentation": "Describes the database credentials for connecting to a database on an Amazon Redshift cluster.",
             "members": [
                 {
                     "name": "Username",
@@ -2122,19 +2122,19 @@
         },
         "RedshiftDatabaseName": {
             "type": "string",
-            "documentation": "<p>The name of a database hosted on an Amazon Redshift cluster.</p>"
+            "documentation": "The name of a database hosted on an Amazon Redshift cluster."
         },
         "RedshiftDatabasePassword": {
             "type": "string",
-            "documentation": "<p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html\">USER</a>.</p>"
+            "documentation": "A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a ``RedshiftSelectSqlQuery`` query. The password should be valid for an Amazon Redshift `USER <http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html>`_."
         },
         "RedshiftDatabaseUsername": {
             "type": "string",
-            "documentation": "<p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html\">USER</a>.</p>"
+            "documentation": "A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the ``RedshiftSelectSqlQuery`` query. The username should be valid for an Amazon Redshift `USER <http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html>`_."
         },
         "RedshiftMetadata": {
             "type": "structure",
-            "documentation": "<p>Describes the <Code>DataSource</Code> details specific to Amazon Redshift.</p>",
+            "documentation": "Describes the ``DataSource`` details specific to Amazon Redshift.",
             "members": [
                 {
                     "name": "RedshiftDatabase",
@@ -2153,11 +2153,11 @@
         },
         "RedshiftSelectSqlQuery": {
             "type": "string",
-            "documentation": "<p> Describes the SQL query to execute on the Amazon Redshift database. The SQL query should be valid for an Amazon Redshift <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_SELECT_synopsis.html\">SELECT</a>. </p>"
+            "documentation": "Describes the SQL query to execute on the Amazon Redshift database. The SQL query should be valid for an Amazon Redshift `SELECT <http://docs.aws.amazon.com/redshift/latest/dg/r_SELECT_synopsis.html>`_."
         },
         "ResourceNotFoundException": {
             "type": "structure",
-            "documentation": "<p>A specified resource cannot be located.</p>",
+            "documentation": "A specified resource cannot be located.",
             "members": [
                 {
                     "name": "message",
@@ -2171,11 +2171,11 @@
         },
         "RoleARN": {
             "type": "string",
-            "documentation": "<p>The Amazon Resource Name (ARN) of an <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts\">AWS IAM Role</a> such as the following: arn:aws:iam::account:role/rolename. </p>"
+            "documentation": "The Amazon Resource Name (ARN) of an `AWS IAM Role <http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts>`_ such as the following: arn:aws:iam::account:role/rolename."
         },
         "S3DataSpec": {
             "type": "structure",
-            "documentation": "<p> Describes the data specification of a <code>DataSource</code>.</p>",
+            "documentation": "Describes the data specification of a ``DataSource``.",
             "members": [
                 {
                     "name": "DataLocationS3",
@@ -2201,7 +2201,7 @@
         },
         "S3Url": {
             "type": "string",
-            "documentation": "<p>A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).</p>"
+            "documentation": "A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3)."
         },
         "ScoreThreshold": {
             "type": "float"
@@ -2217,11 +2217,11 @@
         },
         "SortOrder": {
             "type": "string",
-            "documentation": "<p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul>"
+            "documentation": "The sort order specified in a listing condition. Possible values include the following:\n\n \n\n  *  ``asc`` - Present the information in ascending order (from A-Z).\n  *  ``dsc`` - Present the information in descending order (from Z-A)."
         },
         "StringType": {
             "type": "string",
-            "documentation": "<p>String type.</p>"
+            "documentation": "String type."
         },
         "TrainingParameters": {
             "type": "map",
@@ -2245,7 +2245,7 @@
         },
         "UpdateBatchPredictionOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <a>UpdateBatchPrediction</a> operation.</p> <p>You can see the updated content by using the <a>GetBatchPrediction</a> operation.</p>",
+            "documentation": "Represents the output of an UpdateBatchPrediction operation.\n\n You can see the updated content by using the GetBatchPrediction operation.",
             "members": [
                 {
                     "name": "BatchPredictionId",
@@ -2271,7 +2271,7 @@
         },
         "UpdateDataSourceOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <a>UpdateDataSource</a> operation.</p> <p>You can see the updated content by using the <a>GetBatchPrediction</a> operation.</p>",
+            "documentation": "Represents the output of an UpdateDataSource operation.\n\n You can see the updated content by using the GetBatchPrediction operation.",
             "members": [
                 {
                     "name": "DataSourceId",
@@ -2297,7 +2297,7 @@
         },
         "UpdateEvaluationOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <a>UpdateEvaluation</a> operation.</p> <p>You can see the updated content by using the <a>GetEvaluation</a> operation.</p>",
+            "documentation": "Represents the output of an UpdateEvaluation operation.\n\n You can see the updated content by using the GetEvaluation operation.",
             "members": [
                 {
                     "name": "EvaluationId",
@@ -2328,7 +2328,7 @@
         },
         "UpdateMLModelOutput": {
             "type": "structure",
-            "documentation": "<p>Represents the output of an <a>UpdateMLModel</a> operation.</p> <p>You can see the updated content by using the <a>GetMLModel</a> operation.</p>",
+            "documentation": "Represents the output of an UpdateMLModel operation.\n\n You can see the updated content by using the GetMLModel operation.",
             "members": [
                 {
                     "name": "MLModelId",
@@ -2339,15 +2339,15 @@
         },
         "VariableName": {
             "type": "string",
-            "documentation": "<p>The name of a variable. Currently it's used to specify the name of the target value, label, weight, and tags.</p>"
+            "documentation": "The name of a variable. Currently it's used to specify the name of the target value, label, weight, and tags."
         },
         "VariableValue": {
             "type": "string",
-            "documentation": "<p>The value of a variable. Currently it's used to specify values of the target value, weights, and tag variables and for filtering variable values.</p>"
+            "documentation": "The value of a variable. Currently it's used to specify values of the target value, weights, and tag variables and for filtering variable values."
         },
         "Verbose": {
             "type": "boolean",
-            "documentation": "<p>Specifies whether a describe operation should return exhaustive or abbreviated information.</p>"
+            "documentation": "Specifies whether a describe operation should return exhaustive or abbreviated information."
         },
         "VipURL": {
             "type": "string"

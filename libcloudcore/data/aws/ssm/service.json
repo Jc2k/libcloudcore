@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateAssociation": {
-            "documentation": "<p>Associates the specified configuration document with the specified instance.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>",
+            "documentation": "Associates the specified configuration document with the specified instance.\n\n When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.\n\n If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.",
             "input": {
                 "shape": "CreateAssociationRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateAssociationBatch": {
-            "documentation": "<p>Associates the specified configuration documents with the specified instances.</p> <p>When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.</p> <p>If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.</p>",
+            "documentation": "Associates the specified configuration documents with the specified instances.\n\n When you associate a configuration document with an instance, the configuration agent on the instance processes the configuration document and configures the instance as specified.\n\n If you associate a configuration document with an instance that already has an associated configuration document, we replace the current configuration document with the new configuration document.",
             "input": {
                 "shape": "CreateAssociationBatchRequest"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CreateDocument": {
-            "documentation": "<p>Creates a configuration document.</p> <p>After you create a configuration document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>",
+            "documentation": "Creates a configuration document.\n\n After you create a configuration document, you can use CreateAssociation to associate it with one or more running instances.",
             "input": {
                 "shape": "CreateDocumentRequest"
             },
@@ -59,7 +59,7 @@
             }
         },
         "DeleteAssociation": {
-            "documentation": "<p>Disassociates the specified configuration document from the specified instance.</p> <p>When you disassociate a configuration document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a configuration document, you must create a new configuration document with the desired configuration and associate it with the instance.</p>",
+            "documentation": "Disassociates the specified configuration document from the specified instance.\n\n When you disassociate a configuration document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a configuration document, you must create a new configuration document with the desired configuration and associate it with the instance.",
             "input": {
                 "shape": "DeleteAssociationRequest"
             },
@@ -68,7 +68,7 @@
             }
         },
         "DeleteDocument": {
-            "documentation": "<p>Deletes the specified configuration document.</p> <p>You must use <a>DeleteAssociation</a> to disassociate all instances that are associated with the configuration document before you can delete it.</p>",
+            "documentation": "Deletes the specified configuration document.\n\n You must use DeleteAssociation to disassociate all instances that are associated with the configuration document before you can delete it.",
             "input": {
                 "shape": "DeleteDocumentRequest"
             },
@@ -77,7 +77,7 @@
             }
         },
         "DescribeAssociation": {
-            "documentation": "<p>Describes the associations for the specified configuration document or instance.</p>",
+            "documentation": "Describes the associations for the specified configuration document or instance.",
             "input": {
                 "shape": "DescribeAssociationRequest"
             },
@@ -86,7 +86,7 @@
             }
         },
         "DescribeDocument": {
-            "documentation": "<p>Describes the specified configuration document.</p>",
+            "documentation": "Describes the specified configuration document.",
             "input": {
                 "shape": "DescribeDocumentRequest"
             },
@@ -95,7 +95,7 @@
             }
         },
         "GetDocument": {
-            "documentation": "<p>Gets the contents of the specified configuration document.</p>",
+            "documentation": "Gets the contents of the specified configuration document.",
             "input": {
                 "shape": "GetDocumentRequest"
             },
@@ -104,7 +104,7 @@
             }
         },
         "ListAssociations": {
-            "documentation": "<p>Lists the associations for the specified configuration document or instance.</p>",
+            "documentation": "Lists the associations for the specified configuration document or instance.",
             "input": {
                 "shape": "ListAssociationsRequest"
             },
@@ -113,7 +113,7 @@
             }
         },
         "ListDocuments": {
-            "documentation": "<p>Describes one or more of your configuration documents.</p>",
+            "documentation": "Describes one or more of your configuration documents.",
             "input": {
                 "shape": "ListDocumentsRequest"
             },
@@ -122,7 +122,7 @@
             }
         },
         "UpdateAssociationStatus": {
-            "documentation": "<p>Updates the status of the configuration document associated with the specified instance.</p>",
+            "documentation": "Updates the status of the configuration document associated with the specified instance.",
             "input": {
                 "shape": "UpdateAssociationStatusRequest"
             },
@@ -134,12 +134,12 @@
     "shapes": {
         "AssociatedInstances": {
             "type": "structure",
-            "documentation": "<p>You must disassociate a configuration document from all instances before you can delete it.</p>",
+            "documentation": "You must disassociate a configuration document from all instances before you can delete it.",
             "members": []
         },
         "Association": {
             "type": "structure",
-            "documentation": "<p>Describes an association of a configuration document and an instance.</p>",
+            "documentation": "Describes an association of a configuration document and an instance.",
             "members": [
                 {
                     "name": "Name",
@@ -155,12 +155,12 @@
         },
         "AssociationAlreadyExists": {
             "type": "structure",
-            "documentation": "<p>The specified association already exists.</p>",
+            "documentation": "The specified association already exists.",
             "members": []
         },
         "AssociationDescription": {
             "type": "structure",
-            "documentation": "<p>Describes an association.</p>",
+            "documentation": "Describes an association.",
             "members": [
                 {
                     "name": "Name",
@@ -190,12 +190,12 @@
         },
         "AssociationDoesNotExist": {
             "type": "structure",
-            "documentation": "<p>The specified association does not exist.</p>",
+            "documentation": "The specified association does not exist.",
             "members": []
         },
         "AssociationFilter": {
             "type": "structure",
-            "documentation": "<p>Describes a filter.</p>",
+            "documentation": "Describes a filter.",
             "members": [
                 {
                     "name": "key",
@@ -221,7 +221,7 @@
         },
         "AssociationLimitExceeded": {
             "type": "structure",
-            "documentation": "<p>You can have at most 2,000 active associations.</p>",
+            "documentation": "You can have at most 2,000 active associations.",
             "members": []
         },
         "AssociationList": {
@@ -230,7 +230,7 @@
         },
         "AssociationStatus": {
             "type": "structure",
-            "documentation": "<p>Describes an association status.</p>",
+            "documentation": "Describes an association status.",
             "members": [
                 {
                     "name": "Date",
@@ -276,7 +276,7 @@
         },
         "CreateAssociationBatchRequestEntry": {
             "type": "structure",
-            "documentation": "<p>Describes the association of a configuration document and an instance.</p>",
+            "documentation": "Describes the association of a configuration document and an instance.",
             "members": [
                 {
                     "name": "Name",
@@ -438,7 +438,7 @@
         },
         "DocumentAlreadyExists": {
             "type": "structure",
-            "documentation": "<p>The specified configuration document already exists.</p>",
+            "documentation": "The specified configuration document already exists.",
             "members": []
         },
         "DocumentContent": {
@@ -446,7 +446,7 @@
         },
         "DocumentDescription": {
             "type": "structure",
-            "documentation": "<p>Describes a configuration document.</p>",
+            "documentation": "Describes a configuration document.",
             "members": [
                 {
                     "name": "Sha1",
@@ -472,7 +472,7 @@
         },
         "DocumentFilter": {
             "type": "structure",
-            "documentation": "<p>Describes a filter.</p>",
+            "documentation": "Describes a filter.",
             "members": [
                 {
                     "name": "key",
@@ -498,7 +498,7 @@
         },
         "DocumentIdentifier": {
             "type": "structure",
-            "documentation": "<p>Describes the name of a configuration document.</p>",
+            "documentation": "Describes the name of a configuration document.",
             "members": [
                 {
                     "name": "Name",
@@ -513,7 +513,7 @@
         },
         "DocumentLimitExceeded": {
             "type": "structure",
-            "documentation": "<p>You can have at most 100 active configuration documents.</p>",
+            "documentation": "You can have at most 100 active configuration documents.",
             "members": []
         },
         "DocumentName": {
@@ -527,12 +527,12 @@
         },
         "DuplicateInstanceId": {
             "type": "structure",
-            "documentation": "<p>You cannot specify an instance ID in more than one association.</p>",
+            "documentation": "You cannot specify an instance ID in more than one association.",
             "members": []
         },
         "FailedCreateAssociation": {
             "type": "structure",
-            "documentation": "<p>Describes a failed association.</p>",
+            "documentation": "Describes a failed association.",
             "members": [
                 {
                     "name": "Entry",
@@ -588,17 +588,17 @@
         },
         "InternalServerError": {
             "type": "structure",
-            "documentation": "<p>An error occurred on the server side.</p>",
+            "documentation": "An error occurred on the server side.",
             "members": []
         },
         "InvalidDocument": {
             "type": "structure",
-            "documentation": "<p>The configuration document is not valid.</p>",
+            "documentation": "The configuration document is not valid.",
             "members": []
         },
         "InvalidDocumentContent": {
             "type": "structure",
-            "documentation": "<p>The content for the configuration document is not valid.</p>",
+            "documentation": "The content for the configuration document is not valid.",
             "members": [
                 {
                     "name": "message",
@@ -609,12 +609,12 @@
         },
         "InvalidInstanceId": {
             "type": "structure",
-            "documentation": "<p>You must specify the ID of a running instance.</p>",
+            "documentation": "You must specify the ID of a running instance.",
             "members": []
         },
         "InvalidNextToken": {
             "type": "structure",
-            "documentation": "<p>The specified token is not valid.</p>",
+            "documentation": "The specified token is not valid.",
             "members": []
         },
         "ListAssociationsRequest": {
@@ -691,7 +691,7 @@
         },
         "MaxDocumentSizeExceeded": {
             "type": "structure",
-            "documentation": "<p>The size limit of a configuration document is 64 KB.</p>",
+            "documentation": "The size limit of a configuration document is 64 KB.",
             "members": []
         },
         "MaxResults": {
@@ -708,7 +708,7 @@
         },
         "StatusUnchanged": {
             "type": "structure",
-            "documentation": "<p>The updated status is the same as the current status.</p>",
+            "documentation": "The updated status is the same as the current status.",
             "members": []
         },
         "String": {
@@ -716,7 +716,7 @@
         },
         "TooManyUpdates": {
             "type": "structure",
-            "documentation": "<p>There are concurrent updates for a resource that supports one update at a time.</p>",
+            "documentation": "There are concurrent updates for a resource that supports one update at a time.",
             "members": []
         },
         "UpdateAssociationStatusRequest": {

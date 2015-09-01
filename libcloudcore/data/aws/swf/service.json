@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CountClosedWorkflowExecutions": {
-            "documentation": "<p>Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li><code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li><code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``tagFilter.tag``: String constraint. The key is ``swf:tagFilter.tag``.\n  * ``typeFilter.name``: String constraint. The key is ``swf:typeFilter.name``.\n  * ``typeFilter.version``: String constraint. The key is ``swf:typeFilter.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "CountClosedWorkflowExecutionsInput"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CountOpenWorkflowExecutions": {
-            "documentation": "<p>Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li><code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li><code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``tagFilter.tag``: String constraint. The key is ``swf:tagFilter.tag``.\n  * ``typeFilter.name``: String constraint. The key is ``swf:typeFilter.name``.\n  * ``typeFilter.version``: String constraint. The key is ``swf:typeFilter.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "CountOpenWorkflowExecutionsInput"
             },
@@ -50,7 +50,7 @@
             }
         },
         "CountPendingActivityTasks": {
-            "documentation": "<p>Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and is not guaranteed to be exact. If you specify a task list that no activity task was ever scheduled in then 0 will be returned.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the <code>taskList.name</code> parameter by using a <b>Condition</b> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and is not guaranteed to be exact. If you specify a task list that no activity task was ever scheduled in then 0 will be returned.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the ``taskList.name`` parameter by using a **Condition** element with the ``swf:taskList.name`` key to allow the action to access only certain task lists.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "CountPendingActivityTasksInput"
             },
@@ -59,7 +59,7 @@
             }
         },
         "CountPendingDecisionTasks": {
-            "documentation": "<p>Returns the estimated number of decision tasks in the specified task list. The count returned is an approximation and is not guaranteed to be exact. If you specify a task list that no decision task was ever scheduled in then 0 will be returned.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the <code>taskList.name</code> parameter by using a <b>Condition</b> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns the estimated number of decision tasks in the specified task list. The count returned is an approximation and is not guaranteed to be exact. If you specify a task list that no decision task was ever scheduled in then 0 will be returned.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the ``taskList.name`` parameter by using a **Condition** element with the ``swf:taskList.name`` key to allow the action to access only certain task lists.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "CountPendingDecisionTasksInput"
             },
@@ -68,25 +68,25 @@
             }
         },
         "DeprecateActivityType": {
-            "documentation": "<p>Deprecates the specified <i>activity type</i>. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated will continue to run.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Deprecates the specified *activity type*. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated will continue to run.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``activityType.name``: String constraint. The key is ``swf:activityType.name``.\n  * ``activityType.version``: String constraint. The key is ``swf:activityType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DeprecateActivityTypeInput"
             }
         },
         "DeprecateDomain": {
-            "documentation": "<p>Deprecates the specified domain. After a domain has been deprecated it cannot be used to create new workflow executions or register new types. However, you can still use visibility actions on this domain. Deprecating a domain also deprecates all activity and workflow types registered in the domain. Executions that were started before the domain was deprecated will continue to run.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Deprecates the specified domain. After a domain has been deprecated it cannot be used to create new workflow executions or register new types. However, you can still use visibility actions on this domain. Deprecating a domain also deprecates all activity and workflow types registered in the domain. Executions that were started before the domain was deprecated will continue to run.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DeprecateDomainInput"
             }
         },
         "DeprecateWorkflowType": {
-            "documentation": "<p>Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated, you cannot create new executions of that type. Executions that were started before the type was deprecated will continue to run. A deprecated workflow type may still be used when calling visibility actions.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Deprecates the specified *workflow type*. After a workflow type has been deprecated, you cannot create new executions of that type. Executions that were started before the type was deprecated will continue to run. A deprecated workflow type may still be used when calling visibility actions.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``workflowType.name``: String constraint. The key is ``swf:workflowType.name``.\n  * ``workflowType.version``: String constraint. The key is ``swf:workflowType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DeprecateWorkflowTypeInput"
             }
         },
         "DescribeActivityType": {
-            "documentation": "<p>Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``activityType.name``: String constraint. The key is ``swf:activityType.name``.\n  * ``activityType.version``: String constraint. The key is ``swf:activityType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DescribeActivityTypeInput"
             },
@@ -95,7 +95,7 @@
             }
         },
         "DescribeDomain": {
-            "documentation": "<p>Returns information about the specified domain, including description and status.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns information about the specified domain, including description and status.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DescribeDomainInput"
             },
@@ -104,7 +104,7 @@
             }
         },
         "DescribeWorkflowExecution": {
-            "documentation": "<p>Returns information about the specified workflow execution including its type and some statistics.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns information about the specified workflow execution including its type and some statistics.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DescribeWorkflowExecutionInput"
             },
@@ -113,7 +113,7 @@
             }
         },
         "DescribeWorkflowType": {
-            "documentation": "<p>Returns information about the specified <i>workflow type</i>. This includes configuration settings specified when the type was registered and other information such as creation date, current status, etc.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns information about the specified *workflow type*. This includes configuration settings specified when the type was registered and other information such as creation date, current status, etc.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``workflowType.name``: String constraint. The key is ``swf:workflowType.name``.\n  * ``workflowType.version``: String constraint. The key is ``swf:workflowType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "DescribeWorkflowTypeInput"
             },
@@ -122,7 +122,7 @@
             }
         },
         "GetWorkflowExecutionHistory": {
-            "documentation": "<p>Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the ``nextPageToken`` returned by the initial call.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "GetWorkflowExecutionHistoryInput"
             },
@@ -131,7 +131,7 @@
             }
         },
         "ListActivityTypes": {
-            "documentation": "<p>Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the ``nextPageToken`` returned by the initial call.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "ListActivityTypesInput"
             },
@@ -140,7 +140,7 @@
             }
         },
         "ListClosedWorkflowExecutions": {
-            "documentation": "<p>Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li><code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li><code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.\n\n This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``tagFilter.tag``: String constraint. The key is ``swf:tagFilter.tag``.\n  * ``typeFilter.name``: String constraint. The key is ``swf:typeFilter.name``.\n  * ``typeFilter.version``: String constraint. The key is ``swf:typeFilter.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "ListClosedWorkflowExecutionsInput"
             },
@@ -149,7 +149,7 @@
             }
         },
         "ListDomains": {
-            "documentation": "<p>Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>, where <i>AccountID</i> is the account ID, with no dashes.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.\n\n  This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains. The element must be set to ``arn:aws:swf::AccountID:domain/*``, where *AccountID* is the account ID, with no dashes.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "ListDomainsInput"
             },
@@ -158,7 +158,7 @@
             }
         },
         "ListOpenWorkflowExecutions": {
-            "documentation": "<p>Returns a list of open workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</li> <li><code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</li> <li><code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns a list of open workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.\n\n  This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``tagFilter.tag``: String constraint. The key is ``swf:tagFilter.tag``.\n  * ``typeFilter.name``: String constraint. The key is ``swf:typeFilter.name``.\n  * ``typeFilter.version``: String constraint. The key is ``swf:typeFilter.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "ListOpenWorkflowExecutionsInput"
             },
@@ -167,7 +167,7 @@
             }
         },
         "ListWorkflowTypes": {
-            "documentation": "<p>Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the call repeatedly.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the call repeatedly.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "ListWorkflowTypesInput"
             },
@@ -176,7 +176,7 @@
             }
         },
         "PollForActivityTask": {
-            "documentation": "<p>Used by workers to get an <a>ActivityTask</a> from the specified activity <code>taskList</code>. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll will return an empty result. An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the worker should use its type to identify and process it correctly.</p> <important>Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold the poll request).</important> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the <code>taskList.name</code> parameter by using a <b>Condition</b> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by workers to get an ActivityTask from the specified activity ``taskList``. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll will return an empty result. An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the worker should use its type to identify and process it correctly.\n\n Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold the poll request). **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the ``taskList.name`` parameter by using a **Condition** element with the ``swf:taskList.name`` key to allow the action to access only certain task lists.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "PollForActivityTaskInput"
             },
@@ -185,7 +185,7 @@
             }
         },
         "PollForDecisionTask": {
-            "documentation": "<p>Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p> <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p> <important>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</important> <important>Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code> returned by the initial call. Note that you do <b>not</b> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code> again.</important> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the <code>taskList.name</code> parameter by using a <b>Condition</b> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by deciders to get a DecisionTask from the specified decision ``taskList``. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.\n\n This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.\n\n Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout). Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to ``PollForDecisionTask`` using the ``nextPageToken`` returned by the initial call. Note that you do **not** call ``GetWorkflowExecutionHistory`` with this ``nextPageToken``. Instead, call ``PollForDecisionTask`` again. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the ``taskList.name`` parameter by using a **Condition** element with the ``swf:taskList.name`` key to allow the action to access only certain task lists.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "PollForDecisionTaskInput"
             },
@@ -194,7 +194,7 @@
             }
         },
         "RecordActivityTaskHeartbeat": {
-            "documentation": "<p>Used by activity workers to report to the service that the <a>ActivityTask</a> represented by the specified <code>taskToken</code> is still making progress. The worker can also (optionally) specify details of the progress, for example percent complete, using the <code>details</code> parameter. This action can also be used by the worker as a mechanism to check if cancellation is being requested for the activity task. If a cancellation is being attempted for the specified task, then the boolean <code>cancelRequested</code> flag returned by the service is set to <code>true</code>.</p> <p>This action resets the <code>taskHeartbeatTimeout</code> clock. The <code>taskHeartbeatTimeout</code> is specified in <a>RegisterActivityType</a>.</p> <p>This action does not in itself create an event in the workflow execution history. However, if the task times out, the workflow execution history will contain a <code>ActivityTaskTimedOut</code> event that contains the information from the last heartbeat generated by the activity worker.</p> <note>The <code>taskStartToCloseTimeout</code> of an activity type is the maximum duration of an activity task, regardless of the number of <a>RecordActivityTaskHeartbeat</a> requests received. The <code>taskStartToCloseTimeout</code> is also specified in <a>RegisterActivityType</a>.</note> <note>This operation is only useful for long-lived activities to report liveliness of the task and to determine if a cancellation is being attempted. </note> <important>If the <code>cancelRequested</code> flag returns <code>true</code>, a cancellation is being attempted. If the worker can cancel the activity, it should respond with <a>RespondActivityTaskCanceled</a>. Otherwise, it should ignore the cancellation request.</important> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by activity workers to report to the service that the ActivityTask represented by the specified ``taskToken`` is still making progress. The worker can also (optionally) specify details of the progress, for example percent complete, using the ``details`` parameter. This action can also be used by the worker as a mechanism to check if cancellation is being requested for the activity task. If a cancellation is being attempted for the specified task, then the boolean ``cancelRequested`` flag returned by the service is set to ``true``.\n\n This action resets the ``taskHeartbeatTimeout`` clock. The ``taskHeartbeatTimeout`` is specified in RegisterActivityType.\n\n This action does not in itself create an event in the workflow execution history. However, if the task times out, the workflow execution history will contain a ``ActivityTaskTimedOut`` event that contains the information from the last heartbeat generated by the activity worker.\n\n The ``taskStartToCloseTimeout`` of an activity type is the maximum duration of an activity task, regardless of the number of RecordActivityTaskHeartbeat requests received. The ``taskStartToCloseTimeout`` is also specified in RegisterActivityType. This operation is only useful for long-lived activities to report liveliness of the task and to determine if a cancellation is being attempted.  If the ``cancelRequested`` flag returns ``true``, a cancellation is being attempted. If the worker can cancel the activity, it should respond with RespondActivityTaskCanceled. Otherwise, it should ignore the cancellation request. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RecordActivityTaskHeartbeatInput"
             },
@@ -203,61 +203,61 @@
             }
         },
         "RegisterActivityType": {
-            "documentation": "<p>Registers a new <i>activity type</i> along with its configuration settings in the specified domain.</p> <important>A <code>TypeAlreadyExists</code> fault is returned if the type already exists in the domain. You cannot change any configuration settings of the type after its registration, and it must be registered as a new version.</important> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.</li> <li> <code>name</code>: String constraint. The key is <code>swf:name</code>.</li> <li> <code>version</code>: String constraint. The key is <code>swf:version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Registers a new *activity type* along with its configuration settings in the specified domain.\n\n A ``TypeAlreadyExists`` fault is returned if the type already exists in the domain. You cannot change any configuration settings of the type after its registration, and it must be registered as a new version. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  *  ``defaultTaskList.name``: String constraint. The key is ``swf:defaultTaskList.name``.\n  *  ``name``: String constraint. The key is ``swf:name``.\n  *  ``version``: String constraint. The key is ``swf:version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RegisterActivityTypeInput"
             }
         },
         "RegisterDomain": {
-            "documentation": "<p>Registers a new domain.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the resource of this action.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Registers a new domain.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the resource of this action.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RegisterDomainInput"
             }
         },
         "RegisterWorkflowType": {
-            "documentation": "<p>Registers a new <i>workflow type</i> and its configuration settings in the specified domain.</p> <p>The retention period for the workflow history is set by the <a>RegisterDomain</a> action.</p> <important>If the type already exists, then a <code>TypeAlreadyExists</code> fault is returned. You cannot change the configuration settings of a workflow type once it is registered and it must be registered as a new version.</important> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.</li> <li> <code>name</code>: String constraint. The key is <code>swf:name</code>.</li> <li> <code>version</code>: String constraint. The key is <code>swf:version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Registers a new *workflow type* and its configuration settings in the specified domain.\n\n The retention period for the workflow history is set by the RegisterDomain action.\n\n If the type already exists, then a ``TypeAlreadyExists`` fault is returned. You cannot change the configuration settings of a workflow type once it is registered and it must be registered as a new version. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  *  ``defaultTaskList.name``: String constraint. The key is ``swf:defaultTaskList.name``.\n  *  ``name``: String constraint. The key is ``swf:name``.\n  *  ``version``: String constraint. The key is ``swf:version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RegisterWorkflowTypeInput"
             }
         },
         "RequestCancelWorkflowExecution": {
-            "documentation": "<p>Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> <note>If the runId is not specified, the <code>WorkflowExecutionCancelRequested</code> event is recorded in the history of the current open workflow execution with the specified workflowId in the domain.</note> <note>Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of <a>TerminateWorkflowExecution</a> when possible.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Records a ``WorkflowExecutionCancelRequested`` event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.\n\n If the runId is not specified, the ``WorkflowExecutionCancelRequested`` event is recorded in the history of the current open workflow execution with the specified workflowId in the domain. Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of TerminateWorkflowExecution when possible. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RequestCancelWorkflowExecutionInput"
             }
         },
         "RespondActivityTaskCanceled": {
-            "documentation": "<p>Used by workers to tell the service that the <a>ActivityTask</a> identified by the <code>taskToken</code> was successfully canceled. Additional <code>details</code> can be optionally provided using the <code>details</code> argument.</p> <p>These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code> event added to the workflow history.</p> <important>Only use this operation if the <code>canceled</code> flag of a <a>RecordActivityTaskHeartbeat</a> request returns <code>true</code> and if the activity can be safely undone or abandoned.</important> <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to <a>RespondActivityTaskCompleted</a>, RespondActivityTaskCanceled, <a>RespondActivityTaskFailed</a>, or the task has <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types\">timed out</a>.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by workers to tell the service that the ActivityTask identified by the ``taskToken`` was successfully canceled. Additional ``details`` can be optionally provided using the ``details`` argument.\n\n These ``details`` (if provided) appear in the ``ActivityTaskCanceled`` event added to the workflow history.\n\n Only use this operation if the ``canceled`` flag of a RecordActivityTaskHeartbeat request returns ``true`` and if the activity can be safely undone or abandoned. A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or the task has `timed out <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types>`_.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RespondActivityTaskCanceledInput"
             }
         },
         "RespondActivityTaskCompleted": {
-            "documentation": "<p>Used by workers to tell the service that the <a>ActivityTask</a> identified by the <code>taskToken</code> completed successfully with a <code>result</code> (if provided). The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the workflow history.</p> <important> If the requested task does not complete successfully, use <a>RespondActivityTaskFailed</a> instead. If the worker finds that the task is canceled through the <code>canceled</code> flag returned by <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean up and then call <a>RespondActivityTaskCanceled</a>.</important> <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, <a>RespondActivityTaskCanceled</a>, <a>RespondActivityTaskFailed</a>, or the task has <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types\">timed out</a>.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by workers to tell the service that the ActivityTask identified by the ``taskToken`` completed successfully with a ``result`` (if provided). The ``result`` appears in the ``ActivityTaskCompleted`` event in the workflow history.\n\n  If the requested task does not complete successfully, use RespondActivityTaskFailed instead. If the worker finds that the task is canceled through the ``canceled`` flag returned by RecordActivityTaskHeartbeat, it should cancel the task, clean up and then call RespondActivityTaskCanceled. A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or the task has `timed out <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types>`_.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RespondActivityTaskCompletedInput"
             }
         },
         "RespondActivityTaskFailed": {
-            "documentation": "<p>Used by workers to tell the service that the <a>ActivityTask</a> identified by the <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added to the workflow history.</p> <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>, RespondActivityTaskFailed, or the task has <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types\">timed out</a>.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by workers to tell the service that the ActivityTask identified by the ``taskToken`` has failed with ``reason`` (if specified). The ``reason`` and ``details`` appear in the ``ActivityTaskFailed`` event added to the workflow history.\n\n A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or the task has `timed out <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types>`_.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RespondActivityTaskFailedInput"
             }
         },
         "RespondDecisionTaskCompleted": {
-            "documentation": "<p>Used by deciders to tell the service that the <a>DecisionTask</a> identified by the <code>taskToken</code> has successfully completed. The <code>decisions</code> argument specifies the list of decisions made while processing the task.</p> <p>A <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code> specified is attached to the event in the workflow execution history.</p> <p><b>Access Control</b></p> <p>If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code>, it can express permissions for the list of decisions in the <code>decisions</code> parameter. Each of the decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Used by deciders to tell the service that the DecisionTask identified by the ``taskToken`` has successfully completed. The ``decisions`` argument specifies the list of decisions made while processing the task.\n\n A ``DecisionTaskCompleted`` event is added to the workflow history. The ``executionContext`` specified is attached to the event in the workflow execution history.\n\n **Access Control**\n\n If an IAM policy grants permission to use ``RespondDecisionTaskCompleted``, it can express permissions for the list of decisions in the ``decisions`` parameter. Each of the decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "RespondDecisionTaskCompletedInput"
             }
         },
         "SignalWorkflowExecution": {
-            "documentation": "<p>Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history and creates a decision task for the workflow execution identified by the given domain, workflowId and runId. The event is recorded with the specified user defined signalName and input (if provided).</p> <note> If a runId is not specified, then the <code>WorkflowExecutionSignaled</code> event is recorded in the history of the current open workflow with the matching workflowId in the domain.</note> <note> If the specified workflow execution is not open, this method fails with <code>UnknownResource</code>.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Records a ``WorkflowExecutionSignaled`` event in the workflow execution history and creates a decision task for the workflow execution identified by the given domain, workflowId and runId. The event is recorded with the specified user defined signalName and input (if provided).\n\n  If a runId is not specified, then the ``WorkflowExecutionSignaled`` event is recorded in the history of the current open workflow with the matching workflowId in the domain.  If the specified workflow execution is not open, this method fails with ``UnknownResource``. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "SignalWorkflowExecutionInput"
             }
         },
         "StartWorkflowExecution": {
-            "documentation": "<p>Starts an execution of the workflow type in the specified domain using the provided <code>workflowId</code> and input data.</p> <p>This action returns the newly started workflow execution.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.</li> <li> <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.</li> <li> <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.</li> <li> <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.</li> <li> <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> <li><code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Starts an execution of the workflow type in the specified domain using the provided ``workflowId`` and input data.\n\n This action returns the newly started workflow execution.\n\n **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  *  ``tagList.member.0``: The key is ``swf:tagList.member.0``.\n  *  ``tagList.member.1``: The key is ``swf:tagList.member.1``.\n  *  ``tagList.member.2``: The key is ``swf:tagList.member.2``.\n  *  ``tagList.member.3``: The key is ``swf:tagList.member.3``.\n  *  ``tagList.member.4``: The key is ``swf:tagList.member.4``.\n  * ``taskList``: String constraint. The key is ``swf:taskList.name``.\n  * ``workflowType.name``: String constraint. The key is ``swf:workflowType.name``.\n  * ``workflowType.version``: String constraint. The key is ``swf:workflowType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "StartWorkflowExecutionInput"
             },
@@ -266,7 +266,7 @@
             }
         },
         "TerminateWorkflowExecution": {
-            "documentation": "<p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.</p> <important> If the identified workflow execution was in progress, it is terminated immediately.</important> <note> If a runId is not specified, then the <code>WorkflowExecutionTerminated</code> event is recorded in the history of the current open workflow with the matching workflowId in the domain.</note> <note> You should consider using <a>RequestCancelWorkflowExecution</a> action instead because it allows the workflow to gracefully close while <a>TerminateWorkflowExecution</a> does not.</note> <p><b>Access Control</b></p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Records a ``WorkflowExecutionTerminated`` event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.\n\n  If the identified workflow execution was in progress, it is terminated immediately.  If a runId is not specified, then the ``WorkflowExecutionTerminated`` event is recorded in the history of the current open workflow with the matching workflowId in the domain.  You should consider using RequestCancelWorkflowExecution action instead because it allows the workflow to gracefully close while TerminateWorkflowExecution does not. **Access Control**\n\n You can use IAM policies to control this action's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "input": {
                 "shape": "TerminateWorkflowExecutionInput"
             }
@@ -278,7 +278,7 @@
         },
         "ActivityTask": {
             "type": "structure",
-            "documentation": "<p>Unit of work sent to an activity worker.</p>",
+            "documentation": "Unit of work sent to an activity worker.",
             "members": [
                 {
                     "name": "taskToken",
@@ -314,7 +314,7 @@
         },
         "ActivityTaskCancelRequestedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskCancelRequested</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskCancelRequested`` event.",
             "members": [
                 {
                     "name": "decisionTaskCompletedEventId",
@@ -330,7 +330,7 @@
         },
         "ActivityTaskCanceledEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskCanceled</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskCanceled`` event.",
             "members": [
                 {
                     "name": "details",
@@ -356,7 +356,7 @@
         },
         "ActivityTaskCompletedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskCompleted</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskCompleted`` event.",
             "members": [
                 {
                     "name": "result",
@@ -377,7 +377,7 @@
         },
         "ActivityTaskFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskFailed</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskFailed`` event.",
             "members": [
                 {
                     "name": "reason",
@@ -403,7 +403,7 @@
         },
         "ActivityTaskScheduledEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskScheduled</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskScheduled`` event.",
             "members": [
                 {
                     "name": "activityType",
@@ -464,7 +464,7 @@
         },
         "ActivityTaskStartedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskStarted</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskStarted`` event.",
             "members": [
                 {
                     "name": "identity",
@@ -480,7 +480,7 @@
         },
         "ActivityTaskStatus": {
             "type": "structure",
-            "documentation": "<p>Status information about an activity task.</p>",
+            "documentation": "Status information about an activity task.",
             "members": [
                 {
                     "name": "cancelRequested",
@@ -491,7 +491,7 @@
         },
         "ActivityTaskTimedOutEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ActivityTaskTimedOut</code> event.</p>",
+            "documentation": "Provides details of the ``ActivityTaskTimedOut`` event.",
             "members": [
                 {
                     "name": "timeoutType",
@@ -520,7 +520,7 @@
         },
         "ActivityType": {
             "type": "structure",
-            "documentation": "<p>Represents an activity type.</p>",
+            "documentation": "Represents an activity type.",
             "members": [
                 {
                     "name": "name",
@@ -536,7 +536,7 @@
         },
         "ActivityTypeConfiguration": {
             "type": "structure",
-            "documentation": "<p>Configuration settings registered with the activity type.</p>",
+            "documentation": "Configuration settings registered with the activity type.",
             "members": [
                 {
                     "name": "defaultTaskStartToCloseTimeout",
@@ -572,7 +572,7 @@
         },
         "ActivityTypeDetail": {
             "type": "structure",
-            "documentation": "<p>Detailed information about an activity type.</p>",
+            "documentation": "Detailed information about an activity type.",
             "members": [
                 {
                     "name": "typeInfo",
@@ -588,7 +588,7 @@
         },
         "ActivityTypeInfo": {
             "type": "structure",
-            "documentation": "<p>Detailed information about an activity type.</p>",
+            "documentation": "Detailed information about an activity type.",
             "members": [
                 {
                     "name": "activityType",
@@ -623,7 +623,7 @@
         },
         "ActivityTypeInfos": {
             "type": "structure",
-            "documentation": "<p>Contains a paginated list of activity type information structures.</p>",
+            "documentation": "Contains a paginated list of activity type information structures.",
             "members": [
                 {
                     "name": "typeInfos",
@@ -639,7 +639,7 @@
         },
         "CancelTimerDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>CancelTimer</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``CancelTimer`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "timerId",
@@ -653,7 +653,7 @@
         },
         "CancelTimerFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>CancelTimerFailed</code> event.</p>",
+            "documentation": "Provides details of the ``CancelTimerFailed`` event.",
             "members": [
                 {
                     "name": "timerId",
@@ -674,7 +674,7 @@
         },
         "CancelWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>CancelWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``CancelWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "details",
@@ -688,7 +688,7 @@
         },
         "CancelWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>CancelWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``CancelWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "cause",
@@ -710,7 +710,7 @@
         },
         "ChildWorkflowExecutionCanceledEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.</p>",
+            "documentation": "Provide details of the ``ChildWorkflowExecutionCanceled`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -741,7 +741,7 @@
         },
         "ChildWorkflowExecutionCompletedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionCompleted</code> event.</p>",
+            "documentation": "Provides details of the ``ChildWorkflowExecutionCompleted`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -772,7 +772,7 @@
         },
         "ChildWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``ChildWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -808,7 +808,7 @@
         },
         "ChildWorkflowExecutionStartedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionStarted</code> event.</p>",
+            "documentation": "Provides details of the ``ChildWorkflowExecutionStarted`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -829,7 +829,7 @@
         },
         "ChildWorkflowExecutionTerminatedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionTerminated</code> event.</p>",
+            "documentation": "Provides details of the ``ChildWorkflowExecutionTerminated`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -855,7 +855,7 @@
         },
         "ChildWorkflowExecutionTimedOutEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ChildWorkflowExecutionTimedOut</code> event.</p>",
+            "documentation": "Provides details of the ``ChildWorkflowExecutionTimedOut`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -889,7 +889,7 @@
         },
         "CloseStatusFilter": {
             "type": "structure",
-            "documentation": "<p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>",
+            "documentation": "Used to filter the closed workflow executions in visibility APIs by their close status.",
             "members": [
                 {
                     "name": "status",
@@ -900,7 +900,7 @@
         },
         "CompleteWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>CompleteWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``CompleteWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "result",
@@ -914,7 +914,7 @@
         },
         "CompleteWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>CompleteWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``CompleteWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "cause",
@@ -930,7 +930,7 @@
         },
         "ContinueAsNewWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tag</code>: <i>Optional.</i>. A tag used to identify the workflow execution</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``ContinueAsNewWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  *  ``tag``: *Optional.*. A tag used to identify the workflow execution\n  * ``taskList``: String constraint. The key is ``swf:taskList.name``.\n  * ``workflowType.version``: String constraint. The key is ``swf:workflowType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "input",
@@ -977,7 +977,7 @@
         },
         "ContinueAsNewWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``ContinueAsNewWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "cause",
@@ -1099,7 +1099,7 @@
         },
         "Decision": {
             "type": "structure",
-            "documentation": "<p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <b>CancelTimer</b>: cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</li> <li> <b>CancelWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li> <li> <b>CompleteWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</li> <li> <b>ContinueAsNewWorkflowExecution</b>: closes the workflow execution and starts a new workflow execution of the same type using the same workflow id and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</li> <li> <b>FailWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</li> <li> <b>RecordMarker</b>: records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they do not need to look at the history beyond the marker event.</li> <li> <b>RequestCancelActivityTask</b>: attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</li> <li> <b>RequestCancelExternalWorkflowExecution</b>: requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>ScheduleActivityTask</b>: schedules an activity task.</li> <li> <b>SignalExternalWorkflowExecution</b>: requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>StartChildWorkflowExecution</b>: requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer will fire after the specified delay and record a <code>TimerFired</code> event.</li> </ul> <p><b>Access Control</b></p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <p><b>Decision Failure</b></p> <p>Decisions can fail for several reasons</p> <ul> <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and will therefore fail.</li> <li>A limit on your account was reached.</li> <li>The decision lacks sufficient permissions.</li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b> parameter indicates the cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <ul> <li> <b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed. This could happen if the activity type specified in the decision is not registered, is in a deprecated state, or the decision is not properly configured.</li> <li> <b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask decision failed. This could happen if there is no open activity task with the specified activityId.</li> <li> <b>StartTimerFailed</b>: a StartTimer decision failed. This could happen if there is another open timer with the same timerId.</li> <li> <b>CancelTimerFailed</b>: a CancelTimer decision failed. This could happen if there is no open timer with the specified timerId.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution decision failed. This could happen if the workflow type specified is not registered, is deprecated, or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: a SignalExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: a RequestCancelExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>CancelWorkflowExecutionFailed</b>: a CancelWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>CompleteWorkflowExecutionFailed</b>: a CompleteWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>ContinueAsNewWorkflowExecutionFailed</b>: a ContinueAsNewWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</li> <li> <b>FailWorkflowExecutionFailed</b>: a FailWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An UnhandledDecision fault will be returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</note> <p><b>How to Code a Decision</b></p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a> </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a> </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a> </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a> </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RecordMarkerDecisionAttributes</a> </li> <li> <a>StartTimerDecisionAttributes</a> </li> <li> <a>CancelTimerDecisionAttributes</a> </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>",
+            "documentation": "Specifies a decision made by the decider. A decision can be one of these types:\n\n \n\n  *  **CancelTimer**: cancels a previously started timer and records a ``TimerCanceled`` event in the history.\n  *  **CancelWorkflowExecution**: closes the workflow execution and records a ``WorkflowExecutionCanceled`` event in the history.\n  *  **CompleteWorkflowExecution**: closes the workflow execution and records a ``WorkflowExecutionCompleted`` event in the history .\n  *  **ContinueAsNewWorkflowExecution**: closes the workflow execution and starts a new workflow execution of the same type using the same workflow id and a unique run Id. A ``WorkflowExecutionContinuedAsNew`` event is recorded in the history.\n  *  **FailWorkflowExecution**: closes the workflow execution and records a ``WorkflowExecutionFailed`` event in the history.\n  *  **RecordMarker**: records a ``MarkerRecorded`` event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they do not need to look at the history beyond the marker event.\n  *  **RequestCancelActivityTask**: attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be informed that cancellation has been requested in the response to RecordActivityTaskHeartbeat.\n  *  **RequestCancelExternalWorkflowExecution**: requests that a request be made to cancel the specified external workflow execution and records a ``RequestCancelExternalWorkflowExecutionInitiated`` event in the history.\n  *  **ScheduleActivityTask**: schedules an activity task.\n  *  **SignalExternalWorkflowExecution**: requests a signal to be delivered to the specified external workflow execution and records a ``SignalExternalWorkflowExecutionInitiated`` event in the history.\n  *  **StartChildWorkflowExecution**: requests that a child workflow execution be started and records a ``StartChildWorkflowExecutionInitiated`` event in the history. The child workflow execution is a separate workflow execution with its own history.\n  *  **StartTimer**: starts a timer for this workflow execution and records a ``TimerStarted`` event in the history. This timer will fire after the specified delay and record a ``TimerFired`` event.\n \n **Access Control**\n\n If you grant permission to use ``RespondDecisionTaskCompleted``, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.\n\n **Decision Failure**\n\n Decisions can fail for several reasons\n\n \n\n  * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and will therefore fail.\n  * A limit on your account was reached.\n  * The decision lacks sufficient permissions.\n \n One of the following events might be added to the history to indicate an error. The event attribute's **cause** parameter indicates the cause. If **cause** is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.\n\n \n\n  *  **ScheduleActivityTaskFailed**: a ScheduleActivityTask decision failed. This could happen if the activity type specified in the decision is not registered, is in a deprecated state, or the decision is not properly configured.\n  *  **RequestCancelActivityTaskFailed**: a RequestCancelActivityTask decision failed. This could happen if there is no open activity task with the specified activityId.\n  *  **StartTimerFailed**: a StartTimer decision failed. This could happen if there is another open timer with the same timerId.\n  *  **CancelTimerFailed**: a CancelTimer decision failed. This could happen if there is no open timer with the specified timerId.\n  *  **StartChildWorkflowExecutionFailed**: a StartChildWorkflowExecution decision failed. This could happen if the workflow type specified is not registered, is deprecated, or the decision is not properly configured.\n  *  **SignalExternalWorkflowExecutionFailed**: a SignalExternalWorkflowExecution decision failed. This could happen if the ``workflowID`` specified in the decision was incorrect.\n  *  **RequestCancelExternalWorkflowExecutionFailed**: a RequestCancelExternalWorkflowExecution decision failed. This could happen if the ``workflowID`` specified in the decision was incorrect.\n  *  **CancelWorkflowExecutionFailed**: a CancelWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.\n  *  **CompleteWorkflowExecutionFailed**: a CompleteWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.\n  *  **ContinueAsNewWorkflowExecutionFailed**: a ContinueAsNewWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.\n  *  **FailWorkflowExecutionFailed**: a FailWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.\n \n The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.\n\n A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: ``CompleteWorkflowExecution``, ``FailWorkflowExecution``, ``CancelWorkflowExecution`` and ``ContinueAsNewWorkflowExecution``. An UnhandledDecision fault will be returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call RespondDecisionTaskCompleted without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution. **How to Code a Decision**\n\n You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:\n\n \n\n  *  ScheduleActivityTaskDecisionAttributes \n  *  RequestCancelActivityTaskDecisionAttributes \n  *  CompleteWorkflowExecutionDecisionAttributes \n  *  FailWorkflowExecutionDecisionAttributes \n  *  CancelWorkflowExecutionDecisionAttributes \n  *  ContinueAsNewWorkflowExecutionDecisionAttributes \n  *  RecordMarkerDecisionAttributes \n  *  StartTimerDecisionAttributes \n  *  CancelTimerDecisionAttributes \n  *  SignalExternalWorkflowExecutionDecisionAttributes \n  *  RequestCancelExternalWorkflowExecutionDecisionAttributes \n  *  StartChildWorkflowExecutionDecisionAttributes",
             "members": [
                 {
                     "name": "decisionType",
@@ -1174,7 +1174,7 @@
         },
         "DecisionTask": {
             "type": "structure",
-            "documentation": "<p>A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.</p>",
+            "documentation": "A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.",
             "members": [
                 {
                     "name": "taskToken",
@@ -1215,7 +1215,7 @@
         },
         "DecisionTaskCompletedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>DecisionTaskCompleted</code> event.</p>",
+            "documentation": "Provides details of the ``DecisionTaskCompleted`` event.",
             "members": [
                 {
                     "name": "executionContext",
@@ -1236,7 +1236,7 @@
         },
         "DecisionTaskScheduledEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>",
+            "documentation": "Provides details about the ``DecisionTaskScheduled`` event.",
             "members": [
                 {
                     "name": "taskList",
@@ -1257,7 +1257,7 @@
         },
         "DecisionTaskStartedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>DecisionTaskStarted</code> event.</p>",
+            "documentation": "Provides details of the ``DecisionTaskStarted`` event.",
             "members": [
                 {
                     "name": "identity",
@@ -1273,7 +1273,7 @@
         },
         "DecisionTaskTimedOutEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>DecisionTaskTimedOut</code> event.</p>",
+            "documentation": "Provides details of the ``DecisionTaskTimedOut`` event.",
             "members": [
                 {
                     "name": "timeoutType",
@@ -1407,7 +1407,7 @@
         },
         "DomainAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>Returned if the specified domain already exists. You will get this fault even if the existing domain is in deprecated status.</p>",
+            "documentation": "Returned if the specified domain already exists. You will get this fault even if the existing domain is in deprecated status.",
             "members": [
                 {
                     "name": "message",
@@ -1418,7 +1418,7 @@
         },
         "DomainConfiguration": {
             "type": "structure",
-            "documentation": "<p>Contains the configuration settings of a domain.</p>",
+            "documentation": "Contains the configuration settings of a domain.",
             "members": [
                 {
                     "name": "workflowExecutionRetentionPeriodInDays",
@@ -1429,7 +1429,7 @@
         },
         "DomainDeprecatedFault": {
             "type": "structure",
-            "documentation": "<p>Returned when the specified domain has been deprecated.</p>",
+            "documentation": "Returned when the specified domain has been deprecated.",
             "members": [
                 {
                     "name": "message",
@@ -1440,7 +1440,7 @@
         },
         "DomainDetail": {
             "type": "structure",
-            "documentation": "<p>Contains details of a domain.</p>",
+            "documentation": "Contains details of a domain.",
             "members": [
                 {
                     "name": "domainInfo",
@@ -1454,7 +1454,7 @@
         },
         "DomainInfo": {
             "type": "structure",
-            "documentation": "<p>Contains general information about a domain.</p>",
+            "documentation": "Contains general information about a domain.",
             "members": [
                 {
                     "name": "name",
@@ -1479,7 +1479,7 @@
         },
         "DomainInfos": {
             "type": "structure",
-            "documentation": "<p>Contains a paginated collection of DomainInfo structures.</p>",
+            "documentation": "Contains a paginated collection of DomainInfo structures.",
             "members": [
                 {
                     "name": "domainInfos",
@@ -1519,7 +1519,7 @@
         },
         "ExecutionTimeFilter": {
             "type": "structure",
-            "documentation": "<p>Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href=\"https://en.wikipedia.org/wiki/Unix_time\">Unix Time format</a>. For example: <code>\"oldestDate\": 1325376070.</code></p>",
+            "documentation": "Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the `Unix Time format <https://en.wikipedia.org/wiki/Unix_time>`_. For example: ``\"oldestDate\": 1325376070.``",
             "members": [
                 {
                     "name": "oldestDate",
@@ -1535,7 +1535,7 @@
         },
         "ExternalWorkflowExecutionCancelRequestedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.</p>",
+            "documentation": "Provides details of the ``ExternalWorkflowExecutionCancelRequested`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -1551,7 +1551,7 @@
         },
         "ExternalWorkflowExecutionSignaledEventAttributes": {
             "type": "structure",
-            "documentation": "<p> Provides details of the <code>ExternalWorkflowExecutionSignaled</code> event.</p>",
+            "documentation": "Provides details of the ``ExternalWorkflowExecutionSignaled`` event.",
             "members": [
                 {
                     "name": "workflowExecution",
@@ -1567,7 +1567,7 @@
         },
         "FailWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>FailWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``FailWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "reason",
@@ -1586,7 +1586,7 @@
         },
         "FailWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>FailWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``FailWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "cause",
@@ -1635,7 +1635,7 @@
         },
         "History": {
             "type": "structure",
-            "documentation": "<p>Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.</p>",
+            "documentation": "Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.",
             "members": [
                 {
                     "name": "events",
@@ -1651,7 +1651,7 @@
         },
         "HistoryEvent": {
             "type": "structure",
-            "documentation": "<p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <b>WorkflowExecutionStarted</b>: The workflow execution was started.</li> <li> <b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful completion.</li> <li> <b>WorkflowExecutionFailed</b>: The workflow execution closed due to a failure.</li> <li> <b>WorkflowExecutionTimedOut</b>: The workflow execution was closed because a time out was exceeded.</li> <li> <b>WorkflowExecutionCanceled</b>: The workflow execution was successfully canceled and closed.</li> <li> <b>WorkflowExecutionTerminated</b>: The workflow execution was terminated.</li> <li> <b>WorkflowExecutionContinuedAsNew</b>: The workflow execution was closed and a new execution of the same type was created with the same workflowId.</li> <li> <b>WorkflowExecutionCancelRequested</b>: A request to cancel this workflow execution was made.</li> <li> <b>DecisionTaskScheduled</b>: A decision task was scheduled for the workflow execution.</li> <li> <b>DecisionTaskStarted</b>: The decision task was dispatched to a decider.</li> <li> <b>DecisionTaskCompleted</b>: The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</li> <li> <b>DecisionTaskTimedOut</b>: The decision task timed out.</li> <li> <b>ActivityTaskScheduled</b>: An activity task was scheduled for execution.</li> <li> <b>ScheduleActivityTaskFailed</b>: Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly, for example the activity type specified is not registered.</li> <li> <b>ActivityTaskStarted</b>: The scheduled activity task was dispatched to a worker.</li> <li> <b>ActivityTaskCompleted</b>: An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</li> <li> <b>ActivityTaskFailed</b>: An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</li> <li> <b>ActivityTaskTimedOut</b>: The activity task timed out.</li> <li> <b>ActivityTaskCanceled</b>: The activity task was successfully canceled.</li> <li> <b>ActivityTaskCancelRequested</b>: A <code>RequestCancelActivityTask</code> decision was received by the system.</li> <li> <b>RequestCancelActivityTaskFailed</b>: Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured properly.</li> <li> <b>WorkflowExecutionSignaled</b>: An external signal was received for the workflow execution.</li> <li> <b>MarkerRecorded</b>: A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</li> <li> <b>TimerStarted</b>: A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</li> <li> <b>StartTimerFailed</b>: Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer already exists with the specified timer Id.</li> <li> <b>TimerFired</b>: A timer, previously started for this workflow execution, fired.</li> <li> <b>TimerCanceled</b>: A timer, previously started for this workflow execution, was successfully canceled.</li> <li> <b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no timer exists with the specified timer Id.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request was made to start a child workflow execution.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: Failed to process StartChildWorkflowExecution decision. This happens when the decision is not configured properly, for example the workflow type specified is not registered.</li> <li> <b>ChildWorkflowExecutionStarted</b>: A child workflow execution was successfully started.</li> <li> <b>ChildWorkflowExecutionCompleted</b>: A child workflow execution, started by this workflow execution, completed successfully and was closed.</li> <li> <b>ChildWorkflowExecutionFailed</b>: A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</li> <li> <b>ChildWorkflowExecutionTimedOut</b>: A child workflow execution, started by this workflow execution, timed out and was closed.</li> <li> <b>ChildWorkflowExecutionCanceled</b>: A child workflow execution, started by this workflow execution, was canceled and closed.</li> <li> <b>ChildWorkflowExecutionTerminated</b>: A child workflow execution, started by this workflow execution, was terminated.</li> <li> <b>SignalExternalWorkflowExecutionInitiated</b>: A request to signal an external workflow was made.</li> <li> <b>ExternalWorkflowExecutionSignaled</b>: A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: The request to signal an external workflow execution failed.</li> <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b>: A request was made to request the cancellation of an external workflow execution.</li> <li> <b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external workflow execution was successfully delivered to the target execution.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: Request to cancel an external workflow execution failed.</li> </ul>",
+            "documentation": "Event within a workflow execution. A history event can be one of these types:\n\n \n\n  *  **WorkflowExecutionStarted**: The workflow execution was started.\n  *  **WorkflowExecutionCompleted**: The workflow execution was closed due to successful completion.\n  *  **WorkflowExecutionFailed**: The workflow execution closed due to a failure.\n  *  **WorkflowExecutionTimedOut**: The workflow execution was closed because a time out was exceeded.\n  *  **WorkflowExecutionCanceled**: The workflow execution was successfully canceled and closed.\n  *  **WorkflowExecutionTerminated**: The workflow execution was terminated.\n  *  **WorkflowExecutionContinuedAsNew**: The workflow execution was closed and a new execution of the same type was created with the same workflowId.\n  *  **WorkflowExecutionCancelRequested**: A request to cancel this workflow execution was made.\n  *  **DecisionTaskScheduled**: A decision task was scheduled for the workflow execution.\n  *  **DecisionTaskStarted**: The decision task was dispatched to a decider.\n  *  **DecisionTaskCompleted**: The decider successfully completed a decision task by calling RespondDecisionTaskCompleted.\n  *  **DecisionTaskTimedOut**: The decision task timed out.\n  *  **ActivityTaskScheduled**: An activity task was scheduled for execution.\n  *  **ScheduleActivityTaskFailed**: Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly, for example the activity type specified is not registered.\n  *  **ActivityTaskStarted**: The scheduled activity task was dispatched to a worker.\n  *  **ActivityTaskCompleted**: An activity worker successfully completed an activity task by calling RespondActivityTaskCompleted.\n  *  **ActivityTaskFailed**: An activity worker failed an activity task by calling RespondActivityTaskFailed.\n  *  **ActivityTaskTimedOut**: The activity task timed out.\n  *  **ActivityTaskCanceled**: The activity task was successfully canceled.\n  *  **ActivityTaskCancelRequested**: A ``RequestCancelActivityTask`` decision was received by the system.\n  *  **RequestCancelActivityTaskFailed**: Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured properly.\n  *  **WorkflowExecutionSignaled**: An external signal was received for the workflow execution.\n  *  **MarkerRecorded**: A marker was recorded in the workflow history as the result of a ``RecordMarker`` decision.\n  *  **TimerStarted**: A timer was started for the workflow execution due to a ``StartTimer`` decision.\n  *  **StartTimerFailed**: Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer already exists with the specified timer Id.\n  *  **TimerFired**: A timer, previously started for this workflow execution, fired.\n  *  **TimerCanceled**: A timer, previously started for this workflow execution, was successfully canceled.\n  *  **CancelTimerFailed**: Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no timer exists with the specified timer Id.\n  *  **StartChildWorkflowExecutionInitiated**: A request was made to start a child workflow execution.\n  *  **StartChildWorkflowExecutionFailed**: Failed to process StartChildWorkflowExecution decision. This happens when the decision is not configured properly, for example the workflow type specified is not registered.\n  *  **ChildWorkflowExecutionStarted**: A child workflow execution was successfully started.\n  *  **ChildWorkflowExecutionCompleted**: A child workflow execution, started by this workflow execution, completed successfully and was closed.\n  *  **ChildWorkflowExecutionFailed**: A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.\n  *  **ChildWorkflowExecutionTimedOut**: A child workflow execution, started by this workflow execution, timed out and was closed.\n  *  **ChildWorkflowExecutionCanceled**: A child workflow execution, started by this workflow execution, was canceled and closed.\n  *  **ChildWorkflowExecutionTerminated**: A child workflow execution, started by this workflow execution, was terminated.\n  *  **SignalExternalWorkflowExecutionInitiated**: A request to signal an external workflow was made.\n  *  **ExternalWorkflowExecutionSignaled**: A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.\n  *  **SignalExternalWorkflowExecutionFailed**: The request to signal an external workflow execution failed.\n  *  **RequestCancelExternalWorkflowExecutionInitiated**: A request was made to request the cancellation of an external workflow execution.\n  *  **ExternalWorkflowExecutionCancelRequested**: Request to cancel an external workflow execution was successfully delivered to the target execution.\n  *  **RequestCancelExternalWorkflowExecutionFailed**: Request to cancel an external workflow execution failed.",
             "members": [
                 {
                     "name": "eventTimestamp",
@@ -1914,7 +1914,7 @@
         },
         "LimitExceededFault": {
             "type": "structure",
-            "documentation": "<p>Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.</p>",
+            "documentation": "Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.",
             "members": [
                 {
                     "name": "message",
@@ -2126,7 +2126,7 @@
         },
         "MarkerRecordedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>MarkerRecorded</code> event.</p>",
+            "documentation": "Provides details of the ``MarkerRecorded`` event.",
             "members": [
                 {
                     "name": "markerName",
@@ -2153,7 +2153,7 @@
         },
         "OperationNotPermittedFault": {
             "type": "structure",
-            "documentation": "<p>Returned when the caller does not have sufficient permissions to invoke the action.</p>",
+            "documentation": "Returned when the caller does not have sufficient permissions to invoke the action.",
             "members": [
                 {
                     "name": "message",
@@ -2170,7 +2170,7 @@
         },
         "PendingTaskCount": {
             "type": "structure",
-            "documentation": "<p>Contains the count of tasks in a task list.</p>",
+            "documentation": "Contains the count of tasks in a task list.",
             "members": [
                 {
                     "name": "count",
@@ -2256,7 +2256,7 @@
         },
         "RecordMarkerDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RecordMarker</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``RecordMarker`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "markerName",
@@ -2275,7 +2275,7 @@
         },
         "RecordMarkerFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RecordMarkerFailed</code> event.</p>",
+            "documentation": "Provides details of the ``RecordMarkerFailed`` event.",
             "members": [
                 {
                     "name": "markerName",
@@ -2424,7 +2424,7 @@
         },
         "RequestCancelActivityTaskDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RequestCancelActivityTask</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``RequestCancelActivityTask`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "activityId",
@@ -2438,7 +2438,7 @@
         },
         "RequestCancelActivityTaskFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RequestCancelActivityTaskFailed</code> event.</p>",
+            "documentation": "Provides details of the ``RequestCancelActivityTaskFailed`` event.",
             "members": [
                 {
                     "name": "activityId",
@@ -2459,7 +2459,7 @@
         },
         "RequestCancelExternalWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``RequestCancelExternalWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "workflowId",
@@ -2483,7 +2483,7 @@
         },
         "RequestCancelExternalWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``RequestCancelExternalWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "workflowId",
@@ -2518,7 +2518,7 @@
         },
         "RequestCancelExternalWorkflowExecutionInitiatedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.</p>",
+            "documentation": "Provides details of the ``RequestCancelExternalWorkflowExecutionInitiated`` event.",
             "members": [
                 {
                     "name": "workflowId",
@@ -2637,7 +2637,7 @@
         },
         "Run": {
             "type": "structure",
-            "documentation": "<p>Specifies the <code>runId</code> of a workflow execution.</p>",
+            "documentation": "Specifies the ``runId`` of a workflow execution.",
             "members": [
                 {
                     "name": "runId",
@@ -2654,7 +2654,7 @@
         },
         "ScheduleActivityTaskDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ScheduleActivityTask</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``ScheduleActivityTask`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  * ``activityType.name``: String constraint. The key is ``swf:activityType.name``.\n  * ``activityType.version``: String constraint. The key is ``swf:activityType.version``.\n  * ``taskList``: String constraint. The key is ``swf:taskList.name``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "activityType",
@@ -2713,7 +2713,7 @@
         },
         "ScheduleActivityTaskFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>ScheduleActivityTaskFailed</code> event.</p>",
+            "documentation": "Provides details of the ``ScheduleActivityTaskFailed`` event.",
             "members": [
                 {
                     "name": "activityType",
@@ -2739,7 +2739,7 @@
         },
         "SignalExternalWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``SignalExternalWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "workflowId",
@@ -2773,7 +2773,7 @@
         },
         "SignalExternalWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>SignalExternalWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``SignalExternalWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "workflowId",
@@ -2808,7 +2808,7 @@
         },
         "SignalExternalWorkflowExecutionInitiatedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.</p>",
+            "documentation": "Provides details of the ``SignalExternalWorkflowExecutionInitiated`` event.",
             "members": [
                 {
                     "name": "workflowId",
@@ -2877,7 +2877,7 @@
         },
         "StartChildWorkflowExecutionDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>StartChildWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li> <code>tagList.member.N</code>: The key is \"swf:tagList.N\" where N is the tag number from 0 to 4, inclusive.</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> <li><code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</li> <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``StartChildWorkflowExecution`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * Constrain the following parameters by using a ``Condition`` element with the appropriate keys. \n\n  *  ``tagList.member.N``: The key is \"swf:tagList.N\" where N is the tag number from 0 to 4, inclusive.\n  * ``taskList``: String constraint. The key is ``swf:taskList.name``.\n  * ``workflowType.name``: String constraint. The key is ``swf:workflowType.name``.\n  * ``workflowType.version``: String constraint. The key is ``swf:workflowType.version``.\n \n \n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "workflowType",
@@ -2936,7 +2936,7 @@
         },
         "StartChildWorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>StartChildWorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``StartChildWorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "workflowType",
@@ -2971,7 +2971,7 @@
         },
         "StartChildWorkflowExecutionInitiatedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>StartChildWorkflowExecutionInitiated</code> event.</p>",
+            "documentation": "Provides details of the ``StartChildWorkflowExecutionInitiated`` event.",
             "members": [
                 {
                     "name": "workflowId",
@@ -3032,7 +3032,7 @@
         },
         "StartTimerDecisionAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>StartTimer</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=\"http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>",
+            "documentation": "Provides details of the ``StartTimer`` decision.\n\n **Access Control**\n\n You can use IAM policies to control this decision's access to Amazon SWF resources as follows:\n\n \n\n  * Use a ``Resource`` element with the domain name to limit the action to only specified domains.\n  * Use an ``Action`` element to allow or deny permission to call this action.\n  * You cannot use an IAM policy to constrain this action's parameters.\n \n If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's **cause** parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see `Using IAM to Manage Access to Amazon SWF Workflows <http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html>`_.",
             "members": [
                 {
                     "name": "timerId",
@@ -3056,7 +3056,7 @@
         },
         "StartTimerFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>StartTimerFailed</code> event.</p>",
+            "documentation": "Provides details of the ``StartTimerFailed`` event.",
             "members": [
                 {
                     "name": "timerId",
@@ -3135,7 +3135,7 @@
         },
         "TagFilter": {
             "type": "structure",
-            "documentation": "<p>Used to filter the workflow executions in visibility APIs based on a tag.</p>",
+            "documentation": "Used to filter the workflow executions in visibility APIs based on a tag.",
             "members": [
                 {
                     "name": "tag",
@@ -3150,7 +3150,7 @@
         },
         "TaskList": {
             "type": "structure",
-            "documentation": "<p>Represents a task list.</p>",
+            "documentation": "Represents a task list.",
             "members": [
                 {
                     "name": "name",
@@ -3205,7 +3205,7 @@
         },
         "TimerCanceledEventAttributes": {
             "type": "structure",
-            "documentation": "<p> Provides details of the <code>TimerCanceled</code> event. </p>",
+            "documentation": "Provides details of the ``TimerCanceled`` event.",
             "members": [
                 {
                     "name": "timerId",
@@ -3226,7 +3226,7 @@
         },
         "TimerFiredEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>TimerFired</code> event.</p>",
+            "documentation": "Provides details of the ``TimerFired`` event.",
             "members": [
                 {
                     "name": "timerId",
@@ -3245,7 +3245,7 @@
         },
         "TimerStartedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>TimerStarted</code> event.</p>",
+            "documentation": "Provides details of the ``TimerStarted`` event.",
             "members": [
                 {
                     "name": "timerId",
@@ -3277,7 +3277,7 @@
         },
         "TypeAlreadyExistsFault": {
             "type": "structure",
-            "documentation": "<p>Returned if the type already exists in the specified domain. You will get this fault even if the existing type is in deprecated status. You can specify another version if the intent is to create a new distinct version of the type.</p>",
+            "documentation": "Returned if the type already exists in the specified domain. You will get this fault even if the existing type is in deprecated status. You can specify another version if the intent is to create a new distinct version of the type.",
             "members": [
                 {
                     "name": "message",
@@ -3288,7 +3288,7 @@
         },
         "TypeDeprecatedFault": {
             "type": "structure",
-            "documentation": "<p>Returned when the specified activity or workflow type was already deprecated.</p>",
+            "documentation": "Returned when the specified activity or workflow type was already deprecated.",
             "members": [
                 {
                     "name": "message",
@@ -3299,7 +3299,7 @@
         },
         "UnknownResourceFault": {
             "type": "structure",
-            "documentation": "<p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>",
+            "documentation": "Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.",
             "members": [
                 {
                     "name": "message",
@@ -3316,7 +3316,7 @@
         },
         "WorkflowExecution": {
             "type": "structure",
-            "documentation": "<p>Represents a workflow execution.</p>",
+            "documentation": "Represents a workflow execution.",
             "members": [
                 {
                     "name": "workflowId",
@@ -3332,7 +3332,7 @@
         },
         "WorkflowExecutionAlreadyStartedFault": {
             "type": "structure",
-            "documentation": "<p>Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in the specified domain.</p>",
+            "documentation": "Returned by StartWorkflowExecution when an open execution with the same workflowId is already running in the specified domain.",
             "members": [
                 {
                     "name": "message",
@@ -3346,7 +3346,7 @@
         },
         "WorkflowExecutionCancelRequestedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionCancelRequested</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionCancelRequested`` event.",
             "members": [
                 {
                     "name": "externalWorkflowExecution",
@@ -3367,7 +3367,7 @@
         },
         "WorkflowExecutionCanceledEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionCanceled</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionCanceled`` event.",
             "members": [
                 {
                     "name": "details",
@@ -3383,7 +3383,7 @@
         },
         "WorkflowExecutionCompletedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionCompleted</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionCompleted`` event.",
             "members": [
                 {
                     "name": "result",
@@ -3399,7 +3399,7 @@
         },
         "WorkflowExecutionConfiguration": {
             "type": "structure",
-            "documentation": "<p>The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.</p>",
+            "documentation": "The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.",
             "members": [
                 {
                     "name": "taskStartToCloseTimeout",
@@ -3430,7 +3430,7 @@
         },
         "WorkflowExecutionContinuedAsNewEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionContinuedAsNew</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionContinuedAsNew`` event.",
             "members": [
                 {
                     "name": "input",
@@ -3483,7 +3483,7 @@
         },
         "WorkflowExecutionCount": {
             "type": "structure",
-            "documentation": "<p>Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a></p>",
+            "documentation": "Contains the count of workflow executions returned from CountOpenWorkflowExecutions or CountClosedWorkflowExecutions",
             "members": [
                 {
                     "name": "count",
@@ -3499,7 +3499,7 @@
         },
         "WorkflowExecutionDetail": {
             "type": "structure",
-            "documentation": "<p>Contains details about a workflow execution.</p>",
+            "documentation": "Contains details about a workflow execution.",
             "members": [
                 {
                     "name": "executionInfo",
@@ -3530,7 +3530,7 @@
         },
         "WorkflowExecutionFailedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionFailed</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionFailed`` event.",
             "members": [
                 {
                     "name": "reason",
@@ -3551,7 +3551,7 @@
         },
         "WorkflowExecutionFilter": {
             "type": "structure",
-            "documentation": "<p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>",
+            "documentation": "Used to filter the workflow executions in visibility APIs by their ``workflowId``.",
             "members": [
                 {
                     "name": "workflowId",
@@ -3562,7 +3562,7 @@
         },
         "WorkflowExecutionInfo": {
             "type": "structure",
-            "documentation": "<p>Contains information about a workflow execution. </p>",
+            "documentation": "Contains information about a workflow execution.",
             "members": [
                 {
                     "name": "execution",
@@ -3617,7 +3617,7 @@
         },
         "WorkflowExecutionInfos": {
             "type": "structure",
-            "documentation": "<p>Contains a paginated list of information about workflow executions.</p>",
+            "documentation": "Contains a paginated list of information about workflow executions.",
             "members": [
                 {
                     "name": "executionInfos",
@@ -3633,7 +3633,7 @@
         },
         "WorkflowExecutionOpenCounts": {
             "type": "structure",
-            "documentation": "<p>Contains the counts of open tasks, child workflow executions and timers for a workflow execution.</p>",
+            "documentation": "Contains the counts of open tasks, child workflow executions and timers for a workflow execution.",
             "members": [
                 {
                     "name": "openActivityTasks",
@@ -3659,7 +3659,7 @@
         },
         "WorkflowExecutionSignaledEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionSignaled</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionSignaled`` event.",
             "members": [
                 {
                     "name": "signalName",
@@ -3685,7 +3685,7 @@
         },
         "WorkflowExecutionStartedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of <code>WorkflowExecutionStarted</code> event.</p>",
+            "documentation": "Provides details of ``WorkflowExecutionStarted`` event.",
             "members": [
                 {
                     "name": "input",
@@ -3748,7 +3748,7 @@
         },
         "WorkflowExecutionTerminatedEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionTerminated</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionTerminated`` event.",
             "members": [
                 {
                     "name": "reason",
@@ -3774,7 +3774,7 @@
         },
         "WorkflowExecutionTimedOutEventAttributes": {
             "type": "structure",
-            "documentation": "<p>Provides details of the <code>WorkflowExecutionTimedOut</code> event.</p>",
+            "documentation": "Provides details of the ``WorkflowExecutionTimedOut`` event.",
             "members": [
                 {
                     "name": "timeoutType",
@@ -3796,7 +3796,7 @@
         },
         "WorkflowType": {
             "type": "structure",
-            "documentation": "<p>Represents a workflow type.</p>",
+            "documentation": "Represents a workflow type.",
             "members": [
                 {
                     "name": "name",
@@ -3812,7 +3812,7 @@
         },
         "WorkflowTypeConfiguration": {
             "type": "structure",
-            "documentation": "<p>The configuration settings of a workflow type.</p>",
+            "documentation": "The configuration settings of a workflow type.",
             "members": [
                 {
                     "name": "defaultTaskStartToCloseTimeout",
@@ -3843,7 +3843,7 @@
         },
         "WorkflowTypeDetail": {
             "type": "structure",
-            "documentation": "<p>Contains details about a workflow type.</p>",
+            "documentation": "Contains details about a workflow type.",
             "members": [
                 {
                     "name": "typeInfo",
@@ -3859,7 +3859,7 @@
         },
         "WorkflowTypeFilter": {
             "type": "structure",
-            "documentation": "<p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>",
+            "documentation": "Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.",
             "members": [
                 {
                     "name": "name",
@@ -3875,7 +3875,7 @@
         },
         "WorkflowTypeInfo": {
             "type": "structure",
-            "documentation": "<p>Contains information about a workflow type.</p>",
+            "documentation": "Contains information about a workflow type.",
             "members": [
                 {
                     "name": "workflowType",
@@ -3910,7 +3910,7 @@
         },
         "WorkflowTypeInfos": {
             "type": "structure",
-            "documentation": "<p>Contains a paginated list of information structures about workflow types.</p>",
+            "documentation": "Contains a paginated list of information structures about workflow types.",
             "members": [
                 {
                     "name": "typeInfos",

@@ -32,7 +32,7 @@
     ],
     "operations": {
         "CreateFileSystem": {
-            "documentation": "<p> Creates a new, empty file system. The operation requires a creation token in the request that Amazon EFS uses to ensure idempotent creation (calling the operation with same creation token has no effect). If a file system does not currently exist that is owned by the caller's AWS account with the specified creation token, this operation does the following: </p> <ul> <li>Creates a new, empty file system. The file system will have an Amazon EFS assigned ID, and an initial lifecycle state \"creating\". </li> <li> Returns with the description of the created file system. </li> </ul> <p>Otherwise, this operation returns a <code>FileSystemAlreadyExists</code> error with the ID of the existing file system.</p> <note>For basic use cases, you can use a randomly generated UUID for the creation token.</note> <p> The idempotent operation allows you to retry a <code>CreateFileSystem</code> call without risk of creating an extra file system. This can happen when an initial call fails in a way that leaves it uncertain whether or not a file system was actually created. An example might be that a transport level timeout occurred or your connection was reset. As long as you use the same creation token, if the initial call had succeeded in creating a file system, the client can learn of its existence from the <code>FileSystemAlreadyExists</code> error. </p> <note>The <code>CreateFileSystem</code> call returns while the file system's lifecycle state is still \"creating\". You can check the file system creation status by calling the <a>DescribeFileSystems</a> API, which among other things returns the file system state.</note> <p> After the file system is fully created, Amazon EFS sets its lifecycle state to \"available\", at which point you can create one or more mount targets for the file system (<a>CreateMountTarget</a>) in your VPC. You mount your Amazon EFS file system on an EC2 instances in your VPC via the mount target. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html\">Amazon EFS: How it Works</a> </p> <p> This operation requires permission for the <code>elasticfilesystem:CreateFileSystem</code> action. </p>",
+            "documentation": "Creates a new, empty file system. The operation requires a creation token in the request that Amazon EFS uses to ensure idempotent creation (calling the operation with same creation token has no effect). If a file system does not currently exist that is owned by the caller's AWS account with the specified creation token, this operation does the following: \n\n \n\n  * Creates a new, empty file system. The file system will have an Amazon EFS assigned ID, and an initial lifecycle state \"creating\". \n  *  Returns with the description of the created file system. \n \n Otherwise, this operation returns a ``FileSystemAlreadyExists`` error with the ID of the existing file system.\n\n For basic use cases, you can use a randomly generated UUID for the creation token.  The idempotent operation allows you to retry a ``CreateFileSystem`` call without risk of creating an extra file system. This can happen when an initial call fails in a way that leaves it uncertain whether or not a file system was actually created. An example might be that a transport level timeout occurred or your connection was reset. As long as you use the same creation token, if the initial call had succeeded in creating a file system, the client can learn of its existence from the ``FileSystemAlreadyExists`` error. \n\n The ``CreateFileSystem`` call returns while the file system's lifecycle state is still \"creating\". You can check the file system creation status by calling the DescribeFileSystems API, which among other things returns the file system state.  After the file system is fully created, Amazon EFS sets its lifecycle state to \"available\", at which point you can create one or more mount targets for the file system (CreateMountTarget) in your VPC. You mount your Amazon EFS file system on an EC2 instances in your VPC via the mount target. For more information, see `Amazon EFS: How it Works <http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html>`_ \n\n  This operation requires permission for the ``elasticfilesystem:CreateFileSystem`` action.",
             "input": {
                 "shape": "CreateFileSystemRequest"
             },
@@ -41,7 +41,7 @@
             }
         },
         "CreateMountTarget": {
-            "documentation": "<p>Creates a mount target for a file system. You can then mount the file system on EC2 instances via the mount target. </p> <p>You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given Availability Zone share a single mount target for a given file system. If you have multiple subnets in an Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same subnet as the mount target in order to access their file system. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html\">Amazon EFS: How it Works</a>. </p> <p>In the request, you also specify a file system ID for which you are creating the mount target and the file system's lifecycle state must be \"available\" (see <a>DescribeFileSystems</a>).</p> <p> In the request, you also provide a subnet ID, which serves several purposes:</p> <ul> <li>It determines the VPC in which Amazon EFS creates the mount target.</li> <li>It determines the Availability Zone in which Amazon EFS creates the mount target. </li> <li>It determines the IP address range from which Amazon EFS selects the IP address of the mount target if you don't specify an IP address in the request. </li> </ul> <p>After creating the mount target, Amazon EFS returns a response that includes, a <code>MountTargetId</code> and an <code>IpAddress</code>. You use this IP address when mounting the file system in an EC2 instance. You can also use the mount target's DNS name when mounting the file system. The EC2 instance on which you mount the file system via the mount target can resolve the mount target's DNS name to its IP address. For more information, see <a href=\"http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation\">How it Works: Implementation Overview</a> </p> <p> Note that you can create mount targets for a file system in only one VPC, and there can be only one mount target per Availability Zone. That is, if the file system already has one or more mount targets created for it, the request to add another mount target must meet the following requirements: </p> <ul> <li> <p>The subnet specified in the request must belong to the same VPC as the subnets of the existing mount targets.</p> </li> <li>The subnet specified in the request must not be in the same Availability Zone as any of the subnets of the existing mount targets.</li> </ul> <p>If the request satisfies the requirements, Amazon EFS does the following:</p> <ul> <li>Creates a new mount target in the specified subnet. </li> <li>Also creates a new network interface in the subnet as follows: <ul> <li>If the request provides an <code>IpAddress</code>, Amazon EFS assigns that IP address to the network interface. Otherwise, Amazon EFS assigns a free address in the subnet (in the same way that the Amazon EC2 <code>CreateNetworkInterface</code> call does when a request does not specify a primary private IP address).</li> <li>If the request provides <code>SecurityGroups</code>, this network interface is associated with those security groups. Otherwise, it belongs to the default security group for the subnet's VPC.</li> <li>Assigns the description <code>\"Mount target <i>fsmt-id</i> for file system <i>fs-id</i>\"</code> where <code><i>fsmt-id</i></code> is the mount target ID, and <code><i>fs-id</i></code> is the <code>FileSystemId</code>.</li> <li>Sets the <code>requesterManaged</code> property of the network interface to \"true\", and the <code>requesterId</code> value to \"EFS\".</li> </ul> <p>Each Amazon EFS mount target has one corresponding requestor-managed EC2 network interface. After the network interface is created, Amazon EFS sets the <code>NetworkInterfaceId</code> field in the mount target's description to the network interface ID, and the <code>IpAddress</code> field to its address. If network interface creation fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li> </ul> <note>The <code>CreateMountTarget</code> call returns only after creating the network interface, but while the mount target state is still \"creating\". You can check the mount target creation status by calling the <a>DescribeFileSystems</a> API, which among other things returns the mount target state.</note> <p>We recommend you create a mount target in each of the Availability Zones. There are cost considerations for using a file system in an Availability Zone through a mount target created in another Availability Zone. For more information, go to <a href=\"http://aws.amazon.com/efs/\">Amazon EFS</a> product detail page. In addition, by always using a mount target local to the instance's Availability Zone, you eliminate a partial failure scenario; if the Availablity Zone in which your mount target is created goes down, then you won't be able to access your file system through that mount target. </p> <p>This operation requires permission for the following action on the file system:</p> <ul> <li><code>elasticfilesystem:CreateMountTarget</code></li> </ul> <p>This operation also requires permission for the following Amazon EC2 actions:</p> <ul> <li><code>ec2:DescribeSubnets</code></li> <li><code>ec2:DescribeNetworkInterfaces</code></li> <li><code>ec2:CreateNetworkInterface</code></li> </ul>",
+            "documentation": "Creates a mount target for a file system. You can then mount the file system on EC2 instances via the mount target. \n\n You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given Availability Zone share a single mount target for a given file system. If you have multiple subnets in an Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same subnet as the mount target in order to access their file system. For more information, see `Amazon EFS: How it Works <http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html>`_. \n\n In the request, you also specify a file system ID for which you are creating the mount target and the file system's lifecycle state must be \"available\" (see DescribeFileSystems).\n\n  In the request, you also provide a subnet ID, which serves several purposes:\n\n \n\n  * It determines the VPC in which Amazon EFS creates the mount target.\n  * It determines the Availability Zone in which Amazon EFS creates the mount target. \n  * It determines the IP address range from which Amazon EFS selects the IP address of the mount target if you don't specify an IP address in the request. \n \n After creating the mount target, Amazon EFS returns a response that includes, a ``MountTargetId`` and an ``IpAddress``. You use this IP address when mounting the file system in an EC2 instance. You can also use the mount target's DNS name when mounting the file system. The EC2 instance on which you mount the file system via the mount target can resolve the mount target's DNS name to its IP address. For more information, see `How it Works: Implementation Overview <http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation>`_ \n\n  Note that you can create mount targets for a file system in only one VPC, and there can be only one mount target per Availability Zone. That is, if the file system already has one or more mount targets created for it, the request to add another mount target must meet the following requirements: \n\n \n\n  *  The subnet specified in the request must belong to the same VPC as the subnets of the existing mount targets.\n\n \n  * The subnet specified in the request must not be in the same Availability Zone as any of the subnets of the existing mount targets.\n \n If the request satisfies the requirements, Amazon EFS does the following:\n\n \n\n  * Creates a new mount target in the specified subnet. \n  * Also creates a new network interface in the subnet as follows: \n\n  * If the request provides an ``IpAddress``, Amazon EFS assigns that IP address to the network interface. Otherwise, Amazon EFS assigns a free address in the subnet (in the same way that the Amazon EC2 ``CreateNetworkInterface`` call does when a request does not specify a primary private IP address).\n  * If the request provides ``SecurityGroups``, this network interface is associated with those security groups. Otherwise, it belongs to the default security group for the subnet's VPC.\n  * Assigns the description ``\"Mount target *fsmt-id* for file system *fs-id*\"`` where ``*fsmt-id*`` is the mount target ID, and ``*fs-id*`` is the ``FileSystemId``.\n  * Sets the ``requesterManaged`` property of the network interface to \"true\", and the ``requesterId`` value to \"EFS\".\n \n Each Amazon EFS mount target has one corresponding requestor-managed EC2 network interface. After the network interface is created, Amazon EFS sets the ``NetworkInterfaceId`` field in the mount target's description to the network interface ID, and the ``IpAddress`` field to its address. If network interface creation fails, the entire ``CreateMountTarget`` operation fails.\n\n \n \n The ``CreateMountTarget`` call returns only after creating the network interface, but while the mount target state is still \"creating\". You can check the mount target creation status by calling the DescribeFileSystems API, which among other things returns the mount target state. We recommend you create a mount target in each of the Availability Zones. There are cost considerations for using a file system in an Availability Zone through a mount target created in another Availability Zone. For more information, go to `Amazon EFS <http://aws.amazon.com/efs/>`_ product detail page. In addition, by always using a mount target local to the instance's Availability Zone, you eliminate a partial failure scenario; if the Availablity Zone in which your mount target is created goes down, then you won't be able to access your file system through that mount target. \n\n This operation requires permission for the following action on the file system:\n\n \n\n  * ``elasticfilesystem:CreateMountTarget``\n \n This operation also requires permission for the following Amazon EC2 actions:\n\n \n\n  * ``ec2:DescribeSubnets``\n  * ``ec2:DescribeNetworkInterfaces``\n  * ``ec2:CreateNetworkInterface``",
             "input": {
                 "shape": "CreateMountTargetRequest"
             },
@@ -50,31 +50,31 @@
             }
         },
         "CreateTags": {
-            "documentation": "<p>Creates or overwrites tags associated with a file system. Each tag is a key-value pair. If a tag key specified in the request already exists on the file system, this operation overwrites its value with the value provided in the request. If you add the \"Name\" tag to your file system, Amazon EFS returns it in the response to the <a>DescribeFileSystems</a> API. </p> <p>This operation requires permission for the <code>elasticfilesystem:CreateTags</code> action.</p>",
+            "documentation": "Creates or overwrites tags associated with a file system. Each tag is a key-value pair. If a tag key specified in the request already exists on the file system, this operation overwrites its value with the value provided in the request. If you add the \"Name\" tag to your file system, Amazon EFS returns it in the response to the DescribeFileSystems API. \n\n This operation requires permission for the ``elasticfilesystem:CreateTags`` action.",
             "input": {
                 "shape": "CreateTagsRequest"
             }
         },
         "DeleteFileSystem": {
-            "documentation": "<p> Deletes a file system, permanently severing access to its contents. Upon return, the file system no longer exists and you will not be able to access any contents of the deleted file system. </p> <p> You cannot delete a file system that is in use. That is, if the file system has any mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a> and <a>DeleteMountTarget</a>. </p> <note>The <code>DeleteFileSystem</code> call returns while the file system state is still \"deleting\". You can check the file system deletion status by calling the <a>DescribeFileSystems</a> API, which returns a list of file systems in your account. If you pass file system ID or creation token for the deleted file system, the <a>DescribeFileSystems</a> will return a 404 \"FileSystemNotFound\" error.</note> <p>This operation requires permission for the <code>elasticfilesystem:DeleteFileSystem</code> action.</p>",
+            "documentation": "Deletes a file system, permanently severing access to its contents. Upon return, the file system no longer exists and you will not be able to access any contents of the deleted file system. \n\n  You cannot delete a file system that is in use. That is, if the file system has any mount targets, you must first delete them. For more information, see DescribeMountTargets and DeleteMountTarget. \n\n The ``DeleteFileSystem`` call returns while the file system state is still \"deleting\". You can check the file system deletion status by calling the DescribeFileSystems API, which returns a list of file systems in your account. If you pass file system ID or creation token for the deleted file system, the DescribeFileSystems will return a 404 \"FileSystemNotFound\" error. This operation requires permission for the ``elasticfilesystem:DeleteFileSystem`` action.",
             "input": {
                 "shape": "DeleteFileSystemRequest"
             }
         },
         "DeleteMountTarget": {
-            "documentation": "<p>Deletes the specified mount target. </p> <p> This operation forcibly breaks any mounts of the file system via the mount target being deleted, which might disrupt instances or applications using those mounts. To avoid applications getting cut off abruptly, you might consider unmounting any mounts of the mount target, if feasible. The operation also deletes the associated network interface. Uncommitted writes may be lost, but breaking a mount target using this operation does not corrupt the file system itself. The file system you created remains. You can mount an EC2 instance in your VPC using another mount target. </p> <p> This operation requires permission for the following action on the file system: </p> <ul> <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The <code>DeleteMountTarget</code> call returns while the mount target state is still \"deleting\". You can check the mount target deletion by calling the <a>DescribeMountTargets</a> API, which returns a list of mount target descriptions for the given file system. </note> <p>The operation also requires permission for the following Amazon EC2 action on the mount target's network interface:</p> <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>",
+            "documentation": "Deletes the specified mount target. \n\n  This operation forcibly breaks any mounts of the file system via the mount target being deleted, which might disrupt instances or applications using those mounts. To avoid applications getting cut off abruptly, you might consider unmounting any mounts of the mount target, if feasible. The operation also deletes the associated network interface. Uncommitted writes may be lost, but breaking a mount target using this operation does not corrupt the file system itself. The file system you created remains. You can mount an EC2 instance in your VPC using another mount target. \n\n  This operation requires permission for the following action on the file system: \n\n \n\n  * ``elasticfilesystem:DeleteMountTarget``\n \n The ``DeleteMountTarget`` call returns while the mount target state is still \"deleting\". You can check the mount target deletion by calling the DescribeMountTargets API, which returns a list of mount target descriptions for the given file system.  The operation also requires permission for the following Amazon EC2 action on the mount target's network interface:\n\n \n\n  * ``ec2:DeleteNetworkInterface``",
             "input": {
                 "shape": "DeleteMountTargetRequest"
             }
         },
         "DeleteTags": {
-            "documentation": "<p>Deletes the specified tags from a file system. If the <code>DeleteTags</code> request includes a tag key that does not exist, Amazon EFS ignores it; it is not an error. For more information about tags and related restrictions, go to <a href=\"http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html\">Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p> <p>This operation requires permission for the <code>elasticfilesystem:DeleteTags</code> action.</p>",
+            "documentation": "Deletes the specified tags from a file system. If the ``DeleteTags`` request includes a tag key that does not exist, Amazon EFS ignores it; it is not an error. For more information about tags and related restrictions, go to `Tag Restrictions <http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html>`_ in the *AWS Billing and Cost Management User Guide*.\n\n This operation requires permission for the ``elasticfilesystem:DeleteTags`` action.",
             "input": {
                 "shape": "DeleteTagsRequest"
             }
         },
         "DescribeFileSystems": {
-            "documentation": "<p>Returns the description of a specific Amazon EFS file system if either the file system <code>CreationToken</code> or the <code>FileSystemId</code> is provided; otherwise, returns descriptions of all file systems owned by the caller's AWS account in the AWS region of the endpoint that you're calling.</p> <p> When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code> parameter to limit the number of descriptions in a response. If more file system descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response. In this case, you should send a subsequent request with the <code>Marker</code> request parameter set to the value of <code>NextMarker</code>. </p> <p> So to retrieve a list of your file system descriptions, the expected usage of this API is an iterative process of first calling <code>DescribeFileSystems</code> without the <code>Marker</code> and then continuing to call it with the <code>Marker</code> parameter set to the value of the <code>NextMarker</code> from the previous response until the response has no <code>NextMarker</code>. </p> <p> Note that the implementation may return fewer than <code>MaxItems</code> file system descriptions while still including a <code>NextMarker</code> value. </p> <p> The order of file systems returned in the response of one <code>DescribeFileSystems</code> call, and the order of file systems returned across the responses of a multi-call iteration, is unspecified. </p> <p> This operation requires permission for the <code>elasticfilesystem:DescribeFileSystems</code> action. </p>",
+            "documentation": "Returns the description of a specific Amazon EFS file system if either the file system ``CreationToken`` or the ``FileSystemId`` is provided; otherwise, returns descriptions of all file systems owned by the caller's AWS account in the AWS region of the endpoint that you're calling.\n\n  When retrieving all file system descriptions, you can optionally specify the ``MaxItems`` parameter to limit the number of descriptions in a response. If more file system descriptions remain, Amazon EFS returns a ``NextMarker``, an opaque token, in the response. In this case, you should send a subsequent request with the ``Marker`` request parameter set to the value of ``NextMarker``. \n\n  So to retrieve a list of your file system descriptions, the expected usage of this API is an iterative process of first calling ``DescribeFileSystems`` without the ``Marker`` and then continuing to call it with the ``Marker`` parameter set to the value of the ``NextMarker`` from the previous response until the response has no ``NextMarker``. \n\n  Note that the implementation may return fewer than ``MaxItems`` file system descriptions while still including a ``NextMarker`` value. \n\n  The order of file systems returned in the response of one ``DescribeFileSystems`` call, and the order of file systems returned across the responses of a multi-call iteration, is unspecified. \n\n  This operation requires permission for the ``elasticfilesystem:DescribeFileSystems`` action.",
             "input": {
                 "shape": "DescribeFileSystemsRequest"
             },
@@ -83,7 +83,7 @@
             }
         },
         "DescribeMountTargetSecurityGroups": {
-            "documentation": "<p>Returns the security groups currently in effect for a mount target. This operation requires that the network interface of the mount target has been created and the life cycle state of the mount target is not \"deleted\".</p> <p>This operation requires permissions for the following actions:</p> <ul> <li> <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount target's file system. </li> <li> <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network interface. </li> </ul>",
+            "documentation": "Returns the security groups currently in effect for a mount target. This operation requires that the network interface of the mount target has been created and the life cycle state of the mount target is not \"deleted\".\n\n This operation requires permissions for the following actions:\n\n \n\n  *  ``elasticfilesystem:DescribeMountTargetSecurityGroups`` action on the mount target's file system. \n  *  ``ec2:DescribeNetworkInterfaceAttribute`` action on the mount target's network interface.",
             "input": {
                 "shape": "DescribeMountTargetSecurityGroupsRequest"
             },
@@ -92,7 +92,7 @@
             }
         },
         "DescribeMountTargets": {
-            "documentation": "<p>Returns the descriptions of the current mount targets for a file system. The order of mount targets returned in the response is unspecified.</p> <p> This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code> action on the file system <code>FileSystemId</code>. </p>",
+            "documentation": "Returns the descriptions of the current mount targets for a file system. The order of mount targets returned in the response is unspecified.\n\n  This operation requires permission for the ``elasticfilesystem:DescribeMountTargets`` action on the file system ``FileSystemId``.",
             "input": {
                 "shape": "DescribeMountTargetsRequest"
             },
@@ -101,7 +101,7 @@
             }
         },
         "DescribeTags": {
-            "documentation": "<p>Returns the tags associated with a file system. The order of tags returned in the response of one <code>DescribeTags</code> call, and the order of tags returned across the responses of a multi-call iteration (when using pagination), is unspecified. </p> <p> This operation requires permission for the <code>elasticfilesystem:DescribeTags</code> action. </p>",
+            "documentation": "Returns the tags associated with a file system. The order of tags returned in the response of one ``DescribeTags`` call, and the order of tags returned across the responses of a multi-call iteration (when using pagination), is unspecified. \n\n  This operation requires permission for the ``elasticfilesystem:DescribeTags`` action.",
             "input": {
                 "shape": "DescribeTagsRequest"
             },
@@ -110,7 +110,7 @@
             }
         },
         "ModifyMountTargetSecurityGroups": {
-            "documentation": "<p>Modifies the set of security groups in effect for a mount target.</p> <p>When you create a mount target, Amazon EFS also creates a new network interface (see <a>CreateMountTarget</a>). This operation replaces the security groups in effect for the network interface associated with a mount target, with the <code>SecurityGroups</code> provided in the request. This operation requires that the network interface of the mount target has been created and the life cycle state of the mount target is not \"deleted\". </p> <p>The operation requires permissions for the following actions:</p> <ul> <li> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount target's file system. </li> <li> <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network interface. </li> </ul>",
+            "documentation": "Modifies the set of security groups in effect for a mount target.\n\n When you create a mount target, Amazon EFS also creates a new network interface (see CreateMountTarget). This operation replaces the security groups in effect for the network interface associated with a mount target, with the ``SecurityGroups`` provided in the request. This operation requires that the network interface of the mount target has been created and the life cycle state of the mount target is not \"deleted\". \n\n The operation requires permissions for the following actions:\n\n \n\n  *  ``elasticfilesystem:ModifyMountTargetSecurityGroups`` action on the mount target's file system. \n  *  ``ec2:ModifyNetworkInterfaceAttribute`` action on the mount target's network interface.",
             "input": {
                 "shape": "ModifyMountTargetSecurityGroupsRequest"
             }
@@ -122,7 +122,7 @@
         },
         "BadRequest": {
             "type": "structure",
-            "documentation": "<p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>",
+            "documentation": "Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -232,7 +232,7 @@
         },
         "DependencyTimeout": {
             "type": "structure",
-            "documentation": "<p>The service timed out trying to fulfill the request, and the client should try the call again.</p>",
+            "documentation": "The service timed out trying to fulfill the request, and the client should try the call again.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -419,7 +419,7 @@
         },
         "FileSystemAlreadyExists": {
             "type": "structure",
-            "documentation": "<p>Returned if the file system you are trying to create already exists, with the creation token you provided.</p>",
+            "documentation": "Returned if the file system you are trying to create already exists, with the creation token you provided.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -437,7 +437,7 @@
         },
         "FileSystemDescription": {
             "type": "structure",
-            "documentation": "<p>This object provides description of a file system.</p>",
+            "documentation": "This object provides description of a file system.",
             "members": [
                 {
                     "name": "OwnerId",
@@ -490,7 +490,7 @@
         },
         "FileSystemInUse": {
             "type": "structure",
-            "documentation": "<p>Returned if a file system has mount targets. </p>",
+            "documentation": "Returned if a file system has mount targets.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -504,7 +504,7 @@
         },
         "FileSystemLimitExceeded": {
             "type": "structure",
-            "documentation": "<p>Returned if the AWS account has already created maximum number of file systems allowed per account. </p>",
+            "documentation": "Returned if the AWS account has already created maximum number of file systems allowed per account.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -518,7 +518,7 @@
         },
         "FileSystemNotFound": {
             "type": "structure",
-            "documentation": "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>",
+            "documentation": "Returned if the specified ``FileSystemId`` does not exist in the requester's AWS account.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -532,7 +532,7 @@
         },
         "FileSystemSize": {
             "type": "structure",
-            "documentation": "<p>This object provides the latest known metered size, in bytes, of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.</p>",
+            "documentation": "This object provides the latest known metered size, in bytes, of data stored in the file system, in its ``Value`` field, and the time at which that size was determined in its ``Timestamp`` field. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.",
             "members": [
                 {
                     "name": "Value",
@@ -551,7 +551,7 @@
         },
         "IncorrectFileSystemLifeCycleState": {
             "type": "structure",
-            "documentation": "<p>Returned if the file system's life cycle state is not \"created\".</p>",
+            "documentation": "Returned if the file system's life cycle state is not \"created\".",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -565,7 +565,7 @@
         },
         "IncorrectMountTargetState": {
             "type": "structure",
-            "documentation": "<p>Returned if the mount target is not in the correct state for the operation.</p>",
+            "documentation": "Returned if the mount target is not in the correct state for the operation.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -579,7 +579,7 @@
         },
         "InternalServerError": {
             "type": "structure",
-            "documentation": "<p>Returned if an error occurred on the server side.</p>",
+            "documentation": "Returned if an error occurred on the server side.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -596,7 +596,7 @@
         },
         "IpAddressInUse": {
             "type": "structure",
-            "documentation": "<p>Returned if the request specified an <code>IpAddress</code> that is already in use in the subnet.</p>",
+            "documentation": "Returned if the request specified an ``IpAddress`` that is already in use in the subnet.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -636,7 +636,7 @@
         },
         "MountTargetConflict": {
             "type": "structure",
-            "documentation": "<p>Returned if the mount target would violate one of the specified restrictions based on the file system's existing mount targets.</p>",
+            "documentation": "Returned if the mount target would violate one of the specified restrictions based on the file system's existing mount targets.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -653,7 +653,7 @@
         },
         "MountTargetDescription": {
             "type": "structure",
-            "documentation": "<p>This object provides description of a mount target.</p>",
+            "documentation": "This object provides description of a mount target.",
             "members": [
                 {
                     "name": "OwnerId",
@@ -701,7 +701,7 @@
         },
         "MountTargetNotFound": {
             "type": "structure",
-            "documentation": "<p>Returned if there is no mount target with the specified ID is found in the caller's account.</p>",
+            "documentation": "Returned if there is no mount target with the specified ID is found in the caller's account.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -718,7 +718,7 @@
         },
         "NetworkInterfaceLimitExceeded": {
             "type": "structure",
-            "documentation": "<p> The calling account has reached the ENI limit for the specific AWS region. Client should try to delete some ENIs or get its account limit raised. For more information, go to <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html\">Amazon VPC Limits</a> in the Amazon Virtual Private Cloud User Guide (see the Network interfaces per VPC entry in the table). </p>",
+            "documentation": "The calling account has reached the ENI limit for the specific AWS region. Client should try to delete some ENIs or get its account limit raised. For more information, go to `Amazon VPC Limits <http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html>`_ in the Amazon Virtual Private Cloud User Guide (see the Network interfaces per VPC entry in the table).",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -732,7 +732,7 @@
         },
         "NoFreeAddressesInSubnet": {
             "type": "structure",
-            "documentation": "<p>Returned if <code>IpAddress</code> was not specified in the request and there are no free IP addresses in the subnet.</p>",
+            "documentation": "Returned if ``IpAddress`` was not specified in the request and there are no free IP addresses in the subnet.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -749,7 +749,7 @@
         },
         "SecurityGroupLimitExceeded": {
             "type": "structure",
-            "documentation": "<p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>",
+            "documentation": "Returned if the size of ``SecurityGroups`` specified in the request is greater than five.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -763,7 +763,7 @@
         },
         "SecurityGroupNotFound": {
             "type": "structure",
-            "documentation": "<p>Returned if one of the specified security groups does not exist in the subnet's VPC.</p>",
+            "documentation": "Returned if one of the specified security groups does not exist in the subnet's VPC.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -784,7 +784,7 @@
         },
         "SubnetNotFound": {
             "type": "structure",
-            "documentation": "<p>Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.</p>",
+            "documentation": "Returned if there is no subnet with ID ``SubnetId`` provided in the request.",
             "members": [
                 {
                     "name": "ErrorCode",
@@ -798,7 +798,7 @@
         },
         "Tag": {
             "type": "structure",
-            "documentation": "<p>A tag is a pair of key and value. The allowed characters in keys and values are letters, whitespace, and numbers, representable in UTF-8, and the characters '+', '-', '=', '.', '_', ':', and '/'. </p>",
+            "documentation": "A tag is a pair of key and value. The allowed characters in keys and values are letters, whitespace, and numbers, representable in UTF-8, and the characters '+', '-', '=', '.', '_', ':', and '/'.",
             "members": [
                 {
                     "name": "Key",
