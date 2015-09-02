@@ -80,10 +80,10 @@ class Importer(object):
         if Signature and operation.input_shape:
             parameters = []
             for member in operation.input_shape.iter_members():
-                 parameters.append(Parameter(
-                     name=member.name,
-                     kind=Parameter.KEYWORD_ONLY,
-                 ))
+                parameters.append(Parameter(
+                    name=member.name,
+                    kind=Parameter.KEYWORD_ONLY,
+                ))
             sig = Signature(parameters)
             setattr(method, "__signature__", sig)
 
