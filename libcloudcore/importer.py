@@ -16,6 +16,11 @@
 import imp
 import sys
 
+try:
+    from inspect import Signature, Parameter
+except ImportError:
+    Signature = None
+
 from .loader import Loader
 from .models import Model
 from .driver import Driver
@@ -66,13 +71,28 @@ class Importer(object):
 
     def get_driver_method(self, operation):
         def method(self, *args, **kwargs):
+            if args:
+                raise ValueError("This function only takes kwargs")
             return self.driver.call(operation, *args, **kwargs)
         setattr(method, "__doc__", operation.documentation)
         setattr(method, "__name__", force_str(operation.name))
+
+        if Signature and operation.input_shape:
+            parameters = []
+            for member in operation.input_shape.iter_members():
+                 parameters.append(Parameter(
+                     name=member.name,
+                     kind=Parameter.KEYWORD_ONLY,
+                 ))
+            sig = Signature(parameters)
+            setattr(method, "__signature__", sig)
+
         return method
 
     def get_waiter_method(self, waiter):
         def method(self, *args, **kwargs):
+            if args:
+                raise ValueError("This function only takes kwargs")
             return self.driver.wait(waiter, *args, **kwargs)
         setattr(method, "__doc__", waiter.documentation)
         setattr(method, "__name__", force_str(waiter.name))
