@@ -82,7 +82,7 @@ class Importer(object):
             for member in operation.input_shape.iter_members():
                 parameters.append(Parameter(
                     name=member.name,
-                    kind=Parameter.KEYWORD_ONLY,
+                    kind=Parameter.POSITIONAL_OR_KEYWORD,
                 ))
             sig = Signature(parameters)
             setattr(method, "__signature__", sig)
